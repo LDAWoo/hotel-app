@@ -1,9 +1,5 @@
-
-
-const RegisterModal = () =>{
-    return (
-        <div></div>
-    );
-}
+const RegisterModal = () => {
+  return <div></div>;
+};
 
 export default RegisterModal;

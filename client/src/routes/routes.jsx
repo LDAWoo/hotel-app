@@ -1,13 +1,12 @@
-import routesConfig from '../configs/routesConfig';
-import DefaultLayout from '../components/Layouts/DefaultLayout/DefaultLayout';
+import routesConfig from "../configs/routesConfig";
+import DefaultLayout from "../components/Layouts/DefaultLayout/DefaultLayout";
 
-import Home from '../pages/Home/Home';
+import Home from "../pages/Home/Home";
 
+const publicRoutesPathComponent = [
+  { path: routesConfig.home, component: Home, layout: DefaultLayout },
+];
 
-const publicRoutesPathComponent =[
-  {path: routesConfig.home,component: Home, layout: DefaultLayout}
-]
+const privateRoutesPathComponent = [];
 
-const privateRoutesPathComponent = []
-
-export {publicRoutesPathComponent, privateRoutesPathComponent};
+export { publicRoutesPathComponent, privateRoutesPathComponent };

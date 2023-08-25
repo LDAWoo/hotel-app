@@ -1,11 +1,11 @@
-import { AiFillFacebook, AiOutlineMail } from "react-icons/ai";
+import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import { AiFillFacebook, AiOutlineMail } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 
-import Image from "../../../components/Image/Image";
 import Button from "../../../components/Buttons/Button";
+import Image from "../../../components/Image/Image";
 import TextInput from "../../../components/TextInput/TextInput";
 
 function Entry({ onConfirm }) {

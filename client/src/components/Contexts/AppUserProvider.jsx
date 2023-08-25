@@ -1,6 +1,6 @@
-import { createContext } from "react";
-import PropTypes from "prop-types";
 import { useAuth0 } from "@auth0/auth0-react";
+import PropTypes from "prop-types";
+import { createContext } from "react";
 
 export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {

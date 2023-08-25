@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../Buttons/Button";
 

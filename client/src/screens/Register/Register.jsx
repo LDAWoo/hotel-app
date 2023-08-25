@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { use100vh } from "react-div-100vh";
 
 import { ThemeContext } from "../../components/Contexts/AppThemeProvider";
-import Entry from "./Entry/Entry";
 import Code from "./Code/Code";
+import Entry from "./Entry/Entry";
 
 function Register() {
   const { darkMode } = useContext(ThemeContext);

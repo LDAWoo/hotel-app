@@ -1,5 +1,5 @@
-import ToolTip from "../ToolTip/ToolTip";
 import Icon from "../Icon/Icon";
+import ToolTip from "../ToolTip/ToolTip";
 
 import PropTypes from "prop-types";
 

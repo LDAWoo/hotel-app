@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { use100vh } from "react-div-100vh";
-import { FcGoogle } from "react-icons/fc";
 import { AiFillLock, AiOutlineMail } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
-import Image from "../../components/Image/Image";
-import Button from "../../components/Buttons/Button";
-import TextInput from "../../components/TextInput/TextInput";
-import { ThemeContext } from "../../components/Contexts/AppThemeProvider";
-import { useTranslation } from "react-i18next";
-import { UserContext } from "../../components/Contexts/AppUserProvider";
-import FacebookLogin from "react-facebook-login";
 import { useAuth0 } from "@auth0/auth0-react";
+import FacebookLogin from "react-facebook-login";
+import { useTranslation } from "react-i18next";
+import Button from "../../components/Buttons/Button";
+import { ThemeContext } from "../../components/Contexts/AppThemeProvider";
+import { UserContext } from "../../components/Contexts/AppUserProvider";
+import Image from "../../components/Image/Image";
+import TextInput from "../../components/TextInput/TextInput";
 
 import "./facebookSDK";
 const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;

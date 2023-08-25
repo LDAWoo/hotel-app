@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom";
 
 import AppAuthProvider from "./components/Contexts/AppAuthProvider";
 import AppThemeProvider from "./components/Contexts/AppThemeProvider";
+import AppUserProvider from "./components/Contexts/AppUserProvider";
 import { publicRoutesPathComponent } from "./routes/routes";
 import Login from "./screens/Login/Login";
 import Register from "./screens/Register/Register";
-import AppUserProvider from "./components/Contexts/AppUserProvider";
 
 function App() {
   return (

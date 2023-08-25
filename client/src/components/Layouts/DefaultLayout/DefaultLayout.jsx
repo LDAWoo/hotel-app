@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import Navbar from "../../Navbar/Navbar";
-import { use100vh } from "react-div-100vh";
 import { useContext } from "react";
+import { use100vh } from "react-div-100vh";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import LanguageModal from "../../Modals/LanguageModal";
+import Navbar from "../../Navbar/Navbar";
 function DefaultLayout({ children }) {
   const { darkMode } = useContext(ThemeContext);
   const heightWindow = use100vh();

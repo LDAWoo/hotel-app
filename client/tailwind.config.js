@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary:{
-          "50":  "#B0B3B8",
+        primary: {
+          "50": "#B0B3B8",
           "100": "#525758",
           "200": "#4E4F50",
           "300": "#4D4E4F",
@@ -18,10 +18,23 @@ export default {
           "600": "#242526",
           "700": "#18191A",
         },
+        hotel: {
+          "50": "#006CE4",
+          "100": "#1A4FA0",
+          "200": "#003B95",
+
+        }
+
       },
-      textColor:{
-        
+      textColor: {
+
+      },
+      borderColor: {
+        hotel: {
+          "50": "#FFB700"
+        }
       }
+
     },
   },
   plugins: [],

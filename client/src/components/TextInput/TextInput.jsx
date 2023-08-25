@@ -20,6 +20,7 @@ function TextInput({
   classCurrency,
   tooltip,
   placement,
+  placeholder,
   ...props
 }) {
   return (
@@ -39,7 +40,7 @@ function TextInput({
             </div>
         )}
         <div className="relative w-full rounded-lg duration-200 outline-none border-[2px] dark:border-gray-800 ">
-            <input className={`${!classInput && `bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${icon ? 'pl-[48px]' : 'pl-[10px]'}`} `} {...props} />
+            <input className={`${!classInput && `bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${icon ? 'pl-[48px]' : 'pl-[10px]'}`} `} placeholder={placeholder} {...props} />
             {icon && (
                 <div className={`${!classIcon && 'absolute top-0 bottom-0 flex justify-center items-center pl-2 text-primary-100 dark:text-primary-50'}`}>
                     <Icon icon={icon} size={sizeIcon}/>
@@ -68,6 +69,7 @@ TextInput.propTypes = {
     currency: PropTypes.string,
     tooltip: PropTypes.string,
     placement: PropTypes.string,
+    placeholder: PropTypes.string,
     classCurrency: PropTypes.string,
     classToolTip: PropTypes.string,
     classIcon: PropTypes.string,

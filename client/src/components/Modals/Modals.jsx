@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../Buttons/Button";
 
@@ -138,7 +138,7 @@ function Modals({
               <div className='relative p-6 flex-auto'>{body}</div>
               {/* Footer */}
               <div className='flex flex-col gap-2 p-6'>
-                {footer}              
+                {footer}
                 <div
                   className='
                                 flex
@@ -147,7 +147,7 @@ function Modals({
                                 gap-4
                                 w-full
                                 '
-                >   
+                >
                   <Button
                     small={small}
                     outline={outline}
@@ -170,22 +170,21 @@ function Modals({
 }
 
 Modals.propTypes = {
-    classTitle: PropTypes.string,
-    isOpen: PropTypes.bool.isRequired,
-    onSubmit: PropTypes.func.isRequired,
-    onClose: PropTypes.func.isRequired,
-    title: PropTypes.node.isRequired,
-    body: PropTypes.node,
-    footer: PropTypes.node,
-    actionsLabel: PropTypes.string,
-    disabled: PropTypes.bool,
-    iconButton: PropTypes.node,
-    titleButton: PropTypes.string,
-    sizeIcon: PropTypes.number,
-    classIcon: PropTypes.string,
-    small: PropTypes.string,
-    outline: PropTypes.string,
-  };
-
+  classTitle: PropTypes.string,
+  isOpen: PropTypes.bool.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  title: PropTypes.node.isRequired,
+  body: PropTypes.node,
+  footer: PropTypes.node,
+  actionsLabel: PropTypes.string,
+  disabled: PropTypes.bool,
+  iconButton: PropTypes.node,
+  titleButton: PropTypes.string,
+  sizeIcon: PropTypes.number,
+  classIcon: PropTypes.string,
+  small: PropTypes.string,
+  outline: PropTypes.string,
+};
 
 export default Modals;

@@ -1,35 +1,34 @@
-import { createContext } from "react";
-import PropTypes from 'prop-types'
 import { useAuth0 } from "@auth0/auth0-react";
+import PropTypes from "prop-types";
+import { createContext } from "react";
 
+export const UserContext = createContext();
+const AppUserProvider = ({ children }) => {
+  const { loginWithRedirect, logout } = useAuth0();
 
-export const UserContext = createContext()
-const AppUserProvider = ({children}) =>{
-    const {loginWithRedirect,logout } = useAuth0();
+  const handleLoginWithGoogle = () => {
+    loginWithRedirect({ connection: "google-oauth2" });
+  };
 
-    const handleLoginWithGoogle = () =>{
-        loginWithRedirect({connection: 'google-oauth2'});
-    }
+  const handleLoginWithFacebook = () => {
+    console.log("Facebook");
+  };
 
-    const handleLoginWithFacebook = () =>{
-        console.log("Facebook");
-    }
+  const handleLogout = () => {
+    logout();
+  };
 
-    const handleLogout = () =>{
-        logout();
-    }
-
-    return (
-        <UserContext.Provider 
-        value={{handleLoginWithGoogle,handleLoginWithFacebook,handleLogout}}
-        >
-            {children}
-        </UserContext.Provider>
-    );
-}
+  return (
+    <UserContext.Provider
+      value={{ handleLoginWithGoogle, handleLoginWithFacebook, handleLogout }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
+};
 
 AppUserProvider.propTypes = {
-    children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
 export default AppUserProvider;

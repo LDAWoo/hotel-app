@@ -1,6 +1,6 @@
-import {createStore} from 'zustand'
+import create from 'zustand'
 
-const useRegisterModal = createStore((set) =>({
+const useRegisterModal = create((set) =>({
     isOpen: false,
     onOpen: () => set({isOpen: true}),
     onClose: () => set({isOpen: false})

@@ -1,9 +1,18 @@
+import Modals from './Modals'
+import useRegisterModal from '../../hooks/useRegisterModal'
 
+function LanguageModal(){
+    
+    const {isOpen, onClose} = useRegisterModal()
 
-const RegisterModal = () =>{
     return (
-        <div></div>
+        <Modals
+        isOpen={isOpen}
+        title="Select Language"
+        onClose={onClose}
+
+        ></Modals>
     );
 }
 
-export default RegisterModal;
+export default LanguageModal;

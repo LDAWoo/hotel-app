@@ -1,27 +1,32 @@
 {
-    "Login": {
-        "title":"Login",
-        "loginWithOpenAccount" :"Login with Open Account",
-        "orContinueWithEmail": "Or continue with email address",
-        "email": "Your email",
-        "password": "Password",
-        "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
-        "doNotHaveAnAccount": "Don’t have an account ?",
-        "register": "Register"
-    },
+  "Login": {
+    "title": "Login",
+    "loginWithOpenAccount": "Login with Open Account",
+    "orContinueWithEmail": "Or continue with email address",
+    "email": "Your email",
+    "password": "Password",
+    "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
+    "doNotHaveAnAccount": "Don’t have an account ?",
+    "register": "Register"
+  },
 
-    "Register": {
-        "title": "Register",
-        "registerWithOpenAccount" :"Register with Open Account",
-        "orContinueWithEmail": "Or continue with email address",
-        "email": "Your email",
-        "continue":"Continue",
-        "checkCodeEmail": "We just send you a verify code. Check your inbox to get them.",
-        "errorCode": "The code you entered is incorrect.",
-        "password": "Password",
-        "passwordConfirm": "Password confirm",
-        "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
-        "alreadyAMember": "Already a member ?",
-        "login": "Login"
+  "Register": {
+    "title": "Register",
+    "registerWithOpenAccount": "Register with Open Account",
+    "orContinueWithEmail": "Or continue with email address",
+    "email": "Your email",
+    "continue": "Continue",
+    "checkCodeEmail": "We just send you a verify code. Check your inbox to get them.",
+    "errorCode": "The code you entered is incorrect.",
+    "password": "Password",
+    "passwordConfirm": "Password confirm",
+    "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
+    "alreadyAMember": "Already a member ?",
+    "login": "Login"
+  },
+  "Modal": {
+    "Language": {
+      "title": "Select your language"
     }
+  }
 }

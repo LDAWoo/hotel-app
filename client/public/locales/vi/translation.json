@@ -1,27 +1,31 @@
 {
-    "Login": {
-        "title":"Đăng Nhập",
-        "loginWithOpenAccount" :"Đăng nhập bằng mở tài khoản",
-        "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
-        "email":"Email của bạn",
-        "password":"Mật khẩu",
-        "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
-        "doNotHaveAnAccount": "Bạn chưa có tài khoản?",
-        "register": "Đăng ký"
-    },
-    "Register": {
-        "title": "Đăng ký",
-        "registerWithOpenAccount" :"Đăng nhập bằng mở tài khoản",
-        "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
-        "email": "Email của bạn",
-        "continue":"Tiếp tục",
-        "checkCodeEmail": "Chúng tôi chỉ gửi cho bạn một mã xác minh. Kiểm tra hộp thư đến của bạn để nhận chúng.",
-        "errorCode": "Mã bạn đã nhập không chính xác.",
-        "password": "Mật khẩu",
-        "passwordConfirm": "Xác nhận mật khẩu",
-        "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
-        "alreadyAMember": "Đã là thành viên hay chưa ?",
-        "login": "Đăng Nhập"
+  "Login": {
+    "title": "Đăng Nhập",
+    "loginWithOpenAccount": "Đăng nhập bằng mở tài khoản",
+    "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
+    "email": "Email của bạn",
+    "password": "Mật khẩu",
+    "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
+    "doNotHaveAnAccount": "Bạn chưa có tài khoản?",
+    "register": "Đăng ký"
+  },
+  "Register": {
+    "title": "Đăng ký",
+    "registerWithOpenAccount": "Đăng nhập bằng mở tài khoản",
+    "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
+    "email": "Email của bạn",
+    "continue": "Tiếp tục",
+    "checkCodeEmail": "Chúng tôi chỉ gửi cho bạn một mã xác minh. Kiểm tra hộp thư đến của bạn để nhận chúng.",
+    "errorCode": "Mã bạn đã nhập không chính xác.",
+    "password": "Mật khẩu",
+    "passwordConfirm": "Xác nhận mật khẩu",
+    "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
+    "alreadyAMember": "Đã là thành viên hay chưa ?",
+    "login": "Đăng Nhập"
+  },
+  "Modal": {
+    "Language": {
+      "title": "Chọn ngôn ngữ của bạn"
     }
-    
+  }
 }

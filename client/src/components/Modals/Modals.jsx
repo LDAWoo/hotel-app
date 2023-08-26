@@ -61,7 +61,7 @@ function Modals({
             inset-0 
             z-50 
             outline-none
-            focus:outline-none 
+            focus:outline-none
             bg-gray-50/70 
             dark:bg-primary-700/70'
       >
@@ -83,6 +83,7 @@ function Modals({
                     translate-x-0
                     duration-300
                     h-full
+                    
                     ${showModal ? "translate-y-0" : "translate-y-full"}
                     ${showModal ? "opacity-100" : "opacity-0"}
                     `}
@@ -93,7 +94,6 @@ function Modals({
                             h-full
                             lg:h-auto
                             md:h-auto
-                            border-0
                             rounded-lg
                             shadow-lg
                             relative
@@ -101,6 +101,9 @@ function Modals({
                             flex-col
                             outline-none
                             focus:outline-none
+                            border-[2px]
+                          border-gray-200
+                          dark:border-primary-600 
                             bg-white
                             dark:bg-primary-600
                         '
@@ -179,10 +182,10 @@ function Modals({
 
 Modals.propTypes = {
   classTitle: PropTypes.string,
-  isOpen: PropTypes.bool.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-  title: PropTypes.node.isRequired,
+  isOpen: PropTypes.bool,
+  onSubmit: PropTypes.func,
+  onClose: PropTypes.func,
+  title: PropTypes.node,
   body: PropTypes.node,
   footer: PropTypes.node,
   actionsLabel: PropTypes.string,

@@ -26,7 +26,20 @@
   },
   "Modal": {
     "Language": {
-      "title": "言語を選択"
+      "title": "言語を選択",
+      "allLanguage": "すべての言語"
+    }
+  },
+  "Theme": {
+    "title": "トピック",
+    "light": {
+      "title": "明るい"
+    },
+    "dark": {
+      "title": "暗い"
+    },
+    "system": {
+      "title": "システム"
     }
   }
 }

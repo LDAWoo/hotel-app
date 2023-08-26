@@ -25,7 +25,20 @@
   },
   "Modal": {
     "Language": {
-      "title": "Chọn ngôn ngữ của bạn"
+      "title": "Chọn ngôn ngữ của bạn",
+      "allLanguage": "Tất cả ngôn ngữ"
+    }
+  },
+  "Theme": {
+    "title": "Chủ đề",
+    "light": {
+      "title": "Áng sáng"
+    },
+    "dark": {
+      "title": "Tối tăm"
+    },
+    "system": {
+      "title": "Hệ thống"
     }
   }
 }

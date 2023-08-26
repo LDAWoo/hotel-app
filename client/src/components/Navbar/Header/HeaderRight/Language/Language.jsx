@@ -1,9 +1,9 @@
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 import useRegisterModal from "../../../../../hooks/useRegisterModal";
 import Button from "../../../../Buttons/Button";
-import ToolTip from "../../../../ToolTip/ToolTip";
 import { Language as Languages } from "../../../../Constants/Language";
-import { useTranslation } from "react-i18next";
+import ToolTip from "../../../../ToolTip/ToolTip";
 function Language() {
   const { onOpen } = useRegisterModal();
   const { t } = useTranslation();
@@ -18,6 +18,7 @@ function Language() {
   return (
     <>
       <ToolTip
+        typeToolTip='Tippy'
         delay={[500, 0]}
         placement='bottom'
         content={t("Modal.Language.title")}

@@ -26,7 +26,20 @@
   },
   "Modal": {
     "Language": {
-      "title": "언어 선택"
+      "title": "언어 선택",
+      "allLanguage": "모든 언어"
+    }
+  },
+  "Theme": {
+    "title": "주제",
+    "light": {
+      "title": "밝게"
+    },
+    "dark": {
+      "title": "어둡게"
+    },
+    "system": {
+      "title": "시스템"
     }
   }
 }

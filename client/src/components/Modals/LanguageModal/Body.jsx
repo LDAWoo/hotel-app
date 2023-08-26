@@ -1,10 +1,12 @@
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 import { BsCheck2 } from "react-icons/bs";
 import useRegisterModal from "../../../hooks/useRegisterModal";
 import Button from "../../Buttons/Button";
 import { Language } from "../../Constants/Language";
 
 function Body() {
+  const { t } = useTranslation();
   const { onClose } = useRegisterModal();
   const currentLanguage = i18next.language;
   const LanguageChoose = Language.find((lang) => lang.code === currentLanguage);
@@ -24,7 +26,7 @@ function Body() {
     <div className='flex items-center w-full'>
       <div className='flex flex-col w-full items-center'>
         <div className='flex items-center w-full justify-start dark:text-white font-medium '>
-          All language
+          {t("Modal.Language.allLanguage")}
         </div>
         <div className='flex items-center justify-start w-full flex-wrap'>
           {sortLanguage.map((lang) => (

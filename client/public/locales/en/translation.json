@@ -26,7 +26,20 @@
   },
   "Modal": {
     "Language": {
-      "title": "Select your language"
+      "title": "Select your language",
+      "allLanguage": "All languages"
+    }
+  },
+  "Theme": {
+    "title": "Theme",
+    "light": {
+      "title": "Light"
+    },
+    "dark": {
+      "title": "Dark"
+    },
+    "system": {
+      "title": "System"
     }
   }
 }

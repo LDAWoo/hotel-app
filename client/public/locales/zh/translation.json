@@ -26,7 +26,20 @@
   },
   "Modal": {
     "Language": {
-      "title": "选择您的语言"
+      "title": "选择您的语言",
+      "allLanguage": "所有语言"
+    }
+  },
+  "Theme": {
+    "title": "话题",
+    "light": {
+      "title": "明亮"
+    },
+    "dark": {
+      "title": "黑暗"
+    },
+    "system": {
+      "title": "系统"
     }
   }
 }

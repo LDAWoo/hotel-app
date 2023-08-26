@@ -1,0 +1,45 @@
+{
+  "Login": {
+    "title": "ログイン",
+    "loginWithOpenAccount": "オープンアカウントでログイン",
+    "orContinueWithEmail": "またはメールアドレスを使用して続行",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
+    "doNotHaveAnAccount": "アカウントをお持ちでないですか？",
+    "register": "登録"
+  },
+
+  "Register": {
+    "title": "登録",
+    "registerWithOpenAccount": "オープンアカウントで登録",
+    "orContinueWithEmail": "またはメールアドレスを使用して続行",
+    "email": "メールアドレス",
+    "continue": "続行",
+    "checkCodeEmail": "確認コードを送信しました。受信トレイを確認してください。",
+    "errorCode": "入力したコードが正しくありません。",
+    "password": "パスワード",
+    "passwordConfirm": "パスワード確認",
+    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
+    "alreadyAMember": "既に会員ですか？",
+    "login": "ログイン"
+  },
+  "Modal": {
+    "Language": {
+      "title": "言語を選択",
+      "allLanguage": "すべての言語"
+    }
+  },
+  "Theme": {
+    "title": "トピック",
+    "light": {
+      "title": "明るい"
+    },
+    "dark": {
+      "title": "暗い"
+    },
+    "system": {
+      "title": "システム"
+    }
+  }
+}

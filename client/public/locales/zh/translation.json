@@ -1,0 +1,45 @@
+{
+  "Login": {
+    "title": "登录",
+    "loginWithOpenAccount": "使用开放账户登录",
+    "orContinueWithEmail": "或继续使用电子邮件地址",
+    "email": "您的电子邮件",
+    "password": "密码",
+    "description": "本站受 reCAPTCHA 保护以及 Google 隐私政策。",
+    "doNotHaveAnAccount": "还没有账户？",
+    "register": "注册"
+  },
+
+  "Register": {
+    "title": "注册",
+    "registerWithOpenAccount": "使用开放账户注册",
+    "orContinueWithEmail": "或继续使用电子邮件地址",
+    "email": "您的电子邮件",
+    "continue": "继续",
+    "checkCodeEmail": "我们刚刚发送了一封验证代码邮件。请检查您的收件箱。",
+    "errorCode": "您输入的代码不正确。",
+    "password": "密码",
+    "passwordConfirm": "确认密码",
+    "description": "本站受 reCAPTCHA 保护以及 Google 隐私政策。",
+    "alreadyAMember": "已经是会员？",
+    "login": "登录"
+  },
+  "Modal": {
+    "Language": {
+      "title": "选择您的语言",
+      "allLanguage": "所有语言"
+    }
+  },
+  "Theme": {
+    "title": "话题",
+    "light": {
+      "title": "明亮"
+    },
+    "dark": {
+      "title": "黑暗"
+    },
+    "system": {
+      "title": "系统"
+    }
+  }
+}

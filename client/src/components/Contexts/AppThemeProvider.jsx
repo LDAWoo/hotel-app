@@ -1,11 +1,22 @@
 import PropTypes from "prop-types";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
 function AppThemeProvider({ children }) {
   const theme = localStorage.getItem("theme");
-  const [darkMode, setDarkMode] = useState(theme);
+  const [darkMode, setDarkMode] = useState("");
+
+  useEffect(() => {
+    if (theme == null) {
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      setDarkMode(prefersDarkMode ? "dark" : "light");
+    } else {
+      setDarkMode(theme);
+    }
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>

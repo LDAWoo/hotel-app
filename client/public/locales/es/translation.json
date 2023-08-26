@@ -1,0 +1,45 @@
+{
+  "Login": {
+    "title": "Iniciar sesión",
+    "loginWithOpenAccount": "Iniciar sesión con cuenta abierta",
+    "orContinueWithEmail": "O continuar con dirección de correo electrónico",
+    "email": "Tu correo electrónico",
+    "password": "Contraseña",
+    "description": "Este sitio está protegido por reCAPTCHA y la Política de privacidad de Google.",
+    "doNotHaveAnAccount": "¿No tienes una cuenta?",
+    "register": "Registrarse"
+  },
+
+  "Register": {
+    "title": "Registrarse",
+    "registerWithOpenAccount": "Registrarse con cuenta abierta",
+    "orContinueWithEmail": "O continuar con dirección de correo electrónico",
+    "email": "Tu correo electrónico",
+    "continue": "Continuar",
+    "checkCodeEmail": "Acabamos de enviarte un código de verificación. Revisa tu bandeja de entrada.",
+    "errorCode": "El código que ingresaste es incorrecto.",
+    "password": "Contraseña",
+    "passwordConfirm": "Confirmar contraseña",
+    "description": "Este sitio está protegido por reCAPTCHA y la Política de privacidad de Google.",
+    "alreadyAMember": "¿Ya eres miembro?",
+    "login": "Iniciar sesión"
+  },
+  "Modal": {
+    "Language": {
+      "title": "Selecciona tu idioma",
+      "allLanguage": "Todos los idiomas"
+    }
+  },
+  "Theme": {
+    "title": "Tema",
+    "light": {
+      "title": "Claro"
+    },
+    "dark": {
+      "title": "Oscuro"
+    },
+    "system": {
+      "title": "Sistema"
+    }
+  }
+}

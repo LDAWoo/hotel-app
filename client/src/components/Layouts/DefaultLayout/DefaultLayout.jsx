@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { use100vh } from "react-div-100vh";
+import Banner from "../../Banner/Banner";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import LanguageModal from "../../Modals/LanguageModal/LanguageModal";
 import Navbar from "../../Navbar/Navbar";
@@ -17,9 +18,10 @@ function DefaultLayout({ children }) {
           minHeight: heightWindow,
         }}
       >
-        <div className='flex items-center justify-center w-full flex-col'>
+        <div className='flex w-full flex-col'>
           <LanguageModal />
           <Navbar />
+          <Banner />
           {children}
         </div>
       </div>

@@ -22,6 +22,7 @@ function Body() {
     i18next.changeLanguage(lng);
     onClose();
   };
+
   return (
     <div className='flex items-center w-full'>
       <div className='flex flex-col w-full items-center'>
@@ -37,7 +38,7 @@ function Body() {
                 sm:min-w-[200px]
                 sm:max-w-[304px]
                 lg:max-w-[217px]
-                h-12 mt-2 mr-2 rounded-md bg-transparent ${
+                h-12 mt-2 mr-2 rounded-md ${
                   lang.code === currentLanguage
                     ? "bg-gray-100 dark:bg-primary-500"
                     : "hover:bg-gray-100 dark:hover:bg-primary-500"

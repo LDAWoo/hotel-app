@@ -16,7 +16,7 @@ function Language() {
   );
 
   return (
-    <>
+    <div>
       <ToolTip
         typeToolTip='Tippy'
         delay={[500, 0]}
@@ -32,7 +32,7 @@ function Language() {
           />
         </div>
       </ToolTip>
-    </>
+    </div>
   );
 }
 

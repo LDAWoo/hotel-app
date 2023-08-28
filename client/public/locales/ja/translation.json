@@ -41,5 +41,13 @@
     "system": {
       "title": "システム"
     }
+  },
+  "User": {
+    "managerProfile": "アカウント管理",
+    "logout": "ログアウト"
+  },
+  "Search": {
+    "location": "どこに行く予定ですか？",
+    "search": "検索"
   }
 }

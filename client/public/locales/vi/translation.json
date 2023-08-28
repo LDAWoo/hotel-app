@@ -40,5 +40,13 @@
     "system": {
       "title": "Hệ thống"
     }
+  },
+  "User": {
+    "managerProfile": "Quản lí trang cá nhân",
+    "logout": "Đăng xuất"
+  },
+  "Search": {
+    "location": "Bạn muốn đến đâu?",
+    "search": "Tìm"
   }
 }

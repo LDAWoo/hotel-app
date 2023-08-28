@@ -41,5 +41,13 @@
     "system": {
       "title": "系统"
     }
+  },
+  "User": {
+    "managerProfile": "管理帐户",
+    "logout": "登出"
+  },
+  "Search": {
+    "location": "您要去哪里？",
+    "search": "搜索"
   }
 }

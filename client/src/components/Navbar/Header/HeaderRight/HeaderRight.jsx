@@ -3,6 +3,7 @@ import Language from "./Language/Language";
 import Theme from "./Theme/Theme";
 import HeaderLogin from "./Login/HeaderLogin";
 import User from "./User/User";
+import Menu from "./Menu/Menu";
 
 function HeaderRight() {
   const { user } = useAuth0();
@@ -12,6 +13,7 @@ function HeaderRight() {
       <Language />
       <Theme />
       {user ? <User /> : <HeaderLogin />}
+      <Menu />
     </div>
   );
 }

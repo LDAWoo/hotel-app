@@ -22,7 +22,7 @@ function Search() {
   return (
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[1100px]'>
-        <div className='absolute w-full z-10 left-0 -bottom-12'>
+        <div className='absolute w-full z-10 left-0 top-[50px] md:-bottom-[50px]'>
           <form action='' className='m-0 p-0'>
             <div className='flex flex-col md:flex-row items-center mt-2 mb-5 ml-0 mr-0 rounded-lg bg-orange-300'>
               <SearchBox

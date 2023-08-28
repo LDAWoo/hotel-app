@@ -40,7 +40,14 @@ function ToolTip({
     </Tippy>
   );
 
-  const renderItems = () => <div style={{ maxWidth: width }}>{items}</div>;
+  const renderItems = () => (
+    <div
+      className='flex flex-col bg-white dark:bg-primary-600 border-[1px] border-gray-200 dark:border-primary-500 shadow-md rounded-md gap-2 pt-1 pb-1'
+      style={{ width: width }}
+    >
+      {items}
+    </div>
+  );
 
   const ToolTipTippyHeadless = () => (
     <TippyHeadless
@@ -48,7 +55,7 @@ function ToolTip({
       interactive
       visible={isVisible}
       render={renderItems}
-      placement='bottom'
+      placement={placement}
     >
       {children}
     </TippyHeadless>

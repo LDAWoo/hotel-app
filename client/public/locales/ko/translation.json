@@ -41,5 +41,13 @@
     "system": {
       "title": "시스템"
     }
+  },
+  "User": {
+    "managerProfile": "계정 관리",
+    "logout": "로그아웃"
+  },
+  "Search": {
+    "location": "어디로 가시나요?",
+    "search": "검색"
   }
 }

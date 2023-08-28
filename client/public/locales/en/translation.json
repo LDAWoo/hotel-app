@@ -41,5 +41,13 @@
     "system": {
       "title": "System"
     }
+  },
+  "User": {
+    "managerProfile": "Manage account",
+    "logout": "Log out"
+  },
+  "Search": {
+    "location": "Where are you going?",
+    "search": "Search"
   }
 }

@@ -41,5 +41,13 @@
     "system": {
       "title": "Sistema"
     }
+  },
+  "User": {
+    "managerProfile": "Gestionar cuenta",
+    "logout": "Cerrar sesión"
+  },
+  "Search": {
+    "location": "¿A dónde vas?",
+    "search": "Buscar"
   }
 }

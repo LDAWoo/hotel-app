@@ -4,8 +4,8 @@ import AppAuthProvider from "./components/Contexts/AppAuthProvider";
 import AppThemeProvider from "./components/Contexts/AppThemeProvider";
 import AppUserProvider from "./components/Contexts/AppUserProvider";
 import { publicRoutesPathComponent } from "./routes/routes";
-import Login from "./screens/Login/Login";
-import Register from "./screens/Register/Register";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (

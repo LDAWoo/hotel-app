@@ -46,8 +46,27 @@
     "managerProfile": "管理帐户",
     "logout": "登出"
   },
+  "Banner": {
+    "title": "我们希望您享受您的住宿",
+    "subTitle": "发现我们世界一流的酒店和餐厅度假胜地。",
+    "bookNow": "立即预订"
+  },
   "Search": {
     "location": "您要去哪里？",
-    "search": "搜索"
+    "search": "搜索",
+    "Guest": {
+      "Adult": {
+        "title": "成人"
+      },
+      "Children": {
+        "title": "儿童"
+      },
+      "Room": {
+        "title": "房间"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "您的最近搜索"
   }
 }

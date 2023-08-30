@@ -46,8 +46,27 @@
     "managerProfile": "Manage account",
     "logout": "Log out"
   },
+  "Banner": {
+    "title": "We hope you’ll enjoy your stay",
+    "subTitle": "Discover our world-class hotel & restaurant resort.",
+    "bookNow": "Book Now"
+  },
   "Search": {
     "location": "Where are you going?",
-    "search": "Search"
+    "search": "Search",
+    "Guest": {
+      "Adult": {
+        "title": "Adult"
+      },
+      "Children": {
+        "title": "Children"
+      },
+      "Room": {
+        "title": "Rooms"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Your Recent Searches"
   }
 }

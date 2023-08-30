@@ -28,7 +28,7 @@ function MoreMenu({ data }) {
 }
 
 MoreMenu.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
 
 export default MoreMenu;

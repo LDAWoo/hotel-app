@@ -45,8 +45,27 @@
     "managerProfile": "Quản lí trang cá nhân",
     "logout": "Đăng xuất"
   },
+  "Banner": {
+    "title": "Chúng tôi hy vọng bạn sẽ thích kỳ nghỉ của mình",
+    "subTitle": "Khám phá khu nghỉ dưỡng khách sạn và nhà hàng hàng đầu thế giới của chúng tôi.",
+    "bookNow": "Đặt ngay"
+  },
   "Search": {
     "location": "Bạn muốn đến đâu?",
-    "search": "Tìm"
+    "search": "Tìm",
+    "Guest": {
+      "Adult": {
+        "title": "Người lớn"
+      },
+      "Children": {
+        "title": "Trẻ em"
+      },
+      "Room": {
+        "title": "Phòng"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Các Tìm Kiếm Gần Đây Của Bạn"
   }
 }

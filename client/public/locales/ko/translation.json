@@ -46,8 +46,27 @@
     "managerProfile": "계정 관리",
     "logout": "로그아웃"
   },
+  "Banner": {
+    "title": "우리는 여행을 즐기시길 바랍니다",
+    "subTitle": "우리의 세계급 호텔 및 레스토랑 리조트를 발견해보세요.",
+    "bookNow": "지금 예약하기"
+  },
   "Search": {
     "location": "어디로 가시나요?",
-    "search": "검색"
+    "search": "검색",
+    "Guest": {
+      "Adult": {
+        "title": "어른"
+      },
+      "Children": {
+        "title": "어린이"
+      },
+      "Room": {
+        "title": "방"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "최근 검색 내역"
   }
 }

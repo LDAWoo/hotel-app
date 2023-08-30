@@ -1,50 +1,31 @@
-import { SlLocationPin } from "react-icons/sl";
-import SearchBox from "./SearchBox";
-import { AiOutlineClose, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
-import { LuCalendarDays } from "react-icons/lu";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { AiOutlineSearch } from "react-icons/ai";
+
+import CalendarBox from "./Calendar/CalendarBox";
+import LocationBox from "./Location/LocationBox";
+import SearchBox from "./SearchBox";
+import GuestBox from "./Guest/GuestBox";
+
 function Search() {
   const { t } = useTranslation();
-
-  const [valueLocation, setValueLocation] = useState("");
-
-  const handleChangeInput = (e) => {
-    setValueLocation(e.target.value);
-  };
-
-  const handleClose = () => {
-    setValueLocation("");
-  };
-
   const handleSubmit = () => {};
 
   return (
-    <div className='w-full'>
-      <div className='w-full m-auto lg:max-w-[1100px]'>
-        <div className='absolute w-full z-10 left-0 top-[50px] md:-bottom-[50px]'>
+    <div className='w-full h-full'>
+      <div className='relative w-full h-full m-auto lg:max-w-[1100px]'>
+        <div className='absolute w-full h-full z-10 top-0'>
           <form action='' className='m-0 p-0'>
-            <div className='flex flex-col md:flex-row items-center mt-2 mb-5 ml-0 mr-0 rounded-lg bg-orange-300'>
-              <SearchBox
-                input
-                placeholder={t("Search.location")}
-                icon={SlLocationPin}
-                size={24}
-                iconClose={AiOutlineClose}
-                sizeClose={18}
-                value={valueLocation}
-                handleChangeInput={handleChangeInput}
-                handleClose={handleClose}
-              />
-              <SearchBox className='' icon={LuCalendarDays} size={24} button />
-              <SearchBox icon={AiOutlineUser} size={24} button />
+            <div className='flex gap-1 p-1 flex-col 2md:flex-row items-center mt-2 mb-5 ml-0 mr-0 rounded-lg bg-secondary-50'>
+              <LocationBox />
+              <CalendarBox />
+              <GuestBox />
               <SearchBox
                 icon={AiOutlineSearch}
                 size={24}
-                className='w-full min-w-[100px] md:w-[120px]'
+                className='w-full min-w-[120px] 2md:w-[120px]'
                 title={t("Search.search")}
                 button
-                handleSubmit={handleSubmit}
+                onClick={handleSubmit}
               />
             </div>
           </form>

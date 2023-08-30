@@ -30,7 +30,7 @@ function TitleComponent({ src, icon, title }) {
 
 TitleComponent.propTypes = {
   src: PropTypes.string,
-  icon: PropTypes.node,
+  icon: PropTypes.elementType,
   title: PropTypes.string,
 };
 

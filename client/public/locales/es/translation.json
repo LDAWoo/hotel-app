@@ -46,8 +46,27 @@
     "managerProfile": "Gestionar cuenta",
     "logout": "Cerrar sesión"
   },
+  "Banner": {
+    "title": "Esperamos que disfrutes de tu estancia",
+    "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
+    "bookNow": "Reservar ahora"
+  },
   "Search": {
     "location": "¿A dónde vas?",
-    "search": "Buscar"
+    "search": "Buscar",
+    "Guest": {
+      "Adult": {
+        "title": "Adultos"
+      },
+      "Children": {
+        "title": "Niños"
+      },
+      "Room": {
+        "title": "Habitación"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Tus Búsquedas Recientes"
   }
 }

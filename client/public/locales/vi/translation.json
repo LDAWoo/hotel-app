@@ -52,6 +52,7 @@
   },
   "Search": {
     "location": "Bạn muốn đến đâu?",
+    "checkOutDate": "Ngày trả phòng",
     "search": "Tìm",
     "Guest": {
       "Adult": {
@@ -67,5 +68,14 @@
   },
   "RecentSearch": {
     "title": "Các Tìm Kiếm Gần Đây Của Bạn"
+  },
+  "TrendingDestination": {
+    "title": "Các Điểm Đến Đang Phổ Biến",
+    "subTitle": "Các du khách khác cũng đã đặt những điểm này"
+  },
+  "OurHotel": {
+    "title": "Khách Sạn Của Chúng Tôi",
+    "subTitle": "Những khách sạn phổ biến nhất",
+    "night": "đêm"
   }
 }

@@ -53,6 +53,7 @@
   },
   "Search": {
     "location": "您要去哪里？",
+    "checkOutDate": "退房日期",
     "search": "搜索",
     "Guest": {
       "Adult": {
@@ -68,5 +69,14 @@
   },
   "RecentSearch": {
     "title": "您的最近搜索"
+  },
+  "TrendingDestination": {
+    "title": "热门目的地",
+    "subTitle": "其他旅行者也预订了这些"
+  },
+  "OurHotel": {
+    "title": "我们的酒店",
+    "subTitle": "最受欢迎的酒店",
+    "night": "晚"
   }
 }

@@ -53,6 +53,7 @@
   },
   "Search": {
     "location": "¿A dónde vas?",
+    "checkOutDate": "Fecha de salida",
     "search": "Buscar",
     "Guest": {
       "Adult": {
@@ -68,5 +69,14 @@
   },
   "RecentSearch": {
     "title": "Tus Búsquedas Recientes"
+  },
+  "TrendingDestination": {
+    "title": "Destinos Populares",
+    "subTitle": "Otros viajeros también han reservado estos destinos"
+  },
+  "OurHotel": {
+    "title": "Nuestro Hotel",
+    "subTitle": "Los hoteles más populares",
+    "night": "noche"
   }
 }

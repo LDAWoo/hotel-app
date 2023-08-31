@@ -53,6 +53,7 @@
   },
   "Search": {
     "location": "어디로 가시나요?",
+    "checkOutDate": "체크아웃 날짜",
     "search": "검색",
     "Guest": {
       "Adult": {
@@ -68,5 +69,14 @@
   },
   "RecentSearch": {
     "title": "최근 검색 내역"
+  },
+  "TrendingDestination": {
+    "title": "인기 있는 여행지",
+    "subTitle": "다른 여행자들도 이 여행지를 예약했습니다"
+  },
+  "OurHotel": {
+    "title": "우리 호텔",
+    "subTitle": "가장 인기 있는 호텔",
+    "night": "밤"
   }
 }

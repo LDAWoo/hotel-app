@@ -14,7 +14,7 @@ function RecentSearchArrow({ icon, onClick, left, right }) {
   );
 }
 RecentSearchArrow.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.elementType.isRequired,
   onClick: PropTypes.func.isRequired,
   left: PropTypes.bool,
   right: PropTypes.bool,

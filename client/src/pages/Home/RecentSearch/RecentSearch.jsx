@@ -1,29 +1,23 @@
+import { format } from "date-fns";
 import { useRef, useState } from "react";
-import { recentSearch } from "../../../components/Constants/RecentSearch";
-import RecentSearchBox from "./RecentSearchBox";
+import { useTranslation } from "react-i18next";
 import {
   MdOutlineArrowBackIos,
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
+import { recentSearch } from "../../../components/Constants/RecentSearch";
+import { getLocale } from "../../../components/Locale/Locale";
 import RecentSearchArrow from "./RecentSearchArrow";
-import { useTranslation } from "react-i18next";
-import { format } from "date-fns";
-import * as locales from "date-fns/locale";
-import i18next from "i18next";
-import { nameMapper } from "../../../components/Search/Calendar/NameMapper";
+import RecentSearchBox from "./RecentSearchBox";
 function RecentSearch() {
   const { t } = useTranslation();
+
   const scrollRef = useRef();
   const [isArrowLeftVisible, setIsArrowLeftVisible] = useState(false);
   const [isArrowRightVisible, setIsArrowRightVisible] = useState(
     recentSearch.length > 3,
   );
-
-  const currentLocal = i18next.language;
-  const languageCode = currentLocal.split("-")[0];
-  const localeKey = languageCode.toLowerCase();
-  const locale = locales[nameMapper[localeKey]];
-
+  const locale = getLocale();
   const handleScrollLeft = () => {
     const container = scrollRef.current;
     const scrollStep = container.clientWidth;

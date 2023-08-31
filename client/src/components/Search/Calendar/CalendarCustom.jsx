@@ -1,18 +1,14 @@
-import i18next from "i18next";
 import { useCallback } from "react";
 import { DateRangePicker } from "react-date-range";
-import * as locales from "react-date-range/dist/locale";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import useRegisterDateStore from "../../../hooks/useRegisterDateStore";
-import { nameMapper } from "./NameMapper";
+import { getLocale } from "../../Locale/Locale";
 
 function CalendarCustom() {
-  const currentLocal = i18next.language;
-  const languageCode = currentLocal.split("-")[0];
-  const localeKey = languageCode.toLowerCase();
   const { startDate, endDate, setStartDate, setEndDate } =
     useRegisterDateStore();
+  const locale = getLocale();
 
   const handleDateChange = useCallback((ranges) => {
     setEndDate(ranges.selection.endDate);
@@ -35,7 +31,7 @@ function CalendarCustom() {
       direction='horizontal'
       showDateDisplay={false}
       showMonthArrow={true}
-      locale={locales[nameMapper[localeKey]]}
+      locale={locale}
       inputRanges={[]}
       staticRanges={[]}
       showMonthAndYearPickers={false}

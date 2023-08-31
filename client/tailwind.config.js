@@ -4,7 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      screens: {},
+      screens: {
+        "2md": { min: "900px" },
+      },
       colors: {
         primary: {
           50: "#B0B3B8",
@@ -20,6 +22,9 @@ export default {
           50: "#006CE4",
           100: "#1A4FA0",
           200: "#003B95",
+        },
+        secondary: {
+          50: "#FFB700",
         },
       },
       textColor: {},

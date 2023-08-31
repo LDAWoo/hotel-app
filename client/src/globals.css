@@ -1,3 +1,258 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap');
+
+@layer base {
+    html {
+        font-family: Inter, system-ui, sans-serif;
+    }
+}
+
+.dark .rdrCalendarWrapper {
+    background-color: #242526 !important;
+}
+
+
+.rdrCalendarWrapper {
+    width: 100%;
+    display: block;
+}
+
+
+.rdrDefinedRangesWrapper {
+    display: none;
+}
+
+.rdrMonthAndYearWrapper {
+    padding: 0;
+}
+
+.rdrNextPrevButton {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.dark .rdrPprevButton i {
+    border-color: transparent rgb(255, 255, 255);
+    border-left-color: transparent;
+}
+
+.dark .rdrNextPrevButton:hover {
+    background-color: #3A3B3C;
+}
+
+.dark .rdrNextButton i {
+    border-color: transparent rgb(255, 255, 255);
+    border-right-color: transparent;
+}
+
+
+.dark .rdrMonthAndYearPickers {
+    color: #fff;
+}
+
+.rdrMonthAndYearPickers {
+    font-size: 18px;
+}
+
+.rdrMonths {
+    width: 100%;
+}
+
+.rdrMonth {
+    width: 100%;
+}
+
+.rdrMonthName {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark .rdrMonthName {
+    color: #fff;
+}
+
+.rdrMonthName {
+    color: #000;
+}
+
+.rdrWeekDays {
+    font-size: 14px;
+}
+
+.dark .rdrWeekDay {
+    color: #fff;
+}
+
+.rdrWeekDay {
+    color: #000;
+}
+
+.dark .rdrDay>.rdrDayNumber>span {
+    color: #fff !important;
+    font-weight: 300;
+}
+
+.rdrDay {
+    font-size: 14px;
+}
+
+.rdrDay>.rdrDayNumber>span {
+    font-weight: 300;
+}
+
+.rdrDayPassive>.rdrDayNumber>span {
+    color: transparent !important;
+}
+
+.rdrDayDisabled>.rdrDayNumber>span {
+    color: #9AA3BA !important;
+
+}
+
+.dark .rdrDayPassive>.rdrDayNumber>span {
+    color: transparent !important;
+}
+
+.dark .rdrDayDisabled>.rdrDayNumber>span {
+    color: #525758 !important;
+
+}
+
+
+
+.rdrStartEdge {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.rdrEndEdge {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+
+.rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrDayNumber:after {
+    background: rgba(26, 26, 26, 0.06);
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    border: 0px;
+    border-radius: 8px;
+    right: 0;
+    top: 0;
+}
+
+.rdrDayToday:not(.rdrDayPassive) .rdrStartEdge~.rdrDayNumber span:after,
+.rdrDayToday:not(.rdrDayPassive) .rdrEndEdge~.rdrDayNumber span:after {
+    background: transparent;
+}
+
+.rdrDayToday .rdrDayNumber span:after {
+    background: transparent;
+}
+
+.rdrInRange {
+    background-color: rgba(26, 26, 26, 0.06);
+}
+
+.dark .rdrInRange {
+    background-color: #3A3B3C;
+
+}
+
+.rdrDay:not(.rdrDayPassive) .rdrInRange~.rdrDayNumber span {
+    color: #242526;
+}
+
+.rdrDayEndOfWeek .rdrInRange {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+.rdrDayStartOfWeek .rdrInRange {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+
+.rdrDayEndOfWeek .rdrDayInPreview,
+.rdrDayEndOfMonth .rdrDayInPreview {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+.rdrDayInPreview {
+    background-color: rgba(26, 26, 26, 0.05);
+}
+
+.dark .rdrDayInPreview {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.rdrDayInPreview {
+    border: none;
+}
+
+.rdrDayEndOfWeek .rdrDayStartPreview {
+    border-right-width: 0px;
+}
+
+.rdrDayStartPreview,
+.rdrDayEndPreview {
+    border: none;
+    background-color: rgba(26, 26, 26, 0.06);
+}
+
+.rdrDayStartPreview {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.rdrDayEndPreview {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+.dark .rdrDayStartPreview,
+.dark .rdrDayEndPreview {
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+
+.rdrDayStartOfWeek .rdrDayInPreview,
+.rdrDayStartOfMonth .rdrDayInPreview {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.rdrDayEndOfWeek .rdrDayStartPreview {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.rdrDayEndOfMonth .rdrDayStartPreview {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.rdrDayStartOfWeek .rdrDayEndPreview {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.rdrDayStartOfMonth .rdrDayEndPreview {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}

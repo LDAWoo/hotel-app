@@ -46,8 +46,37 @@
     "managerProfile": "Gestionar cuenta",
     "logout": "Cerrar sesión"
   },
+  "Banner": {
+    "title": "Esperamos que disfrutes de tu estancia",
+    "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
+    "bookNow": "Reservar ahora"
+  },
   "Search": {
     "location": "¿A dónde vas?",
-    "search": "Buscar"
+    "checkOutDate": "Fecha de salida",
+    "search": "Buscar",
+    "Guest": {
+      "Adult": {
+        "title": "Adultos"
+      },
+      "Children": {
+        "title": "Niños"
+      },
+      "Room": {
+        "title": "Habitación"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Tus Búsquedas Recientes"
+  },
+  "TrendingDestination": {
+    "title": "Destinos Populares",
+    "subTitle": "Otros viajeros también han reservado estos destinos"
+  },
+  "OurHotel": {
+    "title": "Nuestro Hotel",
+    "subTitle": "Los hoteles más populares",
+    "night": "noche"
   }
 }

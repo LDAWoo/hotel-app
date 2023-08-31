@@ -4,6 +4,7 @@ function SearchBox({
   className,
   icon,
   iconClose,
+  label,
   title,
   input,
   size,
@@ -13,7 +14,7 @@ function SearchBox({
   value = "",
   handleChangeInput,
   handleClose,
-  handleSubmit,
+  onClick,
   button,
 }) {
   const IconComponent = icon;
@@ -30,14 +31,14 @@ function SearchBox({
   };
 
   return (
-    <div className={`box-border p-1 w-full ${className}`}>
+    <div className={`box-border w-full ${className}`}>
       <div
         className={`border-[2px] box-border border-transparent duration-300 hover:border-red-500  ${
           title
             ? "bg-hotel-50 hover:bg-hotel-100"
             : "bg-white dark:bg-primary-600"
         } ${button ? "cursor-pointer" : ""} rounded-lg w-full`}
-        onClick={handleSubmit}
+        onClick={onClick}
       >
         <div className={`flex flex-1 w-full items-center p-2 `}>
           <div
@@ -60,12 +61,13 @@ function SearchBox({
                   isFocus
                     ? "placeholder:text-gray-500 dark:placeholder:text-gray-100"
                     : ""
-                }`}
+                } overflow-hidden text-ellipsis whitespace-nowrap`}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 onChange={(e) => handleChangeInput(e)}
               />
             )}
+
             {IconCloseComponent && value.length > 0 && (
               <div className='flex justify-end relative z-10 '>
                 <div
@@ -76,6 +78,12 @@ function SearchBox({
                 </div>
               </div>
             )}
+            {label && (
+              <div className='flex w-full items-center text-center text-[14px] dark:text-white font-medium overflow-hidden text-ellipsis whitespace-nowrap'>
+                {label}
+              </div>
+            )}
+
             {title && (
               <div className='flex w-full items-center justify-center text-center text-white font-medium'>
                 {title}
@@ -93,6 +101,7 @@ SearchBox.propTypes = {
   icon: PropTypes.elementType,
   iconClose: PropTypes.elementType,
   title: PropTypes.string,
+  label: PropTypes.string,
   input: PropTypes.bool,
   size: PropTypes.number,
   sizeClose: PropTypes.number,
@@ -101,7 +110,7 @@ SearchBox.propTypes = {
   value: PropTypes.string,
   handleChangeInput: PropTypes.func,
   handleClose: PropTypes.func,
-  handleSubmit: PropTypes.func,
+  onClick: PropTypes.func,
   button: PropTypes.bool,
 };
 export default SearchBox;

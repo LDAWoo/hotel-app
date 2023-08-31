@@ -46,8 +46,37 @@
     "managerProfile": "アカウント管理",
     "logout": "ログアウト"
   },
+  "Banner": {
+    "title": "滞在を楽しんでいただけることを願っています",
+    "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
+    "bookNow": "今すぐ予約"
+  },
   "Search": {
     "location": "どこに行く予定ですか？",
-    "search": "検索"
+    "checkOutDate": "チェックアウト日",
+    "search": "検索",
+    "Guest": {
+      "Adult": {
+        "title": "大人"
+      },
+      "Children": {
+        "title": "子供"
+      },
+      "Room": {
+        "title": "部屋"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "最近の検索履歴"
+  },
+  "TrendingDestination": {
+    "title": "トレンディング先行予約地",
+    "subTitle": "他の旅行者もこれらを予約しました"
+  },
+  "OurHotel": {
+    "title": "当社のホテル",
+    "subTitle": "最も人気のあるホテル",
+    "night": "夜"
   }
 }

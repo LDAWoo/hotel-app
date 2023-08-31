@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { use100vh } from "react-div-100vh";
+import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
 import Banner from "../../Banner/Banner";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import LanguageModal from "../../Modals/LanguageModal/LanguageModal";
@@ -9,6 +10,20 @@ import Navbar from "../../Navbar/Navbar";
 function DefaultLayout({ children }) {
   const { darkMode } = useContext(ThemeContext);
   const heightWindow = use100vh();
+
+  const { setWidthAndHeight } = useRegisterWindowSizeStore();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidthAndHeight(window.innerWidth, window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={`${darkMode}`}>

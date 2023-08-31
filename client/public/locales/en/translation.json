@@ -46,8 +46,37 @@
     "managerProfile": "Manage account",
     "logout": "Log out"
   },
+  "Banner": {
+    "title": "We hope you’ll enjoy your stay",
+    "subTitle": "Discover our world-class hotel & restaurant resort.",
+    "bookNow": "Book Now"
+  },
   "Search": {
     "location": "Where are you going?",
-    "search": "Search"
+    "checkOutDate": "Check-out date",
+    "search": "Search",
+    "Guest": {
+      "Adult": {
+        "title": "Adult"
+      },
+      "Children": {
+        "title": "Children"
+      },
+      "Room": {
+        "title": "Rooms"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Your Recent Searches"
+  },
+  "TrendingDestination": {
+    "title": "Trending Destinations",
+    "subTitle": "Travelers looking have also booked these"
+  },
+  "OurHotel": {
+    "title": "Our Hotel",
+    "subTitle": "The most popular hotels",
+    "night": "night"
   }
 }

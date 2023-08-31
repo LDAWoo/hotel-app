@@ -9,8 +9,6 @@ import ThemeMenu from "./ThemeMenu";
 function Theme() {
   const { t } = useTranslation();
   const localStorageTheme = localStorage.getItem("theme");
-  console.log(localStorageTheme);
-
   const iconComponent = !localStorageTheme
     ? MdLightMode
     : localStorageTheme === "dark"

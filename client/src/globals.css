@@ -19,6 +19,9 @@
     display: block;
 }
 
+.rdrDateRangePickerWrapper {
+    display: inline;
+}
 
 .rdrDefinedRangesWrapper {
     display: none;
@@ -255,4 +258,14 @@
 .rdrDayStartOfMonth .rdrDayEndPreview {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.rdrDayEndOfWeek .rdrStartEdge {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.rdrDayEndOfMonth .rdrInRange {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

@@ -27,6 +27,22 @@ function ToolTipCustom({
   }, []);
 
   useEffect(() => {
+    const handleMouseDown = (e) => {
+      if (!tooltipRef.current) {
+        return;
+      }
+      if (!tooltipRef.current.contains(e.target)) {
+        handleClose();
+      }
+    };
+    document.addEventListener("mousedown", handleMouseDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, []);
+
+  useEffect(() => {
     setShowToolTip(isOpen);
   }, [isOpen]);
 
@@ -54,28 +70,27 @@ function ToolTipCustom({
               fixed
               outline-none
               overflow-x-hidden
-              overflow-y-auto
-              scroll-smooth
               lg:absolute
-              lg:overflow-y-hidden
+              overflow-y-hidden
+              scroll-smooth
               z-50
               inset-0
-              m-0
               lg:inset-auto
-              lg:-translate-x-[0px] 
-              lg:translate-y-[11px] 
+              lg:-translate-x-10
+              lg:translate-y-5
+              m-0
           `}
       ref={tooltipRef}
     >
       <div
         className={`
-          relative
-          w-full
-          my-0
-          mx-0
-          h-full
-          
-          `}
+            relative
+            w-full
+            my-0
+            mx-0
+            h-full
+            z-[1005]
+            `}
         style={{
           width: windowWidth < 1024 ? "100%" : width,
         }}
@@ -83,54 +98,55 @@ function ToolTipCustom({
         {/* Content */}
         <div
           className={`
-              translate-x-0
-              duration-300
-              h-full
-              ${showToolTip ? "translate-y-0" : "translate-y-full"}
-              `}
+                translate-x-0
+                duration-300
+                h-full
+                
+                ${showToolTip ? "translate-y-0" : "translate-y-full"}
+                `}
         >
           <div
             className='
-                  translate
-                  h-full
-                  flex
-                  flex-col
-                  outline-none
-                  lg:h-auto
-                  lg:rounded-lg
-                  lg:shadow-lg
-                  lg:border-[1px]
-                  lg:border-gray-200
-                  lg:dark:border-primary-600 
-                  bg-white
-                  dark:bg-primary-600
-  
-                  '
+                    transition-transform ease-out
+                    h-full
+                    flex
+                    flex-col
+                    outline-none
+                    lg:h-auto
+                    lg:rounded-lg
+                    bg-white
+                    dark:bg-primary-600
+                    pt-[5px]
+                    pb-[5px]
+                    border-[1px]
+                    border-gray-200
+                    dark:border-primary-500
+                    '
           >
             {/* Header */}
             <div
               className='
-                      flex
-                      items-center
-                      p-6
-                     
-                      '
+                        flex
+                        items-center
+                        p-6
+                        lg:hidden
+                        '
             >
               <button
+                type='button'
                 onClick={handleClose}
                 className='   
-                    flex  
-                   
-                    p-1
-                    border-0
-                    hover:bg-gray-200/70
-                    hover:dark:bg-primary-400/70
-                    transition
-                    absolute
-                    right-5
-                    rounded-full
-                    text-hotel-50
-                    '
+                      flex  
+                      p-1
+                      border-0
+                      hover:bg-gray-200/70
+                      hover:dark:bg-primary-400/70
+                      transition
+                      absolute
+                      right-5
+                      rounded-full
+                      text-hotel-50
+                      '
               >
                 <IoMdClose size={24} />
               </button>

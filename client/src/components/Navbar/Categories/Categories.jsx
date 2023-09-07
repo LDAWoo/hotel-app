@@ -47,7 +47,7 @@ function Categories() {
   return (
     <div className='flex items-center justify-center bg-hotel-200 w-full'>
       <div
-        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-200 lg:max-w-[1100px]'
+        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-200 lg:max-w-[1100px] p-[10px]'
         ref={categoriesRef}
       >
         <div className='flex w-full gap-2'>

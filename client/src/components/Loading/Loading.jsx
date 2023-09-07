@@ -1,40 +1,15 @@
 const Loading = () => {
   return (
-    <div>
-      <svg
-        width='180px'
-        height='150px'
-        viewBox='0 0 187.3 93.7'
-        preserveAspectRatio='xMidYMid meet'
-        style={{
-          left: "50%",
-          top: "50%",
-          position: "absolute",
-          transform: "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
-        }}
-      >
-        <path
-          stroke='#D90A2C'
-          id='outline'
-          fill='none'
-          strokeWidth='4'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeMiterlimit='10'
-          d='M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z'
-        ></path>
-        <path
-          id='outline-bg'
-          opacity='0.05'
-          fill='none'
-          stroke='#959595'
-          strokeWidth='4'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeMiterlimit='10'
-          d='M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z'
-        ></path>
-      </svg>
+    <div className='absolute bg-[hsla(120,5%,96%,.8)] dark:bg-[hsla(120,5%,96%,.5)] top-0 left-0 right-0 bottom-0 h-full w-full transition-transform z-[1004]'>
+      <div className='flex items-center ml-[50%] justify-center bg-white dark:bg-primary-600 rounded-lg border border-gray-100 dark:border-primary-500 p-4 shadow-[0_2px_4px_0_rgba(0,0,0,.2)] flex-col overflow-hidden sticky whitespace-nowrap -translate-x-[50%] -translate-y-[50%] w-fit top-[50%]'>
+        <div className='mb-2'>
+          <div
+            className='inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-hotel-100 border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]'
+            role='status'
+          />
+        </div>
+        <div className='dark:text-white font-medium'>Loading properties...</div>
+      </div>
     </div>
   );
 };

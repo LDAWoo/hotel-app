@@ -5,7 +5,9 @@ import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStor
 import Banner from "../../Banner/Banner";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import LanguageModal from "../../Modals/LanguageModal/LanguageModal";
+import MapModal from "../../Modals/MapModal/MapModal";
 import Navbar from "../../Navbar/Navbar";
+import FilterModal from "../../Modals/FilterModal/FilterModal";
 
 function DefaultLayout({ children }) {
   const { darkMode } = useContext(ThemeContext);
@@ -35,6 +37,8 @@ function DefaultLayout({ children }) {
       >
         <div className='flex w-full flex-col'>
           <LanguageModal />
+          <FilterModal />
+          <MapModal />
           <Navbar />
           <Banner />
           {children}

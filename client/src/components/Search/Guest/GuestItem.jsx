@@ -5,6 +5,7 @@ import GuestButton from "./GuestButton";
 
 function GuestItem({
   title,
+  sizeText,
   value,
   minValue,
   maxValue,
@@ -13,7 +14,11 @@ function GuestItem({
 }) {
   return (
     <div className='w-full flex items-center h-[42px] '>
-      <div className='flex-1 h-full flex items-center justify-start dark:text-white font-normal text-[17px]'>
+      <div
+        className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal ${
+          sizeText ? sizeText : "text-[16px]"
+        }`}
+      >
         {title}
       </div>
       <div className='flex flex-row items-center h-full justify-center'>
@@ -39,6 +44,7 @@ function GuestItem({
 
 GuestItem.propTypes = {
   title: PropTypes.string.isRequired,
+  sizeText: PropTypes.string,
   value: PropTypes.number.isRequired,
   minValue: PropTypes.number.isRequired,
   maxValue: PropTypes.number.isRequired,

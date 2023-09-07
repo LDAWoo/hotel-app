@@ -17,16 +17,16 @@ function OurHotel() {
           </div>
         </div>
 
-        <div className='grid gap-x-5 gap-y-8 auto-cols-auto grid-cols-1 sm:grid-cols-2 2md:grid-cols-3 w-full '>
+        <div className='grid gap-x-3 gap-y-3 auto-cols-auto grid-cols-1 sm:grid-cols-2 2md:grid-cols-3 w-full '>
           {ourHotels.map((card) => (
             <HotelCard
               key={card.id}
               to={card.to}
-              src={card.src}
+              images={card?.images}
               title={card.name}
               price={card.price}
               description={card.description}
-              isWishlist={card.isWishlist}
+              isWishlist={card?.isWishlist}
               starCount={card.star}
             />
           ))}

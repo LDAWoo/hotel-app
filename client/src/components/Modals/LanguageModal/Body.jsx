@@ -6,6 +6,7 @@ import Button from "../../Buttons/Button";
 import { Language } from "../../Constants/Language";
 
 function Body() {
+  console.log("start");
   const { t } = useTranslation();
   const { onClose } = useRegisterModal();
   const currentLanguage = i18next.language;
@@ -20,11 +21,13 @@ function Body() {
       ]
     : Language;
 
+  console.log(sortLanguage);
   const handleChangeLanguage = (lng) => {
     i18next.changeLanguage(lng);
     onClose();
   };
 
+  console.log("end");
   return (
     <div className='flex items-center w-full'>
       <div className='flex flex-col w-full items-center'>

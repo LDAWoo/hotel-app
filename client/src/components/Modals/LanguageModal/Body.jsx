@@ -9,12 +9,14 @@ function Body() {
   const { t } = useTranslation();
   const { onClose } = useRegisterModal();
   const currentLanguage = i18next.language;
-  const LanguageChoose = Language.find((lang) => lang.code === currentLanguage);
+  const LanguageChoose = Language.find(
+    (lang) => lang?.code === currentLanguage,
+  );
 
   const sortLanguage = LanguageChoose
     ? [
         LanguageChoose,
-        ...Language.filter((lang) => lang.code !== currentLanguage),
+        ...Language.filter((lang) => lang?.code !== currentLanguage),
       ]
     : Language;
 
@@ -46,11 +48,11 @@ function Body() {
             >
               <Button
                 className='w-full h-full'
-                active={lang.code === currentLanguage}
-                src={lang.img}
-                title={lang.title}
+                active={lang?.code === currentLanguage}
+                src={lang?.img}
+                title={lang?.title}
                 classTitle={`${
-                  lang.code === currentLanguage
+                  lang?.code === currentLanguage
                     ? "text-hotel-50"
                     : "dark:text-white"
                 }`}

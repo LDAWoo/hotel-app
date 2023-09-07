@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import useRegisterLocationStore from "../../hooks/useRegisterLocationStore";
 function SearchBox({
   className,
   icon,
@@ -17,6 +18,7 @@ function SearchBox({
   onClick,
   button,
 }) {
+  const { onCloseAlert } = useRegisterLocationStore();
   const IconComponent = icon;
   const IconCloseComponent = iconClose;
 
@@ -24,6 +26,7 @@ function SearchBox({
 
   const handleFocus = () => {
     setIsFocus(true);
+    onCloseAlert();
   };
 
   const handleBlur = () => {
@@ -85,7 +88,7 @@ function SearchBox({
             )}
 
             {title && (
-              <div className='flex w-full items-center justify-center text-center text-white font-medium'>
+              <div className='flex w-full items-center justify-center text-center text-white font-medium whitespace-nowrap'>
                 {title}
               </div>
             )}

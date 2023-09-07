@@ -11,7 +11,7 @@ const AppUserProvider = ({ children }) => {
   };
 
   const handleLoginWithFacebook = () => {
-    console.log("Facebook");
+    loginWithRedirect({ connection: "facebook" });
   };
 
   const handleLogout = () => {

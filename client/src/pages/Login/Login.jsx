@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { use100vh } from "react-div-100vh";
-import { AiFillLock, AiOutlineMail } from "react-icons/ai";
+import { AiFillFacebook, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-import { useAuth0 } from "@auth0/auth0-react";
-import FacebookLogin from "react-facebook-login";
 import { useTranslation } from "react-i18next";
 import Button from "../../components/Buttons/Button";
 import { ThemeContext } from "../../components/Contexts/AppThemeProvider";
@@ -14,31 +12,23 @@ import Image from "../../components/Image/Image";
 import TextInput from "../../components/TextInput/TextInput";
 
 import "./facebookSDK";
-const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
+// const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
 
 function Login() {
   const { darkMode } = useContext(ThemeContext);
-  const { handleLoginWithGoogle } = useContext(UserContext);
-
-  const { loginWithRedirect } = useAuth0();
+  const { handleLoginWithGoogle, handleLoginWithFacebook } =
+    useContext(UserContext);
 
   const heightWindow = use100vh();
   const { t } = useTranslation();
 
-  const responseFacebook = (response) => {
-    console.log(response);
-
-    if (response.accessToken) {
-      loginWithRedirect({ connection: "facebook", accessToken: response.accessToken });
-    }
-  };
   return (
     <div className={`${darkMode}`}>
       <div
         className={`flex justify-center p-[48px] bg-gray-50 dark:bg-primary-700`}
         style={{ minHeight: heightWindow }}
       >
-        <div className='min-w[296px] w-full sm:w-[446px] md:w-[310px]'>
+        <div className='min-w[296px] w-full sm:w-[446px] md:w-[380px]'>
           <Link to='/'>
             <Image
               src='/images/logo-dark.png'
@@ -53,9 +43,9 @@ function Login() {
             <div className='text-[16px] sm:text-[18px] md:text-[22px] font-medium dark:text-white mb-4'>
               {t("Login.loginWithOpenAccount")}
             </div>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 flex-col sm:flex-row'>
               <Button
-                className='w-full pt-2 pb-2 pr-5 pl-5 border-[2px] rounded-md hover:border-gray-700 dark:border-gray-700 cursor-pointer hover:dark:border-gray-400 dark:text-white duration-200'
+                className='w-full items-center justify-center pt-2 pb-2 pr-5 pl-5 border-[2px] rounded-md hover:border-gray-700 dark:border-gray-700 cursor-pointer hover:dark:border-gray-400 dark:text-white duration-200'
                 classIcon='text-blue-800'
                 size={30}
                 icon={FcGoogle}
@@ -64,13 +54,14 @@ function Login() {
                 onClick={handleLoginWithGoogle}
               />
 
-              <FacebookLogin
-                appId={appID}
-                autoLoad={true}
-                fields='name,email,picture'
-                textButton='Facebook'
-                callback={responseFacebook}
-                cssClass='flex items-center text-center justify-center font-medium w-full pt-2 pb-4 pr-5 pl-5 border-[2px] rounded-md hover:border-gray-700 dark:border-gray-700 cursor-pointer hover:dark:border-gray-400 dark:text-white duration-200'
+              <Button
+                className='w-full pt-2 pb-2 pr-5 pl-5 border-[2px] rounded-md hover:border-gray-700 dark:border-gray-700 cursor-pointer hover:dark:border-gray-400 dark:text-white duration-200'
+                classIcon='text-blue-800 dark:text-white'
+                size={30}
+                icon={AiFillFacebook}
+                title='Facebook'
+                classTitle='text-[18px] font-medium'
+                onClick={handleLoginWithFacebook}
               />
             </div>
           </div>

@@ -57,7 +57,7 @@ function Modals({
             items-center 
             justify-center 
             overflow-x-hidden 
-            overflow-y-auto 
+            overflow-y-hidden 
             inset-0 
             z-50 
             outline-none
@@ -71,11 +71,11 @@ function Modals({
                 w-full 
                 md:w-5/6 
                 lg:w-[960px] 
-                md:my-6
                 my-10
                 mx-10
-                lg:h-auto
-                md:h-auto'
+                h-[calc(100%_-_80px)]
+                2md:h-auto
+                '
         >
           {/* Content */}
           <div
@@ -91,9 +91,8 @@ function Modals({
             <div
               className='
                             translate
-                            h-full
                             lg:h-auto
-                            md:h-auto
+                            h-full
                             rounded-lg
                             shadow-lg
                             relative
@@ -144,7 +143,9 @@ function Modals({
                 </div>
               </div>
               {/* Body */}
-              <div className='relative p-6 flex-auto'>{body}</div>
+              <div className='relative p-6 flex-auto overflow-y-auto h-full'>
+                {body}
+              </div>
               {/* Footer */}
               <div className={`${footer && "flex flex-col gap-2 p-6"}`}>
                 {footer}

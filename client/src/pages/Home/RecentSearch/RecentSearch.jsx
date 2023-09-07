@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { recentSearch } from "../../../components/Constants/RecentSearch";
 import { getLocale } from "../../../components/Locale/Locale";
-import RecentSearchArrow from "./RecentSearchArrow";
+import Arrow from "../../../components/Arrow/Arrow";
 import RecentSearchBox from "./RecentSearchBox";
 function RecentSearch() {
   const { t } = useTranslation();
@@ -75,18 +75,24 @@ function RecentSearch() {
                 ))}
               </div>
               {isArrowLeftVisible && (
-                <RecentSearchArrow
+                <Arrow
                   icon={MdOutlineArrowBackIos}
-                  left
+                  left='-left-5'
                   onClick={handleScrollLeft}
+                  top='top-[35%]'
+                  width='w-[40px]'
+                  height='h-[40px]'
                 />
               )}
 
               {isArrowRightVisible && (
-                <RecentSearchArrow
+                <Arrow
                   icon={MdOutlineArrowForwardIos}
-                  right
+                  right='-right-7'
                   onClick={handleScrollRight}
+                  top='top-[35%]'
+                  width='w-[40px]'
+                  height='h-[40px]'
                 />
               )}
             </div>

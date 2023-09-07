@@ -5,6 +5,7 @@ import GuestItem from "./GuestItem";
 function GuestAdult() {
   const { t } = useTranslation();
   const { adult, setAdult } = useRegisterGuestStore();
+
   const handleMinusAdult = () => {
     setAdult(adult - 1);
   };

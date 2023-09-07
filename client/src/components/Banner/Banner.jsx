@@ -6,7 +6,7 @@ function Banner() {
   return (
     <div className='relative'>
       <div className='relative w-full bg-hotel-200'>
-        <div className='w-full m-auto bg-hotel-200 lg:max-w-[1100px] mb-10'>
+        <div className='w-full m-auto bg-hotel-200 lg:max-w-[1100px] mb-10 p-[10px]'>
           <div className='w-full text-white h-[280px] my-auto'>
             <div className='flex w-full flex-col items-start justify-start pt-8 gap-5'>
               <div className='flex flex-col w-full'>

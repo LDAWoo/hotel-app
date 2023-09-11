@@ -1,6 +1,3 @@
-import { useTranslation } from "react-i18next";
-import { AiOutlineSearch } from "react-icons/ai";
-
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import routesConfig from "../../configs/routesConfig";
@@ -10,10 +7,9 @@ import useRegisterLocationStore from "../../hooks/useRegisterLocationStore";
 import CalendarBox from "./Calendar/CalendarBox";
 import GuestBox from "./Guest/GuestBox";
 import LocationBox from "./Location/LocationBox";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
 
 function Search() {
-  const { t } = useTranslation();
   const { valueLocation, onOpenAlert, onCloseAlert } =
     useRegisterLocationStore();
   const { startDate, endDate } = useRegisterDateStore();
@@ -51,12 +47,9 @@ function Search() {
               <CalendarBox />
               <GuestBox />
               <SearchBox
-                icon={AiOutlineSearch}
-                size={24}
-                className='w-full min-w-[120px] 2md:w-[120px]'
-                title={t("Search.search")}
-                button
                 onClick={handleSubmit}
+                visibleIcon
+                className='w-full min-w-[120px] 2md:w-[120px]'
               />
             </div>
           </div>

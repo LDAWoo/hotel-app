@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { IconHeart } from "../../../assets/Icons/icons";
 import Carousel from "./Carousel";
+import Star from "../../../components/Star/Start";
 function HotelCard({
   to,
   title,
@@ -62,12 +62,7 @@ function HotelCard({
               <div className='flex-1 font-semibold dark:text-white'>
                 {title}
               </div>
-              {starCount > 0 && (
-                <div className='flex items-center gap-1 text-secondary-50 font-medium'>
-                  <AiFillStar size={18} />
-                  <span>{starCount}</span>
-                </div>
-              )}
+              {starCount > 0 && <Star starCount={starCount} />}
             </div>
             {description && (
               <div className='font-normal mb-2 text-[16px] text-primary-100 dark:text-primary-50'>
@@ -106,6 +101,7 @@ HotelCard.propTypes = {
   starCount: PropTypes.number,
   description: PropTypes.string,
   isWishlist: PropTypes.bool,
+  nightAndAdultAndChild: PropTypes.string,
 };
 
 export default HotelCard;

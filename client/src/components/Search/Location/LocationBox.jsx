@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
 import ToolTipAlert from "../../ToolTip/ToolTipAlert";
-import SearchBox from "../SearchBox";
+import SearchBox from "../SearchBox/SearchItem";
 
 function LocationBox() {
   const [searchParams] = useSearchParams();

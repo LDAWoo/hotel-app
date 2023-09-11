@@ -22,12 +22,12 @@ function SearchResult() {
   return (
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[1100px] mt-10 p-[10px] bg-transparent'>
-        <div className='flex flex-col w-full'>
+        <div className='flex-col w-full'>
           <div>Home</div>
           {width < 900 && (
             <Button
               title='Filter'
-              className='w-[20%] h-[40px] mt-5 mb-5 border-[2px] duration-500 rounded-md dark:border-primary-500 dark:text-white hover:border-hotel-50 hover:dark:border-hotel-50 font-medium'
+              className='w-auto h-[40px] mt-5 mb-5 border-[2px] pr-3 duration-500 rounded-md dark:border-primary-500 dark:text-white hover:border-hotel-50 hover:dark:border-hotel-50 font-medium'
               icon={TbFilterEdit}
               size={24}
               onClick={handleShowModalFilter}

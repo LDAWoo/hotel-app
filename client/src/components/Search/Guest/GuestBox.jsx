@@ -6,7 +6,7 @@ import useRegisterGuestStore from "../../../hooks/useRegisterGuestStore";
 import userRegisterToolTipAdult from "../../../hooks/useRegisterToolTipAdult";
 import TitleComponent from "../../TitleComponent/TitleComponent";
 import RegisterToolTip from "../../ToolTip/RegisterToolTip/RegisterToolTip";
-import SearchBox from "../SearchBox";
+import SearchBox from "../SearchBox/SearchItem";
 import GuestMenu from "./GuestMenu";
 
 function GuestBox() {

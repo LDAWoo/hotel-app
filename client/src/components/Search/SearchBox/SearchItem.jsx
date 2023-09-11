@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import useRegisterLocationStore from "../../hooks/useRegisterLocationStore";
-function SearchBox({
+import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
+function SearchItem({
   className,
   icon,
   iconClose,
@@ -99,7 +99,7 @@ function SearchBox({
   );
 }
 
-SearchBox.propTypes = {
+SearchItem.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.elementType,
   iconClose: PropTypes.elementType,
@@ -116,4 +116,4 @@ SearchBox.propTypes = {
   onClick: PropTypes.func,
   button: PropTypes.bool,
 };
-export default SearchBox;
+export default SearchItem;

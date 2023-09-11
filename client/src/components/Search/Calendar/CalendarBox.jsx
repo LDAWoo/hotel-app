@@ -8,7 +8,7 @@ import useRegisterToolTipCalendar from "../../../hooks/useRegisterToolTipCalenda
 import { getLocale } from "../../Locale/Locale";
 import TitleComponent from "../../TitleComponent/TitleComponent";
 import RegisterToolTip from "../../ToolTip/RegisterToolTip/RegisterToolTip";
-import SearchBox from "../SearchBox";
+import SearchBox from "../SearchBox/SearchItem";
 import CalendarCustom from "./CalendarCustom";
 function CalendarBox() {
   const [searchParams] = useSearchParams();

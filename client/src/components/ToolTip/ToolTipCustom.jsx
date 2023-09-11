@@ -76,7 +76,7 @@ function ToolTipCustom({
               z-50
               inset-0
               lg:inset-auto
-              lg:-translate-x-10
+              lg:-translate-x-0
               lg:translate-y-5
               m-0
           `}

@@ -18,7 +18,7 @@ RegisterToolTip.propTypes = {
   width: PropTypes.number,
   component: PropTypes.node,
   render: PropTypes.node,
-  userRegisterToolTip: PropTypes.func.isRequired,
+  userRegisterToolTip: PropTypes.bool,
 };
 
 export default RegisterToolTip;

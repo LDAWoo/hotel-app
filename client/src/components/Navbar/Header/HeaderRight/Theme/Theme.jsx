@@ -25,6 +25,7 @@ function Theme() {
         }
         render={<ThemeMenu />}
         width={240}
+        zIndex='z-[1002]'
       />
     </div>
   );

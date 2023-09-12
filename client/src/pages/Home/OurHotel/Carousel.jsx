@@ -56,7 +56,7 @@ function Carousel({ visible, children }) {
               width='w-[30px]'
               height='h-[30px]'
               left='left-2'
-              top='top-[42%]'
+              top='top-[45%]'
               onClick={handleClickPrev}
             />
           )}
@@ -67,7 +67,7 @@ function Carousel({ visible, children }) {
               width='w-[30px]'
               height='h-[30px]'
               right='right-2'
-              top='top-[42%]'
+              top='top-[45%]'
               onClick={handleClickNext}
             />
           )}

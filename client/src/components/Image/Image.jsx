@@ -8,7 +8,7 @@ function Image({ className, src, srcDark, srcSet, srcSetDark, alt }) {
     <img
       className={className}
       srcSet={darkMode === "dark" ? srcSetDark : srcSet}
-      src={darkMode === "dark" ? srcDark : src}
+      src={srcDark ? (darkMode === "dark" ? srcDark : src) : src}
       alt={alt}
     />
   );
@@ -20,7 +20,7 @@ Image.propTypes = {
   srcDark: PropTypes.string,
   srcSet: PropTypes.string,
   srcSetDark: PropTypes.string,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 };
 
 export default Image;

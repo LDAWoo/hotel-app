@@ -74,6 +74,7 @@ function CalendarBox() {
         }
         render={<CalendarCustom />}
         width={700}
+        zIndex='z-[999]'
       />
     </div>
   );

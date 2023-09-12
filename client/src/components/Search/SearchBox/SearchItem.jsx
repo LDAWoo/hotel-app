@@ -45,7 +45,7 @@ function SearchItem({
       >
         <div className={`flex flex-1 w-full items-center p-2 `}>
           <div
-            className={`flex duration-50 gap-2 p-[2px] w-full border-[2px] ${
+            className={`flex relative duration-50 gap-2 p-[2px] w-full border-[2px] ${
               isFocus ? " border-hotel-100" : " border-transparent"
             }`}
           >
@@ -88,7 +88,7 @@ function SearchItem({
             )}
 
             {title && (
-              <div className='flex w-full items-center justify-center text-center text-white font-medium whitespace-nowrap'>
+              <div className='absolute left-0 2md:left-3 flex w-full items-center justify-center text-center text-white font-medium whitespace-nowrap'>
                 {title}
               </div>
             )}

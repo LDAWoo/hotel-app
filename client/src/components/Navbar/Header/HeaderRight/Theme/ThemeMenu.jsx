@@ -41,8 +41,10 @@ function ThemeMenu() {
                 : localStorageTheme === theme?.code
                 ? "text-hotel-50"
                 : "dark:text-primary-50"
-            } text-[15px] font-bold`}
+            }`}
             icon={theme?.icon}
+            large
+            fontMedium
             size={18}
             classIcon={`${
               !localStorageTheme

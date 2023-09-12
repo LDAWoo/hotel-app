@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 import ToolTipCustom from "../ToolTipCustom";
-function RegisterToolTip({ width, component, render, userRegisterToolTip }) {
+function RegisterToolTip({
+  width,
+  component,
+  render,
+  userRegisterToolTip,
+  zIndex = "",
+}) {
   const { isOpen, onClose } = userRegisterToolTip();
 
   return (
@@ -10,6 +16,7 @@ function RegisterToolTip({ width, component, render, userRegisterToolTip }) {
       render={render}
       component={component}
       width={width}
+      zIndex={zIndex}
     />
   );
 }
@@ -18,7 +25,8 @@ RegisterToolTip.propTypes = {
   width: PropTypes.number,
   component: PropTypes.node,
   render: PropTypes.node,
-  userRegisterToolTip: PropTypes.bool,
+  userRegisterToolTip: PropTypes.func,
+  zIndex: PropTypes.string,
 };
 
 export default RegisterToolTip;

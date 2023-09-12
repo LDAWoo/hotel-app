@@ -75,6 +75,7 @@ function GuestBox() {
           />
         }
         userRegisterToolTip={userRegisterToolTipAdult}
+        zIndex='z-[999]'
       />
     </div>
   );

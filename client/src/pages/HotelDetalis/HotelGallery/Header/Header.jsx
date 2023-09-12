@@ -8,15 +8,16 @@ function Header() {
     <div className='w-full'>
       <div className='w-full flex flex-col'>
         <div></div>
-        <div className='w-full'>
-          <div className='flex items-center'>
+        <div className='flex w-full'>
+          <div className='flex flex-1 items-center'>
             <Title
               title='Bon Ami Hotel - Thien Xuan Hotel'
               fontBold
-              titleCustom='text-[28px]'
+              xl
+              colorTitle='dark:text-white'
             />
-            {starCount > 0 && <Star starCount={starCount} />}
           </div>
+          {starCount > 0 && <Star starCount={starCount} />}
         </div>
         <Location />
       </div>

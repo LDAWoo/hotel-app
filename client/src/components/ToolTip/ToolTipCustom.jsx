@@ -9,6 +9,7 @@ function ToolTipCustom({
   disabled,
   width,
   render,
+  zIndex = "",
 }) {
   const [showToolTip, setShowToolTip] = useState(isOpen);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -73,12 +74,12 @@ function ToolTipCustom({
               lg:absolute
               overflow-y-hidden
               scroll-smooth
-              z-50
               inset-0
               lg:inset-auto
               lg:-translate-x-0
               lg:translate-y-5
               m-0
+              ${zIndex}
           `}
       ref={tooltipRef}
     >
@@ -89,7 +90,6 @@ function ToolTipCustom({
             my-0
             mx-0
             h-full
-            z-[1005]
             `}
         style={{
           width: windowWidth < 1024 ? "100%" : width,
@@ -175,6 +175,7 @@ ToolTipCustom.propTypes = {
   disabled: PropTypes.bool,
   width: PropTypes.number,
   render: PropTypes.node,
+  zIndex: PropTypes.string,
 };
 
 export default ToolTipCustom;

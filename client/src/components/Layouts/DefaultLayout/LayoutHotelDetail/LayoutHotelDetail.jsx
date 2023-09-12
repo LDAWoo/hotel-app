@@ -5,8 +5,8 @@ import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeS
 import { ThemeContext } from "../../../Contexts/AppThemeProvider";
 import LanguageModal from "../../../Modals/LanguageModal/LanguageModal";
 import MapModal from "../../../Modals/MapModal/MapModal";
-import Navbar from "../../../Navbar/Navbar";
 import SearchModal from "../../../Modals/SearchModal/SearchModal";
+import Navbar from "../../../Navbar/Navbar";
 function LayoutHotelDetail({ children }) {
   const { darkMode } = useContext(ThemeContext);
   const heightWindow = use100vh();

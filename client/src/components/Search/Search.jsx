@@ -40,7 +40,7 @@ function Search() {
   return (
     <div className='w-full h-full'>
       <div className='relative w-full h-full m-auto lg:max-w-[1100px]'>
-        <div className='absolute w-full h-full z-10 top-0'>
+        <div className='absolute w-full h-full z-10 top-3'>
           <div className='m-0 p-0'>
             <div className='flex gap-1 p-1 flex-col 2md:flex-row items-center mt-2 mb-5 ml-0 mr-0 rounded-lg bg-secondary-50'>
               <LocationBox />

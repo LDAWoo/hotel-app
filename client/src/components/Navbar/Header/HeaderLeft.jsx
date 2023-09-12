@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Image from "../../Image/Image";
+import Title from "../../Title/Title";
 
 function HeaderLeft() {
   return (
@@ -10,9 +11,7 @@ function HeaderLeft() {
         srcDark='/images/logo-dark.png'
         alt='Logo'
       />
-      <div>
-        <p className='text-[28px] font-bold text-white'>Staying.com</p>
-      </div>
+      <Title title='Staying.com' fontBold xxxl colorTitle='text-white' />
     </Link>
   );
 }

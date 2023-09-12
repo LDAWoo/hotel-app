@@ -4,10 +4,10 @@ import { use100vh } from "react-div-100vh";
 import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
 import Banner from "../../Banner/Banner";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
+import FilterModal from "../../Modals/FilterModal/FilterModal";
 import LanguageModal from "../../Modals/LanguageModal/LanguageModal";
 import MapModal from "../../Modals/MapModal/MapModal";
 import Navbar from "../../Navbar/Navbar";
-import FilterModal from "../../Modals/FilterModal/FilterModal";
 
 function DefaultLayout({ children }) {
   const { darkMode } = useContext(ThemeContext);

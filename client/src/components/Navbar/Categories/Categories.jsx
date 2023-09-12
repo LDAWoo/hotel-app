@@ -1,12 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
-import Button from "../../Buttons/Button";
-import { categories } from "../../Constants/Categories";
 import { useEffect, useRef, useState } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
+import { Link, useLocation } from "react-router-dom";
+import useRegisterToolTipCategoriesMore from "../../../hooks/useRegisterToolTipCategoriesMore";
+import Button from "../../Buttons/Button";
+import { categories } from "../../Constants/Categories";
+import TitleComponent from "../../TitleComponent/TitleComponent";
 import RegisterToolTip from "../../ToolTip/RegisterToolTip/RegisterToolTip";
 import MoreMenu from "./MoreMenu";
-import useRegisterToolTipCategoriesMore from "../../../hooks/useRegisterToolTipCategoriesMore";
-import TitleComponent from "../../TitleComponent/TitleComponent";
 
 function Categories() {
   const [maxVisibleItems, setMaxVisibleItems] = useState(0);
@@ -47,7 +47,7 @@ function Categories() {
   return (
     <div className='flex items-center justify-center bg-hotel-200 w-full'>
       <div
-        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-200 lg:max-w-[1100px] p-[10px]'
+        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-200 lg:max-w-[var(--max-width)] p-[10px]'
         ref={categoriesRef}
       >
         <div className='flex w-full gap-2'>
@@ -55,7 +55,7 @@ function Categories() {
             <Link
               key={item.id}
               to={item.to}
-              className={`flex items-center justify-center w-auto h-12 rounded-[24px]
+              className={`flex items-center justify-center w-auto h-auto rounded-[24px]
               ${
                 pathName === item.to
                   ? "border-[2px] border-hotel-50 bg-hotel-100"
@@ -69,6 +69,7 @@ function Categories() {
                 classTitle='text-[14px]'
                 icon={item?.icon}
                 size={24}
+                customSize={20}
               />
             </Link>
           ))}
@@ -76,13 +77,16 @@ function Categories() {
             <div className='relative'>
               <div className='flex items-center justify-center w-auto h-12 rounded-[24px] hover:bg-hotel-100'>
                 <Button
-                  className='w-full pt-2 pb-2 pl-3 pr-3 text-white font-medium'
+                  className='w-full pt-2 pb-2 pl-3 pr-3'
+                  classTitle='text-white'
+                  fontMedium
                   title='More'
-                  classTitle='text-[14px]'
                   size={16}
+                  classIcon='text-white'
                   icon={SlOptionsVertical}
                   iconPosition='right'
                   active
+                  large
                   onClick={handleShowCategoriesMore}
                 />
               </div>
@@ -95,6 +99,7 @@ function Categories() {
                   <TitleComponent title='More' icon={SlOptionsVertical} />
                 }
                 userRegisterToolTip={useRegisterToolTipCategoriesMore}
+                zIndex='z-[999]'
               />
             </div>
           )}

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function ToolTipAlert({ isOpen, content }) {
   if (!isOpen) {
     return null;
@@ -17,5 +19,8 @@ function ToolTipAlert({ isOpen, content }) {
     </div>
   );
 }
-
+ToolTipAlert.propTypes = {
+  isOpen: PropTypes.bool,
+  content: PropTypes.string,
+};
 export default ToolTipAlert;

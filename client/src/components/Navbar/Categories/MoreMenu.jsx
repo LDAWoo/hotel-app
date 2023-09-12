@@ -17,6 +17,7 @@ function MoreMenu({ data }) {
               title={item.translationKey}
               classTitle='dark:text-primary-50'
               classIcon='dark:text-primary-50'
+              large
               size={18}
               onClick={() => onClose()}
             />

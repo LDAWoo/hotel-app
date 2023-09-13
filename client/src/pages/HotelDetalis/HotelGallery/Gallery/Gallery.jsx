@@ -1,6 +1,6 @@
 import { photos } from "../../../../components/Constants/GalleryPhotos";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
-import Carousel from "../../../Home/OurHotel/Carousel";
+import Carousel from "../../../../components/Carousel/Carousel";
 import GalleryItem from "./GalleryItem";
 
 const startTopPhotos = 0;

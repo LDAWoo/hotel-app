@@ -56,7 +56,7 @@ function CalendarBox() {
       <SearchBox
         onClick={handleShowCalender}
         icon={LuCalendarDays}
-        size={24}
+        size={14}
         button
         label={`${format(startDate, "EEE, MMM d", {
           locale,

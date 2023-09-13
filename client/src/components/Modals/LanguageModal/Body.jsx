@@ -4,6 +4,7 @@ import { BsCheck2 } from "react-icons/bs";
 import useRegisterModal from "../../../hooks/useRegisterModal";
 import Button from "../../Buttons/Button";
 import { Language } from "../../Constants/Language";
+import { useEffect } from "react";
 
 function Body() {
   const { t } = useTranslation();
@@ -24,6 +25,12 @@ function Body() {
     i18next.changeLanguage(lng);
     onClose();
   };
+
+  useEffect(() => {
+    if (!i18next.language) {
+      i18next.changeLanguage("en-EN");
+    }
+  }, []);
 
   return (
     <div className='flex items-center w-full'>

@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        "2md": { min: "900px" },
+        "vsm": "480px",
+        "2md": "900px",
       },
       colors: {
         primary: {

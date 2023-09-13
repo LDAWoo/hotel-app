@@ -12,9 +12,8 @@ function Language() {
     onOpen();
   };
   const currentLanguage = Languages.find(
-    (lang) => lang.code === i18next.language,
+    (lang) => lang?.code === i18next.language,
   );
-
   return (
     <div>
       <ToolTip

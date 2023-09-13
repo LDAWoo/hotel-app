@@ -8,7 +8,7 @@ function SearchBox({ onClick, className, visibleIcon }) {
   return (
     <SearchItem
       icon={visibleIcon && AiOutlineSearch}
-      size={24}
+      size={18}
       className={className}
       title={t("Search.search")}
       button

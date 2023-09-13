@@ -1,7 +1,7 @@
 export const Language = [
   {
     id: 1,
-    code: "vi-VI",
+    code: "vi-VN",
     title: "Tiếng Việt",
     img: "/images/flagVietNam.png",
     translationKey: "languages.vietnamese",

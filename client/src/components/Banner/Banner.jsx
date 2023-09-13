@@ -13,23 +13,23 @@ function Banner() {
               <div className='flex flex-col w-full'>
                 <Title
                   title={t("Banner.title")}
-                  extraLarge4
+                  extraLarge5
                   fontBold
                   nowrap={false}
                 />
-                <Title title={t("Banner.subTitle")} xl nowrap={false} />
+                <Title title={t("Banner.subTitle")} xxl nowrap={false} />
               </div>
               <div>
                 <Button
                   className='w-full h-full bg-hotel-50 pt-[10px] pb-[10px] pl-5 pr-5 duration-300 rounded-md hover:bg-hotel-200'
                   title={t("Banner.bookNow")}
-                  large
-                  fontMedium
+                  xl
+                  fontBold
                 />
               </div>
             </div>
           </div>
-          <div className='h-[210px] 2md:max-h-[40px]'>
+          <div className='h-[175px] 2md:max-h-[40px]'>
             <Search />
           </div>
         </div>

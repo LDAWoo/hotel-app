@@ -7,7 +7,7 @@ function Star({ starCount }) {
   return (
     <div className='flex items-center gap-1 text-secondary-50 font-medium'>
       <Icon icon={AiFillStar} size={18} />
-      <Title title={starCount} large />
+      <Title title={starCount} xl fontMedium />
     </div>
   );
 }

@@ -56,7 +56,7 @@ function GuestBox() {
     <div className='relative w-full'>
       <SearchBox
         icon={AiOutlineUser}
-        size={24}
+        size={14}
         button
         label={`${adult} ${t("Search.Guest.Adult.title")} · ${child} ${t(
           "Search.Guest.Children.title",

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import Arrow from "../../../components/Arrow/Arrow";
+import Arrow from "../Arrow/Arrow";
 
 function Carousel({ visible, children }) {
   const [current, setCurrent] = useState(0);

@@ -64,32 +64,28 @@ function Categories() {
               `}
             >
               <Button
-                className='w-full pt-2 pb-2 pl-3 pr-3 text-white'
+                className='w-full p-[4px] vsm:p-[5px] sm:p-[6px] text-white'
                 title={item.translationKey}
-                classTitle='text-[14px]'
                 icon={item?.icon}
-                size={24}
-                customSize={20}
+                size={18}
+                xxl
+                fontMedium
               />
             </Link>
           ))}
           {sortedCategories.length > maxVisibleItems && (
-            <div className='relative'>
-              <div className='flex items-center justify-center w-auto h-12 rounded-[24px] hover:bg-hotel-100'>
-                <Button
-                  className='w-full pt-2 pb-2 pl-3 pr-3'
-                  classTitle='text-white'
-                  fontMedium
-                  title='More'
-                  size={16}
-                  classIcon='text-white'
-                  icon={SlOptionsVertical}
-                  iconPosition='right'
-                  active
-                  large
-                  onClick={handleShowCategoriesMore}
-                />
-              </div>
+            <div className='flex items-center justify-center w-auto h-auto rounded-[24px] hover:bg-hotel-100'>
+              <Button
+                className='w-full p-[4px] vsm:p-[5px] sm:p-[6px] text-white'
+                title='More'
+                size={18}
+                icon={SlOptionsVertical}
+                iconPosition='right'
+                active
+                xxl
+                fontMedium
+                onClick={handleShowCategoriesMore}
+              />
               <RegisterToolTip
                 render={
                   <MoreMenu data={sortedCategories.slice(maxVisibleItems)} />

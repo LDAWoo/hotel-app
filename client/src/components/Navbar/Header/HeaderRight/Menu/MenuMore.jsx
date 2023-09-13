@@ -21,7 +21,7 @@ function MenuMore() {
               }
               return null;
             })}
-          {menu.theme && <Theme data={menu.theme} />}
+          {menu?.theme && <Theme data={menu.theme} />}
         </div>
       ))}
     </>

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 
-function Icon({ icon, size, classIcon, customSize = false }) {
+function Icon({ icon, size, classIcon }) {
   const { width } = useRegisterWindowSizeStore();
   const IconComponent = icon;
 
@@ -9,7 +9,19 @@ function Icon({ icon, size, classIcon, customSize = false }) {
     <div className={classIcon}>
       {icon && (
         <IconComponent
-          size={width < 640 ? (customSize ? customSize : 16) : size}
+          size={
+            width < 640
+              ? size
+                ? width < 320
+                  ? size
+                  : width < 480
+                  ? size + 2
+                  : width < 640
+                  ? size + 4
+                  : size + 6
+                : 16
+              : size + 8
+          }
         />
       )}
     </div>

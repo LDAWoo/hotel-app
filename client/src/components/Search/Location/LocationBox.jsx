@@ -32,9 +32,9 @@ function LocationBox() {
         input
         placeholder={t("Search.location")}
         icon={SlLocationPin}
-        size={24}
+        size={14}
         iconClose={AiOutlineClose}
-        sizeClose={18}
+        sizeClose={14}
         value={valueLocation}
         handleChangeInput={handleChangeInput}
         handleClose={handleClose}

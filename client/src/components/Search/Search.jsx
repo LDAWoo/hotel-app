@@ -46,11 +46,7 @@ function Search() {
               <LocationBox />
               <CalendarBox />
               <GuestBox />
-              <SearchBox
-                onClick={handleSubmit}
-                visibleIcon
-                className='w-full min-w-[120px] 2md:w-[120px]'
-              />
+              <SearchBox onClick={handleSubmit} className='w-full' />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
+import Icon from "../../Icon/Icon";
 function GuestButton({ icon, disable, onClick }) {
-  const IconComponent = icon;
   return (
     <button
       onClick={onClick}
@@ -13,13 +13,13 @@ function GuestButton({ icon, disable, onClick }) {
       tabIndex={-1}
       disabled={disable}
     >
-      {IconComponent && (
+      {icon && (
         <div
           className={`${
             disable ? "text-gray-300 dark:text-primary-400" : "text-hotel-50"
           } bg-transparent`}
         >
-          <IconComponent size={20} />
+          <Icon icon={icon} size={16} />
         </div>
       )}
     </button>

@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
-import MenuButton from "./MenuButton";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import useRegisterToolTipTheme from "../../../../../hooks/useRegisterToolTipTheme";
+import MenuButton from "./MenuButton";
 
 function Theme({ data }) {
   const localStorageTheme = localStorage.getItem("theme");
@@ -11,10 +11,23 @@ function Theme({ data }) {
   const handleShowTheme = () => {
     onOpen();
   };
+
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
+
+  const exitsTheme = (localStorageTheme) => {
+    if (!localStorageTheme) {
+      return prefersDarkMode ? "dark" : "light";
+    } else {
+      return localStorageTheme;
+    }
+  };
+
   return (
     <div>
       {data.map((theme) => {
-        if (theme.code === localStorageTheme) {
+        if (theme.code === exitsTheme(localStorageTheme)) {
           return (
             <MenuButton
               key={theme?.id}
@@ -31,7 +44,7 @@ function Theme({ data }) {
 }
 
 Theme.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default Theme;

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ourHotels } from "../../../components/Constants/OurHotel";
 import HotelCard from "./HotelCard";
+import Title from "../../../components/Title/Title";
 function OurHotel() {
   const { t } = useTranslation();
   return (
@@ -8,12 +9,19 @@ function OurHotel() {
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
           <div className='flex flex-col'>
-            <span className='flex items-center text-[20px] md:text-[24px] font-bold dark:text-white'>
-              {t("OurHotel.title")}
-            </span>
-            <span className='flex items-center text-[14px] md:text-[16px] text-primary-200 dark:text-primary-50'>
-              {t("OurHotel.subTitle")}
-            </span>
+            <Title
+              title={t("OurHotel.title")}
+              extraLarge4
+              fontBold
+              colorTitle='dark:text-white'
+              nowrap={false}
+            />
+            <Title
+              title={t("OurHotel.subTitle")}
+              xxl
+              colorTitle='text-primary-100 dark:text-primary-50'
+              nowrap={false}
+            />
           </div>
         </div>
 

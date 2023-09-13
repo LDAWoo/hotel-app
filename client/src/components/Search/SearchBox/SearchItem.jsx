@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
+import Icon from "../../Icon/Icon";
+import Title from "../../Title/Title";
 function SearchItem({
   className,
   icon,
@@ -19,8 +21,6 @@ function SearchItem({
   button,
 }) {
   const { onCloseAlert } = useRegisterLocationStore();
-  const IconComponent = icon;
-  const IconCloseComponent = iconClose;
 
   const [isFocus, setIsFocus] = useState(false);
 
@@ -43,15 +43,15 @@ function SearchItem({
         } ${button ? "cursor-pointer" : ""} rounded-lg w-full`}
         onClick={onClick}
       >
-        <div className={`flex flex-1 w-full items-center p-2 `}>
+        <div className={`flex flex-1 w-full items-center p-1`}>
           <div
-            className={`flex relative duration-50 gap-2 p-[2px] w-full border-[2px] ${
+            className={`flex items-center relative duration-50 gap-2 p-[2px] w-full border-[2px] ${
               isFocus ? " border-hotel-100" : " border-transparent"
-            }`}
+            } ${button && icon ? "justify-start" : "justify-center"}`}
           >
-            {IconComponent && (
+            {icon && (
               <div className={` ${title ? "text-white" : "dark:text-white"}`}>
-                <IconComponent size={size} />
+                <Icon icon={icon} size={size} />
               </div>
             )}
             {input && (
@@ -60,7 +60,7 @@ function SearchItem({
                 placeholder={placeholder}
                 name={name}
                 value={value}
-                className={`flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:font-medium ${
+                className={`flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:lg:text-[16px] placeholder:font-medium text-[14px] lg:text-[16px]${
                   isFocus
                     ? "placeholder:text-gray-500 dark:placeholder:text-gray-100"
                     : ""
@@ -71,26 +71,32 @@ function SearchItem({
               />
             )}
 
-            {IconCloseComponent && value.length > 0 && (
+            {iconClose && value.length > 0 && (
               <div className='flex justify-end relative z-10 '>
                 <div
                   className='flex items-center justify-center cursor-pointer dark:text-white'
                   onClick={handleClose}
                 >
-                  <IconCloseComponent size={sizeClose} />
+                  <Icon icon={iconClose} size={sizeClose} />
                 </div>
               </div>
             )}
             {label && (
-              <div className='flex w-full items-center text-center text-[14px] dark:text-white font-medium overflow-hidden text-ellipsis whitespace-nowrap'>
-                {label}
-              </div>
+              <Title
+                title={label}
+                fontMedium
+                titleCustom='text-[14px] lg:text-[16px]'
+                colorTitle='dark:text-white'
+              />
             )}
 
             {title && (
-              <div className='absolute left-0 2md:left-3 flex w-full items-center justify-center text-center text-white font-medium whitespace-nowrap'>
-                {title}
-              </div>
+              <Title
+                colorTitle='text-white'
+                title={title}
+                titleCustom='text-[14px] lg:text-[16px]'
+                fontBold
+              />
             )}
           </div>
         </div>

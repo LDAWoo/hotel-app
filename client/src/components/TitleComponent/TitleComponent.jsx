@@ -16,7 +16,7 @@ function TitleComponent({ src, icon, title }) {
         )}
         {icon && (
           <div className='text-hotel-50'>
-            <Icon icon={icon} customSize={28} size={40} />
+            <Icon icon={icon} size={28} />
           </div>
         )}
         {title && (

@@ -2,13 +2,16 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import useRegisterToolTipTheme from "../../../../../hooks/useRegisterToolTipTheme";
 import MenuButton from "./MenuButton";
+import useRegisterToolTipMenuMore from "../../../../../hooks/useRegisterToolTipMenuMore";
 
 function Theme({ data }) {
   const localStorageTheme = localStorage.getItem("theme");
   const { onOpen } = useRegisterToolTipTheme();
+  const { onClose } = useRegisterToolTipMenuMore();
 
   const { t } = useTranslation();
   const handleShowTheme = () => {
+    onClose();
     onOpen();
   };
 

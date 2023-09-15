@@ -1,42 +1,40 @@
+import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ourHotels } from "../../../components/Constants/OurHotel";
-import HotelCard from "./HotelCard";
-import Title from "../../../components/Title/Title";
+import { getHotels } from "../../../api/Hotel/index";
+import HomeTitle from "../HomeTitle";
+import Card from "./Card";
+import HotelCardSkeleton from "./HotelCardSkeleton";
+
 function OurHotel() {
   const { t } = useTranslation();
+  const [ourHotels, setOurHotels] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const fetchHotels = async () => {
+      const hotels = await getHotels();
+      setOurHotels(hotels);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
+    };
+    fetchHotels();
+  }, []);
+
   return (
     <div className='w-full mb-5 ml-0 mr-0 mt-0'>
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
-          <div className='flex flex-col'>
-            <Title
-              title={t("OurHotel.title")}
-              extraLarge4
-              fontBold
-              colorTitle='dark:text-white'
-              nowrap={false}
-            />
-            <Title
-              title={t("OurHotel.subTitle")}
-              xxl
-              colorTitle='text-primary-100 dark:text-primary-50'
-              nowrap={false}
-            />
-          </div>
+          <HomeTitle
+            title={t("OurHotel.title")}
+            subTitle={t("OurHotel.subTitle")}
+          />
         </div>
 
-        <div className='grid gap-x-3 gap-y-3 auto-cols-auto grid-cols-1 sm:grid-cols-2 2md:grid-cols-3 w-full '>
-          {ourHotels.map((card) => (
-            <HotelCard
-              key={card.id}
-              to={card.to}
-              images={card?.images}
-              title={card.name}
-              price={card.price}
-              description={card.description}
-              isWishlist={card?.isWishlist}
-              starCount={card.star}
-            />
+        <div className='grid gap-4 auto-cols-auto grid-cols-1 2vsm:grid-cols-2 2md:grid-cols-3 w-full '>
+          {ourHotels?.products?.map((card) => (
+            <Fragment key={card.id}>
+              {isLoading ? <HotelCardSkeleton /> : <Card data={card} />}
+            </Fragment>
           ))}
         </div>
       </div>

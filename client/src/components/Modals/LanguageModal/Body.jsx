@@ -5,6 +5,7 @@ import useRegisterModal from "../../../hooks/useRegisterModal";
 import Button from "../../Buttons/Button";
 import { Language } from "../../Constants/Language";
 import { useEffect } from "react";
+import Title from "../../Title/Title";
 
 function Body() {
   const { t } = useTranslation();
@@ -35,8 +36,13 @@ function Body() {
   return (
     <div className='flex items-center w-full'>
       <div className='flex flex-col w-full items-center'>
-        <div className='flex items-center w-full justify-start dark:text-white font-medium '>
-          {t("Modal.Language.allLanguage")}
+        <div className='flex items-center w-full justify-start   '>
+          <Title
+            title={t("Modal.Language.allLanguage")}
+            xxl
+            fontMedium
+            colorTitle='dark:text-white'
+          />
         </div>
         <div className='flex items-center justify-start w-full flex-wrap'>
           {sortLanguage.map((lang) => (
@@ -47,7 +53,7 @@ function Body() {
                 sm:min-w-[200px]
                 sm:max-w-[304px]
                 lg:max-w-[217px]
-                h-12 mt-2 mr-2 rounded-md ${
+                h-10 sm:h-12 mt-2 mr-2 rounded-md ${
                   lang.code === currentLanguage
                     ? "bg-gray-100 dark:bg-primary-500"
                     : "hover:bg-gray-100 dark:hover:bg-primary-500"
@@ -63,13 +69,14 @@ function Body() {
                     ? "text-hotel-50"
                     : "dark:text-white"
                 }`}
-                classImg='rounded-full object-cover w-6 h-6'
+                classImg='rounded-full object-cover w-5 h-5 sm:w-6 sm:h-6'
                 icon={BsCheck2}
                 srcPosition='before'
                 titlePosition='before'
                 iconPosition='right'
                 classIcon='text-hotel-50'
-                size={20}
+                size={16}
+                xl
                 onClick={() => handleChangeLanguage(lang.code)}
               />
             </div>

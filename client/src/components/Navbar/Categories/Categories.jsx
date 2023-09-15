@@ -68,7 +68,7 @@ function Categories() {
                 title={item.translationKey}
                 icon={item?.icon}
                 size={18}
-                xxl
+                xl
                 fontMedium
               />
             </Link>
@@ -82,7 +82,7 @@ function Categories() {
                 icon={SlOptionsVertical}
                 iconPosition='right'
                 active
-                xxl
+                xl
                 fontMedium
                 onClick={handleShowCategoriesMore}
               />

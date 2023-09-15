@@ -6,6 +6,7 @@ export default {
     extend: {
       screens: {
         "vsm": "480px",
+        "2vsm": "550px",
         "2md": "900px",
       },
       colors: {

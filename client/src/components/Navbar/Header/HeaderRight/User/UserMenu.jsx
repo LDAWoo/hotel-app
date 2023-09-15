@@ -27,11 +27,11 @@ function UserMenu() {
           <Button
             className='w-full h-full hover:bg-gray-200/50 dark:hover:bg-primary-500 p-[7px] translate duration-300'
             icon={u.icon}
-            classTitle='dark:text-primary-50 font-normal lg:p-0 p-2 whitespace-nowrap text-ellipsis overflow-hidden'
+            classTitle='dark:text-primary-50'
             title={t(u?.translationKey)}
             large
-            classIcon='dark:text-primary-50 min-w-[24px]'
-            size={24}
+            classIcon='dark:text-primary-50'
+            size={16}
             onClick={() => handleSelectOption(u.type)}
             iconPosition='before'
           />

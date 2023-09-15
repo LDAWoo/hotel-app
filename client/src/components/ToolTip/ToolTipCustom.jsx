@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { IoMdClose } from "react-icons/io";
+import Icon from "../Icon/Icon";
 function ToolTipCustom({
   isOpen,
   onClose,
@@ -148,7 +149,7 @@ function ToolTipCustom({
                       text-hotel-50
                       '
               >
-                <IoMdClose size={24} />
+                <Icon icon={IoMdClose} size={18} />
               </button>
             </div>
             {component && (

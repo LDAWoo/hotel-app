@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Title from "../../../components/Title/Title";
 function TrendingCard({ to, destination, areaImage, src, maxImage }) {
   const [isHovered, setIsHovered] = useState(false);
   const maxImg = maxImage;
@@ -19,9 +20,12 @@ function TrendingCard({ to, destination, areaImage, src, maxImage }) {
         <div className='absolute top-6 left-6'>
           <div className='flex flex-col md:flex-row gap-2 items-start md:items-center'>
             {destination && (
-              <div className='text-white cursor-pointer font-bold text-[18px] md:text-[24px] lg:text-[28px]'>
-                {destination}
-              </div>
+              <Title
+                title={destination}
+                colorTitle='text-white'
+                fontBold
+                xxxl
+              />
             )}
             {areaImage && (
               <div className='w-6 h-5 rounded-sm'>

@@ -6,14 +6,14 @@ function MenuButton({ title, src, icon, onClick }) {
       className='w-full h-full hover:bg-gray-200/50 dark:hover:bg-primary-500 p-[7px] translate duration-300'
       title={title}
       classTitle='text-primary-700 dark:text-white'
-      large
-      classImg='rounded-full object-cover w-4 h-4 sm:w-6 sm:h-6'
+      classImg='rounded-full object-cover w-5 h-5 sm:w-6 sm:h-6'
       classIcon='text-primary-600 dark:text-white'
       srcPosition='before'
       titlePosition='right'
       {...(src ? { src } : {})}
       {...(icon ? { icon } : {})}
-      size={24}
+      size={18}
+      xl
       iconPosition='before'
       onClick={onClick}
     />

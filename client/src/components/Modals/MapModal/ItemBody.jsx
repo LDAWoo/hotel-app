@@ -1,4 +1,4 @@
-import HotelCard from "../../../pages/Home/OurHotel/HotelCard";
+import Card from "../../../pages/Home/OurHotel/Card";
 import { ourHotels } from "../../Constants/OurHotel";
 
 function ItemBody() {
@@ -8,7 +8,7 @@ function ItemBody() {
         <div>Button</div>
         <div className='grid grid-cols-1 gap-y-8'>
           {ourHotels.map((card, index) => (
-            <HotelCard
+            <Card
               key={index}
               to={card?.to}
               images={card?.images}

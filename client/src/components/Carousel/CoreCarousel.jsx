@@ -21,7 +21,7 @@ function CoreCarousel({ data, component }) {
 }
 CoreCarousel.propTypes = {
   data: PropTypes.array.isRequired,
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func,
 };
 
 export default CoreCarousel;

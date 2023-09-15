@@ -1,4 +1,4 @@
-import HotelCard from "../../Home/OurHotel/HotelCard";
+import Card from "../../Home/OurHotel/Card";
 
 function ItemResults({ data }) {
   return (
@@ -12,7 +12,7 @@ function ItemResults({ data }) {
         {data ? (
           <div className='grid gap-x-3 gap-y-3 auto-cols-auto grid-cols-1 sm:grid-cols-2 w-full'>
             {data?.map((card, index) => (
-              <HotelCard
+              <Card
                 key={card?.id}
                 title={card?.name}
                 price={card?.price}

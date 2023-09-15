@@ -26,9 +26,9 @@ function ThemeButton() {
         classIcon={`translate-x-1 ${
           !localStorageTheme ? "text-gray-300" : "text-gray-200"
         }`}
-        size={24}
         icon={iconComponent}
         onClick={handelChooseTheme}
+        size={18}
       />
     </div>
   );

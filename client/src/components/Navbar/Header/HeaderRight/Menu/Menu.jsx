@@ -18,7 +18,6 @@ function Menu() {
           icon={AiOutlineMenu}
           classIcon='text-gray-300'
           size={24}
-          customSize={22}
           onClick={handleShowMenuMore}
         />
         <RegisterToolTip

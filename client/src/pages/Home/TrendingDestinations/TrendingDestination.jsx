@@ -2,31 +2,29 @@ import { useTranslation } from "react-i18next";
 import CoreCarousel from "../../../components/Carousel/CoreCarousel";
 import { trendingDestinations } from "../../../components/Constants/TrendingDestination";
 import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import HomeTitle from "../HomeTitle";
 import RenderTrendingCards from "./RenderTrendingCards";
 import TrendingCardCarousel from "./TrendingCardCarousel";
-import Title from "../../../components/Title/Title";
+import TrendingCardCarouselSkeleton from "./TrendingCardCarouselSkeleton";
+import { useEffect, useState } from "react";
 function TrendingDestination() {
   const { t } = useTranslation();
   const { width } = useRegisterWindowSizeStore();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
   return (
     <div className='w-full mb-5 ml-0 mr-0 mt-0'>
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
-          <div className='flex flex-col'>
-            <Title
-              title={t("TrendingDestination.title")}
-              extraLarge4
-              fontBold
-              colorTitle='dark:text-white'
-              nowrap={false}
-            />
-            <Title
-              title={t("TrendingDestination.subTitle")}
-              xxl
-              colorTitle='text-primary-100 dark:text-primary-50'
-              nowrap={false}
-            />
-          </div>
+          <HomeTitle
+            title={t("TrendingDestination.title")}
+            subTitle={t("TrendingDestination.subTitle")}
+          />
         </div>
 
         {width >= 640 ? (
@@ -52,7 +50,9 @@ function TrendingDestination() {
         ) : (
           <CoreCarousel
             data={trendingDestinations}
-            component={TrendingCardCarousel}
+            component={
+              isLoading ? TrendingCardCarouselSkeleton : TrendingCardCarousel
+            }
           />
         )}
       </div>

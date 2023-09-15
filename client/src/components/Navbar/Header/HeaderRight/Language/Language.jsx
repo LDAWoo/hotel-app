@@ -26,7 +26,7 @@ function Language() {
           <Button
             className='w-full h-full'
             src={currentLanguage?.img}
-            classImg='rounded-full object-cover w-6 h-6'
+            classImg='rounded-full object-cover w-5 w-5 sm:w-6 sm:h-6'
             onClick={handleChooseLanguage}
           />
         </div>

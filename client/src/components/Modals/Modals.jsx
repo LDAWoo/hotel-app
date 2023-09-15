@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../Buttons/Button";
+import Title from "../Title/Title";
+import Icon from "../Icon/Icon";
 
 function Modals({
   classTitle,
@@ -121,6 +123,14 @@ function Modals({
                             ${classTitle}
                             `}
               >
+                <Title
+                  title={title}
+                  colorTitle='dark:text-white flex-1'
+                  xxxl
+                  fontBold
+                  nowrap={false}
+                />
+
                 <button
                   onClick={handleClose}
                   className='
@@ -128,19 +138,14 @@ function Modals({
                                 border-0
                                 hover:opacity-70
                                 transition
-                                absolute
-                                right-5
                                 rounded-full
                                 bg-gray-200
                                 dark:bg-primary-400
                                 text-hotel-50
                                 '
                 >
-                  <IoMdClose size={24} />
+                  <Icon icon={IoMdClose} size={16} />
                 </button>
-                <div className='text-lg font-medium dark:text-white'>
-                  {title}
-                </div>
               </div>
               {/* Body */}
               <div className='relative p-6 flex-auto overflow-y-auto h-full'>

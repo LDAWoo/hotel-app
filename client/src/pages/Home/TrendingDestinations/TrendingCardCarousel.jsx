@@ -18,12 +18,12 @@ function TrendingCardCarousel({ item }) {
           <Title
             title={item?.destination}
             fontMedium
-            xxl
+            xl
             colorTitle='dark:text-white'
           />
           <Title
             title={`${property} properties`}
-            xl
+            large
             colorTitle='dark:text-primary-50'
           />
         </div>

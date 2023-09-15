@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Title from "../../../components/Title/Title";
 function RecentSearchBox({ to, location, content, src, endScroll }) {
   return (
     <div
@@ -7,22 +8,29 @@ function RecentSearchBox({ to, location, content, src, endScroll }) {
         endScroll ? "mr-0" : "mr-3"
       }`}
     >
-      <div className='rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_1px_rgba(200,200,200,0.16)] dark:bg-primary-600 p-[1px]'>
+      <div className='rounded-lg w-full shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_1px_rgba(200,200,200,0.16)] dark:bg-primary-600 p-[1px]'>
         <Link to={to}>
-          <div className='flex items-center p-4 min-h-[100px] border-0'>
-            <div className='min-w-[40px] mr-3'>
+          <div className='flex w-full items-center pl-4 pr-4 pt-2 pb-2 min-h-[100px] border-0 gap-2'>
+            <div style={{ aspectRatio: "20/19" }}>
               <img
                 src={src}
-                className='flex items-center rounded-lg h-20 w-20'
+                className='flex items-center rounded-lg min-h-full min-w-full object-cover'
               />
             </div>
-            <div className='flex flex-col '>
-              <span className='text-[16px] font-medium dark:text-white whitespace-nowrap overflow-hidden text-ellipsis'>
-                {location}
-              </span>
-              <span className='text-[14px] font-normal text-primary-100 dark:text-primary-50'>
-                {content}
-              </span>
+            <div className='flex flex-col w-full'>
+              <Title
+                title={location}
+                colorTitle='dark:text-white'
+                fontBold
+                xl
+              />
+              <div className='flex items-center flex-grow w-full'>
+                <Title
+                  title={content}
+                  colorTitle='text-primary-100 dark:text-primary-50'
+                  large
+                />
+              </div>
             </div>
           </div>
         </Link>

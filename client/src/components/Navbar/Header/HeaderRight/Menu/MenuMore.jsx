@@ -1,6 +1,5 @@
-import i18next from "i18next";
 import { menuMores } from "../../../../Constants/MenuMore";
-import MenuButton from "./MenuButton";
+import Language from "./Language";
 import Theme from "./Theme";
 
 function MenuMore() {
@@ -8,19 +7,7 @@ function MenuMore() {
     <>
       {menuMores.map((menu, index) => (
         <div key={index}>
-          {menu.language &&
-            menu.language.map((langItem) => {
-              if (langItem.code === i18next.language) {
-                return (
-                  <MenuButton
-                    key={langItem.id}
-                    title={langItem.title}
-                    src={langItem?.img}
-                  />
-                );
-              }
-              return null;
-            })}
+          {menu.language && <Language data={menu.language} />}
           {menu?.theme && <Theme data={menu.theme} />}
         </div>
       ))}

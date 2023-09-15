@@ -16,11 +16,9 @@ function Icon({ icon, size, classIcon }) {
                   ? size
                   : width < 480
                   ? size + 2
-                  : width < 640
-                  ? size + 4
-                  : size + 6
+                  : size + 4
                 : 16
-              : size + 8
+              : size + 6
           }
         />
       )}

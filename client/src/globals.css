@@ -5,6 +5,10 @@
 
 :root {
     --max-width: 1100px;
+    --bg-dark-skeleton: #3A3B3C;
+    --fg-dark-skeleton: #3E4042;
+    --bg-light-skeleton: #EBEBEB;
+    --fg-light-skeleton: #F0F0F0;
 }
 
 @layer base {

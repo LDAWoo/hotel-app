@@ -49,7 +49,7 @@ function Card({ data }) {
 
   const handleMouseEnter = useCallback(() => {
     setVisible(!isMobile);
-  }, [isMobile]);
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     setVisible(false);

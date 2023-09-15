@@ -126,7 +126,7 @@ function Modals({
                 <Title
                   title={title}
                   colorTitle='dark:text-white flex-1'
-                  xxxl
+                  xl
                   fontBold
                   nowrap={false}
                 />

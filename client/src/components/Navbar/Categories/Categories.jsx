@@ -67,8 +67,8 @@ function Categories() {
                 className='w-full p-[4px] vsm:p-[5px] sm:p-[6px] text-white'
                 title={item.translationKey}
                 icon={item?.icon}
-                size={18}
-                xl
+                size={16}
+                large
                 fontMedium
               />
             </Link>
@@ -78,11 +78,11 @@ function Categories() {
               <Button
                 className='w-full p-[4px] vsm:p-[5px] sm:p-[6px] text-white'
                 title='More'
-                size={18}
+                size={16}
                 icon={SlOptionsVertical}
                 iconPosition='right'
                 active
-                xl
+                large
                 fontMedium
                 onClick={handleShowCategoriesMore}
               />

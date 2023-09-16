@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
 import Icon from "../../Icon/Icon";
 import Title from "../../Title/Title";
+import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocation";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 function SearchItem({
   className,
   icon,
@@ -21,13 +23,17 @@ function SearchItem({
   button,
 }) {
   const { onCloseAlert } = useRegisterLocationStore();
-
   const [isFocus, setIsFocus] = useState(false);
+  const { onOpen } = useRegisterToolTipLocation();
+  const { isMobile } = useContext(DeviceContext);
 
-  const handleFocus = () => {
+  const handleFocus = useCallback(() => {
     setIsFocus(true);
     onCloseAlert();
-  };
+    if (isMobile) {
+      onOpen();
+    }
+  }, []);
 
   const handleBlur = () => {
     setIsFocus(false);
@@ -60,7 +66,7 @@ function SearchItem({
                 placeholder={placeholder}
                 name={name}
                 value={value}
-                className={`flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:lg:text-[16px] placeholder:font-medium text-[14px] lg:text-[16px]${
+                className={`flex justify-start flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:sm:text-[15px] placeholder:font-medium text-[14px] sm:text-[15px]${
                   isFocus
                     ? "placeholder:text-gray-500 dark:placeholder:text-gray-100"
                     : ""
@@ -85,7 +91,7 @@ function SearchItem({
               <Title
                 title={label}
                 fontMedium
-                titleCustom='text-[14px] lg:text-[16px]'
+                titleCustom='text-[14px] sm:text-[15px]'
                 colorTitle='dark:text-white'
               />
             )}
@@ -94,7 +100,7 @@ function SearchItem({
               <Title
                 colorTitle='text-white'
                 title={title}
-                titleCustom='text-[14px] lg:text-[16px]'
+                titleCustom='text-[14px] sm:text-[15px]'
                 fontBold
               />
             )}

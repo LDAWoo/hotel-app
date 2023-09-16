@@ -5,8 +5,12 @@ import { SlLocationPin } from "react-icons/sl";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
+import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocation";
+import TitleComponent from "../../TitleComponent/TitleComponent";
+import RegisterToolTip from "../../ToolTip/RegisterToolTip/RegisterToolTip";
 import ToolTipAlert from "../../ToolTip/ToolTipAlert";
 import SearchBox from "../SearchBox/SearchItem";
+import LocationMenu from "./LocationMenu";
 
 function LocationBox() {
   const [searchParams] = useSearchParams();
@@ -39,6 +43,14 @@ function LocationBox() {
         handleChangeInput={handleChangeInput}
         handleClose={handleClose}
       />
+      <RegisterToolTip
+        userRegisterToolTip={useRegisterToolTipLocation}
+        component={<TitleComponent title='Enter destination' />}
+        zIndex='z-[999]'
+        render={<LocationMenu />}
+        width={0}
+      />
+
       <ToolTipAlert
         isOpen={isOpen}
         content='Please enter a destination to start searching.'

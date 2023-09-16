@@ -9,7 +9,12 @@ function CardContent({ data }) {
     <div className='w-full pr-2 pb-2 pl-2 pt-1'>
       <div className='flex items-center'>
         <div className='flex-1 '>
-          <Title title={data?.title} xl fontBold colorTitle='dark:text-white' />
+          <Title
+            title={data?.title}
+            titleCustom='text-[15px] sm:text-[16px]'
+            fontBold
+            colorTitle='dark:text-white'
+          />
         </div>
         {data?.rating > 0 && <Star starCount={data?.rating} />}
       </div>
@@ -17,7 +22,7 @@ function CardContent({ data }) {
         <div className='flex items-center mb-2'>
           <Title
             title={data?.description}
-            large
+            titleCustom='text-[14px] sm:text-[15px]'
             colorTitle='text-primary-100 dark:text-primary-50'
           />
         </div>
@@ -25,11 +30,21 @@ function CardContent({ data }) {
       {data?.nightAndAdultAndChild && <div>{data?.nightAndAdultAndChild}</div>}
       {data?.price && (
         <div className='flex items-center gap-1'>
-          <Title title={data?.price} fontBold xl colorTitle='dark:text-white' />
-          <Title title='VND' xl fontBold colorTitle='dark:text-white' />
+          <Title
+            title={data?.price}
+            fontBold
+            titleCustom='text-[15px] sm:text-[16px]'
+            colorTitle='dark:text-white'
+          />
+          <Title
+            title='VND'
+            titleCustom='text-[15px] sm:text-[16px]'
+            fontBold
+            colorTitle='dark:text-white'
+          />
           <Title
             title={t("OurHotel.night")}
-            xl
+            titleCustom='text-[15px] sm:text-[16px]'
             colorTitle='dark:text-primary-50'
           />
         </div>

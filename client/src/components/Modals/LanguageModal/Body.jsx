@@ -39,7 +39,7 @@ function Body() {
         <div className='flex items-center w-full justify-start   '>
           <Title
             title={t("Modal.Language.allLanguage")}
-            xxl
+            xl
             fontMedium
             colorTitle='dark:text-white'
           />
@@ -76,7 +76,7 @@ function Body() {
                 iconPosition='right'
                 classIcon='text-hotel-50'
                 size={16}
-                xl
+                titleCustom='text-[14px] sm:text-[15px]'
                 onClick={() => handleChangeLanguage(lang.code)}
               />
             </div>

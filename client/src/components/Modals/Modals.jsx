@@ -21,6 +21,7 @@ function Modals({
   small,
   outline,
   isButton,
+  hAuto = false,
 }) {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -68,16 +69,16 @@ function Modals({
             dark:bg-primary-700/70'
       >
         <div
-          className='
+          className={`
                 relative 
                 w-full 
                 md:w-5/6 
                 lg:w-[960px] 
                 my-10
                 mx-10
-                h-[calc(100%_-_80px)]
+                ${hAuto ? " h-auto" : "h-[calc(100%_-_80px)]"}
                 2md:h-auto
-                '
+                `}
         >
           {/* Content */}
           <div
@@ -91,7 +92,7 @@ function Modals({
                     `}
           >
             <div
-              className='
+              className={`
                             translate
                             lg:h-auto
                             h-full
@@ -107,7 +108,7 @@ function Modals({
                           dark:border-primary-600 
                             bg-white
                             dark:bg-primary-600
-                        '
+                        `}
             >
               {/* Header */}
               <div
@@ -126,7 +127,7 @@ function Modals({
                 <Title
                   title={title}
                   colorTitle='dark:text-white flex-1'
-                  xxxl
+                  titleCustom='text-[16px] sm:text-[18px]'
                   fontBold
                   nowrap={false}
                 />
@@ -203,6 +204,7 @@ Modals.propTypes = {
   small: PropTypes.string,
   outline: PropTypes.string,
   isButton: PropTypes.bool,
+  hAuto: PropTypes.bool,
 };
 
 export default Modals;

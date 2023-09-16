@@ -19,7 +19,6 @@ function BedRooms() {
         item={[
           <GuestItem
             title='Bedrooms'
-            sizeText='text-[14px]'
             minValue={0}
             maxValue={30}
             value={rooms}

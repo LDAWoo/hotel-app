@@ -153,7 +153,7 @@ function ToolTipCustom({
               </button>
             </div>
             {component && (
-              <div className='pt-10 pl-6 pr-6 pb-1 flex lg:hidden'>
+              <div className='pt-5 sm:pt-10 pl-6 pr-6 pb-1 flex lg:hidden'>
                 {component}
               </div>
             )}

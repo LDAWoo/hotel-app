@@ -19,7 +19,7 @@ function GuestButton({ icon, disable, onClick }) {
             disable ? "text-gray-300 dark:text-primary-400" : "text-hotel-50"
           } bg-transparent`}
         >
-          <Icon icon={icon} size={16} />
+          <Icon icon={icon} size={12} />
         </div>
       )}
     </button>

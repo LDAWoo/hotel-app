@@ -12,7 +12,8 @@ function LanguageModal() {
       title={t("Modal.Language.title")}
       onClose={onClose}
       body={<Body />}
-    ></Modals>
+      hAuto
+    />
   );
 }
 

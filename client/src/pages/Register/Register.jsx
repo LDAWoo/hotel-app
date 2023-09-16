@@ -1,29 +1,28 @@
-import { useContext, useState } from "react";
-import { use100vh } from "react-div-100vh";
-
-import { ThemeContext } from "../../components/Contexts/AppThemeProvider";
-import Code from "./Code/Code";
+import { useNavigate } from "react-router-dom";
+import useRegisterUserRegister from "../../hooks/Register/useRegisterUserRegister";
+import { post } from "../../utils/request";
 import Entry from "./Entry/Entry";
-
+import routesConfig from "../../configs/routesConfig";
 function Register() {
-  const { darkMode } = useContext(ThemeContext);
-  const heightWindow = use100vh();
-  const [visible, setVisible] = useState(true);
+  const { firstName, lastName, email, password } = useRegisterUserRegister();
+  const navigate = useNavigate();
 
-  const handleConfirm = () => {
-    setVisible(false);
+  const handleSignIn = async () => {
+    try {
+      const response = await post("auth/register", {
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      console.log("Đăng ký thành công:", response);
+      navigate(routesConfig.checkEmail);
+    } catch (error) {
+      console.error("Sign in failed:", error);
+    }
   };
 
-  return (
-    <div className={`${darkMode}`}>
-      <div
-        className={`flex justify-center p-[48px] bg-gray-50 dark:bg-primary-700`}
-        style={{ minHeight: heightWindow }}
-      >
-        {visible ? <Entry onConfirm={handleConfirm} /> : <Code />}
-      </div>
-    </div>
-  );
+  return <Entry onClick={handleSignIn} />;
 }
 
 export default Register;

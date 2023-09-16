@@ -11,7 +11,7 @@ function ToolTipAlert({ isOpen, content }) {
       {content && (
         <div className='before:absolute before:border-b-[5px] before:border-[#d4111e] bo before:w-0 before:h-0 before:border-l-[5px] before:border-l-transparent before:border-r-[5px] before:border-r-transparent before:left-[14px] before:bottom-[100%]'>
           <div className='bg-[#d4111e] p-1 rounded-md'>
-            <Title title={content} colorTitle='text-white' xl />
+            <Title title={content} colorTitle='text-white' large />
           </div>
         </div>
       )}

@@ -16,17 +16,17 @@ function GuestItem({
       <div
         className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal `}
       >
-        <Title title={title} xl fontMedium />
+        <Title title={title} medium fontMedium />
       </div>
       <div className='flex flex-row items-center h-full justify-center'>
-        <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-hotel-50 gap-3'>
+        <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
           <GuestButton
             icon={BiMinus}
             disable={value > minValue ? false : true}
             onClick={handleMinus}
           />
           <span className='flex items-center justify-center dark:text-white font-medium min-w-[20px] max-w-[25px]'>
-            <Title title={value} large />
+            <Title title={value} medium />
           </span>
           <GuestButton
             disable={value === maxValue ? true : false}

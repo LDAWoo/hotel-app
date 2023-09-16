@@ -25,7 +25,7 @@ function Language() {
         <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md bg-transparent hover:bg-hotel-100 '>
           <Button
             className='w-full h-full'
-            src={currentLanguage?.img}
+            src={currentLanguage?.img || "/images/flagVietNam.png"}
             classImg='rounded-full object-cover w-5 w-5 sm:w-6 sm:h-6'
             onClick={handleChooseLanguage}
           />

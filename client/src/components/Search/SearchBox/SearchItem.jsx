@@ -22,10 +22,10 @@ function SearchItem({
   onClick,
   button,
 }) {
+  const { isMobile } = useContext(DeviceContext);
   const { onCloseAlert } = useRegisterLocationStore();
   const [isFocus, setIsFocus] = useState(false);
   const { onOpen } = useRegisterToolTipLocation();
-  const { isMobile } = useContext(DeviceContext);
 
   const handleFocus = useCallback(() => {
     setIsFocus(true);

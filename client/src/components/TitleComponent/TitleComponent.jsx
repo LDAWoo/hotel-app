@@ -20,7 +20,7 @@ function TitleComponent({ src, icon, title }) {
           </div>
         )}
         {title && (
-          <Title title={title} xxxl fontMedium colorTitle='dark:text-white' />
+          <Title title={title} xxl fontMedium colorTitle='dark:text-white' />
         )}
       </div>
     </div>

@@ -4,8 +4,6 @@ import AppAuthProvider from "./components/Contexts/AppAuthProvider";
 import AppDeviceProvider from "./components/Contexts/AppDeviceProvider";
 import AppThemeProvider from "./components/Contexts/AppThemeProvider";
 import AppUserProvider from "./components/Contexts/AppUserProvider";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
 import { publicRoutesPathComponent } from "./routes/routes";
 
 function App() {
@@ -31,8 +29,6 @@ function App() {
                   />
                 );
               })}
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
             </Routes>
           </AppUserProvider>
         </AppDeviceProvider>

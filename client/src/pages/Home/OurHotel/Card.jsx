@@ -57,7 +57,7 @@ function Card({ data }) {
 
   return (
     <div
-      className='box-border border rounded-lg border-gray-200 dark:border-primary-500'
+      className='box-border border rounded-lg border-gray-200 dark:bg-primary-600 dark:border-primary-500'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

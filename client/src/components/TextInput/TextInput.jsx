@@ -1,12 +1,12 @@
 import Icon from "../Icon/Icon";
 import ToolTip from "../ToolTip/ToolTip";
-
 import PropTypes from "prop-types";
 
 function TextInput({
   className,
   label,
   classLabel,
+  classBorder,
   classInput,
   classToolTip,
   icon,
@@ -21,6 +21,7 @@ function TextInput({
   tooltip,
   placement,
   placeholder,
+  onClickCopy,
   ...props
 }) {
   return (
@@ -29,19 +30,28 @@ function TextInput({
         <div className={classLabel}>
           {label}{" "}
           {tooltip && (
-            <ToolTip className={classToolTip} content={tooltip} placement={placement}>
+            <ToolTip
+              className={classToolTip}
+              content={tooltip}
+              placement={placement}
+            >
               {tooltip}
             </ToolTip>
           )}
         </div>
       )}
-      <div className='relative w-full rounded-lg duration-200 outline-none border-[2px] dark:border-gray-800 '>
+      <div
+        className={`relative w-full rounded-lg duration-200 outline-none ${
+          !classBorder ? "border-[2px] dark:border-gray-800" : classBorder
+        }`}
+      >
         <input
           className={`${
-            !classInput &&
-            `bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${
-              icon ? "pl-[48px]" : "pl-[10px]"
-            }`
+            !classInput
+              ? `bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${
+                  icon ? "pl-[48px]" : "pl-[10px]"
+                }`
+              : classInput
           } `}
           placeholder={placeholder}
           {...props}
@@ -49,17 +59,18 @@ function TextInput({
         {icon && (
           <div
             className={`${
-              !classIcon &&
-              "absolute top-0 bottom-0 flex justify-center items-center pl-2 text-primary-100 dark:text-primary-50"
+              !classIcon
+                ? "absolute top-0 bottom-0 flex justify-center items-center pl-2 text-primary-100 dark:text-primary-50"
+                : classIcon
             }`}
           >
             <Icon icon={icon} size={sizeIcon} />
           </div>
         )}
         {copy && (
-          <button className={classCopy}>
+          <div className={classCopy} onClick={onClickCopy}>
             <Icon icon={iconCopy} size={sizeIconCopy} />
-          </button>
+          </div>
         )}
         {currency && <div className={classCurrency}>{currency}</div>}
       </div>
@@ -74,17 +85,19 @@ TextInput.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.elementType,
   iconCopy: PropTypes.elementType,
-  copy: PropTypes.string,
+  copy: PropTypes.bool,
   currency: PropTypes.string,
   tooltip: PropTypes.string,
   placement: PropTypes.string,
   placeholder: PropTypes.string,
   classCurrency: PropTypes.string,
+  classBorder: PropTypes.string,
   classToolTip: PropTypes.string,
   classIcon: PropTypes.string,
   classCopy: PropTypes.string,
   sizeIcon: PropTypes.number,
   sizeIconCopy: PropTypes.number,
+  onClickCopy: PropTypes.func,
 };
 
 export default TextInput;

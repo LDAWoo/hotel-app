@@ -6,8 +6,8 @@ import Title from "../Title/Title";
 function Star({ starCount }) {
   return (
     <div className='flex items-center gap-1 text-secondary-50 font-medium'>
-      <Icon icon={AiFillStar} size={12} />
-      <Title title={starCount} medium fontMedium />
+      <Icon icon={AiFillStar} size={13} />
+      <Title title={starCount} large fontMedium />
     </div>
   );
 }

@@ -43,9 +43,9 @@ function ThemeMenu() {
                 : "dark:text-primary-50"
             }`}
             icon={theme?.icon}
-            xl
             fontMedium
             size={16}
+            titleCustom='text-[14px] sm:text-[15px]'
             classIcon={`${
               !localStorageTheme
                 ? theme?.code === "system"

@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
 import Icon from "../../Icon/Icon";
 import Title from "../../Title/Title";
+import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocation";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 function SearchItem({
   className,
   icon,
@@ -21,13 +23,17 @@ function SearchItem({
   button,
 }) {
   const { onCloseAlert } = useRegisterLocationStore();
-
   const [isFocus, setIsFocus] = useState(false);
+  const { onOpen } = useRegisterToolTipLocation();
+  const { isMobile } = useContext(DeviceContext);
 
-  const handleFocus = () => {
+  const handleFocus = useCallback(() => {
     setIsFocus(true);
     onCloseAlert();
-  };
+    if (isMobile) {
+      onOpen();
+    }
+  }, []);
 
   const handleBlur = () => {
     setIsFocus(false);

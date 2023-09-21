@@ -16,7 +16,7 @@ function GuestItem({
       <div
         className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal `}
       >
-        <Title title={title} medium fontMedium />
+        <Title title={title} xl fontMedium />
       </div>
       <div className='flex flex-row items-center h-full justify-center'>
         <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
@@ -26,7 +26,7 @@ function GuestItem({
             onClick={handleMinus}
           />
           <span className='flex items-center justify-center dark:text-white font-medium min-w-[20px] max-w-[25px]'>
-            <Title title={value} medium />
+            <Title title={value} xl />
           </span>
           <GuestButton
             disable={value === maxValue ? true : false}

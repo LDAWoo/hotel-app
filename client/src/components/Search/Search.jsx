@@ -8,6 +8,7 @@ import CalendarBox from "./Calendar/CalendarBox";
 import GuestBox from "./Guest/GuestBox";
 import LocationBox from "./Location/LocationBox";
 import SearchBox from "./SearchBox/SearchBox";
+import { useTranslation } from "react-i18next";
 
 function Search() {
   const { valueLocation, onOpenAlert, onCloseAlert } =
@@ -15,6 +16,7 @@ function Search() {
   const { startDate, endDate } = useRegisterDateStore();
   const { adult, child, rooms } = useRegisterGuestStore();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = () => {
     const location = valueLocation?.split(" ").join("+");
@@ -46,7 +48,11 @@ function Search() {
               <LocationBox />
               <CalendarBox />
               <GuestBox />
-              <SearchBox onClick={handleSubmit} className='w-full' />
+              <SearchBox
+                onClick={handleSubmit}
+                className='w-full'
+                title={t("Search.search")}
+              />
             </div>
           </div>
         </div>

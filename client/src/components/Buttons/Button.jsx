@@ -5,6 +5,7 @@ import Title from "../Title/Title";
 import { memo } from "react";
 function Button({
   className,
+  background,
   classIcon,
   active,
   icon,
@@ -41,11 +42,13 @@ function Button({
           ? `relative 
             disabled:opacity-70 
             disabled:cursor-not-allowed 
-            rounded-lg 
             hover:opacity-80 
             transition w-full
             `
           : className
+      } ${
+        background &&
+        "bg-hotel-100 hover:bg-hotel-300 duration-200 w-full flex items-center justify-center"
       }`}
       disabled={disabled}
       onClick={onClick}
@@ -132,6 +135,7 @@ function Button({
 
 Button.propTypes = {
   className: PropTypes.string,
+  background: PropTypes.bool,
   classIcon: PropTypes.string,
   icon: PropTypes.elementType,
   classTitle: PropTypes.string,

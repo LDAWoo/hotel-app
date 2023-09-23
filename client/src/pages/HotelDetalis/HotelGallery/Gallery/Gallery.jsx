@@ -12,7 +12,6 @@ const remainingPhotos =
 
 function Gallery() {
   const { width } = useRegisterWindowSizeStore();
-  console.log(photos);
   return (
     <div className='relative w-full overflow-hidden'>
       {width > 640 ? (

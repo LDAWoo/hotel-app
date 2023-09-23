@@ -35,7 +35,7 @@ function CalendarCustom() {
       minDate={new Date()}
       rangeColors={["#006CE4"]}
       onChange={handleDateChange}
-      months={2}
+      months={1}
       direction={direction}
       showDateDisplay={false}
       showMonthArrow={true}

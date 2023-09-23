@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { useCallback, useContext, useState } from "react";
+import { useContext, useState } from "react";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 import useRegisterLocationStore from "../../../hooks/useRegisterLocationStore";
+import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocation";
 import Icon from "../../Icon/Icon";
 import Title from "../../Title/Title";
-import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocation";
-import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 function SearchItem({
   className,
   icon,
@@ -21,19 +21,20 @@ function SearchItem({
   handleClose,
   onClick,
   button,
+  componentError,
 }) {
   const { isMobile } = useContext(DeviceContext);
   const { onCloseAlert } = useRegisterLocationStore();
   const [isFocus, setIsFocus] = useState(false);
   const { onOpen } = useRegisterToolTipLocation();
 
-  const handleFocus = useCallback(() => {
+  const handleFocus = () => {
     setIsFocus(true);
     onCloseAlert();
     if (isMobile) {
       onOpen();
     }
-  }, []);
+  };
 
   const handleBlur = () => {
     setIsFocus(false);
@@ -56,8 +57,13 @@ function SearchItem({
             } ${button && icon ? "justify-start" : "justify-center"}`}
           >
             {icon && (
-              <div className={` ${title ? "text-white" : "dark:text-white"}`}>
+              <div
+                className={` ${
+                  title ? "text-white" : "dark:text-white"
+                } relative`}
+              >
                 <Icon icon={icon} size={size} />
+                {componentError}
               </div>
             )}
             {input && (
@@ -115,6 +121,7 @@ SearchItem.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.elementType,
   iconClose: PropTypes.elementType,
+  componentError: PropTypes.node,
   title: PropTypes.string,
   label: PropTypes.string,
   input: PropTypes.bool,

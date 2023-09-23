@@ -11,7 +11,7 @@ function CardContent({ data }) {
         <div className='flex-1 '>
           <Title
             title={data?.title}
-            titleCustom='text-[15px] sm:text-[16px]'
+            xxl
             fontBold
             colorTitle='dark:text-white'
           />
@@ -22,7 +22,7 @@ function CardContent({ data }) {
         <div className='flex items-center mb-2'>
           <Title
             title={data?.description}
-            titleCustom='text-[14px] sm:text-[15px]'
+            xxl
             colorTitle='text-primary-100 dark:text-primary-50'
           />
         </div>
@@ -33,18 +33,13 @@ function CardContent({ data }) {
           <Title
             title={data?.price}
             fontBold
-            titleCustom='text-[15px] sm:text-[16px]'
+            xxl
             colorTitle='dark:text-white'
           />
-          <Title
-            title='VND'
-            titleCustom='text-[15px] sm:text-[16px]'
-            fontBold
-            colorTitle='dark:text-white'
-          />
+          <Title title='VND' xxl fontBold colorTitle='dark:text-white' />
           <Title
             title={t("OurHotel.night")}
-            titleCustom='text-[15px] sm:text-[16px]'
+            xxl
             colorTitle='dark:text-primary-50'
           />
         </div>

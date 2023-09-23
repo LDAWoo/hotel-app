@@ -13,11 +13,11 @@ function Banner() {
               <div className='flex flex-col w-full'>
                 <Title
                   title={t("Banner.title")}
-                  extraLarge5
+                  extraLarge6
                   fontBold
                   nowrap={false}
                 />
-                <Title title={t("Banner.subTitle")} xxl nowrap={false} />
+                <Title title={t("Banner.subTitle")} xxxl nowrap={false} />
               </div>
               <div>
                 <Button

@@ -26,7 +26,7 @@ function CalendarCustom() {
   };
 
   useEffect(() => {
-    width < 640 ? setDirection("vertical") : setDirection("horizontal");
+    width < 900 ? setDirection("vertical") : setDirection("horizontal");
   }, [width]);
 
   return (

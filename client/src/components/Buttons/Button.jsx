@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Icon from "../Icon/Icon";
 import Image from "../Image/Image";
 import Title from "../Title/Title";
+import { memo } from "react";
 function Button({
   className,
   classIcon,
@@ -161,4 +162,4 @@ Button.propTypes = {
   titleCustom: PropTypes.string,
 };
 
-export default Button;
+export default memo(Button);

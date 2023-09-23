@@ -4,6 +4,7 @@ import { getHotels } from "../../../api/Hotel/index";
 import HomeTitle from "../HomeTitle";
 import Card from "./Card";
 import HotelCardSkeleton from "./HotelCardSkeleton";
+import CardContent from "./CardContent";
 
 function OurHotel() {
   const { t } = useTranslation();
@@ -33,7 +34,13 @@ function OurHotel() {
         <div className='grid gap-4 auto-cols-auto grid-cols-1 2vsm:grid-cols-2 2md:grid-cols-3 w-full '>
           {ourHotels?.products?.map((card) => (
             <Fragment key={card.id}>
-              {isLoading ? <HotelCardSkeleton /> : <Card data={card} />}
+              {isLoading ? (
+                <HotelCardSkeleton />
+              ) : (
+                <Card data={card}>
+                  <CardContent data={card} />
+                </Card>
+              )}
             </Fragment>
           ))}
         </div>

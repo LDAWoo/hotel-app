@@ -1,14 +1,18 @@
+import PropTypes from "prop-types";
 import LocationBox from "../../../../../components/Search/Location/LocationBox";
+import SearchTitle from "../SearchTitle";
 
 function Location({ title }) {
   return (
     <>
-      <div>
-        <span className='text-primary-700 text-[14px]'>{title}</span>
-      </div>
+      <SearchTitle title={title} />
       <LocationBox />
     </>
   );
 }
+
+Location.propTypes = {
+  title: PropTypes.string,
+};
 
 export default Location;

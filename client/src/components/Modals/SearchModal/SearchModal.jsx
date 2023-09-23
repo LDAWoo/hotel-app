@@ -12,6 +12,7 @@ function SearchModal() {
       onClose={onClose}
       title={t("Search.search")}
       body={<SideBar />}
+      hAuto
     />
   );
 }

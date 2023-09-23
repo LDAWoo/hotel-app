@@ -7,11 +7,10 @@ import Arrow from "../../../components/Arrow/Arrow";
 import Carousel from "../../../components/Carousel/Carousel";
 import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 import Image from "../../../components/Image/Image";
-import CardContent from "./CardContent";
 import CardHeart from "./CardHeart";
 import routesConfig from "../../../configs/routesConfig";
 
-function Card({ data }) {
+function Card({ data, children }) {
   const { isMobile } = useContext(DeviceContext);
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -29,16 +28,16 @@ function Card({ data }) {
 
   let startDisplayIndex = Math.max(0, current - halfDisplayedItems);
   let endDisplayIndex = Math.min(
-    data?.images.length - 1,
+    data?.images?.length - 1,
     current + halfDisplayedItems,
   );
 
   if (startDisplayIndex === 0) {
     endDisplayIndex = Math.min(
-      data?.images.length - 1,
+      data?.images?.length - 1,
       startDisplayIndex + numDisplayedItems - 1,
     );
-  } else if (endDisplayIndex === data?.images.length - 1) {
+  } else if (endDisplayIndex === data?.images?.length - 1) {
     startDisplayIndex = Math.max(0, endDisplayIndex - numDisplayedItems + 1);
   }
 
@@ -57,7 +56,7 @@ function Card({ data }) {
 
   return (
     <div
-      className='box-border border rounded-lg border-gray-200 dark:bg-primary-600 dark:border-primary-500'
+      className='box-border border rounded-lg border-gray-200 bg-transparent dark:border-primary-500'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -71,8 +70,15 @@ function Card({ data }) {
             />
             <div className='flex flex-col '>
               {/* image */}
-              <div className='relative mb-4' style={{ aspectRatio: "20/19" }}>
-                <div className='relative bg-gray-200 rounded-tl-lg rounded-tr-lg overflow-clip'>
+              <div
+                className={`relative ${children ? "mb-4" : "mb-0"}`}
+                style={{ aspectRatio: "20/19" }}
+              >
+                <div
+                  className={`relative  ${
+                    children ? "rounded-tl-lg rounded-tr-lg" : "rounded-lg"
+                  } overflow-clip`}
+                >
                   <div className='grid relative'>
                     <div className='absolute top-0 bottom-0 left-0 right-0 '>
                       <div className='relative w-full h-full p-2'>
@@ -147,7 +153,11 @@ function Card({ data }) {
                                   <Image
                                     src={img}
                                     key={index}
-                                    className={`min-w-full min-h-full rounded-tl-lg rounded-tr-lg object-cover`}
+                                    className={`min-w-full min-h-full ${
+                                      children
+                                        ? "rounded-tl-lg rounded-tr-lg"
+                                        : "rounded-lg"
+                                    } object-cover`}
                                   />
                                 ))}
                               </Carousel>
@@ -160,8 +170,8 @@ function Card({ data }) {
                 </div>
               </div>
 
-              {/* content */}
-              <CardContent data={data} />
+              {/* children */}
+              {children}
             </div>
           </div>
         </div>
@@ -172,5 +182,6 @@ function Card({ data }) {
 
 Card.propTypes = {
   data: PropsTypes.object,
+  children: PropsTypes.node,
 };
 export default Card;

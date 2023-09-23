@@ -42,6 +42,12 @@ function LocationBox() {
         value={valueLocation}
         handleChangeInput={handleChangeInput}
         handleClose={handleClose}
+        componentError={
+          <ToolTipAlert
+            isOpen={isOpen}
+            content='Please enter a destination to start searching.'
+          />
+        }
       />
       <RegisterToolTip
         userRegisterToolTip={useRegisterToolTipLocation}
@@ -49,11 +55,6 @@ function LocationBox() {
         zIndex='z-[999]'
         render={<LocationMenu />}
         width={0}
-      />
-
-      <ToolTipAlert
-        isOpen={isOpen}
-        content='Please enter a destination to start searching.'
       />
     </div>
   );

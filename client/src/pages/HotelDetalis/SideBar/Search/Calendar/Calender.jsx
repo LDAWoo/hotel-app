@@ -1,14 +1,18 @@
+import PropTypes from "prop-types";
 import CalendarBox from "../../../../../components/Search/Calendar/CalendarBox";
+import SearchTitle from "../SearchTitle";
 
 function Calender({ title }) {
   return (
     <>
-      <div>
-        <span className='text-primary-700 text-[14px]'>{title}</span>
-      </div>
+      <SearchTitle title={title} />
       <CalendarBox />
     </>
   );
 }
+
+Calender.propTypes = {
+  title: PropTypes.string,
+};
 
 export default Calender;

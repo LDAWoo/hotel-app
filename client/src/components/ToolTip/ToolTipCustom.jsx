@@ -158,7 +158,7 @@ function ToolTipCustom({
               </div>
             )}
             {render && (
-              <div className='relative flex-auto pl-0 pr-0 pt-5 pb-20 lg:pt-0 lg:pb-0'>
+              <div className='relative flex-auto pl-0 pr-0 pt-5 pb-20 lg:pt-0 lg:pb-0 overflow-y-auto no-scrollbar'>
                 {render}
               </div>
             )}

@@ -4,6 +4,7 @@ import useRegisterDateStore from "../../../../hooks/useRegisterDateStore";
 import Calender from "./Calendar/Calender";
 import Guest from "./Guest/Guest";
 import Location from "./Location/Location";
+import Title from "../../../../components/Title/Title";
 
 function Search() {
   const { t } = useTranslation();
@@ -13,12 +14,15 @@ function Search() {
   const numberOfNights = Math.round(endDate - startDate) / oneDay;
 
   return (
-    <div className='p-2 bg-secondary-50 dark:bg-[#E8930C] w-full'>
+    <div className='p-2 bg-secondary-50 dark:bg-secondary-50/60 w-full'>
       <div className='flex flex-col w-full gap-1'>
         <div className=''>
-          <span className='text-[18px] font-medium text-primary-700'>
-            {t("Search.search")}
-          </span>
+          <Title
+            title={t("Search.search")}
+            fontBold
+            xxxl
+            colorTitle='text-primary-700 dark:text-white'
+          />
         </div>
         <Location title='Destination/property name:' />
         <Calender title='Check in - Check out' />

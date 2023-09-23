@@ -11,7 +11,7 @@ function Location() {
         <Title
           title='100 Cô Giang 34, District 1, Ho Chi Minh City, Vietnam'
           colorTitle='dark:text-primary-50'
-          medium
+          xl
           nowrap={false}
         />
       </div>

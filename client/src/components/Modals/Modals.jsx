@@ -76,6 +76,7 @@ function Modals({
                 lg:w-[960px] 
                 my-10
                 mx-10
+                z-[]
                 ${hAuto ? " h-auto" : "h-[calc(100%_-_80px)]"}
                 2md:h-auto
                 `}

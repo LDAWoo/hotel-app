@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Search from "./Search/Search";
 
 function SideBar() {
@@ -12,4 +13,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default memo(SideBar);

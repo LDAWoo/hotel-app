@@ -8,6 +8,8 @@ import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import HotelGallery from "./HotelGallery/HotelGallery";
 import HotelProperty from "./HotelProperty/HotelProperty";
 import SideBar from "./SideBar/SideBar";
+import DescriptionHighlight from "./DescriptionHighlight/DescriptionHighlight";
+import GuestReview from "./GuestReview/GuestReview";
 
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
@@ -55,6 +57,8 @@ function HotelDetails() {
           </div>
 
           <HotelProperty />
+          <DescriptionHighlight />
+          <GuestReview />
         </div>
       </div>
     </div>

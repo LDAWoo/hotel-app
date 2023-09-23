@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Gallery from "./Gallery/Gallery";
 import Header from "./Header/Header";
 
@@ -12,4 +13,4 @@ function HotelGallery() {
   );
 }
 
-export default HotelGallery;
+export default memo(HotelGallery);

@@ -1,14 +1,17 @@
+import PropTypes from "prop-types";
 import GuestBox from "../../../../../components/Search/Guest/GuestBox";
+import SearchTitle from "../SearchTitle";
 
 function Guest({ title }) {
   return (
     <>
-      <div>
-        <span className='text-primary-700 text-[14px]'>{title}</span>
-      </div>
+      <SearchTitle title={title} />
       <GuestBox />
     </>
   );
 }
+Guest.propTypes = {
+  title: PropTypes.string,
+};
 
 export default Guest;

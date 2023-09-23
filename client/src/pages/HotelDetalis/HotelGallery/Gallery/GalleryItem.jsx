@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Title from "../../../../components/Title/Title";
 function GalleryItem({ imgURL, width, height, left, right, values, imageEnd }) {
   return (
     <Link
@@ -11,11 +12,14 @@ function GalleryItem({ imgURL, width, height, left, right, values, imageEnd }) {
       style={{ backgroundImage: `url('${imgURL}')` }}
     >
       <img src={imgURL} className='hidden' />
-      {imageEnd && (
+      {imageEnd && values > 0 && (
         <div className='absolute top-0 flex items-center justify-center bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.40)] z-10'>
-          <span className='text-white font-bold text-[18px] border-b-[1px]'>
-            +{values} photos
-          </span>
+          <Title
+            colorTitle='text-white border-b-[1px]'
+            title={`+${values} photos`}
+            fontBold
+            extraLarge4
+          />
         </div>
       )}
     </Link>

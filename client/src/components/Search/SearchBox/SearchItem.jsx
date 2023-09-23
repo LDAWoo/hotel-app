@@ -21,6 +21,7 @@ function SearchItem({
   handleClose,
   onClick,
   button,
+  componentError,
 }) {
   const { isMobile } = useContext(DeviceContext);
   const { onCloseAlert } = useRegisterLocationStore();
@@ -56,8 +57,13 @@ function SearchItem({
             } ${button && icon ? "justify-start" : "justify-center"}`}
           >
             {icon && (
-              <div className={` ${title ? "text-white" : "dark:text-white"}`}>
+              <div
+                className={` ${
+                  title ? "text-white" : "dark:text-white"
+                } relative`}
+              >
                 <Icon icon={icon} size={size} />
+                {componentError}
               </div>
             )}
             {input && (
@@ -115,6 +121,7 @@ SearchItem.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.elementType,
   iconClose: PropTypes.elementType,
+  componentError: PropTypes.node,
   title: PropTypes.string,
   label: PropTypes.string,
   input: PropTypes.bool,

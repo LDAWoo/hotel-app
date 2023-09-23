@@ -1,10 +1,11 @@
 import { BiHomeAlt2 } from "react-icons/bi";
 import HotelPropertyItems from "./HotelPropertyItem";
+import { memo } from "react";
 
 function HotelProperty() {
   return (
     <div className='w-full'>
-      <ul className='flex list-none items-center gap-1 sm:gap-2 overflow-x-auto sm:flex-wrap sm:overflow-x-hidden w-full'>
+      <ul className='flex list-none items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar sm:flex-wrap sm:overflow-x-hidden w-full'>
         <HotelPropertyItems icon={BiHomeAlt2} title='Căn hộ' />
         <HotelPropertyItems icon={BiHomeAlt2} title='Bếp' />
         <HotelPropertyItems icon={BiHomeAlt2} title='Nhìn ra thành phố' />
@@ -21,4 +22,4 @@ function HotelProperty() {
   );
 }
 
-export default HotelProperty;
+export default memo(HotelProperty);

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 function CoreCarousel({ data, component }) {
   const Component = component;
   return (
-    <div className='bg-gray-100 dark:bg-primary-600 pl-2 pr-2 pb-3 pt-3 border-[1px] dark:border-primary-500 rounded-lg'>
+    <div className='bg-transparent pl-2 pr-2 pb-3 pt-3 border-[1px] dark:border-primary-500 rounded-lg'>
       <ul
         className='flex flex-nowrap list-none m-0 justify-start box-border w-full overflow-x-scroll scroll-smooth no-scrollbar'
         style={{ WebkitOverflowScrolling: "touch" }}

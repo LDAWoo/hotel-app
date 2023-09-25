@@ -9,7 +9,8 @@ import HotelGallery from "./HotelGallery/HotelGallery";
 import HotelProperty from "./HotelProperty/HotelProperty";
 import SideBar from "./SideBar/SideBar";
 import DescriptionHighlight from "./DescriptionHighlight/DescriptionHighlight";
-import GuestReview from "./GuestReview/GuestReview";
+// import GuestReview from "./GuestReview/GuestReview";
+import Availability from "./Availability/Availability";
 
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
@@ -58,7 +59,8 @@ function HotelDetails() {
 
           <HotelProperty />
           <DescriptionHighlight />
-          <GuestReview />
+          <Availability />
+          {/* <GuestReview /> */}
         </div>
       </div>
     </div>

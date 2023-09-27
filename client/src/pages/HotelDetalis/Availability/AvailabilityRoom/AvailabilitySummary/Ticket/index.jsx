@@ -16,9 +16,12 @@ const tickets = [
 const Ticket = () => {
   return (
     <div>
-      <ul className='block list-disc ml-3'>
+      <ul className='block list-disc ml-3 dark:text-primary-700'>
         {tickets.map((item, index) => (
-          <li key={index} className='list-item text-[12px] mb-[2px]'>
+          <li
+            key={index}
+            className='list-item text-[12px] mb-[2px] dark:text-primary-700'
+          >
             {item?.name}
           </li>
         ))}

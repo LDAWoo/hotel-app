@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Body({ data, maxSegments }) {
+function Body({ data, maxSegments, className }) {
   const splitDescription = (text) => {
     const segments = text.trim().split(". ");
     const condition = (index, count) =>
@@ -9,7 +9,9 @@ function Body({ data, maxSegments }) {
     return segments.map((segment, index, array) => (
       <span
         key={index}
-        className={`${condition(index, 0) ? "inline-block" : "hidden"}`}
+        className={`${
+          condition(index, 0) ? "inline-block" : "hidden"
+        } ${className}`}
       >
         {index < maxSegments && segment}
         {index === maxSegments - 1 && index !== array.length - 1
@@ -27,6 +29,7 @@ function Body({ data, maxSegments }) {
 Body.propTypes = {
   data: PropTypes.string,
   maxSegments: PropTypes.number,
+  className: PropTypes.string,
 };
 
 export default Body;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
@@ -7,7 +8,7 @@ import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStor
 import { getLocale } from "../../Locale/Locale";
 import "./CalendarCustom.scss";
 
-function CalendarCustom() {
+function CalendarCustom({ months }) {
   const { startDate, endDate, setStartDate, setEndDate } =
     useRegisterDateStore();
   const { width } = useRegisterWindowSizeStore();
@@ -35,7 +36,7 @@ function CalendarCustom() {
       minDate={new Date()}
       rangeColors={["#006CE4"]}
       onChange={handleDateChange}
-      months={1}
+      months={months}
       direction={direction}
       showDateDisplay={false}
       showMonthArrow={true}
@@ -46,5 +47,9 @@ function CalendarCustom() {
     />
   );
 }
+
+CalendarCustom.propTypes = {
+  months: PropTypes.number,
+};
 
 export default CalendarCustom;

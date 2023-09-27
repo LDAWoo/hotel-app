@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Col = ({ className, render, title, arrow, nowrap = true }) => {
   return (
     <th
-      className={`relative align-top table-cell pt-[6px] pb-[6px] pl-[8px] pr-[8px] text-[12px] border-r border-hotel-100 text-white ${
+      className={`relative align-top table-cell pt-[6px] pb-[6px] pl-[8px] pr-[8px] text-[12px] border-r border-hotel-100 dark:border-primary-600 text-white ${
         nowrap && "whitespace-nowrap"
       } ${className} 
       `}

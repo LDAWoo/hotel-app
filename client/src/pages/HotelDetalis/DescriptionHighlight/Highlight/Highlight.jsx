@@ -4,7 +4,7 @@ import Title from "../../../../components/Title/Title";
 
 function Highlight() {
   return (
-    <div className='w-[33.33%] basis-[33.33%] max-w-[33.33%] pt-3'>
+    <div className='w-full 2md:w-[33.33%] 2md:basis-[33.33%] 2md:max-w-[33.33%] pt-3'>
       <div className='relative w-full m-0 p-0'>
         <div className='border-0 bg-hotel-25 dark:bg-primary-50 clear-both p-3 w-full rounded-[2px]'>
           <Title title='Property highlights' fontBold xl />
@@ -19,7 +19,7 @@ function Highlight() {
               <Title
                 title='Reserve for 2 adults,1 child (for VND 15,800,000)'
                 fontMedium
-                large
+                xl
                 nowrap={false}
               />
             </button>
@@ -29,9 +29,9 @@ function Highlight() {
                 title='Save the property'
                 classTitle='text-hotel-200'
                 classIcon='text-hotel-200'
-                size={14}
+                size={20}
                 fontMedium
-                large
+                xl
                 icon={AiOutlineHeart}
               />
             </div>

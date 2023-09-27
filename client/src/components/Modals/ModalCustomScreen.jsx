@@ -1,0 +1,145 @@
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import Button from "../Buttons/Button";
+import { AiOutlineClose } from "react-icons/ai";
+import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import { DeviceContext } from "../Contexts/AppDeviceProvider";
+import PropTypes from "prop-types";
+
+const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
+  const modalsRef = useRef(null);
+  const [showModal, setShowModal] = useState(isOpen);
+  const { width } = useRegisterWindowSizeStore();
+  const { isMobile } = useContext(DeviceContext);
+  useEffect(() => {
+    const handleMouseDown = (e) => {
+      if (!modalsRef.current) {
+        return;
+      }
+      if (!modalsRef.current.contains(e.target)) {
+        handleClose();
+      }
+      console.log(e.target);
+      console.log(modalsRef.current);
+    };
+    document.addEventListener("mousedown", handleMouseDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
+  const handleClose = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+
+    setShowModal(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [disabled, onClose]);
+
+  if (!isOpen) {
+    return;
+  }
+
+  return (
+    <div
+      className={`
+  flex
+  items-center
+  justify-center
+  fixed
+  outline-none
+  overflow-x-hidden
+  overflow-y-hidden
+  scroll-smooth
+  inset-0
+  bg-primary-700/70
+  m-0
+  ${zIndex}
+`}
+      ref={modalsRef}
+    >
+      <div
+        className={`
+    relative
+    w-full
+    my-0
+    mx-0
+    h-full
+    `}
+        style={{ width: "100%" }}
+      >
+        <div
+          className={`
+      translate-x-0
+      duration-300
+      sm:duration-1000
+      h-full
+      relative
+      ${
+        showModal
+          ? width > 640
+            ? "translate-x-0"
+            : "translate-y-0"
+          : width > 640
+          ? "translate-x-full opacity-20"
+          : "translate-y-full opacity-20"
+      }
+      `}
+        >
+          {/* Content */}
+          <div className='relative w-full h-full overflow-x-hidden overflow-y-auto'>
+            <div className='fixed top-[5%] hidden sm:flex sm:right-[560px] md:right-[675px] 2md:right-[735px] rounded-tl-md rounded-bl-md shadow-[0_0_14px_rgba(10,10,10,0.5)]'>
+              <Button
+                icon={AiOutlineClose}
+                onClick={handleClose}
+                className='text-white bg-hotel-200 dark:bg-hotel-300 dark:hover:bg-hotel-600 hover:bg-hotel-300 p-2 rounded-tl-md rounded-bl-md'
+                size={24}
+              />
+            </div>
+            <div className='absolute w-full top-0 sm:right-0 sm:w-[545px] md:w-[660px] 2md:w-[720px] pb-16 sm:pb-[15px] min-h-full border-box bg-white dark:bg-primary-600 pt-[15px] pl-[25px] pr-[25px] shadow-[0_0_14px_rgba(10,10,10,0.5)]'>
+              {body}
+            </div>
+
+            <div
+              className={`flex ${
+                !isMobile ? "w-[97%]" : "w-full"
+              } gap-2 sm:hidden fixed dark:bg-primary-600 left-0 bottom-0 pb-2 pt-2 pl-3 pr-3 z-[99] border-t dark:border-primary-500`}
+            >
+              <Button
+                title='Back'
+                border
+                onClick={handleClose}
+                className='pt-[4px] pb-[4px]'
+                fontMedium
+              />
+
+              <Button
+                title='Reserve'
+                background
+                className='pt-[4px] pb-[4px]'
+                fontMedium
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+ModalCustomScreen.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
+  body: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
+  zIndex: PropTypes.string,
+};
+
+export default ModalCustomScreen;

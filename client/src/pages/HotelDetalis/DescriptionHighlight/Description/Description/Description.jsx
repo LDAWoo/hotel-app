@@ -28,7 +28,7 @@ function Description() {
 
   return (
     <div className='flex flex-col gap-2'>
-      <div className='text-[14px] dark:text-gray-50'>
+      <div className='text-[14px] dark:text-white'>
         <Body data={description} maxSegments={maxSegments} />
         <DescriptionModal data={description} />
         {segmentsLength > maxSegments && (
@@ -41,7 +41,7 @@ function Description() {
               fontMedium
               title='Show more'
               xl
-              titleCustom='underline pb-1'
+              titleCustom='underline pb-1 dark:text-white'
             />
             <Icon icon={IoIosArrowForward} size={14} />
           </button>

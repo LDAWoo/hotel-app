@@ -11,8 +11,8 @@ const Body = () => {
   ];
 
   return (
-    <tbody className='border-b border-hotel-500 dark:border-primary-600'>
-      <tr className='h-auto table-row border-collapse border-b border-hotel-500 dark:border-primary-600'>
+    <tbody className='border-b border-hotel-500 dark:border-primary-500'>
+      <tr className='h-auto table-row border-collapse border-b border-hotel-500 dark:border-primary-500'>
         <Col className='w-[30%]' render={<AccommodationType />} />
         <Col className='w-[10%]' render={<Person data={data} />} />
         <Col className='' render={<Price />} />

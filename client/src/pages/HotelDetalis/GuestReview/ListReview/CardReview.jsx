@@ -5,7 +5,7 @@ import Body from "../../DescriptionHighlight/Description/Description/Body";
 
 const CardReview = ({ ...props }) => {
   return (
-    <div className='box-border w-full h-full p-4 border dark:border-primary-600'>
+    <div className='box-border w-full h-full p-4 border dark:border-primary-500'>
       <div className='flex flex-col gap-1'>
         {/* Avatar  */}
         <div className='flex flex-row items-center gap-2'>

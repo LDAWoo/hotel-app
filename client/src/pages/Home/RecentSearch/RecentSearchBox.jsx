@@ -1,14 +1,10 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Title from "../../../components/Title/Title";
-function RecentSearchBox({ to, location, content, src, endScroll }) {
+function RecentSearchBox({ to, location, content, src }) {
   return (
-    <div
-      className={`min-w-[calc((100%_-_2px)_/_1)] md:min-w-[calc((100%_-_14px)_/_2)] lg:min-w-[calc((100%_-_24px)_/_3)] ${
-        endScroll ? "mr-0" : "mr-3"
-      }`}
-    >
-      <div className='rounded-lg w-full shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_1px_rgba(200,200,200,0.16)] dark:bg-primary-600 p-[1px]'>
+    <div className={`h-full w-full`}>
+      <div className='rounded-lg w-full h-full dark:bg-primary-600 border dark:border-primary-600'>
         <Link to={to}>
           <div className='flex w-full items-center pl-4 pr-4 pt-2 pb-2 min-h-[100px] border-0 gap-2'>
             <div style={{ aspectRatio: "20/19" }}>

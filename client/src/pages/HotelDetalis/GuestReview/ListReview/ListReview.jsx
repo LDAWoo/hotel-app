@@ -58,7 +58,12 @@ const ListReview = () => {
   return (
     <div className='flex flex-col mt-5 w-full gap-2'>
       <div className='flex flex-row items-center'>
-        <Title title='See what guests loved the most:' fontBold xl />
+        <Title
+          title='See what guests loved the most:'
+          fontBold
+          xl
+          colorTitle='dark:text-white'
+        />
       </div>
       <CarouselCustom
         data={data?.map((item, index) => (

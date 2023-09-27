@@ -19,7 +19,7 @@ const CarouselCustom = ({ data }) => {
       const scrollStep =
         container.clientWidth / (width > 900 ? 3 : width > 640 ? 2 : 1);
       container.scrollLeft -= scrollStep + count;
-      if (container.scrollLeft <= scrollStep + count) {
+      if (container.scrollLeft <= scrollStep + count * 2) {
         setIsArrowLeftVisible(false);
       }
       setIsArrowRightVisible(true);

@@ -14,7 +14,7 @@ function TrendingCard({ to, destination, areaImage, src, maxImage }) {
     >
       <Link className='relative w-full h-full ' to={to}>
         {isHovered && (
-          <div className='absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-b from-primary-700 duration-300' />
+          <div className='absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-b from-primary-700/50 duration-300' />
         )}
         <img src={src} className='w-full h-full object-cover rounded-lg ' />
         <div className='absolute top-6 left-6'>

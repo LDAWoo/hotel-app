@@ -24,7 +24,7 @@ const CardReview = ({ ...props }) => {
           <Body
             maxSegments={1}
             data={props?.description}
-            className='break-words whitespace-pre-line text-[14px] dark:text-white'
+            className='break-words whitespace-pre-line text-[14px] dark:text-primary-50'
           />
         </div>
         {/* ReadMore */}

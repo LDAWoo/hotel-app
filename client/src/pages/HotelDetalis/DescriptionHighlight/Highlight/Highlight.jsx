@@ -19,7 +19,7 @@ function Highlight() {
               <Title
                 title='Reserve for 2 adults,1 child (for VND 15,800,000)'
                 fontMedium
-                large
+                xl
                 nowrap={false}
               />
             </button>
@@ -29,9 +29,9 @@ function Highlight() {
                 title='Save the property'
                 classTitle='text-hotel-200'
                 classIcon='text-hotel-200'
-                size={14}
+                size={20}
                 fontMedium
-                large
+                xl
                 icon={AiOutlineHeart}
               />
             </div>

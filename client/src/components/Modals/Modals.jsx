@@ -65,8 +65,8 @@ function Modals({
             z-50 
             outline-none
             focus:outline-none
-            bg-gray-50/70 
-            dark:bg-primary-700/70'
+            bg-primary-700/70 
+            '
       >
         <div
           className={`

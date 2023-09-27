@@ -72,7 +72,7 @@ function CalendarBox() {
             icon={LuCalendarDays}
           />
         }
-        render={<CalendarCustom />}
+        render={<CalendarCustom months={2} />}
         width={700}
         zIndex='z-[999]'
       />

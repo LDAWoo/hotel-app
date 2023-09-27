@@ -3,7 +3,7 @@ import Popular from "./Popular/Popular";
 
 function DescriptionPopular() {
   return (
-    <div className='w-[66.67%] max-w-[66.67%] basis-[66.67%]'>
+    <div className='w-full 2md:w-[66.67%] 2md:max-w-[66.67%] 2md:basis-[66.67%]'>
       <div className='flex flex-col pt-3 '>
         {/* Description */}
         <Description />

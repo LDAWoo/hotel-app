@@ -4,7 +4,7 @@ import Highlight from "./Highlight/Highlight";
 function DescriptionHighlight() {
   return (
     <>
-      <div className='flex'>
+      <div className='flex flex-col 2md:flex-row'>
         {/* Description */}
         <Description />
         {/* Highlight */}

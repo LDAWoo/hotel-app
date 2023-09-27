@@ -4,7 +4,7 @@ import Title from "../../../../components/Title/Title";
 
 function Highlight() {
   return (
-    <div className='w-[33.33%] basis-[33.33%] max-w-[33.33%] pt-3'>
+    <div className='w-full 2md:w-[33.33%] 2md:basis-[33.33%] 2md:max-w-[33.33%] pt-3'>
       <div className='relative w-full m-0 p-0'>
         <div className='border-0 bg-hotel-25 dark:bg-primary-50 clear-both p-3 w-full rounded-[2px]'>
           <Title title='Property highlights' fontBold xl />

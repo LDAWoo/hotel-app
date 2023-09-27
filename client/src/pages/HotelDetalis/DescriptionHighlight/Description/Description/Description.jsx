@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Body from "./Body";
 import DescriptionModal from "../../../../../components/Modals/DescriptionModal/DescriptionModal";
 import useRegisterModalDescription from "../../../../../hooks/Description/useRegisterModalDescription";
+import useRegisterWindowSizeStore from "../../../../../hooks/useRegisterWindowSizeStore";
 
 function Description() {
   const hotelName = "Bon Ami Hotel - Thien Xuan Hotel";
@@ -12,10 +13,10 @@ function Description() {
   const description =
     "Set in Vung Tau, 500 metres from Back Beach, CAROLINE SEA HOTEL provides accommodation with free WiFi and free private parking. The property is located 1.9 km from Front Beach, 2.6 km from Pineapple Beach and 2.2 km from Nghinh Phong Cape. The accommodation offers room service, a 24-hour front desk and currency exchange for guests. At the hotel, every room comes with a desk. Complete with a private bathroom fitted with a bidet and free toiletries, all guest rooms at CAROLINE SEA HOTEL have a flat-screen TV and air conditioning, and certain rooms also offer a terrace. H";
 
-  const maxSegments = 5;
-
+  const { width } = useRegisterWindowSizeStore();
   const { onOpen } = useRegisterModalDescription();
   const [segmentsLength, setSegmentsLength] = useState();
+  const maxSegments = width > 900 ? 5 : 1;
 
   useEffect(() => {
     setSegmentsLength(description.trim().split(". ").length);
@@ -51,6 +52,7 @@ function Description() {
           title={`${hotelName} đã chào đón khách Staying từ ${startDateHotel}.`}
           fontBold
           large
+          nowrap={false}
           colorTitle='dark:text-gray-50'
         />
       </div>

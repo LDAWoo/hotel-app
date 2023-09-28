@@ -1,25 +1,24 @@
+import PropTypes from "prop-types";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import Button from "../Buttons/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import Button from "../Buttons/Button";
 import { DeviceContext } from "../Contexts/AppDeviceProvider";
-import PropTypes from "prop-types";
 
 const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
   const modalsRef = useRef(null);
+
   const [showModal, setShowModal] = useState(isOpen);
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
   useEffect(() => {
-    const handleMouseDown = (e) => {
+    const handleMouseDown = (event) => {
       if (!modalsRef.current) {
         return;
       }
-      if (!modalsRef.current.contains(e.target)) {
+      if (!modalsRef.current.contains(event.target)) {
         handleClose();
       }
-      console.log(e.target);
-      console.log(modalsRef.current);
     };
     document.addEventListener("mousedown", handleMouseDown);
 
@@ -63,7 +62,6 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
   m-0
   ${zIndex}
 `}
-      ref={modalsRef}
     >
       <div
         className={`
@@ -103,14 +101,17 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
                 size={24}
               />
             </div>
-            <div className='absolute w-full top-0 sm:right-0 sm:w-[545px] md:w-[660px] 2md:w-[720px] pb-16 sm:pb-[15px] min-h-full border-box bg-white dark:bg-primary-600 pt-[15px] pl-[25px] pr-[25px] shadow-[0_0_14px_rgba(10,10,10,0.5)]'>
+            <div
+              className='absolute w-full top-0 sm:right-0 sm:w-[545px] md:w-[660px] 2md:w-[720px] pb-16 sm:pb-[15px] min-h-full border-box bg-white dark:bg-primary-600 pt-[15px] pl-[25px] pr-[25px] shadow-[0_0_14px_rgba(10,10,10,0.5)]'
+              ref={modalsRef}
+            >
               {body}
             </div>
 
             <div
               className={`flex ${
                 !isMobile ? "w-[97%]" : "w-full"
-              } gap-2 sm:hidden fixed dark:bg-primary-600 left-0 bottom-0 pb-2 pt-2 pl-3 pr-3 z-[99] border-t dark:border-primary-500`}
+              } gap-2 sm:hidden fixed bg-white dark:bg-primary-600 left-0 bottom-0 pb-2 pt-2 pl-3 pr-3 z-[99] border-t dark:border-primary-500`}
             >
               <Button
                 title='Back'

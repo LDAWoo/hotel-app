@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Title from "../../../components/Title/Title";
 import Card from "../../Home/OurHotel/Card";
 import PropTypes from "prop-types";
-import HotelCardSkeleton from "../../Home/OurHotel/HotelCardSkeleton";
+import CardContent from "../../Home/OurHotel/CardContent";
 
 function ItemResults({ data, isLoading }) {
   return (
@@ -21,7 +21,9 @@ function ItemResults({ data, isLoading }) {
           <div className='grid gap-3 auto-cols-auto grid-cols-1 vsm:grid-cols-2 w-full'>
             {data?.products?.map((card, index) => (
               <Fragment key={index}>
-                {isLoading ? <HotelCardSkeleton /> : <Card data={card} />}
+                <Card data={card} isLoading={isLoading}>
+                  <CardContent data={card} />
+                </Card>
               </Fragment>
             ))}
           </div>

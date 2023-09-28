@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../Buttons/Button";
-import Title from "../Title/Title";
 import Icon from "../Icon/Icon";
+import Title from "../Title/Title";
 
 function Modals({
+  className,
   classTitle,
   isOpen,
   onSubmit,
@@ -23,7 +24,26 @@ function Modals({
   isButton,
   hAuto = false,
 }) {
+  const modalRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    const handleMouseDown = (event) => {
+      if (!modalRef.current) {
+        return;
+      }
+
+      if (!modalRef.current.contains(event.target)) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleMouseDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, []);
+
   useEffect(() => {
     setShowModal(isOpen);
   }, [isOpen]);
@@ -76,10 +96,10 @@ function Modals({
                 lg:w-[960px] 
                 my-10
                 mx-10
-                z-[]
-                ${hAuto ? " h-auto" : "h-[calc(100%_-_80px)]"}
-                2md:h-auto
+                h-auto
+                ${hAuto ? "h-auto" : "h-[calc(100%_-_80px)]"}
                 `}
+          ref={modalRef}
         >
           {/* Content */}
           <div
@@ -87,7 +107,6 @@ function Modals({
                     translate-x-0
                     duration-300
                     h-full
-                    
                     ${showModal ? "translate-y-0" : "translate-y-full"}
                     ${showModal ? "opacity-100" : "opacity-0"}
                     `}
@@ -97,7 +116,7 @@ function Modals({
                             translate
                             lg:h-auto
                             h-full
-                            rounded-lg
+                            rounded-sm
                             shadow-lg
                             relative
                             flex 
@@ -109,18 +128,17 @@ function Modals({
                           dark:border-primary-600 
                             bg-white
                             dark:bg-primary-600
-                        `}
+                        ${className}`}
             >
               {/* Header */}
               <div
                 className={`
                             flex
                             items-center
-                            p-6
-                            rounded-t
+                            p-4
+                            rounded-sm
                             justify-start
                             relative
-                            border-b-[1px]
                             dark:border-primary-100
                             ${classTitle}
                             `}
@@ -128,7 +146,7 @@ function Modals({
                 <Title
                   title={title}
                   colorTitle='dark:text-white flex-1'
-                  titleCustom='text-[16px] sm:text-[18px]'
+                  xxl
                   fontBold
                   nowrap={false}
                 />
@@ -136,21 +154,19 @@ function Modals({
                 <button
                   onClick={handleClose}
                   className='
-                                p-1
+                                p-[6px]
                                 border-0
-                                hover:opacity-70
                                 transition
-                                rounded-full
-                                bg-gray-200
-                                dark:bg-primary-400
-                                text-hotel-50
+                                dark:text-white
+                                hover:bg-gray-100
+                                dark:hover:bg-primary-500
                                 '
                 >
-                  <Icon icon={IoMdClose} size={16} />
+                  <Icon icon={IoMdClose} size={24} />
                 </button>
               </div>
               {/* Body */}
-              <div className='relative p-6 flex-auto overflow-y-auto h-full'>
+              <div className='relative pt-2 pb-2 pr-4 pl-4 flex-auto overflow-y-auto h-full'>
                 {body}
               </div>
               {/* Footer */}
@@ -189,6 +205,7 @@ function Modals({
 }
 
 Modals.propTypes = {
+  className: PropTypes.string,
   classTitle: PropTypes.string,
   isOpen: PropTypes.bool,
   onSubmit: PropTypes.func,

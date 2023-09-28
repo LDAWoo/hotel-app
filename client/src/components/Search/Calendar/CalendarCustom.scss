@@ -1,5 +1,5 @@
 .dark .rdrCalendarWrapper {
-  background-color: #242526 !important;
+  background-color: var(--bg-dark-600) !important;
 }
 
 .rdrCalendarWrapper {
@@ -31,7 +31,7 @@
 }
 
 .dark .rdrNextPrevButton:hover {
-  background-color: #3a3b3c;
+  background-color: var(--bg-dark-500);
 }
 
 .dark .rdrNextButton i {

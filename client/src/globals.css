@@ -5,8 +5,11 @@
 
 :root {
   --max-width: 1100px;
-  --bg-dark-skeleton: #363738;
-  --fg-dark-skeleton: #3e4042;
+  --bg-dark-500: #1F1F1F;
+  --bg-dark-600: #0A0A0A;
+  --bg-dark-700: #000000;
+  --bg-dark-skeleton: #0A0A0A;
+  --fg-dark-skeleton: #0A0A0A;
   --bg-light-skeleton: #ebebeb;
   --fg-light-skeleton: #f0f0f0;
 }

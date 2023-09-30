@@ -8,7 +8,7 @@ import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
 
-const CardReview = ({ border, style, onReadMoreClick, ...props }) => {
+const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
   const [maxSegments, setMaxSegments] = useState(1);
   const reviewResponseLength =
     props?.reviewResponse && props?.reviewResponse.length;
@@ -28,7 +28,11 @@ const CardReview = ({ border, style, onReadMoreClick, ...props }) => {
     >
       <div
         className={`flex relative ${
-          style ? "flex-col sm:flex-row gap-5" : "flex-col gap-1"
+          style
+            ? vertical
+              ? "flex-col"
+              : "flex-col sm:flex-row gap-5"
+            : "flex-col gap-1"
         }`}
       >
         {/* Avatar  */}

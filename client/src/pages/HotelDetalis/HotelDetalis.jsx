@@ -3,14 +3,16 @@ import { useTranslation } from "react-i18next";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMapFill } from "react-icons/bs";
 import Button from "../../components/Buttons/Button";
+import ImageModal from "../../components/Modals/ImageModal/ImageModal";
 import useRegisterModalSearch from "../../hooks/useRegisterModalSearch";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import Availability from "./Availability/Availability";
+import BodyImageModal from "./BodyImageModal/BodyImageModal";
+import DescriptionHighlight from "./DescriptionHighlight/DescriptionHighlight";
+import GuestReview from "./GuestReview/GuestReview";
 import HotelGallery from "./HotelGallery/HotelGallery";
 import HotelProperty from "./HotelProperty/HotelProperty";
 import SideBar from "./SideBar/SideBar";
-import DescriptionHighlight from "./DescriptionHighlight/DescriptionHighlight";
-import GuestReview from "./GuestReview/GuestReview";
-import Availability from "./Availability/Availability";
 
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
@@ -61,6 +63,7 @@ function HotelDetails() {
           <DescriptionHighlight />
           <Availability />
           <GuestReview />
+          <ImageModal body={<BodyImageModal />} />
         </div>
       </div>
     </div>

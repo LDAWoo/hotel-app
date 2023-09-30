@@ -19,7 +19,7 @@ function Login() {
   const { t } = useTranslation();
 
   return (
-    <div className='min-w[296px] w-full sm:w-[446px] md:w-[380px]'>
+    <div className='min-w-[296px] w-full sm:w-[446px] md:w-[380px]'>
       <Link to='/'>
         <Image
           src='/images/logo-dark.png'

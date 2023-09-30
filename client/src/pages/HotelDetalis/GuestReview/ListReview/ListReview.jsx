@@ -69,7 +69,7 @@ const data = [
       "“Lovely hotel - comfortable, nicely decorated room and in a perfect location, we found several great restaurants literally across the road which was just what we needed after busy days sightseeing.10”",
   },
 ];
-const ListReview = ({ style }) => {
+const ListReview = ({ vertical, style }) => {
   const [selectedReview, setSelectedReview] = useState(null);
   const { onOpen } = useRegisterModalReadMoreReview();
   const handleReadMoreInsideCard = (reviewData) => {
@@ -114,6 +114,7 @@ const ListReview = ({ style }) => {
                 key={index}
                 border
                 style
+                vertical={vertical}
               />
             </>
           ))}

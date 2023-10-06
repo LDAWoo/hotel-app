@@ -22,7 +22,7 @@ function Language() {
         placement='bottom'
         content={t("Modal.Language.title")}
       >
-        <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md bg-transparent hover:bg-hotel-100 '>
+        <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md bg-transparent hover:bg-hotel-200 '>
           <Button
             className='w-full h-full'
             src={currentLanguage?.img || "/images/flagVietNam.png"}

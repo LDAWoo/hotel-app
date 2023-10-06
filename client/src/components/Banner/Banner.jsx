@@ -6,8 +6,8 @@ function Banner() {
   const { t } = useTranslation();
   return (
     <div className='relative'>
-      <div className='relative w-full bg-hotel-200'>
-        <div className='w-full m-auto bg-hotel-200 lg:max-w-[var(--max-width)] mb-10 p-[10px]'>
+      <div className='relative w-full bg-hotel-600'>
+        <div className='w-full m-auto bg-hotel-600 lg:max-w-[var(--max-width)] mb-10 p-[10px]'>
           <div className='w-full text-white h-auto mb-2 my-auto'>
             <div className='flex w-full flex-col items-start justify-start pt-8 gap-5'>
               <div className='flex flex-col w-full'>

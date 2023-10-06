@@ -45,9 +45,9 @@ function Categories() {
   };
 
   return (
-    <div className='flex items-center justify-center bg-hotel-200 w-full'>
+    <div className='flex items-center justify-center bg-hotel-600 w-full'>
       <div
-        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-200 lg:max-w-[var(--max-width)] p-[10px]'
+        className='flex box-border m-auto pt-1 pb-1 w-full bg-hotel-600 lg:max-w-[var(--max-width)] p-[10px]'
         ref={categoriesRef}
       >
         <div className='flex w-full gap-2'>
@@ -58,8 +58,8 @@ function Categories() {
               className={`flex items-center justify-center w-auto h-auto rounded-[24px]
               ${
                 pathName === item.to
-                  ? "border-[2px] border-hotel-50 bg-hotel-100"
-                  : "hover:bg-hotel-100"
+                  ? "border-[2px] border-hotel-50 bg-hotel-200"
+                  : "hover:bg-hotel-200"
               }
               `}
             >
@@ -74,7 +74,7 @@ function Categories() {
             </Link>
           ))}
           {sortedCategories.length > maxVisibleItems && (
-            <div className='flex items-center justify-center w-auto h-auto rounded-[24px] hover:bg-hotel-100'>
+            <div className='flex items-center justify-center w-auto h-auto rounded-[24px] hover:bg-hotel-200'>
               <Button
                 className='w-full p-[4px] vsm:p-[5px] sm:p-[6px] text-white'
                 title='More'

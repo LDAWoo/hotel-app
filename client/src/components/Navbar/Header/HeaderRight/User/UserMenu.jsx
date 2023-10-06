@@ -29,9 +29,9 @@ function UserMenu() {
             icon={u.icon}
             classTitle='dark:text-primary-50'
             title={t(u?.translationKey)}
-            large
+            xxl
             classIcon='dark:text-primary-50'
-            size={16}
+            size={20}
             onClick={() => handleSelectOption(u.type)}
             iconPosition='before'
           />

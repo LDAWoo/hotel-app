@@ -20,10 +20,7 @@ function Entry({ onClick }) {
   };
 
   return (
-    <div className='min-w[296px] w-full sm:w-[446px] md:w-[380px]'>
-      <div className='text-[32px] sm:text-[48px] md:text-[56px] font-bold dark:text-white mb-5'>
-        {t("Register.title")}
-      </div>
+    <div className='w-full sm:w-[446px] md:w-[380px]'>
       <div className='pb-8'>
         <Link to='/'>
           <Image
@@ -32,10 +29,13 @@ function Entry({ onClick }) {
             alt='Staying.com'
           />
         </Link>
-        <div className='text-[16px] sm:text-[18px] md:text-[22px] font-medium dark:text-white mb-4'>
+        <div className='text-[28px] sm:text-[32px] md:text-36px] font-bold dark:text-white mb-5'>
+          {t("Register.title")}
+        </div>
+        <div className='text-[16px] sm:text-[18px] md:text-[20px] font-medium dark:text-white mb-4'>
           {t("Register.registerWithOpenAccount")}
         </div>
-        <div className='flex gap-2'>
+        <div className='flex items-center justify-center gap-2 flex-col sm:flex-row'>
           <Button
             className='w-full pt-2 pb-2 pr-5 pl-5 border-[2px] rounded-md hover:border-gray-700 dark:border-gray-700 cursor-pointer hover:dark:border-gray-400 dark:text-white duration-200'
             classIcon='text-blue-800'
@@ -59,7 +59,7 @@ function Entry({ onClick }) {
         <div className='font-medium dark:text-white text-[16px]'>
           {t("Register.orContinueWithEmail")}
         </div>
-        <div className='flex flex-row gap-1'>
+        <div className='flex flex-col sm:flex-row gap-4 sm:gap-1 w-full'>
           <TextInput
             type='text'
             placeholder={t("Register.firstName")}
@@ -115,15 +115,15 @@ function Entry({ onClick }) {
           onClick={onClick}
         />
       </div>
-      <div className='flex items-center justify-center mt-8 font-medium text-[15px] text-gray-400'>
+      <div className='flex items-center justify-center mt-8 font-medium text-[14px] sm:text-[15px] text-gray-400'>
         {t("Register.description")}
       </div>
       <div className='flex items-center mt-8'>
-        <div className='text-gray-500 font-medium'>
+        <div className='text-gray-500 font-medium text-[14px]'>
           {t("Register.alreadyAMember")}
         </div>
         <Link
-          className='ml-2 font-bold dark:text-white hover:text-blue-600 dark:hover:text-blue-600 duration-200'
+          className='ml-2 text-[14px] font-bold dark:text-white hover:text-blue-600 dark:hover:text-blue-600 duration-200'
           to='/login'
         >
           {t("Register.login")}

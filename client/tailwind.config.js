@@ -36,6 +36,9 @@ export default {
           100: "#E8930C",
           200: "#FF820D",
         },
+        success: {
+          50: "#008009",
+        },
       },
       textColor: {},
       borderColor: {

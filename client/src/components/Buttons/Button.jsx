@@ -38,22 +38,22 @@ function Button({
 }) {
   return (
     <button
-      className={` ${
-        !className
-          ? `relative 
-            disabled:opacity-70 
-            disabled:cursor-not-allowed 
-            hover:opacity-80 
-            transition w-full
-            `
-          : className
+      className={`${
+        background
+          ? disabled
+            ? ""
+            : "bg-hotel-100 hover:bg-hotel-300 duration-200 text-white w-full"
+          : ""
       } ${
-        background &&
-        "bg-hotel-100 hover:bg-hotel-300 duration-200 text-white w-full flex items-center justify-center"
+        border
+          ? disabled
+            ? ""
+            : "border border-hotel-100 text-hotel-100 hover:bg-hotel-25 duration-200 w-full "
+          : ""
       } ${
-        border &&
-        "border border-hotel-100 text-hotel-100 hover:bg-hotel-25 duration-200 w-full flex items-center justify-center"
-      }`}
+        disabled ? "opacity-70 cursor-not-allowed bg-[#d9d9d9]" : ""
+      } flex items-center justify-center transition w-full ${className}`}
+      type='button'
       disabled={disabled}
       onClick={onClick}
     >

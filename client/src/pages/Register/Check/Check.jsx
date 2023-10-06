@@ -10,25 +10,25 @@ function Check() {
     navigate(routesConfig.login);
   };
   return (
-    <div className='w-full vsm:w-[400px] sm:w-[446px] md:w-[380px]'>
-      <div className='flex flex-col items-center justify-center'>
+    <div className='w-full sm:w-[446px] md:w-[380px]'>
+      <div className='flex flex-col items-center justify-center w-full'>
         <Title
           title='Staying.com'
           fontBold
-          titleCustom='text-[28px] sm:text-[32px]'
+          titleCustom='text-[32px] sm:text-[36px]'
           colorTitle='text-hotel-50 mb-8'
         />
         <Title
           title='Check your inbox'
           colorTitle='dark:text-white'
           fontMedium
-          xxl
+          extraLarge4
         />
 
         <Title
           title="We've just emailed a verification link to"
           colorTitle='dark:text-primary-50'
-          medium
+          xl
         />
 
         <Title title={email} fontBold colorTitle='dark:text-white' large />
@@ -36,15 +36,16 @@ function Check() {
         <Title
           title='Once it arrives, it will be valid for 15 minutes.'
           colorTitle='dark:text-primary-50'
-          medium
+          xl
         />
 
         <Button
           title='Back to login'
           classTitle='text-hotel-50'
           fontBold
-          xl
-          className='flex flex-row items-center justify-center border dark:border-hotel-100 w-full p-2 ml-0 mr-0 mt-8 mb-8 hover:opacity-60 duration-300'
+          xxl
+          className='w-full p-2 ml-0 mr-0 mt-8 mb-8 duration-300'
+          border
           onClick={handleBackLogin}
         />
 
@@ -52,7 +53,8 @@ function Check() {
           title='All rights reserved.
 Copyright 2023 - Staying.com™'
           colorTitle='dark:text-white'
-          medium
+          xl
+          nowrap={false}
         />
       </div>
     </div>

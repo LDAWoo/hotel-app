@@ -16,6 +16,9 @@ import CategoryHost from "../pages/HostStaying/CategoryHost/CategoryHost";
 import PropertyHost from "../pages/HostStaying/PropertyHost/PropertyHost";
 import OwnerHost from "../pages/HostStaying/OwnerHost/OwnerHost";
 import FeedBackHost from "../pages/HostStaying/FeedBackHost/FeedBackHost";
+import AddRessHost from "../pages/HostStaying/AddressHost/AddressHost";
+import MapHost from "../pages/HostStaying/MapHost/MapHost";
+import HotelNameHost from "../pages/HostStaying/HotelNameHost/HotelNameHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -55,6 +58,21 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostFeedBack,
     component: FeedBackHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostAddRess,
+    component: AddRessHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostMap,
+    component: MapHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostHotelName,
+    component: HotelNameHost,
     layout: HostLayout,
   },
 ];

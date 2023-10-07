@@ -1,0 +1,42 @@
+/* Slide in từ trái sang phải */
+.slide-in-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-in-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 500ms, opacity 500ms;
+}
+.slide-in-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-in-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 500ms, opacity 500ms;
+}
+
+/* Slide out từ phải sang trái */
+.slide-out-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-out-enter-active {
+  transform: translateX(0);
+  transform: translateY(-100%);
+  opacity: 1;
+  transition: transform 500ms, opacity 500ms;
+}
+.slide-out-exit {
+  transform: translateX(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-out-exit-active {
+  transform: translateX(-100%);
+
+  opacity: 0;
+  transition: transform 500ms, opacity 500ms;
+}

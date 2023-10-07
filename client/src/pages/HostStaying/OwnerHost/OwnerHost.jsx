@@ -8,6 +8,7 @@ import ButtonPrevHost from "../ButtonPrevHost";
 import ItemHost from "../ItemHost";
 import useRegisterFeedBack from "../../../hooks/JoinStaying/FeedBackHost/useRegisterFeedBack";
 import { useNavigate } from "react-router-dom";
+import routesConfig from "../../../configs/routesConfig";
 
 const OwnerHost = () => {
   const { numberOfProperty, setNumberOfProperty } =
@@ -30,12 +31,16 @@ const OwnerHost = () => {
     setNumberOfProperty(e.target.value);
   };
 
+  const handleBack = () => {
+    navigate(routesConfig.becomeAHostProperty);
+  };
+
   const handleContinue = () => {
-    navigate("/join/become-a-host/feedback");
+    navigate(routesConfig.becomeAHostFeedBack);
   };
 
   return (
-    <>
+    <div>
       <div className='max-w-[500px] flex flex-col h-full justify-between'>
         <div className='relative'>
           <div className='flex flex-col p-4 gap-2'>
@@ -74,13 +79,13 @@ const OwnerHost = () => {
       </div>
 
       <div className='flex flex-row gap-2 w-full mt-5 p-4'>
-        <ButtonPrevHost />
+        <ButtonPrevHost onClick={handleBack} />
         <ButtonContinueHost
           disabled={numberOfProperty < 2}
           onClick={handleContinue}
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const CategoryHost = () => {
   };
 
   return (
-    <>
+    <div>
       <div className='max-w-[500px] flex flex-col h-full justify-between'>
         <div className='relative'>
           <div className='flex flex-col p-4 gap-2'>
@@ -38,7 +38,7 @@ const CategoryHost = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

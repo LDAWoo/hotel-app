@@ -4,16 +4,27 @@ import Title from "../../../components/Title/Title";
 import ButtonContinueHost from "../ButtonContinueHost";
 import ButtonPrevHost from "../ButtonPrevHost";
 import ItemHost from "../ItemHost";
+import { useNavigate } from "react-router-dom";
+import routesConfig from "../../../configs/routesConfig";
 
 const PropertyHost = () => {
   const [activeProperty, setActiveProperty] = useState("");
+  const navigate = useNavigate();
 
   const handleChooseProperty = (property) => {
     setActiveProperty(property);
   };
 
+  const handleBack = () => {
+    navigate(routesConfig.becomeAHostCategory);
+  };
+
+  const handleContinue = () => {
+    navigate(routesConfig.becomeAHostOwner);
+  };
+
   return (
-    <>
+    <div>
       <div className='max-w-[500px] flex flex-col h-full justify-between'>
         <div className='relative'>
           <div className='flex flex-col p-4 gap-2'>
@@ -38,10 +49,10 @@ const PropertyHost = () => {
       </div>
 
       <div className='flex w-full flex-row gap-2 mt-5 p-4'>
-        <ButtonPrevHost />
-        <ButtonContinueHost />
+        <ButtonPrevHost onClick={handleBack} />
+        <ButtonContinueHost onClick={handleContinue} />
       </div>
-    </>
+    </div>
   );
 };
 

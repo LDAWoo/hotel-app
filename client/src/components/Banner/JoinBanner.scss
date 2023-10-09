@@ -1,0 +1,43 @@
+.bannerItem {
+  animation-duration: 12s;
+  animation-name: item;
+
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: translateY(0px);
+  transition: transform 1s linear;
+  will-change: transform;
+}
+
+@keyframes item {
+  0% {
+    transform: translateY(0);
+  }
+  18% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-48px);
+  }
+  38% {
+    transform: translateY(-48px);
+  }
+  40% {
+    transform: translateY(-96px);
+  }
+  58% {
+    transform: translateY(-96px);
+  }
+  60% {
+    transform: translateY(-144px);
+  }
+  68% {
+    transform: translateY(-144px);
+  }
+  70% {
+    transform: translateY(-48px);
+  }
+  100% {
+    transform: translateY(-192px);
+  }
+}

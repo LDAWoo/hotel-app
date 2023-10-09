@@ -20,7 +20,7 @@ function ThemeButton() {
   };
 
   return (
-    <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md hover:bg-hotel-100 '>
+    <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md hover:bg-hotel-200 '>
       <Button
         className='w-full h-full'
         classIcon={`translate-x-1 ${
@@ -28,7 +28,7 @@ function ThemeButton() {
         }`}
         icon={iconComponent}
         onClick={handelChooseTheme}
-        size={18}
+        size={20}
       />
     </div>
   );

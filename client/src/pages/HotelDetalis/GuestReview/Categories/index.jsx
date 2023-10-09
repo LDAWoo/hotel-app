@@ -16,7 +16,7 @@ const categoriesData = [
   { id: 6, title: "Location", rating: 5 },
 ];
 
-const Categories = () => {
+const Categories = ({ vertical }) => {
   const { width } = useRegisterWindowSizeStore();
   const [showMore, setShowMore] = useState(true);
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
@@ -34,7 +34,11 @@ const Categories = () => {
   return (
     <div className='flex flex-col gap-2 dark:text-white'>
       <Title title='Categories:' fontBold xl />
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-5 dark:text-white'>
+      <div
+        className={`grid ${
+          vertical ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+        }  gap-2 sm:gap-5 dark:text-white`}
+      >
         {categoriesData
           .slice(0, width > 640 ? categoriesData.length : visibleCount)
           .map((category) => (

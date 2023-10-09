@@ -1,35 +1,59 @@
 import { useEffect, useState } from "react";
 import { BsFillMapFill } from "react-icons/bs";
 import { TbFilterEdit } from "react-icons/tb";
-import { getHotels } from "../../api/Hotel";
 import Button from "../../components/Buttons/Button";
 import useRegisterModalFilter from "../../hooks/useRegisterModalFilter";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import Filter from "./Filter/Filter";
 import ItemResults from "./ItemResults/ItemResults";
 import Map from "./Map/Map";
+import { post } from "../../utils/request";
+import { useSearchParams } from "react-router-dom";
+
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
   const { onOpen, onClose } = useRegisterModalFilter();
-  const handleShowModalFilter = () => {
-    onOpen();
-  };
 
   useEffect(() => {
     onClose();
   }, [width]);
 
-  const [ourHotels, setOurHotels] = useState({});
+  const [searchParams] = useSearchParams();
+  const currentLocation = searchParams?.get("location")?.split("+").join(" ");
+  const currentCheckInDate = searchParams?.get("checkin");
+  const currentCheckOutDate = searchParams?.get("checkout");
+  const currentAdults = searchParams?.get("group_adults");
+  const currentChildren = searchParams?.get("group_children");
+  const currentRooms = searchParams?.get("group_rooms");
+
+  const [ourHotels, setOurHotels] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const data = {
+        city: currentLocation,
+        country: "Viet Nam",
+        checkInDate: currentCheckInDate,
+        checkOutDate: currentCheckOutDate,
+        adults: currentAdults,
+        typeOfGuestChildren: true,
+        children: currentChildren,
+        childrenOldStart: "Children >= 12",
+        childrenOldEnd: "Children >= 14",
+        quantityRoom: currentRooms,
+      };
+
+      const response = await post("hotel/get-condition", data);
+      setOurHotels(response.listResult);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching hotel data:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchHotels = async () => {
-      const hotels = await getHotels();
-      setOurHotels(hotels);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    };
-    fetchHotels();
+    fetchData();
   }, []);
 
   return (
@@ -43,7 +67,7 @@ function SearchResult() {
               className='w-auto h-[40px] mt-5 mb-5 border-[2px] pr-3 duration-500 rounded-md dark:border-primary-500 dark:text-white hover:border-hotel-50 hover:dark:border-hotel-50 font-medium'
               icon={TbFilterEdit}
               size={20}
-              onClick={handleShowModalFilter}
+              onClick={onOpen}
               xl
             />
           )}
@@ -59,7 +83,7 @@ function SearchResult() {
           )}
 
           <div className='relative flex w-full gap-3'>
-            <div className=' hidden 2md:flex flex-col w-full 2md:w-[24%] absolute 2md:relative'>
+            <div className='hidden 2md:flex flex-col w-full 2md:w-[24%] absolute 2md:relative'>
               <Map />
               <Filter />
             </div>

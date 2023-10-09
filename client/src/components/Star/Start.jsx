@@ -3,9 +3,13 @@ import { AiFillStar } from "react-icons/ai";
 import Icon from "../Icon/Icon";
 import Title from "../Title/Title";
 
-function Star({ starCount, size = 15, startCustom }) {
+function Star({ className, starCount, size = 15, startCustom }) {
   return (
-    <div className='flex items-center gap-1 text-secondary-50 font-medium'>
+    <div
+      className={`flex items-center gap-1 text-secondary-50 font-medium ${
+        className ? className : ""
+      }`}
+    >
       <Icon icon={AiFillStar} size={size} />
       <Title title={starCount} xxl fontMedium titleCustom={startCustom} />
     </div>
@@ -13,6 +17,7 @@ function Star({ starCount, size = 15, startCustom }) {
 }
 
 Star.propTypes = {
+  className: PropTypes.string,
   starCount: PropTypes.number,
   size: PropTypes.number,
   startCustom: PropTypes.string,

@@ -20,6 +20,7 @@ function UserButton({ title, src, icon, onClick }) {
             ? "flex items-center text-primary-50 justify-center w-[28px] h-[28px] rounded-full border-[2px] border-hotel-50"
             : ""
         }`}
+        xl
         srcPosition='before'
         onClick={onClick}
       />

@@ -3,6 +3,7 @@ import Title from "../../../components/Title/Title";
 import Card from "../../Home/OurHotel/Card";
 import PropTypes from "prop-types";
 import CardContent from "../../Home/OurHotel/CardContent";
+import CardResult from "./CardResult.jsx";
 
 function ItemResults({ data, isLoading }) {
   return (
@@ -10,7 +11,7 @@ function ItemResults({ data, isLoading }) {
       <div className='flex flex-col w-full h-full relative'>
         <div className='mb-2'>
           <Title
-            title=' Ho Chi Minh City: 584 properties found'
+            title={`${data[0]?.city}: ${data?.length} properties found`}
             xl
             fontBold
             colorTitle='dark:text-white'
@@ -18,15 +19,16 @@ function ItemResults({ data, isLoading }) {
           />
         </div>
         {data ? (
-          <div className='grid gap-3 auto-cols-auto grid-cols-1 vsm:grid-cols-2 w-full'>
-            {data?.products?.map((card, index) => (
-              <Fragment key={index}>
-                <Card data={card} isLoading={isLoading}>
-                  <CardContent data={card} />
-                </Card>
-              </Fragment>
-            ))}
-          </div>
+          // <div className='grid gap-3 auto-cols-auto grid-cols-1 vsm:grid-cols-2 w-full'>
+          //   {data?.products?.map((card, index) => (
+          //     <Fragment key={index}>
+          //       <Card data={card} isLoading={isLoading}>
+          //         <CardContent data={card} />
+          //       </Card>
+          //     </Fragment>
+          //   ))}
+          // </div>
+          <CardResult />
         ) : (
           <div>Not Result</div>
         )}

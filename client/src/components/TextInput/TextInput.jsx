@@ -25,7 +25,7 @@ function TextInput({
   ...props
 }) {
   return (
-    <div className={className}>
+    <div className={`w-full ${className}`}>
       {label && (
         <div className={classLabel}>
           {label}{" "}

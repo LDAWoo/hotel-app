@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Title from "../../../../components/Title/Title";
-function GalleryItem({ imgURL, width, height, left, right, values, imageEnd }) {
+function GalleryItem({
+  imgURL,
+  width,
+  height,
+  left,
+  right,
+  values,
+  imageEnd,
+  onClick,
+}) {
   return (
     <Link
       className={`relative block ${width && width} ${height && height} ${
@@ -10,6 +19,7 @@ function GalleryItem({ imgURL, width, height, left, right, values, imageEnd }) {
         right && "float-right"
       } mb-[10px] bg-cover bg-no-repeat bg-[50%] bg-gray-200 dark:bg-primary-600`}
       style={{ backgroundImage: `url('${imgURL}')` }}
+      onClick={onClick}
     >
       <img src={imgURL} className='hidden' />
       {imageEnd && values > 0 && (

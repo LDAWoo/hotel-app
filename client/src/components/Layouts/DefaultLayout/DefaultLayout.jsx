@@ -5,7 +5,6 @@ import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStor
 import Banner from "../../Banner/Banner";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import FilterModal from "../../Modals/FilterModal/FilterModal";
-import LanguageModal from "../../Modals/LanguageModal/LanguageModal";
 import MapModal from "../../Modals/MapModal/MapModal";
 import Navbar from "../../Navbar/Navbar";
 
@@ -36,7 +35,6 @@ function DefaultLayout({ children }) {
         }}
       >
         <div className='flex w-full flex-col'>
-          <LanguageModal />
           <FilterModal />
           <MapModal />
           <Navbar />

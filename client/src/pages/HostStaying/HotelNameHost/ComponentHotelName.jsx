@@ -37,13 +37,13 @@ const ComponentHotelName = () => {
                 <TextInput
                   type='text'
                   classBorder='border border-primary-100 rounded-sm'
-                  classInput='w-full focus:outline-none placeholder:text-[14px] text-[14px] border-[1px] p-[3px] border-transparent focus:border-hotel-75'
+                  classInput='w-full focus:outline-none placeholder:text-[14px] text-[14px] border-[1px] pt-[5px] pb-[5px] pl-[3px] pr-[3px] border-transparent focus:border-hotel-75 dark:focus:border-hotel-500 dark:bg-primary-700 dark:text-white'
                 />
               ) : item?.type === "radio" ? (
                 <input
                   type='radio'
                   name={item?.name}
-                  className='w-4 h-4 mr-[8px] cursor-pointer'
+                  className='w-4 h-4 mr-[8px] cursor-pointer dark:bg-primary-700'
                   value={item?.value}
                   id={item?.id}
                 />

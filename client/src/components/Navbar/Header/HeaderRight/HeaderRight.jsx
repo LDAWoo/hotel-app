@@ -5,6 +5,7 @@ import HeaderLogin from "./Login/HeaderLogin";
 import User from "./User/User";
 import Menu from "./Menu/Menu";
 import LanguageModal from "../../../Modals/LanguageModal/LanguageModal";
+import ListYourProperty from "./ListYourProperty/ListYourProperty";
 
 function HeaderRight() {
   const { user } = useAuth0();
@@ -14,6 +15,7 @@ function HeaderRight() {
       <LanguageModal />
       <Language />
       <Theme />
+      <ListYourProperty />
       {user ? <User /> : <HeaderLogin />}
       <Menu />
     </div>

@@ -4,8 +4,11 @@ import Label from "../Label/Label";
 import Title from "../Title/Title";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { memo } from "react";
+import { useNavigate } from "react-router-dom";
+import routesConfig from "../../configs/routesConfig";
 
 function GetStarted() {
+  const navigate = useNavigate();
   const data = [
     {
       title: "45% of partners get their first booking within a week",
@@ -20,6 +23,10 @@ function GetStarted() {
       title: "Registration is free and takes 15 minutes",
     },
   ];
+
+  const handleGetStartNow = () => {
+    navigate(routesConfig.becomeAHostCategory);
+  };
 
   return (
     <div className='w-full'>
@@ -53,6 +60,7 @@ function GetStarted() {
             titlePosition='before'
             icon={HiOutlineArrowNarrowRight}
             size={20}
+            onClick={handleGetStartNow}
           />
         </div>
       </div>

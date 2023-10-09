@@ -17,7 +17,9 @@ const ToolTipNotification = ({
     return null;
   }
   return (
-    <div className={`border bg-white p-4 ${className}`}>
+    <div
+      className={`border bg-white dark:bg-primary-700 dark:border-primary-500 dark:text-white p-4 ${className}`}
+    >
       <div className='flex flex-col gap-3'>
         <div className='relative flex flex-row gap-5'>
           <Icon icon={icon} size={24} />
@@ -26,7 +28,7 @@ const ToolTipNotification = ({
             {render && render}
           </div>
           <div
-            className='absolute -top-1 -right-1 cursor-pointer p-2 bg-transparent hover:bg-gray-100 duration-300'
+            className='absolute -top-1 -right-1 cursor-pointer p-2 bg-transparent hover:bg-gray-100 dark:hover:bg-primary-500 duration-300'
             onClick={handleClose}
           >
             <Icon size={20} icon={AiOutlineClose} />

@@ -7,7 +7,7 @@ function ButtonContinueHost({ onClick, disabled }) {
       title='Continue'
       background
       disabled={disabled}
-      className='w-full pt-2 pb-2'
+      className='w-full justify-center pt-2 pb-2'
       onClick={onClick}
     />
   );

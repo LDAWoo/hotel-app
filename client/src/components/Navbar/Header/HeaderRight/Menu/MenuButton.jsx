@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Button from "../../../../Buttons/Button";
-function MenuButton({ title, src, icon, onClick }) {
+function MenuButton({ title, src, size = 18, icon, onClick }) {
   return (
     <Button
       className='w-full h-full hover:bg-gray-200/50 dark:hover:bg-primary-500 p-[7px] translate duration-300'
@@ -12,7 +12,7 @@ function MenuButton({ title, src, icon, onClick }) {
       titlePosition='right'
       {...(src ? { src } : {})}
       {...(icon ? { icon } : {})}
-      size={18}
+      size={size}
       xl
       iconPosition='before'
       onClick={onClick}
@@ -23,6 +23,7 @@ MenuButton.propTypes = {
   title: PropTypes.string,
   src: PropTypes.string,
   icon: PropTypes.elementType,
+  size: PropTypes.number,
   onClick: PropTypes.func.isRequired,
 };
 

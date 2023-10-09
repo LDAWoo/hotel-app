@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Checkbox({ title, value, values, name, checked, onChange }) {
   return (
     <div className='relative w-full pt-1 pl-0 pr-1 pb-1'>
@@ -28,5 +30,14 @@ function Checkbox({ title, value, values, name, checked, onChange }) {
     </div>
   );
 }
+
+Checkbox.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  values: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Checkbox;

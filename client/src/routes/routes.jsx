@@ -19,6 +19,7 @@ import FeedBackHost from "../pages/HostStaying/FeedBackHost/FeedBackHost";
 import AddRessHost from "../pages/HostStaying/AddressHost/AddressHost";
 import MapHost from "../pages/HostStaying/MapHost/MapHost";
 import HotelNameHost from "../pages/HostStaying/HotelNameHost/HotelNameHost";
+import FacilitiesHost from "../pages/HostStaying/FacilitiesHost/FacilitiesHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -73,6 +74,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostHotelName,
     component: HotelNameHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostFacilities,
+    component: FacilitiesHost,
     layout: HostLayout,
   },
 ];

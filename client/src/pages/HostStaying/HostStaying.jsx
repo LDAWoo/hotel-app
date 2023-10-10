@@ -37,6 +37,10 @@ function HostStaying({ children }) {
       id: 8,
       param: routesConfig.becomeAHostFacilities,
     },
+    {
+      id: 9,
+      param: routesConfig.becomeAHostHouseRules,
+    },
   ];
 
   const location = useLocation();

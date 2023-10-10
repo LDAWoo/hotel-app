@@ -1,4 +1,5 @@
 import { AddRessData } from "../../../components/Constants/AddRessData";
+import SelectInput from "../../../components/SelectInput/SelectInput";
 import TextInput from "../../../components/TextInput/TextInput";
 
 const ComponentAddRess = () => {
@@ -9,7 +10,7 @@ const ComponentAddRess = () => {
           <div className='flex flex-col gap-2'>
             <label className='font-medium text-[14px]'>{item?.name}</label>
             {item?.data ? (
-              <select className='mb-5 text-[14px] text-primary-100 border-[1px] border-primary-100 pt-[5px] pb-[5px] pl-[3px] pr-[3px] focus:outline-none dark:bg-primary-700 dark:text-white'>
+              <SelectInput>
                 <option
                   key={index}
                   className='text-[14px] text-primary-700 dark:text-white'
@@ -25,7 +26,7 @@ const ComponentAddRess = () => {
                     {country.name}
                   </option>
                 ))}
-              </select>
+              </SelectInput>
             ) : (
               <TextInput
                 className={`mb-5 ${index === 2 ? "w-[50%]" : "w-full"}`}

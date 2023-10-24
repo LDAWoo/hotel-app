@@ -27,7 +27,7 @@ const ComponentHouseRules = () => {
             </div>
           )}
           {item?.type === "radio" && (
-            <div>
+            <div className='flex flex-col gap-2'>
               {item?.data.map((check, index) => (
                 <div className='flex flex-col gap-2' key={index}>
                   <RadioInput

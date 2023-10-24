@@ -16,6 +16,8 @@ const routesConfig = {
   becomeAHostHotelName: "/join/become-a-host/name",
   becomeAHostFacilities: "/join/become-a-host/facilities",
   becomeAHostHouseRules: "/join/become-a-host/house-rules",
+  becomeAHostOverviewRoom: "/join/become-a-host/overview-room",
+  becomeAHostPhoto: "/join/become-a-host/photo",
 };
 
 export default routesConfig;

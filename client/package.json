@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.1",
+    "@hello-pangea/dnd": "^16.3.0",
     "@tippyjs/react": "^4.2.6",
     "antd": "^5.9.0",
     "axios": "^1.5.0",
@@ -25,6 +26,7 @@
     "immer": "^10.0.2",
     "moment": "^2.29.4",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-content-loader": "^6.2.1",
     "react-date-range": "^1.4.0",
     "react-div-100vh": "^0.7.0",

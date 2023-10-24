@@ -52,7 +52,7 @@ function Button({
           : ""
       } ${
         disabled ? "opacity-70 cursor-not-allowed bg-[#d9d9d9]" : ""
-      } flex w-full items-center transition ${className ? className : ""}`}
+      } flex items-center transition ${className ? className : "w-full"}`}
       type='button'
       disabled={disabled}
       onClick={onClick}

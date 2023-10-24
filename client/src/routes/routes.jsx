@@ -20,6 +20,9 @@ import AddRessHost from "../pages/HostStaying/AddressHost/AddressHost";
 import MapHost from "../pages/HostStaying/MapHost/MapHost";
 import HotelNameHost from "../pages/HostStaying/HotelNameHost/HotelNameHost";
 import FacilitiesHost from "../pages/HostStaying/FacilitiesHost/FacilitiesHost";
+import HouseRulesHost from "../pages/HostStaying/HouseRulesHost/HouseRulesHost";
+import OverviewRoomHost from "../pages/HostStaying/OverviewRoomHost/OverviewRoomHost";
+import PhotoHost from "../pages/HostStaying/PhotoHost/PhotoHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -79,6 +82,21 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostFacilities,
     component: FacilitiesHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostHouseRules,
+    component: HouseRulesHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostOverviewRoom,
+    component: OverviewRoomHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostPhoto,
+    component: PhotoHost,
     layout: HostLayout,
   },
 ];

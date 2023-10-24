@@ -10,7 +10,9 @@ function FacilitiesHost() {
     navigate(routesConfig.becomeAHostHotelName);
   };
 
-  const handleContinue = () => {};
+  const handleContinue = () => {
+    navigate(routesConfig.becomeAHostHouseRules);
+  };
 
   return (
     <ComponentHost

@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import routesConfig from "../../configs/routesConfig";
 import "./HostStaying.scss";
+import { useEffect, useState } from "react";
 function HostStaying({ children }) {
   const params = [
     {
@@ -37,6 +38,18 @@ function HostStaying({ children }) {
       id: 8,
       param: routesConfig.becomeAHostFacilities,
     },
+    {
+      id: 9,
+      param: routesConfig.becomeAHostHouseRules,
+    },
+    {
+      id: 10,
+      param: routesConfig.becomeAHostOverviewRoom,
+    },
+    {
+      id: 11,
+      param: routesConfig.becomeAHostPhoto,
+    },
   ];
 
   const location = useLocation();
@@ -48,6 +61,16 @@ function HostStaying({ children }) {
 
   const totalParams = params.length;
   const percentage = (activeIndex + 1) * (100 / totalParams);
+
+  const [slideOut, setSlideOut] = useState(false);
+  const [slideIn, setSlideIn] = useState(false);
+
+  useEffect(() => {
+    setSlideOut("-translate-x-full");
+    setTimeout(() => {
+      setSlideOut("translate-x-0");
+    }, 500);
+  }, [activeIndex]);
 
   return (
     <div className='flex flex-col w-full'>
@@ -82,7 +105,7 @@ function HostStaying({ children }) {
                 key={index}
                 in={activeIndex === index}
                 timeout={500}
-                classNames={activeIndex > index ? "slide-out" : "slide-in"}
+                className={activeIndex > index ? "slide-out" : "slide-in"}
                 unmountOnExit
               >
                 {children}

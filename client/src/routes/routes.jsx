@@ -22,7 +22,11 @@ import HotelNameHost from "../pages/HostStaying/HotelNameHost/HotelNameHost";
 import FacilitiesHost from "../pages/HostStaying/FacilitiesHost/FacilitiesHost";
 import HouseRulesHost from "../pages/HostStaying/HouseRulesHost/HouseRulesHost";
 import OverviewRoomHost from "../pages/HostStaying/OverviewRoomHost/OverviewRoomHost";
+import AddRoomHost from "../pages/HostStaying/AddRoomHost/AddRoomHost";
+import BathRoomHost from "../pages/HostStaying/BathRoomHost/BathRoomHost";
+import AmenityHost from "../pages/HostStaying/AmenityHost/AmenityHost";
 import PhotoHost from "../pages/HostStaying/PhotoHost/PhotoHost";
+import UnitNameHost from "../pages/HostStaying/UnitNameHost/UnitNameHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -92,6 +96,26 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostOverviewRoom,
     component: OverviewRoomHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostAddRoom,
+    component: AddRoomHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostBathRoom,
+    component: BathRoomHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostAmenities,
+    component: AmenityHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostUnitName,
+    component: UnitNameHost,
     layout: HostLayout,
   },
   {

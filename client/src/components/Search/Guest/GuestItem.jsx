@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
-import { AiOutlinePlus } from "react-icons/ai";
-import { BiMinus } from "react-icons/bi";
-import GuestButton from "./GuestButton";
 import Title from "../../../components/Title/Title";
+import IncreaseAndDecreaseValue from "../../ValueIncreaseAndDecrease/IncreaseAndDecreaseValue";
 function GuestItem({
   title,
   value,
@@ -12,7 +10,7 @@ function GuestItem({
   handlePlus,
 }) {
   return (
-    <div className='w-full flex items-center h-[42px] '>
+    <div className='w-full flex items-center h-[42px]'>
       <div
         className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal `}
       >
@@ -20,18 +18,12 @@ function GuestItem({
       </div>
       <div className='flex flex-row items-center h-full justify-center'>
         <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
-          <GuestButton
-            icon={BiMinus}
-            disable={value > minValue ? false : true}
-            onClick={handleMinus}
-          />
-          <span className='flex items-center justify-center dark:text-white font-medium min-w-[20px] max-w-[25px]'>
-            <Title title={value} xl />
-          </span>
-          <GuestButton
-            disable={value === maxValue ? true : false}
-            icon={AiOutlinePlus}
-            onClick={handlePlus}
+          <IncreaseAndDecreaseValue
+            value={value}
+            minValue={minValue}
+            maxValue={maxValue}
+            handleMinus={handleMinus}
+            handlePlus={handlePlus}
           />
         </div>
       </div>

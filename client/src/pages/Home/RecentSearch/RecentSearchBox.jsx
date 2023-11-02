@@ -4,7 +4,7 @@ import Title from "../../../components/Title/Title";
 function RecentSearchBox({ to, location, content, src }) {
   return (
     <div className={`h-full w-full`}>
-      <div className='rounded-lg w-full h-full dark:bg-primary-600 border dark:border-primary-600'>
+      <div className='rounded-lg w-full h-full dark:bg-primary-700 border dark:border-primary-500'>
         <Link to={to}>
           <div className='flex w-full items-center pl-4 pr-4 pt-2 pb-2 min-h-[100px] border-0 gap-2'>
             <div style={{ aspectRatio: "20/19" }}>

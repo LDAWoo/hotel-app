@@ -14,28 +14,26 @@ function RecentSearch() {
         <div className='mb-5'>
           <HomeTitle title={t("RecentSearch.title")} />
         </div>
-        <div className='w-full pl-3 pr-3'>
-          <div className='w-full pl-3 pr-5 pt-2 pb-4'>
-            <CarouselCustom
-              data={recentSearch?.map((item, index) => (
-                <RecentSearchBox
-                  key={index}
-                  to={item.to}
-                  location={item.location}
-                  content={`${format(
-                    new Date("2023-09-20T00:00:00.166584+02:00"),
-                    "d MMM ",
-                    { locale },
-                  )} - ${format(
-                    new Date("2023-09-23T00:00:00.166584+02:00"),
-                    "d MMM",
-                    { locale },
-                  )}, ${item.adult} ${t("Search.Guest.Adult.title")}`}
-                  src={item.src}
-                />
-              ))}
-            />
-          </div>
+        <div className='w-full '>
+          <CarouselCustom
+            data={recentSearch?.map((item, index) => (
+              <RecentSearchBox
+                key={index}
+                to={item.to}
+                location={item.location}
+                content={`${format(
+                  new Date("2023-09-20T00:00:00.166584+02:00"),
+                  "d MMM ",
+                  { locale },
+                )} - ${format(
+                  new Date("2023-09-23T00:00:00.166584+02:00"),
+                  "d MMM",
+                  { locale },
+                )}, ${item.adult} ${t("Search.Guest.Adult.title")}`}
+                src={item.src}
+              />
+            ))}
+          />
         </div>
       </div>
     </div>

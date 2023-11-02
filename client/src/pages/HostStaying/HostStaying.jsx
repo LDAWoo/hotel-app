@@ -48,6 +48,23 @@ function HostStaying({ children }) {
     },
     {
       id: 11,
+      param: routesConfig.becomeAHostAddRoom,
+    },
+    {
+      id: 12,
+      param: routesConfig.becomeAHostBathRoom,
+    },
+    {
+      id: 13,
+      param: routesConfig.becomeAHostAmenities,
+    },
+    {
+      id: 14,
+      param: routesConfig.becomeAHostUnitName,
+    },
+
+    {
+      id: 15,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

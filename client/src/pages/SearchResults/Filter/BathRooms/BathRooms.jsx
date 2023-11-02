@@ -1,6 +1,6 @@
-import GuestItem from "../../../../components/Search/Guest/GuestItem";
 import FilterCard from "../FilterCard";
 import useRegisterNumberOfBathRoomsStore from "../../../../hooks/Filter/useRegisterNumberOfBathRoomsStore";
+import IncreaseAndDecreaseValue from "../../../../components/ValueIncreaseAndDecrease/IncreaseAndDecreaseValue";
 function BathRooms() {
   const { rooms, setRooms } = useRegisterNumberOfBathRoomsStore();
 
@@ -15,7 +15,7 @@ function BathRooms() {
       <FilterCard
         title='Number of bathrooms'
         item={[
-          <GuestItem
+          <IncreaseAndDecreaseValue
             title='Bathrooms'
             sizeText='text-[14px]'
             key={1}

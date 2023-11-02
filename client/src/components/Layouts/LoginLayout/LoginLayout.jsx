@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../../Contexts/AppThemeProvider";
 import { use100vh } from "react-div-100vh";
 import PropTypes from "prop-types";
-
 function LoginLayout({ children }) {
   const { darkMode } = useContext(ThemeContext);
   const heightWindow = use100vh();

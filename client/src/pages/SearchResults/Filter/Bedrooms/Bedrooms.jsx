@@ -1,6 +1,6 @@
 import FilterCard from "../FilterCard";
-import GuestItem from "../../../../components/Search/Guest/GuestItem";
 import useRegisterNumberOfBedRoomsStore from "../../../../hooks/Filter/useRegisterNumberOfBedRoomsStore";
+import IncreaseAndDecreaseValue from "../../../../components/ValueIncreaseAndDecrease/IncreaseAndDecreaseValue";
 
 function BedRooms() {
   const { rooms, setRooms } = useRegisterNumberOfBedRoomsStore();
@@ -17,7 +17,7 @@ function BedRooms() {
       <FilterCard
         title='Number of bedrooms'
         item={[
-          <GuestItem
+          <IncreaseAndDecreaseValue
             title='Bedrooms'
             minValue={0}
             maxValue={30}

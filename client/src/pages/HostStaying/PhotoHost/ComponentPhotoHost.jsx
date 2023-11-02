@@ -9,16 +9,15 @@ import DragImage from "./DragImage";
 
 const ComponentPhotoHost = () => {
   const [images, setImages] = useState([]);
+
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef();
 
   const onDragEnter = () => {
-    // console.log("Enter");
     setIsDragging(true);
   };
 
   const onDragLeave = () => {
-    // console.log("Leave");
     setIsDragging(false);
   };
 
@@ -47,21 +46,31 @@ const ComponentPhotoHost = () => {
     setImages((prevImage) => prevImage.filter((img) => img.name != image));
   };
 
+  const handleUploadPhoto = (e) => {
+    e.preventDefault();
+    fileInputRef.current.click();
+  };
+
   return (
     <div
-      className={`w-full border dark:border-primary-500 p-4 z-50 ${
+      className={`relative w-full border dark:border-primary-500 p-4 z-50 ${
         isDragging ? "border-hotel-200 bg-hotel-25 dark:bg-primary-600" : ""
       }`}
       onDragEnter={onDragEnter}
       onDrop={onDrop}
       onDragLeave={onDragLeave}
     >
-      <div
-        className='flex flex-col gap-2'
-        onDragEnter={onDragEnter}
-        onDrop={onDrop}
-        onDragLeave={onDragLeave}
-      >
+      <input
+        ref={fileInputRef}
+        type='file'
+        className={`absolute top-0 left-0 right-0 bottom-0 opacity-0 cursor-default block w-full ${
+          isDragging ? "z-10" : "-z-10"
+        }`}
+        multiple
+        onChange={onFileDrop}
+      />
+
+      <div className='flex flex-col gap-2'>
         <div className='font-medium inline dark:text-white text-[14px]'>
           Upload at least 5 photos of your property.{" "}
           <span className='font-normal inline'>
@@ -90,6 +99,7 @@ const ComponentPhotoHost = () => {
                 size={22}
                 xl
                 title='Upload photos'
+                onClick={handleUploadPhoto}
               />
             </div>
 
@@ -98,19 +108,11 @@ const ComponentPhotoHost = () => {
               xl
               colorTitle='dark:text-primary-50'
             />
-
-            <input
-              ref={fileInputRef}
-              type='file'
-              className='absolute top-0 left-0 right-0 bottom-0 opacity-0 cursor-pointer block w-full z-10'
-              multiple
-              onChange={onFileDrop}
-            />
           </div>
         </div>
 
         <div>
-          <div className='flex flex-col text-[14px] gap-2 pt-[10px] pb-10 text-primary-300 dark:text-primary-50'>
+          <div className='flex flex-col text-[14px] gap-2 pt-[10px] pb-10 text-primary-300 dark:text-primary-50 pointer-events-none'>
             <hr className='dark:border-primary-500' />
             <span>
               Choose a <b className='dark:text-white'>main photo</b> that will

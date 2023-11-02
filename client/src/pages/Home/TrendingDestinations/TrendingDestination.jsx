@@ -49,6 +49,8 @@ function TrendingDestination() {
           </div>
         ) : (
           <CoreCarousel
+            classUl='gap-3'
+            classLi='mr-0'
             data={trendingDestinations}
             component={
               isLoading ? TrendingCardCarouselSkeleton : TrendingCardCarousel

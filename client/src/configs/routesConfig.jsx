@@ -17,6 +17,10 @@ const routesConfig = {
   becomeAHostFacilities: "/join/become-a-host/facilities",
   becomeAHostHouseRules: "/join/become-a-host/house-rules",
   becomeAHostOverviewRoom: "/join/become-a-host/overview-room",
+  becomeAHostAddRoom: "/join/become-a-host/add-room",
+  becomeAHostBathRoom: "/join/become-a-host/bathroom-details",
+  becomeAHostAmenities: "/join/become-a-host/unit-amenities",
+  becomeAHostUnitName: "/join/become-a-host/unit-name",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

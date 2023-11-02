@@ -1,6 +1,6 @@
+import Icon from "../Icon/Icon";
 import PropTypes from "prop-types";
-import Icon from "../../Icon/Icon";
-function GuestButton({ icon, disable, onClick }) {
+function ButtonValue({ icon, disable, onClick }) {
   return (
     <button
       onClick={onClick}
@@ -25,10 +25,11 @@ function GuestButton({ icon, disable, onClick }) {
     </button>
   );
 }
-GuestButton.propTypes = {
+
+ButtonValue.propTypes = {
   icon: PropTypes.elementType,
   disable: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
-export default GuestButton;
+export default ButtonValue;

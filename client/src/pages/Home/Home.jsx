@@ -1,6 +1,8 @@
 import RecentSearch from "./RecentSearch/RecentSearch";
 import TrendingDestination from "./TrendingDestinations/TrendingDestination";
 import OurHotel from "./OurHotel/OurHotel";
+import UniqueProperty from "./UniqueProperty/UniqueProperty";
+import GuestLove from "./GuestLove/GuestLove";
 
 function Home() {
   return (
@@ -9,7 +11,9 @@ function Home() {
         <div className='flex flex-col w-full'>
           <RecentSearch />
           <TrendingDestination />
-          <OurHotel />
+          {/* <OurHotel /> */}
+          <UniqueProperty />
+          <GuestLove />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ function RadioInput({ id, name, title, value, checked = false, onChange }) {
         name={name}
         value={value}
         onChange={onChange}
-        className='form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out'
+        className='form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer'
       />
       <label htmlFor={id} className='text-sm dark:text-white cursor-pointer'>
         {title}

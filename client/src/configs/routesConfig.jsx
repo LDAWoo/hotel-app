@@ -21,6 +21,8 @@ const routesConfig = {
   becomeAHostBathRoom: "/join/become-a-host/bathroom-details",
   becomeAHostAmenities: "/join/become-a-host/unit-amenities",
   becomeAHostUnitName: "/join/become-a-host/unit-name",
+  becomeAHostHotelPrice: "/join/become-a-host/price",
+  becomeAHostHotelPriceOverview: "/join/become-a-host/price-overview",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

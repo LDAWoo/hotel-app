@@ -41,7 +41,7 @@ const ToolTipNotification = ({
 
 ToolTipNotification.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.func,
   header: PropTypes.node,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,

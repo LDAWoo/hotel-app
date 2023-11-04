@@ -62,9 +62,16 @@ function HostStaying({ children }) {
       id: 14,
       param: routesConfig.becomeAHostUnitName,
     },
-
     {
       id: 15,
+      param: routesConfig.becomeAHostHotelPrice,
+    },
+    {
+      id: 16,
+      param: routesConfig.becomeAHostHotelPriceOverview,
+    },
+    {
+      id: 17,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

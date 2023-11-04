@@ -23,6 +23,7 @@ function ToolTip({
     <Tippy
       delay={delay}
       content={content}
+      arrow={true}
       className={`${
         !className
           ? `duration-300 rounded-md pt-1 pb-1 pl-2 pr-2 text-[15px] font-medium  

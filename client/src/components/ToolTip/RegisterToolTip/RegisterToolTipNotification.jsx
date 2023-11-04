@@ -23,7 +23,7 @@ function RegisterToolTipNotification({
 
 RegisterToolTipNotification.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.func,
   header: PropTypes.node,
   useRegisterToolTip: PropTypes.func,
   render: PropTypes.node,

@@ -72,6 +72,14 @@ function HostStaying({ children }) {
     },
     {
       id: 17,
+      param: routesConfig.becomeAHostHotelGroupDiscount,
+    },
+    {
+      id: 18,
+      param: routesConfig.becomeAHostHotelPolicy,
+    },
+    {
+      id: 19,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

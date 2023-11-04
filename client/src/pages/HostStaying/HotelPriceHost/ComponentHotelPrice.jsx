@@ -4,6 +4,7 @@ import Title from "../../../components/Title/Title";
 import Label from "../../../components/Label/Label";
 import CurrencyFormat from 'react-currency-format'
 import useRegisterHotelPriceValue from "../../../hooks/JoinStaying/HotelPriceHost/useRegisterHotelPriceValue";
+import MoneyFormatStaying from "../../../components/Staying/MoneyFormatStaying";
 
 const ComponentHotelPrice = () =>{
     const[active,setActice] = useState(false);
@@ -78,14 +79,7 @@ const ComponentHotelPrice = () =>{
                                 </ul>
                                 <hr className="dark:border-primary-400"/>
                                 <p className="mt-5">
-                                    <CurrencyFormat 
-                                    value={totalPrice} 
-                                    displayType={'text'}
-                                    thousandSeparator={true}
-                                    fixedDecimalScale={true}
-                                    decimalScale={2}
-                                    prefix="VND "
-                                    />
+                                    <MoneyFormatStaying price={totalPrice}/>
                                     {" "}Your earnings (including taxes)
                                 </p>
                             </div>}

@@ -23,6 +23,8 @@ const routesConfig = {
   becomeAHostUnitName: "/join/become-a-host/unit-name",
   becomeAHostHotelPrice: "/join/become-a-host/price",
   becomeAHostHotelPriceOverview: "/join/become-a-host/price-overview",
+  becomeAHostHotelGroupDiscount: "/join/become-a-host/group-discount",
+  becomeAHostHotelPolicy: "/join/become-a-host/policies",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

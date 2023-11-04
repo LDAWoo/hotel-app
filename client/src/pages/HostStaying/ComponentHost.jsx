@@ -36,6 +36,7 @@ const ComponentHost = ({
             <Title
               title={title}
               nowrap={false}
+              fontBold
               extraLarge4
               colorTitle='dark:text-white'
             />

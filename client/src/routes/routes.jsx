@@ -28,6 +28,8 @@ import AmenityHost from "../pages/HostStaying/AmenityHost/AmenityHost";
 import PhotoHost from "../pages/HostStaying/PhotoHost/PhotoHost";
 import HotelPriceHost from "../pages/HostStaying/HotelPriceHost/HotelPriceHost";
 import HotelPriceOverviewHost from "../pages/HostStaying/HotelPriceOverviewHost/HotelPriceOverviewHost";
+import HotelDiscountHost from "../pages/HostStaying/HotelDiscountHost/HotelDiscountHost";
+import HotelPolicyHost from "../pages/HostStaying/HotelPolicyHost/HotelPolicyHost";
 import UnitNameHost from "../pages/HostStaying/UnitNameHost/UnitNameHost";
 
 const publicRoutesPathComponent = [
@@ -128,6 +130,16 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostHotelPriceOverview,
     component: HotelPriceOverviewHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostHotelGroupDiscount,
+    component: HotelDiscountHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostHotelPolicy,
+    component: HotelPolicyHost,
     layout: HostLayout,
   },
   {

@@ -32,7 +32,7 @@ const ComponentHotelPolicy = () =>{
                     </SelectInput>
                 )}
                 {policy?.type === "radio" && (
-                    <div>
+                    <div className="flex flex-col gap-2">
                         {policy?.data && (
                             policy?.data.map((item,index) => (
                                 <RadioInput

@@ -25,6 +25,7 @@ const routesConfig = {
   becomeAHostHotelPriceOverview: "/join/become-a-host/price-overview",
   becomeAHostHotelGroupDiscount: "/join/become-a-host/group-discount",
   becomeAHostHotelPolicy: "/join/become-a-host/policies",
+  becomeAHostNonRefundable: "/join/become-a-host/non-refundable",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

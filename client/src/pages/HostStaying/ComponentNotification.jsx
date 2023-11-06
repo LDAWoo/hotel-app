@@ -26,12 +26,25 @@ function ComponentNotification({ data = [] }) {
                 }`}
               >
                 {notification?.data.map((item, index) => (
+                  <div  key={index}>
                   <Label
-                    key={index}
                     title={item?.name}
                     className='list-item text-[14px] dark:text-primary-50'
                     n
                   />
+                  {item?.data && (
+                    <div className="pl-4">
+                      {item?.data.map((i,index) =>(
+                        <Label
+                        key={index}
+                        title={i?.name}
+                        className='list-item text-[14px] dark:text-primary-50'
+                        n
+                      />
+                      ))}
+                    </div>
+                  )}
+                  </div>
                 ))}
               </ul>
             }

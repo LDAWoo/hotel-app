@@ -31,6 +31,7 @@ import HotelPriceOverviewHost from "../pages/HostStaying/HotelPriceOverviewHost/
 import HotelDiscountHost from "../pages/HostStaying/HotelDiscountHost/HotelDiscountHost";
 import HotelPolicyHost from "../pages/HostStaying/HotelPolicyHost/HotelPolicyHost";
 import UnitNameHost from "../pages/HostStaying/UnitNameHost/UnitNameHost";
+import NonRefundableHost from "../pages/HostStaying/NonRefundableHost/NonRefundableHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -140,6 +141,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostHotelPolicy,
     component: HotelPolicyHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostNonRefundable,
+    component: NonRefundableHost,
     layout: HostLayout,
   },
   {

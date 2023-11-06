@@ -80,6 +80,10 @@ function HostStaying({ children }) {
     },
     {
       id: 19,
+      param: routesConfig.becomeAHostNonRefundable,
+    },
+    {
+      id: 20,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

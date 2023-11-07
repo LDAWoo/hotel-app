@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function RadioInput({ id, name, title, value, checked = false, onChange }) {
+function RadioInput({ id, name, title, value, onChange }) {
   return (
     <div className='flex items-center space-x-2'>
       <input
@@ -23,7 +23,6 @@ RadioInput.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
 };
 

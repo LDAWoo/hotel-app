@@ -1,28 +1,27 @@
 import ComponentHost from "../ComponentHost";
-import ComponentHotelPriceOverview from "./ComponentHotelPriceOverview";
+import ComponentCalendarSync from "./ComponentCalendarSync";
 import FooterHost from "../FooterHost";
 import { useNavigate } from "react-router-dom";
 import routesConfig from "../../../configs/routesConfig";
 
-const HotelPriceOverviewHost = () => {
+const CalendarSyncHost = () => {
   const navigate = useNavigate();
-
   const handleBack = () => {
     window.history.back();
   };
 
   const handleContinue = () => {
-    navigate(routesConfig.becomeAHostOverviewRoom);
+    navigate(routesConfig.becomeAHostPaymentMode);
   };
 
   return (
     <ComponentHost
-      title='Rate plan'
-      componentLeft={<ComponentHotelPriceOverview />}
+      title='Availability'
+      componentLeft={<ComponentCalendarSync />}
       componentRight
       footer={<FooterHost onBack={handleBack} onContinue={handleContinue} />}
     />
   );
 };
 
-export default HotelPriceOverviewHost;
+export default CalendarSyncHost;

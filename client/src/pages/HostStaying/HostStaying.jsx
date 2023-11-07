@@ -84,6 +84,14 @@ function HostStaying({ children }) {
     },
     {
       id: 20,
+      param: routesConfig.becomeAHostCalendarSync,
+    },
+    {
+      id: 21,
+      param: routesConfig.becomeAHostPaymentMode,
+    },
+    {
+      id: 22,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

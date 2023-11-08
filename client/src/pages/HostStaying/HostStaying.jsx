@@ -91,6 +91,10 @@ function HostStaying({ children }) {
       param: routesConfig.becomeAHostPaymentMode,
     },
     {
+      id: 21,
+      param: routesConfig.becomeAHostInvoicing,
+    },
+    {
       id: 22,
       param: routesConfig.becomeAHostPhoto,
     },

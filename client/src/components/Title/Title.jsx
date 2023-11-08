@@ -19,6 +19,7 @@ function Title({
   fontBold,
   fontMedium,
   titleCustom,
+  className,
 }) {
   return (
     <span
@@ -38,7 +39,7 @@ function Title({
         nowrap ? "whitespace-nowrap" : ""
       }  overflow-hidden text-ellipsis ${titleCustom ? titleCustom : ""} ${
         colorTitle ? colorTitle : ""
-      }`}
+      } ${className ? className : ""}`}
     >
       {title}
     </span>
@@ -65,5 +66,6 @@ Title.propTypes = {
   fontBold: PropTypes.bool,
   fontMedium: PropTypes.bool,
   titleCustom: PropTypes.string,
+  className: PropTypes.string,
 };
 export default Title;

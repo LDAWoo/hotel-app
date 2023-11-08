@@ -28,6 +28,7 @@ const routesConfig = {
   becomeAHostNonRefundable: "/join/become-a-host/non-refundable",
   becomeAHostCalendarSync: "/join/become-a-host/calendar-sync",
   becomeAHostPaymentMode: "/join/become-a-host/payment-mode",
+  becomeAHostInvoicing: "/join/become-a-host/invoicing",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

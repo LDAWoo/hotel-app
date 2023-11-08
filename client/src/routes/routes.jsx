@@ -34,6 +34,7 @@ import UnitNameHost from "../pages/HostStaying/UnitNameHost/UnitNameHost";
 import NonRefundableHost from "../pages/HostStaying/NonRefundableHost/NonRefundableHost";
 import CalendarSyncHost from "../pages/HostStaying/CalendarSyncHost/CalendarSyncHost";
 import PaymentModeHost from "../pages/HostStaying/PaymentModeHost/PaymentModeHost";
+import InvoicingHost from "../pages/HostStaying/InvoicingHost/InvoicingHost";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -158,6 +159,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostPaymentMode,
     component: PaymentModeHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostInvoicing,
+    component: InvoicingHost,
     layout: HostLayout,
   },
   {

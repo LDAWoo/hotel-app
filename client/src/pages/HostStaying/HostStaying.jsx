@@ -96,6 +96,10 @@ function HostStaying({ children }) {
     },
     {
       id: 22,
+      param: routesConfig.becomeAHostPartner,
+    },
+    {
+      id: 23,
       param: routesConfig.becomeAHostPhoto,
     },
   ];

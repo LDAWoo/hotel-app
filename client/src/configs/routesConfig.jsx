@@ -29,6 +29,7 @@ const routesConfig = {
   becomeAHostCalendarSync: "/join/become-a-host/calendar-sync",
   becomeAHostPaymentMode: "/join/become-a-host/payment-mode",
   becomeAHostInvoicing: "/join/become-a-host/invoicing",
+  becomeAHostPartner: "/join/become-a-host/know-your-partner",
   becomeAHostPhoto: "/join/become-a-host/photo",
 };
 

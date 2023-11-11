@@ -32,7 +32,7 @@ const ComponentInvoicing = () => {
     dispatch({ type: "SELECT_OPTION", id, value, title });
   };
 
-  console.log(state);
+  console.log(initialState);
 
   return (
     <div>

@@ -33,7 +33,7 @@ function SearchResult() {
     try {
       const data = {
         city: currentLocation,
-        country: "Viet Nam",
+        country: "Ho Chi Minh",
         checkInDate: currentCheckInDate,
         checkOutDate: currentCheckOutDate,
         adults: currentAdults,
@@ -45,6 +45,7 @@ function SearchResult() {
       };
 
       const response = await post("hotel/get-condition", data);
+      console.log(response);
       setOurHotels(response.listResult);
       setIsLoading(false);
     } catch (error) {
@@ -55,6 +56,8 @@ function SearchResult() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  console.log(ourHotels);
 
   return (
     <div className='w-full'>

@@ -10,10 +10,10 @@ import CardHeart from "../../../Home/OurHotel/CardHeart";
 
 const CardResult = () => {
   return (
-    <div className='flex flex-row w-full p-4 border rounded-lg dark:border-primary-500'>
+    <div className='flex flex-row w-full p-4 border rounded-lg duration-200 dark:border-primary-500 hover:bg-hotel-25 dark:hover:bg-primary-500'>
       <div className='flex flex-row gap-2 w-full'>
         {/* Image */}
-        <Link className='relative rounded-lg' style={{ aspectRatio: "20/19" }}>
+        <Link className='relative rounded-lg aspect-[20/20]'>
           <Image
             src='https://cf.bstatic.com/xdata/images/hotel/square200/411708796.webp?k=6be1f267544f29559b966e9bb461eb95c7f304ec19ba4ad6a3eeefb2e0bce159&o='
             className='min-h-full min-w-full object-cover rounded-lg'
@@ -103,15 +103,15 @@ const CardResult = () => {
                 />
 
                 <Button
-                  title='Xem cho trong'
-                  className='pt-[6px] pb-[6px] pr-2 pl-2 rounded-md'
+                  title='Xem chỗ trống'
+                  className='pt-[6px] pb-[6px] pr-2 pl-2 rounded-md w-full justify-center'
                   fontMedium
                   xxl
                   background
                   icon={MdKeyboardArrowRight}
                   classTitle='-translate-y-[1px]'
                   titlePosition='before'
-                  size={20}
+                  size={24}
                 />
               </div>
             </div>

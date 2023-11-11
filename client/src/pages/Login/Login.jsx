@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AiFillFacebook, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
@@ -16,7 +16,22 @@ function Login() {
   const { handleLoginWithGoogle, handleLoginWithFacebook } =
     useContext(UserContext);
 
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
   const { t } = useTranslation();
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = () => {
+    console.log(email + password);
+  };
 
   return (
     <div className='w-full sm:w-[446px] md:w-[380px]'>
@@ -69,6 +84,8 @@ function Login() {
           name='email'
           icon={AiOutlineMail}
           sizeIcon={28}
+          value={email}
+          onChange={handleChangeEmail}
         />
         <TextInput
           placeholder={t("Login.password")}
@@ -78,10 +95,13 @@ function Login() {
           required
           icon={AiFillLock}
           sizeIcon={28}
+          value={password}
+          onChange={handleChangePassword}
         />
         <Button
           className='p-2 bg-blue-500 rounded-lg flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-blue-600 cursor-pointer duration-200'
           title={t("Login.title")}
+          onClick={handleLogin}
         />
       </div>
       <div className='flex items-center justify-center mt-8 font-medium text-[14px] sm:text-[15px] text-gray-400'>

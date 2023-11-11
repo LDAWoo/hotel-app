@@ -1,18 +1,29 @@
-import Image from "../../../components/Image/Image";
-import Title from "../../../components/Title/Title";
-import StayingRating from "../../../components/Staying/StayingRating";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
-function ItemUniqueProperty({ name, image, location, reviews, ratings }) {
+import Image from "../../../components/Image/Image";
+import StayingRating from "../../../components/Staying/StayingRating";
+import Title from "../../../components/Title/Title";
+function ItemUniqueProperty({
+  name,
+  image,
+  districtAddress,
+  city,
+  country,
+  reviews,
+  ratings,
+}) {
+  const location = districtAddress + ", " + city + ", " + country;
   return (
     <Link className='w-full'>
       <div className='w-full border dark:border-primary-500 rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(200,200,200,0.16)]'>
         <div className='flex flex-col'>
-          <div className='flex flex-col'>
-            <Image
-              src={image}
-              className='w-full h-full object-cover rounded-tl-lg rounded-tr-lg'
-            />
+          <div className='flex flex-col '>
+            <div className='flex aspect-[20/20]'>
+              <Image
+                imageBase={image}
+                className='aspect-[20/20] object-cover rounded-tl-lg rounded-tr-lg'
+              />
+            </div>
             <div className='flex flex-col w-full m-0 p-3'>
               <div className='flex w-full dark:text-white'>
                 <Title
@@ -22,7 +33,7 @@ function ItemUniqueProperty({ name, image, location, reviews, ratings }) {
                   titleCustom='text-[14px]'
                 />
               </div>
-              <div className='flex w-full'>
+              <div className='flex w-full items-center gap-1'>
                 <Title
                   title={location}
                   nowrap={false}
@@ -45,5 +56,15 @@ function ItemUniqueProperty({ name, image, location, reviews, ratings }) {
     </Link>
   );
 }
+
+ItemUniqueProperty.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired, // Assuming it's a URL or base64 string
+  districtAddress: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  reviews: PropTypes.number.isRequired,
+  ratings: PropTypes.number.isRequired,
+};
 
 export default ItemUniqueProperty;

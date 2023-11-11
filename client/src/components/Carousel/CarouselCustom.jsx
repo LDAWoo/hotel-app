@@ -11,9 +11,14 @@ const CarouselCustom = ({ data, size = 3 }) => {
   const scrollRef = useRef();
   const { width } = useRegisterWindowSizeStore();
   const [isArrowLeftVisible, setIsArrowLeftVisible] = useState(false);
-  const [isArrowRightVisible, setIsArrowRightVisible] = useState(true);
+  const [isArrowRightVisible, setIsArrowRightVisible] = useState(
+    maxSize < data.length,
+  );
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setIsArrowLeftVisible(false);
+    setIsArrowRightVisible(maxSize < data.length);
+  }, [data]);
 
   const handleLeft = useCallback(() => {
     if (scrollRef.current) {

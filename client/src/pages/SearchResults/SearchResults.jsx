@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { BsFillMapFill } from "react-icons/bs";
 import { TbFilterEdit } from "react-icons/tb";
+import { useSearchParams } from "react-router-dom";
+import Border from "../../components/Border/Border";
 import Button from "../../components/Buttons/Button";
 import useRegisterModalFilter from "../../hooks/useRegisterModalFilter";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import { post } from "../../utils/request";
 import Filter from "./Filter/Filter";
 import ItemResults from "./ItemResults/ItemResults";
 import Map from "./Map/Map";
-import { post } from "../../utils/request";
-import { useSearchParams } from "react-router-dom";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
@@ -62,27 +63,28 @@ function SearchResult() {
   return (
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[1100px] mt-10 p-[10px] bg-transparent'>
-        <div className='flex-col w-full'>
-          <div>Home</div>
+        <div className='flex flex-col w-full gap-2'>
           {width < 900 && (
-            <Button
-              title='Filter'
-              className='w-auto h-[40px] mt-5 mb-5 border-[2px] pr-3 duration-500 rounded-md dark:border-primary-500 dark:text-white hover:border-hotel-50 hover:dark:border-hotel-50 font-medium'
-              icon={TbFilterEdit}
-              size={20}
-              onClick={onOpen}
-              xl
-            />
-          )}
-
-          {width < 900 && (
-            <Button
-              className='fixed bottom-[5%] left-0 right-0 max-w-[125px] mx-auto h-10 z-[9] bg-white dark:bg-primary-600 dark:text-white hover:scale-105 hover:dark:shadow-[0_2px_6px_2px_rgba(245,246,247,0.2)] hover:shadow-[0_2px_6px_2px_rgba(24,25,26,0.2)] duration-500 border-[2px] border-hotel-50 rounded-full font-medium'
-              title='Show map'
-              icon={BsFillMapFill}
-              size={14}
-              customSize='text-[15px]'
-            />
+            <div className='flex flex-col gap-2'>
+              <div className='flex flex-row'>
+                <Button
+                  className='w-full text-hotel-50 hover:bg-hotel-25 pt-2 pb-2  justify-center'
+                  title='Filter'
+                  icon={TbFilterEdit}
+                  size={20}
+                  onClick={onOpen}
+                  xl
+                />
+                <Button
+                  className='w-full text-hotel-50 hover:bg-hotel-25 pt-2 pb-2  justify-center'
+                  title='Map'
+                  icon={BsFillMapFill}
+                  size={14}
+                  xl
+                />
+              </div>
+              <Border />
+            </div>
           )}
 
           <div className='relative flex w-full gap-3'>

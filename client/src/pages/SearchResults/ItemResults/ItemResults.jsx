@@ -28,7 +28,10 @@ function ItemResults({ data, isLoading }) {
           //     </Fragment>
           //   ))}
           // </div>
-          <CardResult />
+          <>
+            <CardResult />
+            <CardResult />
+          </>
         ) : (
           <div>Not Result</div>
         )}

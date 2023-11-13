@@ -1,14 +1,12 @@
-import { post } from "../../utils/request";
+import { post } from "../../../utils/request";
 
-export const postUserLogin = async ({ data }) => {
+export const postUserLogin = async (data) => {
   try {
-    const response = await post("auth/authenticated", { params: data });
+    const response = await post("auth/authenticated", data);
 
     console.log(response);
-    if (!response.ok) {
-      throw new Error(`Lỗi khi lấy dữ liệu: ${response.statusText}`);
-    }
-    const responseData = response.data; // Use responseData
+
+    const responseData = response.data;
     return responseData;
   } catch (error) {
     throw new Error(`Lỗi khi lấy dữ liệu: ${error.message}`);

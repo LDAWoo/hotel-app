@@ -5,12 +5,12 @@ function FilterCard({ title, subTitle, componentDiff, item = [] }) {
   return (
     <div className='w-full p-2 border-b-[1px] dark:border-primary-500'>
       <div className='flex flex-col w-full dark:text-white'>
-        {title && <Title title={title} colorTitle='mb-2' large fontBold />}
+        {title && <Title title={title} className='mb-2' large fontBold />}
         {subTitle && (
           <Title
             title={subTitle}
-            medium
-            colorTitle='text-primary-100 dark:text-primary-50'
+            large
+            className='text-primary-100 dark:text-primary-50'
           />
         )}
         {componentDiff && <>{componentDiff}</>}

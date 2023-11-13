@@ -13,7 +13,7 @@ const CardResult = () => {
     <div className='flex flex-row w-full p-4 border rounded-lg duration-200 dark:border-primary-500 hover:bg-hotel-25 dark:hover:bg-primary-500'>
       <div className='flex flex-row gap-2 w-full'>
         {/* Image */}
-        <Link className='relative rounded-lg aspect-[20/20]'>
+        <Link className='relative rounded-lg sm:aspect-[20/20]'>
           <Image
             src='https://cf.bstatic.com/xdata/images/hotel/square200/411708796.webp?k=6be1f267544f29559b966e9bb461eb95c7f304ec19ba4ad6a3eeefb2e0bce159&o='
             className='min-h-full min-w-full object-cover rounded-lg'
@@ -32,6 +32,7 @@ const CardResult = () => {
                 colorTitle='text-hotel-200 hover:text-primary-700 dark:hover:text-white duration-200'
                 fontBold
                 extraLarge4
+                nowrap={false}
               />
             </div>
 
@@ -56,8 +57,8 @@ const CardResult = () => {
             />
           </div>
 
-          <div className='flex flex-row border-l-[2px] dark:border-primary-500 pl-2 mt-2 w-full'>
-            <div className='flex flex-row gap-2 w-full'>
+          <div className='flex flex-row  pl-2 mt-2 w-full'>
+            <div className='flex flex-col sm:flex-row gap-2 w-full'>
               {/* Categories */}
               <div className='flex flex-col gap-1 w-full dark:text-primary-50'>
                 <Title
@@ -102,17 +103,19 @@ const CardResult = () => {
                   large
                 />
 
-                <Button
-                  title='Xem chỗ trống'
-                  className='pt-[6px] pb-[6px] pr-2 pl-2 rounded-md w-full justify-center'
-                  fontMedium
-                  xxl
-                  background
-                  icon={MdKeyboardArrowRight}
-                  classTitle='-translate-y-[1px]'
-                  titlePosition='before'
-                  size={24}
-                />
+                <div>
+                  <Button
+                    title='Xem chỗ trống'
+                    className='pt-[6px] pb-[6px] pr-2 pl-2 rounded-md justify-end'
+                    fontMedium
+                    xl
+                    background
+                    icon={MdKeyboardArrowRight}
+                    classTitle='-translate-y-[1px]'
+                    titlePosition='before'
+                    size={24}
+                  />
+                </div>
               </div>
             </div>
           </div>

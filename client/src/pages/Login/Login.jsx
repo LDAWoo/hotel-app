@@ -10,6 +10,7 @@ import Image from "../../components/Image/Image";
 import TextInput from "../../components/TextInput/TextInput";
 
 import "./facebookSDK";
+import { postUserLogin } from "../../api/User/Login";
 // const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
 
 function Login() {
@@ -29,8 +30,12 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
-    console.log(email + password);
+  const handleLogin = async () => {
+    const data = { email: email, password: password };
+
+    const response = await postUserLogin(data);
+
+    console.log(response);
   };
 
   return (

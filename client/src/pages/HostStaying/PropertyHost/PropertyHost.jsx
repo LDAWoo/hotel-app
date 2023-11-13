@@ -1,16 +1,16 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import routesConfig from "../../../configs/routesConfig";
 import ComponentHost from "../ComponentHost";
 import FooterHost from "../FooterHost";
 import ComponentPropertyHost from "./ComponentPropertyHost";
+import useRegisterHotelProperty from "../../../hooks/JoinStaying/HotelPropertyHost/useRegisterHotelProperty";
 
 const PropertyHost = () => {
-  const [activeProperty, setActiveProperty] = useState("");
+  const { propertiesValue, setPropertiesValue } = useRegisterHotelProperty();
   const navigate = useNavigate();
 
   const handleChooseProperty = (property) => {
-    setActiveProperty(property);
+    setPropertiesValue(property);
   };
 
   const handleBack = () => {
@@ -28,10 +28,16 @@ const PropertyHost = () => {
       componentLeft={
         <ComponentPropertyHost
           onClick={handleChooseProperty}
-          active={activeProperty}
+          active={propertiesValue}
         />
       }
-      footer={<FooterHost onBack={handleBack} onContinue={handleContinue} />}
+      footer={
+        <FooterHost
+          onBack={handleBack}
+          onContinue={handleContinue}
+          disabled={propertiesValue === ""}
+        />
+      }
     />
   );
 };

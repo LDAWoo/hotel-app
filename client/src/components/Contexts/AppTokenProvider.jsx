@@ -5,7 +5,7 @@ export const UseToken = createContext();
 
 const AppTokenProvider = ({ children }) => {
   const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2dWxkYXBzMjU5MjZAZnB0LmVkdS52biIsImlhdCI6MTY5OTg0NzgzMiwiZXhwIjoxNjk5OTM0MjMyfQ.cmydmmxMU90rQkJ72xO63RxaMyrwZ5t3_nJf1JTJy5E";
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2dWxkYXBzMjU5MjZAZnB0LmVkdS52biIsImlhdCI6MTY5OTg2NDQ2OCwiZXhwIjoxNjk5OTUwODY4fQ.zAmvKH4CvvEaeCBBrdnVdFM6CO4OUa0HS0AOwycTdLM";
 
   return <UseToken.Provider value={{ token }}>{children}</UseToken.Provider>;
 };

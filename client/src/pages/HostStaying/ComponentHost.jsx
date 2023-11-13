@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Title from "../../components/Title/Title";
+import LoadingFullScreen from "../../components/Loading/LoadingFullScreen";
 
 const ComponentHost = ({
   className,
@@ -12,6 +13,7 @@ const ComponentHost = ({
   classComponentRight,
   footer,
   classFooter,
+  loading,
 }) => {
   const ComponentLeft = componentLeft;
   const ComponentRight = componentRight;
@@ -85,6 +87,8 @@ const ComponentHost = ({
 
         {footer && <FooterComponent isVisible={false} />}
       </div>
+
+      {loading && <LoadingFullScreen />}
     </div>
   );
 };
@@ -101,6 +105,7 @@ ComponentHost.propTypes = {
   footer: PropTypes.node,
   classFooter: PropTypes.string,
   isVisible: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 export default ComponentHost;

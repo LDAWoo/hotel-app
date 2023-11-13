@@ -15,9 +15,13 @@ export const get = async (path, options = {}, token) => {
   return response.data;
 };
 
-export const post = async (path, options = {}) => {
-  const response = await request.post(path, options);
-  return response.data;
+export const post = async (path, data = {}, token) => {
+  const response = await request.post(path, data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response;
 };
 
 export default request;

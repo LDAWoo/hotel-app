@@ -1,10 +1,13 @@
+import PropTypes from "prop-types";
 import { HotelNameHostData } from "../../../components/Constants/HotelNameHostData";
+import Star from "../../../components/Star/Start";
 import TextInput from "../../../components/TextInput/TextInput";
 import Title from "../../../components/Title/Title";
-import Star from "../../../components/Star/Start";
-import PropTypes from "prop-types";
+import useRegisterHotelName from "../../../hooks/JoinStaying/HotelNameHost/useRegisterHotelName";
 
 const ComponentHotelName = () => {
+  const { name, rating, setField } = useRegisterHotelName();
+
   const StarRating = ({ value }) => {
     const stars = [];
 
@@ -15,11 +18,20 @@ const ComponentHotelName = () => {
     return <div className='flex flex-row'>{stars}</div>;
   };
 
+  const handleChangeHotelName = (e) => {
+    setField("name", e.target.value);
+  };
+
+  const handleCheckedRating = (value) => {
+    setField("rating", value);
+  };
+
   return (
     <div>
       {HotelNameHostData.map((hotelName, index) => (
         <div key={index} className='flex flex-col gap-2'>
           <Title title={hotelName?.title} fontBold xl />
+
           {hotelName?.data.map((item, index) => (
             <div
               key={index}
@@ -33,25 +45,30 @@ const ComponentHotelName = () => {
               {item?.type === "text" && (
                 <label className='font-medium text-[14px]'>{item?.title}</label>
               )}
-              {item?.type === "text" ? (
+              {hotelName?.type === "text" ? (
                 <TextInput
                   type='text'
+                  className='w-full'
                   classBorder='border border-primary-100 rounded-sm'
                   classInput='w-full focus:outline-none placeholder:text-[14px] text-[14px] border-[1px] pt-[5px] pb-[5px] pl-[3px] pr-[3px] border-transparent focus:border-hotel-75 dark:focus:border-hotel-500 dark:bg-primary-700 dark:text-white'
+                  value={name}
+                  onChange={handleChangeHotelName}
                 />
-              ) : item?.type === "radio" ? (
+              ) : hotelName?.type === "radio" ? (
                 <input
                   type='radio'
                   name={item?.name}
                   className='w-4 h-4 mr-[8px] cursor-pointer dark:bg-primary-700'
                   value={item?.value}
+                  checked={item?.value === rating}
                   id={item?.id}
+                  onChange={() => handleCheckedRating(item?.value)}
                 />
               ) : (
                 <></>
               )}
 
-              {item?.type === "radio" && (
+              {hotelName?.type === "radio" && (
                 <label
                   className='flex flex-row gap-1 text-[14px] cursor-pointer w-full'
                   htmlFor={item?.id}
@@ -65,7 +82,7 @@ const ComponentHotelName = () => {
 
           {hotelName?.subTitle && (
             <div className='mb-5'>
-              <Title title={hotelName?.subTitle} large />
+              <Title title={hotelName?.subTitle} large xl />
             </div>
           )}
         </div>

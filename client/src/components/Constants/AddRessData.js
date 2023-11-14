@@ -27,8 +27,8 @@ export const AddRessData = [
     type: "text",
     data: [
       {
-        name: "Zip code",
-        field: "postalCode",
+        name: "District Address",
+        field: "districtAddress",
       },
     ],
   },
@@ -39,6 +39,16 @@ export const AddRessData = [
       {
         name: "City",
         field: "city",
+      },
+    ],
+  },
+  {
+    id: 5,
+    type: "text",
+    data: [
+      {
+        name: "Zip code",
+        field: "postalCode",
       },
     ],
   },

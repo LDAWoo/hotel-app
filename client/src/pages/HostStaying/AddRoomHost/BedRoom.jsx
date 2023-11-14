@@ -51,6 +51,7 @@ function BedRoom({ data }) {
                 </div>
               )}
               <IncreaseAndDecreaseValue
+                className='w-auto h-[40px]'
                 value={item?.value}
                 minValue={item?.min}
                 maxValue={item?.max}

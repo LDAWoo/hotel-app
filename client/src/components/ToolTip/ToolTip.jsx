@@ -43,8 +43,8 @@ function ToolTip({
 
   const renderItems = () => (
     <div
-      className='flex flex-col w-full mx-auto bg-white dark:bg-primary-600 border-[1px] border-gray-200 dark:border-primary-500 shadow-md rounded-md gap-2 pt-1 pb-1'
-      style={{ width: width }}
+      className='flex flex-col w-full h-full mx-auto bg-white dark:bg-primary-600 border-[1px] border-gray-200 dark:border-primary-500 shadow-md rounded-md'
+      style={{ width: width, height: "auto" }}
     >
       {items}
     </div>

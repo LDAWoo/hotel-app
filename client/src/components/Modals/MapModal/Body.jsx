@@ -4,8 +4,8 @@ import ItemBody from "./ItemBody";
 import { IoIosArrowBack } from "react-icons/io";
 import Loading from "../../Loading/Loading";
 import Filter from "../../../pages/SearchResults/Filter/Filter";
-import { getHotels } from "../../../api/Hotel";
 import Icon from "../../Icon/Icon";
+import { getSearchResults } from "../../Constants/SearchResults";
 function Body() {
   const [visibleItem, setVisibleItem] = useState(true);
 
@@ -13,18 +13,10 @@ function Body() {
     setVisibleItem(!visibleItem);
   };
 
-  const [ourHotels, setOurHotels] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const fetchHotels = async () => {
-      const hotels = await getHotels();
-      setOurHotels(hotels);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    };
-    fetchHotels();
-  }, []);
+  const [ourHotels, setOurHotels] = useState(getSearchResults);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(ourHotels);
 
   return (
     <div className='relative w-full h-full'>
@@ -33,27 +25,33 @@ function Body() {
           <Filter />
         </div>
         <div
-          className={`absolute overflow-x-hidden duration-100 p-[8px] pt-0 z-[999] bg-white dark:bg-primary-700 overflow-y-auto box-border top-0 h-full ${
+          className={`absolute overflow-x-hidden p-[8px] pt-0 z-[999] bg-white dark:bg-primary-700 overflow-y-auto box-border top-0 h-full transition-[left] duration-500 ${
             visibleItem
               ? "left-[265px] w-[380px]"
               : "left-[0] w-[265px] rounded-tl-lg rounded-bl-lg"
           }`}
         >
           <div className='relative'>
-            <ItemBody data={ourHotels} isLoading={isLoading} />
+            <ItemBody data={ourHotels} />
             {isLoading && <Loading />}
           </div>
         </div>
         <div
-          className={`absolute flex items-center duration-100 justify-center dark:text-white cursor-pointer w-6 h-6 top-3 bg-white dark:bg-primary-600 dark:border-primary-500 shadow-[1px_1px_2px_0px_rgba(100,100,100,0.5)] dark:shadow-[1px_1px_2px_0px_rgba(23,24,25,0.9)] hover:bg-gray-100 rounded-tr-md rounded-br-md border-[1px] ${
+          className={`absolute z-50 flex items-center transition-[left] duration-500 justify-center dark:text-white cursor-pointer w-6 h-6 top-3 bg-white dark:bg-primary-600 dark:border-primary-500 shadow-[1px_1px_2px_0px_rgba(100,100,100,0.5)] dark:shadow-[1px_1px_2px_0px_rgba(23,24,25,0.9)] hover:bg-gray-100 rounded-tr-md rounded-br-md border-[1px] ${
             visibleItem ? "left-[645px]" : "left-[268px] rotate-180"
           }`}
           onClick={handleClick}
         >
           <Icon icon={IoIosArrowBack} size={16} />
         </div>
-        <div>
-          <GoogleMapCustom />
+        <div
+          className={`absolute right-0 top-0 left-0 bottom-0 transition-[left] duration-500 ${
+            visibleItem ? "left-[640px]" : "left-[265px]"
+          }`}
+        >
+          <div className='relative w-full h-full'>
+            <GoogleMapCustom data={ourHotels} />
+          </div>
         </div>
       </div>
     </div>

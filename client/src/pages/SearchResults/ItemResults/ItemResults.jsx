@@ -1,9 +1,6 @@
-import { Fragment } from "react";
 import Title from "../../../components/Title/Title";
-import Card from "../../Home/OurHotel/Card";
 import PropTypes from "prop-types";
-import CardContent from "../../Home/OurHotel/CardContent";
-import CardResult from "./CardResult.jsx";
+import CardResult from "./CardResult";
 
 function ItemResults({ data, isLoading }) {
   return (

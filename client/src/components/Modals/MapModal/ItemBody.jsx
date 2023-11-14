@@ -1,15 +1,25 @@
 import PropTypes from "prop-types";
 import { Fragment } from "react";
-import Card from "../../../pages/Home/OurHotel/Card";
-import HotelCardSkeleton from "../../../pages/Home/OurHotel/HotelCardSkeleton";
-function ItemBody({ data, isLoading }) {
+import CardBody from "./CardBody";
+function ItemBody({ data }) {
+  console.log(data);
   return (
-    <div className=''>
-      <div className='pt-2 flex flex-col h-full'>
-        <div className='grid grid-cols-1 gap-y-8'>
-          {data?.products?.map((card, index) => (
+    <div className='w-full'>
+      <div className='pt-2 flex flex-col h-full w-full'>
+        <div className='grid grid-cols-1 gap-y-3'>
+          {data?.map((item, index) => (
             <Fragment key={index}>
-              {isLoading ? <HotelCardSkeleton /> : <Card data={card} />}
+              <CardBody
+                id={item?.hotelId}
+                name={item?.name}
+                rating={item?.rating}
+                image={item?.images[0]?.picByte}
+                days={item?.totalDay}
+                adults={item?.adults}
+                child={item?.children}
+                reviews={item?.countView}
+                border
+              />
             </Fragment>
           ))}
         </div>

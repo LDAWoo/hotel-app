@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { AddRessData } from "../../../components/Constants/AddRessData";
 import SelectInput from "../../../components/SelectInput/SelectInput";
 import TextInput from "../../../components/TextInput/TextInput";
@@ -6,6 +6,7 @@ import useRegisterAddRess from "../../../hooks/JoinStaying/AddRessHost/useRegist
 
 const ComponentAddRess = () => {
   const { country, setField, data } = useRegisterAddRess();
+  const prevCountryRef = useRef(country);
 
   const initialState = AddRessData.map((item) => {
     if (item.type === "text") {
@@ -32,11 +33,33 @@ const ComponentAddRess = () => {
     }
   };
 
-  const handleSelectCountry = (e) => {
-    setField("country", e.target.value);
-  };
-
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    const resetOtherFields = () => {
+      const fieldsToReset = [
+        "streetAddress",
+        "districtAddress",
+        "city",
+        "postalCode",
+      ];
+      fieldsToReset.forEach((field) => setField(field, ""));
+      fieldsToReset.forEach((field) =>
+        dispatch({ type: "SELECT_OPTION", payload: { value: "", field } }),
+      );
+    };
+
+    if (prevCountryRef.current !== data.country) {
+      resetOtherFields();
+    }
+
+    prevCountryRef.current = country;
+  }, [country, data.country, setField, state]);
+
+  const handleSelectCountry = (e) => {
+    const countries = e.target.value;
+    setField("country", countries);
+  };
 
   const handleChooseOption = (value, field) => {
     dispatch({ type: "SELECT_OPTION", payload: { value, field } });
@@ -45,6 +68,9 @@ const ComponentAddRess = () => {
   useEffect(() => {
     state.forEach((item) => setField(item.field, item.selectedValue));
   }, [state, setField]);
+
+  console.log(data);
+  console.log(state);
 
   return (
     <div>

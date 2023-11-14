@@ -1,3 +1,4 @@
+import Map from "../../../components/Map/Map";
 import Title from "../../../components/Title/Title";
 
 function ComponentMap() {
@@ -10,6 +11,9 @@ function ComponentMap() {
           xl
         />
         {/* GoogleMap */}
+        <div className='w-[50vh] h-[50vh]'>
+          <Map />
+        </div>
         <div></div>
       </div>
     </div>

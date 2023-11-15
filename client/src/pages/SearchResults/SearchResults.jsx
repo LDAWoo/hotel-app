@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { BsFillMapFill } from "react-icons/bs";
-import { TbFilterEdit } from "react-icons/tb";
 import { useSearchParams } from "react-router-dom";
 import Border from "../../components/Border/Border";
-import Button from "../../components/Buttons/Button";
 import useRegisterModalFilter from "../../hooks/useRegisterModalFilter";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import { post } from "../../utils/request";
 import Filter from "./Filter/Filter";
+import FilterMobile from "./Filter/FilterMobile";
 import ItemResults from "./ItemResults/ItemResults";
 import Map from "./Map/Map";
+import MapMobile from "./Map/MapMobile";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
-  const { onOpen, onClose } = useRegisterModalFilter();
+  const { onClose } = useRegisterModalFilter();
 
   useEffect(() => {
     onClose();
@@ -67,21 +66,8 @@ function SearchResult() {
           {width < 900 && (
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row'>
-                <Button
-                  className='w-full text-hotel-50 hover:bg-hotel-25 pt-2 pb-2  justify-center'
-                  title='Filter'
-                  icon={TbFilterEdit}
-                  size={20}
-                  onClick={onOpen}
-                  xl
-                />
-                <Button
-                  className='w-full text-hotel-50 hover:bg-hotel-25 pt-2 pb-2  justify-center'
-                  title='Map'
-                  icon={BsFillMapFill}
-                  size={14}
-                  xl
-                />
+                <FilterMobile />
+                <MapMobile />
               </div>
               <Border />
             </div>

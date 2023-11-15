@@ -6,6 +6,7 @@ import { ThemeContext } from "../Contexts/AppThemeProvider";
 
 function ToolTip({
   typeToolTip = "Tippy",
+  interactive,
   delay,
   content,
   items,
@@ -43,7 +44,9 @@ function ToolTip({
 
   const renderItems = () => (
     <div
-      className='flex flex-col w-full h-full mx-auto bg-white dark:bg-primary-600 border-[1px] border-gray-200 dark:border-primary-500 shadow-md rounded-md'
+      className={`flex flex-col w-full h-full mx-auto rounded-lg ${
+        darkMode === "dark" ? "bg-primary-700" : "bg-white"
+      }`}
       style={{ width: width, height: "auto" }}
     >
       {items}
@@ -53,7 +56,7 @@ function ToolTip({
   const ToolTipTippyHeadless = () => (
     <TippyHeadless
       onClickOutside={onClickOutside}
-      interactive
+      interactive={interactive}
       visible={isVisible}
       render={renderItems}
       placement={placement}
@@ -69,6 +72,7 @@ function ToolTip({
 
 ToolTip.propTypes = {
   delay: PropTypes.arrayOf(PropTypes.number),
+  interactive: PropTypes.bool,
   content: PropTypes.node,
   placement: PropTypes.string,
   className: PropTypes.string,

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Fragment } from "react";
+import { Fragment, memo } from "react";
 import CardBody from "./CardBody";
 function ItemBody({ data }) {
   console.log(data);
@@ -29,8 +29,8 @@ function ItemBody({ data }) {
 }
 
 ItemBody.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   isLoading: PropTypes.bool,
 };
 
-export default ItemBody;
+export default memo(ItemBody);

@@ -1,11 +1,10 @@
+import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
-import Image from "../../Image/Image";
-import CardHeart from "../../../pages/Home/OurHotel/CardHeart";
-import Title from "../../Title/Title";
-import StayingRating from "../../Staying/StayingRating";
-import Icon from "../../Icon/Icon";
-import { BsInfoCircle } from "react-icons/bs";
 import useRegisterPinMap from "../../../hooks/Map/useRegisterPinMap";
+import CardHeart from "../../../pages/Home/OurHotel/CardHeart";
+import Icon from "../../Icon/Icon";
+import StayingRating from "../../Staying/StayingRating";
+import Title from "../../Title/Title";
 
 const CardBody = ({
   id,
@@ -16,6 +15,8 @@ const CardBody = ({
   adults,
   child,
   reviews,
+  background,
+  hover,
   border,
 }) => {
   const { value, setValue } = useRegisterPinMap();
@@ -27,17 +28,20 @@ const CardBody = ({
   const handleMouseLeave = () => {
     setValue(null);
   };
+
   return (
     <Link
-      className={`flex relative flex-row w-full h-full p-2 rounded-lg duration-200 hover:bg-hotel-25 dark:hover:bg-primary-500 shadow-[0_5px_5px_rgba(0,0,0,7%)] ${
-        border ? "border" : ""
+      className={`flex relative flex-row w-full h-full p-2 rounded-lg duration-200 ${
+        background ? "bg-white dark:bg-primary-700" : ""
+      } hover:bg-hotel-25 dark:hover:bg-primary-500 shadow-[0_5px_5px_rgba(0,0,0,7%)] ${
+        border ? "border dark:border-primary-500" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(id)}
       onMouseLeave={handleMouseLeave}
     >
       {/* Image */}
       <div className='absolute top-[10px] bottom-[10px] overflow-hidden w-[35%] rounded-lg'>
-        <Image src={image} className='h-full w-full object-cover rounded-lg' />
+        <img src={image} className='h-full w-full object-cover rounded-lg' />
       </div>
 
       {/* Heart */}
@@ -45,7 +49,11 @@ const CardBody = ({
         <CardHeart isWishlist={false} />
       </div>
 
-      <div className='flex flex-col overflow-hidden ml-[38%] w-[55%] h-full'>
+      <div className='absolute top-[50%] right-0 text-primary-50 dark:text-white'>
+        <Icon icon={MdArrowForwardIos} size={20} />
+      </div>
+
+      <div className='flex flex-col overflow-hidden ml-[39%] w-[55%] h-full'>
         <div className='flex flex-col w-full gap-2'>
           <Title
             title={name}
@@ -58,7 +66,7 @@ const CardBody = ({
           />
 
           <div>
-            <div className='flex w-full h-auto'>
+            <div className='flex w-full h-auto gap-1'>
               <StayingRating rating={rating} />
               <div className='flex flex-row items-end'>
                 <Title title={`${reviews} lượt xem`} large />
@@ -99,11 +107,6 @@ const CardBody = ({
 
                 <div className='flex flex-row gap-1 items-center dark:text-white'>
                   <Title title='VND 37,550,000' xxxl fontMedium />
-                  <Icon
-                    icon={BsInfoCircle}
-                    size={14}
-                    classIcon='text-primary-700 dark:text-white'
-                  />
                 </div>
               </div>
 

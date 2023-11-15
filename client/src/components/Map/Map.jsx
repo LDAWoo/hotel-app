@@ -1,21 +1,44 @@
-import { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
+import { useContext, useEffect, useState } from "react";
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
-import Marker from "../Marker/Marker";
 import useRegisterPinMap from "../../hooks/Map/useRegisterPinMap";
-
+import Marker from "../Marker/Marker";
+import { mapStyles } from "./MapStyles";
+import { ThemeContext } from "../Contexts/AppThemeProvider";
+import PropType from "prop-types";
 const key = import.meta.env.VITE_APP_GOOGLE_MAP_KEY;
 
 const Map = ({ data }) => {
   const { value } = useRegisterPinMap();
+  const zoom = 14;
+  const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+  const { darkMode } = useContext(ThemeContext);
 
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
+  useEffect(() => {
+    const fetch = async () => {
+      const currentAddRess =
+        data[0]?.streetAddress +
+        ", " +
+        data[0]?.districtAddress +
+        ", " +
+        data[0]?.city +
+        ", " +
+        data[0]?.country;
+
+      if (currentAddRess.trim() != "") {
+        const currentCoordinates = await getCoordinates(currentAddRess);
+        console.log(currentCoordinates);
+        if (currentAddRess) {
+          setCoordinates({
+            lat: currentCoordinates.lat,
+            lng: currentCoordinates.lng,
+          });
+        }
+      }
+    };
+
+    fetch();
+  }, []);
 
   const [markers, setMarkers] = useState([]);
 
@@ -23,7 +46,7 @@ const Map = ({ data }) => {
     const fetchCoordinates = async () => {
       const markersArray = await Promise.all(
         data.map(async (item) => {
-          const addRess =
+          const address =
             item.streetAddress +
             ", " +
             item.districtAddress +
@@ -31,23 +54,28 @@ const Map = ({ data }) => {
             item.city +
             ", " +
             item.country;
-          const coordinates = await getCoordinates(addRess);
-          return coordinates ? (
-            <Marker
-              key={item?.id}
-              id={item?.hotelId}
-              lat={coordinates.lat}
-              lng={coordinates.lng}
-              isActive={item?.hotelId === value}
-              name={item?.name}
-              rating={item?.rating}
-              image={item?.images[0]?.picByte}
-              days={item?.totalDay}
-              adults={item?.adults}
-              child={item?.children}
-              reviews={item?.countView}
-            />
-          ) : null;
+          try {
+            const coordinates = await getCoordinates(address);
+            return coordinates ? (
+              <Marker
+                key={item?.hotelId}
+                id={item?.hotelId}
+                lat={coordinates.lat}
+                lng={coordinates.lng}
+                isActive={item?.hotelId === value}
+                name={item?.name}
+                rating={item?.rating}
+                image={item?.images[0]?.picByte}
+                days={item?.totalDay}
+                adults={item?.adults}
+                child={item?.children}
+                reviews={item?.countView}
+              />
+            ) : null;
+          } catch (error) {
+            console.error("Error fetching coordinates:", error);
+            return null;
+          }
         }),
       );
       setMarkers(markersArray);
@@ -59,28 +87,44 @@ const Map = ({ data }) => {
   const getCoordinates = async (address) => {
     try {
       const results = await geocodeByAddress(address);
-      const latLng = await getLatLng(results[0]);
-      return latLng;
+      if (results && results[0]) {
+        const latLng = await getLatLng(results[0]);
+        return latLng;
+      } else {
+        console.error("No valid result found");
+        return null;
+      }
     } catch (error) {
       console.error("Error getting coordinates:", error);
       return null;
     }
   };
 
-  const handleApiLoaded = (map, maps) => {
-    // Use the map and maps objects here
-  };
+  // const handleApiLoaded = (map, maps) => {
+  //   // maps.visualRefresh = true;
+  //   // maps.maxZoomService = true;
+  // };
 
   return (
-    <GoogleMapReact
-      bootstrapURLKeys={{ key: key, language: "en" }}
-      defaultCenter={defaultProps.center}
-      defaultZoom={defaultProps.zoom}
-      onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
-    >
-      {markers}
-    </GoogleMapReact>
+    <>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: key, language: "en" }}
+        center={coordinates}
+        // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+        options={{
+          styles: `${darkMode === "dark" ? mapStyles : ""}`,
+          gestureHandling: "greedy",
+        }}
+        defaultZoom={zoom}
+      >
+        {markers}
+      </GoogleMapReact>
+    </>
   );
+};
+
+Map.propTypes = {
+  data: PropType.array,
 };
 
 export default Map;

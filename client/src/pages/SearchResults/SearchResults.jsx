@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import Border from "../../components/Border/Border";
+import useRegisterSearchHotelResult from "../../hooks/SearchResults/useRegisterSearchHotelResult";
 import useRegisterModalFilter from "../../hooks/useRegisterModalFilter";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import { post } from "../../utils/request";
@@ -9,6 +9,7 @@ import FilterMobile from "./Filter/FilterMobile";
 import ItemResults from "./ItemResults/ItemResults";
 import Map from "./Map/Map";
 import MapMobile from "./Map/MapMobile";
+import NoResult from "./NoResult";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
@@ -18,22 +19,23 @@ function SearchResult() {
     onClose();
   }, [width]);
 
-  const [searchParams] = useSearchParams();
-  const currentLocation = searchParams?.get("location")?.split("+").join(" ");
-  const currentCheckInDate = searchParams?.get("checkin");
-  const currentCheckOutDate = searchParams?.get("checkout");
-  const currentAdults = searchParams?.get("group_adults");
-  const currentChildren = searchParams?.get("group_children");
-  const currentRooms = searchParams?.get("group_rooms");
+  const searchParams = new URLSearchParams(window.location.search);
+  const currentLocation =
+    searchParams?.get("location")?.split("+").join(" ") || "";
+  const currentCheckInDate = searchParams?.get("checkin") || "";
+  const currentCheckOutDate = searchParams?.get("checkout") || "";
+  const currentAdults = searchParams?.get("group_adults") || "";
+  const currentChildren = searchParams?.get("group_children") || "";
+  const currentRooms = searchParams?.get("group_rooms") || "";
 
-  const [ourHotels, setOurHotels] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { ourHotels, setOurHotels } = useRegisterSearchHotelResult();
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
       const data = {
         city: currentLocation,
-        country: "Ho Chi Minh",
+        country: "Viet Nam",
         checkInDate: currentCheckInDate,
         checkOutDate: currentCheckOutDate,
         adults: currentAdults,
@@ -44,12 +46,15 @@ function SearchResult() {
         quantityRoom: currentRooms,
       };
 
+      console.log(data);
+
       const response = await post("hotel/get-condition", data);
       console.log(response);
       setOurHotels(response.listResult);
-      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching hotel data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -76,11 +81,15 @@ function SearchResult() {
           <div className='relative flex w-full gap-3'>
             <div className='hidden 2md:flex flex-col w-full 2md:w-[24%] absolute 2md:relative'>
               <Map />
-              <Filter />
+              {ourHotels.length > 0 && <Filter />}
             </div>
 
             <div className='w-full 2md:w-[74%]'>
-              <ItemResults data={ourHotels} isLoading={isLoading} />
+              {ourHotels.length > 0 ? (
+                <ItemResults data={ourHotels} isLoading={loading} />
+              ) : (
+                <NoResult searchResult={currentLocation} />
+              )}
             </div>
           </div>
         </div>

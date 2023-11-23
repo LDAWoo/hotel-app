@@ -46,7 +46,7 @@ function base64ToBlob(base64String, contentType = "") {
 
 Image.propTypes = {
   className: PropTypes.string,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   srcDark: PropTypes.string,
   srcSet: PropTypes.string,
   srcSetDark: PropTypes.string,

@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMapFill } from "react-icons/bs";
+import { useSearchParams } from "react-router-dom";
+import { getHotelById } from "../../api/HotelDetails";
 import Button from "../../components/Buttons/Button";
 import ImageModal from "../../components/Modals/ImageModal/ImageModal";
+import useRegisterHotelDetails from "../../hooks/HotelDetails/useRegisterHotelDetails";
 import useRegisterModalSearch from "../../hooks/useRegisterModalSearch";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import Availability from "./Availability/Availability";
@@ -19,12 +22,55 @@ function HotelDetails() {
   const { onOpen, onClose } = useRegisterModalSearch();
   const { t } = useTranslation();
 
+  const [searchParams] = useSearchParams();
+  const currentHotelId = searchParams?.get("id") || "";
+  const currentLocation =
+    searchParams?.get("location")?.split("+").join(" ") || "";
+  const currentCheckInDate = searchParams?.get("checkin") || "";
+  const currentCheckOutDate = searchParams?.get("checkout") || "";
+  const currentAdults = searchParams?.get("group_adults") || "";
+  const currentChildren = searchParams?.get("group_children") || "";
+  const currentRooms = searchParams?.get("group_rooms") || "";
+
+  const { setHotels, setLoading } = useRegisterHotelDetails();
+
+  const data = {
+    hotelId: currentHotelId,
+    city: currentLocation,
+    country: "Viet Nam",
+    checkInDate: currentCheckInDate,
+    checkOutDate: currentCheckOutDate,
+    adults: currentAdults,
+    typeOfGuestChildren: true,
+    children: currentChildren,
+    childrenOldStart: "Children >= 12",
+    childrenOldEnd: "Children >= 14",
+    quantityRoom: currentRooms,
+  };
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const results = await getHotelById(data);
+        console.log(results);
+        setHotels(results.listResult[0]);
+      } catch (e) {
+        console.log(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetch();
+  }, []);
+
   const handleShowModalSearch = () => {
     onOpen();
   };
   useEffect(() => {
     onClose();
   }, [width]);
+
   return (
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>

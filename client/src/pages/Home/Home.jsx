@@ -4,7 +4,7 @@ import UniqueProperty from "./UniqueProperty/UniqueProperty";
 import GuestLove from "./GuestLove/GuestLove";
 import DestinationsWeLove from "./DestinationsWeLove/DestinationsWeLove";
 import { useEffect, useState } from "react";
-import { getDestinationWeLove } from "../../api/Hotel/DestinationWeLove";
+import { getHotelIndex } from "../../api/Home";
 
 function Home() {
   const [homeData, setHomeData] = useState([]);
@@ -20,7 +20,8 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getDestinationWeLove();
+        const result = await getHotelIndex();
+        console.log(result);
         setHomeData(result);
       } catch (error) {
         console.error("Error fetching data:", error);

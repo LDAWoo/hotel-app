@@ -1,8 +1,9 @@
 import Title from "../../../components/Title/Title";
 import PropTypes from "prop-types";
 import CardResult from "./CardResult";
+import { Fragment } from "react";
 
-function ItemResults({ data, isLoading }) {
+function ItemResults({ data }) {
   return (
     <div className='w-full h-full relative'>
       <div className='flex flex-col w-full h-full relative'>
@@ -15,29 +16,18 @@ function ItemResults({ data, isLoading }) {
             nowrap={false}
           />
         </div>
-        {data ? (
-          // <div className='grid gap-3 auto-cols-auto grid-cols-1 vsm:grid-cols-2 w-full'>
-          //   {data?.products?.map((card, index) => (
-          //     <Fragment key={index}>
-          //       <Card data={card} isLoading={isLoading}>
-          //         <CardContent data={card} />
-          //       </Card>
-          //     </Fragment>
-          //   ))}
-          // </div>
-          <>
-            <CardResult />
-            <CardResult />
-          </>
-        ) : (
-          <div>Not Result</div>
-        )}
+        <div className='grid gap-3 grid-cols-1 w-full'>
+          {data.map((items, index) => (
+            <Fragment key={index}>
+              <CardResult items={items} />
+            </Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 ItemResults.propTypes = {
   data: PropTypes.object,
-  isLoading: PropTypes.bool,
 };
 export default ItemResults;

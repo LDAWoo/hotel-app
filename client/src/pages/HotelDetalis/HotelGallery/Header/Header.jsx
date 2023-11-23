@@ -1,9 +1,11 @@
-import Star from "../../../../components/Star/Start";
+import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
+import useRegisterHotelDetails from "../../../../hooks/HotelDetails/useRegisterHotelDetails";
 import Location from "./Location/Location";
 
 function Header() {
-  const starCount = 2;
+  const { hotels } = useRegisterHotelDetails();
+
   return (
     <div className='w-full'>
       <div className='w-full flex flex-col'>
@@ -11,15 +13,15 @@ function Header() {
         <div className='flex w-full'>
           <div className='flex flex-1 items-center'>
             <Title
-              title='Bon Ami Hotel - Thien Xuan Hotel'
+              title={hotels?.name}
               fontBold
-              xl
+              extraLarge5
               colorTitle='dark:text-white'
             />
           </div>
-          {starCount > 0 && <Star starCount={starCount} />}
+          {hotels?.rating > 0 && <StayingRating rating={hotels?.rating} />}
         </div>
-        <Location />
+        <Location data={hotels} />
       </div>
     </div>
   );

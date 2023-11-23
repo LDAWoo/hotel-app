@@ -5,23 +5,26 @@ const request = axios.create({
 });
 
 export const get = async (path, options = {}, token) => {
+  const headers = token
+    ? {
+        Authorization: `Bearer ${token}`,
+        ...options.headers,
+      }
+    : options.headers;
+
   const response = await request.get(path, {
     ...options,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      ...options.headers,
-    },
+    headers,
   });
+
   return response.data;
 };
 
 export const post = async (path, data = {}, token) => {
-  const response = await request.post(path, data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  return response;
+  const headers = token ? { Authorization: `Bearer ${token}` } : null;
+
+  const response = await request.post(path, data, headers);
+  return response.data;
 };
 
 export default request;

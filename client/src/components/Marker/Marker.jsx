@@ -39,8 +39,6 @@ const Marker = ({
       child,
       reviews,
     });
-
-    console.log(id);
   };
 
   return (
@@ -65,11 +63,19 @@ const Marker = ({
           <div className='absolute -translate-y-[100%] -translate-x-[50%] w-[28px] h-[34px] duration-200 cursor-pointer fill-hotel-600 hover:fill-hotel-50'>
             <div className='w-[28px] h-[34px] relative pointer-events-none cursor-pointer after:content-[""] after:absolute after:block after:left-0 after:top-0 after:w-full after:h-full'>
               <div
-                className={`absolute w-[28px] h-[34px] top-0 left-0 z-[2] pointer-events-none ${
-                  isActive ? "animate-bounce fill-hotel-50" : ""
+                className={`absolute z-[2] pointer-events-none ${
+                  isActive
+                    ? "animate-bounce fill-hotel-50 w-[34px] h-[40px] -top-[8px] -left-[3px] "
+                    : "w-[28px] h-[34px] top-0 left-0 "
                 }`}
               >
-                <div className='cursor-pointer w-[10px] h-[10px] bg-white border-white border rounded-[50%] absolute top-[9px] left-[9px] pointer-events-none z-[1002]'></div>
+                <div
+                  className={`cursor-pointer ${
+                    isActive
+                      ? "w-[14px] h-[14px] left-[10px]"
+                      : "w-[10px] h-[10px] left-[9px]"
+                  } bg-white border-white border rounded-[50%] absolute top-[9px] pointer-events-none z-[1002]`}
+                ></div>
                 <svg
                   viewBox='-1 -1 26 32'
                   className='stroke-white stroke-[1px] pointer-events-none z-[1]'

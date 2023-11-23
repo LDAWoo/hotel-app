@@ -6,6 +6,7 @@ import Marker from "../Marker/Marker";
 import { mapStyles } from "./MapStyles";
 import { ThemeContext } from "../Contexts/AppThemeProvider";
 import PropType from "prop-types";
+import SearchMap from "./SeachMap";
 const key = import.meta.env.VITE_APP_GOOGLE_MAP_KEY;
 
 const Map = ({ data }) => {
@@ -87,7 +88,7 @@ const Map = ({ data }) => {
   const getCoordinates = async (address) => {
     try {
       const results = await geocodeByAddress(address);
-      if (results && results[0]) {
+      if (results && results.length > 0) {
         const latLng = await getLatLng(results[0]);
         return latLng;
       } else {
@@ -95,7 +96,12 @@ const Map = ({ data }) => {
         return null;
       }
     } catch (error) {
-      console.error("Error getting coordinates:", error);
+      if (error.status === "OVER_QUERY_LIMIT") {
+        console.warn("Geocoding API quota exceeded. Waiting and retrying...");
+        // You can implement a retry mechanism or handle it as needed.
+      } else {
+        console.error("Error getting coordinates:", error);
+      }
       return null;
     }
   };
@@ -106,12 +112,13 @@ const Map = ({ data }) => {
   // };
 
   return (
-    <>
+    <div className='w-full h-full relative'>
       <GoogleMapReact
         bootstrapURLKeys={{ key: key, language: "en" }}
         center={coordinates}
         // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         options={{
+          fullscreenControl: false,
           styles: `${darkMode === "dark" ? mapStyles : ""}`,
           gestureHandling: "greedy",
         }}
@@ -119,7 +126,8 @@ const Map = ({ data }) => {
       >
         {markers}
       </GoogleMapReact>
-    </>
+      <SearchMap />
+    </div>
   );
 };
 

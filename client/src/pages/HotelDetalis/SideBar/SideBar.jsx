@@ -1,13 +1,11 @@
 import { memo } from "react";
-import Search from "./Search/Search";
+import Search from "../Search";
 
 function SideBar() {
   return (
-    <div className='min-w-[200px] max-w[300px]'>
-      <div className='w-full'>
-        <div className='w-full'>
-          <Search />
-        </div>
+    <div className='w-[250px]'>
+      <div className='w-full bg-secondary-50/80 dark:bg-secondary-100/50 p-4 dark:text-white'>
+        <Search />
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
         >
           {/* Content */}
           <div className='relative w-full h-full overflow-x-hidden overflow-y-auto'>
-            <div className='fixed top-[5%] hidden sm:flex sm:right-[560px] md:right-[675px] 2md:right-[735px] rounded-tl-md rounded-bl-md shadow-[0_0_14px_rgba(10,10,10,0.5)]'>
+            <div className='fixed top-[5%] hidden sm:flex sm:right-[545px] md:right-[655px] 2md:right-[720px] rounded-tl-md rounded-bl-md shadow-[0_0_14px_rgba(10,10,10,0.5)]'>
               <Button
                 icon={AiOutlineClose}
                 onClick={handleClose}
@@ -117,14 +117,14 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
                 title='Back'
                 border
                 onClick={handleClose}
-                className='pt-[4px] pb-[4px]'
+                className='pt-[4px] pb-[4px] text-center justify-center'
                 fontMedium
               />
 
               <Button
                 title='Reserve'
                 background
-                className='pt-[4px] pb-[4px]'
+                className='pt-[4px] pb-[4px] text-center justify-center'
                 fontMedium
               />
             </div>

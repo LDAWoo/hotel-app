@@ -1,8 +1,9 @@
 import { AiOutlineHeart } from "react-icons/ai";
 import Button from "../../../../components/Buttons/Button";
 import Title from "../../../../components/Title/Title";
+// import MoneyFormatStaying from '../../../../components/Staying/MoneyFormatStaying'
 
-function Highlight() {
+function Highlight({ data }) {
   return (
     <div className='w-full 2md:w-[33.33%] 2md:basis-[33.33%] 2md:max-w-[33.33%] pt-3'>
       <div className='relative w-full m-0 p-0'>
@@ -22,6 +23,7 @@ function Highlight() {
                 xl
                 nowrap={false}
               />
+              {/* <MoneyFormatStaying price={data?.}/> */}
             </button>
             <div className='flex flex-col'>
               <Button

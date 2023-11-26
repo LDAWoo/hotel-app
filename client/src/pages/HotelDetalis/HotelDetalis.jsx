@@ -52,8 +52,7 @@ function HotelDetails() {
     const fetch = async () => {
       try {
         const results = await getHotelById(data);
-        console.log(results);
-        setHotels(results.listResult[0]);
+        setHotels(results);
       } catch (e) {
         console.log(e);
       } finally {

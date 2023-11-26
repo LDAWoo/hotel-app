@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 const MoneyFormatStaying = ({ className, price, prefix }) => {
   return (
     <div
-      className={`flex flex-col sm:flex-row gap-2 items-end sm:items-center ${className}`}
+      className={`flex flex-col sm:flex-row items-end sm:items-center ${
+        className ? className : "gap-2"
+      }`}
     >
       {!prefix && <span>VND</span>}
       <CurrencyFormat

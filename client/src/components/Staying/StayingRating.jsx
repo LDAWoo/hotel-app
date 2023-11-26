@@ -5,7 +5,7 @@ const StayingRating = ({ className, rating }) => {
     <div
       className={`p-[4px] bg-hotel-600 rounded-tr-md rounded-br-md rounded-tl-md text-white font-medium ${className}`}
     >
-      {rating.toFixed(1)}
+      {rating && rating.toFixed(1)}
     </div>
   );
 };

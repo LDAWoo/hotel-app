@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Title from "../../../../components/Title/Title";
+import Image from "../../../../components/Image/Image";
 function GalleryItem({
   imgURL,
   width,
@@ -12,16 +13,15 @@ function GalleryItem({
   onClick,
 }) {
   return (
-    <Link
+    <div
       className={`relative block ${width && width} ${height && height} ${
         left && "float-left"
       } ${
         right && "float-right"
-      } mb-[10px] bg-cover bg-no-repeat bg-[50%] bg-gray-200 dark:bg-primary-600`}
-      style={{ backgroundImage: `url('${imgURL}')` }}
+      } mb-[10px] bg-cover bg-no-repeat bg-[50%] bg-gray-200 dark:bg-primary-600 cursor-pointer`}
       onClick={onClick}
     >
-      <img src={imgURL} className='hidden' />
+      <Image imageBase={imgURL} className='flex w-full h-full object-cover' />
       {imageEnd && values > 0 && (
         <div className='absolute top-0 flex items-center justify-center bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.40)] z-10'>
           <Title
@@ -32,7 +32,7 @@ function GalleryItem({
           />
         </div>
       )}
-    </Link>
+    </div>
   );
 }
 

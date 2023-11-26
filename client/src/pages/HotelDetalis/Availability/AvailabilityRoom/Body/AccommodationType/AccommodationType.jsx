@@ -1,17 +1,19 @@
 import RoomType from "./RoomType";
-
-const AccommodationType = () => {
-  const roomType = "Deluxe Double Room with Garden View";
-
+import PropTypes from "prop-types";
+const AccommodationType = ({ data }) => {
   return (
     <div className='flex flex-col gap-1'>
       {/* RoomType */}
-      <RoomType title={roomType} />
+      <RoomType title={data?.bedName} />
       {/* RoomTypeBed */}
 
       {/*Room Facilities*/}
     </div>
   );
+};
+
+AccommodationType.propTypes = {
+  data: PropTypes.object,
 };
 
 export default AccommodationType;

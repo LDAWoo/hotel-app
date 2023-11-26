@@ -26,7 +26,9 @@ function Body({ data, maxSegments, className }) {
     );
   };
 
-  return <p className='flex flex-col gap-2'>{splitDescription(data)}</p>;
+  return (
+    <p className='flex flex-col gap-2'>{data && splitDescription(data)}</p>
+  );
 }
 
 Body.propTypes = {

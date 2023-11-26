@@ -7,7 +7,8 @@ import Image from "../../../../components/Image/Image";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
-
+import { format } from "date-fns";
+import { getLocale } from "../../../../components/Locale/Locale";
 const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
   const [maxSegments, setMaxSegments] = useState(1);
   const reviewResponseLength =
@@ -16,6 +17,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
     setMaxSegments(reviewResponseLength);
   };
 
+  const locale = getLocale();
   return (
     <div
       className={`box-border w-full h-full ${
@@ -61,10 +63,19 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
 
             {style && (
               <div className='flex flex-col p-2 sm:p-0 sm:border-none border dark:border-primary-500 rounded-sm'>
-                <div className='flex flex-row gap-2 items-center text-primary-100 dark:text-white'>
-                  <Icon icon={BsCalendar4} size={16} />
-                  <Title title='4 ngày · tháng 9/2023' large />
-                </div>
+                {props?.date && (
+                  <div className='flex flex-row gap-2 items-center text-primary-100 dark:text-white'>
+                    <Icon icon={BsCalendar4} size={16} />
+                    <Title
+                      title={format(
+                        new Date(props?.date),
+                        "EEE, d MMMM yyyy",
+                        locale,
+                      )}
+                      large
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -92,7 +103,11 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
               <div className='flex flex-row w-full'>
                 {/* CheckInDate */}
                 <Title
-                  title={`Đã đánh giá: ngày 21 tháng 9 năm 2023`}
+                  title={`Đã đánh giá: ${format(
+                    new Date(props?.date),
+                    "dd MMMM MM yyyy",
+                    locale,
+                  )}`}
                   large
                   colorTitle='text-primary-100 dark:text-gray-50'
                 />
@@ -108,7 +123,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
               </div>
 
               {/* Review Response */}
-              {props?.reviewResponse && (
+              {props?.reviewResponse.length > 0 && (
                 <div className='flex flex-col w-full h-auto gap-1 relative mt-2'>
                   <div className='flex flex-col w-full p-4 bg-gray-100 rounded-md dark:bg-primary-500 before:absolute before:border-b-[8px] before:border-gray-100 dark:before:border-primary-500 dark:before:border-l-transparent dark:before:border-r-transparent before:w-0 before:h-0 before:border-l-[8px] before:border-l-transparent before:border-r-[8px] before:border-r-transparent before:left-[50%] before:bottom-[100%]'>
                     <div className='flex items-center flex-row gap-2 mb-2 dark:text-white'>
@@ -157,7 +172,8 @@ CardReview.propTypes = {
   border: PropTypes.bool,
   style: PropTypes.bool,
   onReadMoreClick: PropTypes.func,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  vertical: PropTypes.bool,
 };
 
 export default CardReview;

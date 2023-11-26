@@ -7,22 +7,13 @@ import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeS
 
 const initialVisibleCount = 3;
 
-const categoriesData = [
-  { id: 1, title: "Staff", rating: 4.8 },
-  { id: 2, title: "Facilities", rating: 2.8 },
-  { id: 3, title: "Cleanliness", rating: 1.8 },
-  { id: 4, title: "Comfort", rating: 3.8 },
-  { id: 5, title: "Value for Money", rating: 0.8 },
-  { id: 6, title: "Location", rating: 5 },
-];
-
-const Categories = ({ vertical }) => {
+const Categories = ({ data, vertical }) => {
   const { width } = useRegisterWindowSizeStore();
   const [showMore, setShowMore] = useState(true);
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const handleShowMore = () => {
-    setVisibleCount(categoriesData.length);
+    setVisibleCount(data?.categories?.length);
     setShowMore(false);
   };
 
@@ -39,13 +30,13 @@ const Categories = ({ vertical }) => {
           vertical ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
         }  gap-2 sm:gap-5 dark:text-white`}
       >
-        {categoriesData
-          .slice(0, width > 640 ? categoriesData.length : visibleCount)
+        {data?.categories
+          .slice(0, width > 640 ? data?.categories?.length : visibleCount)
           .map((category) => (
             <CategoryItem
-              key={category.id}
-              title={category.title}
-              rating={category.rating}
+              key={category?.categoryId}
+              title={category?.categoryName}
+              rating={category?.rating}
             />
           ))}
       </div>

@@ -9,12 +9,12 @@ function ComponentPropertyHost({ onClick, active }) {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const { token } = useContext(UseToken);
-
   useEffect(() => {
     const fetch = async () => {
       try {
         const results = await getHotelPropertyHost(token);
-        setProperties(results);
+        console.log(results);
+        setProperties(results?.listResult);
       } catch (error) {
         console.log(error);
       } finally {
@@ -33,15 +33,16 @@ function ComponentPropertyHost({ onClick, active }) {
         ))
       ) : (
         <>
-          {properties?.listResult.map((item, index) => (
-            <ItemHost
-              key={index}
-              name={item?.name}
-              description={item?.description}
-              active={item?.id === active}
-              onClick={() => onClick(item?.id)}
-            />
-          ))}
+          {properties.length > 0 &&
+            properties.map((item, index) => (
+              <ItemHost
+                key={index}
+                name={item?.name}
+                description={item?.description}
+                active={item?.id === active}
+                onClick={() => onClick(item?.id)}
+              />
+            ))}
         </>
       )}
     </div>

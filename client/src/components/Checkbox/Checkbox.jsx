@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Checkbox({ title, value, values, name, checked, onChange }) {
+function Checkbox({ title, value, values, checked, onChange }) {
   return (
     <div className='relative w-full pt-1 pl-0 pr-1 pb-1'>
       <div className='flex items-center w-full mb-[0.125rem] min-h-[1.5rem] pl-[1.5rem]'>
@@ -10,7 +10,7 @@ function Checkbox({ title, value, values, name, checked, onChange }) {
             type='checkbox'
             value={value}
             id={value}
-            onChange={(e) => onChange(name, e.target.checked)}
+            onChange={onChange}
             checked={checked}
           />
           <label
@@ -32,12 +32,12 @@ function Checkbox({ title, value, values, name, checked, onChange }) {
 }
 
 Checkbox.propTypes = {
-  title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  value: PropTypes.string,
   values: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  checked: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 export default Checkbox;

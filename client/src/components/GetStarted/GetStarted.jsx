@@ -56,7 +56,7 @@ function GetStarted() {
           <Button
             title='Get started now'
             background
-            className='pt-3 pb-3'
+            className='pt-3 pb-3 justify-center mt-4'
             titlePosition='before'
             icon={HiOutlineArrowNarrowRight}
             size={20}

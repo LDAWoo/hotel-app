@@ -1,26 +1,23 @@
 import { useContext, useState } from "react";
 import { AiFillFacebook, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import Button from "../../components/Buttons/Button";
 import { UserContext } from "../../components/Contexts/AppUserProvider";
 import TextInput from "../../components/TextInput/TextInput";
-import routesConfig from "../../configs/routesConfig";
 
-import "./facebookSDK";
-import { postUserLogin } from "../../api/User/Login";
-import Title from "../../components/Title/Title";
 import TextError from "../../components/TextError/TextError";
-import { validateEmail } from "../Validate/Email";
+import Title from "../../components/Title/Title";
 import { validatePassword } from "../Validate/Password";
+import "./facebookSDK";
 // const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook } =
+  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin } =
     useContext(UserContext);
-  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [state, setState] = useState({
@@ -39,26 +36,10 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = async () => {
+  const login = () => {
     if (!validate()) return;
     const data = { email: email, password: password };
-    try {
-      const response = await postUserLogin(data);
-      console.log(response);
-      if (response && response.token) {
-        const expirationTime = 14 * 24 * 60 * 60 * 1000;
-        const expirationDate = new Date(Date.now() + expirationTime);
-        document.cookie = `token=${
-          response.token
-        }; Expires=${expirationDate.toUTCString()}; Secure; HttpOnly; SameSite=Strict`;
-
-        navigate(routesConfig.home);
-      } else {
-        navigate(routesConfig.login);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+    handleLogin(data);
   };
 
   const validate = () => {
@@ -148,7 +129,7 @@ function Login() {
         <Button
           className='p-2 bg-blue-500 rounded-lg flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-blue-600 cursor-pointer duration-200'
           title={t("Login.title")}
-          onClick={handleLogin}
+          onClick={login}
         />
       </div>
       <div className='flex items-center justify-center mt-8 font-medium text-[14px] sm:text-[15px] text-gray-400'>

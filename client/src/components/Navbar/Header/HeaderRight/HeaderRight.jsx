@@ -1,4 +1,5 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useContext } from "react";
+import { UserContext } from "../../../Contexts/AppUserProvider";
 import Language from "./Language/Language";
 import ListYourProperty from "./ListYourProperty/ListYourProperty";
 import HeaderLogin from "./Login/HeaderLogin";
@@ -7,7 +8,7 @@ import Theme from "./Theme/Theme";
 import User from "./User/User";
 
 function HeaderRight() {
-  const { user } = useAuth0();
+  const { user } = useContext(UserContext);
 
   return (
     <div className='flex items-center justify-center'>

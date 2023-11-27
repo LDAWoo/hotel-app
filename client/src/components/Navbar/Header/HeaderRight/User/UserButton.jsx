@@ -3,7 +3,7 @@ import Button from "../../../../Buttons/Button";
 
 function UserButton({ title, src, icon, onClick }) {
   return (
-    <div className='flex items-center justify-center w-14 lg:w-full h-14 mt-2 mr-2 rounded-md bg-transparent hover:bg-hotel-100 '>
+    <div className='flex items-center justify-center w-14 lg:w-full h-14 mt-2 mr-2 rounded-md bg-transparent hover:bg-hotel-200 '>
       <Button
         title={title}
         src={src}

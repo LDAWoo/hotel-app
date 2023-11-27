@@ -54,7 +54,7 @@ const ComponentAddRess = () => {
     }
 
     prevCountryRef.current = country;
-  }, [country, data.country, setField, state]);
+  }, [country, data.country]);
 
   const handleSelectCountry = (e) => {
     const countries = e.target.value;
@@ -67,10 +67,7 @@ const ComponentAddRess = () => {
 
   useEffect(() => {
     state.forEach((item) => setField(item.field, item.selectedValue));
-  }, [state, setField]);
-
-  console.log(data);
-  console.log(state);
+  }, [setField, state]);
 
   return (
     <div>

@@ -18,6 +18,24 @@ const AppUserProvider = ({ children }) => {
     logout();
   };
 
+  function getTokenFromCookie() {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith("token=")) {
+        return cookie.substring("token=".length);
+      }
+    }
+    return null;
+  }
+
+  const token = getTokenFromCookie();
+  if (token) {
+    console.log("Token found:", token);
+  } else {
+    console.log("Token not found");
+  }
+
   return (
     <UserContext.Provider
       value={{ handleLoginWithGoogle, handleLoginWithFacebook, handleLogout }}

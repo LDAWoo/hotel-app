@@ -6,7 +6,9 @@ import TitleComponent from "../../../../TitleComponent/TitleComponent";
 import RegisterToolTip from "../../../../ToolTip/RegisterToolTip/RegisterToolTip";
 import ThemeButton from "./ThemeButton";
 import ThemeMenu from "./ThemeMenu";
-function Theme() {
+import PropTypes from "prop-types";
+
+function Theme({ visible }) {
   const { t } = useTranslation();
   const localStorageTheme = localStorage.getItem("theme");
   const iconComponent = !localStorageTheme
@@ -17,7 +19,7 @@ function Theme() {
 
   return (
     <div className='relative'>
-      <ThemeButton />
+      <ThemeButton visible={visible} />
       <RegisterToolTip
         userRegisterToolTip={useRegisterToolTipTheme}
         component={
@@ -30,5 +32,9 @@ function Theme() {
     </div>
   );
 }
+
+Theme.propTypes = {
+  visible: PropTypes.bool,
+};
 
 export default Theme;

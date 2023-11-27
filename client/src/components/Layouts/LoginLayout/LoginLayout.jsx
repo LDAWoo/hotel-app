@@ -1,20 +1,15 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../Contexts/AppThemeProvider";
-import { use100vh } from "react-div-100vh";
-import PropTypes from "prop-types";
-function LoginLayout({ children }) {
-  const { darkMode } = useContext(ThemeContext);
-  const heightWindow = use100vh();
+import MainLayout from "../MainLayout";
 
+import PropTypes from "prop-types";
+import AccountHeader from "../../Navbar/AccountHeader/AccountHeader";
+function LoginLayout({ children }) {
   return (
-    <div className={`${darkMode}`}>
-      <div
-        className={`flex justify-center p-[48px] bg-gray-50 dark:bg-primary-700 overflow-hidden`}
-        style={{ minHeight: heightWindow }}
-      >
-        {children}
+    <MainLayout>
+      <AccountHeader />
+      <div className='w-full dark:bg-primary-700 min-h-[100vh]'>
+        <div className='min-w-[200px] max-w-[500px] mx-auto '>{children}</div>
       </div>
-    </div>
+    </MainLayout>
   );
 }
 

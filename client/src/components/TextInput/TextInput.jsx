@@ -48,7 +48,7 @@ function TextInput({
         <input
           className={`${
             !classInput
-              ? `bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${
+              ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${
                   icon ? "pl-[48px]" : "pl-[10px]"
                 }`
               : classInput

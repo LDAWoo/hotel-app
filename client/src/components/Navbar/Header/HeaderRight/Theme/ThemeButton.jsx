@@ -1,11 +1,12 @@
+import PropTypes from "prop-types";
 import { useContext } from "react";
-import Button from "../../../../Buttons/Button";
-import { ThemeContext } from "../../../../Contexts/AppThemeProvider";
-import useRegisterToolTipTheme from "../../../../../hooks/useRegisterToolTipTheme";
 import { BsMoonStars } from "react-icons/bs";
 import { MdLightMode } from "react-icons/md";
+import useRegisterToolTipTheme from "../../../../../hooks/useRegisterToolTipTheme";
+import Button from "../../../../Buttons/Button";
+import { ThemeContext } from "../../../../Contexts/AppThemeProvider";
 
-function ThemeButton() {
+function ThemeButton({ visible = false }) {
   const { darkMode } = useContext(ThemeContext);
   const iconComponent = darkMode === "dark" ? BsMoonStars : MdLightMode;
   const { isOpen, onOpen, onClose } = useRegisterToolTipTheme();
@@ -20,7 +21,11 @@ function ThemeButton() {
   };
 
   return (
-    <div className='hidden lg:flex items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md hover:bg-hotel-200 '>
+    <div
+      className={`${
+        visible ? "" : "hidden lg:flex"
+      } items-center justify-center w-14 h-14 mt-2 mr-2 rounded-md hover:bg-hotel-200 `}
+    >
       <Button
         className='w-full h-full'
         classIcon={`translate-x-1 ${
@@ -33,5 +38,9 @@ function ThemeButton() {
     </div>
   );
 }
+
+ThemeButton.propTypes = {
+  visible: PropTypes.bool,
+};
 
 export default ThemeButton;

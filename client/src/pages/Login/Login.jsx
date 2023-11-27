@@ -1,25 +1,34 @@
 import { useContext, useState } from "react";
 import { AiFillFacebook, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import Button from "../../components/Buttons/Button";
 import { UserContext } from "../../components/Contexts/AppUserProvider";
-import Image from "../../components/Image/Image";
 import TextInput from "../../components/TextInput/TextInput";
+import routesConfig from "../../configs/routesConfig";
 
 import "./facebookSDK";
 import { postUserLogin } from "../../api/User/Login";
+import Title from "../../components/Title/Title";
+import TextError from "../../components/TextError/TextError";
+import { validateEmail } from "../Validate/Email";
+import { validatePassword } from "../Validate/Password";
 // const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
 
 function Login() {
   const { handleLoginWithGoogle, handleLoginWithFacebook } =
     useContext(UserContext);
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [state, setState] = useState({
+    errorEmail: "",
+    errorPassword: "",
+  });
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-
+  const { errorEmail, errorPassword } = state;
   const { t } = useTranslation();
 
   const handleChangeEmail = (e) => {
@@ -31,26 +40,58 @@ function Login() {
   };
 
   const handleLogin = async () => {
+    if (!validate()) return;
     const data = { email: email, password: password };
+    try {
+      const response = await postUserLogin(data);
+      console.log(response);
+      if (response && response.token) {
+        const expirationTime = 14 * 24 * 60 * 60 * 1000;
+        const expirationDate = new Date(Date.now() + expirationTime);
+        document.cookie = `token=${
+          response.token
+        }; Expires=${expirationDate.toUTCString()}; Secure; HttpOnly; SameSite=Strict`;
 
-    const response = await postUserLogin(data);
+        navigate(routesConfig.home);
+      } else {
+        navigate(routesConfig.login);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-    console.log(response);
+  const validate = () => {
+    let isValid = true;
+    // if (!validateEmail(email)) {
+    //   setState((prevState) => ({ ...prevState, errorEmail: "Email invalid" }));
+    //   isValid = false;
+    // } else {
+    //   setState((prevState) => ({ ...prevState, errorEmail: "" }));
+    // }
+
+    if (!validatePassword(password)) {
+      setState((prevState) => ({
+        ...prevState,
+        errorPassword: "Password invalid",
+      }));
+      isValid = false;
+    } else {
+      setState((prevState) => ({
+        ...prevState,
+        errorPassword: "",
+      }));
+    }
+    return isValid;
   };
 
   return (
-    <div className='w-full sm:w-[446px] md:w-[380px]'>
-      <Link to='/'>
-        <Image
-          src='/images/logo-dark.png'
-          srcDark='/images/logo-light.png'
-          alt='Staying.com'
-        />
-      </Link>
-      <div className='text-[28px] sm:text-[32px] md:text-[36px] font-bold dark:text-white mb-5'>
-        {t("Login.title")}
-      </div>
-      <div className='pb-8'>
+    <div className='w-full h-full'>
+      <Title
+        title={t("Login.title")}
+        className='text-[28px] sm:text-[32px] md:text-[36px] font-bold dark:text-white mb-5'
+      />
+      <div className='pb-5'>
         <div className='text-[16px] sm:text-[18px] md:text-[20px] font-medium dark:text-white mb-4'>
           {t("Login.loginWithOpenAccount")}
         </div>
@@ -77,13 +118,11 @@ function Login() {
           />
         </div>
       </div>
-      <div className='w-full border-t-[2px] dark:border-gray-700' />
       <div className='flex flex-col w-full space-y-4 pt-8'>
         <div className='font-medium dark:text-white text-[16px]'>
           {t("Login.orContinueWithEmail")}
         </div>
         <TextInput
-          className=''
           placeholder={t("Login.email")}
           required
           name='email'
@@ -92,9 +131,9 @@ function Login() {
           value={email}
           onChange={handleChangeEmail}
         />
+        <TextError error={errorEmail} icon />
         <TextInput
           placeholder={t("Login.password")}
-          className=''
           name='password'
           type='password'
           required
@@ -103,6 +142,9 @@ function Login() {
           value={password}
           onChange={handleChangePassword}
         />
+        <TextError error={errorPassword} icon />
+        <TextError error='Error' icon />
+
         <Button
           className='p-2 bg-blue-500 rounded-lg flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-blue-600 cursor-pointer duration-200'
           title={t("Login.title")}

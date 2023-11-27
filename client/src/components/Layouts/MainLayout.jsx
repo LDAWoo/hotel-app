@@ -3,10 +3,13 @@ import useRegisterWindowOnline from "../../hooks/useRegisterWindowOnline";
 import PropTypes from "prop-types";
 import { ThemeContext } from "../Contexts/AppThemeProvider";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import FilterModal from "../Modals/FilterModal/FilterModal";
+import MapModal from "../Modals/MapModal/MapModal";
+import LanguageModal from "../Modals/LanguageModal/LanguageModal";
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
 
-  const { isOnline, setIsOnline } = useRegisterWindowOnline();
+  const { setIsOnline } = useRegisterWindowOnline();
   const { setWidthAndHeight } = useRegisterWindowSizeStore();
 
   useEffect(() => {
@@ -19,7 +22,6 @@ const MainLayout = ({ children }) => {
     };
 
     const handleResize = () => {
-      console.log(3);
       setWidthAndHeight(window.innerWidth, window.innerHeight);
     };
 
@@ -34,8 +36,14 @@ const MainLayout = ({ children }) => {
     };
   }, []);
 
-  console.log(isOnline);
-  return <div className={`${darkMode}`}>{children}</div>;
+  return (
+    <div className={`${darkMode}`}>
+      <FilterModal />
+      <MapModal />
+      <LanguageModal />
+      {children}
+    </div>
+  );
 };
 
 MainLayout.propTypes = {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import routesConfig from "../../../configs/routesConfig";
 import useRegisterFeedBack from "../../../hooks/JoinStaying/FeedBackHost/useRegisterFeedBack";
@@ -23,6 +23,12 @@ const OwnerHost = () => {
     setValueFeedBack(item);
     setActive(item);
   };
+
+  useEffect(() => {
+    if (numberOfProperty) {
+      console.log(numberOfProperty);
+    }
+  }, []);
 
   const handleChangeNumberOfProperty = (e) => {
     setNumberOfProperty(e.target.value);

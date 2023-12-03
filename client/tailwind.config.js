@@ -40,7 +40,11 @@ export default {
           50: "#008009",
         },
       },
-      textColor: {},
+      textColor: {
+        error: {
+          100: "#D4111E",
+        },
+      },
       borderColor: {
         hotel: {
           50: "#FFB700",

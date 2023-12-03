@@ -4,9 +4,36 @@ import Star from "../../../components/Star/Start";
 import TextInput from "../../../components/TextInput/TextInput";
 import Title from "../../../components/Title/Title";
 import useRegisterHotelName from "../../../hooks/JoinStaying/HotelNameHost/useRegisterHotelName";
+import { useEffect, useReducer } from "react";
 
 const ComponentHotelName = () => {
-  const { name, rating, setField } = useRegisterHotelName();
+  const { data, rating, managerHotel, setField } = useRegisterHotelName();
+
+  const initialState = HotelNameHostData.map((item) => {
+    if (item?.type === "text" || item?.type === "number") {
+      const field = item.data[0].field;
+      const initValue = data[field];
+      const selectedValue = initValue;
+      return { field, selectedValue };
+    }
+    return {};
+  });
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "SELECT_OPTION":
+        return state.map((item) => {
+          if (item.field === action.payload.field) {
+            return { ...item, selectedValue: action.payload.value };
+          }
+          return item;
+        });
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const StarRating = ({ value }) => {
     const stars = [];
@@ -18,19 +45,29 @@ const ComponentHotelName = () => {
     return <div className='flex flex-row'>{stars}</div>;
   };
 
-  const handleChangeHotelName = (e) => {
-    setField("name", e.target.value);
+  const handleChangeHotelName = (value, field) => {
+    dispatch({ type: "SELECT_OPTION", payload: { value, field } });
   };
 
-  const handleCheckedRating = (value) => {
-    setField("rating", value);
+  const handleCheckedRating = (type, value) => {
+    setField(type, value);
+  };
+
+  useEffect(() => {
+    state.forEach((item) => setField(item.field, item.selectedValue));
+  }, [setField, state]);
+
+  const handleKeyDown = (e, type) => {
+    if (e.key === "-" && type === "number") {
+      e.preventDefault();
+    }
   };
 
   return (
-    <div>
+    <div className='flex flex-col space-y-2'>
       {HotelNameHostData.map((hotelName, index) => (
         <div key={index} className='flex flex-col gap-2'>
-          <Title title={hotelName?.title} fontBold xl />
+          <Title title={hotelName?.title} fontBold xl nowrap={false} />
 
           {hotelName?.data.map((item, index) => (
             <div
@@ -45,14 +82,20 @@ const ComponentHotelName = () => {
               {item?.type === "text" && (
                 <label className='font-medium text-[14px]'>{item?.title}</label>
               )}
-              {hotelName?.type === "text" ? (
+              {hotelName?.type === "text" || hotelName?.type === "number" ? (
                 <TextInput
-                  type='text'
+                  type={hotelName?.type}
                   className='w-full'
                   classBorder='border border-primary-100 rounded-sm'
                   classInput='w-full focus:outline-none placeholder:text-[14px] text-[14px] border-[1px] pt-[5px] pb-[5px] pl-[3px] pr-[3px] border-transparent focus:border-hotel-75 dark:focus:border-hotel-500 dark:bg-primary-700 dark:text-white'
-                  value={name}
-                  onChange={handleChangeHotelName}
+                  value={
+                    state.find((s) => s.field === item?.field)?.selectedValue ||
+                    ""
+                  }
+                  onChange={(e) =>
+                    handleChangeHotelName(e.target.value, item?.field)
+                  }
+                  onKeyDown={(e) => handleKeyDown(e, hotelName?.type)}
                 />
               ) : hotelName?.type === "radio" ? (
                 <input
@@ -60,9 +103,13 @@ const ComponentHotelName = () => {
                   name={item?.name}
                   className='w-4 h-4 mr-[8px] cursor-pointer dark:bg-primary-700'
                   value={item?.value}
-                  checked={item?.value === rating}
+                  checked={
+                    item?.name === "rating"
+                      ? item?.value === rating
+                      : item?.value === managerHotel
+                  }
                   id={item?.id}
-                  onChange={() => handleCheckedRating(item?.value)}
+                  onChange={() => handleCheckedRating(item?.name, item?.value)}
                 />
               ) : (
                 <></>
@@ -74,7 +121,7 @@ const ComponentHotelName = () => {
                   htmlFor={item?.id}
                 >
                   {item?.title}
-                  <StarRating value={item?.value} />
+                  {hotelName?.star && <StarRating value={item?.value} />}
                 </label>
               )}
             </div>

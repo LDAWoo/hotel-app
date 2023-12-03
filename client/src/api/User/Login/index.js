@@ -1,10 +1,11 @@
-import { post } from "../../../utils/request";
+import { get, post } from "../../../utils/request";
 
 export const postUserLogin = async (data) => {
-  try {
-    const response = await post("auth/authenticated", data);
-    return response;
-  } catch (error) {
-    throw new Error(`Lỗi khi lấy dữ liệu: ${error.message}`);
-  }
+  const response = await post("auth/authenticated", data);
+  return response;
+};
+
+export const getUserWithToken = async (token) => {
+  const response = await get(`auth/find-token?token=${token}`);
+  return response;
 };

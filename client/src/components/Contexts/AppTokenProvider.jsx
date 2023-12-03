@@ -10,7 +10,7 @@ const AppTokenProvider = ({ children }) => {
     if (cookieToken) {
       setToken(cookieToken);
     }
-  }, []);
+  }, [cookieToken]);
 
   return (
     <UseToken.Provider value={{ token, setToken }}>

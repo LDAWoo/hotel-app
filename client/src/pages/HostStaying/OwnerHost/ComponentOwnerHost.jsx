@@ -1,5 +1,4 @@
 import { OwnerHostData } from "../../../components/Constants/OwnerHostData";
-import TextInput from "../../../components/TextInput/TextInput";
 import Title from "../../../components/Title/Title";
 import ItemHost from "../ItemHost";
 import PropTypes from "prop-types";
@@ -26,11 +25,10 @@ function ComponentOwnerHost({
 
       {isNumberOfProperty && (
         <div className='flex flex-col gap-2 w-full'>
-          <Title title='Number of property' />
-          <TextInput
+          <Title title='Number of property' xl />
+          <input
             type='number'
-            classInput='w-[20vw] pl-1 pt-1 pb-1 text-primary-700 border-[2px] focus:border-hotel-75 dark:border-primary-500 focus:outline-none dark:focus:border-hotel-200 rounded-md dark:bg-primary-700 dark:border-primary-500 dark:text-white'
-            classBorder
+            className='w-[20vw] pl-1 pt-1 pb-1 text-primary-700 border-[2px] focus:border-hotel-75 focus:outline-none dark:focus:border-hotel-200 rounded-md dark:bg-primary-700 dark:border-primary-500 dark:text-white'
             value={value}
             onChange={onChange}
           />

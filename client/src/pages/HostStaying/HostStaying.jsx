@@ -1,128 +1,145 @@
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 import routesConfig from "../../configs/routesConfig";
 import "./HostStaying.scss";
-import { useEffect, useState } from "react";
 function HostStaying({ children }) {
   const params = [
     {
       id: 1,
-      param: routesConfig.becomeAHostCategory,
+      groupParam: [
+        {
+          id: 1,
+          param: routesConfig.becomeAHostCategory,
+        },
+        {
+          id: 2,
+          param: routesConfig.becomeAHostProperty,
+        },
+        {
+          id: 3,
+          param: routesConfig.becomeAHostOwner,
+        },
+        {
+          id: 4,
+          param: routesConfig.becomeAHostFeedBack,
+        },
+      ],
     },
     {
       id: 2,
-      param: routesConfig.becomeAHostProperty,
+      groupParam: [
+        {
+          id: 1,
+          param: routesConfig.becomeAHostAddRess,
+        },
+        {
+          id: 2,
+          param: routesConfig.becomeAHostMap,
+        },
+        {
+          id: 3,
+          param: routesConfig.becomeAHostHotelName,
+        },
+        {
+          id: 4,
+          param: routesConfig.becomeAHostFacilities,
+        },
+        {
+          id: 5,
+          param: routesConfig.becomeAHostHouseRules,
+        },
+        {
+          id: 6,
+          param: routesConfig.becomeAHostOverviewRoom,
+        },
+      ],
     },
     {
       id: 3,
-      param: routesConfig.becomeAHostOwner,
+      groupParam: [
+        {
+          id: 23,
+          param: routesConfig.becomeAHostPhoto,
+        },
+      ],
     },
     {
       id: 4,
-      param: routesConfig.becomeAHostFeedBack,
+      groupParam: [
+        {
+          id: 1,
+          param: routesConfig.becomeAHostAddRoom,
+        },
+        {
+          id: 2,
+          param: routesConfig.becomeAHostBathRoom,
+        },
+        {
+          id: 3,
+          param: routesConfig.becomeAHostAmenities,
+        },
+        {
+          id: 4,
+          param: routesConfig.becomeAHostUnitName,
+        },
+        {
+          id: 5,
+          param: routesConfig.becomeAHostHotelPrice,
+        },
+        {
+          id: 6,
+          param: routesConfig.becomeAHostHotelPriceOverview,
+        },
+      ],
     },
     {
       id: 5,
-      param: routesConfig.becomeAHostAddRess,
-    },
-    {
-      id: 6,
-      param: routesConfig.becomeAHostMap,
-    },
-    {
-      id: 7,
-      param: routesConfig.becomeAHostHotelName,
-    },
-    {
-      id: 8,
-      param: routesConfig.becomeAHostFacilities,
-    },
-    {
-      id: 9,
-      param: routesConfig.becomeAHostHouseRules,
-    },
-    {
-      id: 10,
-      param: routesConfig.becomeAHostOverviewRoom,
-    },
-    {
-      id: 11,
-      param: routesConfig.becomeAHostAddRoom,
-    },
-    {
-      id: 12,
-      param: routesConfig.becomeAHostBathRoom,
-    },
-    {
-      id: 13,
-      param: routesConfig.becomeAHostAmenities,
-    },
-    {
-      id: 14,
-      param: routesConfig.becomeAHostUnitName,
-    },
-    {
-      id: 15,
-      param: routesConfig.becomeAHostHotelPrice,
-    },
-    {
-      id: 16,
-      param: routesConfig.becomeAHostHotelPriceOverview,
-    },
-    {
-      id: 17,
-      param: routesConfig.becomeAHostHotelGroupDiscount,
-    },
-    {
-      id: 18,
-      param: routesConfig.becomeAHostHotelPolicy,
-    },
-    {
-      id: 19,
-      param: routesConfig.becomeAHostNonRefundable,
-    },
-    {
-      id: 20,
-      param: routesConfig.becomeAHostCalendarSync,
-    },
-    {
-      id: 21,
-      param: routesConfig.becomeAHostPaymentMode,
-    },
-    {
-      id: 21,
-      param: routesConfig.becomeAHostInvoicing,
-    },
-    {
-      id: 22,
-      param: routesConfig.becomeAHostPartner,
-    },
-    {
-      id: 23,
-      param: routesConfig.becomeAHostPhoto,
+      groupParam: [
+        {
+          id: 1,
+          param: routesConfig.becomeAHostHotelGroupDiscount,
+        },
+        {
+          id: 2,
+          param: routesConfig.becomeAHostHotelPolicy,
+        },
+        {
+          id: 3,
+          param: routesConfig.becomeAHostNonRefundable,
+        },
+        {
+          id: 4,
+          param: routesConfig.becomeAHostCalendarSync,
+        },
+        {
+          id: 5,
+          param: routesConfig.becomeAHostPaymentMode,
+        },
+        {
+          id: 6,
+          param: routesConfig.becomeAHostInvoicing,
+        },
+        {
+          id: 7,
+          param: routesConfig.becomeAHostPartner,
+        },
+      ],
     },
   ];
 
   const location = useLocation();
   const currentPathName = location.pathname;
 
-  const activeIndex = params.findIndex((param) =>
-    currentPathName.startsWith(param.param),
+  const groupParamCurrent = params.find((param) => {
+    return param.groupParam.some((group) => group.param === currentPathName);
+  });
+
+  const activeIndex = groupParamCurrent?.groupParam.findIndex(
+    (p) => p.param === currentPathName,
   );
 
-  const totalParams = params.length;
+  const totalParams = groupParamCurrent?.groupParam.length;
   const percentage = (activeIndex + 1) * (100 / totalParams);
-
-  const [slideOut, setSlideOut] = useState(false);
-  const [slideIn, setSlideIn] = useState(false);
-
-  useEffect(() => {
-    setSlideOut("-translate-x-full");
-    setTimeout(() => {
-      setSlideOut("translate-x-0");
-    }, 500);
-  }, [activeIndex]);
 
   return (
     <div className='flex flex-col w-full'>
@@ -135,34 +152,25 @@ function HostStaying({ children }) {
             style={{ width: `${percentage}%`, transition: "width 500ms" }}
           ></div>
 
-          {params.map((param, index) => (
-            <div
-              key={index}
-              style={{
-                left: `${(100 / totalParams) * index}%`,
-                width: `${100 / totalParams}%`,
-              }}
-              className={`absolute h-[8px] top-0 ${
-                index > 0 ? "border-l-[2px]" : ""
-              } border-white`}
-            />
-          ))}
+          {groupParamCurrent &&
+            groupParamCurrent?.groupParam.map((_, index) => (
+              <div
+                key={index}
+                style={{
+                  left: `${(100 / totalParams) * index}%`,
+                  width: `${100 / totalParams}%`,
+                }}
+                className={`absolute h-[8px] top-0 ${
+                  index > 0 ? "border-l-[2px]" : ""
+                } border-white`}
+              />
+            ))}
         </div>
       </div>
       <div className='w-full'>
         <div className='w-full flex justify-center max-w-[var(--max-width)] mx-auto'>
           <div className='flex flex-col gap-2 h-full w-full mx-auto my-auto'>
-            {params.map((param, index) => (
-              <CSSTransition
-                key={index}
-                in={activeIndex === index}
-                timeout={500}
-                className={activeIndex > index ? "slide-out" : "slide-in"}
-                unmountOnExit
-              >
-                {children}
-              </CSSTransition>
-            ))}
+            {children}
           </div>
         </div>
       </div>

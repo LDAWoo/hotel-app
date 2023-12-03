@@ -13,11 +13,17 @@ import ComponentHotelName from "./ComponentHotelName";
 function HotelNameHost() {
   const navigate = useNavigate();
   const { propertiesValue } = useRegisterHotelProperty();
-
   const { country, streetAddress, districtAddress, city, postalCode } =
     useRegisHotelAddRess();
 
-  const { name, rating } = useRegisterHotelName();
+  const {
+    hotelName,
+    rating,
+    managerHotel,
+    contactPerson,
+    phoneNumberOne,
+    phoneNumberTwo,
+  } = useRegisterHotelName();
 
   const { token } = useContext(UseToken);
 
@@ -29,12 +35,12 @@ function HotelNameHost() {
 
   const data = {
     hotelTypeId: propertiesValue,
-    name: name,
+    name: hotelName,
     rating: rating,
-    contactPerson: "Vu Lee",
-    phoneNumber: "0352843864",
-    phoneNumberTwo: "01887983017",
-    managerHotel: false,
+    contactPerson: contactPerson,
+    phoneNumber: phoneNumberOne,
+    phoneNumberTwo: phoneNumberTwo,
+    managerHotel: managerHotel,
     streetAddress: streetAddress,
     districtAddress: districtAddress,
     country: country,
@@ -43,18 +49,23 @@ function HotelNameHost() {
     quantityHotel: 2,
   };
 
+  console.log(data);
+
   const handleContinue = async () => {
     setLoading(true);
-    try {
-      await postAddHotelName(data, token);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
 
-    if (!loading) {
-      navigate(routesConfig.becomeAHostFacilities);
+    if (token) {
+      try {
+        await postAddHotelName(data, token);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+
+      if (!loading) {
+        navigate(routesConfig.becomeAHostFacilities);
+      }
     }
   };
   return (
@@ -66,7 +77,7 @@ function HotelNameHost() {
         <FooterHost
           onBack={handleBack}
           onContinue={handleContinue}
-          disabled={name === ""}
+          disabled={hotelName === ""}
         />
       }
       loading={loading}

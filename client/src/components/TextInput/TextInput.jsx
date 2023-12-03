@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Icon from "../Icon/Icon";
 import ToolTip from "../ToolTip/ToolTip";
 import PropTypes from "prop-types";
-
+import { MdOutlineErrorOutline } from "react-icons/md";
 function TextInput({
   className,
   label,
@@ -9,6 +10,7 @@ function TextInput({
   classBorder,
   classInput,
   classToolTip,
+  error,
   icon,
   classIcon,
   sizeIcon,
@@ -24,6 +26,15 @@ function TextInput({
   onClickCopy,
   ...props
 }) {
+  const [active, setActive] = useState(false);
+
+  const handleFocus = () => {
+    setActive(true);
+  };
+
+  const handleBlur = () => {
+    setActive(false);
+  };
   return (
     <div className={`${className}`}>
       {label && (
@@ -41,20 +52,35 @@ function TextInput({
         </div>
       )}
       <div
-        className={`relative w-full rounded-lg duration-200 outline-none ${
-          !classBorder ? "border-[2px] dark:border-gray-800" : classBorder
+        className={`relative w-full rounded-lg duration-200 outline-none   ${
+          !classBorder
+            ? `border-[2px] ${
+                active
+                  ? "border-hotel-100 "
+                  : `${
+                      error
+                        ? "border-red-500"
+                        : "border-gray-200 dark:border-primary-500"
+                    }`
+              }`
+            : classBorder
         }`}
       >
         <input
           className={`${
             !classInput
-              ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[48px] pt-1 pb-1 pr-[10px] outline-none text-primary-100 dark:text-white font-medium text-[16px] ${
+              ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[35px] pt-1 pb-1 pr-[10px] outline-none text-primary-700 placeholder:text-primary-100 dark:placeholder:text-primary-50 dark:text-white font-normal text-[14px] ${
                   icon ? "pl-[48px]" : "pl-[10px]"
                 }`
               : classInput
           } `}
           placeholder={placeholder}
           {...props}
+          autoCapitalize='off'
+          autoCorrect='off'
+          spellCheck='false'
+          onBlur={handleBlur}
+          onFocus={handleFocus}
         />
         {icon && (
           <div
@@ -65,6 +91,15 @@ function TextInput({
             }`}
           >
             <Icon icon={icon} size={sizeIcon} />
+          </div>
+        )}
+
+        {error && !active && (
+          <div
+            className={`absolute top-0 bottom-0 right-0 flex justify-center items-center pl-2 text-red-500 dark:text-primary-50"
+          }`}
+          >
+            <Icon icon={MdOutlineErrorOutline} size={sizeIcon} />
           </div>
         )}
         {copy && (
@@ -85,6 +120,7 @@ TextInput.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.elementType,
   iconCopy: PropTypes.elementType,
+  error: PropTypes.bool,
   copy: PropTypes.bool,
   currency: PropTypes.string,
   tooltip: PropTypes.string,

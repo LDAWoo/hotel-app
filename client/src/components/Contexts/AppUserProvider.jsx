@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { postUserLogin } from "../../api/User/Login";
+import { getUserWithToken, postUserLogin } from "../../api/User/Login";
 import { useNavigate } from "react-router-dom";
 import removeCookie from "../../hooks/useRegisterRemoveCookie";
 import setCookie from "../../hooks/useRegisterSetCookie";
@@ -55,10 +55,10 @@ const AppUserProvider = ({ children }) => {
     const fetchUserData = async () => {
       if (cookieToken) {
         try {
-          // const userDataResponse = await getUserDataWithToken(cookieToken);
-          // setUser(userDataResponse);
+          const userDataResponse = await getUserWithToken(cookieToken);
+          setUser(userDataResponse);
         } catch (error) {
-          console.log(error);
+          setUser({});
         }
       }
     };

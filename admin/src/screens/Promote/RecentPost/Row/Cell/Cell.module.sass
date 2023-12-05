@@ -1,0 +1,49 @@
+@import ../../../../../styles/helpers
+
+.cell
+    +t
+        display: flex
+        align-items: center
+
+.box
+    display: flex
+    align-items: center
+
+.number
+    padding: 0 7px
+    border-radius: 6px
+    background: $n3
+    line-height: 24px
+    +dark
+        background: $n6
+
+.line
+    position: relative
+    flex-shrink: 0
+    width: 44px
+    height: 12px
+    margin-left: 8px
+    +t
+        margin-left: 12px
+
+.progress
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    border-radius: 2px
+    &.red
+        background: $p3
+    &.green
+        background: $p2
+    &.blue
+        background: $p1
+
+.balance
+    margin-top: 8px
+    padding: 4px
+    border-radius: 4px
+    +t
+        margin: 0 0 0 4px
+    +dark
+        background: $n6

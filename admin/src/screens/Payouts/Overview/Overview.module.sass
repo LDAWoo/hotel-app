@@ -1,0 +1,81 @@
+@import ../../../styles/helpers
+
+.overview
+    display: flex
+    +t
+        display: block
+
+.list
+    display: flex
+    justify-content: space-between
+    flex-grow: 1
+    margin-right: 64px
+    +d
+        margin-right: 48px
+    +t
+        display: block
+        margin: 0 0 32px
+
+.item
+    display: flex
+    padding: 0 64px
+    border-right: 1px solid $n3
+    color: $n7
+    +w
+        padding: 0 48px
+    +x
+        padding: 0 32px
+    +t
+        padding: 0
+        border: none
+    +dark
+        border-color: $n6
+        color: $n1
+    &:first-child
+        padding-left: 0
+    &:not(:last-child)
+        +t
+            margin-bottom: 24px
+            padding-bottom: 24px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 48px
+    height: 48px
+    margin-right: 24px
+    border-radius: 50%
+    svg
+        fill: $n7
+
+.label
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+    +caption1
+    color: $n4
+
+.tooltip
+    svg
+        fill: $n4
+
+.counter
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    letter-spacing: -.03em
+    +x
+        font-size: 40px
+
+.button
+    flex-shrink: 0
+    +m
+        width: 100%
+
+.outer
+    max-width: 560px

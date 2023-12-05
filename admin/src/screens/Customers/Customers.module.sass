@@ -1,0 +1,30 @@
+@import ../../styles/helpers
+
+.row
+    display: flex
+    +t
+        display: block
+
+.col
+    &:first-child
+        flex: 0 0 calc(100% - 340px)
+        width: calc(100% - 340px)
+        padding-right: 8px
+        +x
+            flex: 0 0 calc(100% - 312px)
+            width: calc(100% - 312px)
+        +t
+            width: 100%
+            margin-bottom: 8px
+            padding-right: 0
+    &:nth-child(2)
+        flex-shrink: 0
+        width: 340px
+        +x
+            width: 312px
+        +t
+            width: 100%
+
+.card
+    &:not(:last-child)
+        margin-bottom: 8px

@@ -1,0 +1,24 @@
+@import ../../../../styles/helpers
+
+.item
+    display: inline-flex
+    align-items: center
+
+.counter
+    padding: 0 6px
+    border-radius: 6px
+    cursor: pointer
+    +dark
+        color: $n7
+    &:hover + .balance
+        visibility: visible
+        opacity: 1
+
+.balance
+    margin-left: 6px
+    visibility: hidden
+    opacity: 0
+    transition: all .2s
+    +d
+        visibility: visible
+        opacity: 1

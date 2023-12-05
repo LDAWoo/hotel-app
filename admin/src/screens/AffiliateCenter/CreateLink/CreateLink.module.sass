@@ -1,0 +1,58 @@
+@import ../../../styles/helpers
+
+.title
+    margin-bottom: 16px
+    color: $n4
+
+.fieldset
+    margin-bottom: 32px
+    .dropdown,
+    .field
+        margin-bottom: 12px
+
+.box
+    &:not(:last-child)
+        margin-bottom: 32px
+
+.label
+    margin-bottom: 16px
+    +caption1
+    font-weight: 500
+    color: $n4
+
+.line
+    display: flex
+    align-items: center
+
+.list
+    display: flex
+    margin-right: auto
+
+.avatar
+    position: relative
+    width: 48px
+    height: 48px
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+    &:not(:last-child)
+        margin-right: 24px
+
+.icon
+    position: absolute
+    right: -4px
+    bottom: -4px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    border: 2px solid $n
+    background: $p1
+    +dark
+        border-color: $n7
+    svg
+        fill: $n1

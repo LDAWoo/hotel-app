@@ -56,7 +56,8 @@ function HotelNameHost() {
 
     if (token) {
       try {
-        await postAddHotelName(data, token);
+        const response = await postAddHotelName(data, token);
+        console.log(response);
       } catch (error) {
         console.log(error);
       } finally {

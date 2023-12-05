@@ -1,0 +1,141 @@
+@import ../../../styles/helpers
+
+.panel
+  position: absolute
+  top: 40px
+  left: 40px
+  right: 40px
+  display: flex
+  align-items: center
+  +t
+    top: 24px
+    left: 24px
+    right: 24px
+  +m
+    top: 24px
+    left: 16px
+    right: 16px
+  &.panelGallery
+    +t
+      flex-wrap: wrap
+      .title
+        order: 1
+        position: static
+        flex-grow: 1
+        max-width: calc(100% - 96px)
+        padding-right: 24px
+        transform: translate(0,0)
+        text-align: left
+      .control
+        order: 2
+        align-self: flex-start
+      .actions
+        order: 3
+        width: 100%
+        margin-top: 20px
+    +m
+      .title
+        padding: 0 16px 0 0
+
+.actions
+  display: flex
+  align-items: center
+  margin-right: auto
+  flex-shrink: 0
+  .button
+    margin-left: 12px
+
+.favorite
+  height: 40px
+  padding: 0 16px
+  background: $n3
+  border: 1px solid $n1
+  border-radius: 8px
+  +button2
+  color: $n7
+  transition: all .2s
+  +m
+    width: 40px
+    padding: 0
+    border-radius: 50%
+    font-size: 0
+  +dark
+    background: transparent
+    border-color: $n3
+  svg
+    margin-right: 10px
+    fill: $p3
+    transition: fill .2s
+    +m
+      margin-right: 0
+  &:hover
+    border-color: $p3
+    background: $p3
+    color: $n1
+    svg
+      fill: $n1
+
+.title
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  max-width: 550px
+  text-align: center
+  font-size: 20px
+  flex-wrap: 600
+  line-height: 1.2
+  color: $n1
+  +d
+    max-width: 360px
+  +m
+    position: static
+    flex-grow: 1
+    max-width: 100%
+    padding: 0 16px
+    transform: translate(0,0)
+    font-size: 15px
+  +dark
+    color: $n7
+
+.control
+  display: flex
+  align-items: center
+  flex-shrink: 0
+
+.close
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  background: $n
+  font-size: 0
+  svg
+    fill: $n5
+    transition: transform .2s
+  +dark
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06)
+  &:hover
+    svg
+      transform: rotate(90deg)
+
+.link
+  width: 40px
+  height: 40px
+  margin-right: 16px
+  border-radius: 50%
+  border: 2px solid $n6
+  font-size: 0
+  transition: background .2s
+  svg
+    fill: $n4
+    transition: fill .2s
+  &:hover
+    background: $n6
+    svg
+      fill: $n1
+  +dark
+    border-color: $n3
+    &:hover
+      background: $n3
+      svg
+        fill: $n7

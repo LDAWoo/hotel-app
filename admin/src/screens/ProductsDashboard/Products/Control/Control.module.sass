@@ -1,0 +1,46 @@
+@import ../../../../styles/helpers
+
+.control
+    display: flex
+    align-items: center
+
+.button
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    margin-right: 24px
+    border-radius: 50%
+    background: $n1
+    +t
+        display: none
+    +dark
+        background: $n7
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+
+.actionsHead
+    width: 36px
+    height: 36px
+    background: $n1 !important
+    +dark
+        background: $n7 !important
+    svg
+        fill: $n4
+
+.actionsBody
+    &:before
+        right: 20px
+        +dark
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' fill='none' viewBox='0 0 20 10'%3E%3Cpath d='M6.927 1.687L0 10h20l-6.927-8.313a4 4 0 0 0-6.146 0z' fill='%23111315'/%3E%3C/svg%3E")
+
+.actionsOption
+    &:first-child,
+    &:nth-child(2)
+        display: none
+        +t
+            display: flex
+

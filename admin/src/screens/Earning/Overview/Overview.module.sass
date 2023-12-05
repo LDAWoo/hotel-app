@@ -1,0 +1,84 @@
+@import ../../../styles/helpers
+
+.list
+    display: flex
+    justify-content: space-between
+    +m
+        display: block
+
+.item
+    display: block
+    padding: 0 32px 0 64px
+    color: $n7
+    +x
+        padding-left: 48px
+    +d
+        padding: 0 32px 0 24px
+    +m
+        display: flex
+        padding: 0
+    &:not(:first-child)
+        border-width: 0 0 0 1px
+        border-style: solid
+        border-color: $n3
+        +m
+            margin-top: 24px
+            padding-top: 24px
+            border-width: 1px 0 0 
+        +dark
+            border-color: $n6
+    &:first-child
+        padding-left: 0
+    &:last-child
+        padding-right: 0
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 48px
+    height: 48px
+    margin-bottom: 24px
+    border-radius: 50%
+    +m
+        margin: 0 20px 0 0
+    svg
+        fill: $n7
+
+.label
+    display: flex
+    align-items: center
+    margin-bottom: 8px
+    +caption1
+    color: $n4
+
+.tooltip
+    svg
+        fill: $n4
+
+.counter
+    min-width: 238px
+    margin-bottom: 8px
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    letter-spacing: -.03em
+    +x
+        min-width: 200px
+    +t
+        min-width: auto
+        font-size: 40px
+    +dark
+        color: $n1
+
+.indicator
+    display: inline-flex
+    align-items: center
+    padding: 4px
+    color: $n4
+    +dark
+        background: $n6
+        border-radius: 8px
+    span
+        margin-left: 4px
+        +caption2

@@ -1,0 +1,75 @@
+@import ../../../styles/helpers
+
+.item
+    display: flex
+    margin-bottom: 24px
+    padding-bottom: 24px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.avatar
+    flex-shrink: 0
+    width: 48px
+    height: 48px
+    margin-right: 12px
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.details
+    flex-grow: 1
+
+.line
+    display: flex
+    align-items: center
+
+.user
+    margin-right: auto
+
+.title
+    font-weight: 700
+
+.login
+    font-weight: 500
+    color: $shades1
+
+.time
+    margin-left: 20px
+    +caption1
+    color: $shades1
+
+.content
+    margin-bottom: 8px
+    font-weight: 500
+    color: $shades1
+    strong
+        font-weight: 700
+        color: $n7
+        +dark
+            color: $n1
+
+.comment
+    margin-bottom: 16px
+    font-weight: 500
+    color: $n7
+    +dark
+        color: $n1
+
+.control
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+.link
+    svg
+        fill: $shades1
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+
+.button
+    width: 100%

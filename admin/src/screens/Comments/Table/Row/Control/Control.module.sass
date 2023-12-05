@@ -1,0 +1,30 @@
+@import ../../../../../styles/helpers
+
+.control
+    display: flex
+    align-items: center
+    margin: 12px 0 -4px
+    &.hidden
+        display: none
+        +t
+            display: flex
+
+.button
+    flex-shrink: 0
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+    &:not(:last-child)
+        margin-right: 32px
+    &.active
+        svg
+            fill: $n7
+            +dark
+                fill: $n1
+
+.answer
+    &.show
+        display: block

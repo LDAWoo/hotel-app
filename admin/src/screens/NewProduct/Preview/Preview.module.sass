@@ -1,0 +1,110 @@
+@import ../../../styles/helpers
+
+.preview
+    position: sticky
+    top: 102px
+    +x
+        top: 86px
+    +t
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 50
+        display: flex
+        padding: 64px 16px
+        overflow: auto
+        background: $n2
+        visibility: hidden
+        opacity: 0
+        transition: all .2s
+        +dark
+            background: $n8
+        &.visible
+            visibility: visible
+            opacity: 1
+
+.close
+    position: absolute
+    top: 32px
+    left: 32px
+    display: none
+    +t
+        display: inline-block
+    svg
+        fill: $n4
+
+.card
+    +d
+        padding: 16px
+    +t
+        max-width: 340px
+        margin: auto
+
+.head
+    margin-bottom: 24px
+
+.button
+    width: 40px
+    height: 40px
+    margin-left: auto
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+
+.photo
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 16px
+    img
+        width: 100%
+        border-radius: 12px
+
+.line
+    display: flex
+    align-items: flex-start
+    margin-bottom: 8px
+
+.title
+    +title1-s
+
+.price
+    flex-shrink: 0
+    margin-left: 12px
+    padding: 0 8px
+    background: $s4
+    border-radius: 6px
+    line-height: 32px
+    font-weight: 700
+    +dark
+        color: $n7
+
+.user
+    display: flex
+    align-items: center
+
+.avatar
+    position: relative
+    flex-shrink: 0
+    width: 32px
+    height: 32px
+    margin-right: 12px
+    & > img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.text
+    font-weight: 500
+    color: $n4
+    span
+        font-weight: 600
+        color: $n7
+        +dark
+            color: $n1

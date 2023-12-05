@@ -1,0 +1,66 @@
+@import ../../../../../styles/helpers
+
+.head,
+.preview
+    margin-bottom: 24px
+    padding-bottom: 24px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.title
+    position: 40px
+
+.field
+    position: relative
+    margin-bottom: 24px
+
+.icon
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 40px
+    pointer-events: none
+    svg
+        fill: $n4
+
+.input
+    width: 100%
+    height: 40px
+    padding: 0 60px 0 44px
+    border-radius: 8px
+    background: $n2
+    font-size: 15px
+    font-weight: 600
+    color: $shades1
+    +dark
+        background: $n6
+
+.copy
+    position: absolute
+    top: 0
+    right: 8px
+    bottom: 0
+    font-size: 15px
+    font-weight: 600
+    line-height: 40px
+    color: $p1
+    transition: opacity .2s
+    &:hover
+        opacity: .8
+
+.preview
+    img
+        width: 100%
+        border-radius: 12px
+
+.btns
+    display: flex
+    margin: 0 -8px
+    .button
+        flex-grow: 1
+        margin: 0 8px

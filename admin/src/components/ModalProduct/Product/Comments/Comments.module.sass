@@ -1,0 +1,54 @@
+@import ../../../../styles/helpers
+
+.comments
+    padding: 24px
+    border-left: 1px solid $n3
+    +m
+        padding: 16px 16px 24px
+    +dark
+        border-color: $n8
+
+.head
+    display: flex
+    align-items: center
+    height: 48px
+
+.title
+    display: flex
+    align-items: center
+    margin-right: auto
+    +title1-s
+
+.counter
+    flex-shrink: 0
+    min-width: 38px
+    margin-right: 12px
+    padding: 0 6px
+    border-radius: 8px
+    background: $s2
+    text-align: center
+    line-height: 36px
+    +dark
+        color: $n7
+
+.close
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    svg
+        fill: $n5
+        transition: fill .2s
+        +dark
+            fill: $n1
+    &:hover
+        svg
+            fill: $p1
+
+.editor
+    margin-top: 24px
+
+.list
+    margin-top: 40px
+    +m
+        margin-top: 24px
+

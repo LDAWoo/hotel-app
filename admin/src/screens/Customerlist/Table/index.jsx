@@ -1,151 +1,66 @@
-import Col from "./Col";
+import React, { useState } from "react";
+import styles from "./Table.module.sass";
+import cn from "classnames";
+import Checkbox from "../../../components/Checkbox";
+import Loader from "../../../components/Loader";
 import Row from "./Row";
-const customers = [
-  {
-    id: 0,
-    user: "Chelsie Haley",
-    login: "@username",
-    avatar: "/images/content/avatar-1.jpg",
-    email: "chelsie@ui8.net",
-    purchase: 4,
-    price: 384,
-    balance: -12.8,
-    comments: 8,
-    likes: 16,
-  },
-  {
-    id: 1,
-    user: "Filomena Fahey",
-    login: "@username",
-    avatar: "/images/content/avatar-2.jpg",
-    email: "fahey.designer@robot.co",
-    purchase: 12,
-    price: 223,
-    balance: 2.8,
-    comments: 14,
-    likes: 6,
-  },
-  {
-    id: 2,
-    user: "Orion Luettgen",
-    login: "@username",
-    avatar: "/images/content/avatar-3.jpg",
-    email: "orion88@yahoo.com",
-    purchase: 6,
-    price: 546,
-    balance: -5.9,
-    comments: 34,
-    likes: 28,
-  },
-  {
-    id: 3,
-    user: "Brown Beatty",
-    login: "@username",
-    avatar: "/images/content/avatar-4.jpg",
-    email: "brown.be@gmail.com",
-    purchase: 31,
-    price: 98,
-    balance: -25.9,
-    comments: 14,
-    likes: 42,
-  },
-  {
-    id: 4,
-    user: "Bessie Runolfsson",
-    login: "@username",
-    avatar: "/images/content/avatar-5.jpg",
-    email: "bess@ui8.net",
-    purchase: 31,
-    price: 98,
-    balance: 13.4,
-    comments: 4,
-    likes: 42,
-  },
-  {
-    id: 5,
-    user: "Chelsie Haley",
-    login: "@username",
-    avatar: "/images/content/avatar-1.jpg",
-    email: "chelsie@ui8.net",
-    purchase: 4,
-    price: 384,
-    balance: -12.8,
-    comments: 8,
-    likes: 16,
-  },
-  {
-    id: 6,
-    user: "Filomena Fahey",
-    login: "@username",
-    avatar: "/images/content/avatar-2.jpg",
-    email: "fahey.designer@robot.co",
-    purchase: 12,
-    price: 223,
-    balance: 2.8,
-    comments: 14,
-    likes: 6,
-  },
-  {
-    id: 7,
-    user: "Orion Luettgen",
-    login: "@username",
-    avatar: "/images/content/avatar-3.jpg",
-    email: "orion88@yahoo.com",
-    purchase: 6,
-    price: 546,
-    balance: -5.9,
-    comments: 34,
-    likes: 28,
-  },
-  {
-    id: 8,
-    user: "Brown Beatty",
-    login: "@username",
-    avatar: "/images/content/avatar-4.jpg",
-    email: "brown.be@gmail.com",
-    purchase: 31,
-    price: 98,
-    balance: -25.9,
-    comments: 14,
-    likes: 42,
-  },
-  {
-    id: 9,
-    user: "Bessie Runolfsson",
-    login: "@username",
-    avatar: "/images/content/avatar-5.jpg",
-    email: "bess@ui8.net",
-    purchase: 31,
-    price: 98,
-    balance: 13.4,
-    comments: 4,
-    likes: 42,
-  },
-];
 
-function Table() {
+// data
+import { customers } from "../../../mocks/customers";
+
+const Table = ({ className, activeTable, setActiveTable }) => {
+  const [chooseAll, setСhooseAll] = useState(false);
+  const [activeId, setActiveId] = useState(customers[0].id);
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const handleChange = (id) => {
+    if (selectedFilters.includes(id)) {
+      setSelectedFilters(selectedFilters.filter((x) => x !== id));
+    } else {
+      setSelectedFilters((selectedFilters) => [...selectedFilters, id]);
+    }
+  };
+
   return (
-    <div className="m-0 lg:mt-0 xl:mb-0 xl:-mt-0 xl:-ml-[12px] xl:-mr-[12px]">
-      <div className="block xl:flex w-full">
-        <div className={`block xl:table w-full`}>
-          <div className="hidden xl:table-row">
-            <Col title="Name" />
-            <Col title="Email" />
-            <Col title="Phone number" />
-            <Col title="Price" />
-            <Col title="Comment" />
-            <Col title="Wishlist" />
+    <div className={cn(styles.wrapper, className)}>
+      <div className={cn(styles.table)}>
+        <div className={cn(styles.row, { [styles.active]: activeTable })}>
+          <div className={styles.col}>
+            <Checkbox
+              className={styles.checkbox}
+              value={chooseAll}
+              onChange={() => setСhooseAll(!chooseAll)}
+            />
           </div>
-
-          {/* StartRow */}
-          {customers.map((user, index) => (
-            <Row key={index} item={user} />
-          ))}
-          {/* EndRow */}
+          <div className={styles.col}>Name</div>
+          <div className={styles.col}>Email</div>
+          <div className={styles.col}>Purchase</div>
+          <div className={styles.col}>Lifetime</div>
+          <div className={styles.col}>Comments</div>
+          <div className={styles.col}>Likes</div>
         </div>
+        {customers.map((x, index) => (
+          <Row
+            item={x}
+            key={index}
+            activeTable={activeTable}
+            setActiveTable={setActiveTable}
+            activeId={activeId}
+            setActiveId={setActiveId}
+            value={selectedFilters.includes(x.id)}
+            onChange={() => handleChange(x.id)}
+          />
+        ))}
+      </div>
+      <div className={styles.foot}>
+        <button className={cn("button-stroke button-small", styles.button)}>
+          <Loader className={styles.loader} />
+          <span>Load more</span>
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Table;

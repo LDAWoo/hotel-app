@@ -1,0 +1,135 @@
+@import ../../../styles/helpers
+
+.head
+    +m
+        flex-wrap: wrap
+        .title
+            width: 100%
+            flex-grow: 1
+            margin: 0 0 16px
+
+.button
+    margin-left: 16px
+    +m
+        flex-grow: 1
+
+.wrapper
+    margin: 0 -24px
+    background: $n1
+    +m
+        margin: 0 -16px
+    +dark
+        background: transparent
+
+.table
+    display: table
+    width: 100%
+    +t
+        display: block
+
+.row
+    display: table-row
+    +t
+        display: flex
+        flex-direction: column
+        padding: 16px 24px
+    +m
+        padding: 16px
+    &:first-child
+        +t
+            display: none
+        .col
+            padding-top: 8px
+            padding-bottom: 16px
+            +caption2
+            font-weight: 500
+            color: $n4
+    &:nth-child(2n)
+        +t
+            background: rgba($n3, .35)
+            +dark
+                background: rgba($n6, .5)
+        .col
+            background: rgba($n3, .35)
+            +t
+                background: none
+            +dark
+                background: rgba($n6, .5)
+                +t
+                    background: none
+
+.col
+    display: table-cell
+    padding: 10px 16px
+    +base2
+    +t
+        display: flex
+        align-items: center
+        padding: 0
+    &:first-child
+        padding-left: 24px
+        +t
+            padding-left: 0
+    &:nth-child(2)
+        +t
+            align-items: flex-start
+            order: -1
+            padding-bottom: 12px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+    &:nth-child(3)
+        +t
+            display: none
+    &:last-child
+        padding-right: 24px 
+        +t
+            padding-right: 0
+    &:not(:last-child)
+        +t
+            margin-bottom: 12px
+
+.status
+    flex-shrink: 0
+    white-space: nowrap
+    font-size: 14px
+    line-height: 28px
+    font-weight: 600
+    color: $n7
+
+.details
+    display: none
+    +t
+        display: block
+        margin-right: auto
+        padding-right: 16px
+
+.product
+    color: $n5
+    +dark
+        color: $n3
+
+.invoice
+    margin-top: 4px
+    +caption2
+    font-weight: 500
+    color: $n4
+
+.negative
+    color: $p3
+
+.foot
+    padding: 12px 0
+    text-align: center
+    .button
+        .loader
+            transform: scale(.8)
+            margin: 0 18px 0 8px
+
+.label
+    display: none
+    margin-right: auto
+    +base2
+    color: $n4
+    +t
+        display: block

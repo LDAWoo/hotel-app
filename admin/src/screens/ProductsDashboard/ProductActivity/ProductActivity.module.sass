@@ -1,0 +1,96 @@
+@import ../../../styles/helpers
+
+.table
+    display: table
+    width: 100%
+    +m
+        display: block
+
+.row
+    display: table-row
+    +m
+        display: block
+    &:first-child
+        +m
+            display: none
+        .col
+            padding-bottom: 24px
+            border-bottom: 1px solid $n3
+            white-space: nowrap
+            +caption1
+            color: $n4
+            +dark
+                border-color: $n6
+    &:not(:first-child)
+        .col
+            padding-top: 24px
+            +m
+                padding: 0
+            &:first-child
+                +base2
+                color: $n4
+    &:nth-child(2)
+        .col
+            padding-top: 32px
+            +m
+                padding-top: 0
+    &:not(:last-child):not(:first-child)
+        +m
+            margin-bottom: 24px
+            padding-bottom: 24px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+        .col
+            padding-bottom: 16px
+            border-bottom: 1px solid $n3
+            +m
+                padding-bottom: 0
+                border: none
+            +dark
+                border-color: $n6
+
+.col
+    display: table-cell
+    vertical-align: middle
+    +m
+        display: flex
+        align-items: center
+    &:not(:last-child)
+        padding-right: 16px    
+        +m
+            margin-bottom: 8px
+            padding-right: 0
+
+.label
+    display: none
+    +m
+        display: block
+        flex-shrink: 0
+        width: 116px
+        padding-right: 12px
+        +caption1
+        color: $n4
+
+.nav
+    display: none
+    margin-top: 32px
+    +m
+        display: flex
+
+.link
+    flex: 1
+    padding: 8px 16px
+    border-radius: 8px
+    +base1-s
+    color: $n4
+    transition: all .2s
+    &:hover,
+    &.active
+        color: $n7
+        +dark
+            color: $n1
+    &.active
+        background: $n3
+        +dark
+            background: $n6

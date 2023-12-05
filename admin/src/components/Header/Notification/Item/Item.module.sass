@@ -1,0 +1,115 @@
+@import ../../../../styles/helpers
+
+.item
+    position: relative
+    display: flex
+    align-items: center
+    padding: 12px
+    border-radius: 8px
+    transition: background .2s
+    &:hover
+        background: $n2
+        .icon
+            border-color: $n2
+        +dark
+            background: $n5
+            .icon
+                border-color: $n5
+        +m
+            background: none
+    &:after
+        content: ""
+        position: absolute
+        top: 18px
+        right: 12px
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: $shades1
+    &.new
+        &:after
+            background: $p1
+    &:not(:last-child)
+        &:before
+            content: ""
+            position: absolute
+            left: 12px
+            right: 12px
+            bottom: 0
+            height: 1px
+            background: $n3
+            +dark
+                background: $n6
+    &:nth-child(n+3)
+        +m
+            display: none
+        +a
+            display: flex
+    &:nth-child(n+6)
+        +a
+            display: none
+
+.avatar
+    position: relative
+    flex-shrink: 0
+    width: 48px
+    height: 48px
+    & > img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.icon
+    position: absolute
+    right: -2px
+    bottom: -2px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    border: 2px solid $n
+    transition: border-color .2s
+    +dark
+        border-color: $n8
+
+.details
+    flex: 0 0 calc(100% - 48px)
+    width: calc(100% - 48px)
+    padding-left: 12px
+
+.line
+    display: flex
+    align-items: center
+    padding-right: 24px
+
+.subtitle
+    margin-right: 4px
+    font-weight: 700
+    color: $n7
+    +dark
+        color: $n1
+
+.login
+    margin-right: auto
+    font-weight: 500
+    color: $shades1
+
+.time
+    margin-left: 16px
+    +caption1
+    color: $shades1
+
+.content
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-weight: 500
+    color: $n4
+    strong
+        font-weight: 700
+        color: $n7
+        +dark
+            color: $n1

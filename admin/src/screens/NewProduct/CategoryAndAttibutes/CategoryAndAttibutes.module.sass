@@ -1,0 +1,48 @@
+@import ../../../styles/helpers
+
+.field
+    margin-bottom: 32px
+    +d
+        margin-bottom: 24px
+
+.label
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1
+    svg
+        fill: $shades1
+
+.list
+    display: flex
+    flex-wrap: wrap
+    margin: -4px -16px 32px 0
+    +d
+        margin-bottom: 24px
+
+.checkbox
+    flex: 0 0 calc(33.33% - 16px)
+    width: calc(33.33% - 16px)
+    margin: 16px 16px 0 0
+    +m
+        flex: 0 0 calc(50% - 16px)
+        width: calc(50% - 16px)
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 12px
+    .label
+        margin-right: auto
+
+.counter
+    +caption1-m
+    color: $shades1
+    span
+        color: $n7
+        +dark
+            color: $n1

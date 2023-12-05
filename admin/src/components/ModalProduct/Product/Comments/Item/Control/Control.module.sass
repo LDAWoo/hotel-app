@@ -1,0 +1,46 @@
+@import ../../../../../../styles/helpers
+
+.control
+    display: flex
+    align-items: center
+    margin-top: 20px
+
+.favorite,
+.reply
+    display: flex
+    align-items: center
+    font-size: 13px
+    font-weight: 700
+    line-height: (16/13)
+    color: $shades1
+    transition: color .2s
+    svg
+        margin-right: 10px
+        fill: $shades1
+        transition: fill .2s
+    &:hover,
+    &.active
+        color: $n7
+        svg
+            fill: $n7
+        +dark
+            color: $n1
+            svg
+                fill: $n1
+    &:not(:last-child)
+        margin-right: 24px
+
+.favorite
+    svg
+        &:nth-child(2)
+            display: none
+    &.active
+        svg
+            &:first-child
+                display: none
+            &:nth-child(2)
+                display: inline-block
+
+.answer
+    &.show
+        display: block

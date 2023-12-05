@@ -1,0 +1,56 @@
+@import ../../../../styles/helpers
+
+.item
+    display: flex
+    padding: 20px
+    flex: 0 0 50%
+    border-radius: 12px
+    cursor: pointer
+    transition: all .2s
+    +d
+        display: block
+        position: relative
+        padding-left: 76px
+    +m
+        padding-left: 20px
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 40px
+    height: 40px
+    margin-right: 16px
+    border-radius: 50%
+    +d
+        position: absolute
+        top: 20px
+        left: 20px
+        margin-right: 0
+    +t
+        display: none
+
+.subtitle
+    display: flex
+    align-items: center
+    margin-bottom: 4px
+    +caption1
+    color: $n4
+
+.tooltip
+    svg
+        fill: $shades1
+
+.counter
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    letter-spacing: -.03em
+    +x
+        font-size: 40px
+
+.balance
+    margin: -12px -12px 0 auto
+    +d
+        margin: 8px 0 0

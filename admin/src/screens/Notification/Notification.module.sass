@@ -1,0 +1,30 @@
+@import ../../styles/helpers
+
+.row
+    display: flex
+    align-items: flex-start
+    +t
+        display: block
+
+.col
+    &:first-child
+        flex: 0 0 calc(100% - 340px)
+        width: calc(100% - 340px)
+        padding-right: 8px
+        +d
+            flex: 0 0 calc(100% - 300px)
+            width: calc(100% - 300px)
+        +t
+            width: 100%
+            padding-right: 0
+    &:nth-child(2)
+        flex-shrink: 0
+        width: 340px
+        position: sticky
+        top: 102px
+        +x
+            top: 86px
+        +d
+            width: 300px
+        +t
+            display: none

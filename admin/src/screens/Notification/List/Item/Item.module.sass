@@ -1,0 +1,117 @@
+@import ../../../../styles/helpers
+
+.item
+    position: relative
+    display: flex
+    padding: 12px
+    border-radius: 12px
+    transition: background .2s
+    +m
+        padding: 0
+        border-radius: 0
+    &:hover
+        +rmin(768)
+            background: $n2
+            +dark
+                background: $n6
+    &:after
+        content: ""
+        position: absolute
+        top: 18px
+        right: 12px
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: $shades1
+        +m
+            display: none
+    &.new
+        &:after
+            background: $p1
+    &:not(:last-child)
+        margin-bottom: 41px
+        +m
+            margin-bottom: 24px
+            padding-bottom: 24px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+        &:before
+            content: ""
+            position: absolute
+            top: calc(100% + 20px)
+            left: 12px
+            right: 12px
+            height: 1px
+            background: $n3
+            +m
+                display: none
+            +dark
+                background: $n6
+
+.avatar
+    position: relative
+    flex-shrink: 0
+    width: 64px
+    height: 64px
+    & > img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.icon
+    position: absolute
+    right: -2px
+    bottom: -2px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 28px
+    height: 28px
+    border-radius: 50%
+    border: 2px solid $n
+    +dark
+        border-color: $n7
+    img
+        width: 16px
+
+.details
+    flex: 0 0 calc(100% - 64px)
+    width: calc(100% - 64px)
+    padding-left: 12px
+
+.line
+    display: flex
+    align-items: center
+    padding-right: 24px
+
+.subtitle
+    margin-right: 4px
+    font-weight: 700
+    color: $n7
+    +dark
+        color: $n1
+
+.login
+    margin-right: auto
+    font-weight: 500
+    color: $shades1
+
+.time
+    margin-left: 16px
+    +caption1
+    color: $shades1
+
+.content
+    font-weight: 500
+    color: $n4
+    strong
+        font-weight: 700
+        color: $n7
+        +dark
+            color: $n1
+
+.comment
+    margin-top: 8px
+    font-weight: 500

@@ -1,0 +1,50 @@
+@import ../../../styles/helpers
+
+.wrapper
+    padding-bottom: 24px
+    background: $n1
+    border-radius: 8px
+    +dark
+        background: $n7
+
+.table
+    display: table
+    width: 100%
+
+.row
+    display: table-row
+    &:first-child
+        .col
+            padding-top: 16px
+            padding-bottom: 16px
+            +caption2
+            font-weight: 500
+            color: $n4
+    &:nth-child(2n)
+        .col
+            background: rgba($n3, .35)
+            +dark
+                background: rgba($n6, .3)
+
+.col
+    display: table-cell
+    padding: 10px 16px
+    +base2
+    &:first-child
+        padding-left: 24px
+        white-space: nowrap
+        color: $n4
+        +m
+            padding-left: 16px
+    &:nth-child(2)
+        +m
+            display: none
+    &:last-child
+        padding-right: 24px 
+        +m
+            padding-right: 16px
+
+.status
+    font-size: 14px
+    line-height: 28px
+    font-weight: 600

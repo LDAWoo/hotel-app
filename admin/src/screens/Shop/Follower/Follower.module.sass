@@ -1,0 +1,101 @@
+@import ../../../styles/helpers
+
+.follower
+    display: flex
+    align-items: flex-start
+    padding-bottom: 24px
+    &:not(:last-child)
+        margin-bottom: 24px
+        border-bottom: 1px solid $n3
+        +dark
+            border-color: $n6
+
+.details
+    display: flex
+    padding-right: 24px
+    flex-grow: 1
+    +t
+        padding-right: 0
+
+.avatar
+    flex-shrink: 0
+    width: 80px
+    height: 80px
+    margin-right: 16px
+    +m
+        width: 64px
+        height: 64px
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.man
+    margin-bottom: 4px
+    +title1-s
+
+.list
+    display: flex
+    align-items: center
+
+.counter
+    +caption1
+    color: $shades1
+    span
+        color: $n4
+    &:not(:first-child)
+        position: relative
+        margin-left: 12px
+        padding-left: 14px
+        &:before
+            content: ""
+            position: absolute
+            top: 5px
+            left: 0
+            width: 2px
+            height: 8px
+            border-radius: 2px
+            background: $n3
+            +dark
+                background: $n6
+
+.gallery
+    display: flex
+    flex-wrap: wrap
+    flex-shrink: 0
+    width: 480px
+    margin: -12px -6px 0 0
+    +t
+        display: none
+
+.preview
+    flex: 0 0 calc(33.333% - 12px)
+    width: calc(33.333% - 12px)
+    height: 116px
+    margin: 12px 6px 0
+    img
+        width: 100%
+        height: 100%
+        border-radius: 12px
+        object-fit: cover
+    &:nth-child(n+4)
+        display: none
+
+.btns
+    display: flex
+    margin-top: 16px
+    .button
+        &.follow
+            span
+                display: none
+            &.active
+                box-shadow: inset 0 0 0 2px $n3
+                background: $n3
+                +dark
+                    box-shadow: inset 0 0 0 2px $n5
+                    background: $n6
+                span
+                    display: inline
+        &:not(:last-child)
+            margin-right: 8px

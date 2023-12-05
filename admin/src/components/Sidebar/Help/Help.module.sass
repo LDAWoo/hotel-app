@@ -1,0 +1,119 @@
+@import ../../../styles/helpers
+
+.help
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    z-index: 15
+    display: flex
+    flex-direction: column
+    width: 340px
+    padding: 24px 12px
+    background: $n
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    transform: translateX(-100%)
+    transition: transform .3s
+    +x
+        width: 320px
+        padding: 16px 8px
+    +m
+        width: 100%
+    +dark
+        background: $n8
+    &.active
+        transform: translateX(0)
+        +d
+            box-shadow: 4px 0 32px rgba($n8, .05)
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 12px
+    padding: 12px
+    & > svg
+        margin-right: 12px
+        fill: $n7
+        +dark
+            fill: $n1
+
+.close
+    margin-left: auto
+    svg
+        fill: $n7
+        transition: fill .2s
+        +dark
+            fill: $n1
+    &:hover
+        svg
+            fill: $p1
+
+.list
+    margin-bottom: auto
+    padding: 24px 0
+    border-top: 1px solid $n3
+    +dark
+        border-color: rgba($n4, .2)
+
+.menu
+    display: flex
+    flex-direction: column
+
+.link
+    display: flex
+    align-items: center
+    height: 48px
+    padding: 0 12px
+    border-radius: 12px
+    color: $n4
+    transition: all .2s
+    svg
+        fill: $n4
+        transition: fill .2s
+    & > svg
+        margin-right: 12px
+    &:hover
+        color: $n7
+        svg
+            fill: $n7
+        +dark
+            color: $n1
+            svg
+                fill: $n1
+    &:not(:last-child)
+        margin-bottom: 8px
+        +x
+            margin-bottom: 4px
+
+.arrow
+    margin-left: auto
+    svg
+        fill
+        
+.counter
+    flex-shrink: 0
+    min-width: 24px
+    margin-left: auto
+    border-radius: 6px
+    background: $s1
+    text-align: center
+    line-height: 24px
+    color: $n7
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 14
+    background: rgba($n2, .8)
+    visibility: hidden
+    opacity: 0
+    transition: all .2s
+    +dark
+        background: rgba($n6, .9)
+    &.active
+        visibility: visible
+        opacity: 1

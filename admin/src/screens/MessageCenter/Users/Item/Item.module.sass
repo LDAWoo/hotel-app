@@ -1,0 +1,95 @@
+@import ../../../../styles/helpers
+
+.item
+    display: flex
+    align-items: center
+    padding: 12px
+    border-radius: 12px
+    cursor: pointer
+    transition: all .2s
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    +m
+        padding: 8px
+    &:hover,
+    &.active
+        background: $n3
+        +dark
+            background: $n6
+    &.new
+        .head:after
+            background: $p1
+    &.online
+        .avatar
+            position: relative
+            &:before
+                content: ""
+                position: absolute
+                top: -2px
+                left: -2px
+                width: 20px
+                height: 20px
+                border-radius: 50%
+                background: $p2
+                border: 4px solid $n1
+                transition: border-color .2s
+                +dark
+                    border-color: $n7
+        &:hover
+            .avatar:before
+                border-color: $n3
+                +dark
+                    border-color: $n6
+    &:not(:last-child)
+        margin-bottom: 8px
+        +m
+            margin-bottom: 0
+
+.avatar
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: 50%
+
+.details
+    flex: 0 0 calc(100% - 56px)
+    max-width: calc(100% - 56px)
+    padding-left: 12px
+
+.head
+    position: relative
+    display: flex
+    align-items: center
+    margin-bottom: 4px
+    &:after
+        content: ""
+        flex-shrink: 0
+        display: block
+        width: 12px
+        height: 12px
+        margin-left: 12px
+        border-radius: 50%
+        background: $shades1
+
+.man
+    margin-right: auto
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    font-weight: 700
+
+.time
+    flex-shrink: 0
+    margin-left: 24px
+    +caption1
+    color: $shades1
+
+.message
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    font-weight: 500
+    color: $n4

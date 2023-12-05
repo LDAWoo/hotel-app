@@ -1,0 +1,66 @@
+@import ../../styles/helpers
+
+.creators
+    padding: 24px
+    border-radius: 8px
+    background: $n1
+    overflow: hidden
+    +m
+        padding: 16px
+    +dark
+        background: $n7
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    padding-bottom: 20px
+    border-bottom: 1px solid $n3
+    +m
+        display: block
+    +dark
+        border-color: $n6
+
+.nav
+    display: flex
+    margin-right: auto
+    +m
+        margin: 0 0 20px
+
+.link
+    padding: 8px 16px
+    border-radius: 8px
+    +base1-s
+    color: $n4
+    transition: all .2s
+    +m
+        flex-grow: 1
+    &:hover,
+    &.active
+        color: $n7
+        +dark
+            color: $n1
+    &.active
+        background: $n3
+        +dark
+            background: $n6
+    &:not(:last-child)
+        margin-right: 8px
+
+.info
+    margin-bottom: 20px
+    +caption1
+    color: $shades1
+
+.creator
+    margin-bottom: 24px
+
+.foot
+    padding: 12px 0
+    text-align: center
+    +m
+        padding: 0
+    .button
+        .loader
+            transform: scale(.8)
+            margin: 0 18px 0 8px

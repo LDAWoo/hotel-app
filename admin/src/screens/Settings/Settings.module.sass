@@ -1,0 +1,92 @@
+@import ../../styles/helpers
+
+.settings
+    display: flex
+    align-items: flex-start
+    padding: 24px
+    border-radius: 8px
+    background: $n1
+    +t
+        display: block
+    +m
+        padding: 24px 16px
+    +dark
+        background: $n7
+
+.menu
+    position: sticky
+    top: 116px
+    display: flex
+    flex-direction: column
+    flex-shrink: 0
+    width: 280px
+    +d
+        width: 210px
+    +t
+        display: none
+    .button
+        padding: 8px 16px
+        border-radius: 8px
+        text-align: left
+        +base1-s
+        color: $n4
+        transition: all .2s
+        &:not(:last-child)
+            margin-bottom: 8px
+        &:hover,
+        &.active
+            color: $n7
+            +dark
+                color: $n1
+        &.active
+            background: $n3
+            +dark
+                background: $n6
+
+.wrapper
+    flex-grow: 1
+    padding-left: 32px
+    +t
+        padding-left: 0
+    & > .button
+        margin-top: 48px
+        +t
+            margin-top: 32px
+
+.dropdown
+    display: none
+    +t
+        display: block
+        margin-bottom: 32px
+    +m
+        margin-bottom: 24px
+
+.dropdownHead
+    +dark
+        background: $n6
+        box-shadow: 0 0 0 $n6 inset
+
+.item
+    position: relative
+    +t
+        display: none
+        &.active
+            display: block
+    &:not(:last-child)
+        margin-bottom: 48px
+        padding-bottom: 48px
+        border-bottom: 1px solid $n3
+        +t
+            margin-bottom: 0
+            padding-bottom: 0
+            border: none
+        +dark
+            border-color: $n6
+
+.anchor
+    position: absolute
+    top: -116px
+    left: 0
+    right: 0
+    +t
+        top: -106px

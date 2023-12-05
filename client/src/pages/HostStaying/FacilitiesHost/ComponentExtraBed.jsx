@@ -6,7 +6,7 @@ import RadioInput from "../../../components/RadioInput/RadioInput";
 import SelectInput from "../../../components/SelectInput/SelectInput";
 import Title from "../../../components/Title/Title";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import Checkbox from "../../../components/Checkbox/Checkbox";
 import useRegisterExtraBed from "../../../hooks/JoinStaying/FacilitiesHost/useRegisterExtraBed";
@@ -213,4 +213,4 @@ const ComponentExtraBed = () => {
   );
 };
 
-export default ComponentExtraBed;
+export default memo(ComponentExtraBed);

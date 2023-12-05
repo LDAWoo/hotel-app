@@ -1,41 +1,75 @@
+import styles from "./Row.module.sass";
+import cn from "classnames";
+import Checkbox from "../../../../components/Checkbox";
 import Balance from "../../../../components/Balance";
-import Title from "../../../../components/Title";
-import Col from "./Col";
 
-function Row({ item, value, onChange, activeTable, setActiveTable, activeId, setActiveId }) {
-  return (
-    <>
-      <div className="flex justify-between xl:justify-start xl:table-row transition-all items-center mb-[16px] pb-[16px] border-b-[1px] xl:rounded-lg border-secondary-n3 dark:border-secondary-n6 xl:hover:bg-secondary-n2 dark:bg-secondary-n7 xl:dark:hover:bg-secondary-n6">
-        <Col>
-          <div className="flex items-center cursor-pointer transition-all hover:text-primary-p1">
-            <div className="flex-shrink-0 w-[48px] h-[48px] mr-[12px] rounded-[50%] overflow-hidden">
-              <img src={item.avatar} className="w-full h-full object-cover" />
+const Row = ({
+    item,
+    value,
+    onChange,
+    activeTable,
+    setActiveTable,
+    activeId,
+    setActiveId,
+}) => {
+    const handleClick = (id) => {
+        setActiveTable(true);
+        setActiveId(id);
+    };
+
+    return (
+        <>
+            <div
+                className={cn(
+                    styles.row,
+                    { [styles.selected]: activeId === item.id },
+                    { [styles.active]: activeTable }
+                )}
+            >
+                <div className={styles.col}>
+                    <Checkbox
+                        className={styles.checkbox}
+                        value={value}
+                        onChange={onChange}
+                    />
+                </div>
+                <div className={styles.col}>
+                    <div
+                        className={styles.item}
+                        onClick={() => handleClick(item.id)}
+                    >
+                        <div className={styles.avatar}>
+                            <img src={item.avatar} alt="Avatar" />
+                        </div>
+                        <div className={styles.details}>
+                            <div className={styles.user}>{item.user}</div>
+                            <div className={styles.login}>{item.login}</div>
+                            <div className={styles.email}>{item.email}</div>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.col}>
+                    <div className={styles.email}>{item.email}</div>
+                </div>
+                <div className={styles.col}>
+                    <div className={cn("status-green-dark", styles.purchase)}>
+                        {item.purchase}
+                    </div>
+                </div>
+                <div className={styles.col}>
+                    <div className={styles.lifetime}>
+                        <div className={styles.price}>${item.price}</div>
+                        <Balance
+                            className={styles.balance}
+                            value={item.balance}
+                        />
+                    </div>
+                </div>
+                <div className={styles.col}>{item.comments}</div>
+                <div className={styles.col}>{item.likes}</div>
             </div>
-
-            <Title title={item.user} xxl fontBold />
-          </div>
-        </Col>
-        <Col hidden>
-          <Title title={item.email} xl fontBold className="text-secondary-n4" />
-        </Col>
-        <Col hidden>
-          <Title title="0123456789" xl fontBold className="text-secondary-n4" />
-        </Col>
-        <Col>
-          <div className="flex xl:flex-row flex-col items-center gap-2">
-            <Title title={item.price} xl fontBold background />
-            <Balance value={item.balance} />
-          </div>
-        </Col>
-        <Col hidden>
-          <Title title={item.comments} xl fontBold />
-        </Col>
-        <Col hidden>
-          <Title title={item.likes} xl fontBold />
-        </Col>
-      </div>
-    </>
-  );
-}
+        </>
+    );
+};
 
 export default Row;

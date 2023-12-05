@@ -1,0 +1,27 @@
+@import ../../../styles/helpers
+
+.chart
+    width: auto
+    height: 230px
+    +x
+        margin-left: -12px
+    +t
+        max-width: 310px
+        margin: 0 auto
+    +m
+        padding-left: 10px
+
+.legend
+    display: flex
+    justify-content: space-between
+    margin-top: 32px
+    svg
+        margin-bottom: 12px
+
+.title
+    +caption2
+    font-weight: 500
+    color: $n4
+
+.percent
+    +title1-s

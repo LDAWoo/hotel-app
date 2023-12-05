@@ -1,0 +1,139 @@
+@import ../../../styles/helpers
+
+.row
+    display: table-row
+    cursor: pointer
+    transition: background .2s
+    +m
+        display: flex
+        align-items: flex-start
+        &:not(:last-child)
+            margin-bottom: 16px
+            padding-bottom: 16px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+    &:hover
+        +rmin(768)
+            background: $n2
+            +dark
+                background: $n6
+    
+.col
+    position: relative
+    display: table-cell
+    vertical-align: top
+    padding: 16px 12px
+    +base2
+    color: $n7
+    +m
+        padding: 0
+    +dark
+        color: $n1
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        height: 1px
+        background: $n3
+        +m
+            display: none
+        +dark
+            background: $n6
+    &:first-child
+        border-radius: 8px 0 0 8px
+        +m
+            margin-right: auto
+        &:after
+            left: 12px
+    &:nth-child(2)
+        +m
+            display: none
+    &:nth-child(3)
+        +t
+            display: none
+    &:last-child
+        border-radius: 0 8px 8px 0
+        +m
+            margin-left: 16px
+        &:after
+            right: 12px
+    &:not(:first-child)
+        padding-top: 22px
+        +m
+            padding: 0
+
+.item
+    display: flex
+    align-items: center
+    .new,
+    .progress
+        display: none
+        +m
+            display: inline-block
+
+.preview
+    flex-shrink: 0
+    width: 80px
+    height: 80px
+    margin-right: 20px
+    border-radius: 8px
+    overflow: hidden
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.product
+    max-width: 170px
+    margin-bottom: 4px
+    font-size: 15px
+
+.category
+    +caption1
+    color: $shades1
+    +m
+        display: none
+
+.new,
+.progress
+    display: inline-block
+    padding: 2px 8px
+    border-radius: 6px
+    white-space: nowrap
+    +dark
+        color: $n8
+
+.new
+    background: $s4
+
+.progress
+    background: $s2
+
+.user
+    display: flex
+    align-items: center
+    margin-top: -2px
+    +m
+        font-size: 0
+
+.avatar
+    flex-shrink: 0
+    width: 32px
+    height: 32px
+    margin-right: 12px
+    +m
+        margin-right: 0
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.outer
+    max-width: 896px
+    & > div
+        +m
+            padding: 26px 16px 16px

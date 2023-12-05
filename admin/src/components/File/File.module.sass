@@ -1,0 +1,59 @@
+@import ../../styles/helpers
+
+.label
+    margin-bottom: 14px
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1px
+    svg
+        fill: $shades1
+
+.wrap
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 200px
+    border-radius: 12px
+    background: $n2
+    overflow: hidden
+    +dark
+        background: $n6
+
+.input
+    position: absolute
+    top: 0
+    left: 0
+    font-size: 340px
+    opacity: 0
+    &:hover + .box
+        border-color: $n4
+        +dark
+            border-color: $n5
+
+.box
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 48px
+    padding: 0 20px
+    border: 2px solid $n3
+    border-radius: 12px
+    background: $n1
+    box-shadow: 0px 12px 13px -6px rgba(0, 0, 0, 0.04)
+    +button1
+    transition: border-color .2s
+    +dark
+        background: $n7
+        border-color: $n6
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 12px 13px -6px rgba(0, 0, 0, 0.04), inset 0px 2px 4px #31353B
+    svg
+        margin-right: 8px
+        +dark
+            fill: $n1
+

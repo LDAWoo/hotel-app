@@ -1,0 +1,48 @@
+@import ../../../styles/helpers
+
+.panel
+    +t
+        display: none
+
+.info
+    margin-right: 24px
+    +caption1
+    color: $n4
+    svg
+        margin-right: 12px
+        fill: $n4
+
+.note
+    display: inline-flex
+    align-items: center
+    height: 40px
+    padding: 0 10px
+    border-radius: 8px
+    background: $n6
+    +caption2
+    color: $n2
+    & > svg
+        margin-right: 8px
+        fill: $p2
+    span
+        position: relative
+        top: -2px
+        margin-left: 4px
+
+.close
+    margin-left: 20px
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $n1
+
+.btns
+    display: flex
+    align-items: center
+    margin-left: auto
+
+.button
+    &:not(:last-child)
+        margin-right: 8px

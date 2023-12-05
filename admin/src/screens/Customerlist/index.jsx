@@ -1,54 +1,81 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import styles from "./CustomerList.module.sass";
+import cn from "classnames";
 import Card from "../../components/Card";
-import Table from "./Table";
 import Form from "../../components/Form";
-import Filter from "../../components/Filter";
-import useRegisterFilter from "../../hooks/Customer/useRegisterFilter";
-import Title from "../../components/Title";
-const navigation = ["Active", "UnActive"];
+import Filters from "../../components/Filters";
+import Settings from "./Settings";
+import Table from "./Table";
+import Panel from "./Panel";
+import Details from "./Details";
 
-function CustomerList() {
+const navigation = ["Active", "New"];
+
+const CustomerList = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [search, setSearch] = useState("");
-  const { isOpen, onOpen, onClose } = useRegisterFilter();
-  const handleSubmit = () => {};
+  const [visible, setVisible] = useState(false);
 
-  const handleShowFilter = () => {
-    onOpen();
-  };
-
-  const handleClose = () => {
-    onClose();
+  const handleSubmit = (e) => {
+    alert();
   };
 
   return (
     <>
       <Card
-        className=""
-        classCardHead={``}
-        classTitle="mr-5"
+        className={styles.card}
+        title="Customer"
+        classTitle={cn("title-purple", styles.title)}
+        classCardHead={cn(styles.head, { [styles.hidden]: visible })}
         head={
-          <div className="flex flex-col 2md:flex-row gap-2 flex-1 w-full">
-            <Form className="mr-auto" classInput="font-medium" value={search} setValue={setSearch} onSubmit={() => handleSubmit()} placeholder="Search by name or email" type="text" name="search" icon="search" />
-            <div className="flex w-full md:w-auto">
-              {navigation.map((item, index) => (
-                <button className={`${activeIndex === index ? "text-secondary-n7 dark:text-secondary-n1 bg-secondary-n3 dark:bg-secondary-n6" : "text-secondary-n4"} rounded-lg pt-[8px] pb-[8px] pl-[16px] pr-[16px] w-full  transition-all `} key={index} onClick={() => setActiveIndex(index)}>
-                  <Title title={item} fontMedium xxl />
+          <>
+            <Form
+              className={styles.form}
+              value={search}
+              setValue={setSearch}
+              onSubmit={() => handleSubmit()}
+              placeholder="Search by name or email"
+              type="text"
+              name="search"
+              icon="search"
+            />
+            <div className={styles.nav}>
+              {navigation.map((x, index) => (
+                <button
+                  className={cn(styles.link, {
+                    [styles.active]: index === activeIndex,
+                  })}
+                  onClick={() => setActiveIndex(index)}
+                  key={index}
+                >
+                  {x}
                 </button>
               ))}
             </div>
-            <Filter visible={isOpen} title="Showing 10 of 24 customer" onClick={handleShowFilter} onClickOutSide={handleClose} onClose={handleClose} />
-          </div>
+            <Filters
+              className={styles.filters}
+              title="Showing 10 of 24 customer"
+            >
+              <Settings />
+            </Filters>
+          </>
         }
-        title="Customer"
       >
-        <div>
-          {/* Table */}
-          <Table />
+        <div className={cn(styles.row, { [styles.flex]: visible })}>
+          <Table
+            className={styles.table}
+            activeTable={visible}
+            setActiveTable={setVisible}
+          />
+          <Details
+            className={styles.details}
+            onClose={() => setVisible(false)}
+          />
         </div>
       </Card>
+      <Panel />
     </>
   );
-}
+};
 
 export default CustomerList;

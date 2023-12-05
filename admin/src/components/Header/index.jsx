@@ -1,12 +1,46 @@
-import Search from "../Search";
+import React, { useState } from "react";
+import cn from "classnames";
+import styles from "./Header.module.sass";
+import { Link } from "react-router-dom";
+import Icon from "../Icon";
+import Search from "./Search";
+import Messages from "./Messages";
+import Notification from "./Notification";
+import User from "./User";
 
-function Header({ onOpen }) {
+const Header = ({ onOpen }) => {
+  const [visible, setVisible] = useState(false);
+  const handleClick = () => {
+    onOpen();
+    setVisible(false);
+  };
+
   return (
-    <header className="fixed left-0 top-0 right-0 z-10 flex items-center p-[16px_24px_16px_16px] bg-secondary-n shadow-[4px_10px_32px_0px_rgba(17,19,21,0.05)] dark:bg-secondary-n7 dark:shadow-[1px_0px_0px_0px_rgba(17,19,21,1)] sm:left-[96px] xl:left-[300px] xl:pt-[16px] xl:pb-[24px]">
-      <button className="" onClick={onOpen}></button>
-      <Search />
+    <header className={styles.header}>
+      <button className={styles.burger} onClick={() => handleClick()}></button>
+      <Search className={cn(styles.search, { [styles.visible]: visible })} />
+      <button className={cn(styles.buttonSearch, { [styles.active]: visible })} onClick={() => setVisible(!visible)}>
+        <Icon name="search" size="24" />
+      </button>
+      <div className={styles.control} onClick={() => setVisible(false)}>
+        <Link className={cn("button", styles.button)} to="/products/add">
+          <Icon name="add" size="24" />
+          <span>Create</span>
+        </Link>
+        <Messages className={styles.messages} />
+        <Notification className={styles.notification} />
+        <User className={styles.user} />
+      </div>
+      <div className={styles.btns}>
+        <Link className={styles.link} to="/sign-in">
+          Sign in
+        </Link>
+        <Link className={cn("button", styles.button)} to="/sign-up">
+          Sign up
+        </Link>
+      </div>
     </header>
   );
-}
+};
 
 export default Header;

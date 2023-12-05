@@ -1,0 +1,133 @@
+@import ../../../../styles/helpers
+
+.row
+    display: table-row
+    +t
+        display: block
+        margin-bottom: 24px
+        padding-bottom: 24px
+        border-bottom: 1px solid $n3
+        +dark
+            border-color: $n6
+    &:not(:last-child)
+        .col
+            border-bottom: 1px solid $n3
+            +t
+                border: none
+            +dark
+                border-color: $n6
+    
+.col
+    display: table-cell
+    vertical-align: top
+    padding-top: 20px
+    padding-bottom: 20px
+    +t
+        display: flex
+        align-items: center
+        padding: 0
+    &:not(:first-child)
+        padding-top: 32px
+        +t
+            padding-top: 0
+    &:not(:last-child)
+        padding-right: 24px
+        +t
+            margin-bottom: 12px
+            padding-top: 0
+
+.item
+    display: flex
+    align-items: center
+
+.preview
+    position: relative
+    flex-shrink: 0
+    width: 136px
+    height: 112px
+    margin-right: 20px
+    border-radius: 8px
+    overflow: hidden
+    +m
+        width: 112px
+        height: 96px
+        margin-right: 16px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.icon
+    position: absolute
+    top: 4px
+    left: 4px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 24px
+    height: 24px
+    border-radius: 4px
+    background: $n1
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1)
+    +dark
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.36)
+        background: $n8
+    svg
+        fill: $n4
+
+.post
+    max-width: 160px
+    margin-bottom: 12px
+    font-weight: 700
+    +t
+        max-width: 100%
+        font-size: 18px
+    +m
+        font-size: 15px
+
+.socials
+    display: flex
+
+.social
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n3
+    transition: all .2s
+    svg
+        fill: $n7
+        transition: fill .2s
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+    &:hover
+        background: $p1
+        svg
+            fill: $n1
+    &:not(:last-child)
+        margin-right: 12px
+
+.distribution
+    font-size: 15px
+    font-weight: 600
+    color: $n7
+
+.label
+    display: none
+    +t
+        display: block
+        flex-shrink: 0
+        width: 156px
+        padding-right: 20px
+        +caption1
+        color: $n4
+    +m
+        width: 128px
+
+
+    

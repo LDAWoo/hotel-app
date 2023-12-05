@@ -1,0 +1,67 @@
+@import ../../../styles/helpers
+
+.title
+    margin-bottom: 24px
+
+.container
+    display: flex
+    padding: 48px
+    border-radius: 8px
+    background: $n1
+    +d
+        padding: 32px
+    +t
+        display: block
+    +m
+        padding: 24px
+    +dark
+        background: $n7
+
+.sidebar
+    flex-shrink: 0
+    width: 224px
+    +t
+        width: 100%
+        margin-bottom: 32px
+
+.menu
+    display: flex
+    flex-direction: column
+    +t
+        display: none
+    .button
+        padding: 8px 16px
+        border-radius: 8px
+        text-align: left
+        +base1-s
+        color: $n4
+        transition: all .2s
+        &:not(:last-child)
+            margin-bottom: 8px
+        &:hover,
+        &.active
+            color: $n7
+            +dark
+                color: $n1
+        &.active
+            background: $n3
+            +dark
+                background: $n6
+
+.dropdown
+    display: none
+    +t
+        display: block
+
+.dropdownHead
+    +dark
+        background: $n6
+        box-shadow: inset 0 0 0 2px $n6
+
+.list
+    flex-grow: 1
+    padding-left: 64px
+    +d
+        padding-left: 48px
+    +t
+        padding-left: 0

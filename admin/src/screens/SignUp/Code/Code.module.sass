@@ -1,0 +1,60 @@
+@import ../../../styles/helpers
+
+.info
+    margin-bottom: 20px
+    +body2-s
+
+.fieldset
+    display: flex
+    margin: 0 -6px
+
+.field
+    flex: 0 0 calc(25% - 12px)
+    width: calc(25% - 12px)
+    margin: 0 6px
+    &.error
+        .input
+            background: rgba($s1, .25)
+            border-color: transparent
+            color: $p3
+
+.input
+    width: 100%
+    height: 72px
+    padding: 0 6px
+    border-radius: 12px
+    border: 2px solid transparent
+    background: $n3
+    text-align: center
+    +inter
+    font-size: 48px
+    font-weight: 600
+    color: $n7
+    transition: all .2s
+    &:focus
+        border-color: $shades1
+        background: $n
+    +dark
+        background: $n6
+        color: $n1
+        &:focus
+            background: transparent
+
+.errorNote
+    display: none
+    margin-top: 12px
+    +caption2
+    font-weight: 500
+    color: $p3
+
+.button
+    width: 100%
+    margin-top: 12px
+    .loader
+        display: none
+        margin-right: 16px
+
+.note
+    margin-top: 32px
+    +body2-s
+    color: $shades1

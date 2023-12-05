@@ -1,0 +1,91 @@
+@import ../../../styles/helpers
+
+.details
+    position: relative
+    flex-grow: 1
+    padding: 60px 0 0 48px
+    +w
+        padding: 48px 0 0 48px
+    +t
+        padding: 0
+
+.close
+    position: absolute
+    top: 0
+    right: 0
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n3
+    +t
+        top: -90px
+        background: $n1
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05)
+    +m
+        top: -70px
+    svg
+        transition: transform .2s
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+    &:hover
+        svg
+            transform: rotate(90deg)
+
+.head,
+.editor
+    margin-bottom: 48px
+    +x
+        margin-bottom: 32px
+
+.line
+    display: flex
+    align-items: center
+    +base2
+    color: $n7
+    transition: color .2s
+    svg
+        margin-right: 12px
+        fill: $n4
+        transition: fill .2s
+    +dark
+        color: $n1
+    &:hover
+        color: $p1
+        svg
+            fill: $p1
+
+.socials
+    display: flex
+    align-items: center
+    padding: 20px 0
+    border-width: 1px 0
+    border-style: solid
+    border-color: $n3
+    +m
+        padding: 16px 0
+    +dark
+        border-color: $n6
+
+.social
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+    &:not(:last-child)
+        margin-right: 32px
+
+.line,
+.socials
+    &:not(:last-child)
+        margin-bottom: 20px
+        +m
+            margin-bottom: 16px
+
+.history
+    margin-top: 48px
+    +x
+        margin-top: 32px

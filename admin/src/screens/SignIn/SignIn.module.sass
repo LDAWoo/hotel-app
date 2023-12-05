@@ -1,0 +1,74 @@
+@import ../../styles/helpers
+
+.login
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 48px
+    background: $n1
+    +m
+        padding: 24px
+    +dark
+        background: $n7
+
+.wrapper
+    max-width: 296px
+    +m
+        max-width: 100%
+
+.logo
+    display: inline-block
+    width: 48px
+    margin-bottom: 32px
+    img
+        width: 100%
+
+.title
+    margin-bottom: 32px
+
+.head
+    margin-bottom: 32px
+    padding-bottom: 32px
+    border-bottom: 2px solid $n3
+    +dark
+        border-color: $n6
+
+.subtitle
+    margin-bottom: 20px
+    +body2-s
+
+.btns
+    display: flex
+    margin: 0 -4px
+    .button
+        flex: 0 0 calc(50% - 8px)
+        width: calc(50% - 8px)
+        margin: 0 4px
+        padding: 0 16px
+        img
+            margin-right: 10px
+
+.body
+    .button
+        width: 100%
+
+.field
+    margin-bottom: 12px
+
+.note
+    margin-top: 32px
+    +body2-s
+    color: $shades1
+
+.info
+    margin-top: 32px
+    +caption1
+    color: $n4
+    a
+        font-weight: 700
+        color: $n7
+        transition: color .2s
+        +dark
+            color: $n1
+        &:hover
+            color: $p1

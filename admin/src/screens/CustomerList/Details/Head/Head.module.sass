@@ -1,0 +1,62 @@
+@import ../../../../styles/helpers
+
+.head
+    display: flex
+    align-items: center
+    +m
+        display: block
+
+.user
+    display: flex
+    align-items: center
+    margin-right: 24px
+    +m
+        margin: 0 0 24px
+
+.avatar
+    flex-shrink: 0
+    width: 80px
+    height: 80px
+    margin-right: 24px
+    +w
+        width: 64px
+        height: 64px
+        margin-right: 16px
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.man
+    margin-bottom: 4px
+    +title1-s
+
+.login
+    +caption1
+    color: $shades1
+
+.btns
+    display: flex
+    align-items: center
+    margin-left: auto
+    .button
+        +m
+            flex-grow: 1
+        &:first-child
+            +w
+                width: 48px
+                padding: 0 
+                font-size: 0
+                svg
+                    &:last-child
+                        margin: 0
+            +m
+                width: auto
+                padding: 0 20px
+                font-size: 15px
+                svg
+                    &:last-child
+                        margin-left: 8px
+        &:not(:last-child)
+            margin-right: 8px

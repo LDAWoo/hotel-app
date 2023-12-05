@@ -1,0 +1,61 @@
+@import ../../../styles/helpers
+
+.product
+    position: relative
+    max-width: 1020px
+    background: $n1
+    border-radius: 8px
+    +d
+        max-width: calc(100% - 88px)
+    +m
+        max-width: 100%
+    +dark
+        background: $n7
+    &.active
+        display: flex
+        max-width: 1440px
+        +d
+            max-width: 100%
+            margin-right: 0
+        .details
+            flex: 0 0 calc(100% - 472px)
+            width: calc(100% - 472px)
+            +d
+                display: none
+        .comments
+            display: block
+        .panel,
+        .next
+            display: none
+
+.comments
+    display: none
+    flex-shrink: 0
+    width: 472px
+    +d
+        width: 600px
+    +t
+        width: 100%
+
+.next
+    position: absolute
+    left: calc(100% + 24px)
+    bottom: 256px
+    width: 64px
+    height: 64px
+    background: $n
+    border-radius: 50%
+    +d
+        left: auto
+        right: -88px
+        bottom: 0
+    +m
+        display: none
+    +dark
+        background: $n6
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1

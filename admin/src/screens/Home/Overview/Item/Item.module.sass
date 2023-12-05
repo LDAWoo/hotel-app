@@ -1,0 +1,53 @@
+@import ../../../../styles/helpers
+
+.item
+    display: flex
+    padding: 20px
+    flex: 0 0 50%
+    border-radius: 12px
+    cursor: pointer
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    transition: all .2s
+    +w
+        padding: 20px 16px
+    +m
+        display: block
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 40px
+    height: 40px
+    margin-right: 16px
+    border-radius: 50%
+    +m
+        display: none
+
+.subtitle
+    display: flex
+    align-items: center
+    margin-bottom: 4px
+    +caption1
+    color: $n4
+
+.tooltip
+    svg
+        fill: $shades1
+
+.counter
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    letter-spacing: -.03em
+    +w
+        font-size: 40px
+        line-height: 48px
+
+.balance
+    margin: -12px -12px 0 auto
+    +m
+        margin: 4px 0 0
+    +dark
+        background: $n6 !important

@@ -1,0 +1,81 @@
+@import ../../styles/helpers
+
+.head
+    margin-bottom: 44px
+    +t
+        margin-bottom: 32px
+    +m
+        flex-wrap: wrap
+        margin-bottom: 24px
+
+.title
+    margin-right: 24px
+
+.form
+    +t
+        width: 300px
+    +m
+        width: 100%
+        margin-top: 16px
+        order: 3
+
+.sorting
+    display: flex
+    margin-left: auto
+
+.link
+    flex-shrink: 0
+    width: 40px
+    height: 40px
+    border-radius: 8px
+    svg
+        fill: $shades1
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $n7
+            +dark
+                fill: $n1
+    &.active
+        background: $n1
+        box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.1), inset 0px -1px 1px rgba(0, 0, 0, 0.04), inset 0px 2px 0px rgba(255, 255, 255, 0.25)
+        svg
+            fill: $n7
+        +dark
+            box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.1), inset 0px -1px 1px rgba(0, 0, 0, 0.04), inset 0px 2px 0px rgba(255, 255, 255, 0.05)
+            background: $n8
+            svg
+                fill: $n1
+    &:not(:last-child)
+        margin-right: 12px
+
+.list
+    display: flex
+    flex-wrap: wrap
+    margin: -32px -12px 0
+    +a
+        display: block
+        margin: 0 -8px
+
+.product
+    flex: 0 0 calc(33.333% - 24px)
+    width: calc(33.333% - 24px)
+    margin: 32px 12px 0
+    +t
+        flex: 0 0 calc(50% - 24px)
+        width: calc(50% - 24px)
+    +a
+        width: 100%
+        margin: 0
+        &:not(:last-child)
+            margin-bottom: 32px
+
+.foot
+    margin-top: 44px
+    text-align: center
+    +m
+        margin-top: 32px
+    .button
+        .loader
+            transform: scale(.8)
+            margin: 0 18px 0 8px

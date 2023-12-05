@@ -9,13 +9,13 @@ import User from "./User/User";
 
 function HeaderRight() {
   const { user } = useContext(UserContext);
-
+  console.log(user);
   return (
     <div className='flex items-center justify-center'>
       <Language />
       <Theme />
       <ListYourProperty />
-      {user ? <User /> : <HeaderLogin />}
+      {Object.keys(user).length > 0 ? <User /> : <HeaderLogin />}
       <Menu />
     </div>
   );

@@ -1,0 +1,112 @@
+@import ../../../styles/helpers
+
+.notification
+    position: relative
+    +m
+        position: static
+    &.active
+        .head
+            svg
+                fill: $n7
+                +dark
+                    fill: $n1
+        .body
+            visibility: visible
+            opacity: 1
+            transform: translateY(0)
+
+.head
+    position: relative
+    width: 48px
+    height: 48px
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $n7
+            +dark
+                fill: $n1
+    &.active
+        &:before
+            content: ""
+            position: absolute
+            top: 10px
+            right: 10px
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid $n
+            background: $p3
+            +dark
+                border-color: $n7
+
+.body
+    position: absolute
+    top: calc(100% + 18px)
+    right: -92px
+    width: 392px
+    padding: 12px 24px 24px
+    border: 1px solid transparent
+    border-radius: 16px
+    box-shadow: 0px 40px 64px -12px rgba(0, 0, 0, 0.08), 0px 0px 14px -4px rgba(0, 0, 0, 0.05), 0px 32px 48px -8px rgba(0, 0, 0, 0.1)
+    background: $n
+    visibility: hidden
+    opacity: 0
+    transform: translateY(3px)
+    transition: all .2s
+    +x
+        right: -72px
+        top: calc(100% + 15px)
+    +m
+        top: 100%
+        right: 16px
+        left: 16px
+        width: auto
+        padding: 12px 16px 20px
+    +dark
+        background: $n8
+        border-color: $n6
+    &:before
+        content: ""
+        position: absolute
+        right: 105px
+        bottom: 100%
+        width: 20px
+        height: 10px
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' fill='none' viewBox='0 0 20 10'%3E%3Cpath d='M6.927 1.687L0 10h20l-6.927-8.313a4 4 0 0 0-6.146 0z' fill='%23fff'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+        +x
+            right: 84px
+        +m
+            right: 92px
+        +dark
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10' fill='none' viewBox='0 0 20 10'%3E%3Cpath d='M6.927 1.687L0 10h20l-6.927-8.313a4 4 0 0 0-6.146 0z' fill='%23111315'/%3E%3C/svg%3E")
+
+.top
+    display: flex
+    align-items: center
+    margin: 0 -12px 12px 0
+    +m
+        margin-right: -8px
+
+.title
+    margin-right: auto
+    +title1-s
+
+.actionsHead
+    background: $n3
+    svg
+        fill: $n7
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+
+.list
+    margin: 0 -12px
+
+.button
+    width: 100%
+    margin-top: 24px
+    +m
+        margin-top: 16px

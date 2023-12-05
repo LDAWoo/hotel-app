@@ -1,0 +1,165 @@
+@import ../../../../../styles/helpers
+
+.row
+    display: table-row
+    // cursor: pointer
+    transition: background .2s
+    +t
+        position: relative
+        display: block
+        margin-bottom: 24px
+        padding-bottom: 24px
+        border-bottom: 1px solid $n3
+        +dark
+            border-color: $n6
+    &:hover
+        +rmin(1024)
+            background: $n2
+            +dark
+                background: $n6
+            .control
+                visibility: visible
+                opacity: 1
+
+.col
+    position: relative
+    display: table-cell
+    vertical-align: top
+    padding: 16px 12px
+    color: $n7
+    +t
+        position: static
+        display: block
+        padding: 0
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        right: 0
+        height: 1px
+        background: $n3
+        +dark
+            background: $n6
+        +t
+            display: none
+    &:first-child
+        width: 56px
+        border-radius: 8px 0 0 8px
+        font-size: 0
+        +t
+            display: none
+        &:after
+            left: 12px
+    &:nth-child(2)
+        width: 300px
+        +t
+            width: 100%
+    &:last-child
+        border-radius: 0 8px 8px 0
+        &:after
+            right: 12px
+
+.item
+    display: flex
+    align-items: center
+    cursor: pointer
+    transition: color .2s
+    +m
+        align-items: stretch
+    +dark
+        color: $n1
+    &:hover
+        color: $p1
+
+.preview
+    flex-shrink: 0
+    width: 80px
+    height: 80px
+    margin-right: 20px
+    border-radius: 8px
+    overflow: hidden
+    +t
+        width: 104px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.product
+    max-width: 170px
+    margin-bottom: 4px
+    +t
+        max-width: 100%
+        margin-bottom: 8px
+        padding-right: 42px
+        +title2
+
+.date
+    +caption1
+    color: $n4
+
+.line
+    display: flex
+    margin: 11px 0 0 -1px
+    +t
+        margin-top: 20px
+
+.box
+    position: relative
+    height: 12px
+    margin-left: 1px
+    border-radius: 2px
+    cursor: pointer
+    &:hover
+        .tooltip
+            visibility: visible
+            opacity: 1
+
+.tooltip
+    position: absolute
+    left: 50%
+    bottom: calc(100% + 4px)
+    transform: translateX(-50%)
+    padding: 8px
+    background: $n6
+    border: 1px solid rgba(255, 255, 255, 0.12)
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), inset 0px 0px 1px #000000
+    border-radius: 8px
+    font-size: 12px
+    line-height: 1
+    visibility: hidden
+    opacity: 0
+    transition: .2s
+
+.subtitle
+    margin-bottom: 8px
+    white-space: nowrap
+    color: $n3
+
+.legend
+    display: flex
+    align-items: center
+    color: $n1
+
+.color
+    flex-shrink: 0
+    width: 12px
+    height: 12px
+    border-radius: 4px
+    margin-right: 4px
+
+.control
+    position: absolute
+    left: 12px
+    bottom: 16px
+    visibility: hidden
+    opacity: 0
+    transition: all .2s
+    +t
+        top: 0
+        left: auto
+        right: 0
+        bottom: auto
+        visibility: visible
+        opacity: 1

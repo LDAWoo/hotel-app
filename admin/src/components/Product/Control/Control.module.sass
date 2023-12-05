@@ -1,0 +1,25 @@
+@import ../../../styles/helpers
+
+.control
+    display: flex
+    align-items: center
+
+.button
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n1
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
+    &:not(:last-child)
+        margin-right: 16px
+
+

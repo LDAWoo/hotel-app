@@ -1,0 +1,28 @@
+@import ../../../../../styles/helpers
+
+.control
+    display: flex
+    align-items: center
+    margin-top: 8px
+
+.button
+    +button1
+    color: $n7
+    transition: color .2s
+    +dark
+        color: $n1
+    &:hover
+        color: $p1
+    &:not(:last-child)
+        margin-right: 24px
+    &.favorite
+        span
+            display: none
+        &.active
+            color: $p1
+            span
+                display: inline
+
+.answer
+    &.show
+        display: block

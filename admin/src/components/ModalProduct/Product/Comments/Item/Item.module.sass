@@ -1,0 +1,83 @@
+@import ../../../../../styles/helpers
+
+.item,
+.answer
+    display: flex
+
+.item
+    .avatar
+        width: 48px
+        height: 48px
+    .details
+        flex: 0 0 calc(100% - 48px)
+        width: calc(100% - 48px)
+        padding-left: 16px
+    &:not(:first-child)
+        margin-top: 32px
+        padding-top: 24px
+        border-top: 1px solid $n3
+        +dark
+            border-color: $n6
+
+.answer
+    margin-top: 32px
+    padding: 24px 0 0 64px
+    border-top: 1px solid $n3
+    +dark
+        border-color: $n6
+    .avatar
+        width: 32px
+        height: 32px
+    .details
+        flex: 0 0 calc(100% - 32px)
+        width: calc(100% - 32px)
+        padding-left: 16px
+
+.avatar
+    flex-shrink: 0
+    img
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        object-fit: cover
+
+.line
+    display: flex
+    align-items: center
+
+.author
+    margin-right: auto
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.time
+    margin-left: 8px
+    white-space: nowrap
+    +caption2
+    font-weight: 500
+    color: $shades1
+
+.rating
+    display: flex
+    align-items: center
+    margin-left: 16px
+    +base2
+    svg
+        margin-left: 8px
+        fill: #FFC554
+
+.login
+    margin-top: 4px
+    +caption1
+    font-weight: 500
+    color: $n4
+
+.comment
+    margin-top: 12px
+    font-weight: 500
+    color: $n5
+    +dark
+        color: $n1
+    strong
+        font-weight: 600

@@ -1,0 +1,128 @@
+@import ../../../styles/helpers
+
+.packages
+    padding: 48px
+    background: $n1
+    border-radius: 8px
+    +d
+        padding: 32px
+    +m
+        padding: 24px
+    +dark
+        background: $n7
+
+.list
+    display: flex
+    flex-wrap: wrap
+    margin: -80px -80px 0
+    +w
+        margin: -64px -64px 0
+    +t
+        display: block
+        margin: 0
+
+.package
+    display: flex
+    flex-direction: column
+    flex: 0 0 50%
+    margin-top: 80px
+    padding: 0 80px
+    +w
+        margin-top: 64px
+        padding: 0 64px
+    +t
+        margin: 0
+        padding: 0
+    &:nth-child(2n+1)
+        border-right: 1px solid $n3
+        +t
+            border: none
+        +dark
+            border-color: $n6
+    &:not(:last-child)
+        +t
+            margin-bottom: 48px
+            padding-bottom: 48px
+            border-bottom: 1px solid $n3
+            +dark
+                border-color: $n6
+
+.top
+    display: flex
+    align-items: center
+    min-height: 40px
+    margin-bottom: 24px
+
+.recommended
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 36px
+    margin-left: 18px
+    padding: 0 14px
+    border-radius: 20px
+    background: $s4
+    +button2
+    +dark
+        color: $n7
+
+.content
+    margin-bottom: 24px
+    color: $n4
+
+.line
+    display: flex
+    align-items: center
+    margin-bottom: 24px
+    padding: 24px 0
+    border-width: 1px 0
+    border-style: solid
+    border-color: $n3
+    +dark
+        border-color: $n6
+
+.percent
+    margin-right: 24px
+
+.note
+    max-width: 190px
+    margin-right: auto
+    +caption1
+    color: $shades1
+
+.tooltip
+    margin-left: 24px
+    +m
+        display: none
+    svg
+        width: 24px
+        height: 24px
+        fill: $shades1
+
+.group
+    flex-grow: 1
+
+.item
+    position: relative
+    padding-left: 40px
+    color: $n5
+    +dark
+        color: $n3
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 24px
+        height: 24px
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M20.707 6.293a1 1 0 0 1 0 1.414l-8.586 8.586a3 3 0 0 1-4.243 0l-3.586-3.586a1 1 0 0 1 1.414-1.414l3.586 3.586a1 1 0 0 0 1.414 0l8.586-8.586a1 1 0 0 1 1.414 0z' fill='%23b5e4ca'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+    &:not(:last-child)
+        margin-bottom: 24px
+
+.button
+    width: 100%
+    margin-top: 72px
+    +t
+        margin-top: 48px
+    
+    

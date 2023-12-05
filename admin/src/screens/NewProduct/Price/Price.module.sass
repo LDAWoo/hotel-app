@@ -1,0 +1,47 @@
+@import ../../../styles/helpers
+
+.price
+    & > .field
+        &:not(:last-child)
+            margin-bottom: 32px
+            +d
+                margin-bottom: 24px
+
+.line
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    padding-bottom: 16px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.info
+    margin-right: auto
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1
+    svg
+        fill: $shades1
+
+.switch
+    margin-left: 12px
+
+.fieldset
+    display: flex
+    margin: 0 -6px
+    .field
+        flex: 0 0 calc(50% - 12px)
+        width: calc(50% - 12px)
+        margin: 0 6px
+    .label
+        margin-bottom: 12px
+        font-size: 12px
+        line-height: (16/12)
+        font-weight: 700
+        color: $n4

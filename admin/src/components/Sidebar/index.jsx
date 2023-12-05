@@ -1,7 +1,12 @@
-import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import styles from "./Sidebar.module.sass";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import cn from "classnames";
 import Icon from "../Icon";
-import Dropdown from "../Dropdown";
+import Theme from "../Theme";
+import Dropdown from "./Dropdown";
+import Help from "./Help";
+import Image from "../Image";
 
 const navigation = [
   {
@@ -91,51 +96,61 @@ const navigation = [
   },
 ];
 
-function Sidebar({ className, onClose }) {
+const Sidebar = ({ className, onClose }) => {
   const [visibleHelp, setVisibleHelp] = useState(false);
   const [visible, setVisible] = useState(false);
 
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
-    <div className={`fixed top-0 left-0 bottom-0 flex flex-col w-full items-stretch sm:w-[75px] sm:z-50 p-[12px] sm:items-center xl:w-[300px] xl:p-[24px] overflow-auto no-scrollbar bg-secondary-n  dark:bg-secondary-n7 md:shadow-[4px_0px_32px_rgba(17,19,21,0.05)] ${visible ? "sm:w-full z-50 md:w-[300px] md:items-stretch " : "hidden sm:flex"} ${className}`} onClick={onClose}>
-      <button className={`absolute top-[5px] right-[0px] w-[48px] h-[48px] text-secondary-n7 dark:text-secondary-n1 ${visible ? "md:block" : "hidden"}`} onClick={onClose}>
-        <Icon name="close" size="24" />
-      </button>
-
-      {/* startLogo */}
-      <div className="mt-2 mb-2 font-bold">Staying</div>
-      {/* endLogo */}
-
-      {/* startMenu */}
-      <div className="flex flex-col mb-auto w-full">
-        {navigation.map((item, index) =>
-          item.url ? (
-            <NavLink
-              key={index}
-              to={item.url}
-              className={`flex items-center w-full whitespace-nowrap font-bold text-[0] xl:text-[15px] p-[12px] xl:gap-2 rounded-xl transition-shadow ${
-                pathname === item.url ? "text-secondary-n7 dark:text-secondary-n1 bg-secondary-n3 dark:bg-secondary-n6 shadow-[inset_0px_-2px_1px_rgba(0,0,0,0.05),inset_0px_1px_1px_rgba(255,255,255,1)]" : "text-secondary-n4 hover:text-secondary-n5 dark:hover:text-secondary-n2"
-              }
-              ${visible ? "w-full md:w-full md:text-[15px] gap-3 text-[15px]" : ""}
-              `}
-            >
-              <Icon name={item.icon} size="24" />
-              {item.title}
-            </NavLink>
-          ) : (
-            <Dropdown key={index} item={item} visibleSidebar={visible} setValue={setVisible} onClose={onClose} />
-          )
-        )}
+    <>
+      <div
+        className={cn(styles.sidebar, className, {
+          [styles.active]: visible,
+        })}
+      >
+        <button className={styles.close} onClick={onClose}>
+          <Icon name="close" size="24" />
+        </button>
+        <Link className={styles.logo} to="/" onClick={onClose}>
+          <Image className={styles.pic} src="/images/logo-dark.png" srcDark="/images/logo-light.png" alt="Core" />
+        </Link>
+        <div className={styles.menu}>
+          {navigation.map((x, index) =>
+            x.url ? (
+              <NavLink
+                className={cn(styles.item, {
+                  [styles.active]: pathname === x.url,
+                })}
+                to={x.url}
+                key={index}
+                onClick={onClose}
+              >
+                <Icon name={x.icon} size="24" />
+                {x.title}
+              </NavLink>
+            ) : (
+              <Dropdown className={styles.dropdown} visibleSidebar={visible} setValue={setVisible} key={index} item={x} onClose={onClose} />
+            )
+          )}
+        </div>
+        <button className={styles.toggle} onClick={() => setVisible(!visible)}>
+          <Icon name="arrow-right" size="24" />
+          <Icon name="close" size="24" />
+        </button>
+        <div className={styles.foot}>
+          <button className={styles.link} onClick={() => setVisibleHelp(true)}>
+            <Icon name="help" size="24" />
+            Help & getting started
+            <div className={styles.counter}>8</div>
+          </button>
+          <Theme className={styles.theme} visibleSidebar={visible} />
+        </div>
       </div>
-      {/* endMenu */}
-      <button className="xl:hidden inline-block w-[48px] h-[48px] text-secondary-n4" onClick={() => setVisible(!visible)}>
-        <Icon name="arrow-right" size="24" />
-        {/* <Icon name="close" size="24" /> */}
-      </button>
-    </div>
+      <Help visible={visibleHelp} setVisible={setVisibleHelp} onClose={onClose} />
+      <div className={cn(styles.overlay, { [styles.active]: visible })} onClick={() => setVisible(false)}></div>
+    </>
   );
-}
+};
 
 export default Sidebar;

@@ -1,0 +1,47 @@
+@import ../../../../styles/helpers
+
+.link
+    display: flex
+    align-items: center
+    padding: 12px
+    cursor: pointer
+    &:hover
+        .title
+            color: $p1
+        .arrow
+            transform: translateX(2px)
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    width: 48px
+    height: 48px
+    margin-right: 16px
+    border-radius: 50%
+    border: 2px solid $s2
+    svg
+        fill: $n7
+        +dark
+            fill: $n1
+
+.details
+    flex-grow: 1
+
+.content
+    +caption1
+    color: $n4
+
+.title
+    margin-bottom: 4px
+    color: $n7
+    transition: color .2s
+    +dark
+        color: $n1
+
+.arrow
+    margin-left: 24px
+    transition: transform .2s
+    svg
+        fill: $shades1

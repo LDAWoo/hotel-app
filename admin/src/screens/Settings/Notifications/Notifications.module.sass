@@ -1,0 +1,28 @@
+@import ../../../styles/helpers
+
+.line
+    display: flex
+    padding-bottom: 16px
+    &:not(:last-child)
+        margin-bottom: 32px
+        border-bottom: 1px solid $n3
+        +t
+            margin-bottom: 24px
+        +dark
+            border-color: $n6
+
+.title
+    margin-right: 24px
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1px
+    svg
+        fill: $shades1
+
+.switch
+    margin-left: auto

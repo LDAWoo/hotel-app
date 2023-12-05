@@ -1,0 +1,74 @@
+@import ../../../styles/helpers
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 44px
+    +t
+        margin-bottom: 32px
+    +m
+        flex-wrap: wrap
+        margin-bottom: 24px
+    .form
+        +w
+            width: 300px
+        +t
+            width: 250px
+        +m
+            width: 100%
+            margin: 16px 0 0
+
+.title
+    margin-right: 24px
+    +m
+        margin-right: 0
+
+.control
+    display: none
+    align-items: center
+    +t
+        display: none
+    .button
+        margin-right: 8px
+
+.counter
+    margin-left: 16px
+    +button2
+
+.dropdown
+    min-width: 154px
+    margin-left: auto
+    +m
+        width: 100%
+        margin-top: 16px
+
+.dropdownHead
+    +m
+        +dark
+            background: $n6
+            box-shadow: inset 0 0 0 2px $n6
+            color: $n1
+
+.nav
+    display: flex
+    margin-left: auto
+    +t
+        display: none
+
+.link
+    padding: 8px 16px
+    border-radius: 8px
+    +base1-s
+    color: $n4
+    transition: all .2s
+    &:hover,
+    &.active
+        color: $n7
+        +dark
+            color: $n1
+    &.active
+        background: $n3
+        +dark
+            background: $n6
+    &:not(:last-child)
+        margin-right: 8px

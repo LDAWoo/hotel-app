@@ -1,0 +1,38 @@
+export const history = [
+  {
+    id: 0,
+    product: "Bento Matte 3D Illustration",
+    link: "ui8.net/product/product-link",
+    image: "/images/content/product-pic-1.jpg",
+    image2x: "/images/content/product-pic-1@2x.jpg",
+    price: 64,
+    date: "Apr 9, 2021",
+  },
+  {
+    id: 1,
+    product: "Node - Crypto iOS UI design kit",
+    link: "ui8.net/product/product-link",
+    image: "/images/content/product-pic-2.jpg",
+    image2x: "/images/content/product-pic-2@2x.jpg",
+    price: 123,
+    date: "Apr 18, 2021",
+  },
+  {
+    id: 2,
+    product: "TaskEz: Productivity App iOS UI Kit",
+    link: "ui8.net/product/product-link",
+    image: "/images/content/product-pic-3.jpg",
+    image2x: "/images/content/product-pic-3@2x.jpg",
+    price: 43,
+    date: "Apr 29, 2021",
+  },
+  {
+    id: 3,
+    product: "Fleet - Travel shopping UI design kit",
+    link: "ui8.net/product/product-link",
+    image: "/images/content/product-pic-4.jpg",
+    image2x: "/images/content/product-pic-4@2x.jpg",
+    price: 89,
+    date: "Apr 31, 2021",
+  },
+];

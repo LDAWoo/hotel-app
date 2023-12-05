@@ -1,0 +1,45 @@
+@import ../../styles/helpers
+
+.label
+    margin-bottom: 14px
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1px
+    svg
+        fill: $shades1
+
+.editor
+    position: relative
+    +inter
+    +dark
+        color: $n8
+    .editorMain
+        min-height: 112px
+        +dark
+            color: $n1
+    .editorWrapper
+        border: 2px solid rgba(#9A9FA5, .25)
+        border-radius: 12px
+        background: $n2
+        +dark
+            border-color: rgba(#9A9FA5, .15)
+            background: $n8
+    .editorToolbar
+        border: none
+        border-radius: 12px 12px 0 0
+        background: $n1
+        +dark
+            background: $n6
+
+.editorButton
+    .editorMain
+        padding-bottom: 56px
+    .button
+        position: absolute
+        left: 12px
+        bottom: 12px

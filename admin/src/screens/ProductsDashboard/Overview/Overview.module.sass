@@ -1,0 +1,104 @@
+@import ../../../styles/helpers
+
+.list
+    display: flex
+    margin: 0 -6px
+    +t
+        margin: 0 -24px
+        overflow: auto
+        -webkit-overflow-scrolling: touch
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none 
+        &:before,
+        &:after
+            content: ""
+            flex-shrink: 0
+            width: 24px
+            height: 1px
+    +m
+        margin: 0 -16px
+        &:before,
+        &:after
+            width: 16px
+
+.item
+    display: block
+    flex: 0 0 calc(33.333% - 12px)
+    width: calc(33.333% - 12px)
+    margin: 0 6px
+    padding: 32px
+    border-radius: 12px
+    color: $n7
+    +t
+        flex: 0 0 295px
+        width: 295px
+        margin: 0
+        &:not(:last-child)
+            margin-right: 12px
+    +m
+        flex: 0 0 285px
+        width: 285px
+    +dark
+        color: $n3
+    &:nth-child(2n+1)
+        +dark
+            background: rgba(#A7AAF7, .15) !important
+    &:nth-child(2n)
+        +dark
+            background: rgba(#B1E5FC, .1) !important
+
+.icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 48px
+    height: 48px
+    margin-bottom: 12px
+    border-radius: 50%
+    background: $n7
+    svg
+        fill: $n1
+    +dark
+        background: $n1
+        svg
+            fill: $n7
+
+.line
+    display: flex
+
+.category
+    display: flex
+    align-items: center
+    margin-bottom: 4px
+    +caption1
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    svg
+        fill: $n5
+        +dark
+            fill: $n3
+
+.counter
+    margin-bottom: 4px
+    font-size: 48px
+    font-weight: 600
+    line-height: 1
+    letter-spacing: -.03em
+
+.indicator
+    display: inline-flex
+    align-items: center
+    border-radius: 8px
+    padding: 4px
+    background: $n1
+    color: $n4
+    +dark
+        background: $n7
+    span
+        margin-left: 4px
+        +caption2

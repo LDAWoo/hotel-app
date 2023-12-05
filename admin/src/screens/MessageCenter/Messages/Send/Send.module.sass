@@ -1,0 +1,68 @@
+@import ../../../../styles/helpers
+
+.send
+    position: absolute
+    left: 24px
+    right: 24px
+    bottom: 24px
+    display: flex
+    align-items: center
+    +m
+        left: 16px
+        right: 16px
+        bottom: 16px
+
+.file,
+.smile
+    flex-shrink: 0
+    margin-right: 24px
+    +m
+        margin-right: 12px
+
+.file
+    position: relative
+    overflow: hidden
+    input
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 140px
+        opacity: 0
+    svg
+        fill: $n4
+        transition: fill .2s
+    input:hover + svg
+        fill: $n7
+        +dark
+            fill: $p1
+
+.form
+    position: relative
+    flex-grow: 1
+
+.input
+    width: 100%
+    height: 48px
+    padding: 0 96px 0 10px
+    border-radius: 12px
+    border: 2px solid $n3
+    background: $n2
+    +base1-s
+    color: $n7
+    &::placeholder
+        color: $n4
+    &:focus
+        border-color: rgba($p1, .35)
+        background: $n
+    +dark
+        background: $n6
+        border-color: $n6
+        color: $n1
+        &:focus
+            background: $n8
+
+.button
+    position: absolute
+    top: 50%
+    right: 4px
+    transform: translateY(-50%)

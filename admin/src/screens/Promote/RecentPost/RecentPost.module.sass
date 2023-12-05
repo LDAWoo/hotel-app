@@ -1,0 +1,52 @@
+@import ../../../styles/helpers
+
+.head
+    margin-bottom: 44px
+    +t
+        margin-bottom: 32px
+    +m
+        flex-wrap: wrap
+        margin-bottom: 24px
+        .title
+            width: 100%
+            margin: 0 0 16px
+
+.button
+    margin-left: 16px
+
+.table
+    display: table
+    width: 100%
+    +t
+        display: block
+
+.row
+    display: table-row
+    +t
+        display: none
+
+.col
+    display: table-cell
+    padding-top: 16px
+    padding-bottom: 16px
+    border-bottom: 1px solid $n3
+    +caption2
+    font-weight: 500
+    color: $n4
+    +dark
+        border-color: $n6
+    &:not(:last-child)
+        padding-right: 24px
+
+.foot
+    margin-top: 20px
+    text-align: center
+    +t
+        margin-top: 0
+    .button
+        .loader
+            transform: scale(.8)
+            margin: 0 18px 0 8px
+
+.outer
+    max-width: 560px

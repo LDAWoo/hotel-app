@@ -1,0 +1,70 @@
+@import ../../../../styles/helpers
+
+.market
+    margin: 0 -12px
+    +t
+        margin: 0
+
+.table
+    display: table
+    width: 100%
+    +t
+        display: block
+
+.row
+    display: table-row
+    +t
+        display: none
+
+.col
+    position: relative
+    display: table-cell
+    padding: 0 12px 16px
+    vertical-align: middle
+    +caption1
+    color: $n4
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        right: 0
+        height: 1px
+        background: $n3
+        +dark
+            background: $n6
+    &:first-child
+        width: 56px
+        font-size: 0
+        &:after
+            left: 12px
+    &:last-child
+        &:after
+            right: 12px
+
+.foot
+    display: flex
+    justify-content: center
+    margin-top: 24px
+
+.arrow
+    width: 40px
+    height: 40px
+    border: 2px solid $n3
+    border-radius: 50%
+    transition: border-color .2s
+    +dark
+        border-color: transparent
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        border-color: $n3
+        svg
+            fill: $n7
+        +dark
+            border-color: $n6
+            svg
+                fill: $n1
+    &:not(:last-child)
+        margin-right: 8px

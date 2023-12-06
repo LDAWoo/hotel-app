@@ -59,28 +59,15 @@ const Products = () => {
   return (
     <Card
       className={styles.card}
-      title="Products"
+      title="Hotels"
       classTitle={cn("title-purple", styles.title)}
       classCardHead={styles.head}
       head={
         <>
-          <Form
-            className={styles.form}
-            value={search}
-            setValue={setSearch}
-            onSubmit={() => handleSubmit()}
-            placeholder="Search product"
-            type="text"
-            name="search"
-            icon="search"
-          />
+          <Form className={styles.form} value={search} setValue={setSearch} onSubmit={() => handleSubmit()} placeholder="Search hotel" type="text" name="search" icon="search" />
           <div className={styles.control}>
-            <button className={cn("button-stroke button-small", styles.button)}>
-              Deleted
-            </button>
-            <button className={cn("button-stroke button-small", styles.button)}>
-              Set status
-            </button>
+            <button className={cn("button-stroke button-small", styles.button)}>Deleted</button>
+            <button className={cn("button-stroke button-small", styles.button)}>Set status</button>
             <div className={styles.counter}>3 selected</div>
           </div>
           <div className={cn(styles.nav, "tablet-hide")}>
@@ -97,13 +84,7 @@ const Products = () => {
             ))}
           </div>
           <div className={cn(styles.dropdown, "tablet-show")}>
-            <Dropdown
-              classDropdownHead={styles.dropdownHead}
-              value={activeTab}
-              setValue={setActiveTab}
-              options={navigation}
-              small
-            />
+            <Dropdown classDropdownHead={styles.dropdownHead} value={activeTab} setValue={setActiveTab} options={navigation} small />
           </div>
         </>
       }
@@ -111,16 +92,8 @@ const Products = () => {
       <div className={styles.products}>
         <div className={styles.wrapper}>
           {activeTab === navigation[0] && <Market items={market} />}
-          {activeTab === navigation[1] && (
-            <Table
-              title="Traffic source"
-              items={traffic}
-              legend={indicatorsTraffic}
-            />
-          )}
-          {activeTab === navigation[2] && (
-            <Table title="Viewers" items={viewers} legend={indicatorsViewers} />
-          )}
+          {activeTab === navigation[1] && <Table title="Traffic source" items={traffic} legend={indicatorsTraffic} />}
+          {activeTab === navigation[2] && <Table title="Viewers" items={viewers} legend={indicatorsViewers} />}
         </div>
       </div>
     </Card>

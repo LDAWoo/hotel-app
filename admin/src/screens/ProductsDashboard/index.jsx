@@ -7,23 +7,23 @@ import ProductViews from "./ProductViews";
 import Products from "./Products";
 
 const ProductsDashboard = () => {
-    return (
-        <>
-            <div className={styles.section}>
-                <Overview className={styles.card} />
-                <div className={styles.row}>
-                    <div className={styles.col}>
-                        <ProductActivity />
-                    </div>
-                    <div className={styles.col}>
-                        <ProductViews />
-                    </div>
-                </div>
-                <Products />
-            </div>
-            <TooltipGlodal />
-        </>
-    );
+  return (
+    <>
+      <div className={styles.section}>
+        <Overview className={styles.card} />
+        <div className={styles.row}>
+          <div className={styles.col}>
+            <ProductActivity />
+          </div>
+          <div className={styles.col}>
+            <ProductViews />
+          </div>
+        </div>
+        <Products />
+      </div>
+      <TooltipGlodal />
+    </>
+  );
 };
 
 export default ProductsDashboard;

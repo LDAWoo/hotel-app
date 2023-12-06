@@ -47,12 +47,12 @@ const Search = () => {
   return (
     <OutsideClickHandler onOutsideClick={() => setActive(false)}>
       <Button className="flex w-10 h-10 text-white 2md:hidden" size={24} icon={CiSearch} onClick={handleShowSearch} />
-      <div className={`fixed top-0 left-0 right-0 bottom-0 w-full ${show ? "block" : active ? "2md:w-[360px]" : "2md:w-[272px] hidden 2md:block"} 2md:relative transition-all duration-500 ease-out`}>
+      <div className={`fixed top-0 left-0 right-0 bottom-0 w-full z-[1111]  ${show ? "block bg-white" : active ? "2md:w-[360px]" : "2md:w-[272px] hidden 2md:block"} 2md:relative transition-all duration-500 ease-out`}>
         <div className={`${show ? "bg-hotel-600 p-[8px] w-full flex items-center relative animate" : ""}`}>
           <input
             onFocus={handleFocus}
             type="text"
-            className={`outline-none border-none rounded-[2px] shadow-[0_1px_2px_0_rgba(0,0,0,0.1)] w-full h-10 box-border pl-[8px] pr-[8px] pt-0 pb-0 text-[14px]  ${show ? "bg-white text-primary-700 placeholder:text-primary-50" : active ? "bg-white text-primary-700" : " text-white bg-[hsla(0,0%,100%,0.07)]"} placeholder:text-white`}
+            className={`outline-none border-none rounded-[2px] shadow-[0_1px_2px_0_rgba(0,0,0,0.1)] w-full h-10 box-border pl-[8px] pr-[8px] pt-0 pb-0 text-[14px]  ${show ? "bg-white text-primary-700 placeholder:text-primary-100" : active ? "bg-white text-primary-700" : " text-white bg-[hsla(0,0%,100%,0.07)]"} placeholder:text-white`}
             placeholder="Search pages and reservations"
             autoComplete="off"
             value={search}

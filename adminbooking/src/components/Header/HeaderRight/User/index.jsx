@@ -45,13 +45,13 @@ const User = () => {
           <Icon icon={PiUserCircleLight} size={30} />
         </div>
         {visible && (
-          <div className="fixed 2md:absolute left-[8px] 2md:left-auto right-[8px] 2md:top-[calc(100%_+_2px)] 2md:-right-[8px] rounded-sm w-auto 2md:w-[270px] pt-2 pb-2 bg-white shadow-[0_2px_2px_0px_rgba(0,0,0,0.27)]">
+          <div className="fixed 2md:absolute  left-[8px] 2md:left-auto right-[8px] 2md:top-[calc(100%_+_5px)] 2md:-right-[8px] rounded-sm w-auto 2md:w-[270px] pt-2 pb-2 bg-white shadow-[0_2px_2px_0px_rgba(0,0,0,0.27)] z-[1001]">
             {items.map((item, index) => (
               <div key={index} className="">
                 {item.menu.map((x, index) =>
                   x.url ? (
                     <NavLink to={x.url} key={index} className="flex text-primary-100 items-center w-full hover:bg-gray-50 flex-row gap-2 pt-2 pb-2 pr-4 pl-4">
-                      {x.icon && <Icon icon={x.icon} size="24" />}
+                      {x.icon && <Icon icon={x.icon} size={24} />}
                       <Title title={x.title} xxl className="" />
                     </NavLink>
                   ) : (

@@ -6,6 +6,7 @@ import useRegisterMobileTrigger from "../../../hooks/Header/useRegisterMobileTri
 import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
 import Button from "../../Buttons/Button";
 import Title from "../../Title/Title";
+import UserPrimary from "../../Header/HeaderLeft/UserPrimary";
 
 const items = [
   {
@@ -128,6 +129,9 @@ const Navigation = () => {
     <OutsideClickHandler onOutsideClick={handleOutside} key={1} display="contents">
       <div className={`fixed top-0 bottom-0 left-0 right-[56px] z-[300] bg-white 2md:relative 2md:bg-transparent ${isOpen ? "w-auto translate-x-0" : "-translate-x-full 2md:translate-x-0"} transition-transform duration-500 2md:w-full`}>
         <div className="relative w-full p-0 m-auto">
+          <div className="block 2md:hidden">
+            <UserPrimary />
+          </div>
           <ul className="list-none flex flex-col 2md:flex-row w-full" ref={menuRef}>
             {items.map((item, index) => (
               <div key={index} className="flex flex-col 2md:flex-row w-full">

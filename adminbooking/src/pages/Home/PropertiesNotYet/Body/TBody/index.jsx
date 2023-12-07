@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
+import { PiTrashLight } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 import Button from "../../../../../components/Buttons/Button";
 import Title from "../../../../../components/Title/Title";
-import { NavLink } from "react-router-dom";
-import { PiTrashLight } from "react-icons/pi";
+import useRegisterSortByValue from "../../../../../hooks/Home/PropertiesNotYet/useRegisterSortByValue";
+
 const data = [
   {
     hotelId: "1",
@@ -36,9 +39,28 @@ const data = [
 ];
 
 function TBody() {
+  const { sortBy, isIncrease } = useRegisterSortByValue();
+  const [sortData, setSortData] = useState([]);
+
+  useEffect(() => {
+    const sortedData = [...data].sort((a, b) => {
+      if (a[sortBy] < b[sortBy]) {
+        return isIncrease ? -1 : 1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return isIncrease ? 1 : -1;
+      }
+      return 0;
+    });
+
+    setSortData(sortedData);
+  }, [isIncrease, sortBy]);
+
+  console.log("render");
+
   return (
     <tbody className="relative table-row-group text-[14px] box-border">
-      {data.map((row, index) => (
+      {sortData.map((row, index) => (
         <tr key={index} className="m-0 flex flex-col w-[calc(100vw_-_51px)] 2md:w-full 2md:table-row border-[1px] relative box-border">
           <td className="pl-3 2md:pl-8 pt-4 pb-4 pr-3 table-cell align-top border-b-[1px] 2md:border-none">
             <div className="flex items-center">
@@ -47,6 +69,7 @@ function TBody() {
                   {row.hotelName.substring(0, 2)}
                 </span>
               </div>
+
               <Title title={row.hotelName} className="ml-2" fontBold nowrap={false} />
             </div>
           </td>

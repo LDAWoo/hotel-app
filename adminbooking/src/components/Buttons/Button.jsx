@@ -11,7 +11,7 @@ function Button({ className, classButton, background, border, classIcon, active,
       disabled={disabled}
       onClick={onClick}
     >
-      <div className={`${classButton ? classButton : title ? "justify-start" : "item-center flex-grow justify-center"} ml-2 mr-2 flex items-center gap-2 w-full`}>
+      <div className={`ml-2 mr-2 flex items-center gap-2 w-full ${classButton ? classButton : title ? "justify-start" : "item-center flex-grow justify-center"}`}>
         {srcPosition === "before" && src && <Image className={classImg} src={src} srcDark={srcDark} srcSet={srcSet} srcSetDark={srcSetDark} alt={alt} />}
         {titlePosition === "before" && <Title title={title} colorTitle={classTitle} fontBold={fontBold} fontMedium={fontMedium} xxxl={xxxl} xxl={xxl} xl={xl} large={large} medium={medium} small={small} nowrap={nowrap} titleCustom={titleCustom} />}
         {iconPosition !== "right" && icon && <Icon classIcon={classIcon} icon={icon} customSize={customSize} size={size} />}
@@ -32,6 +32,7 @@ Button.propTypes = {
   classIcon: PropTypes.string,
   icon: PropTypes.elementType,
   classTitle: PropTypes.string,
+  classButton: PropTypes.string,
   title: PropTypes.string,
   size: PropTypes.number,
   customSize: PropTypes.number,

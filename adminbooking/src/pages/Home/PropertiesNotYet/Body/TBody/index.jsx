@@ -61,7 +61,7 @@ function TBody() {
   return (
     <tbody className="relative table-row-group text-[14px] box-border">
       {sortData.map((row, index) => (
-        <tr key={index} className="m-0 flex flex-col w-[calc(100vw_-_51px)] 2md:w-full 2md:table-row border-[1px] relative box-border">
+        <tr key={index} className="m-0 flex flex-col w-full 2md:w-full 2md:table-row border-[1px] relative box-border">
           <td className="pl-3 2md:pl-8 pt-4 pb-4 pr-3 table-cell align-top border-b-[1px] 2md:border-none">
             <div className="flex items-center">
               <div className="flex items-center justify-center text-white rounded-full bg-[#494949] h-8 relative w-8 uppercase box-border">

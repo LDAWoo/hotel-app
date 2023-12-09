@@ -26,7 +26,6 @@ const DragImage = ({ data, onClick }) => {
     const items = Array.from(images);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-    console.log(result);
     setImages(items);
   }
 

@@ -61,7 +61,7 @@ function TBody() {
   return (
     <tbody className="relative table-row-group text-[14px] box-border">
       {sortData.map((row, index) => (
-        <tr key={index} className="m-0 flex flex-col w-full 2md:w-full 2md:table-row border-[1px] relative box-border">
+        <tr key={index} className="mb-4 2md:m-0 gap-4 flex flex-col w-full 2md:w-full 2md:table-row border-[1px] bg-white relative box-border">
           <td className="pl-3 2md:pl-8 pt-4 pb-4 pr-3 table-cell align-top border-b-[1px] 2md:border-none">
             <div className="flex items-center">
               <div className="flex items-center justify-center text-white rounded-full bg-[#494949] h-8 relative w-8 uppercase box-border">
@@ -96,7 +96,7 @@ function TBody() {
               <span>Continue registration</span>
             </NavLink>
             <div className="inline">
-              <Button title="Delete" className="text-[#a30000] hover:underline inline" classButton="ml-0 mr-0" classTitle="text-[#a30000]" xl icon={PiTrashLight} size={18} />
+              <Button title="Delete" className="text-[#a30000] hover:underline inline" classButton="ml-0 mr-0 -translate-x-2 2md:-translate-x-2" classTitle="text-[#a30000]" xl icon={PiTrashLight} size={18} />
             </div>
           </td>
         </tr>

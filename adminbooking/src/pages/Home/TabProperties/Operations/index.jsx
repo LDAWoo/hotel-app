@@ -3,7 +3,7 @@ import HappeningToday from "./HappeningToday";
 
 function Operations() {
   return (
-    <div className="mt-4 mb-96">
+    <div className="mt-4 mb-4">
       <HappeningToday />
       <ComponentProperties />
     </div>

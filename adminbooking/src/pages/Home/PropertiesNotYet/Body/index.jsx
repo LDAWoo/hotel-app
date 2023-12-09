@@ -9,7 +9,7 @@ function Body() {
       <div className="mb-4">
         <Title title="Grow your business by adding these properties to the world's biggest online travel agency, Staying.com." xl nowrap={false} />
       </div>
-      <table className="w-full table border-[1px] border-b-0 bg-white">
+      <table className="w-full table border-b-0 ">
         <THead />
         <TBody />
       </table>

@@ -1,12 +1,11 @@
-import { memo } from "react";
-import Title from "../../../../../../components/Title/Title";
-import Icon from "../../../../../../components/Icon/Icon";
-import useRegisterSortById from "../../../../../../hooks/Home/TabProperties/Operations/useRegisterSortById";
-import { MdOutlineArrowDownward } from "react-icons/md";
 import PropTypes from "prop-types";
+import { memo } from "react";
+import { MdOutlineArrowDownward } from "react-icons/md";
+import Icon from "../../Icon/Icon";
+import Title from "../../Title/Title";
 
-function THead({ data }) {
-  const { sortBy, isIncrease, setSortBy } = useRegisterSortById();
+function THead({ data, useRegister }) {
+  const { sortBy, isIncrease, setSortBy } = useRegister();
 
   const handleSort = (by) => {
     if (sortBy === by) {
@@ -24,7 +23,8 @@ function THead({ data }) {
             <div>
               {cell?.sortBy && cell?.status ? (
                 <button type="button" className="flex items-center gap-1" onClick={() => handleSort(cell?.sortBy)}>
-                  {cell?.name}
+                  {cell?.id === "genius" ? <div className="bg-hotel-200 text-white text-[10px] font-medium p-[2px] rounded-[2px]">{cell?.name}</div> : <>{cell?.name}</>}
+
                   {sortBy === cell?.sortBy ? <Icon icon={MdOutlineArrowDownward} size={18} classIcon={`${isIncrease ? "rotate-0" : "rotate-180"} text-primary-100`} /> : <div></div>}
                 </button>
               ) : (
@@ -40,6 +40,7 @@ function THead({ data }) {
 
 THead.propTypes = {
   data: PropTypes.array,
+  useRegister: PropTypes.func,
 };
 
 export default memo(THead);

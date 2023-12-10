@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { BsArrowsMove } from "react-icons/bs";
-import Icon from "../../../../../../../components/Icon/Icon";
-import Switcher from "../../../../../../../components/Switcher";
-import Title from "../../../../../../../components/Title/Title";
+import Icon from "../../Icon/Icon";
+import Switcher from "../../Switcher";
+import Title from "../../Title/Title";
 
 function Item({ items, id, handleChange }) {
   return (

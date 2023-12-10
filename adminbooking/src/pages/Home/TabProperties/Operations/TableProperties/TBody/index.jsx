@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Title from "../../../../../../components/Title/Title";
-import Tr from "./Tr";
+import Td from "./Td";
 import PropTypes from "prop-types";
 import useRegisterSortById from "../../../../../../hooks/Home/TabProperties/Operations/useRegisterSortById";
 import { useEffect, useState } from "react";
@@ -89,13 +89,13 @@ function TBody({ data, showLocation }) {
                 </td>
               )}
 
-              {column?.id === "arrivals" && <Tr title={row?.arrivals} name={column?.name} />}
+              {column?.id === "arrivals" && <Td title={row?.arrivals} name={column?.name} />}
 
-              {column?.id === "departures" && <Tr title={row?.departures} name={column?.name} />}
+              {column?.id === "departures" && <Td title={row?.departures} name={column?.name} />}
 
-              {column?.id === "guestMessages" && <Tr title={row?.guestMessages} name={column?.name} />}
+              {column?.id === "guestMessages" && <Td title={row?.guestMessages} name={column?.name} />}
 
-              {column?.id === "stayingMessage" && <Tr title={row?.stayingMessage} name={column?.name} />}
+              {column?.id === "stayingMessage" && <Td title={row?.stayingMessage} name={column?.name} />}
             </>
           ))}
         </tr>

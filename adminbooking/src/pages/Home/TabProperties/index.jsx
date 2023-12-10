@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../../../components/Buttons/Button";
 import Operations from "./Operations";
+import Settings from "./Settings";
 
 const nav = [
   {
@@ -27,6 +28,7 @@ function TabProperties() {
         ))}
       </ul>
       {activeIndex === 0 && <Operations />}
+      {activeIndex === 2 && <Settings />}
     </div>
   );
 }

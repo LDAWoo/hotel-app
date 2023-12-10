@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Tr({ name, title }) {
+function Td({ name, title }) {
   return (
     <td className="w-full 2md:w-auto pt-4 pb-4 pr-3 pl-3 border-b-[1px] 2md:border-none">
       <span className="text-[12px] flex items-center justify-between 2md:justify-center">
@@ -11,9 +11,9 @@ function Tr({ name, title }) {
   );
 }
 
-Tr.propTypes = {
+Td.propTypes = {
   name: PropTypes.string,
   title: PropTypes.number,
 };
 
-export default Tr;
+export default Td;

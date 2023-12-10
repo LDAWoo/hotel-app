@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import useRegisterDataProperties from "../../../../../hooks/Home/TabProperties/Operations/useRegisterDataProperties";
-import useRegisterSortById from "../../../../../hooks/Home/TabProperties/Operations/useRegisterSortById";
-import TBody from "./TBody";
 import THead from "../../../../../components/Table/THead";
+import useRegisterDataSettings from "../../../../../hooks/Home/TabProperties/Settings/useRegisterDataSetting";
+import useRegisterSortById from "../../../../../hooks/Home/TabProperties/Settings/useRegisterSortById";
+import TBody from "./TBody";
 
 const data = [
   {
@@ -19,8 +19,9 @@ const data = [
   },
 ];
 
-function TableProperties() {
-  const { items } = useRegisterDataProperties();
+function Table() {
+  const { items } = useRegisterDataSettings();
+
   const [headRow, setHeadRow] = useState([]);
   const [location, setLocation] = useState([]);
 
@@ -41,4 +42,4 @@ function TableProperties() {
   );
 }
 
-export default TableProperties;
+export default Table;

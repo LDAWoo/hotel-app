@@ -5,25 +5,7 @@ import Button from "../Buttons/Button";
 import Icon from "../Icon/Icon";
 import Title from "../Title/Title";
 
-function Modals({
-  className,
-  classTitle,
-  isOpen,
-  onSubmit,
-  onClose,
-  title,
-  body,
-  footer,
-  disabled,
-  iconButton,
-  titleButton,
-  sizeIcon,
-  classIcon,
-  small,
-  outline,
-  isButton,
-  hAuto = false,
-}) {
+function Modals({ className, classTitle, isOpen, onSubmit, onClose, title, body, footer, disabled, iconButton, titleButton, sizeIcon, classIcon, small, outline, isButton, hAuto = false }) {
   const modalRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -74,7 +56,7 @@ function Modals({
   return (
     <>
       <div
-        className='
+        className="
             flex 
             fixed 
             items-center 
@@ -82,11 +64,11 @@ function Modals({
             overflow-x-hidden 
             overflow-y-hidden 
             inset-0 
-            z-50 
+            z-[9999]
             outline-none
             focus:outline-none
             bg-primary-700/70 
-            '
+            "
       >
         <div
           className={`
@@ -143,56 +125,38 @@ function Modals({
                             ${classTitle}
                             `}
               >
-                <Title
-                  title={title}
-                  colorTitle='dark:text-white flex-1'
-                  xxl
-                  fontBold
-                  nowrap={false}
-                />
+                <Title title={title} colorTitle="dark:text-white flex-1" xxl fontBold nowrap={false} />
 
                 <button
                   onClick={handleClose}
-                  className='
+                  className="
                                 p-[6px]
                                 border-0
                                 transition
                                 dark:text-white
                                 hover:bg-gray-100
                                 dark:hover:bg-primary-500
-                                '
+                                "
                 >
                   <Icon icon={IoMdClose} size={24} />
                 </button>
               </div>
               {/* Body */}
-              <div className='relative pt-2 pb-2 pr-4 pl-4 flex-auto overflow-y-auto h-full'>
-                {body}
-              </div>
+              <div className="relative pt-2 pb-2 pr-4 pl-4 flex-auto overflow-y-auto h-full">{body}</div>
               {/* Footer */}
               <div className={`${footer && "flex flex-col gap-2 p-6"}`}>
                 {footer}
                 {isButton && (
                   <div
-                    className='
+                    className="
                                 flex
                                 flex-row
                                 items-center
                                 gap-4
                                 w-full
-                                '
+                                "
                   >
-                    <Button
-                      small={small}
-                      outline={outline}
-                      icon={iconButton}
-                      classIcon={classIcon}
-                      title={titleButton}
-                      disabled={disabled}
-                      classTitle={classTitle}
-                      size={sizeIcon}
-                      onClick={handleSubmit}
-                    />
+                    <Button small={small} outline={outline} icon={iconButton} classIcon={classIcon} title={titleButton} disabled={disabled} classTitle={classTitle} size={sizeIcon} onClick={handleSubmit} />
                   </div>
                 )}
               </div>

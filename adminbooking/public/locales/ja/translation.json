@@ -1,0 +1,82 @@
+{
+  "Login": {
+    "title": "ログイン",
+    "loginWithOpenAccount": "オープンアカウントでログイン",
+    "orContinueWithEmail": "またはメールアドレスを使用して続行",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
+    "doNotHaveAnAccount": "アカウントをお持ちでないですか？",
+    "register": "登録"
+  },
+
+  "Register": {
+    "title": "登録",
+    "registerWithOpenAccount": "オープンアカウントで登録",
+    "orContinueWithEmail": "またはメールアドレスを使用して続行",
+    "email": "メールアドレス",
+    "continue": "続行",
+    "checkCodeEmail": "確認コードを送信しました。受信トレイを確認してください。",
+    "errorCode": "入力したコードが正しくありません。",
+    "password": "パスワード",
+    "passwordConfirm": "パスワード確認",
+    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
+    "alreadyAMember": "既に会員ですか？",
+    "login": "ログイン"
+  },
+  "Modal": {
+    "Language": {
+      "title": "言語を選択",
+      "allLanguage": "すべての言語"
+    }
+  },
+  "Theme": {
+    "title": "トピック",
+    "light": {
+      "title": "明るい"
+    },
+    "dark": {
+      "title": "暗い"
+    },
+    "system": {
+      "title": "システム"
+    }
+  },
+  "User": {
+    "managerProfile": "アカウント管理",
+    "logout": "ログアウト"
+  },
+  "Banner": {
+    "title": "滞在を楽しんでいただけることを願っています",
+    "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
+    "bookNow": "今すぐ予約"
+  },
+  "Search": {
+    "location": "どこに行く予定ですか？",
+    "checkOutDate": "チェックアウト日",
+    "search": "検索",
+    "Guest": {
+      "Adult": {
+        "title": "大人"
+      },
+      "Children": {
+        "title": "子供"
+      },
+      "Room": {
+        "title": "部屋"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "最近の検索履歴"
+  },
+  "TrendingDestination": {
+    "title": "トレンディング先行予約地",
+    "subTitle": "他の旅行者もこれらを予約しました"
+  },
+  "OurHotel": {
+    "title": "当社のホテル",
+    "subTitle": "最も人気のあるホテル",
+    "night": "夜"
+  }
+}

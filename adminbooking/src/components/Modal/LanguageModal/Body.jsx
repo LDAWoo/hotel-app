@@ -21,15 +21,20 @@ function Body() {
   };
 
   useEffect(() => {
-    if (!i18next.language) {
-      i18next.changeLanguage("en-EN");
+    console.log("Current Language:", i18next?.language);
+
+    if (!i18next?.language) {
+      console.log("Language not set, changing to 'en-EN'");
+      i18next?.changeLanguage("en-EN");
     }
   }, []);
 
   return (
     <div className="flex items-center w-full">
       <div className="flex flex-col w-full items-center">
-        <div className="flex items-center w-full justify-start   ">{/* <Title title={t("Modal.Language.allLanguage")} xl fontMedium colorTitle="dark:text-white" /> */}</div>
+        <div className="flex items-center w-full justify-start   ">
+          <Title title={t("Modal.Language.allLanguage")} xl fontMedium colorTitle="dark:text-white" />
+        </div>
         <div className="flex items-center justify-start w-full flex-wrap">
           {sortLanguage.map((lang) => (
             <div

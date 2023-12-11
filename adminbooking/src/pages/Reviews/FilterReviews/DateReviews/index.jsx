@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import DatePickerCustom from "../../../../components/DatePickerCustom";
 import OutsideClickHandler from "react-outside-click-handler";
 import Title from "../../../../components/Title/Title";
 import Button from "../../../../components/Buttons/Button";
-
+import DatePickerCustom from "../../../../components/DatePickerCustom";
 import { format } from "date-fns";
+import { useEffect, useState } from "react";
 
-function DateReservations() {
+function DateReviews() {
   const [open, setOpen] = useState(false);
 
   const [dateRange, setDateRange] = useState([new Date(), new Date()]);
@@ -46,4 +45,4 @@ function DateReservations() {
   );
 }
 
-export default DateReservations;
+export default DateReviews;

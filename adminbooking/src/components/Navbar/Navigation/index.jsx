@@ -127,7 +127,7 @@ const Navigation = () => {
 
   return (
     <OutsideClickHandler onOutsideClick={handleOutside} key={1} display="contents">
-      <div className={`fixed top-0 bottom-0 left-0 right-[56px] z-[300] bg-white 2md:relative 2md:bg-transparent ${isOpen ? "w-auto translate-x-0" : "-translate-x-full 2md:translate-x-0"} transition-transform duration-500 2md:w-full`}>
+      <div className={`fixed top-0 bottom-0 left-0 right-[56px] z-[300] bg-white shadow-[2px_0_14px_2px_rgba(0,0,0,.05)] 2md:relative 2md:bg-transparent ${isOpen ? "w-auto translate-x-0" : "-translate-x-full 2md:translate-x-0"} transition-transform duration-500 2md:w-full`}>
         <div className="relative w-full p-0 m-auto">
           <div className="block 2md:hidden">
             <UserPrimary />
@@ -138,7 +138,7 @@ const Navigation = () => {
                 {item?.menu.slice(0, maxVisibleItems).map((x, index) => (
                   <li key={index} className={`${pathName === x.url ? "2md:border-hotel-100 bg-gray-100 2md:bg-hotel-200" : dropdownOpen[index] ? "border-hotel-25/50 2md:bg-hotel-200" : "2md:border-transparent hover:bg-gray-100 hover:border-hotel-25/50 2md:hover:bg-hotel-200 duration-200"} border-b-[1px] 2md:border-b-[4px]`}>
                     {x.url ? (
-                      <NavLink to={x.url} className="flex flex-col h-full text-left 2md:text-center pt-3 pb-3 pr-4 pl-4 text-primary-700 2md:text-white">
+                      <NavLink onClick={() => onClose()} to={x.url} className="flex flex-col h-full text-left 2md:text-center pt-3 pb-3 pr-4 pl-4 text-primary-700 2md:text-white">
                         <Title title={x.title} xl />
                       </NavLink>
                     ) : (

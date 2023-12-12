@@ -4,7 +4,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 import Button from "../Buttons/Button";
 import Drag from "../Drag";
 
-function TableDraggable({ initData, component, setItems, currentData, setCurrentData }) {
+function TableDraggable({ initData, component, setItems, currentData, setCurrentData, onClick }) {
   const initialState = initData?.map((item) => {
     const id = item?.id;
     const title = item?.title;
@@ -98,13 +98,19 @@ function TableDraggable({ initData, component, setItems, currentData, setCurrent
       {currentState.map((item, index) => (
         <OutsideClickHandler key={index} onOutsideClick={() => handleOutsideDropdownMenu(item.id)}>
           <div className="relative">
-            <Button onClick={() => handleToggleDropdown(item.id)} title={item?.title} icon={item?.icon} size={18} fontMedium xl className="pt-1 pb-1 pl-2 pr-2 duration-300 hover:bg-hotel-25 hover:text-hotel-75 text-primary-100" />
-            {item?.menu.length > 0 && dropdownOpen[item.id] && (
-              <div className="absolute left-0 2md:left-auto right-auto 2md:right-0 top-full z-[100]">
-                <div className="p-4 max-w-[360px] bg-white shadow-[0_2px_8px_0_rgba(0,0,0,.16)] rounded-sm">
-                  <Drag setCurrentData={setCurrentData} currentData={currentData} data={currentState.find((s) => s.id === item.id).menu} droppableId={item.id} handleChange={handleChange} component={component} />
-                </div>
-              </div>
+            {item?.menu ? (
+              <>
+                <Button onClick={() => handleToggleDropdown(item.id)} title={item?.title} icon={item?.icon} size={18} fontMedium xl className="pt-1 pb-1 pl-2 pr-2 duration-300 hover:bg-hotel-25 hover:text-hotel-75 text-primary-100" />
+                {item?.menu.length > 0 && dropdownOpen[item.id] && (
+                  <div className="absolute left-0 2md:left-auto right-auto 2md:right-0 top-full z-[100]">
+                    <div className="p-4 max-w-[360px] bg-white shadow-[0_2px_8px_0_rgba(0,0,0,.16)] rounded-sm">
+                      <Drag setCurrentData={setCurrentData} currentData={currentData} data={currentState.find((s) => s.id === item.id).menu} droppableId={item.id} handleChange={handleChange} component={component} />
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <Button onClick={() => onClick(item.id)} title={item?.title} icon={item?.icon} size={18} fontMedium xl className="pt-1 pb-1 pl-2 pr-2 duration-300 hover:bg-hotel-25 hover:text-hotel-75 text-primary-100" />
             )}
           </div>
         </OutsideClickHandler>
@@ -126,6 +132,7 @@ TableDraggable.propTypes = {
   setItems: PropTypes.func.isRequired,
   currentData: PropTypes.array.isRequired,
   setCurrentData: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default TableDraggable;

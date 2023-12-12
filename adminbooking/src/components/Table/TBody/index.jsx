@@ -9,6 +9,7 @@ function TBody({ dataHeader, data, showLocation, loading, useRegisterSortById, b
   const [sortData, setSortData] = useState([]);
 
   useEffect(() => {
+    if (!data) return;
     const sortedData = [...data].sort((a, b) => {
       if (a[sortBy] < b[sortBy]) {
         return isIncrease ? -1 : 1;

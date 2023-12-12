@@ -67,7 +67,7 @@ function TableFinance() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <Header onClick={handleClick} initData={initData} />
       <Table data={fakeData} />
     </div>

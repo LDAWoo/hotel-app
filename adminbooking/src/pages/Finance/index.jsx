@@ -9,7 +9,9 @@ function Finance() {
         <div className="mb-4">
           <Title title="Finance" fontBold extraLarge5 />
         </div>
-        <Invoices />
+        <div className="mb-4">
+          <Invoices />
+        </div>
         <TableFinance />
       </div>
     </div>

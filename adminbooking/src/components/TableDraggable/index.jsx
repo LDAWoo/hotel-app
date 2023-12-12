@@ -94,7 +94,7 @@ function TableDraggable({ initData, component, setItems, currentData, setCurrent
   };
 
   return (
-    <div className="flex flex-col 2md:flex-row gap-2">
+    <div className="flex flex-col 2md:flex-row gap-2 flex-wrap items-start 2md:items-end justify-start 2md:justify-end">
       {currentState.map((item, index) => (
         <OutsideClickHandler key={index} onOutsideClick={() => handleOutsideDropdownMenu(item.id)}>
           <div className="relative">

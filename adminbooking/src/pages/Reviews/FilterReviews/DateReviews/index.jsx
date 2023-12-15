@@ -35,7 +35,7 @@ function DateReviews() {
             <Button onClick={handleClick} title={format(startDate, "dd MMM yyyy") + " - " + format(currentEndDate, "dd MMM yyyy")} xl className="pt-[5px] pb-[6px] pr-1 pl-1 bg-white border-[1px] focus:shadow-[0_0_0_1px_rgba(0,13,194,.76)] border-primary-400 rounded-[2px]" />
             {open && (
               <div className="absolute top-full left-0 z-[300]">
-                <DatePickerCustom startDate={startDate} endDate={endDate} onChange={(update) => setDateRange(update)} />
+                <DatePickerCustom minDate={new Date()} selectsRange={true} startDate={startDate} endDate={endDate} onChange={(update) => setDateRange(update)} />
               </div>
             )}
           </div>

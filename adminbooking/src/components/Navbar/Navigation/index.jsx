@@ -37,22 +37,23 @@ const items = [
       },
       {
         title: "Analytics",
+        url: "/analytics",
         menu: [
           {
             title: "Market insights",
-            url: "/market-insights",
+            url: "?market-insights",
           },
           {
             title: "Pace report",
-            url: "/pace-report",
+            url: "?report=pace",
           },
           {
             title: "Sales statistics",
-            url: "/sales-stats",
+            url: "?report=sales",
           },
           {
             title: "Bookwindow information",
-            url: "/book-window-info",
+            url: "?report=book-window",
           },
         ],
       },
@@ -64,6 +65,8 @@ const Navigation = () => {
   const location = useLocation();
 
   const pathName = location.pathname;
+  const search = location?.search;
+
   const { onClose, isOpen } = useRegisterMobileTrigger();
   const [maxVisibleItems, setMaxVisibleItems] = useState(0);
   const [showMore, setShowMore] = useState(false);
@@ -124,6 +127,7 @@ const Navigation = () => {
       onClose();
     }
   };
+  console.log(location);
 
   return (
     <OutsideClickHandler onOutsideClick={handleOutside} key={1} display="contents">
@@ -137,7 +141,7 @@ const Navigation = () => {
               <div key={index} className="flex flex-col 2md:flex-row w-full">
                 {item?.menu.slice(0, maxVisibleItems).map((x, index) => (
                   <li key={index} className={`${pathName === x.url ? "2md:border-hotel-100 bg-gray-100 2md:bg-hotel-200" : dropdownOpen[index] ? "border-hotel-25/50 2md:bg-hotel-200" : "2md:border-transparent hover:bg-gray-100 hover:border-hotel-25/50 2md:hover:bg-hotel-200 duration-200"} border-b-[1px] 2md:border-b-[4px]`}>
-                    {x.url ? (
+                    {!x.menu ? (
                       <NavLink onClick={() => onClose()} to={x.url} className="flex flex-col h-full text-left 2md:text-center pt-3 pb-3 pr-4 pl-4 text-primary-700 2md:text-white">
                         <Title title={x.title} xl />
                       </NavLink>
@@ -150,7 +154,7 @@ const Navigation = () => {
                               <div className="relative 2md:absolute left-auto right-0 w-full 2md:w-[300px] 2md:shadow-[0_2px_8px_0_rgba(0,0,0,0.16)] top-[calc(100%_+_5px)] block bg-white z-[1] pt-0 pb-0 2md:pt-2 2md:pb-2">
                                 {x.menu.map((m, index) =>
                                   m.url ? (
-                                    <NavLink to={m.url} key={index} className="flex text-primary-100 items-center w-full hover:bg-gray-100 flex-row gap-2 pt-3 pb-3 2md:pt-2 2md:pb-2 pr-4 pl-4 border-b-[1px] 2md:border-b-[0px]">
+                                    <NavLink to={x.url + m.url} key={index} className={`flex text-primary-100 items-center w-full hover:bg-gray-100 flex-row gap-2 pt-3 pb-3 2md:pt-2 2md:pb-2 pr-4 pl-4 border-b-[1px] 2md:border-b-[0px] ${search === m.url ? "bg-gray-100" : ""}`}>
                                       <Title title={m.title} xxl />
                                     </NavLink>
                                   ) : (
@@ -172,7 +176,7 @@ const Navigation = () => {
                       {showMore && (
                         <div className="absolute left-auto right-0 w-[300px] shadow-[0_2px_8px_0_rgba(0,0,0,0.16)] top-[calc(100%_+_5px)] block bg-white z-[1] pt-2 pb-2">
                           {item.menu.slice(maxVisibleItems).map((more, index) =>
-                            more.url ? (
+                            !more.menu ? (
                               <NavLink to={more.url} key={index} className="flex text-primary-100 items-center w-full hover:bg-gray-100 flex-row gap-2 pt-2 pb-2 pr-4 pl-4">
                                 <Title title={more.title} xxl />
                               </NavLink>
@@ -184,7 +188,7 @@ const Navigation = () => {
                                     <div className="absolute left-auto right-full w-[300px] shadow-[0_2px_8px_0_rgba(0,0,0,0.16)] top-0 block bg-white z-[1] pt-2 pb-2">
                                       {more.menu.map((m, index) =>
                                         m.url ? (
-                                          <NavLink to={m.url} key={index} className="flex text-primary-100 items-center w-full hover:bg-gray-100 flex-row gap-2 pt-2 pb-2 pr-4 pl-4">
+                                          <NavLink to={m.url} key={index} className={`flex text-primary-100 items-center w-full hover:bg-gray-100 flex-row gap-2 pt-2 pb-2 pr-4 pl-4 ${search === m.url ? "bg-gray-100" : ""}`}>
                                             <Title title={m.title} xxl />
                                           </NavLink>
                                         ) : (

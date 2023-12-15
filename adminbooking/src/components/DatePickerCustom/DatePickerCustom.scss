@@ -37,6 +37,10 @@
   margin: 0;
 }
 
+.react-datepicker__day--selected {
+  border-radius: 0px;
+}
+
 @media screen and (max-width: 400px) {
   .react-datepicker__day {
     width: 2.3rem;
@@ -56,6 +60,11 @@
   color: #0071c2;
 }
 
+.react-datepicker__day--disabled {
+  cursor: default;
+  color: #ccc !important;
+}
+
 .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--range-start) {
   border-radius: 0px;
   background-color: #f2f2f2;
@@ -64,8 +73,7 @@
 
 .react-datepicker__day--keyboard-selected {
   border-radius: 0px;
-  background-color: #0071c2;
-  color: #fff;
+  background-color: transparent;
 }
 
 .react-datepicker__day--selecting-range-start {

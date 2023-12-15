@@ -3,6 +3,7 @@ const routesConfig = {
   reservations: "/reservations",
   reviews: "/reviews",
   finance: "/finance",
+  analytics: "/analytics",
 };
 
 export default routesConfig;

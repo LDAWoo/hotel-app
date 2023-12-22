@@ -1,9 +1,9 @@
 import TableReport from "../../../../../../../components/TableReport";
 
-function Table({ data, type }) {
+function Table({ data, items, type }) {
   return (
     <div className="max-w-full relative">
-      <TableReport data={data} type={type} />
+      <TableReport data={data} type={type} items={items} />
     </div>
   );
 }

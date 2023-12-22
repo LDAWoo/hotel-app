@@ -1,17 +1,4 @@
-const items = [
-  {
-    id: 1,
-    name: "Room night",
-    color: "bg-[#0896FF]",
-  },
-  {
-    id: 2,
-    name: "Average daily rate in VND",
-    color: "bg-[#EF6C0A]",
-  },
-];
-
-function Header() {
+function Header({ items }) {
   return (
     <ul className="absolute top-[5px] ml-[15px] text-[11px] list-none p-0 mt-0 mr-0 mb-[15px] flex flex-row gap-2">
       {items.map((item, index) => (

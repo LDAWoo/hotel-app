@@ -1,6 +1,12 @@
 import CurrencyFormat from "react-currency-format";
 import PropTypes from "prop-types";
-const MoneyFormatStaying = ({ className, price, prefix }) => {
+const MoneyFormatStaying = ({
+  className,
+  price,
+  prefix,
+  decimalScale = 2,
+  ...props
+}) => {
   return (
     <div
       className={`flex flex-col sm:flex-row items-end sm:items-center ${
@@ -13,8 +19,9 @@ const MoneyFormatStaying = ({ className, price, prefix }) => {
         displayType={"text"}
         thousandSeparator={true}
         fixedDecimalScale={true}
-        decimalScale={2}
+        decimalScale={decimalScale}
         prefix={prefix}
+        {...props}
       />
     </div>
   );
@@ -23,6 +30,7 @@ const MoneyFormatStaying = ({ className, price, prefix }) => {
 MoneyFormatStaying.propTypes = {
   className: PropTypes.string,
   price: PropTypes.number,
+  decimalScale: PropTypes.number,
   prefix: PropTypes.string,
 };
 

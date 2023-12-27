@@ -6,6 +6,8 @@ const routesConfig = {
   searchResults: "/searchresults",
   hotelDetails: "/hotel",
 
+  secureBooking: "/secure-book",
+
   join: "/join",
   becomeAHostCategory: "/join/become-a-host/category",
   becomeAHostProperty: "/join/become-a-host/property",

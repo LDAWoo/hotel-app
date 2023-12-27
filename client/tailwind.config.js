@@ -39,6 +39,9 @@ export default {
         success: {
           50: "#008009",
         },
+        error: {
+          100: "#D4111E",
+        },
       },
       textColor: {
         error: {

@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Check from "../pages/Register/Check/Check";
 import Register from "../pages/Register/Register";
 import SearchResult from "../pages/SearchResults/SearchResults";
+import SecureBooking from "../pages/SecureBooking/SecureBooking";
 import JoinStaying from "../pages/JoinStaying/JoinStaying";
 import JoinLayout from "../components/Layouts/JoinLayout/JoinLayout";
 import HostLayout from "../components/Layouts/JoinLayout/HostLayout/HostLayout";
@@ -50,6 +51,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.hotelDetails,
     component: HotelDetails,
+    layout: LayoutHotelDetail,
+  },
+  {
+    path: routesConfig.secureBooking,
+    component: SecureBooking,
     layout: LayoutHotelDetail,
   },
   {

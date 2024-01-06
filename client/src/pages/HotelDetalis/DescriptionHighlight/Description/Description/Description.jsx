@@ -6,31 +6,54 @@ import Body from "./Body";
 import DescriptionModal from "../../../../../components/Modals/DescriptionModal/DescriptionModal";
 import useRegisterModalDescription from "../../../../../hooks/Description/useRegisterModalDescription";
 import useRegisterWindowSizeStore from "../../../../../hooks/useRegisterWindowSizeStore";
+import useRegisterHotelDetails from "../../../../../hooks/HotelDetails/useRegisterHotelDetails";
 
 function Description() {
-  const hotelName = "Bon Ami Hotel - Thien Xuan Hotel";
-  const startDateHotel = "9 tháng 8 2023";
-  const description =
-    "Set in Vung Tau, 500 metres from Back Beach, CAROLINE SEA HOTEL provides accommodation with free WiFi and free private parking. The property is located 1.9 km from Front Beach, 2.6 km from Pineapple Beach and 2.2 km from Nghinh Phong Cape. The accommodation offers room service, a 24-hour front desk and currency exchange for guests. At the hotel, every room comes with a desk. Complete with a private bathroom fitted with a bidet and free toiletries, all guest rooms at CAROLINE SEA HOTEL have a flat-screen TV and air conditioning, and certain rooms also offer a terrace. H";
+  const { hotels } = useRegisterHotelDetails();
+
+  console.log(hotels);
+
+  const [state, setState] = useState({
+    hotelName: "",
+    startDateHotel: "",
+    description: "",
+  });
+
+  const { hotelName, startDateHotel, description } = state;
 
   const { width } = useRegisterWindowSizeStore();
   const { onOpen } = useRegisterModalDescription();
-  const [segmentsLength, setSegmentsLength] = useState();
+  const [segmentsLength, setSegmentsLength] = useState(0);
   const maxSegments = width > 900 ? 5 : 1;
 
   useEffect(() => {
-    setSegmentsLength(description.trim().split(". ").length);
+    if (description) {
+      setSegmentsLength(description.trim().split(". ").length);
+    }
   }, []);
 
   const handleShowModalDescription = () => {
     onOpen();
   };
 
+  useEffect(() => {
+    setState((prev) => ({
+      ...prev,
+      hotelName: hotels.name,
+      startDateHotel: hotels?.checkInDate,
+      description: hotels?.description,
+    }));
+  }, [hotels]);
+
+  console.log(hotelName);
+
   return (
     <div className='flex flex-col gap-2'>
       <div className='text-[14px] dark:text-white'>
         <Body data={description} maxSegments={maxSegments} />
-        <DescriptionModal data={description} />
+        {description && description.length > 0 && (
+          <DescriptionModal data={description} />
+        )}
         {segmentsLength > maxSegments && (
           <button
             className='flex mt-2 items-center gap-[2px]'

@@ -1,18 +1,18 @@
+import { format } from "date-fns";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { BsCalendar4 } from "react-icons/bs";
 import Icon from "../../../../components/Icon/Icon";
 import Image from "../../../../components/Image/Image";
+import { getLocale } from "../../../../components/Locale/Locale";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
-import { format } from "date-fns";
-import { getLocale } from "../../../../components/Locale/Locale";
-const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
+const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
+  console.log(item);
   const [maxSegments, setMaxSegments] = useState(1);
-  const reviewResponseLength =
-    props?.reviewResponse && props?.reviewResponse.length;
+  const reviewResponseLength = item?.feedbacks && item?.feedbacks.length;
   const handleReadMore = () => {
     setMaxSegments(reviewResponseLength);
   };
@@ -47,13 +47,13 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
             <div className='flex flex-row items-center gap-2'>
               <div className='w-[32px] h-[32px] rounded-full border-[2px] border-secondary-50'>
                 <Image
-                  src={props?.src}
+                  src={item?.src}
                   className='h-full w-full rounded-full object-cover'
                 />
               </div>
               <div>
                 <Title
-                  title={props?.displayName}
+                  title={item?.fullName}
                   fontBold
                   xl
                   colorTitle='dark:text-white'
@@ -63,12 +63,12 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
 
             {style && (
               <div className='flex flex-col p-2 sm:p-0 sm:border-none border dark:border-primary-500 rounded-sm'>
-                {props?.date && (
+                {item?.reviewDate && (
                   <div className='flex flex-row gap-2 items-center text-primary-100 dark:text-white'>
                     <Icon icon={BsCalendar4} size={16} />
                     <Title
                       title={format(
-                        new Date(props?.date),
+                        new Date(item?.reviewDate),
                         "EEE, d MMMM yyyy",
                         locale,
                       )}
@@ -85,37 +85,39 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
           <div className='flex flex-row w-full'>
             <Body
               maxSegments={1}
-              data={props?.description}
+              data={item?.reviewContent}
               className='break-words whitespace-pre-line text-[14px] dark:text-primary-50'
             />
           </div>
         ) : (
           <>
             {/* Rating */}
-            {props?.rating && (
+            {item?.rating && (
               <StayingRating
-                rating={props?.rating}
+                rating={item?.rating}
                 className='absolute right-0 top-0 sm:-top-2'
               />
             )}
 
             <div className='flex flex-col gap-2 w-full'>
-              <div className='flex flex-row w-full'>
-                {/* CheckInDate */}
-                <Title
-                  title={`Đã đánh giá: ${format(
-                    new Date(props?.date),
-                    "dd MMMM MM yyyy",
-                    locale,
-                  )}`}
-                  large
-                  colorTitle='text-primary-100 dark:text-gray-50'
-                />
-              </div>
+              {item?.reviewDate && (
+                <div className='flex flex-row w-full'>
+                  {/* CheckInDate */}
+                  <Title
+                    title={`Đã đánh giá: ${format(
+                      new Date(item?.reviewDate),
+                      "dd MMMM MM yyyy",
+                      locale,
+                    )}`}
+                    large
+                    colorTitle='text-primary-100 dark:text-gray-50'
+                  />
+                </div>
+              )}
               {/* Description */}
               <div className='flex flex-row w-full pr-5'>
                 <Title
-                  title={props?.description}
+                  title={item?.reviewContent}
                   nowrap={false}
                   xl
                   colorTitle='dark:text-primary-50'
@@ -123,7 +125,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
               </div>
 
               {/* Review Response */}
-              {props?.reviewResponse.length > 0 && (
+              {item?.feedbacks && item?.feedbacks.length > 0 && (
                 <div className='flex flex-col w-full h-auto gap-1 relative mt-2'>
                   <div className='flex flex-col w-full p-4 bg-gray-100 rounded-md dark:bg-primary-500 before:absolute before:border-b-[8px] before:border-gray-100 dark:before:border-primary-500 dark:before:border-l-transparent dark:before:border-r-transparent before:w-0 before:h-0 before:border-l-[8px] before:border-l-transparent before:border-r-[8px] before:border-r-transparent before:left-[50%] before:bottom-[100%]'>
                     <div className='flex items-center flex-row gap-2 mb-2 dark:text-white'>
@@ -132,7 +134,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
                     </div>
 
                     <Body
-                      data={props?.reviewResponse}
+                      data={item?.feedbacks}
                       maxSegments={maxSegments}
                       className='text-[14px] dark:text-primary-50'
                     />
@@ -155,7 +157,10 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
 
         {/* ReadMore */}
         {!style && (
-          <div className='flex flex-row w-full' onClick={onReadMoreClick}>
+          <div
+            className='flex flex-row w-full'
+            onClick={() => onReadMoreClick(item)}
+          >
             <Title
               title='Read More'
               titleCustom='text-hotel-50 hover:underline cursor-pointer duration-300'
@@ -169,10 +174,10 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, ...props }) => {
 };
 
 CardReview.propTypes = {
+  item: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   border: PropTypes.bool,
   style: PropTypes.bool,
   onReadMoreClick: PropTypes.func,
-  description: PropTypes.string,
   vertical: PropTypes.bool,
 };
 

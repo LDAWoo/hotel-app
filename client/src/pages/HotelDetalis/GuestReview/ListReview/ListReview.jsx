@@ -1,13 +1,16 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
+import { Navigation } from "swiper/modules";
 import CarouselCustom from "../../../../components/Carousel/CarouselCustom";
 import ReadMoreModal from "../../../../components/Modals/ReviewModal/ReadMoreModal";
 import Title from "../../../../components/Title/Title";
 import useRegisterModalReadMoreReview from "../../../../hooks/Review/useRegisterModalReadMoreReview";
 import CardReview from "./CardReview";
-import PropTypes from "prop-types";
+import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
 
 const ListReview = ({ reviewData, vertical, style }) => {
-  const [selectedReview, setSelectedReview] = useState({});
+  const [selectedReview, setSelectedReview] = useState([]);
+  const { width } = useRegisterWindowSizeStore();
   const { onOpen } = useRegisterModalReadMoreReview();
 
   const handleReadMoreInsideCard = (reviewData) => {
@@ -26,31 +29,27 @@ const ListReview = ({ reviewData, vertical, style }) => {
         />
       </div>
       {!style ? (
-        <CarouselCustom
-          data={reviewData?.listResult?.map((review, index) => (
-            <CardReview
-              displayName={review?.fullName}
-              src={review?.src}
-              description={review?.reviewContent}
-              rating={review?.rating}
-              reviewResponse={review?.feedbacks}
-              key={index}
-              onReadMoreClick={() => handleReadMoreInsideCard(review)}
-            />
-          ))}
-        />
+        <div>
+          <CarouselCustom
+            spaceBetween={15}
+            slidesPerView={width >= 900 ? 3 : width >= 640 ? 2 : 1}
+            modules={[Navigation]}
+            slides={reviewData?.listResult}
+            component={(props) => (
+              <CardReview
+                {...props}
+                onReadMoreClick={handleReadMoreInsideCard}
+              />
+            )}
+          />
+        </div>
       ) : (
         <>
           {reviewData?.listResult.map((review, index) => (
             <>
               <CardReview
-                displayName={review?.fullName}
-                src={review?.src}
-                description={review?.reviewContent}
-                date={review?.reviewDate}
-                rating={review?.rating}
-                reviewResponse={review?.feedbacks}
                 key={index}
+                item={review}
                 border
                 style
                 vertical={vertical}
@@ -60,19 +59,9 @@ const ListReview = ({ reviewData, vertical, style }) => {
         </>
       )}
 
-      <ReadMoreModal
-        body={
-          <CardReview
-            displayName={selectedReview?.fullName}
-            src={selectedReview?.src}
-            description={selectedReview?.reviewContent}
-            rating={selectedReview?.rating}
-            reviewResponse={selectedReview?.feedbacks}
-            date={selectedReview?.reviewDate}
-            style
-          />
-        }
-      />
+      {selectedReview && (
+        <ReadMoreModal body={<CardReview item={selectedReview} style />} />
+      )}
     </div>
   );
 };

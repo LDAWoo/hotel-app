@@ -12,7 +12,7 @@ function Carousel({ slides, component, ...props }) {
       {slides &&
         slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            {Component && <Component item={slide} />}
+            {Component && <Component item={slide} {...slide.props} />}
           </SwiperSlide>
         ))}
     </Swiper>

@@ -6,7 +6,7 @@ import Icon from "../../../../components/Icon/Icon";
 import Image from "../../../../components/Image/Image";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
-import CardHeart from "../../../Home/OurHotel/CardHeart";
+// import CardHeart from "../../../Home/OurHotel/CardHeart";
 import MoneyFormatStaying from "../../../../components/Staying/MoneyFormatStaying";
 import routesConfig from "../../../../configs/routesConfig";
 
@@ -39,9 +39,9 @@ const CardResult = ({ items }) => {
             className='h-full w-full object-cover rounded-lg'
           />
           {/* Heart */}
-          <div className='absolute top-[3%] right-[3%] z-[1]'>
+          {/* <div className='absolute top-[3%] right-[3%] z-[1]'>
             <CardHeart isWishlist={false} />
-          </div>
+          </div> */}
         </Link>
 
         <div className='flex flex-col w-full'>

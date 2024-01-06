@@ -3,7 +3,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 import routesConfig from "../../../configs/routesConfig";
 import useRegisterPinMap from "../../../hooks/Map/useRegisterPinMap";
-import CardHeart from "../../../pages/Home/OurHotel/CardHeart";
+// import CardHeart from "../../../pages/Home/OurHotel/CardHeart";
 import Icon from "../../Icon/Icon";
 import Image from "../../Image/Image";
 import MoneyFormatStaying from "../../Staying/MoneyFormatStaying";
@@ -51,9 +51,9 @@ const CardBody = ({ items = [], background, border }) => {
       </div>
 
       {/* Heart */}
-      <div className='absolute top-[12px] right-[4px] z-[1002]'>
+      {/* <div className='absolute top-[12px] right-[4px] z-[1002]'>
         <CardHeart isWishlist={false} />
-      </div>
+      </div> */}
 
       <div className='absolute top-[50%] right-0 text-primary-50 dark:text-white'>
         <Icon icon={MdArrowForwardIos} size={20} />

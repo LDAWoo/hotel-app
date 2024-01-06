@@ -2,11 +2,13 @@ import { memo } from "react";
 import { photos } from "../../../../components/Constants/GalleryPhotos";
 import useRegisterModalImage from "../../../../hooks/Image/useRegisterModalImage";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
-import Card from "../../../Home/OurHotel/Card";
+import Card from "./Card";
 import GalleryItem from "./GalleryItem";
 import useRegisterHotelDetails from "../../../../hooks/HotelDetails/useRegisterHotelDetails";
 import GallerySkeleton from "./GallerySkeleton";
-
+import CarouselCustom from "../../../../components/Carousel/CarouselCustom";
+import { Navigation, Pagination } from "swiper/modules";
+import "./GalleryStyle.scss";
 const startTopPhotos = 0;
 const startBottomPhotos = 3;
 const maxPhotos = 3;
@@ -22,6 +24,8 @@ function Gallery() {
   const handleShowImageModal = () => {
     onOpen();
   };
+
+  console.log(hotels);
 
   return (
     <>
@@ -75,7 +79,25 @@ function Gallery() {
             </div>
           </div>
         ) : (
-          <Card data={photos[0]} />
+          <div>
+            {loading ? (
+              <div>Loading</div>
+            ) : (
+              <div>
+                <CarouselCustom
+                  spaceBetween={0}
+                  navigation={true}
+                  pagination={{
+                    type: "fraction",
+                  }}
+                  modules={[Pagination, Navigation]}
+                  slidesPerView={1}
+                  slides={hotels?.images}
+                  component={Card}
+                />
+              </div>
+            )}
+          </div>
         )}
       </div>
     </>

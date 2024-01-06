@@ -3,16 +3,9 @@ import { Link } from "react-router-dom";
 import Image from "../../../components/Image/Image";
 import StayingRating from "../../../components/Staying/StayingRating";
 import Title from "../../../components/Title/Title";
-function ItemUniqueProperty({
-  name,
-  image,
-  districtAddress,
-  city,
-  country,
-  reviews,
-  ratings,
-}) {
-  const location = districtAddress + ", " + city + ", " + country;
+function ItemUniqueProperty({ item }) {
+  const location =
+    item?.districtAddress + ", " + item?.city + ", " + item?.country;
   return (
     <Link className='w-full'>
       <div className='w-full border dark:border-primary-500 rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(200,200,200,0.16)]'>
@@ -20,14 +13,14 @@ function ItemUniqueProperty({
           <div className='flex flex-col '>
             <div className='flex aspect-[20/20]'>
               <Image
-                imageBase={image}
+                imageBase={item?.picByte}
                 className='aspect-[20/20] object-cover rounded-tl-lg rounded-tr-lg'
               />
             </div>
             <div className='flex flex-col w-full m-0 p-3'>
               <div className='flex w-full dark:text-white'>
                 <Title
-                  title={name}
+                  title={item?.nameHotel}
                   fontBold
                   nowrap={false}
                   titleCustom='text-[14px]'
@@ -42,9 +35,9 @@ function ItemUniqueProperty({
                 />
               </div>
               <div className='flex flex-row items-center gap-2 mt-1'>
-                <StayingRating rating={ratings} />
+                <StayingRating rating={item?.reviewRating} />
                 <Title
-                  title={`${reviews} reviews`}
+                  title={`${item?.countReview} reviews`}
                   large
                   colorTitle='dark:text-primary-50'
                 />
@@ -58,13 +51,7 @@ function ItemUniqueProperty({
 }
 
 ItemUniqueProperty.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired, // Assuming it's a URL or base64 string
-  districtAddress: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  reviews: PropTypes.number.isRequired,
-  ratings: PropTypes.number.isRequired,
+  item: PropTypes.object.isRequired,
 };
 
 export default ItemUniqueProperty;

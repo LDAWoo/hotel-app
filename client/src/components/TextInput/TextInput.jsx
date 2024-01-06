@@ -52,14 +52,14 @@ function TextInput({
         </div>
       )}
       <div
-        className={`relative w-full rounded-lg duration-200 outline-none   ${
+        className={`relative w-full rounded-[4px] duration-200 outline-none   ${
           !classBorder
-            ? `border-[2px] ${
+            ? `border-[1px] ${
                 active
-                  ? "border-hotel-100 "
+                  ? "border-hotel-100 shadow-[0_0_0_1px_rgba(0,13,194,.76)]"
                   : `${
                       error
-                        ? "border-red-500"
+                        ? "border-red-500 shadow-[0_0_0_1px_rgba(204,0,0,1)]"
                         : "border-gray-200 dark:border-primary-500"
                     }`
               }`

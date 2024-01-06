@@ -7,7 +7,9 @@ function LoginLayout({ children }) {
     <MainLayout>
       <AccountHeader />
       <div className='w-full dark:bg-primary-700 min-h-[100vh]'>
-        <div className='min-w-[200px] max-w-[500px] mx-auto '>{children}</div>
+        <div className='p-4'>
+          <div className='max-w-[360px] mx-auto'>{children}</div>
+        </div>
       </div>
     </MainLayout>
   );

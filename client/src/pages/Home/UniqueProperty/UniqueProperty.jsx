@@ -3,19 +3,23 @@ import HomeTitle from "../HomeTitle";
 import CarouselCustom from "../../../components/Carousel/CarouselCustom";
 import ItemUniqueProperty from "./ItemUniqueProperty";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemUniquePropertySkeleton from "./ItemUniquePropertySkeleton";
-
+import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import { Navigation } from "swiper/modules";
+import "./UniquePropertyStyle.scss";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 const UniqueProperty = ({ data = [], isLoading }) => {
+  const { width } = useRegisterWindowSizeStore();
+  const { isMobile } = useContext(DeviceContext);
+
   const [currentUniqueProperty, setCurrentUniqueProperty] = useState([]);
 
   useEffect(() => {
     if (!isLoading && data.length > 0) {
-      setCurrentUniqueProperty(data[1].data);
+      setCurrentUniqueProperty(data[1]?.data);
     }
-  }, [data]);
-
-  console.log(currentUniqueProperty);
+  }, [data, isLoading]);
 
   const { t } = useTranslation();
   return (
@@ -36,19 +40,12 @@ const UniqueProperty = ({ data = [], isLoading }) => {
         ) : (
           <div>
             <CarouselCustom
-              size={4}
-              data={currentUniqueProperty.map((item, index) => (
-                <ItemUniqueProperty
-                  key={index}
-                  name={item?.nameHotel}
-                  image={item?.picByte}
-                  districtAddress={item?.districtAddress}
-                  city={item?.city}
-                  country={item?.country}
-                  reviews={item?.countReview}
-                  ratings={item?.reviewRating}
-                />
-              ))}
+              spaceBetween={15}
+              navigation={!isMobile}
+              modules={[Navigation]}
+              slidesPerView={width >= 900 ? 4 : width >= 640 ? 3 : 2}
+              slides={currentUniqueProperty}
+              component={ItemUniqueProperty}
             />
           </div>
         )}

@@ -103,35 +103,35 @@ function Login() {
         <TextError error={errorPassword} />
 
         <Button
-          className='p-2 bg-hotel-100 rounded-lg flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-hotel-600 cursor-pointer duration-200'
+          className='p-2 bg-hotel-100 rounded-[4px] flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-hotel-600 cursor-pointer duration-200'
           title={t("Login.title")}
           onClick={login}
         />
       </div>
-      <div className='flex flex-row items-end mt-4'>
-        <Border className='h-[1px] w-full ' />
-        <span className='whitespace-nowrap ml-2 mr-2 text-[16px] -translate-y-1'>
+      <div className='flex flex-row items-center mt-4'>
+        <Border className='-translate-y-[3px] h-[1px] w-full ' />
+        <span className='whitespace-nowrap ml-2 mr-2 text-[12px] -translate-y-1'>
           {t("Login.loginWithOpenAccount")}
         </span>
-        <Border className='h-[1px] w-full ' />
+        <Border className='-translate-y-[3px] h-[1px] w-full ' />
       </div>
       <div className='flex flex-row gap-4 items-center justify-center mt-4'>
         <Button
           icon={FcGoogle}
-          className='pt-5 pb-5 pr-3 pl-3 border justify-center items-center duration-200 hover:border-hotel-100 rounded-sm'
+          className='pt-5 pb-5 pr-[8px] pl-[9px] border justify-center items-center duration-200 hover:border-hotel-100 rounded-sm'
           size={30}
           classIcon='translate-x-1'
           onClick={handleLoginWithGoogle}
         />
         <Button
           icon={AiFillFacebook}
-          className='pt-5 pb-5 pr-3 pl-3 border justify-center items-center text-hotel-75 duration-200 hover:border-hotel-100 rounded-sm'
+          className='pt-5 pb-5 pr-[8px] pl-[9px] border justify-center items-center text-hotel-75 duration-200 hover:border-hotel-100 rounded-sm'
           size={30}
           classIcon='translate-x-1'
           onClick={handleLoginWithFacebook}
         />
       </div>
-      <div className='flex items-center justify-center mt-8 font-normal text-[14px] sm:text-[15px] text-gray-400'>
+      <div className='flex items-center justify-center mt-8 font-normal text-[12px] sm:text-[14px] text-gray-400'>
         {t("Login.description")}
       </div>
       <div className='flex items-center mt-8'>

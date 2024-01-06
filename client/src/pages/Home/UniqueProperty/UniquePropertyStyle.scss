@@ -1,0 +1,35 @@
+.swiper-button-next,
+.swiper-button-prev {
+  box-shadow: rgba(26, 26, 26, 0.16) 0px 2px 8px 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border-width: 1px;
+  border-color: rgb(181, 231, 237);
+  background-color: rgb(255, 255, 255);
+  transition-duration: 300ms;
+  &::after {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0;
+  }
+}
+
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+  border-color: rgb(38, 39, 40);
+  background-color: rgba(31, 31, 31, 1);
+  border-width: 1px;
+  &:hover {
+    background-color: rgb(45, 45, 45);
+  }
+
+  box-shadow: rgba(200, 200, 200, 0.16) 0px 2px 8px 0px;
+}

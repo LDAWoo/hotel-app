@@ -46,6 +46,7 @@ function Home() {
 
   useEffect(() => {}, [currentData]);
 
+  console.log(currentData);
   return (
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>

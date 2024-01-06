@@ -10,8 +10,8 @@ function Carousel({ slides, component, ...props }) {
   return (
     <Swiper {...props}>
       {slides &&
-        slides.map((slide) => (
-          <SwiperSlide key={slide.image}>
+        slides.map((slide, index) => (
+          <SwiperSlide key={index}>
             {Component && <Component item={slide} />}
           </SwiperSlide>
         ))}

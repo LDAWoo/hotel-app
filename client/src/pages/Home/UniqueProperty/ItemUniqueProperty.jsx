@@ -35,7 +35,10 @@ function ItemUniqueProperty({ item }) {
                 />
               </div>
               <div className='flex flex-row items-center gap-2 mt-1'>
-                <StayingRating rating={item?.reviewRating} />
+                <StayingRating
+                  rating={item?.reviewRating}
+                  className='text-[12px]'
+                />
                 <Title
                   title={`${item?.countReview} reviews`}
                   large

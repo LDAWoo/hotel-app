@@ -1,15 +1,19 @@
-import HomeTitle from "../HomeTitle";
-import CarouselCustom from "../../../components/Carousel/CarouselCustom";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import ItemDestinationWeLove from "./ItemDestinationsWeLove";
-import Button from "../../../components/Buttons/Button";
-import { DestinationWeLoveData } from "../../../components/Constants/Home/DestinationsWeLove/DestinationWeLoveData";
-import ItemDestinationsWeLoveSkeleton from "./ItemDestinationsWeLoveSkeleton";
-import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
-import ItemHeadDestinationWeLoveSkeleton from "./ItemHeadDestinationsWeLoveSkeleton";
 import PropTypes from "prop-types";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { Navigation } from "swiper/modules";
+import Button from "../../../components/Buttons/Button";
+import CarouselCustom from "../../../components/Carousel/CarouselCustom";
+import { DestinationWeLoveData } from "../../../components/Constants/Home/DestinationsWeLove/DestinationWeLoveData";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
+import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import HomeTitle from "../HomeTitle";
+import ItemDestinationWeLove from "./ItemDestinationsWeLove";
+import ItemDestinationsWeLoveSkeleton from "./ItemDestinationsWeLoveSkeleton";
+import ItemHeadDestinationWeLoveSkeleton from "./ItemHeadDestinationsWeLoveSkeleton";
 
-const DestinationsWeLove = ({ data, isLoading }) => {
+const DestinationsWeLove = ({ data = [], isLoading }) => {
+  const { width } = useRegisterWindowSizeStore();
+  const { isMobile } = useContext(DeviceContext);
   const [state, setState] = useState({
     currentDestination: [],
     loading: true,
@@ -18,7 +22,6 @@ const DestinationsWeLove = ({ data, isLoading }) => {
 
   const chunkSize = 4;
   const maxSize = 4;
-  const { width } = useRegisterWindowSizeStore();
 
   const { currentDestination, chunks } = state;
 
@@ -32,7 +35,7 @@ const DestinationsWeLove = ({ data, isLoading }) => {
     }
   }, [data]);
 
-  const handleDestination = useCallback((key) => {
+  const handleDestination = (key) => {
     if (currentDestination[0].key != key) {
       const destination = data.filter((v) => v.key.includes(key));
       setState((prevState) => ({
@@ -40,7 +43,7 @@ const DestinationsWeLove = ({ data, isLoading }) => {
         currentDestination: destination,
       }));
     }
-  });
+  };
 
   useEffect(() => {
     if (currentDestination.length > 0) {
@@ -115,19 +118,12 @@ const DestinationsWeLove = ({ data, isLoading }) => {
         ) : (
           <div>
             <CarouselCustom
-              size={maxSize}
-              data={chunks?.map((chunk, index) => (
-                <div key={index} className='flex flex-col gap-2'>
-                  {chunk.map((item, itemIndex) => (
-                    <div key={itemIndex}>
-                      <ItemDestinationWeLove
-                        name={item.name}
-                        properties={item?.quantityRoom}
-                      />
-                    </div>
-                  ))}
-                </div>
-              ))}
+              spaceBetween={15}
+              navigation={!isMobile}
+              modules={[Navigation]}
+              slidesPerView={width >= 900 ? 4 : width >= 640 ? 3 : 2}
+              slides={chunks}
+              component={ItemDestinationWeLove}
             />
           </div>
         )}

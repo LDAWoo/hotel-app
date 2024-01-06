@@ -1,14 +1,14 @@
-import { useTranslation } from "react-i18next";
-import HomeTitle from "../HomeTitle";
-import CarouselCustom from "../../../components/Carousel/CarouselCustom";
-import ItemUniqueProperty from "./ItemUniqueProperty";
 import PropTypes from "prop-types";
 import { useContext, useEffect, useState } from "react";
-import ItemUniquePropertySkeleton from "./ItemUniquePropertySkeleton";
-import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import { useTranslation } from "react-i18next";
 import { Navigation } from "swiper/modules";
-import "./UniquePropertyStyle.scss";
+import CarouselCustom from "../../../components/Carousel/CarouselCustom";
 import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
+import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import HomeTitle from "../HomeTitle";
+import ItemUniqueProperty from "./ItemUniqueProperty";
+import ItemUniquePropertySkeleton from "./ItemUniquePropertySkeleton";
+import "./UniquePropertyStyle.scss";
 const UniqueProperty = ({ data = [], isLoading }) => {
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);

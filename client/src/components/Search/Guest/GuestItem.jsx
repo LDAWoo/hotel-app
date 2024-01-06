@@ -8,25 +8,30 @@ function GuestItem({
   maxValue,
   handleMinus,
   handlePlus,
+  children,
 }) {
   return (
-    <div className='w-full flex items-center h-[42px]'>
-      <div
-        className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal `}
-      >
-        <Title title={title} xl fontMedium />
-      </div>
-      <div className='flex flex-row items-center h-full justify-center'>
-        <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
-          <IncreaseAndDecreaseValue
-            value={value}
-            minValue={minValue}
-            maxValue={maxValue}
-            handleMinus={handleMinus}
-            handlePlus={handlePlus}
-          />
+    <div className='flex flex-col gap-2 w-full'>
+      <div className='w-full flex items-center h-[42px]'>
+        <div
+          className={`flex-1 h-full flex items-center justify-start dark:text-white font-normal `}
+        >
+          <Title title={title} xl fontMedium />
+        </div>
+        <div className='flex flex-row items-center h-full justify-center'>
+          <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
+            <IncreaseAndDecreaseValue
+              value={value}
+              minValue={minValue}
+              maxValue={maxValue}
+              handleMinus={handleMinus}
+              handlePlus={handlePlus}
+            />
+          </div>
         </div>
       </div>
+
+      {children}
     </div>
   );
 }
@@ -38,6 +43,7 @@ GuestItem.propTypes = {
   maxValue: PropTypes.number.isRequired,
   handleMinus: PropTypes.func.isRequired,
   handlePlus: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
 export default GuestItem;

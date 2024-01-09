@@ -1,0 +1,75 @@
+{
+  "Login": {
+    "title": "Đăng nhập để quản lý chỗ nghỉ",
+    "email": "Email đăng nhập",
+    "password": "Mật khẩu",
+    "login": "Đăng Nhập",
+    "register": "Đăng ký",
+    "forgot": "Quên mật khẩu"
+  },
+  "Partner": {
+    "partner": "Quý vị có thắc mắc về chỗ nghỉ của mình hay extranet? Hãy ghé thăm",
+    "help": "Trung tâm Trợ giúp Đối tác",
+    "more": "để tìm hiểu thêm."
+  },
+  "FooterAccount": {
+    "nameOne": "Qua việc đăng nhập hoặc tạo tài khoản, bạn đồng ý với các",
+    "nameTwo": "Điều khoản và Điều kiện",
+    "nameThree": "cũng như",
+    "nameFour": "Chính sách An toàn và Bảo mật",
+    "nameFive": " của chúng tôi"
+  },
+  "AccessFooter": {
+    "nameOne": "Bảo lưu mọi quyền",
+    "nameTwo": "Bản quyền (2023 - 2024) - Staying.com™"
+  },
+  "Register": {
+    "title": "Tạo tài khoản đối tác",
+    "subTitle": "Tạo tài khoản để đăng ký và quản lý chỗ nghỉ.",
+    "email": "Địa chỉ email",
+    "continue": "Tiếp tục"
+  },
+  "RegisterContactDetails": {
+    "title": "Thông tin liên lạc",
+    "subTitle": "Để tài khoản Staying.com của bạn được bảo mật, chúng tôi cần biết họ tên đầy đủ và số điện thoại của bạn.",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "phoneNumber": "Số điện thoại"
+  },
+  "RegisterPassword": {
+    "title": "Tạo mật khẩu",
+    "subTitle": "Dùng ít nhất 10 ký tự, trong đó có chữ hoa, chữ thường và số.",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "registerAccount": "Tạo tài khoản"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
+      "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
+      "firstNameNotBlank": "Vui lòng nhập tên của bạn",
+      "lastNameNotBlank": "Vui lòng nhập họ của bạn",
+      "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
+      "passwordNotBlank": "Vui lòng nhập mật khẩu mới",
+      "passwordNotPassword": "Mật mã phải có ít nhất 1 chữ số, 1 chữ thường, 1 chữ hoa, 1 ký tự đặt biệt",
+      "confirmPasswordNotBlank": "Vui lòng xác nhận mật khẩu",
+      "confirmPasswordNotPassword": "Mật khẩu bạn đã nhập không khớp. Vui lòng thử lại."
+    }
+  },
+
+  "Modal": {
+    "Language": {
+      "title": "Chọn ngôn ngữ của bạn",
+      "allLanguage": "Tất cả ngôn ngữ"
+    }
+  },
+  "User": {
+    "managerProfile": "Quản lí trang cá nhân",
+    "logout": "Đăng xuất"
+  },
+  "Banner": {
+    "title": "Chúng tôi hy vọng bạn sẽ thích kỳ nghỉ của mình",
+    "subTitle": "Khám phá khu nghỉ dưỡng khách sạn và nhà hàng hàng đầu thế giới của chúng tôi.",
+    "bookNow": "Đặt ngay"
+  }
+}

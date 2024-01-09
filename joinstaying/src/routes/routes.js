@@ -1,5 +1,6 @@
 import routesConfig from "../configs/routesConfig";
-
+import Login from "../pages/Login/Login";
+import LoginLayout from "../components/Layout/LoginLayout/LoginLayout";
 import JoinStaying from "../pages/JoinStaying/JoinStaying";
 import JoinLayout from "../components/Layout/JoinLayout/JoinLayout";
 import HostLayout from "../components/Layout/JoinLayout/HostLayout/HostLayout";
@@ -27,8 +28,31 @@ import CalendarSyncHost from "../pages/HostStaying/CalendarSyncHost/CalendarSync
 import PaymentModeHost from "../pages/HostStaying/PaymentModeHost/PaymentModeHost";
 import InvoicingHost from "../pages/HostStaying/InvoicingHost/InvoicingHost";
 import PartnerHost from "../pages/HostStaying/PartnerHost/PartnerHost";
+import Register from "../pages/Register/Register";
+import RegisterContactDetails from "../pages/RegisterContactDetails";
+import RegisterPassword from "../pages/RegisterPassword";
 
 const publicRoutesPathComponent = [
+  {
+    path: routesConfig.login,
+    component: Login,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.register,
+    component: Register,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.contactDetails,
+    component: RegisterContactDetails,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.registerPassword,
+    component: RegisterPassword,
+    layout: LoginLayout,
+  },
   {
     path: routesConfig.home,
     component: JoinStaying,

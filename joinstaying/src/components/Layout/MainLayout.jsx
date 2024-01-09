@@ -3,8 +3,8 @@ import useRegisterWindowOnline from "../../hooks/useRegisterWindowOnline";
 import PropTypes from "prop-types";
 import { ThemeContext } from "../Contexts/AppThemeProvider";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
-import FilterModal from "../Modals/FilterModal/FilterModal";
-import MapModal from "../Modals/MapModal/MapModal";
+// import FilterModal from "../Modals/FilterModal/FilterModal";
+// import MapModal from "../Modals/MapModal/MapModal";
 import LanguageModal from "../Modals/LanguageModal/LanguageModal";
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
@@ -38,8 +38,8 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className={`${darkMode}`}>
-      <FilterModal />
-      <MapModal />
+      {/* <FilterModal />
+      <MapModal /> */}
       <LanguageModal />
       {children}
     </div>

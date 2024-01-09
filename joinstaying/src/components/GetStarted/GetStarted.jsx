@@ -30,7 +30,7 @@ function GetStarted() {
 
   return (
     <div className="w-full">
-      <div className="bg-white mr-2">
+      <div className="bg-white w-full">
         <div className="flex flex-col gap-2 p-4">
           <Title title="Earn more with consistent bookings" fontBold className="text-primary-700" xxxl nowrap={false} />
 

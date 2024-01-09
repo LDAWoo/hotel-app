@@ -1,0 +1,81 @@
+{
+  "Login": {
+    "title": "宿泊施設を管理するためにログイン",
+    "email": "ログインメール",
+    "password": "パスワード",
+    "login": "ログイン",
+    "register": "登録",
+    "forgot": "パスワードを忘れた方"
+  },
+  "Partner": {
+    "partner": "宿泊施設やエクストラネットに関するご質問はありますか？",
+    "help": "パートナーヘルプセンター",
+    "more": "で詳細を確認してください。"
+  },
+  "FooterAccount": {
+    "nameOne": "ログインまたはアカウントを作成することで、",
+    "nameTwo": "利用規約および条件",
+    "nameThree": "および",
+    "nameFour": "セキュリティポリシー",
+    "nameFive": "に同意したことになります。"
+  },
+  "AccessFooter": {
+    "nameOne": "全ての権利を保有",
+    "nameTwo": "著作権 (2023 - 2024) - Staying.com™"
+  },
+  "Modal": {
+    "Language": {
+      "title": "言語を選択",
+      "allLanguage": "すべての言語"
+    }
+  },
+  "Theme": {
+    "title": "トピック",
+    "light": {
+      "title": "明るい"
+    },
+    "dark": {
+      "title": "暗い"
+    },
+    "system": {
+      "title": "システム"
+    }
+  },
+  "User": {
+    "managerProfile": "アカウント管理",
+    "logout": "ログアウト"
+  },
+  "Banner": {
+    "title": "滞在を楽しんでいただけることを願っています",
+    "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
+    "bookNow": "今すぐ予約"
+  },
+  "Search": {
+    "location": "どこに行く予定ですか？",
+    "checkOutDate": "チェックアウト日",
+    "search": "検索",
+    "Guest": {
+      "Adult": {
+        "title": "大人"
+      },
+      "Children": {
+        "title": "子供"
+      },
+      "Room": {
+        "title": "部屋"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "最近の検索履歴"
+  },
+  "TrendingDestination": {
+    "title": "トレンディング先行予約地",
+    "subTitle": "他の旅行者もこれらを予約しました"
+  },
+  "OurHotel": {
+    "title": "当社のホテル",
+    "subTitle": "最も人気のあるホテル",
+    "night": "夜"
+  }
+}

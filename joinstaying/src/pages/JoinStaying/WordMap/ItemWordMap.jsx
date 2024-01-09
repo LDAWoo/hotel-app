@@ -1,5 +1,5 @@
 import Title from "../../../components/Title/Title";
-
+import PropTypes from "prop-types";
 function ItemWordMap({ title, subTitle }) {
   return (
     <div className="flex flex-col w-full max-w-[320px] mt-[32px] mr-[32px]">
@@ -8,5 +8,10 @@ function ItemWordMap({ title, subTitle }) {
     </div>
   );
 }
+
+ItemWordMap.propTypes = {
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+};
 
 export default ItemWordMap;

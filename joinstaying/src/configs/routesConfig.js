@@ -1,6 +1,8 @@
 const routesConfig = {
   login: "/login",
   register: "/register",
+  contactDetails: "/register/contact-details",
+  registerPassword: "/register/password",
   checkEmail: "/register/check-email",
 
   home: "/",

@@ -1,0 +1,81 @@
+{
+  "Login": {
+    "title": "Iniciar sesión para gestionar alojamientos",
+    "email": "Correo electrónico de inicio de sesión",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "forgot": "¿Olvidaste tu contraseña?"
+  },
+  "Partner": {
+    "partner": "¿Tienes preguntas sobre tu alojamiento o extranet? Visita el",
+    "help": "Centro de Ayuda para Socios",
+    "more": "para obtener más información."
+  },
+  "FooterAccount": {
+    "nameOne": "Al iniciar sesión o crear una cuenta, aceptas nuestros",
+    "nameTwo": "Términos y Condiciones",
+    "nameThree": "así como nuestra",
+    "nameFour": "Política de Seguridad y Privacidad",
+    "nameFive": "."
+  },
+  "AccessFooter": {
+    "nameOne": "Todos los derechos reservados",
+    "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
+  },
+  "Modal": {
+    "Language": {
+      "title": "Selecciona tu idioma",
+      "allLanguage": "Todos los idiomas"
+    }
+  },
+  "Theme": {
+    "title": "Tema",
+    "light": {
+      "title": "Claro"
+    },
+    "dark": {
+      "title": "Oscuro"
+    },
+    "system": {
+      "title": "Sistema"
+    }
+  },
+  "User": {
+    "managerProfile": "Gestionar cuenta",
+    "logout": "Cerrar sesión"
+  },
+  "Banner": {
+    "title": "Esperamos que disfrutes de tu estancia",
+    "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
+    "bookNow": "Reservar ahora"
+  },
+  "Search": {
+    "location": "¿A dónde vas?",
+    "checkOutDate": "Fecha de salida",
+    "search": "Buscar",
+    "Guest": {
+      "Adult": {
+        "title": "Adultos"
+      },
+      "Children": {
+        "title": "Niños"
+      },
+      "Room": {
+        "title": "Habitación"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Tus Búsquedas Recientes"
+  },
+  "TrendingDestination": {
+    "title": "Destinos Populares",
+    "subTitle": "Otros viajeros también han reservado estos destinos"
+  },
+  "OurHotel": {
+    "title": "Nuestro Hotel",
+    "subTitle": "Los hoteles más populares",
+    "night": "noche"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "Login": {
+    "title": "Login to Manage Accommodations",
+    "email": "Login Email",
+    "password": "Password",
+    "login": "Log In",
+    "register": "Register",
+    "forgot": "Forgot Password"
+  },
+  "Partner": {
+    "partner": "Do you have questions about your accommodation or extranet? Visit the",
+    "help": "Partner Help Center",
+    "more": "to learn more."
+  },
+  "FooterAccount": {
+    "nameOne": "By logging in or creating an account, you agree to our",
+    "nameTwo": "Terms and Conditions",
+    "nameThree": "as well as",
+    "nameFour": "our Safety and Security Policies",
+    "nameFive": "."
+  },
+  "AccessFooter": {
+    "nameOne": "All rights reserved",
+    "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
+  },
+  "Modal": {
+    "Language": {
+      "title": "Select your language",
+      "allLanguage": "All languages"
+    }
+  },
+  "Theme": {
+    "title": "Theme",
+    "light": {
+      "title": "Light"
+    },
+    "dark": {
+      "title": "Dark"
+    },
+    "system": {
+      "title": "System"
+    }
+  },
+  "User": {
+    "managerProfile": "Manage account",
+    "logout": "Log out"
+  },
+  "Banner": {
+    "title": "We hope you’ll enjoy your stay",
+    "subTitle": "Discover our world-class hotel & restaurant resort.",
+    "bookNow": "Book Now"
+  },
+  "Search": {
+    "location": "Where are you going?",
+    "checkOutDate": "Check-out date",
+    "search": "Search",
+    "Guest": {
+      "Adult": {
+        "title": "Adult"
+      },
+      "Children": {
+        "title": "Children"
+      },
+      "Room": {
+        "title": "Rooms"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "Your Recent Searches"
+  },
+  "TrendingDestination": {
+    "title": "Trending Destinations",
+    "subTitle": "Travelers looking have also booked these"
+  },
+  "OurHotel": {
+    "title": "Our Hotel",
+    "subTitle": "The most popular hotels",
+    "night": "night"
+  }
+}

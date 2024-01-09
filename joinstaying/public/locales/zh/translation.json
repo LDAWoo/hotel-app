@@ -1,0 +1,81 @@
+{
+  "Login": {
+    "title": "登录以管理住宿",
+    "email": "登录电子邮件",
+    "password": "密码",
+    "login": "登录",
+    "register": "注册",
+    "forgot": "忘记密码"
+  },
+  "Partner": {
+    "partner": "您对您的住宿或合作伙伴网络有疑问吗？请访问",
+    "help": "合作伙伴帮助中心",
+    "more": "了解更多。"
+  },
+  "FooterAccount": {
+    "nameOne": "通过登录或创建帐户，您同意我们的",
+    "nameTwo": "条款和条件",
+    "nameThree": "以及",
+    "nameFour": "我们的安全和隐私政策",
+    "nameFive": "。"
+  },
+  "AccessFooter": {
+    "nameOne": "保留所有权利",
+    "nameTwo": "版权所有 (2023 - 2024) - Staying.com™"
+  },
+  "Modal": {
+    "Language": {
+      "title": "选择您的语言",
+      "allLanguage": "所有语言"
+    }
+  },
+  "Theme": {
+    "title": "话题",
+    "light": {
+      "title": "明亮"
+    },
+    "dark": {
+      "title": "黑暗"
+    },
+    "system": {
+      "title": "系统"
+    }
+  },
+  "User": {
+    "managerProfile": "管理帐户",
+    "logout": "登出"
+  },
+  "Banner": {
+    "title": "我们希望您享受您的住宿",
+    "subTitle": "发现我们世界一流的酒店和餐厅度假胜地。",
+    "bookNow": "立即预订"
+  },
+  "Search": {
+    "location": "您要去哪里？",
+    "checkOutDate": "退房日期",
+    "search": "搜索",
+    "Guest": {
+      "Adult": {
+        "title": "成人"
+      },
+      "Children": {
+        "title": "儿童"
+      },
+      "Room": {
+        "title": "房间"
+      }
+    }
+  },
+  "RecentSearch": {
+    "title": "您的最近搜索"
+  },
+  "TrendingDestination": {
+    "title": "热门目的地",
+    "subTitle": "其他旅行者也预订了这些"
+  },
+  "OurHotel": {
+    "title": "我们的酒店",
+    "subTitle": "最受欢迎的酒店",
+    "night": "晚"
+  }
+}

@@ -12,6 +12,7 @@ export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {
   // const { loginWithRedirect, logout } = useAuth0();
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleLoginWithGoogle = () => {
     // loginWithRedirect({ connection: "google-oauth2" });
@@ -29,6 +30,7 @@ const AppUserProvider = ({ children }) => {
 
   const handleLogin = async (userData) => {
     try {
+      setLoading(true);
       const response = await postUserLogin(userData);
 
       if (response && response.token) {
@@ -46,6 +48,8 @@ const AppUserProvider = ({ children }) => {
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,6 +73,8 @@ const AppUserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
+        loading,
+        setLoading,
         handleLoginWithGoogle,
         handleLoginWithFacebook,
         handleLogin,

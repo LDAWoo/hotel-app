@@ -23,6 +23,39 @@
     "nameOne": "全ての権利を保有",
     "nameTwo": "著作権 (2023 - 2024) - Staying.com™"
   },
+  "Register": {
+    "title": "パートナーアカウントの作成",
+    "subTitle": "アカウントを作成して宿泊施設を登録および管理します。",
+    "email": "メールアドレス",
+    "continue": "続ける"
+  },
+  "RegisterContactDetails": {
+    "title": "連絡先情報",
+    "subTitle": "Staying.com アカウントを安全に保つために、お名前と電話番号が必要です。",
+    "firstName": "名",
+    "lastName": "姓",
+    "phoneNumber": "電話番号"
+  },
+  "RegisterPassword": {
+    "title": "パスワードの作成",
+    "subTitle": "大文字、小文字、数字を含む少なくとも 10 文字を使用してください。",
+    "password": "パスワード",
+    "confirmPassword": "パスワードの確認",
+    "registerAccount": "アカウントを作成"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "メールアドレスを入力してください",
+      "emailNotEmail": "有効なメールアドレスを入力してください",
+      "firstNameNotBlank": "お名前を入力してください",
+      "lastNameNotBlank": "姓を入力してください",
+      "phoneNumberNotBlank": "電話番号を入力してください",
+      "passwordNotBlank": "新しいパスワードを入力してください",
+      "passwordNotPassword": "パスワードは少なくとも 1 桁の数字、1 桁の小文字、1 桁の大文字、1 つの特殊文字を含む必要があります",
+      "confirmPasswordNotBlank": "パスワードを確認してください",
+      "confirmPasswordNotPassword": "入力したパスワードが一致しません。もう一度お試しください。"
+    }
+  },
   "Modal": {
     "Language": {
       "title": "言語を選択",

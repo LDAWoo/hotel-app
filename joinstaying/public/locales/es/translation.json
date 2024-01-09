@@ -23,6 +23,39 @@
     "nameOne": "Todos los derechos reservados",
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
+  "Register": {
+    "title": "Creación de Cuenta de Socio",
+    "subTitle": "Crea una cuenta para registrar y gestionar alojamientos.",
+    "email": "Dirección de Correo Electrónico",
+    "continue": "Continuar"
+  },
+  "RegisterContactDetails": {
+    "title": "Detalles de Contacto",
+    "subTitle": "Para asegurar tu cuenta en Staying.com, necesitamos tu nombre completo y número de teléfono.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "phoneNumber": "Número de Teléfono"
+  },
+  "RegisterPassword": {
+    "title": "Creación de Contraseña",
+    "subTitle": "Usa al menos 10 caracteres, incluyendo mayúsculas, minúsculas y números.",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "registerAccount": "Crear Cuenta"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",
+      "emailNotEmail": "Por favor, introduce una dirección de correo electrónico válida",
+      "firstNameNotBlank": "Por favor, introduce tu nombre",
+      "lastNameNotBlank": "Por favor, introduce tu apellido",
+      "phoneNumberNotBlank": "Por favor, introduce tu número de teléfono",
+      "passwordNotBlank": "Por favor, introduce una nueva contraseña",
+      "passwordNotPassword": "La contraseña debe contener al menos 1 dígito, 1 letra minúscula, 1 letra mayúscula y 1 carácter especial",
+      "confirmPasswordNotBlank": "Por favor, confirma tu contraseña",
+      "confirmPasswordNotPassword": "Las contraseñas que ingresaste no coinciden. Por favor, inténtalo de nuevo."
+    }
+  },
   "Modal": {
     "Language": {
       "title": "Selecciona tu idioma",

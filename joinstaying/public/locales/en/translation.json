@@ -23,6 +23,39 @@
     "nameOne": "All rights reserved",
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
+  "Register": {
+    "title": "Partner Account Creation",
+    "subTitle": "Create an account to register and manage accommodations.",
+    "email": "Email Address",
+    "continue": "Continue"
+  },
+  "RegisterContactDetails": {
+    "title": "Contact Information",
+    "subTitle": "To secure your Staying.com account, we need your full name and phone number.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number"
+  },
+  "RegisterPassword": {
+    "title": "Create Password",
+    "subTitle": "Use at least 10 characters, including uppercase, lowercase, and numbers.",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "registerAccount": "Create Account"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "Please enter your email address",
+      "emailNotEmail": "Please enter a valid email address",
+      "firstNameNotBlank": "Please enter your first name",
+      "lastNameNotBlank": "Please enter your last name",
+      "phoneNumberNotBlank": "Please enter your phone number",
+      "passwordNotBlank": "Please enter a new password",
+      "passwordNotPassword": "Password must contain at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character",
+      "confirmPasswordNotBlank": "Please confirm your password",
+      "confirmPasswordNotPassword": "The passwords you entered do not match. Please try again."
+    }
+  },
   "Modal": {
     "Language": {
       "title": "Select your language",

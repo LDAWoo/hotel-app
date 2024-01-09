@@ -23,6 +23,39 @@
     "nameOne": "保留所有权利",
     "nameTwo": "版权所有 (2023 - 2024) - Staying.com™"
   },
+  "Register": {
+    "title": "创建合作伙伴账户",
+    "subTitle": "创建一个账户以注册和管理住宿。",
+    "email": "电子邮件地址",
+    "continue": "继续"
+  },
+  "RegisterContactDetails": {
+    "title": "联系信息",
+    "subTitle": "为了保护您的 Staying.com 账户，我们需要您的全名和电话号码。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "phoneNumber": "电话号码"
+  },
+  "RegisterPassword": {
+    "title": "创建密码",
+    "subTitle": "使用至少 10 个字符，包括大写字母、小写字母和数字。",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "registerAccount": "创建账户"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "请输入您的电子邮件地址",
+      "emailNotEmail": "请输入有效的电子邮件地址",
+      "firstNameNotBlank": "请输入您的名字",
+      "lastNameNotBlank": "请输入您的姓氏",
+      "phoneNumberNotBlank": "请输入您的电话号码",
+      "passwordNotBlank": "请输入新密码",
+      "passwordNotPassword": "密码必须包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符",
+      "confirmPasswordNotBlank": "请确认您的密码",
+      "confirmPasswordNotPassword": "您输入的密码不匹配。请重试。"
+    }
+  },
   "Modal": {
     "Language": {
       "title": "选择您的语言",

@@ -23,6 +23,39 @@
     "nameOne": "모든 권리 보유",
     "nameTwo": "저작권 (2023 - 2024) - Staying.com™"
   },
+  "Register": {
+    "title": "파트너 계정 생성",
+    "subTitle": "계정을 생성하여 숙박시설을 등록 및 관리하세요.",
+    "email": "이메일 주소",
+    "continue": "계속"
+  },
+  "RegisterContactDetails": {
+    "title": "연락처 정보",
+    "subTitle": "Staying.com 계정을 안전하게 유지하기 위해 귀하의 전체 이름과 전화번호가 필요합니다.",
+    "firstName": "이름",
+    "lastName": "성",
+    "phoneNumber": "전화번호"
+  },
+  "RegisterPassword": {
+    "title": "비밀번호 생성",
+    "subTitle": "최소 10자 이상 사용하세요. 대문자, 소문자 및 숫자를 포함해야 합니다.",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "registerAccount": "계정 생성"
+  },
+  "Error": {
+    "Account": {
+      "emailNotBlank": "이메일 주소를 입력해주세요",
+      "emailNotEmail": "유효한 이메일 주소를 입력해주세요",
+      "firstNameNotBlank": "이름을 입력해주세요",
+      "lastNameNotBlank": "성을 입력해주세요",
+      "phoneNumberNotBlank": "전화번호를 입력해주세요",
+      "passwordNotBlank": "새 비밀번호를 입력해주세요",
+      "passwordNotPassword": "비밀번호는 최소 1자리의 숫자, 1자리의 소문자, 1자리의 대문자, 1개의 특수 문자를 포함해야 합니다",
+      "confirmPasswordNotBlank": "비밀번호를 확인해주세요",
+      "confirmPasswordNotPassword": "입력한 비밀번호가 일치하지 않습니다. 다시 시도해주세요."
+    }
+  },
   "Modal": {
     "Language": {
       "title": "언어 선택",

@@ -9,7 +9,7 @@ function HeaderLeft() {
         title='Staying.com'
         fontMedium
         extraLarge5
-        colorTitle='text-white'
+        className='text-white'
       />
     </Link>
   );

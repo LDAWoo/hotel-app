@@ -31,6 +31,8 @@ import PartnerHost from "../pages/HostStaying/PartnerHost/PartnerHost";
 import Register from "../pages/Register/Register";
 import RegisterContactDetails from "../pages/RegisterContactDetails";
 import RegisterPassword from "../pages/RegisterPassword";
+import ForgotPassword from "../pages/ForgotPassword";
+import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
 
 const publicRoutesPathComponent = [
   {
@@ -51,6 +53,16 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.registerPassword,
     component: RegisterPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.forgotPassword,
+    component: ForgotPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.forgotConfirmation,
+    component: ForgotConfirmPassword,
     layout: LoginLayout,
   },
   {

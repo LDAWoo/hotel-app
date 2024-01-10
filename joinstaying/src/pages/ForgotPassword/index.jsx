@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
-import Button from "../../components/Buttons/Button";
-import TextInput from "../../components/TextInput/TextInput";
-import Title from "../../components/Title/Title";
-import TextError from "../../components/TextError/TextError";
 import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import Title from "../../components/Title/Title";
 import Border from "../../components/Border/Border";
-import { validateEmail } from "../../Regexs/Validate/Email";
-import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
+import TextInput from "../../components/TextInput/TextInput";
+import TextError from "../../components/TextError/TextError";
+import Button from "../../components/Buttons/Button";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import useRegisterEmail from "../../hooks/Account/Forgot/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
 
-function Register() {
+function ForgotPassword() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { currentEmail, setCurrentEmail } = useRegisterEmail();
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
-  const { t } = useTranslation();
 
   useEffect(() => {
     setEmail(currentEmail);
@@ -31,10 +30,10 @@ function Register() {
     setEmail(value);
   };
 
-  const handleContinue = () => {
+  const handleSendLink = () => {
     if (!validate()) return;
     setCurrentEmail(email);
-    navigate(routesConfig.contactDetails);
+    navigate(routesConfig.forgotConfirmation);
   };
 
   const validate = () => {
@@ -58,22 +57,21 @@ function Register() {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleContinue();
+      handleSendLink();
     }
   };
-
   return (
     <div className="w-full h-full">
       <div className="flex flex-col">
-        <Title title={t("Register.title")} extraLarge4 nowrap={false} fontBold className=" dark:text-white" />
-        <Title title={t("Register.subTitle")} xl nowrap={false} className=" dark:text-white mb-5" />
+        <Title title={t("Forgot.title")} extraLarge4 nowrap={false} fontBold className=" dark:text-white" />
+        <Title title={t("Forgot.subTitle")} xl nowrap={false} className=" dark:text-white mb-5" />
       </div>
       <div className="flex flex-col w-full gap-2 pt-8">
-        <Title title={t("Register.email")} fontMedium xl />
-        <TextInput placeholder={t("Register.email")} id="email" value={email} error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} onKeyDown={handleKeyPress} />
+        <Title title={t("Forgot.email")} fontMedium xl />
+        <TextInput placeholder={t("Forgot.email")} id="email" value={email} error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} onKeyDown={handleKeyPress} />
         <TextError error={errorEmail} />
 
-        <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleContinue} title={t("Register.continue")} />
+        <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleSendLink} title={t("Forgot.sendLink")} />
       </div>
 
       <div className=" text-[12px] text-center mt-6">
@@ -85,7 +83,7 @@ function Register() {
         {t("Partner.more")}
       </div>
 
-      <Link to={routesConfig.login}>
+      <Link to="/login">
         <Button border fontMedium className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.login")} />
       </Link>
       <Border className="mt-6" />
@@ -111,4 +109,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default ForgotPassword;

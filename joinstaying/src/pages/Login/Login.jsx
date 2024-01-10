@@ -13,6 +13,7 @@ import TextError from "../../components/TextError/TextError";
 import Title from "../../components/Title/Title";
 import { validateEmail } from "../../Regexs/Validate/Email";
 import { validatePassword } from "../../Regexs/Validate/Password";
+import routesConfig from "../../configs/routesConfig";
 
 function Login() {
   const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading } = useContext(UserContext);
@@ -80,7 +81,7 @@ function Login() {
         <Button disabled={loading} loading={loading} background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.login")} onClick={login} />
       </div>
 
-      <Link to="/forgot">
+      <Link to={routesConfig.forgotPassword}>
         <Button fontMedium xl className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full hover:bg-hotel-25 text-hotel-50" title={t("Login.forgot")} />
       </Link>
 
@@ -93,7 +94,7 @@ function Login() {
         {t("Partner.more")}
       </div>
 
-      <Link to="/register">
+      <Link to={routesConfig.register}>
         <Button border fontMedium className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.register")} />
       </Link>
       <Border className="mt-6" />

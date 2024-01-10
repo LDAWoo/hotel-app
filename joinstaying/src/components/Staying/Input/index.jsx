@@ -74,7 +74,7 @@ InputStaying.propTypes = {
   error: PropTypes.bool,
   type: PropTypes.string,
   placeHolder: PropTypes.string,
-  country: PropTypes.bool,
+  country: PropTypes.string,
   countryCode: PropTypes.string,
   countryValue: PropTypes.string,
   handleSelectCountry: PropTypes.func,

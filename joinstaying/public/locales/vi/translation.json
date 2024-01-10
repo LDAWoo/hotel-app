@@ -43,6 +43,18 @@
     "confirmPassword": "Xác nhận mật khẩu",
     "registerAccount": "Tạo tài khoản"
   },
+  "Forgot": {
+    "title": "Quên mật khẩu?",
+    "subTitle": "Vui lòng xác nhận tên đăng nhập và chúng tôi sẽ gửi bạn đường dẫn để cài lại mật khẩu.",
+    "email": "Địa chỉ email",
+    "sendLink": "Gửi link tạo lại mật khẩu"
+  },
+  "ForgotConfirmation": {
+    "title": "Kiểm tra hộp thư của bạn",
+    "subTitle1": "Chúng tôi đã gửi bạn hướng dẫn và đường link cài lại mật khẩu đến",
+    "subTitle2": "Email này có thể mất vài phút để đến hộp thư.",
+    "backLogin": "Quay lại bước đăng nhập"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",

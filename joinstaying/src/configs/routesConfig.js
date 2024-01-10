@@ -3,6 +3,8 @@ const routesConfig = {
   register: "/register",
   contactDetails: "/register/contact-details",
   registerPassword: "/register/password",
+  forgotPassword: "/forgot-password",
+  forgotConfirmation: "/forgot-password/confirmation",
   checkEmail: "/register/check-email",
 
   home: "/",

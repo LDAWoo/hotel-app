@@ -43,6 +43,18 @@
     "confirmPassword": "パスワードの確認",
     "registerAccount": "アカウントを作成"
   },
+  "Forgot": {
+    "title": "パスワードを忘れましたか？",
+    "subTitle": "ユーザー名を確認してください。パスワードをリセットするためのリンクを送信します。",
+    "email": "メールアドレス",
+    "sendLink": "パスワードリセットリンクを送信"
+  },
+  "ForgotConfirmation": {
+    "title": "受信トレイを確認してください",
+    "subTitle1": "説明書とパスワードリセットのリンクを送信しました。",
+    "subTitle2": "このメールは数分かかる場合があります。",
+    "backLogin": "ログイン画面に戻る"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "メールアドレスを入力してください",

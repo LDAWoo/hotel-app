@@ -43,6 +43,18 @@
     "confirmPassword": "确认密码",
     "registerAccount": "创建账户"
   },
+  "Forgot": {
+    "title": "忘记密码？",
+    "subTitle": "请确认您的用户名，我们将向您发送重置密码的链接。",
+    "email": "电子邮件地址",
+    "sendLink": "发送密码重置链接"
+  },
+  "ForgotConfirmation": {
+    "title": "检查您的收件箱",
+    "subTitle1": "我们已向您发送了重置密码的说明和链接至",
+    "subTitle2": "这封电子邮件可能需要几分钟才能到达您的收件箱。",
+    "backLogin": "返回登录页面"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "请输入您的电子邮件地址",

@@ -43,6 +43,19 @@
     "confirmPassword": "Confirmar Contraseña",
     "registerAccount": "Crear Cuenta"
   },
+  "Forgot": {
+    "title": "¿Olvidó la contraseña?",
+    "subTitle": "Por favor, confirme su nombre de usuario y le enviaremos un enlace para restablecer su contraseña.",
+    "email": "Dirección de correo electrónico",
+    "sendLink": "Enviar enlace de restablecimiento de contraseña"
+  },
+  "ForgotConfirmation": {
+    "title": "Revise su bandeja de entrada",
+    "subTitle1": "Le hemos enviado instrucciones y un enlace para restablecer la contraseña a",
+    "subTitle2": "Este correo electrónico puede tardar unos minutos en llegar a su bandeja de entrada.",
+    "backLogin": "Volver a la pantalla de inicio de sesión"
+  },
+
   "Error": {
     "Account": {
       "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",

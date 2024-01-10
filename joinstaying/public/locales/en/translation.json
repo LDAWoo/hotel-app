@@ -43,6 +43,18 @@
     "confirmPassword": "Confirm Password",
     "registerAccount": "Create Account"
   },
+  "Forgot": {
+    "title": "Forgot Password?",
+    "subTitle": "Please confirm your username, and we'll send you a link to reset your password.",
+    "email": "Email Address",
+    "sendLink": "Send Password Reset Link"
+  },
+  "ForgotConfirmation": {
+    "title": "Check Your Inbox",
+    "subTitle1": "We've sent you instructions and a password reset link to",
+    "subTitle2": "This email may take a few minutes to arrive in your inbox.",
+    "backLogin": "Back to Login"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "Please enter your email address",

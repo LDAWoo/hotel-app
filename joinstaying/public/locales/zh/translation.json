@@ -55,6 +55,12 @@
     "subTitle2": "这封电子邮件可能需要几分钟才能到达您的收件箱。",
     "backLogin": "返回登录页面"
   },
+  "CheckEmail": {
+    "title": "检查您的收件箱",
+    "subTitle1": "我们刚刚向以下地址发送了验证链接",
+    "subTitle2": "一旦到达，将在15分钟内有效。",
+    "backLogin": "返回登录"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "请输入您的电子邮件地址",

@@ -33,6 +33,7 @@ import RegisterContactDetails from "../pages/RegisterContactDetails";
 import RegisterPassword from "../pages/RegisterPassword";
 import ForgotPassword from "../pages/ForgotPassword";
 import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
+import CheckEmail from "../pages/CheckEmail";
 
 const publicRoutesPathComponent = [
   {
@@ -63,6 +64,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.forgotConfirmation,
     component: ForgotConfirmPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.checkEmail,
+    component: CheckEmail,
     layout: LoginLayout,
   },
   {

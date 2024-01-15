@@ -55,7 +55,12 @@
     "subTitle2": "Este correo electrónico puede tardar unos minutos en llegar a su bandeja de entrada.",
     "backLogin": "Volver a la pantalla de inicio de sesión"
   },
-
+  "CheckEmail": {
+    "title": "Verifica tu bandeja de entrada",
+    "subTitle1": "Acabamos de enviar un enlace de verificación a",
+    "subTitle2": "Una vez que llegue, será válido durante 15 minutos.",
+    "backLogin": "Volver al inicio de sesión"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",

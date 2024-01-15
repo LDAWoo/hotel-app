@@ -55,6 +55,12 @@
     "subTitle2": "このメールは数分かかる場合があります。",
     "backLogin": "ログイン画面に戻る"
   },
+  "CheckEmail": {
+    "title": "受信トレイを確認してください",
+    "subTitle1": "認証リンクをメールで送信しました",
+    "subTitle2": "到着したら15分間有効です。",
+    "backLogin": "ログインに戻る"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "メールアドレスを入力してください",

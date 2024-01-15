@@ -55,6 +55,12 @@
     "subTitle2": "This email may take a few minutes to arrive in your inbox.",
     "backLogin": "Back to Login"
   },
+  "CheckEmail": {
+    "title": "Check your inbox",
+    "subTitle1": "We've just emailed a verification link to",
+    "subTitle2": "Once it arrives, it will be valid for 15 minutes.",
+    "backLogin": "Back to Login"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "Please enter your email address",

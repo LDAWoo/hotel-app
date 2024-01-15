@@ -55,8 +55,15 @@
     "subTitle2": "Email này có thể mất vài phút để đến hộp thư.",
     "backLogin": "Quay lại bước đăng nhập"
   },
+  "CheckEmail": {
+    "title": "Kiểm tra hộp thư của bạn",
+    "subTitle1": "Chúng tôi vừa gửi một liên kết xác nhận đến",
+    "subTitle2": "Khi nó đến, nó sẽ có hiệu lực trong 15 phút.",
+    "backLogin": "Quay lại Đăng nhập"
+  },
   "Error": {
     "Account": {
+      "loginFailed": "Sai mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
       "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
       "firstNameNotBlank": "Vui lòng nhập tên của bạn",

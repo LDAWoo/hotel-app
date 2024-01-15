@@ -11,16 +11,26 @@ import { LiaEyeSlashSolid } from "react-icons/lia";
 import { LiaEyeSolid } from "react-icons/lia";
 import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
+import { postRegister } from "../../api/User/Register";
+import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
+import useRegisterCheckEmail from "../../hooks/Account/CheckEmail/useRegisterCheckEmail";
 function RegisterPassword() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { currentEmail } = useRegisterEmail();
+  const { currentFirstName, currentLastName, currentPhoneNumber } = useRegisterContactDetails();
+
+  const { email } = useRegisterCheckEmail();
 
   useEffect(() => {
     if (!currentEmail.length > 0) {
       navigate(routesConfig.register);
+    } else {
+      if (currentEmail === email) {
+        navigate(routesConfig.register);
+      }
     }
-  }, [currentEmail, navigate]);
+  }, [currentEmail, navigate, email]);
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -29,6 +39,8 @@ function RegisterPassword() {
 
   const [errorPassword, setErrorPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+
+  const [loading, setLoading] = useState();
 
   const handleChangePassword = (e) => {
     const value = e.target.value.trim();
@@ -52,6 +64,26 @@ function RegisterPassword() {
   };
   const handleRegister = () => {
     if (!validate()) return;
+
+    const data = {
+      email: currentEmail,
+      password: password,
+      firstName: currentFirstName,
+      lastName: currentLastName,
+      phoneNumber: currentPhoneNumber,
+    };
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        await postRegister(data);
+        setLoading(false);
+        navigate(routesConfig.checkEmail);
+      } catch (error) {
+        navigate(routesConfig.register);
+      }
+    };
+    fetchData();
   };
 
   const validate = () => {
@@ -144,7 +176,7 @@ function RegisterPassword() {
         />
         <TextError error={errorConfirmPassword} />
 
-        <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleRegister} title={t("RegisterPassword.registerAccount")} />
+        <Button background disabled={loading} loading={loading} fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleRegister} title={t("RegisterPassword.registerAccount")} />
       </div>
 
       <Border className="mt-6" />

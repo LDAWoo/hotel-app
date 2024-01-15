@@ -11,6 +11,7 @@ import { getCountryCallingCode } from "react-phone-number-input";
 import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
 import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
+import useRegisterCheckEmail from "../../hooks/Account/CheckEmail/useRegisterCheckEmail";
 
 function RegisterContactDetails() {
   const { t } = useTranslation();
@@ -18,11 +19,17 @@ function RegisterContactDetails() {
   const { currentEmail } = useRegisterEmail();
   const { currentFirstName, currentLastName, currentPhoneNumber, setContactDetails } = useRegisterContactDetails();
 
+  const { email } = useRegisterCheckEmail();
+
   useEffect(() => {
     if (!currentEmail.length > 0) {
       navigate(routesConfig.register);
+    } else {
+      if (currentEmail === email) {
+        navigate(routesConfig.register);
+      }
     }
-  }, [currentEmail, navigate]);
+  }, [currentEmail, navigate, email]);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

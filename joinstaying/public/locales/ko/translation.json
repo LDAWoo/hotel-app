@@ -43,6 +43,12 @@
     "confirmPassword": "비밀번호 확인",
     "registerAccount": "계정 생성"
   },
+  "CheckEmail": {
+    "title": "이메일 확인",
+    "subTitle1": "방금 인증 링크를 이메일로 보냈습니다",
+    "subTitle2": "도착하면 15분 동안 유효합니다.",
+    "backLogin": "로그인으로 돌아가기"
+  },
   "Error": {
     "Account": {
       "emailNotBlank": "이메일 주소를 입력해주세요",

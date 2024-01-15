@@ -14,10 +14,11 @@ import Title from "../../components/Title/Title";
 import { validateEmail } from "../../Regexs/Validate/Email";
 import { validatePassword } from "../../Regexs/Validate/Password";
 import routesConfig from "../../configs/routesConfig";
+import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading } = useContext(UserContext);
-
+  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin } = useContext(UserContext);
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
@@ -51,19 +52,23 @@ function Login() {
     //   setState((prevState) => ({ ...prevState, errorEmail: "" }));
     // }
 
-    if (!validatePassword(password)) {
-      setState((prevState) => ({
-        ...prevState,
-        errorPassword: "Password invalid",
-      }));
-      isValid = false;
-    } else {
-      setState((prevState) => ({
-        ...prevState,
-        errorPassword: "",
-      }));
-    }
+    // if (!validatePassword(password)) {
+    //   setState((prevState) => ({
+    //     ...prevState,
+    //     errorPassword: "Password invalid",
+    //   }));
+    //   isValid = false;
+    // } else {
+    //   setState((prevState) => ({
+    //     ...prevState,
+    //     errorPassword: "",
+    //   }));
+    // }
     return isValid;
+  };
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -72,12 +77,28 @@ function Login() {
 
       <div className="flex flex-col w-full gap-2 pt-8">
         <Title title={t("Login.email")} fontMedium xl />
-        <TextInput placeholder={t("Login.email")} id="email" error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
+        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
         <TextError error={errorEmail} />
         <Title title={t("Login.password")} fontMedium xl />
-        <TextInput placeholder={t("Login.password")} id="password" name="password" error={errorPassword.length > 0} type="password" required sizeIcon={24} onChange={handleChange} />
+        <TextInput
+          placeholder={t("Login.password")}
+          id="password"
+          name="password"
+          error={errorPassword.length > 0 || errorLogin.length > 0}
+          type={showPassword ? "text" : "password"}
+          copy
+          classCopy="absolute top-0 bottom-0 flex items-center right-0 cursor-pointer hover:bg-gray-100 p-2 rounded-tr-sm rounded-br-sm duration-200"
+          onClickCopy={handleShowPassword}
+          iconCopy={showPassword ? LiaEyeSlashSolid : LiaEyeSolid}
+          sizeIconCopy={18}
+          required
+          value={password}
+          sizeIcon={24}
+          onChange={handleChange}
+        />
         <TextError error={errorPassword} />
 
+        <TextError error={errorLogin} />
         <Button disabled={loading} loading={loading} background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.login")} onClick={login} />
       </div>
 

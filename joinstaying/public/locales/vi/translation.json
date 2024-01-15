@@ -63,7 +63,7 @@
   },
   "Error": {
     "Account": {
-      "loginFailed": "Sai mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
+      "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
       "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
       "firstNameNotBlank": "Vui lòng nhập tên của bạn",

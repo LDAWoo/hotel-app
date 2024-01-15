@@ -1,14 +1,14 @@
+import i18next from "i18next";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
+import Border from "../../components/Border/Border";
 import Button from "../../components/Buttons/Button";
+import TextError from "../../components/TextError/TextError";
 import TextInput from "../../components/TextInput/TextInput";
 import Title from "../../components/Title/Title";
-import TextError from "../../components/TextError/TextError";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import Border from "../../components/Border/Border";
-import { validateEmail } from "../../Regexs/Validate/Email";
-import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
+import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 
 function Register() {
   const navigate = useNavigate();
@@ -30,6 +30,12 @@ function Register() {
     }
     setEmail(value);
   };
+
+  useEffect(() => {
+    if (errorEmail.length > 0) {
+      validate();
+    }
+  }, [i18next.language]);
 
   const handleContinue = () => {
     if (!validate()) return;

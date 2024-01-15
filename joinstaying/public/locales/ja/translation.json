@@ -63,6 +63,7 @@
   },
   "Error": {
     "Account": {
+      "loginFailed": "メールアドレスまたはパスワードが間違っています。もう一度やり直すか、確認リンクを使用してください。",
       "emailNotBlank": "メールアドレスを入力してください",
       "emailNotEmail": "有効なメールアドレスを入力してください",
       "firstNameNotBlank": "お名前を入力してください",

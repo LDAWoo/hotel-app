@@ -63,6 +63,7 @@
   },
   "Error": {
     "Account": {
+      "loginFailed": "Incorrect email or password. Please try again or use the verification link.",
       "emailNotBlank": "Please enter your email address",
       "emailNotEmail": "Please enter a valid email address",
       "firstNameNotBlank": "Please enter your first name",

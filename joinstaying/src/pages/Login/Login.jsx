@@ -1,23 +1,19 @@
-import { useContext, useState } from "react";
-import { AiFillFacebook } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
+import Border from "../../components/Border/Border";
 import Button from "../../components/Buttons/Button";
 import { UserContext } from "../../components/Contexts/AppUserProvider";
-import TextInput from "../../components/TextInput/TextInput";
-
-import Border from "../../components/Border/Border";
 import TextError from "../../components/TextError/TextError";
+import TextInput from "../../components/TextInput/TextInput";
 import Title from "../../components/Title/Title";
-import { validateEmail } from "../../Regexs/Validate/Email";
-import { validatePassword } from "../../Regexs/Validate/Password";
 import routesConfig from "../../configs/routesConfig";
-import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin } = useContext(UserContext);
+  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({});
 
@@ -37,6 +33,15 @@ function Login() {
 
   const { errorEmail, errorPassword } = state;
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (errorEmail.length > 0 || errorPassword.length > 0 || errorLogin.length > 0) {
+      validate();
+      if (errorLogin.length > 0) {
+        setErrorLogin(t("Error.Account.loginFailed"));
+      }
+    }
+  }, [i18next.language]);
 
   const login = () => {
     if (!validate()) return;
@@ -77,7 +82,7 @@ function Login() {
 
       <div className="flex flex-col w-full gap-2 pt-8">
         <Title title={t("Login.email")} fontMedium xl />
-        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
+        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0 || errorLogin.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
         <TextError error={errorEmail} />
         <Title title={t("Login.password")} fontMedium xl />
         <TextInput

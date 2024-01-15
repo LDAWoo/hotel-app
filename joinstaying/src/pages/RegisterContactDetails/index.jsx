@@ -1,17 +1,18 @@
+import i18next from "i18next";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { getCountryCallingCode } from "react-phone-number-input";
 import { Link, useNavigate } from "react-router-dom";
+import Border from "../../components/Border/Border";
 import Button from "../../components/Buttons/Button";
+import InputStaying from "../../components/Staying/Input";
 import TextError from "../../components/TextError/TextError";
 import TextInput from "../../components/TextInput/TextInput";
 import Title from "../../components/Title/Title";
-import { useTranslation } from "react-i18next";
-import Border from "../../components/Border/Border";
-import { useEffect, useState } from "react";
-import InputStaying from "../../components/Staying/Input";
-import { getCountryCallingCode } from "react-phone-number-input";
-import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
-import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
 import useRegisterCheckEmail from "../../hooks/Account/CheckEmail/useRegisterCheckEmail";
+import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
+import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
 
 function RegisterContactDetails() {
   const { t } = useTranslation();
@@ -53,6 +54,12 @@ function RegisterContactDetails() {
   useEffect(() => {
     setPhoneNumber(currentPhoneNumber);
   }, [currentPhoneNumber]);
+
+  useEffect(() => {
+    if (errorFirstName.length > 0 || errorLastName.length > 0 || errorPhoneNumber.length > 0) {
+      validate();
+    }
+  }, [i18next.language]);
 
   const handleChangeFirstName = (e) => {
     const value = e.target.value.trim();

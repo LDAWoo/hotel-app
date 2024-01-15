@@ -51,6 +51,7 @@
   },
   "Error": {
     "Account": {
+      "loginFailed": "이메일 또는 비밀번호가 잘못되었습니다. 다시 시도하거나 확인 링크를 사용하세요.",
       "emailNotBlank": "이메일 주소를 입력해주세요",
       "emailNotEmail": "유효한 이메일 주소를 입력해주세요",
       "firstNameNotBlank": "이름을 입력해주세요",

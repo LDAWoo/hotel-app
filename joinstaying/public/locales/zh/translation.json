@@ -63,6 +63,7 @@
   },
   "Error": {
     "Account": {
+      "loginFailed": "邮箱或密码错误。请重试或使用验证链接。",
       "emailNotBlank": "请输入您的电子邮件地址",
       "emailNotEmail": "请输入有效的电子邮件地址",
       "firstNameNotBlank": "请输入您的名字",

@@ -1,27 +1,79 @@
 {
   "Login": {
-    "title": "Đăng Nhập",
-    "loginWithOpenAccount": "Đăng nhập bằng mở tài khoản",
-    "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
-    "email": "Email của bạn",
+    "title": "Đăng nhập để quản lý chỗ nghỉ",
+    "email": "Email đăng nhập",
     "password": "Mật khẩu",
-    "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
-    "doNotHaveAnAccount": "Bạn chưa có tài khoản?",
-    "register": "Đăng ký"
+    "login": "Đăng Nhập",
+    "register": "Đăng ký",
+    "forgot": "Quên mật khẩu"
+  },
+  "Partner": {
+    "partner": "Quý vị có thắc mắc về chỗ nghỉ của mình hay extranet? Hãy ghé thăm",
+    "help": "Trung tâm Trợ giúp Đối tác",
+    "more": "để tìm hiểu thêm."
+  },
+  "FooterAccount": {
+    "nameOne": "Qua việc đăng nhập hoặc tạo tài khoản, bạn đồng ý với các",
+    "nameTwo": "Điều khoản và Điều kiện",
+    "nameThree": "cũng như",
+    "nameFour": "Chính sách An toàn và Bảo mật",
+    "nameFive": " của chúng tôi"
+  },
+  "AccessFooter": {
+    "nameOne": "Bảo lưu mọi quyền",
+    "nameTwo": "Bản quyền (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "Đăng ký",
-    "registerWithOpenAccount": "Đăng nhập bằng mở tài khoản",
-    "orContinueWithEmail": "Hoặc tiếp tục với địa chỉ email",
-    "email": "Email của bạn",
-    "continue": "Tiếp tục",
-    "checkCodeEmail": "Chúng tôi chỉ gửi cho bạn một mã xác minh. Kiểm tra hộp thư đến của bạn để nhận chúng.",
-    "errorCode": "Mã bạn đã nhập không chính xác.",
+    "title": "Tạo tài khoản đối tác",
+    "subTitle": "Tạo tài khoản để đăng ký và quản lý chỗ nghỉ.",
+    "email": "Địa chỉ email",
+    "continue": "Tiếp tục"
+  },
+  "RegisterContactDetails": {
+    "title": "Thông tin liên lạc",
+    "subTitle": "Để tài khoản Staying.com của bạn được bảo mật, chúng tôi cần biết họ tên đầy đủ và số điện thoại của bạn.",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "phoneNumber": "Số điện thoại"
+  },
+  "RegisterPassword": {
+    "title": "Tạo mật khẩu",
+    "subTitle": "Dùng ít nhất 10 ký tự, trong đó có chữ hoa, chữ thường và số.",
     "password": "Mật khẩu",
-    "passwordConfirm": "Xác nhận mật khẩu",
-    "description": "Trang web này được bảo vệ bởi reCAPTCHA và Chính sách quyền riêng tư của Google.",
-    "alreadyAMember": "Đã là thành viên hay chưa ?",
-    "login": "Đăng Nhập"
+    "confirmPassword": "Xác nhận mật khẩu",
+    "registerAccount": "Tạo tài khoản"
+  },
+  "Forgot": {
+    "title": "Quên mật khẩu?",
+    "subTitle": "Vui lòng xác nhận tên đăng nhập và chúng tôi sẽ gửi bạn đường dẫn để cài lại mật khẩu.",
+    "email": "Địa chỉ email",
+    "sendLink": "Gửi link tạo lại mật khẩu"
+  },
+  "ForgotConfirmation": {
+    "title": "Kiểm tra hộp thư của bạn",
+    "subTitle1": "Chúng tôi đã gửi bạn hướng dẫn và đường link cài lại mật khẩu đến",
+    "subTitle2": "Email này có thể mất vài phút để đến hộp thư.",
+    "backLogin": "Quay lại bước đăng nhập"
+  },
+  "CheckEmail": {
+    "title": "Kiểm tra hộp thư của bạn",
+    "subTitle1": "Chúng tôi vừa gửi một liên kết xác nhận đến",
+    "subTitle2": "Khi nó đến, nó sẽ có hiệu lực trong 15 phút.",
+    "backLogin": "Quay lại Đăng nhập"
+  },
+  "Error": {
+    "Account": {
+      "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
+      "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
+      "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
+      "firstNameNotBlank": "Vui lòng nhập tên của bạn",
+      "lastNameNotBlank": "Vui lòng nhập họ của bạn",
+      "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
+      "passwordNotBlank": "Vui lòng nhập mật khẩu mới",
+      "passwordNotPassword": "Mật mã phải có ít nhất 1 chữ số, 1 chữ thường, 1 chữ hoa, 1 ký tự đặt biệt",
+      "confirmPasswordNotBlank": "Vui lòng xác nhận mật khẩu",
+      "confirmPasswordNotPassword": "Mật khẩu bạn đã nhập không khớp. Vui lòng thử lại."
+    }
   },
   "Modal": {
     "Language": {

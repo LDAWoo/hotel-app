@@ -37,16 +37,9 @@ const ComponentAddRess = () => {
 
   useEffect(() => {
     const resetOtherFields = () => {
-      const fieldsToReset = [
-        "streetAddress",
-        "districtAddress",
-        "city",
-        "postalCode",
-      ];
+      const fieldsToReset = ["streetAddress", "districtAddress", "city", "postalCode"];
       fieldsToReset.forEach((field) => setField(field, ""));
-      fieldsToReset.forEach((field) =>
-        dispatch({ type: "SELECT_OPTION", payload: { value: "", field } }),
-      );
+      fieldsToReset.forEach((field) => dispatch({ type: "SELECT_OPTION", payload: { value: "", field } }));
     };
 
     if (prevCountryRef.current !== data.country) {
@@ -73,27 +66,18 @@ const ComponentAddRess = () => {
     <div>
       {AddRessData.map((item, index) => (
         <div key={index}>
-          <div className='flex flex-col gap-2'>
+          <div className="flex flex-col gap-2">
             {item?.type === "select" && item?.data && (
               <div>
                 {item?.data.map((item, index) => (
-                  <div key={index} className='flex flex-col gap-2'>
-                    <label className='font-medium text-[14px]'>
-                      {item?.name}
-                    </label>
+                  <div key={index} className="flex flex-col gap-2">
+                    <label className="font-medium text-[14px]">{item?.name}</label>
                     <SelectInput onChange={handleSelectCountry} value={country}>
-                      <option
-                        className='text-[14px] text-primary-700 dark:text-white'
-                        value=''
-                      >
+                      <option className="text-[14px] text-primary-700 dark:text-white" value="">
                         Select {item?.name}
                       </option>
                       {item?.data.map((country, index) => (
-                        <option
-                          key={index}
-                          value={country.name}
-                          className='text-[14px] text-primary-700 dark:text-white'
-                        >
+                        <option key={index} value={country.name} className="text-[14px] text-primary-700 dark:text-white">
                           {country.name}
                         </option>
                       ))}
@@ -107,25 +91,9 @@ const ComponentAddRess = () => {
                 {country !== "" && (
                   <div>
                     {item?.data.map((item, index) => (
-                      <div key={index} className='flex flex-col gap-2'>
-                        <label className='font-medium text-[14px]'>
-                          {item?.name}
-                        </label>
-                        <TextInput
-                          className={`mb-5 ${
-                            index === 2 ? "w-[50%]" : "w-full"
-                          }`}
-                          classBorder='border border-primary-100 rounded-sm'
-                          classInput='w-full focus:outline-none placeholder:text-[14px] text-[14px] border-[1px] pt-[5px] pb-[5px] pl-[3px] pr-[3px] border-transparent focus:border-hotel-75 dark:focus:border-hotel-500 dark:bg-primary-700 dark:text-white'
-                          placeholder={item?.placeHolder}
-                          value={
-                            state.find((s) => s.field === item?.field)
-                              ?.selectedValue || ""
-                          }
-                          onChange={(e) =>
-                            handleChooseOption(e.target.value, item?.field)
-                          }
-                        />
+                      <div key={index} className="flex flex-col gap-2">
+                        <label className="font-medium text-[14px]">{item?.name}</label>
+                        <TextInput className={`mb-5 ${index === 2 ? "w-[50%]" : "w-full"}`} placeholder={item?.placeHolder} sizeIcon={20} value={state.find((s) => s.field === item?.field)?.selectedValue || ""} onChange={(e) => handleChooseOption(e.target.value, item?.field)} />
                       </div>
                     ))}
                   </div>

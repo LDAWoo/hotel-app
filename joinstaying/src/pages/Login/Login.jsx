@@ -1,7 +1,7 @@
+import i18next from "i18next";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
 import Border from "../../components/Border/Border";
@@ -15,7 +15,10 @@ import routesConfig from "../../configs/routesConfig";
 function Login() {
   const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
@@ -50,25 +53,24 @@ function Login() {
 
   const validate = () => {
     let isValid = true;
-    // if (!validateEmail(email)) {
-    //   setState((prevState) => ({ ...prevState, errorEmail: "Email invalid" }));
-    //   isValid = false;
-    // } else {
-    //   setState((prevState) => ({ ...prevState, errorEmail: "" }));
-    // }
 
-    // if (!validatePassword(password)) {
-    //   setState((prevState) => ({
-    //     ...prevState,
-    //     errorPassword: "Password invalid",
-    //   }));
-    //   isValid = false;
-    // } else {
-    //   setState((prevState) => ({
-    //     ...prevState,
-    //     errorPassword: "",
-    //   }));
-    // }
+    if (email === "") {
+      isValid = false;
+      setState((prevState) => ({ ...prevState, errorEmail: t("Error.Account.emailNotBlank") }));
+    } else {
+      setState((prevState) => ({ ...prevState, errorEmail: "" }));
+    }
+
+    if (password === "") {
+      isValid = false;
+      setState((prevState) => ({
+        ...prevState,
+        errorPassword: t("Error.Account.passwordNotBlank"),
+      }));
+    } else {
+      setState((prevState) => ({ ...prevState, errorPassword: "" }));
+    }
+
     return isValid;
   };
 

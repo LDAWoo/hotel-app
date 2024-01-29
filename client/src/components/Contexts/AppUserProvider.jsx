@@ -1,4 +1,4 @@
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { getUserWithToken, postUserLogin } from "../../api/User/Login";
@@ -7,28 +7,33 @@ import removeCookie from "../../hooks/useRegisterRemoveCookie";
 import setCookie from "../../hooks/useRegisterSetCookie";
 import routesConfig from "../../configs/routesConfig";
 import getCookie from "../../hooks/useRegisterGetCookie";
+import { useTranslation } from "react-i18next";
 
 export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {
-  const { loginWithRedirect, logout } = useAuth0();
+  // const { loginWithRedirect, logout } = useAuth0();
+  const { t } = useTranslation();
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [errorLogin, setErrorLogin] = useState("");
   const navigate = useNavigate();
   const handleLoginWithGoogle = () => {
-    loginWithRedirect({ connection: "google-oauth2" });
+    // loginWithRedirect({ connection: "google-oauth2" });
   };
 
   const handleLoginWithFacebook = () => {
-    loginWithRedirect({ connection: "facebook" });
+    // loginWithRedirect({ connection: "facebook" });
   };
 
   const handleLogout = () => {
-    logout();
+    // logout();
     removeCookie("token");
     setUser({});
   };
 
   const handleLogin = async (userData) => {
     try {
+      setLoading(true);
       const response = await postUserLogin(userData);
 
       if (response && response.token) {
@@ -40,12 +45,15 @@ const AppUserProvider = ({ children }) => {
         setCookie("token", token, expirationDate);
         setUser(response);
         navigate(routesConfig.home);
+        setErrorLogin("");
       } else {
         navigate(routesConfig.login);
         setUser({});
       }
     } catch (e) {
-      console.log(e);
+      setErrorLogin(t("Error.Account.loginFailed"));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,12 +77,16 @@ const AppUserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
+        loading,
+        setLoading,
         handleLoginWithGoogle,
         handleLoginWithFacebook,
         handleLogin,
         handleLogout,
         user,
         setUser,
+        errorLogin,
+        setErrorLogin,
       }}
     >
       {children}

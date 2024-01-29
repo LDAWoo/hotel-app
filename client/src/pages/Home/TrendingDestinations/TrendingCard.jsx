@@ -20,12 +20,7 @@ function TrendingCard({ to, destination, areaImage, src, maxImage }) {
         <div className='absolute top-6 left-6'>
           <div className='flex flex-col md:flex-row gap-2 items-start md:items-center'>
             {destination && (
-              <Title
-                title={destination}
-                colorTitle='text-white'
-                fontBold
-                xxxl
-              />
+              <Title title={destination} className='text-white' fontBold xxxl />
             )}
             {areaImage && (
               <div className='w-6 h-5 rounded-sm'>

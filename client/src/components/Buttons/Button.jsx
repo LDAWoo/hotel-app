@@ -5,6 +5,7 @@ import Image from "../Image/Image";
 import Title from "../Title/Title";
 function Button({
   className,
+  classButton,
   background,
   border,
   classIcon,
@@ -13,8 +14,8 @@ function Button({
   classTitle,
   title,
   size,
-  customSize,
   disabled,
+  loading,
   classImg,
   src,
   srcDark,
@@ -34,7 +35,6 @@ function Button({
   medium,
   small,
   nowrap,
-  titleCustom,
 }) {
   return (
     <button
@@ -58,10 +58,20 @@ function Button({
       onClick={onClick}
     >
       <div
-        className={`${
-          title ? "justify-start" : "item-center flex-grow justify-center"
-        } ml-2 mr-2 flex items-center gap-2 `}
+        className={`ml-2 mr-2 flex items-center gap-2 ${
+          classButton
+            ? classButton
+            : title
+            ? "justify-start"
+            : "item-center flex-grow justify-center"
+        } `}
       >
+        {loading && (
+          <div
+            className='inline-block h-[26px] w-[26px] animate-spin rounded-full border-[3px] border-solid border-hotel-100 border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]'
+            role='status'
+          />
+        )}
         {srcPosition === "before" && src && (
           <Image
             className={classImg}
@@ -75,7 +85,6 @@ function Button({
         {titlePosition === "before" && (
           <Title
             title={title}
-            colorTitle={classTitle}
             fontBold={fontBold}
             fontMedium={fontMedium}
             xxxl={xxxl}
@@ -85,16 +94,11 @@ function Button({
             medium={medium}
             small={small}
             nowrap={nowrap}
-            titleCustom={titleCustom}
+            className={classTitle}
           />
         )}
         {iconPosition !== "right" && icon && (
-          <Icon
-            classIcon={classIcon}
-            icon={icon}
-            customSize={customSize}
-            size={size}
-          />
+          <Icon classIcon={classIcon} icon={icon} size={size} />
         )}
         <div className={`${iconPosition !== "right" ? "" : "flex-1"}`}>
           {srcPosition !== "before" && src && (
@@ -110,7 +114,6 @@ function Button({
           {titlePosition !== "before" && title && (
             <Title
               title={title}
-              colorTitle={classTitle}
               fontBold={fontBold}
               fontMedium={fontMedium}
               xxxl={xxxl}
@@ -120,17 +123,12 @@ function Button({
               medium={medium}
               small={small}
               nowrap={nowrap}
-              titleCustom={titleCustom}
+              className={classTitle}
             />
           )}
         </div>
         {active && iconPosition === "right" && icon && (
-          <Icon
-            classIcon={classIcon}
-            icon={icon}
-            customSize={customSize}
-            size={size}
-          />
+          <Icon classIcon={classIcon} icon={icon} size={size} />
         )}
       </div>
     </button>
@@ -139,6 +137,7 @@ function Button({
 
 Button.propTypes = {
   className: PropTypes.string,
+  classButton: PropTypes.string,
   background: PropTypes.bool,
   border: PropTypes.bool,
   classIcon: PropTypes.string,
@@ -146,10 +145,10 @@ Button.propTypes = {
   classTitle: PropTypes.string,
   title: PropTypes.string,
   size: PropTypes.number,
-  customSize: PropTypes.number,
   onClick: PropTypes.func,
   active: PropTypes.bool,
   disabled: PropTypes.bool,
+  loading: PropTypes.bool,
   classImg: PropTypes.string,
   src: PropTypes.string,
   srcDark: PropTypes.string,
@@ -168,7 +167,6 @@ Button.propTypes = {
   medium: PropTypes.bool,
   small: PropTypes.bool,
   nowrap: PropTypes.bool,
-  titleCustom: PropTypes.string,
 };
 
 export default memo(Button);

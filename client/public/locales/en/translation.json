@@ -1,28 +1,79 @@
 {
   "Login": {
-    "title": "Login",
-    "loginWithOpenAccount": "Login with Open Account",
-    "orContinueWithEmail": "Or continue with email address",
-    "email": "Your email",
+    "title": "Login to Manage Accommodations",
+    "email": "Login Email",
     "password": "Password",
-    "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
-    "doNotHaveAnAccount": "Don’t have an account ?",
-    "register": "Register"
+    "login": "Log In",
+    "register": "Register",
+    "forgot": "Forgot Password"
   },
-
+  "Partner": {
+    "partner": "Do you have questions about your accommodation or extranet? Visit the",
+    "help": "Partner Help Center",
+    "more": "to learn more."
+  },
+  "FooterAccount": {
+    "nameOne": "By logging in or creating an account, you agree to our",
+    "nameTwo": "Terms and Conditions",
+    "nameThree": "as well as",
+    "nameFour": "our Safety and Security Policies",
+    "nameFive": "."
+  },
+  "AccessFooter": {
+    "nameOne": "All rights reserved",
+    "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
+  },
   "Register": {
-    "title": "Register",
-    "registerWithOpenAccount": "Register with Open Account",
-    "orContinueWithEmail": "Or continue with email address",
-    "email": "Your email",
-    "continue": "Continue",
-    "checkCodeEmail": "We just send you a verify code. Check your inbox to get them.",
-    "errorCode": "The code you entered is incorrect.",
+    "title": "Partner Account Creation",
+    "subTitle": "Create an account to register and manage accommodations.",
+    "email": "Email Address",
+    "continue": "Continue"
+  },
+  "RegisterContactDetails": {
+    "title": "Contact Information",
+    "subTitle": "To secure your Staying.com account, we need your full name and phone number.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number"
+  },
+  "RegisterPassword": {
+    "title": "Create Password",
+    "subTitle": "Use at least 10 characters, including uppercase, lowercase, and numbers.",
     "password": "Password",
-    "passwordConfirm": "Password confirm",
-    "description": "This site is protected by reCAPTCHA and the Google Privacy Policy.",
-    "alreadyAMember": "Already a member ?",
-    "login": "Login"
+    "confirmPassword": "Confirm Password",
+    "registerAccount": "Create Account"
+  },
+  "Forgot": {
+    "title": "Forgot Password?",
+    "subTitle": "Please confirm your username, and we'll send you a link to reset your password.",
+    "email": "Email Address",
+    "sendLink": "Send Password Reset Link"
+  },
+  "ForgotConfirmation": {
+    "title": "Check Your Inbox",
+    "subTitle1": "We've sent you instructions and a password reset link to",
+    "subTitle2": "This email may take a few minutes to arrive in your inbox.",
+    "backLogin": "Back to Login"
+  },
+  "CheckEmail": {
+    "title": "Check your inbox",
+    "subTitle1": "We've just emailed a verification link to",
+    "subTitle2": "Once it arrives, it will be valid for 15 minutes.",
+    "backLogin": "Back to Login"
+  },
+  "Error": {
+    "Account": {
+      "loginFailed": "Incorrect email or password. Please try again or use the verification link.",
+      "emailNotBlank": "Please enter your email address",
+      "emailNotEmail": "Please enter a valid email address",
+      "firstNameNotBlank": "Please enter your first name",
+      "lastNameNotBlank": "Please enter your last name",
+      "phoneNumberNotBlank": "Please enter your phone number",
+      "passwordNotBlank": "Please enter a new password",
+      "passwordNotPassword": "Password must contain at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character",
+      "confirmPasswordNotBlank": "Please confirm your password",
+      "confirmPasswordNotPassword": "The passwords you entered do not match. Please try again."
+    }
   },
   "Modal": {
     "Language": {

@@ -11,27 +11,14 @@ const HotelPriceHost = () => {
   const { value } = useRegisterHotelPriceValue();
 
   const handleBack = () => {
-    window.history.back();
+    navigate(routesConfig.becomeAHostUnitName);
   };
 
   const handleContinue = () => {
     navigate(routesConfig.becomeAHostHotelPriceOverview);
   };
 
-  return (
-    <ComponentHost
-      title='Set the price per night for this room'
-      componentLeft={<ComponentHotelPrice />}
-      componentRight={<ComponentNotificationHotelPrice />}
-      footer={
-        <FooterHost
-          onBack={handleBack}
-          onContinue={handleContinue}
-          disabled={value < 1}
-        />
-      }
-    />
-  );
+  return <ComponentHost title="Set the price per night for this room" componentLeft={<ComponentHotelPrice />} componentRight={<ComponentNotificationHotelPrice />} footer={<FooterHost onBack={handleBack} onContinue={handleContinue} disabled={value < 1} />} />;
 };
 
 export default HotelPriceHost;

@@ -67,8 +67,7 @@ export const ExtraBed = [
     ],
   },
   {
-    title:
-      "Đánh dấu chọn ô nếu Quý vị cho phép các khách sau đây ngủ trên gường phụ.",
+    title: "Đánh dấu chọn ô nếu Quý vị cho phép các khách sau đây ngủ trên gường phụ.",
     type: "checkbox",
     data: [
       {
@@ -86,65 +85,66 @@ export const ExtraBed = [
             title: "",
             type: "select",
             data: [
+              { value: 0, name: "Select old" },
               {
-                id: 3,
-                value: "Đến 3 tuổi",
+                value: 3,
+                name: "Đến 3 tuổi",
               },
               {
-                id: 4,
-                value: "Đến 4 tuổi",
+                value: 4,
+                name: "Đến 4 tuổi",
               },
               {
-                id: 5,
-                value: "Đến 5 tuổi",
+                value: 5,
+                name: "Đến 5 tuổi",
               },
               {
-                id: 6,
-                value: "Đến 6 tuổi",
+                value: 6,
+                name: "Đến 6 tuổi",
               },
               {
-                id: 7,
-                value: "Đến 7 tuổi",
+                value: 7,
+                name: "Đến 7 tuổi",
               },
               {
-                id: 8,
-                value: "Đến 8 tuổi",
+                value: 8,
+                name: "Đến 8 tuổi",
               },
               {
-                id: 9,
-                value: "Đến 9 tuổi",
+                value: 9,
+                name: "Đến 9 tuổi",
               },
               {
-                id: 10,
-                value: "Đến 10 tuổi",
+                value: 10,
+                name: "Đến 10 tuổi",
               },
               {
-                id: 11,
-                value: "Đến 11 tuổi",
+                value: 11,
+                name: "Đến 11 tuổi",
               },
               {
-                id: 12,
-                value: "Đến 12 tuổi",
+                value: 12,
+                name: "Đến 12 tuổi",
               },
               {
-                id: 13,
-                value: "Đến 13 tuổi",
+                value: 13,
+                name: "Đến 13 tuổi",
               },
               {
-                id: 14,
-                value: "Đến 14 tuổi",
+                value: 14,
+                name: "Đến 14 tuổi",
               },
               {
-                id: 15,
-                value: "Đến 15 tuổi",
+                value: 15,
+                name: "Đến 15 tuổi",
               },
               {
-                id: 16,
-                value: "Đến 16 tuổi",
+                value: 16,
+                name: "Đến 16 tuổi",
               },
               {
-                id: 17,
-                value: "Đến 17 tuổi",
+                value: 17,
+                name: "Đến 17 tuổi",
               },
             ],
           },

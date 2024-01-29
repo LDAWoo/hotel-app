@@ -6,15 +6,47 @@ import LoginLayout from "../components/Layouts/LoginLayout/LoginLayout";
 import Home from "../pages/Home/Home";
 import HotelDetails from "../pages/HotelDetalis/HotelDetalis";
 import Login from "../pages/Login/Login";
-import Check from "../pages/Register/Check/Check";
 import Register from "../pages/Register/Register";
 import SearchResult from "../pages/SearchResults/SearchResults";
 import SecureBooking from "../pages/SecureBooking/SecureBooking";
+import RegisterContactDetails from "../pages/RegisterContactDetails";
+import RegisterPassword from "../pages/RegisterPassword";
+import ForgotPassword from "../pages/ForgotPassword";
+import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
+import CheckEmail from "../pages/CheckEmail";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
-  { path: routesConfig.register, component: Register, layout: LoginLayout },
-  { path: routesConfig.checkEmail, component: Check, layout: LoginLayout },
+  {
+    path: routesConfig.register,
+    component: Register,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.contactDetails,
+    component: RegisterContactDetails,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.registerPassword,
+    component: RegisterPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.forgotPassword,
+    component: ForgotPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.forgotConfirmation,
+    component: ForgotConfirmPassword,
+    layout: LoginLayout,
+  },
+  {
+    path: routesConfig.checkEmail,
+    component: CheckEmail,
+    layout: LoginLayout,
+  },
   { path: routesConfig.home, component: Home, layout: DefaultLayout },
   {
     path: routesConfig.searchResults,

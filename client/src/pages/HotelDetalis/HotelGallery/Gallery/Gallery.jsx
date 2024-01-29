@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { photos } from "../../../../components/Constants/GalleryPhotos";
+// import { photos } from "../../../../components/Constants/GalleryPhotos";
 import useRegisterModalImage from "../../../../hooks/Image/useRegisterModalImage";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
 import Card from "./Card";
@@ -12,8 +12,8 @@ import "./GalleryStyle.scss";
 const startTopPhotos = 0;
 const startBottomPhotos = 3;
 const maxPhotos = 3;
-const remainingPhotos =
-  photos[0].images.length - (maxPhotos + startBottomPhotos);
+// const remainingPhotos =
+//   photos[0].images.length - (maxPhotos + startBottomPhotos);
 
 function Gallery() {
   const { width } = useRegisterWindowSizeStore();
@@ -71,7 +71,7 @@ function Gallery() {
                           index + 1 + maxPhotos ===
                           maxPhotos + startBottomPhotos
                         }
-                        values={remainingPhotos}
+                        // values={remainingPhotos}
                       />
                     ))}
                 </>

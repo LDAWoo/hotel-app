@@ -26,42 +26,29 @@ function BedRoom({ data }) {
       return updateData;
     });
   };
+
   return (
-    <div className='flex flex-col gap-8 w-full'>
-      {rooms &&
-        rooms?.map((item, index) => (
-          <div key={index} className='w-full h-[42px]'>
-            <div className='flex items-center flex-row w-full h-full'>
-              {item?.name && (
-                <div className='flex flex-row items-center flex-1 gap-5 text-primary-100 dark:text-primary-50'>
-                  <Icon icon={item?.icon} size={38} />
-                  <div className='flex flex-col items-start'>
-                    <Title
-                      title={item?.name}
-                      xxl
-                      nowrap={false}
-                      colorTitle={` ${
-                        item?.value > 0
-                          ? "font-medium text-primary-700 dark:text-white"
-                          : ""
-                      }`}
-                    />
-                    <Title title={item?.sizeBed} large nowrap={false} />
+    <div className="flex flex-col gap-2 w-full">
+      <Title title="Tùy chọn gường" xxl />
+      <div className="flex flex-col gap-8">
+        {rooms &&
+          rooms?.map((item, index) => (
+            <div key={index} className="w-full h-[42px]">
+              <div className="flex items-center flex-row w-full h-full">
+                {item?.name && (
+                  <div className="flex flex-row items-center flex-1 gap-5 text-primary-100 dark:text-primary-50">
+                    <Icon icon={item?.icon} size={38} />
+                    <div className="flex flex-col items-start">
+                      <Title title={item?.name} xxl nowrap={false} className={`${item?.value > 0 ? "font-medium text-primary-700 dark:text-white" : ""}`} />
+                      <Title title={item?.sizeBed} large nowrap={false} />
+                    </div>
                   </div>
-                </div>
-              )}
-              <IncreaseAndDecreaseValue
-                className='w-auto h-[40px]'
-                value={item?.value}
-                minValue={item?.min}
-                maxValue={item?.max}
-                step={item?.step}
-                handleMinus={() => handleMinus(index)}
-                handlePlus={() => handlePlus(index)}
-              />
+                )}
+                <IncreaseAndDecreaseValue className="w-auto h-[40px]" value={item?.value} minValue={item?.min} maxValue={item?.max} step={item?.step} handleMinus={() => handleMinus(index)} handlePlus={() => handlePlus(index)} />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 }

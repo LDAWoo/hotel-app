@@ -13,17 +13,9 @@ import ComponentHotelName from "./ComponentHotelName";
 function HotelNameHost() {
   const navigate = useNavigate();
   const { propertiesValue } = useRegisterHotelProperty();
-  const { country, streetAddress, districtAddress, city, postalCode } =
-    useRegisHotelAddRess();
+  const { country, streetAddress, districtAddress, city, postalCode } = useRegisHotelAddRess();
 
-  const {
-    hotelName,
-    rating,
-    managerHotel,
-    contactPerson,
-    phoneNumberOne,
-    phoneNumberTwo,
-  } = useRegisterHotelName();
+  const { hotelName, rating, managerHotel, contactPerson, phoneNumberOne, phoneNumberTwo } = useRegisterHotelName();
 
   const { token } = useContext(UseToken);
 
@@ -33,25 +25,23 @@ function HotelNameHost() {
     navigate(routesConfig.becomeAHostMap);
   };
 
-  const data = {
-    hotelTypeId: propertiesValue,
-    name: hotelName,
-    rating: rating,
-    contactPerson: contactPerson,
-    phoneNumber: phoneNumberOne,
-    phoneNumberTwo: phoneNumberTwo,
-    managerHotel: managerHotel,
-    streetAddress: streetAddress,
-    districtAddress: districtAddress,
-    country: country,
-    city: city,
-    postalCode: postalCode,
-    quantityHotel: 2,
-  };
-
-  console.log(data);
-
   const handleContinue = async () => {
+    const data = {
+      hotelTypeId: propertiesValue,
+      name: hotelName,
+      rating: rating,
+      contactPerson: contactPerson,
+      phoneNumber: phoneNumberOne,
+      phoneNumberTwo: phoneNumberTwo,
+      managerHotel: managerHotel,
+      streetAddress: streetAddress,
+      districtAddress: districtAddress,
+      country: country,
+      city: city,
+      postalCode: postalCode,
+      quantityHotel: 2,
+    };
+    console.log(data);
     setLoading(true);
 
     if (token) {
@@ -69,21 +59,7 @@ function HotelNameHost() {
       }
     }
   };
-  return (
-    <ComponentHost
-      title='Tell us about your hotel'
-      componentLeft={<ComponentHotelName />}
-      componentRight={<div></div>}
-      footer={
-        <FooterHost
-          onBack={handleBack}
-          onContinue={handleContinue}
-          disabled={hotelName === ""}
-        />
-      }
-      loading={loading}
-    />
-  );
+  return <ComponentHost title="Tell us about your hotel" componentLeft={<ComponentHotelName />} componentRight={<div></div>} footer={<FooterHost onBack={handleBack} onContinue={handleContinue} disabled={hotelName === ""} />} loading={loading} />;
 }
 
 export default HotelNameHost;

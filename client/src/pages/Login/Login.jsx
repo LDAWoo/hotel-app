@@ -1,27 +1,24 @@
-import { useContext, useState } from "react";
-import { AiFillFacebook } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
+import i18next from "i18next";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
+import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
+import Border from "../../components/Border/Border";
 import Button from "../../components/Buttons/Button";
 import { UserContext } from "../../components/Contexts/AppUserProvider";
-import TextInput from "../../components/TextInput/TextInput";
-
-import Border from "../../components/Border/Border";
 import TextError from "../../components/TextError/TextError";
+import TextInput from "../../components/TextInput/TextInput";
 import Title from "../../components/Title/Title";
-import { validateEmail } from "../Validate/Email";
-import { validatePassword } from "../Validate/Password";
-
-import "./facebookSDK";
-// const appID = import.meta.env.VITE_APP_FACEBOOK_APP_ID;
+import routesConfig from "../../configs/routesConfig";
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin } =
-    useContext(UserContext);
-
-  const [formData, setFormData] = useState({});
+  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
@@ -40,6 +37,15 @@ function Login() {
   const { errorEmail, errorPassword } = state;
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if (errorEmail.length > 0 || errorPassword.length > 0 || errorLogin.length > 0) {
+      validate();
+      if (errorLogin.length > 0) {
+        setErrorLogin(t("Error.Account.loginFailed"));
+      }
+    }
+  }, [i18next.language]);
+
   const login = () => {
     if (!validate()) return;
     handleLogin(formData);
@@ -47,103 +53,96 @@ function Login() {
 
   const validate = () => {
     let isValid = true;
-    // if (!validateEmail(email)) {
-    //   setState((prevState) => ({ ...prevState, errorEmail: "Email invalid" }));
-    //   isValid = false;
-    // } else {
-    //   setState((prevState) => ({ ...prevState, errorEmail: "" }));
-    // }
 
-    if (!validatePassword(password)) {
-      setState((prevState) => ({
-        ...prevState,
-        errorPassword: "Password invalid",
-      }));
+    if (email === "") {
       isValid = false;
+      setState((prevState) => ({ ...prevState, errorEmail: t("Error.Account.emailNotBlank") }));
     } else {
+      setState((prevState) => ({ ...prevState, errorEmail: "" }));
+    }
+
+    if (password === "") {
+      isValid = false;
       setState((prevState) => ({
         ...prevState,
-        errorPassword: "",
+        errorPassword: t("Error.Account.passwordNotBlank"),
       }));
+    } else {
+      setState((prevState) => ({ ...prevState, errorPassword: "" }));
     }
+
     return isValid;
   };
 
-  return (
-    <div className='w-full h-full'>
-      <Title
-        title={t("Login.title")}
-        className='text-[28px] sm:text-[32px] md:text-[36px] font-bold dark:text-white mb-5'
-      />
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
-      <div className='flex flex-col w-full space-y-2 pt-8'>
-        <div className='font-medium dark:text-white text-[16px]'>
-          {t("Login.orContinueWithEmail")}
-        </div>
-        <TextInput
-          placeholder={t("Login.email")}
-          id='email'
-          error={errorEmail.length > 0}
-          required
-          name='email'
-          sizeIcon={24}
-          onChange={handleChange}
-        />
+  return (
+    <div className="w-full h-full">
+      <Title title={t("Login.title")} extraLarge4 nowrap={false} fontBold className=" dark:text-white mb-5" />
+
+      <div className="flex flex-col w-full gap-2 pt-8">
+        <Title title={t("Login.email")} fontMedium xl />
+        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0 || errorLogin.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
         <TextError error={errorEmail} />
+        <Title title={t("Login.password")} fontMedium xl />
         <TextInput
           placeholder={t("Login.password")}
-          id='password'
-          name='password'
-          error={errorPassword.length > 0}
-          type='password'
+          id="password"
+          name="password"
+          error={errorPassword.length > 0 || errorLogin.length > 0}
+          type={showPassword ? "text" : "password"}
+          copy
+          classCopy="absolute top-0 bottom-0 flex items-center right-0 cursor-pointer hover:bg-gray-100 p-2 rounded-tr-sm rounded-br-sm duration-200"
+          onClickCopy={handleShowPassword}
+          iconCopy={showPassword ? LiaEyeSlashSolid : LiaEyeSolid}
+          sizeIconCopy={18}
           required
+          value={password}
           sizeIcon={24}
           onChange={handleChange}
         />
         <TextError error={errorPassword} />
 
-        <Button
-          className='p-2 bg-hotel-100 rounded-[4px] flex items-center justify-center w-full font-medium text-white text-[18px] hover:bg-hotel-600 cursor-pointer duration-200'
-          title={t("Login.title")}
-          onClick={login}
-        />
+        <TextError error={errorLogin} />
+        <Button disabled={loading} loading={loading} background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.login")} onClick={login} />
       </div>
-      <div className='flex flex-row items-center mt-4'>
-        <Border className='-translate-y-[3px] h-[1px] w-full ' />
-        <span className='whitespace-nowrap ml-2 mr-2 text-[12px] -translate-y-1'>
-          {t("Login.loginWithOpenAccount")}
-        </span>
-        <Border className='-translate-y-[3px] h-[1px] w-full ' />
+
+      <Link to={routesConfig.forgotPassword}>
+        <Button fontMedium xl className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full hover:bg-hotel-25 text-hotel-50" title={t("Login.forgot")} />
+      </Link>
+
+      <div className=" text-[12px] text-center mt-6">
+        {t("Partner.partner")}
+        <Link to="/" className="text-hotel-50">
+          {" "}
+          {t("Partner.help")}
+        </Link>{" "}
+        {t("Partner.more")}
       </div>
-      <div className='flex flex-row gap-4 items-center justify-center mt-4'>
-        <Button
-          icon={FcGoogle}
-          className='pt-5 pb-5 pr-[8px] pl-[9px] border justify-center items-center duration-200 hover:border-hotel-100 rounded-sm'
-          size={30}
-          classIcon='translate-x-1'
-          onClick={handleLoginWithGoogle}
-        />
-        <Button
-          icon={AiFillFacebook}
-          className='pt-5 pb-5 pr-[8px] pl-[9px] border justify-center items-center text-hotel-75 duration-200 hover:border-hotel-100 rounded-sm'
-          size={30}
-          classIcon='translate-x-1'
-          onClick={handleLoginWithFacebook}
-        />
+
+      <Link to={routesConfig.register}>
+        <Button border fontMedium className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.register")} />
+      </Link>
+      <Border className="mt-6" />
+
+      <div className="text-[12px] text-center mt-6">
+        {t("FooterAccount.nameOne")}
+        <Link to="/" className="text-hotel-50">
+          {" "}
+          {t("FooterAccount.nameTwo")}
+        </Link>{" "}
+        {t("FooterAccount.nameThree")}
+        <Link to="/" className="text-hotel-50">
+          {" "}
+          {t("FooterAccount.nameFour")}
+        </Link>{" "}
+        {t("FooterAccount.nameFive")}
       </div>
-      <div className='flex items-center justify-center mt-8 font-normal text-[12px] sm:text-[14px] text-gray-400'>
-        {t("Login.description")}
-      </div>
-      <div className='flex items-center mt-8'>
-        <div className='text-gray-500 text-[14px]'>
-          {t("Login.doNotHaveAnAccount")}
-        </div>
-        <Link
-          className='ml-2 text-[14px] font-bold dark:text-white hover:text-blue-600 dark:hover:text-blue-600 duration-200'
-          to='/register'
-        >
-          {t("Login.register")}
-        </Link>
+      <Border className="mt-6" />
+      <div className="text-center text-[13px] mt-6">
+        {t("AccessFooter.nameOne")}.<br /> {t("AccessFooter.nameTwo")}
       </div>
     </div>
   );

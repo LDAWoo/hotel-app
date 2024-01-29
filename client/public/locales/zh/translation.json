@@ -1,28 +1,79 @@
 {
   "Login": {
-    "title": "登录",
-    "loginWithOpenAccount": "使用开放账户登录",
-    "orContinueWithEmail": "或继续使用电子邮件地址",
-    "email": "您的电子邮件",
+    "title": "登录以管理住宿",
+    "email": "登录电子邮件",
     "password": "密码",
-    "description": "本站受 reCAPTCHA 保护以及 Google 隐私政策。",
-    "doNotHaveAnAccount": "还没有账户？",
-    "register": "注册"
+    "login": "登录",
+    "register": "注册",
+    "forgot": "忘记密码"
   },
-
+  "Partner": {
+    "partner": "您对您的住宿或合作伙伴网络有疑问吗？请访问",
+    "help": "合作伙伴帮助中心",
+    "more": "了解更多。"
+  },
+  "FooterAccount": {
+    "nameOne": "通过登录或创建帐户，您同意我们的",
+    "nameTwo": "条款和条件",
+    "nameThree": "以及",
+    "nameFour": "我们的安全和隐私政策",
+    "nameFive": "。"
+  },
+  "AccessFooter": {
+    "nameOne": "保留所有权利",
+    "nameTwo": "版权所有 (2023 - 2024) - Staying.com™"
+  },
   "Register": {
-    "title": "注册",
-    "registerWithOpenAccount": "使用开放账户注册",
-    "orContinueWithEmail": "或继续使用电子邮件地址",
-    "email": "您的电子邮件",
-    "continue": "继续",
-    "checkCodeEmail": "我们刚刚发送了一封验证代码邮件。请检查您的收件箱。",
-    "errorCode": "您输入的代码不正确。",
+    "title": "创建合作伙伴账户",
+    "subTitle": "创建一个账户以注册和管理住宿。",
+    "email": "电子邮件地址",
+    "continue": "继续"
+  },
+  "RegisterContactDetails": {
+    "title": "联系信息",
+    "subTitle": "为了保护您的 Staying.com 账户，我们需要您的全名和电话号码。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "phoneNumber": "电话号码"
+  },
+  "RegisterPassword": {
+    "title": "创建密码",
+    "subTitle": "使用至少 10 个字符，包括大写字母、小写字母和数字。",
     "password": "密码",
-    "passwordConfirm": "确认密码",
-    "description": "本站受 reCAPTCHA 保护以及 Google 隐私政策。",
-    "alreadyAMember": "已经是会员？",
-    "login": "登录"
+    "confirmPassword": "确认密码",
+    "registerAccount": "创建账户"
+  },
+  "Forgot": {
+    "title": "忘记密码？",
+    "subTitle": "请确认您的用户名，我们将向您发送重置密码的链接。",
+    "email": "电子邮件地址",
+    "sendLink": "发送密码重置链接"
+  },
+  "ForgotConfirmation": {
+    "title": "检查您的收件箱",
+    "subTitle1": "我们已向您发送了重置密码的说明和链接至",
+    "subTitle2": "这封电子邮件可能需要几分钟才能到达您的收件箱。",
+    "backLogin": "返回登录页面"
+  },
+  "CheckEmail": {
+    "title": "检查您的收件箱",
+    "subTitle1": "我们刚刚向以下地址发送了验证链接",
+    "subTitle2": "一旦到达，将在15分钟内有效。",
+    "backLogin": "返回登录"
+  },
+  "Error": {
+    "Account": {
+      "loginFailed": "邮箱或密码错误。请重试或使用验证链接。",
+      "emailNotBlank": "请输入您的电子邮件地址",
+      "emailNotEmail": "请输入有效的电子邮件地址",
+      "firstNameNotBlank": "请输入您的名字",
+      "lastNameNotBlank": "请输入您的姓氏",
+      "phoneNumberNotBlank": "请输入您的电话号码",
+      "passwordNotBlank": "请输入新密码",
+      "passwordNotPassword": "密码必须包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符",
+      "confirmPasswordNotBlank": "请确认您的密码",
+      "confirmPasswordNotPassword": "您输入的密码不匹配。请重试。"
+    }
   },
   "Modal": {
     "Language": {

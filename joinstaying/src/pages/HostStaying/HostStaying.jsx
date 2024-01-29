@@ -1,8 +1,20 @@
 import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import routesConfig from "../../configs/routesConfig";
 import "./HostStaying.scss";
+import { useContext, useEffect } from "react";
+import { UseToken } from "../../components/Contexts/AppTokenProvider";
 function HostStaying({ children }) {
+  const navigate = useNavigate();
+
+  const { token } = useContext(UseToken);
+
+  // useEffect(() => {
+  //   if (!token.length > 0) {
+  //     navigate(routesConfig.login);
+  //   }
+  // }, [token, navigate]);
+
   const params = [
     {
       id: 1,
@@ -134,23 +146,18 @@ function HostStaying({ children }) {
     return param.groupParam.some((group) => group.param === currentPathName);
   });
 
-  const activeIndex = groupParamCurrent?.groupParam.findIndex(
-    (p) => p.param === currentPathName,
-  );
+  const activeIndex = groupParamCurrent?.groupParam.findIndex((p) => p.param === currentPathName);
 
   const totalParams = groupParamCurrent?.groupParam.length;
   const percentage = (activeIndex + 1) * (100 / totalParams);
 
   return (
-    <div className='flex flex-col w-full'>
+    <div className="flex flex-col w-full">
       {/* progress */}
-      <div className='bg-[#dcdcdc] h-[8px] w-full flex-shrink-0 overflow-hidden m-0 p-0 rounded-0'>
-        <div className='relative h-[8px]'>
+      <div className="bg-[#dcdcdc] h-[8px] w-full flex-shrink-0 overflow-hidden m-0 p-0 rounded-0">
+        <div className="relative h-[8px]">
           {/* complete */}
-          <div
-            className='absolute h-[8px] top-0 left-0 bg-hotel-50'
-            style={{ width: `${percentage}%`, transition: "width 500ms" }}
-          ></div>
+          <div className="absolute h-[8px] top-0 left-0 bg-hotel-50" style={{ width: `${percentage}%`, transition: "width 500ms" }}></div>
 
           {groupParamCurrent &&
             groupParamCurrent?.groupParam.map((_, index) => (
@@ -160,18 +167,14 @@ function HostStaying({ children }) {
                   left: `${(100 / totalParams) * index}%`,
                   width: `${100 / totalParams}%`,
                 }}
-                className={`absolute h-[8px] top-0 ${
-                  index > 0 ? "border-l-[2px]" : ""
-                } border-white`}
+                className={`absolute h-[8px] top-0 ${index > 0 ? "border-l-[2px]" : ""} border-white`}
               />
             ))}
         </div>
       </div>
-      <div className='w-full'>
-        <div className='w-full flex justify-center max-w-[var(--max-width)] mx-auto'>
-          <div className='flex flex-col gap-2 h-full w-full mx-auto my-auto'>
-            {children}
-          </div>
+      <div className="w-full">
+        <div className="w-full flex justify-center max-w-[var(--max-width)] mx-auto">
+          <div className="flex flex-col gap-2 h-full w-full mx-auto my-auto">{children}</div>
         </div>
       </div>
     </div>

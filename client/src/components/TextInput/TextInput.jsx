@@ -52,7 +52,7 @@ function TextInput({
         </div>
       )}
       <div
-        className={`relative w-full rounded-[4px] duration-200 outline-none   ${
+        className={`relative w-full rounded-[4px] duration-200 outline-none ${
           !classBorder
             ? `border-[1px] ${
                 active
@@ -69,7 +69,9 @@ function TextInput({
         <input
           className={`${
             !classInput
-              ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[35px] pt-1 pb-1 pr-[10px] outline-none text-primary-700 placeholder:text-primary-100 dark:placeholder:text-primary-50 dark:text-white font-normal text-[14px] ${
+              ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[35px] pt-1 pb-1 ${
+                  copy ? "pr-[50px]" : "pr-[10px]"
+                } outline-none text-primary-700 placeholder:text-primary-100 dark:placeholder:text-primary-50 dark:text-white font-normal text-[14px] ${
                   icon ? "pl-[48px]" : "pl-[10px]"
                 }`
               : classInput
@@ -78,9 +80,11 @@ function TextInput({
           {...props}
           autoCapitalize='off'
           autoCorrect='off'
+          autoComplete='off'
           spellCheck='false'
           onBlur={handleBlur}
           onFocus={handleFocus}
+          style={{ WebkitBackgroundClip: "text" }}
         />
         {icon && (
           <div
@@ -96,7 +100,9 @@ function TextInput({
 
         {error && !active && (
           <div
-            className={`absolute top-0 bottom-0 right-0 flex justify-center items-center pl-2 text-red-500 dark:text-primary-50"
+            className={`absolute top-0 bottom-0 ${
+              copy ? "right-[35px]" : "right-0"
+            }  flex justify-center items-center pl-2 bg-white text-red-500 dark:text-primary-50"
           }`}
           >
             <Icon icon={MdOutlineErrorOutline} size={sizeIcon} />

@@ -9,14 +9,14 @@ import Title from "../../../components/Title/Title";
 
 function ComponentFacilities() {
   const { token } = useContext(UseToken);
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { facilities, setFacilities } = useRegisterFacilities();
+  const [loading, setLoading] = useState(false);
+  const { facilities, setFacilities, data, setData } = useRegisterFacilities();
 
   useEffect(() => {
     const fetch = async () => {
-      if (token) {
+      if (token && data.length === 0) {
         try {
+          setLoading(true);
           const results = await getFacilities(token);
           setData(results?.listResult);
         } catch (error) {
@@ -28,41 +28,31 @@ function ComponentFacilities() {
     };
 
     fetch();
-  }, [token]);
+  }, [token, data, setData]);
 
   const handleChange = (e) => {
     const checkedFacilityId = e.target.value;
-    const isFacilitySelected = facilities.some(
-      (facility) => facility.id === checkedFacilityId,
-    );
+    const isFacilitySelected = facilities.some((facility) => facility.id === checkedFacilityId);
 
     if (isFacilitySelected) {
-      setFacilities(
-        facilities.filter((facility) => facility.id !== checkedFacilityId),
-      );
+      setFacilities(facilities.filter((facility) => facility.id !== checkedFacilityId));
     } else {
       setFacilities([...facilities, { id: checkedFacilityId }]);
     }
   };
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className="flex flex-col gap-2">
       {loading ? (
-        Array.from({ length: 4 }).map((_, index) => (
-          <FacilitiesSkeleton key={index} />
-        ))
+        Array.from({ length: 4 }).map((_, index) => <FacilitiesSkeleton key={index} />)
       ) : (
         <>
           <ComponentExtraBed />
-          <Title title='Tiện nghi' fontBold xxl />
+          <Title title="Tiện nghi" fontBold xxl />
           {data &&
             data.map((item, index) => (
-              <div key={index} className='flex flex-row gap-2'>
-                <CheckBox
-                  value={item?.id}
-                  title={item?.name}
-                  onChange={handleChange}
-                />
+              <div key={index} className="flex flex-row gap-2">
+                <CheckBox value={item?.id} title={item?.name} checked={facilities.some((f) => f?.id === item?.id)} onChange={handleChange} />
               </div>
             ))}
         </>

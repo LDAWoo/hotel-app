@@ -3,40 +3,6 @@ import { BiBed } from "react-icons/bi";
 export const AddRoomData = [
   {
     id: 1,
-    title: "What type of unit is this?",
-    type: "select",
-    data: [
-      {
-        id: 1,
-        value: 1,
-        name: "Single",
-      },
-      {
-        id: 2,
-        value: 2,
-        name: "Double",
-      },
-      {
-        id: 3,
-        value: 3,
-        name: "Twin",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "How many rooms of this type do you have?",
-    type: "number",
-    data: [
-      {
-        id: 1,
-        name: "",
-        value: 1,
-      },
-    ],
-  },
-  {
-    id: 3,
     title: "Which beds are available in this room?",
     type: "increase",
     data: [
@@ -83,7 +49,7 @@ export const AddRoomData = [
     ],
   },
   {
-    id: 4,
+    id: 2,
     title: "How many guests can stay in this room?",
     type: "increase",
     data: [
@@ -95,7 +61,7 @@ export const AddRoomData = [
     ],
   },
   {
-    id: 5,
+    id: 3,
     title: "Is smoking allowed in this room?",
     type: "radio",
     data: [

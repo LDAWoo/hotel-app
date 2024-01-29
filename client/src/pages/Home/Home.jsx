@@ -1,7 +1,7 @@
 import RecentSearch from "./RecentSearch/RecentSearch";
 import TrendingDestination from "./TrendingDestinations/TrendingDestination";
 import UniqueProperty from "./UniqueProperty/UniqueProperty";
-import GuestLove from "./GuestLove/GuestLove";
+// import GuestLove from "./GuestLove/GuestLove";
 import DestinationsWeLove from "./DestinationsWeLove/DestinationsWeLove";
 import { useEffect, useState } from "react";
 import { getHotelIndex } from "../../api/Home";
@@ -55,7 +55,7 @@ function Home() {
           <TrendingDestination />
 
           <UniqueProperty data={currentData} isLoading={loading} />
-          <GuestLove />
+          {/* <GuestLove /> */}
           <DestinationsWeLove data={currentData} isLoading={loading} />
         </div>
       </div>

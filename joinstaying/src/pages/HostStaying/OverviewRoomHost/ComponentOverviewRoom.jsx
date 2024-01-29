@@ -1,30 +1,16 @@
 import { OverviewData } from "../../../components/Constants/OverviewHostData";
 import ItemComponentOverview from "./ItemComponentOverview";
-import routesConfig from "../../../configs/routesConfig";
 import { useNavigate } from "react-router-dom";
 const ComponentOverviewRoom = () => {
   const navigate = useNavigate();
-  const handleClick = (e) => {
-    console.log(e);
-
-    if (e === "Photos") {
-      navigate(routesConfig.becomeAHostPhoto);
-    }
+  const handleClick = (url) => {
+    navigate(url);
   };
 
   return (
     <div>
       {OverviewData.map((item, index) => (
-        <ItemComponentOverview
-          index={index}
-          step={item?.step}
-          title={item?.title}
-          subTitle={item?.subTitle}
-          icon={item?.icon}
-          nameButton={item?.nameButton}
-          key={index}
-          onClick={handleClick}
-        />
+        <ItemComponentOverview index={index} item={item} key={index} onClick={handleClick} />
       ))}
     </div>
   );

@@ -1,39 +1,58 @@
+import { useContext, useEffect, useState } from "react";
+import { getRoomType } from "../../../api/HostStaying/AddRoomHost";
 import { AddRoomData } from "../../../components/Constants/AddRoomData";
-import SelectInput from "../../../components/SelectInput/SelectInput";
-import Title from "../../../components/Title/Title";
+import { UseToken } from "../../../components/Contexts/AppTokenProvider";
+import useRegisterAddRoom from "../../../hooks/JoinStaying/AddRoomHost/useRegisterAddRoom";
 import BedRoom from "./BedRoom";
 import RoomType from "./RoomType";
-import Smoking from "./Smoking";
+import SizeRoom from "./SizeRoom";
 
 function ComponentAddRoom() {
-  return (
-    <div>
-      {AddRoomData.map((room, index) => (
-        <div key={index}>
-          <div className='flex flex-col gap-2'>
-            <div className={`${index < 1 ? "mt-0" : "mt-5"} mb-2`}>
-              <Title title={room?.title} fontBold />
-            </div>
-            {room?.type === "select" && (
-              <SelectInput>
-                {room?.data.map((item, index) => (
-                  <option
-                    key={index}
-                    className='text-[14px] text-primary-700 dark:text-white'
-                    value={item?.value}
-                  >
-                    {item?.name}
-                  </option>
-                ))}
-              </SelectInput>
-            )}
+  const [loading, setLoading] = useState(false);
+  const { token } = useContext(UseToken);
+  const { roomTypes, setRoomTypes, roomType, setRoomType, quantityRoom, setQuantityRoom, roomArea, setRoomArea } = useRegisterAddRoom();
 
-            {room?.type === "number" && <RoomType data={room?.data} />}
-            {room?.type === "increase" && <BedRoom data={room?.data} />}
-            {room?.type === "radio" && <Smoking data={room?.data} />}
-          </div>
-        </div>
-      ))}
+  useEffect(() => {
+    const fetch = async () => {
+      if (token && roomTypes.length === 0) {
+        try {
+          setLoading(true);
+          const response = await getRoomType(token);
+          setRoomTypes(response.listResult);
+          setLoading(false);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+
+    fetch();
+  }, [token, setRoomTypes, loading, roomTypes]);
+
+  const handleSelectRoomType = (e) => {
+    const value = e.target.value;
+    setRoomType(value);
+  };
+
+  const handleChangeQuantityRoom = (e) => {
+    const quantity = e.target.value;
+    setQuantityRoom(quantity);
+  };
+
+  const handleChangeSizeRoom = (e) => {
+    const sizeRoom = e.target.value;
+    setRoomArea(sizeRoom);
+  };
+
+  console.log(roomType);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div>{loading ? <div></div> : <RoomType data={roomTypes} handleSelected={handleSelectRoomType} valueSelected={roomType} onChange={handleChangeQuantityRoom} value={quantityRoom} />}</div>
+
+      <BedRoom data={AddRoomData[0].data} />
+      <SizeRoom onChange={handleChangeSizeRoom} value={roomArea} />
+      {/* <Smoking data={AddRoomData[2].data} /> */}
     </div>
   );
 }

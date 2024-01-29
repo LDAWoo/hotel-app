@@ -3,7 +3,7 @@ import { memo } from "react";
 import Icon from "../Icon/Icon";
 import Image from "../Image/Image";
 import Title from "../Title/Title";
-function Button({ className, classButton, background, border, classIcon, active, icon, classTitle, title, size, customSize, disabled, loading, classImg, src, srcDark, srcSet, srcSetDark, alt, onClick, iconPosition, srcPosition, titlePosition, fontBold, fontMedium, xxxl, xxl, xl, large, medium, small, nowrap, titleCustom }) {
+function Button({ className, classButton, background, border, classIcon, active, icon, classTitle, title, size, disabled, loading, classImg, src, srcDark, srcSet, srcSetDark, alt, onClick, iconPosition, srcPosition, titlePosition, fontBold, fontMedium, xxxl, xxl, xl, large, medium, small, nowrap }) {
   return (
     <button
       className={`${background ? (disabled ? "" : "bg-hotel-100 hover:bg-hotel-300 duration-200 text-white w-full") : ""} ${border ? (disabled ? "" : "border border-hotel-100 text-hotel-100 hover:bg-hotel-25 duration-200 w-full ") : ""} ${disabled ? "opacity-70 cursor-not-allowed bg-[#d9d9d9]" : ""} flex items-center transition ${className ? className : "w-full"}`}
@@ -14,13 +14,13 @@ function Button({ className, classButton, background, border, classIcon, active,
       <div className={`ml-2 mr-2 flex items-center gap-2 ${classButton ? classButton : title ? "justify-start" : "item-center flex-grow justify-center"} `}>
         {loading && <div className="inline-block h-[26px] w-[26px] animate-spin rounded-full border-[3px] border-solid border-hotel-100 border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status" />}
         {srcPosition === "before" && src && <Image className={classImg} src={src} srcDark={srcDark} srcSet={srcSet} srcSetDark={srcSetDark} alt={alt} />}
-        {titlePosition === "before" && <Title title={title} colorTitle={classTitle} fontBold={fontBold} fontMedium={fontMedium} xxxl={xxxl} xxl={xxl} xl={xl} large={large} medium={medium} small={small} nowrap={nowrap} titleCustom={titleCustom} />}
-        {iconPosition !== "right" && icon && <Icon classIcon={classIcon} icon={icon} customSize={customSize} size={size} />}
+        {titlePosition === "before" && <Title title={title} fontBold={fontBold} fontMedium={fontMedium} xxxl={xxxl} xxl={xxl} xl={xl} large={large} medium={medium} small={small} nowrap={nowrap} className={classTitle} />}
+        {iconPosition !== "right" && icon && <Icon classIcon={classIcon} icon={icon} size={size} />}
         <div className={`${iconPosition !== "right" ? "" : "flex-1"}`}>
           {srcPosition !== "before" && src && <Image className={classImg} src={src} srcDark={srcDark} srcSet={srcSet} srcSetDark={srcSetDark} alt={alt} />}
-          {titlePosition !== "before" && title && <Title title={title} colorTitle={classTitle} fontBold={fontBold} fontMedium={fontMedium} xxxl={xxxl} xxl={xxl} xl={xl} large={large} medium={medium} small={small} nowrap={nowrap} titleCustom={titleCustom} />}
+          {titlePosition !== "before" && title && <Title title={title} fontBold={fontBold} fontMedium={fontMedium} xxxl={xxxl} xxl={xxl} xl={xl} large={large} medium={medium} small={small} nowrap={nowrap} className={classTitle} />}
         </div>
-        {active && iconPosition === "right" && icon && <Icon classIcon={classIcon} icon={icon} customSize={customSize} size={size} />}
+        {active && iconPosition === "right" && icon && <Icon classIcon={classIcon} icon={icon} size={size} />}
       </div>
     </button>
   );
@@ -36,7 +36,6 @@ Button.propTypes = {
   classTitle: PropTypes.string,
   title: PropTypes.string,
   size: PropTypes.number,
-  customSize: PropTypes.number,
   onClick: PropTypes.func,
   active: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -59,7 +58,6 @@ Button.propTypes = {
   medium: PropTypes.bool,
   small: PropTypes.bool,
   nowrap: PropTypes.bool,
-  titleCustom: PropTypes.string,
 };
 
 export default memo(Button);

@@ -1,17 +1,26 @@
 import TextInput from "../../../components/TextInput/TextInput";
 import PropTypes from "prop-types";
-function RoomType({ data }) {
+import Title from "../../../components/Title/Title";
+import SelectInput from "../../../components/SelectInput/SelectInput";
+function RoomType({ data, valueSelected, handleSelected, value, onChange }) {
   return (
-    <div>
-      {data &&
-        data.map((item, index) => (
-          <TextInput
-            key={index}
-            type='number'
-            classInput='w-20 pl-1 pt-1 pb-1 text-primary-700 border-[2px] focus:border-hotel-75 dark:border-primary-500 focus:outline-none dark:focus:border-hotel-200 rounded-md dark:bg-primary-700 dark:border-primary-500 dark:text-white'
-            classBorder
-          />
-        ))}
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
+        <Title title="What type of unit is this?" xxl />
+        <SelectInput onChange={handleSelected} value={valueSelected}>
+          <option className="text-[14px] text-primary-700 dark:text-white" value="">
+            Select room type
+          </option>
+          {data.map((roomType, index) => (
+            <option key={index} className="text-[14px] text-primary-700 dark:text-white" value={roomType?.id}>
+              {roomType?.name}
+            </option>
+          ))}
+        </SelectInput>
+      </div>
+
+      <Title title="Số phòng" xxl />
+      <TextInput type="number" onChange={onChange} value={value} />
     </div>
   );
 }

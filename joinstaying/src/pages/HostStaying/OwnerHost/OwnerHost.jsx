@@ -1,70 +1,52 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { putOwnerHotel } from "../../../api/HostStaying/OwnerHost";
+import { UseToken } from "../../../components/Contexts/AppTokenProvider";
 import routesConfig from "../../../configs/routesConfig";
 import useRegisterFeedBack from "../../../hooks/JoinStaying/FeedBackHost/useRegisterFeedBack";
-import useRegisterNumberOfProperty from "../../../hooks/JoinStaying/OwnerHost/useRegisterNumberOfProperty";
+import useRegisterHotelProperty from "../../../hooks/JoinStaying/HotelPropertyHost/useRegisterHotelProperty";
+import useRegisterOwner from "../../../hooks/JoinStaying/OwnerHost/useRegisterOwner";
 import ComponentHost from "../ComponentHost";
 import FooterHost from "../FooterHost";
 import ComponentOwnerHost from "./ComponentOwnerHost";
 
 const OwnerHost = () => {
-  const { numberOfProperty, setNumberOfProperty } =
-    useRegisterNumberOfProperty();
-  const { setValueFeedBack } = useRegisterFeedBack();
   const navigate = useNavigate();
-  const [active, setActive] = useState("");
-  const [isNumberOfProperty, setIsNumberOfProperty] = useState(false);
+  const { token } = useContext(UseToken);
 
-  const handleChooseItem = (item, numberOfProperty) => {
-    if (!numberOfProperty) {
-      setNumberOfProperty(2);
-    }
-    setIsNumberOfProperty(numberOfProperty);
-    setValueFeedBack(item);
-    setActive(item);
-  };
+  const { setValueFeedBack } = useRegisterFeedBack();
+  const { propertiesValue } = useRegisterHotelProperty();
+  const { quantityHotel, activeHotel } = useRegisterOwner();
 
-  useEffect(() => {
-    if (numberOfProperty) {
-      console.log(numberOfProperty);
-    }
-  }, []);
-
-  const handleChangeNumberOfProperty = (e) => {
-    setNumberOfProperty(e.target.value);
-  };
+  const [loading, setLoading] = useState(false);
 
   const handleBack = () => {
     navigate(routesConfig.becomeAHostProperty);
   };
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
+    const data = {
+      hotelTypeId: propertiesValue,
+      ownsManyHotel: false,
+      quantityHotel: quantityHotel,
+    };
+    console.log(data);
+
+    if (token) {
+      try {
+        setLoading(true);
+        const response = await putOwnerHotel(data, token);
+        console.log(response);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     navigate(routesConfig.becomeAHostFeedBack);
   };
 
-  return (
-    <ComponentHost
-      classComponent='p-4 gap-5'
-      title='How many hotels are you listing?'
-      componentLeft={
-        <ComponentOwnerHost
-          value={numberOfProperty}
-          active={active}
-          onClick={handleChooseItem}
-          onChange={handleChangeNumberOfProperty}
-          isNumberOfProperty={isNumberOfProperty}
-        />
-      }
-      classFooter='mt-5 2md:mt-0'
-      footer={
-        <FooterHost
-          onBack={handleBack}
-          disabled={numberOfProperty < 2}
-          onContinue={handleContinue}
-        />
-      }
-    />
-  );
+  return <ComponentHost loading={loading} classComponent="p-4 gap-5" title="How many hotels are you listing?" componentLeft={<ComponentOwnerHost />} classFooter="mt-5 2md:mt-0" footer={<FooterHost onBack={handleBack} disabled={activeHotel === ""} onContinue={handleContinue} />} />;
 };
 
 export default OwnerHost;

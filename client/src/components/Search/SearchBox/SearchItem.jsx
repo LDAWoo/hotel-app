@@ -97,16 +97,14 @@ function SearchItem({
               <Title
                 title={label}
                 fontMedium
-                titleCustom='text-[14px] sm:text-[15px]'
-                colorTitle='dark:text-white'
+                className='dark:text-white text-[14px] sm:text-[15px]'
               />
             )}
 
             {title && (
               <Title
-                colorTitle='text-white'
                 title={title}
-                titleCustom='text-[14px] sm:text-[15px]'
+                className='text-[14px] sm:text-[15px] text-white'
                 fontBold
               />
             )}

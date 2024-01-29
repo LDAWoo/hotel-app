@@ -1,11 +1,13 @@
-import { get } from "../../../utils/request";
+import { get, post } from "../../../utils/request";
 
 export const getFacilities = async (token) => {
-  try {
-    const response = await get("service-amenity/get-all", {}, token);
-    const data = await response;
-    return data;
-  } catch (error) {
-    console.log("Lỗi khi lấy dữ liệu ", error);
-  }
+  const response = await get("service-amenity/get-all", {}, token);
+  const data = await response;
+  return data;
+};
+
+export const postFacilities = async (newData, token) => {
+  const response = await post("service-amenity-room/add-new", newData, token, { headers: { "Content-Type": "application/json" } });
+  const data = await response;
+  return data;
 };

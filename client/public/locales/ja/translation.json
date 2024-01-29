@@ -1,28 +1,79 @@
 {
   "Login": {
-    "title": "ログイン",
-    "loginWithOpenAccount": "オープンアカウントでログイン",
-    "orContinueWithEmail": "またはメールアドレスを使用して続行",
-    "email": "メールアドレス",
+    "title": "宿泊施設を管理するためにログイン",
+    "email": "ログインメール",
     "password": "パスワード",
-    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
-    "doNotHaveAnAccount": "アカウントをお持ちでないですか？",
-    "register": "登録"
+    "login": "ログイン",
+    "register": "登録",
+    "forgot": "パスワードを忘れた方"
   },
-
+  "Partner": {
+    "partner": "宿泊施設やエクストラネットに関するご質問はありますか？",
+    "help": "パートナーヘルプセンター",
+    "more": "で詳細を確認してください。"
+  },
+  "FooterAccount": {
+    "nameOne": "ログインまたはアカウントを作成することで、",
+    "nameTwo": "利用規約および条件",
+    "nameThree": "および",
+    "nameFour": "セキュリティポリシー",
+    "nameFive": "に同意したことになります。"
+  },
+  "AccessFooter": {
+    "nameOne": "全ての権利を保有",
+    "nameTwo": "著作権 (2023 - 2024) - Staying.com™"
+  },
   "Register": {
-    "title": "登録",
-    "registerWithOpenAccount": "オープンアカウントで登録",
-    "orContinueWithEmail": "またはメールアドレスを使用して続行",
+    "title": "パートナーアカウントの作成",
+    "subTitle": "アカウントを作成して宿泊施設を登録および管理します。",
     "email": "メールアドレス",
-    "continue": "続行",
-    "checkCodeEmail": "確認コードを送信しました。受信トレイを確認してください。",
-    "errorCode": "入力したコードが正しくありません。",
+    "continue": "続ける"
+  },
+  "RegisterContactDetails": {
+    "title": "連絡先情報",
+    "subTitle": "Staying.com アカウントを安全に保つために、お名前と電話番号が必要です。",
+    "firstName": "名",
+    "lastName": "姓",
+    "phoneNumber": "電話番号"
+  },
+  "RegisterPassword": {
+    "title": "パスワードの作成",
+    "subTitle": "大文字、小文字、数字を含む少なくとも 10 文字を使用してください。",
     "password": "パスワード",
-    "passwordConfirm": "パスワード確認",
-    "description": "このサイトはreCAPTCHAおよびGoogleのプライバシーポリシーによって保護されています。",
-    "alreadyAMember": "既に会員ですか？",
-    "login": "ログイン"
+    "confirmPassword": "パスワードの確認",
+    "registerAccount": "アカウントを作成"
+  },
+  "Forgot": {
+    "title": "パスワードを忘れましたか？",
+    "subTitle": "ユーザー名を確認してください。パスワードをリセットするためのリンクを送信します。",
+    "email": "メールアドレス",
+    "sendLink": "パスワードリセットリンクを送信"
+  },
+  "ForgotConfirmation": {
+    "title": "受信トレイを確認してください",
+    "subTitle1": "説明書とパスワードリセットのリンクを送信しました。",
+    "subTitle2": "このメールは数分かかる場合があります。",
+    "backLogin": "ログイン画面に戻る"
+  },
+  "CheckEmail": {
+    "title": "受信トレイを確認してください",
+    "subTitle1": "認証リンクをメールで送信しました",
+    "subTitle2": "到着したら15分間有効です。",
+    "backLogin": "ログインに戻る"
+  },
+  "Error": {
+    "Account": {
+      "loginFailed": "メールアドレスまたはパスワードが間違っています。もう一度やり直すか、確認リンクを使用してください。",
+      "emailNotBlank": "メールアドレスを入力してください",
+      "emailNotEmail": "有効なメールアドレスを入力してください",
+      "firstNameNotBlank": "お名前を入力してください",
+      "lastNameNotBlank": "姓を入力してください",
+      "phoneNumberNotBlank": "電話番号を入力してください",
+      "passwordNotBlank": "新しいパスワードを入力してください",
+      "passwordNotPassword": "パスワードは少なくとも 1 桁の数字、1 桁の小文字、1 桁の大文字、1 つの特殊文字を含む必要があります",
+      "confirmPasswordNotBlank": "パスワードを確認してください",
+      "confirmPasswordNotPassword": "入力したパスワードが一致しません。もう一度お試しください。"
+    }
   },
   "Modal": {
     "Language": {

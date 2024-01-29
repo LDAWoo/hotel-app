@@ -7,12 +7,15 @@ import removeCookie from "../../hooks/useRegisterRemoveCookie";
 import setCookie from "../../hooks/useRegisterSetCookie";
 import routesConfig from "../../configs/routesConfig";
 import getCookie from "../../hooks/useRegisterGetCookie";
+import { useTranslation } from "react-i18next";
 
 export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {
   // const { loginWithRedirect, logout } = useAuth0();
+  const { t } = useTranslation();
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
+  const [errorLogin, setErrorLogin] = useState("");
   const navigate = useNavigate();
   const handleLoginWithGoogle = () => {
     // loginWithRedirect({ connection: "google-oauth2" });
@@ -42,12 +45,13 @@ const AppUserProvider = ({ children }) => {
         setCookie("token", token, expirationDate);
         setUser(response);
         navigate(routesConfig.home);
+        setErrorLogin("");
       } else {
         navigate(routesConfig.login);
         setUser({});
       }
     } catch (e) {
-      console.log(e);
+      setErrorLogin(t("Error.Account.loginFailed"));
     } finally {
       setLoading(false);
     }
@@ -81,6 +85,8 @@ const AppUserProvider = ({ children }) => {
         handleLogout,
         user,
         setUser,
+        errorLogin,
+        setErrorLogin,
       }}
     >
       {children}

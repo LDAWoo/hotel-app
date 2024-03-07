@@ -5,7 +5,13 @@ import StayingRating from "../../../components/Staying/StayingRating";
 import Title from "../../../components/Title/Title";
 function ItemUniqueProperty({ item }) {
   const location =
-    item?.districtAddress + ", " + item?.city + ", " + item?.country;
+    item?.streetAddress +
+    ", " +
+    item?.districtAddress +
+    ", " +
+    item?.city +
+    ", " +
+    item?.country;
   return (
     <Link className='w-full'>
       <div className='w-full border dark:border-primary-500 rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(200,200,200,0.16)]'>
@@ -13,7 +19,7 @@ function ItemUniqueProperty({ item }) {
           <div className='flex flex-col '>
             <div className='flex aspect-[20/20]'>
               <Image
-                imageBase={item?.picByte}
+                src={item?.urlImage}
                 className='aspect-[20/20] object-cover rounded-tl-lg rounded-tr-lg'
               />
             </div>

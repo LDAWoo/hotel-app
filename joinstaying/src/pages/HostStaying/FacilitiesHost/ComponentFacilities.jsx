@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { getFacilities } from "../../../api/HostStaying/FacilitiesHost";
 import CheckBox from "../../../components/Checkbox/Checkbox";
-import { UseToken } from "../../../components/Contexts/AppTokenProvider";
 import useRegisterFacilities from "../../../hooks/JoinStaying/FacilitiesHost/useRegisterFacilities";
 import FacilitiesSkeleton from "./FacilitiesSkeleton";
 import ComponentExtraBed from "./ComponentExtrabed";
 import Title from "../../../components/Title/Title";
+import { UserContext } from "../../../components/Contexts/AppUserProvider";
 
 function ComponentFacilities() {
-  const { token } = useContext(UseToken);
+  const { token } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   const { facilities, setFacilities, data, setData } = useRegisterFacilities();
 
@@ -43,7 +43,7 @@ function ComponentFacilities() {
 
   return (
     <div className="flex flex-col gap-2">
-      {loading ? (
+      {!loading ? (
         Array.from({ length: 4 }).map((_, index) => <FacilitiesSkeleton key={index} />)
       ) : (
         <>

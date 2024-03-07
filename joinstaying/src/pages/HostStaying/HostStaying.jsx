@@ -1,19 +1,12 @@
 import PropTypes from "prop-types";
+import { useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { UserContext } from "../../components/Contexts/AppUserProvider";
 import routesConfig from "../../configs/routesConfig";
 import "./HostStaying.scss";
-import { useContext, useEffect } from "react";
-import { UseToken } from "../../components/Contexts/AppTokenProvider";
 function HostStaying({ children }) {
   const navigate = useNavigate();
-
-  const { token } = useContext(UseToken);
-
-  // useEffect(() => {
-  //   if (!token.length > 0) {
-  //     navigate(routesConfig.login);
-  //   }
-  // }, [token, navigate]);
+  const { user, userLoading } = useContext(UserContext);
 
   const params = [
     {
@@ -42,27 +35,7 @@ function HostStaying({ children }) {
       groupParam: [
         {
           id: 1,
-          param: routesConfig.becomeAHostAddRess,
-        },
-        {
-          id: 2,
-          param: routesConfig.becomeAHostMap,
-        },
-        {
-          id: 3,
-          param: routesConfig.becomeAHostHotelName,
-        },
-        {
-          id: 4,
-          param: routesConfig.becomeAHostFacilities,
-        },
-        {
-          id: 5,
-          param: routesConfig.becomeAHostHouseRules,
-        },
-        {
-          id: 6,
-          param: routesConfig.becomeAHostOverviewRoom,
+          param: routesConfig.becomeAHostCreateRoom,
         },
       ],
     },
@@ -70,74 +43,20 @@ function HostStaying({ children }) {
       id: 3,
       groupParam: [
         {
-          id: 23,
-          param: routesConfig.becomeAHostPhoto,
-        },
-      ],
-    },
-    {
-      id: 4,
-      groupParam: [
-        {
           id: 1,
-          param: routesConfig.becomeAHostAddRoom,
-        },
-        {
-          id: 2,
-          param: routesConfig.becomeAHostBathRoom,
-        },
-        {
-          id: 3,
-          param: routesConfig.becomeAHostAmenities,
-        },
-        {
-          id: 4,
-          param: routesConfig.becomeAHostUnitName,
-        },
-        {
-          id: 5,
-          param: routesConfig.becomeAHostHotelPrice,
-        },
-        {
-          id: 6,
-          param: routesConfig.becomeAHostHotelPriceOverview,
-        },
-      ],
-    },
-    {
-      id: 5,
-      groupParam: [
-        {
-          id: 1,
-          param: routesConfig.becomeAHostHotelGroupDiscount,
-        },
-        {
-          id: 2,
-          param: routesConfig.becomeAHostHotelPolicy,
-        },
-        {
-          id: 3,
-          param: routesConfig.becomeAHostNonRefundable,
-        },
-        {
-          id: 4,
-          param: routesConfig.becomeAHostCalendarSync,
-        },
-        {
-          id: 5,
-          param: routesConfig.becomeAHostPaymentMode,
-        },
-        {
-          id: 6,
-          param: routesConfig.becomeAHostInvoicing,
-        },
-        {
-          id: 7,
-          param: routesConfig.becomeAHostPartner,
+          param: routesConfig.becomeAHostThankYou,
         },
       ],
     },
   ];
+
+  useEffect(() => {
+    if (!userLoading) {
+      if (!Object.keys(user).length > 0) {
+        navigate(routesConfig.home);
+      }
+    }
+  }, [user, userLoading]);
 
   const location = useLocation();
   const currentPathName = location.pathname;

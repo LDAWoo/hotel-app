@@ -1,6 +1,6 @@
 import { post } from "../../../utils/request";
 
-export const postAddPhoto = async (newData, token) => {
-  const response = await post("hotel-image/add-new", newData, token, { headers: { "Content-Type": "multipart/form-data" } });
+export const postAddPhoto = async (newData, token, sessionToken) => {
+  const response = await post("/admin/v1/hotel-image", newData, token, { headers: { "Content-Type": "multipart/form-data", jwtToken: sessionToken } });
   return response;
 };

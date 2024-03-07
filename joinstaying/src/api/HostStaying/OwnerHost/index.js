@@ -1,6 +1,10 @@
 import { put } from "../../../utils/request";
 
-export const putOwnerHotel = async (newData, token) => {
-  const response = await put("hotel-owner/update", newData, token);
+export const putOwnerHotel = async (data, token) => {
+  const response = await put(`/admin/v1/hotel-owner`, data, token, {
+    headers: {
+      jwtToken: token,
+    },
+  });
   return response;
 };

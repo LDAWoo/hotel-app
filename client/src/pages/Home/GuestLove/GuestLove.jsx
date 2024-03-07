@@ -1,9 +1,21 @@
+import { useContext, useEffect, useState } from "react";
 import CarouselCustom from "../../../components/Carousel/CarouselCustom";
-import { GuestLoveData } from "../../../components/Constants/GuestLoveData";
 import HomeTitle from "../HomeTitle";
 import ItemGuestLove from "./ItemGuestLove";
+import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
+import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
+import { Navigation } from "swiper/modules";
 
-function GuestLove() {
+function GuestLove({ data, isLoading }) {
+  const [guestsLove, setGuestsLove] = useState([]);
+  const { width } = useRegisterWindowSizeStore();
+  const { isMobile } = useContext(DeviceContext);
+
+  useEffect(() => {
+    if (!isLoading && data.length > 0) {
+      setGuestsLove(data[2]?.data);
+    }
+  }, [data, isLoading]);
   return (
     <div className='w-full mb-5 ml-0 mr-0 mt-0'>
       <div className='flex flex-col w-full'>
@@ -14,17 +26,13 @@ function GuestLove() {
         <div>
           <div>
             <CarouselCustom
+              spaceBetween={15}
+              navigation={!isMobile}
+              modules={[Navigation]}
+              slidesPerView={width >= 900 ? 4 : width >= 640 ? 3 : 2}
               size={4}
-              data={GuestLoveData.map((item, index) => (
-                <ItemGuestLove
-                  key={index}
-                  name={item?.name}
-                  image={item?.image}
-                  ratings={item?.ratings}
-                  reviews={item?.reviews}
-                  price={item?.price}
-                />
-              ))}
+              slides={guestsLove}
+              component={ItemGuestLove}
             />
           </div>
         </div>

@@ -7,7 +7,13 @@ export const HotelNameHostData = [
     data: [
       {
         id: 1,
+        type: "text",
         field: "hotelName",
+        errors: {
+          notBlank: "Please enter your hotel name",
+          notName: "Please enter a valid hotel name",
+          notNameLength: "Please enter the hotel name from 4 to 32 digits",
+        },
       },
     ],
   },
@@ -19,20 +25,30 @@ export const HotelNameHostData = [
     data: [
       {
         id: 1,
+        type: "text",
         field: "contactPerson",
+        errors: {
+          notBlank: "Please enter your contact person not empty",
+          notName: "Please enter a valid contact person",
+          notNameLength: "Please enter the contact person from 4 to 32 digits",
+        },
       },
     ],
   },
   {
     id: 3,
     title: "Phone Number",
-    subTitle:
-      "Contact phone number so we can support your registration when needed",
+    subTitle: "Contact phone number so we can support your registration when needed",
     type: "number",
     data: [
       {
         id: 1,
+        type: "number",
         field: "phoneNumberOne",
+        errors: {
+          notBlank: "Phone number not empty",
+          notPhoneNumber: "Please enter a valid phone number",
+        },
       },
     ],
   },
@@ -44,7 +60,12 @@ export const HotelNameHostData = [
     data: [
       {
         id: 1,
+        type: "number",
         field: "phoneNumberTwo",
+        errors: {
+          notBlank: "",
+          notPhoneNumber: "Please enter a valid phone number",
+        },
       },
     ],
   },
@@ -95,8 +116,7 @@ export const HotelNameHostData = [
   },
   {
     id: 6,
-    title:
-      "Do you own multiple hotels, or are part of a chain or management company?",
+    title: "Do you own multiple hotels, or are part of a chain or management company?",
     subTitle: "",
     type: "radio",
     data: [

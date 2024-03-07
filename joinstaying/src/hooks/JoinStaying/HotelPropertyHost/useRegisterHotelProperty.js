@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useRegisterHotelProperty = create((set) => ({
-  propertiesValue: "",
+  propertiesValue: 0,
   setPropertiesValue: (newProperty) => set({ propertiesValue: newProperty }),
 }));
 

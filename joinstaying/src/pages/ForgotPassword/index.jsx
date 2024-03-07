@@ -1,3 +1,4 @@
+import i18next from "i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Title from "../../components/Title/Title";
 import Border from "../../components/Border/Border";
@@ -8,6 +9,8 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import useRegisterEmail from "../../hooks/Account/Forgot/useRegisterEmail";
 import routesConfig from "../../configs/routesConfig";
+import { validateEmail } from "../../Regexs/Validate/Email";
+import { postUserForgot } from "../../api/User/Forgot";
 
 function ForgotPassword() {
   const navigate = useNavigate();
@@ -15,25 +18,52 @@ function ForgotPassword() {
   const { currentEmail, setCurrentEmail } = useRegisterEmail();
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
+  const [errorForgot, setErrorForgot] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setEmail(currentEmail);
   }, [currentEmail]);
 
+  useEffect(() => {
+    if (errorEmail.length > 0 || errorForgot.length > 0) {
+      validate();
+      if (errorForgot.length > 0) {
+        setErrorForgot(t("Error.Account.emailNotExits"));
+      }
+    }
+  }, [i18next.language]);
+
   const handleChange = (e) => {
     const value = e.target.value.trim();
     if (value.length > 0) {
       setErrorEmail("");
+      setErrorForgot("");
     } else {
-      setErrorEmail(t("Error.Account.emailNotBlank"));
+      setErrorForgot(t("Error.Account.emailNotBlank"));
     }
     setEmail(value);
   };
 
   const handleSendLink = () => {
+    setEmail(email.trim());
     if (!validate()) return;
-    setCurrentEmail(email);
-    navigate(routesConfig.forgotConfirmation);
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const results = await postUserForgot(email);
+        console.log(results);
+        setErrorForgot("");
+        setLoading(false);
+        setCurrentEmail(email);
+        navigate(routesConfig.forgotConfirmation);
+      } catch (e) {
+        setErrorForgot(t("Error.Account.emailNotExits"));
+        setLoading(false);
+      }
+    };
+    fetchData();
   };
 
   const validate = () => {
@@ -46,12 +76,13 @@ function ForgotPassword() {
       setErrorEmail("");
     }
 
-    // if (!validateEmail(email)) {
-    //   setErrorEmail(t("Error.Account.emailNotEmail"));
-    //   isValid = false;
-    // } else {
-    //   setErrorEmail("");
-    // }
+    if (!validateEmail(email)) {
+      setErrorEmail(t("Error.Account.emailNotEmail"));
+      isValid = false;
+    } else {
+      setErrorEmail("");
+      isValid = true;
+    }
     return isValid;
   };
 
@@ -68,10 +99,10 @@ function ForgotPassword() {
       </div>
       <div className="flex flex-col w-full gap-2 pt-8">
         <Title title={t("Forgot.email")} fontMedium xl />
-        <TextInput placeholder={t("Forgot.email")} id="email" value={email} error={errorEmail.length > 0} required name="email" sizeIcon={24} onChange={handleChange} onKeyDown={handleKeyPress} />
+        <TextInput placeholder={t("Forgot.email")} id="email" value={email} error={errorEmail.length > 0 || errorForgot.length > 0} required name="email" sizeIcon={24} onChange={handleChange} onKeyDown={handleKeyPress} />
         <TextError error={errorEmail} />
-
-        <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleSendLink} title={t("Forgot.sendLink")} />
+        <TextError error={errorForgot} />
+        <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleSendLink} title={t("Forgot.sendLink")} disabled={loading} loading={loading} />
       </div>
 
       <div className=" text-[12px] text-center mt-6">

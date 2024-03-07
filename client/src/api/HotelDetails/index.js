@@ -1,6 +1,6 @@
-import { post } from "../../utils/request";
+import { get } from "../../utils/request";
 
 export const getHotelById = async (data) => {
-  const response = await post(`hotel/get-condition/id`, data);
-  return response;
+  const response = await get(`/public/v1/hotel/get-condition/`, data);
+  return response.data;
 };

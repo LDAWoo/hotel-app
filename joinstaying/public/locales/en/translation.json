@@ -66,9 +66,12 @@
       "loginFailed": "Incorrect email or password. Please try again or use the verification link.",
       "emailNotBlank": "Please enter your email address",
       "emailNotEmail": "Please enter a valid email address",
+      "emailNotExits": "This email does not exist on our website.",
+      "emailAlreadyExists": "This email already exists on our website",
       "firstNameNotBlank": "Please enter your first name",
       "lastNameNotBlank": "Please enter your last name",
       "phoneNumberNotBlank": "Please enter your phone number",
+      "phoneNumberNotPhone": "Please enter a valid phone number",
       "passwordNotBlank": "Please enter a new password",
       "passwordNotPassword": "Password must contain at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character",
       "confirmPasswordNotBlank": "Please confirm your password",
@@ -101,6 +104,353 @@
     "title": "We hope you’ll enjoy your stay",
     "subTitle": "Discover our world-class hotel & restaurant resort.",
     "bookNow": "Book Now"
+  },
+  "JoinBanner": {
+    "listYour": "List your",
+    "data": {
+      "title1": "apartment",
+      "title2": "hotel",
+      "title3": "holiday home",
+      "title4": "guest house",
+      "title5": "bed and breakfast"
+    },
+    "onStaying": "on Staying.com",
+    "title": "Whether hosting is your side passion or full-time job, register your holiday rental on Staying.com to reach travellers worldwide",
+    "getStarted": {
+      "title": "Earn more with consistent bookings",
+      "items": {
+        "item1": "45% of partners get their first booking within a week",
+        "item2": "More than 1,1 billion holiday rental guests since 2024",
+        "item3": "Full control over your property and finances",
+        "item4": "Registration is free and takes 15 minutes"
+      },
+      "getStartedNow": "Get Started Now"
+    }
+  },
+  "WordMap": {
+    "title": "Reach a unique global customer base",
+    "items": {
+      "item1": "of holiday rental guests return to book with us again",
+      "item2": "of nights booked on Staying.com in 2022 were for international stays",
+      "item3": "of holiday rental customers are Genius loyalty level 2 or 3 who tend to spend more per booking"
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "List your property on Staying.com and start welcoming guests in no time!",
+      "subTitle": "To get started, choose the type of property you want to list on Staying.com",
+      "buttonProperty": "List your property",
+      "items": {
+        "item1": {
+          "name": "Apartment",
+          "description": "Furnished and self-catering accommodation, where guests rent the entire place."
+        },
+        "item2": {
+          "name": "Homes",
+          "description": "Properties like apartments, holiday homes, villas, etc."
+        },
+        "item3": {
+          "name": "Hotel, B&Bs, and more",
+          "description": "Properties like hotels, B&Bs, guest houses, hostels, aparthotels, etc."
+        },
+        "item4": {
+          "name": "Alternative places",
+          "description": "Properties like boats, campsites, luxury tents, etc."
+        }
+      }
+    },
+    "Property": {
+      "title": "From the list below, which property category is most similar to your place?"
+    },
+    "Owner": {
+      "title": "How many hotels are you listing?",
+      "items": {
+        "item1": "One hotel with one or multiple rooms that guests can book",
+        "item2": "Multiple hotels with one or multiple rooms that guests can book"
+      },
+      "valueProperty": "Number of property"
+    },
+    "FeedBack": {
+      "title": "You're listing?",
+      "subTitle": "Dose this sound like your property?",
+      "needChange": "No, I need to make a change"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "Basic Information",
+          "title": "Hello",
+          "subTitle": "Please start by telling us your room's name, address and contact details.",
+          "information": {
+            "hotelName": "What's the name of your hotel?",
+            "subHotelName": "Guests will see this name when searching for a place to stay.",
+            "contactPerson": "Contact Person",
+            "subContactPerson": "Contact name so we can know your name.",
+            "phoneNumber": "Phone Number",
+            "subPhoneNumber": "Contact phone number so we can support your registration when needed",
+            "otherPhoneNumber": "Other phone number",
+            "nameRanting": "What is the star rating of your hotel?",
+            "ratings": {
+              "star0": "N/A",
+              "star": "star"
+            },
+            "nameMultipleHotel": "Do you own multiple hotels, or are part of a chain or management company?",
+            "multipleHotel": {
+              "yes": "Yes",
+              "no": "No"
+            },
+            "nameCountry": "Country/region",
+            "selectCountry": "Select Country/region",
+            "nameStreet": "Street name and house number",
+            "nameStreetPlaceholder": "Start typing your address",
+            "nameDistrict": "District Address",
+            "nameCity": "City",
+            "nameZipCode": "Zip code"
+          },
+          "notification": {
+            "noti1": {
+              "title": "What needs to be included in my address?",
+              "items": {
+                "item1": "Include both your street name and number for the entire property",
+                "item2": "The floor number in address line 2 if relevant",
+                "item3": "Individual apartment or floor numbers can be shared later",
+                "item4": "Provide the zip code",
+                "item5": "Spell the street name correctly",
+                "item6": "Use the physical address of the property, not your office or home address"
+              }
+            },
+            "noti2": {
+              "title": "Why do I need to add my address?",
+              "items": {
+                "item1": "Once a guest books your property, this is the address that will be shared with them. It's important that it's correct so guests can easily find your property."
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "Composition And Price",
+          "subTitle": "Please choose us to know your first room. After entering all the necessary information. Location will be able to enter details for other rooms.",
+          "information": {
+            "roomType": "Room type",
+            "roomName": "Room name",
+            "optionalName": "Option name (not required)",
+            "subOptionalName": "Create your own custom name for your reference (not required).",
+            "numberOfRoom": "Number of rooms (this type)",
+            "bedOptions": "Bed options",
+            "roomSize": "Room size",
+            "titlePrice": "How much do you want to charge per night?",
+            "priceGuestPay": "Price guests pay",
+            "subPriceGuestPay": "Including taxes, commission and charges",
+            "commissions": {
+              "title": "commission",
+              "help": "24/7 help in your language",
+              "save": "Save time with automatically confirmed bookings",
+              "we": "We promote your place on Google",
+              "earning": "Your earnings (including taxes)"
+            },
+            "roomNameDefault": "Deluxe Double Room",
+            "quantityType": "Quantity of this type:",
+            "edit": "Edit",
+            "delete": "Delete",
+            "buttonAddOrderRoom": "Add another room"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Do you offer other sleeping arrangements?",
+              "items": {
+                "item1": "Right now, you just need to add your basic sleeping arrangements.",
+                "item2": "Cots, additional beds and other sleeping arrangements can be added in the extranet, the platform you’ll use to manage your property.",
+                "item3": "You can set up your property’s child policies, including maximum age and price adjustments, in the extranet after you finish registration."
+              }
+            },
+            "noti2": {
+              "title": "What if I'm not sure about my price?",
+              "items": {
+                "item1": "Don't worry, you can always change it later. You can even set weekend, midweek and seasonal prices, giving you more control over what you earn."
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "Amenities",
+          "subTitle": "Please tell us some convenient information such as amenities and internet that the website uses.",
+          "information": {
+            "optionalExtraBed": "Optional extra bed",
+            "provideExtraBed": "Do you provide extra beds?",
+            "extraBeds": {
+              "yes": "Yes",
+              "no": "No"
+            },
+            "numberOfExtraBed": "Select the number of extra beds that can be added",
+            "check": "Check the box if you allow the following guests to sleep in extra beds.",
+            "childrenOfCrib": "Children up to 2 years old sleep in a crib",
+            "children": "Children",
+            "priceChildren": "Enter the price per night per child",
+            "upTo": "up to",
+            "yearOld": "years old",
+            "adult": "Adult",
+            "priceAdult": "Enter the price per night per adult"
+          },
+          "notification": {
+            "noti1": {
+              "title": "What if I don’t see a facility I offer?",
+              "items": {
+                "item1": "The facilities listed here are the ones guests search for most. After you complete your registration, you can add more facilities from a larger list on the Extranet, the platform you'll use to manage your property."
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "Photos",
+          "title": "What dose your hotel look like?",
+          "subTitle": "Beautiful images are an enticing invitation to a complete hotel experience, download high resolution images and show exactly what your hotel has to offer, We will display them on your property page on Staying.com.",
+          "information": {
+            "uploadPhoto": "Upload at least 5 photos of your property.",
+            "moreUploadPhoto": "The more you upload, the more likely you are to get bookings. You can add more later.",
+            "dragOrDrop": "Drag and drop or",
+            "upload": "Upload photos",
+            "maximum": "jpg,jpeg or png, maximum 20MB each",
+            "choose": "Choose a",
+            "mainPhoto": "main photo",
+            "photoGood": "that will make a good first impression.",
+            "clickAndDrag": "Click and drag the photos to arrange them in the order you would like guests to see them."
+          },
+          "notification": {
+            "noti1": {
+              "title": "What if I don't have professional photos?",
+              "items": {
+                "item1": "No problem! You can use a smartphone or a digital camera.Here are some tips for taking great photos of your property",
+                "item2": "If you don’t know who took a photo, it's best to avoid using it. Only use photos others have taken if you have permission."
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "Policies",
+          "title": "Cancellation policies",
+          "subTitle": "Please list basic policy details. Do you allow children or pets to stay? How flexible are you with cancellations?.",
+          "information": {
+            "cancelBooking": "When can the guests cancel their bookings for free?",
+            "before18": "Before 18:00 on the day of arrival",
+            "before1day": "Before 1 day on the day of arrival",
+            "before2day": "Before 2 days on the day of arrival",
+            "before3day": "Before 3 days on the day of arrival",
+            "before4day": "Before 4 days on the day of arrival",
+            "before5day": "Before 5 days on the day of arrival",
+            "priceCancelBooking": "How much are your guests charged if they cancel after the cancellation window (before 18:00 on the day of arrival)?",
+            "firstNight": "Cost of the first night",
+            "totalPrice": "100% of the total price",
+            "additional": "Additional Polices?",
+            "pet": "Do you allow pet?",
+            "pets": {
+              "yes": "Yes",
+              "no": "No"
+            },
+            "smo": "Do you allow smoking?",
+            "smoking": {
+              "yes": "Yes",
+              "no": "No"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "What policy should I choose?",
+              "items": {
+                "item1": "These policies can be easily updated later."
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "Payments",
+          "subTitle": "Please indicate payment method. You accept the details along with the other options.",
+          "information": {
+            "title": "How can your guests pay you at your property?",
+            "subTitle1": "In case you don’t accept credit cards at your property, Staying.com can facilitate your guest payments for you with the Payments by Staying.com service",
+            "payWithCredit": "Guests can pay with a credit card at my property",
+            "payWithStaying": "I’ll use Payments by Staying.com and I will pay no payment charge",
+            "subTitle2": "In order to comply with various legal and regulatory requirements, we need to collect and verify some information about you and your property.",
+            "provideFullName": "Please provide the full names of all individuals who own 25% or more of the accommodation.",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "flagAddress": "Do you flag address?",
+            "flags": {
+              "yes": "Yes",
+              "no": "No"
+            },
+            "nameCountry": "Country/region",
+            "selectCountry": "Select Country/region",
+            "nameStreet": "Street name and house number",
+            "nameStreetPlaceholder": "Start typing your address",
+            "nameDistrict": "District Address",
+            "nameCity": "City"
+          },
+          "notification": {
+            "noti1": {
+              "title": "How Payments by Staying.com works?",
+              "items": {
+                "item1": "Your guest pays through Staying.com with more options like PayPal, WeChat Pay and AliPay.",
+                "item2": "We facilitate your guest’s payment. You don’t have to deal with fraud, chargebacks or invalid cards.",
+                "item3": "Staying.com sends payouts to you. You'll receive a bank transfer by the 15th of each month that covers all bookings with a check-out in the previous month."
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "Confirm",
+          "title": "You accept the details provided by Staying.com.",
+          "information": {
+            "title": "You're almost done - just a few final notes.",
+            "subTitle1": "To help you start earning revenue, we'll automatically open your property for booking over the next 12 months. If you want to change your room availability before opening, you can select 'complete registration and open later'. Availability can also be adjusted after you open a room for booking.",
+            "subTitle2": "To complete registration, please check the boxes below:",
+            "acceptGeneralTermsPrivacy": "I certify that the accommodation business is legal and has all necessary licenses and permits, available to present upon request. Staying.com B.V has the right to verify and investigate any information provided by you. issued upon registration.",
+            "certificationOfLegalBusinessOperations": "I have read and accept and agree to the general terms and the Staying.com Safety and Security Policy allowing properties and guests to communicate through Staying.com where compliant communications are received and processed."
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "Please enter your hotel name",
+            "notNameHotelName": "Please enter a valid hotel name",
+            "notNameLengthHotelName": "Please enter the hotel name from 4 to 32 digits",
+            "contactPersonNotBlank": "Please enter your contract person",
+            "notNameContactPerson": "Please enter a valid contract person",
+            "notNameLengthContactPerson": "Please enter the contract person from 4 to 32 digits",
+            "phoneNumberNotBlank": "Please enter your phone number",
+            "notPhoneNumber": "Please enter a valid phone number",
+            "addressNotBlank": "Please enter your street address",
+            "districtNotBlank": "Please enter your district address",
+            "cityNotBlank": "Please enter your city",
+            "postalCodeNotBlank": "Please enter your postal code",
+            "notPostalCode": "Please enter a valid postal code"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "Please enter the name custom from 4 to 32 digits",
+            "quantityRoomNotGreaterThan": "Please enter quantity room > 0",
+            "roomSizeNotGreaterThan": "Please enter size room > 0",
+            "priceNotGreaterThan": "Please enter price per night > 0"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "Please enter your first name",
+            "lastNameNotBlank": "Please enter your last name",
+            "addressNotBlank": "Please enter your street address",
+            "districtNotBlank": "Please enter your district address",
+            "cityNotBlank": "Please enter your city"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "Congratulations on completing the registration, and now it's time to relax. To help you keep records, we have sent you a registration confirmation email along with another email attached with a copy of your agreement."
+      }
+    },
+    "buttonContinue": "Continue"
   },
   "Search": {
     "location": "Where are you going?",

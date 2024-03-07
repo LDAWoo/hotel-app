@@ -66,6 +66,7 @@
       "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
       "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
+      "emailNotExits": "Email này không tồn tại trong trang web của chúng tôi.",
       "firstNameNotBlank": "Vui lòng nhập tên của bạn",
       "lastNameNotBlank": "Vui lòng nhập họ của bạn",
       "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
@@ -90,5 +91,352 @@
     "title": "Chúng tôi hy vọng bạn sẽ thích kỳ nghỉ của mình",
     "subTitle": "Khám phá khu nghỉ dưỡng khách sạn và nhà hàng hàng đầu thế giới của chúng tôi.",
     "bookNow": "Đặt ngay"
+  },
+  "JoinBanner": {
+    "listYour": "Liệt kê",
+    "data": {
+      "title1": "căn hộ",
+      "title2": "khách sạn",
+      "title3": "nhà nghỉ",
+      "title4": "nhà khách",
+      "title5": "nhà nghỉ và điểm tâm"
+    },
+    "onStaying": "trên Staying.com",
+    "title": "Dù là sở thích phụ của bạn hay công việc chính, hãy đăng ký cho thuê nhà nghỉ của bạn trên Staying.com để tiếp cận du khách trên toàn thế giới",
+    "getStarted": {
+      "title": "Kiếm nhiều hơn với các đặt phòng liên tục",
+      "items": {
+        "item1": "45% đối tác có đặt phòng đầu tiên trong vòng một tuần",
+        "item2": "Hơn 1,1 tỷ khách thuê nhà nghỉ từ năm 2024",
+        "item3": "Hoàn toàn kiểm soát tài sản và tài chính của bạn",
+        "item4": "Đăng ký miễn phí và chỉ mất 15 phút"
+      },
+      "getStartedNow": "Bắt đầu Ngay"
+    }
+  },
+  "WordMap": {
+    "title": "Tiếp cận một cơ sở khách hàng toàn cầu độc đáo",
+    "items": {
+      "item1": "của khách thuê nhà nghỉ quay lại để đặt phòng với chúng tôi một lần nữa",
+      "item2": "của số đêm được đặt trên Staying.com vào năm 2022 là cho các kỳ nghỉ quốc tế",
+      "item3": "của khách thuê nhà nghỉ là cấp bậc trung thành Genius 2 hoặc 3 và có xu hướng chi tiêu nhiều hơn mỗi lần đặt phòng"
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "Liệt kê tài sản của bạn trên Staying.com và bắt đầu chào đón khách ngay lập tức!",
+      "buttonProperty": "Liệt kê tài sản của bạn",
+      "subTitle": "Để bắt đầu, hãy chọn loại tài sản bạn muốn liệt kê trên Staying.com",
+      "items": {
+        "item1": {
+          "name": "Căn hộ",
+          "description": "Chỗ ở trang bị đầy đủ và tự phục vụ, nơi khách thuê toàn bộ nơi ở."
+        },
+        "item2": {
+          "name": "Nhà",
+          "description": "Các tài sản như căn hộ, nhà nghỉ dưỡng, biệt thự, v.v."
+        },
+        "item3": {
+          "name": "Khách sạn, Nhà khách và hơn thế nữa",
+          "description": "Các tài sản như khách sạn, nhà nghỉ, nhà khách, nhà trọ, khách sạn căn hộ, v.v."
+        },
+        "item4": {
+          "name": "Những nơi thay thế",
+          "description": "Các tài sản như thuyền, khu cắm trại, lều sang trọng, v.v."
+        }
+      }
+    },
+    "Property": {
+      "title": "Từ danh sách dưới đây, loại tài sản nào giống nhất với nơi của bạn?"
+    },
+    "Owner": {
+      "title": "Bạn đang liệt kê bao nhiêu khách sạn?",
+      "items": {
+        "item1": "Một khách sạn với một hoặc nhiều phòng mà khách hàng có thể đặt",
+        "item2": "Nhiều khách sạn với một hoặc nhiều phòng mà khách hàng có thể đặt"
+      },
+      "valueProperty": "Số lượng tài sản"
+    },
+    "FeedBack": {
+      "title": "Bạn đang liệt kê?",
+      "subTitle": "Điều này có nghe giống như tài sản của bạn không?",
+      "needChange": "Không, tôi cần thay đổi"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "Thông tin cơ bản",
+          "title": "Xin chào",
+          "subTitle": "Vui lòng bắt đầu bằng cách cho chúng tôi biết tên phòng, địa chỉ và thông tin liên hệ của bạn.",
+          "information": {
+            "hotelName": "Tên của khách sạn của bạn là gì?",
+            "subHotelName": "Khách hàng sẽ thấy tên này khi tìm kiếm nơi ở.",
+            "contactPerson": "Người liên hệ",
+            "subContactPerson": "Tên liên hệ để chúng tôi có thể biết tên của bạn.",
+            "phoneNumber": "Số điện thoại",
+            "subPhoneNumber": "Số điện thoại liên hệ để chúng tôi hỗ trợ đăng ký của bạn khi cần",
+            "otherPhoneNumber": "Số điện thoại khác",
+            "nameRanting": "Đánh giá sao của khách sạn của bạn là bao nhiêu?",
+            "ratings": {
+              "star0": "Không áp dụng",
+              "star": "sao"
+            },
+            "nameMultipleHotel": "Bạn có sở hữu nhiều khách sạn, hoặc là một phần của một chuỗi hoặc công ty quản lý không?",
+            "multipleHotel": {
+              "yes": "Có",
+              "no": "Không"
+            },
+            "nameCountry": "Quốc gia/Khu vực",
+            "selectCountry": "Chọn Quốc gia/Khu vực",
+            "nameStreet": "Tên đường và số nhà",
+            "nameStreetPlaceholder": "Bắt đầu nhập địa chỉ của bạn",
+            "nameDistrict": "Địa chỉ quận",
+            "nameCity": "Thành phố",
+            "nameZipCode": "Mã bưu chính"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Cần bao gồm gì trong địa chỉ của tôi?",
+              "items": {
+                "item1": "Bao gồm cả tên và số của bạn cho toàn bộ tài sản",
+                "item2": "Số tầng trong địa chỉ dòng 2 nếu có liên quan",
+                "item3": "Các số căn hộ hoặc tầng riêng lẻ có thể được chia sẻ sau",
+                "item4": "Cung cấp mã bưu chính",
+                "item5": "Chính xác về việc viết đúng tên đường",
+                "item6": "Sử dụng địa chỉ vật lý của tài sản, không phải địa chỉ văn phòng hoặc nhà ở của bạn"
+              }
+            },
+            "noti2": {
+              "title": "Tại sao tôi cần thêm địa chỉ của mình?",
+              "items": {
+                "item1": "Khi một khách hàng đặt phòng tài sản của bạn, đây là địa chỉ sẽ được chia sẻ với họ. Điều quan trọng là địa chỉ phải chính xác để khách hàng dễ dàng tìm thấy tài sản của bạn."
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "Cấu trúc và Giá",
+          "subTitle": "Vui lòng chọn chúng tôi để biết phòng đầu tiên của bạn. Sau khi nhập tất cả thông tin cần thiết. Vị trí sẽ có thể nhập thông tin chi tiết cho các phòng khác.",
+          "information": {
+            "roomType": "Loại phòng",
+            "roomName": "Tên phòng",
+            "optionalName": "Tên tùy chọn (không bắt buộc)",
+            "subOptionalName": "Tạo tên tùy chỉnh cho sự tham khảo của bạn (không bắt buộc).",
+            "numberOfRoom": "Số lượng phòng (loại này)",
+            "bedOptions": "Tùy chọn giường",
+            "roomSize": "Diện tích phòng",
+            "titlePrice": "Bạn muốn thu bao nhiêu mỗi đêm?",
+            "priceGuestPay": "Giá khách hàng trả",
+            "subPriceGuestPay": "Bao gồm thuế, hoa hồng và phí",
+            "commissions": {
+              "title": "hoa hồng",
+              "help": "Trợ giúp 24/7 bằng ngôn ngữ của bạn",
+              "save": "Tiết kiệm thời gian với các đặt phòng được xác nhận tự động",
+              "we": "Chúng tôi quảng cáo địa điểm của bạn trên Google",
+              "earning": "Thu nhập của bạn (bao gồm thuế)"
+            },
+            "roomNameDefault": "Phòng Đôi Cao Cấp",
+            "quantityType": "Số lượng của loại này:",
+            "edit": "Chỉnh sửa",
+            "delete": "Xóa",
+            "buttonAddOrderRoom": "Thêm một phòng khác"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Bạn có cung cấp các sắp xếp ngủ khác không?",
+              "items": {
+                "item1": "Hiện tại, bạn chỉ cần thêm các sắp xếp ngủ cơ bản của mình.",
+                "item2": "Giường cũi, giường thêm và các sắp xếp ngủ khác có thể được thêm vào trong extranet, nền tảng mà bạn sẽ sử dụng để quản lý tài sản của mình.",
+                "item3": "Sau khi hoàn thành đăng ký, bạn có thể thiết lập các chính sách về trẻ em của tài sản của mình, bao gồm tuổi tối đa và điều chỉnh giá, trong extranet."
+              }
+            },
+            "noti2": {
+              "title": "Nếu tôi không chắc về giá của mình thì sao?",
+              "items": {
+                "item1": "Đừng lo lắng, bạn luôn có thể thay đổi sau này. Bạn thậm chí có thể thiết lập giá cuối tuần, giữa tuần và theo mùa, mang lại cho bạn nhiều kiểm soát hơn về thu nhập của mình."
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "Tiện ích",
+          "subTitle": "Vui lòng cho chúng tôi biết một số thông tin thuận tiện như tiện ích và internet mà trang web sử dụng.",
+          "information": {
+            "optionalExtraBed": "Giường phụ tùy chọn",
+            "provideExtraBed": "Bạn có cung cấp giường phụ không?",
+            "extraBeds": {
+              "yes": "Có",
+              "no": "Không"
+            },
+            "numberOfExtraBed": "Chọn số lượng giường phụ có thể thêm vào",
+            "check": "Đánh dấu vào ô nếu bạn cho phép các khách sau đây ngủ trên giường phụ.",
+            "childrenOfCrib": "Trẻ em dưới 2 tuổi ngủ trên cũi",
+            "children": "Trẻ em",
+            "priceChildren": "Nhập giá mỗi đêm mỗi trẻ em",
+            "upTo": "tối đa",
+            "yearOld": "tuổi",
+            "adult": "Người lớn",
+            "priceAdult": "Nhập giá mỗi đêm mỗi người lớn"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Nếu tôi không thấy một tiện ích tôi cung cấp?",
+              "items": {
+                "item1": "Các tiện ích được liệt kê ở đây là những tiện ích mà khách hàng tìm kiếm nhiều nhất. Sau khi bạn hoàn tất việc đăng ký, bạn có thể thêm nhiều tiện ích hơn từ danh sách lớn hơn trên Extranet, nền tảng bạn sẽ sử dụng để quản lý tài sản của mình."
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "Ảnh",
+          "title": "Khách sạn của bạn trông như thế nào?",
+          "subTitle": "Hình ảnh đẹp là lời mời hấp dẫn đến một trải nghiệm khách sạn hoàn chỉnh, tải xuống hình ảnh độ phân giải cao và hiển thị đúng những gì khách sạn của bạn có để cung cấp, chúng tôi sẽ hiển thị chúng trên trang tài sản của bạn trên Staying.com.",
+          "information": {
+            "uploadPhoto": "Tải lên ít nhất 5 bức ảnh của tài sản của bạn.",
+            "moreUploadPhoto": "Bạn tải lên càng nhiều, bạn càng có khả năng đặt phòng. Bạn có thể thêm nhiều hơn sau này.",
+            "dragOrDrop": "Kéo và thả hoặc",
+            "upload": "Tải ảnh lên",
+            "maximum": "jpg, jpeg hoặc png, tối đa 20MB mỗi ảnh",
+            "choose": "Chọn một",
+            "mainPhoto": "ảnh chính",
+            "photoGood": "mà sẽ tạo ấn tượng tốt nhất.",
+            "clickAndDrag": "Nhấp và kéo ảnh để sắp xếp theo thứ tự bạn muốn khách hàng nhìn thấy chúng."
+          },
+          "notification": {
+            "noti1": {
+              "title": "Nếu tôi không có ảnh chuyên nghiệp thì sao?",
+              "items": {
+                "item1": "Không vấn đề! Bạn có thể sử dụng điện thoại thông minh hoặc máy ảnh kỹ thuật số. Dưới đây là một số mẹo để chụp ảnh tuyệt vời về tài sản của bạn",
+                "item2": "Nếu bạn không biết ai chụp ảnh, thì tốt nhất là tránh sử dụng. Chỉ sử dụng ảnh người khác đã chụp nếu bạn có sự cho phép."
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "Chính sách",
+          "title": "Chính sách hủy",
+          "subTitle": "Vui lòng liệt kê các chi tiết chính sách cơ bản. Bạn có cho phép trẻ em hoặc thú nuôi ở lại không? Bạn có linh hoạt đối với việc hủy không?.",
+          "information": {
+            "cancelBooking": "Khách hàng có thể hủy đặt phòng của họ miễn phí vào lúc nào?",
+            "before18": "Trước 18:00 vào ngày đến",
+            "before1day": "Trước 1 ngày vào ngày đến",
+            "before2day": "Trước 2 ngày vào ngày đến",
+            "before3day": "Trước 3 ngày vào ngày đến",
+            "before4day": "Trước 4 ngày vào ngày đến",
+            "before5day": "Trước 5 ngày vào ngày đến",
+            "priceCancelBooking": "Nếu khách hàng hủy sau thời gian hủy (trước 18:00 vào ngày đến), họ sẽ bị tính phí bao nhiêu?",
+            "firstNight": "Chi phí của đêm đầu tiên",
+            "totalPrice": "100% tổng giá",
+            "additional": "Chính sách bổ sung?",
+            "pet": "Bạn có cho phép thú cưng?",
+            "pets": {
+              "yes": "Có",
+              "no": "Không"
+            },
+            "smo": "Bạn có cho phép hút thuốc?",
+            "smoking": {
+              "yes": "Có",
+              "no": "Không"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "Tôi nên chọn chính sách nào?",
+              "items": {
+                "item1": "Những chính sách này có thể được cập nhật dễ dàng sau này."
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "Thanh toán",
+          "subTitle": "Vui lòng chỉ định phương thức thanh toán. Bạn chấp nhận các chi tiết cùng với các tùy chọn khác.",
+          "information": {
+            "title": "Khách của bạn có thể thanh toán bạn tại tài sản của bạn bằng cách nào?",
+            "subTitle1": "Trong trường hợp bạn không chấp nhận thẻ tín dụng tại tài sản của mình, Staying.com có thể thuận tiện cho việc thanh toán của khách bạn với dịch vụ Thanh toán bởi Staying.com",
+            "payWithCredit": "Khách hàng có thể thanh toán bằng thẻ tín dụng tại tài sản của tôi",
+            "payWithStaying": "Tôi sẽ sử dụng Dịch vụ Thanh toán bởi Staying.com và tôi sẽ không phải trả phí thanh toán",
+            "subTitle2": "Để tuân thủ các yêu cầu pháp lý và quy định khác nhau, chúng tôi cần thu thập và xác minh một số thông tin về bạn và tài sản của bạn.",
+            "provideFullName": "Vui lòng cung cấp họ và tên đầy đủ của tất cả các cá nhân sở hữu 25% hoặc hơn của chỗ ở.",
+            "firstName": "Tên",
+            "lastName": "Họ",
+            "flagAddress": "Bạn có đánh dấu địa chỉ không?",
+            "flags": {
+              "yes": "Có",
+              "no": "Không"
+            },
+            "nameCountry": "Quốc gia/Khu vực",
+            "selectCountry": "Chọn Quốc gia/Khu vực",
+            "nameStreet": "Tên đường và số nhà",
+            "nameStreetPlaceholder": "Bắt đầu nhập địa chỉ của bạn",
+            "nameDistrict": "Địa chỉ Quận",
+            "nameCity": "Thành phố"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Làm thế nào Dịch vụ Thanh toán bởi Staying.com hoạt động?",
+              "items": {
+                "item1": "Khách của bạn thanh toán thông qua Staying.com với nhiều lựa chọn như PayPal, WeChat Pay và AliPay.",
+                "item2": "Chúng tôi thuận tiện cho việc thanh toán của khách của bạn. Bạn không cần phải đối mặt với gian lận, hoàn trả hoặc thẻ không hợp lệ.",
+                "item3": "Staying.com gửi thanh toán cho bạn. Bạn sẽ nhận được chuyển khoản ngân hàng vào ngày 15 hàng tháng bao gồm tất cả các đặt phòng có ngày trả phòng vào tháng trước đó."
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "Xác nhận",
+          "title": "Bạn chấp nhận các chi tiết được cung cấp bởi Staying.com.",
+          "information": {
+            "title": "Bạn chỉ cần thêm một vài ghi chú cuối cùng.",
+            "subTitle1": "Để giúp bạn bắt đầu kiếm doanh thu, chúng tôi sẽ tự động mở cửa tài sản của bạn để đặt phòng trong vòng 12 tháng tới. Nếu bạn muốn thay đổi sẵn có của phòng trước khi mở, bạn có thể chọn 'hoàn tất đăng ký và mở sau'. Khả năng sẵn có cũng có thể được điều chỉnh sau khi bạn mở phòng để đặt chỗ.",
+            "subTitle2": "Để hoàn tất đăng ký, vui lòng đánh dấu vào các hộp dưới đây:",
+            "acceptGeneralTermsPrivacy": "Tôi chứng nhận rằng kinh doanh chỗ ở của tôi là hợp pháp và có tất cả các giấy phép và phép cần thiết, có sẵn để trình bày khi được yêu cầu. Staying.com B.V có quyền xác minh và điều tra bất kỳ thông tin nào do bạn cung cấp. được phát hành khi đăng ký.",
+            "certificationOfLegalBusinessOperations": "Tôi đã đọc và chấp nhận và đồng ý với các điều khoản chung và Chính sách An toàn và Bảo mật của Staying.com cho phép các địa điểm và khách hàng giao tiếp thông qua Staying.com khi nhận và xử lý các giao tiếp tuân thủ."
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "Vui lòng nhập tên khách sạn của bạn",
+            "notNameHotelName": "Vui lòng nhập tên khách sạn hợp lệ",
+            "notNameLengthHotelName": "Vui lòng nhập tên khách sạn từ 4 đến 32 ký tự",
+            "contactPersonNotBlank": "Vui lòng nhập người liên hệ của bạn",
+            "notNameContactPerson": "Vui lòng nhập người liên hệ hợp lệ",
+            "notNameLengthContactPerson": "Vui lòng nhập người liên hệ từ 4 đến 32 ký tự",
+            "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
+            "notPhoneNumber": "Vui lòng nhập số điện thoại hợp lệ",
+            "addressNotBlank": "Vui lòng nhập địa chỉ của bạn",
+            "districtNotBlank": "Vui lòng nhập địa chỉ quận của bạn",
+            "cityNotBlank": "Vui lòng nhập thành phố của bạn",
+            "postalCodeNotBlank": "Vui lòng nhập mã bưu chính của bạn",
+            "notPostalCode": "Vui lòng nhập mã bưu chính hợp lệ"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "Vui lòng nhập tên tùy chọn từ 4 đến 32 ký tự",
+            "quantityRoomNotGreaterThan": "Vui lòng nhập số lượng phòng > 0",
+            "roomSizeNotGreaterThan": "Vui lòng nhập diện tích phòng > 0",
+            "priceNotGreaterThan": "Vui lòng nhập giá mỗi đêm > 0"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "Vui lòng nhập tên của bạn",
+            "lastNameNotBlank": "Vui lòng nhập họ của bạn",
+            "addressNotBlank": "Vui lòng nhập địa chỉ của bạn",
+            "districtNotBlank": "Vui lòng nhập địa chỉ quận của bạn",
+            "cityNotBlank": "Vui lòng nhập thành phố của bạn"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "Chúc mừng đăng ký đã hoàn tất và giờ là lúc để thư giản rồi. Nhằm giúp Quý vị lưu giữ hồ sơ, chúng tôi đã giữ cho Quý vị một email xác nhận đăng ký cùng với một email khác có đính kèm bản sao thỏa thuận của Quý vị."
+      }
+    },
+    "buttonContinue": "Tiếp tục"
   }
 }

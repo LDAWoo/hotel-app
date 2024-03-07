@@ -3,10 +3,10 @@ import { IoIosClose } from "react-icons/io";
 function TextError({ icon, error }) {
   return (
     <>
-      {error.length > 0 && (
-        <div className='flex flex-row gap-1 items-center text-error-100 mt-[2px]'>
+      {error && error.length > 0 && (
+        <div className="flex flex-row gap-1 items-center text-error-100 mt-[2px] cursor-text">
           {icon && <Icon icon={IoIosClose} size={18} />}
-          <span className='text-[14px]'>{error}</span>
+          <span className="text-[14px]">{error}</span>
         </div>
       )}
     </>

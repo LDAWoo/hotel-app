@@ -1,7 +1,7 @@
 import RecentSearch from "./RecentSearch/RecentSearch";
 import TrendingDestination from "./TrendingDestinations/TrendingDestination";
 import UniqueProperty from "./UniqueProperty/UniqueProperty";
-// import GuestLove from "./GuestLove/GuestLove";
+import GuestLove from "./GuestLove/GuestLove";
 import DestinationsWeLove from "./DestinationsWeLove/DestinationsWeLove";
 import { useEffect, useState } from "react";
 import { getHotelIndex } from "../../api/Home";
@@ -52,10 +52,10 @@ function Home() {
       <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
         <div className='flex flex-col w-full'>
           <RecentSearch />
-          <TrendingDestination />
+          <TrendingDestination isLoading={loading} />
 
           <UniqueProperty data={currentData} isLoading={loading} />
-          {/* <GuestLove /> */}
+          <GuestLove data={currentData} isLoading={loading} />
           <DestinationsWeLove data={currentData} isLoading={loading} />
         </div>
       </div>

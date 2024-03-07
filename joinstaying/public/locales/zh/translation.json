@@ -66,6 +66,7 @@
       "loginFailed": "邮箱或密码错误。请重试或使用验证链接。",
       "emailNotBlank": "请输入您的电子邮件地址",
       "emailNotEmail": "请输入有效的电子邮件地址",
+      "emailNotExits": "这个电子邮件在我们的网站中不存在。",
       "firstNameNotBlank": "请输入您的名字",
       "lastNameNotBlank": "请输入您的姓氏",
       "phoneNumberNotBlank": "请输入您的电话号码",
@@ -101,6 +102,353 @@
     "title": "我们希望您享受您的住宿",
     "subTitle": "发现我们世界一流的酒店和餐厅度假胜地。",
     "bookNow": "立即预订"
+  },
+  "JoinBanner": {
+    "listYour": "列出您的",
+    "data": {
+      "title1": "公寓",
+      "title2": "酒店",
+      "title3": "度假屋",
+      "title4": "民宿",
+      "title5": "住宿加早餐"
+    },
+    "onStaying": "在 Staying.com 上",
+    "title": "无论您是兼职还是全职从事房屋出租，都可以在 Staying.com 上注册您的度假租赁，以吸引全球旅行者",
+    "getStarted": {
+      "title": "通过持续的预订赚取更多收入",
+      "items": {
+        "item1": "45% 的合作伙伴在一周内获得首次预订",
+        "item2": "自 2024 年以来，已有超过 11 亿度假租赁客人",
+        "item3": "完全控制您的房产和财务",
+        "item4": "注册免费，只需 15 分钟"
+      },
+      "getStartedNow": "现在开始"
+    }
+  },
+  "WordMap": {
+    "title": "吸引独特的全球客户群",
+    "items": {
+      "item1": "度假租赁客人中有百分之几回来再次预订",
+      "item2": "2022年在Staying.com上预订的夜晚中有百分之几是国际住宿",
+      "item3": "度假租赁客户中有百分之几是忠诚度2或3的 Genius 会员，他们倾向于在每次预订中花费更多"
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "在 Staying.com 上列出您的房产，并立即开始欢迎客人！",
+      "buttonProperty": "列出您的物业",
+      "subTitle": "要开始，请选择您想在 Staying.com 上列出的房产类型",
+      "items": {
+        "item1": {
+          "name": "公寓",
+          "description": "设备齐全的自助式住宿，客人可以租用整个地方。"
+        },
+        "item2": {
+          "name": "房屋",
+          "description": "像公寓、度假屋、别墅等的房产。"
+        },
+        "item3": {
+          "name": "酒店、民宿等",
+          "description": "像酒店、民宿、招待所、青年旅社、公寓式酒店等的房产。"
+        },
+        "item4": {
+          "name": "其他地方",
+          "description": "像船、露营地、豪华帐篷等的房产。"
+        }
+      }
+    },
+    "Property": {
+      "title": "从下面的列表中，哪种房产类别与您的房屋最相似？"
+    },
+    "Owner": {
+      "title": "您要列出多少家酒店？",
+      "items": {
+        "item1": "一家酒店，拥有一个或多个客房供客人预订",
+        "item2": "多家酒店，拥有一个或多个客房供客人预订"
+      },
+      "valueProperty": "房产数量"
+    },
+    "FeedBack": {
+      "title": "您在列出吗？",
+      "subTitle": "这听起来像是您的房产吗？",
+      "needChange": "不，我需要做出更改"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "基本信息",
+          "title": "您好",
+          "subTitle": "请从告诉我们您的房间名称、地址和联系方式开始。",
+          "information": {
+            "hotelName": "您的酒店名称是什么？",
+            "subHotelName": "客人在搜索住宿时将看到此名称。",
+            "contactPerson": "联系人",
+            "subContactPerson": "联系人姓名，以便我们知道您的姓名。",
+            "phoneNumber": "电话号码",
+            "subPhoneNumber": "联系电话，以便我们在需要时支持您的注册",
+            "otherPhoneNumber": "其他电话号码",
+            "nameRanting": "您的酒店星级是多少？",
+            "ratings": {
+              "star0": "无",
+              "star": "星级"
+            },
+            "nameMultipleHotel": "您拥有多家酒店，或者属于连锁店或管理公司吗？",
+            "multipleHotel": {
+              "yes": "是的",
+              "no": "不是"
+            },
+            "nameCountry": "国家/地区",
+            "selectCountry": "选择国家/地区",
+            "nameStreet": "街道名称和门牌号",
+            "nameStreetPlaceholder": "开始输入您的地址",
+            "nameDistrict": "区域地址",
+            "nameCity": "城市",
+            "nameZipCode": "邮政编码"
+          },
+          "notification": {
+            "noti1": {
+              "title": "我的地址需要包含什么？",
+              "items": {
+                "item1": "在整个物业中包括您的街道名称和号码",
+                "item2": "如果相关，请在地址第二行中包括楼层号",
+                "item3": "个别公寓或楼层号稍后可以共享",
+                "item4": "提供邮政编码",
+                "item5": "正确拼写街道名称",
+                "item6": "使用物业的实际地址，而不是办公室或家庭地址"
+              }
+            },
+            "noti2": {
+              "title": "为什么我需要添加我的地址？",
+              "items": {
+                "item1": "一旦客人预订您的物业，这就是将与他们共享的地址。确保地址准确无误，以便客人能够轻松找到您的物业。"
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "组成与价格",
+          "subTitle": "请选择我们了解您的第一个房间。输入所有必要信息后。位置将能够输入其他房间的详细信息。",
+          "information": {
+            "roomType": "房间类型",
+            "roomName": "房间名称",
+            "optionalName": "选项名称（非必需）",
+            "subOptionalName": "为您的参考创建自定义名称（非必需）。",
+            "numberOfRoom": "房间数量（此类型）",
+            "bedOptions": "床型选择",
+            "roomSize": "房间面积",
+            "titlePrice": "您想每晚收费多少？",
+            "priceGuestPay": "客人支付的价格",
+            "subPriceGuestPay": "包括税金、佣金和费用",
+            "commissions": {
+              "title": "佣金",
+              "help": "24/7 以您的语言提供帮助",
+              "save": "通过自动确认的预订节省时间",
+              "we": "我们在 Google 上推广您的地点",
+              "earning": "您的收入（包括税金）"
+            },
+            "roomNameDefault": "豪华双人间",
+            "quantityType": "此类型的数量：",
+            "edit": "编辑",
+            "delete": "删除",
+            "buttonAddOrderRoom": "添加另一个房间"
+          },
+          "notification": {
+            "noti1": {
+              "title": "您提供其他睡眠安排吗？",
+              "items": {
+                "item1": "现在，您只需添加基本的睡眠安排。",
+                "item2": "童床、额外床铺和其他睡眠安排可以在您使用的平台上（后台管理您的酒店）添加。",
+                "item3": "您可以在注册完成后在后台管理您的酒店中设置酒店的儿童政策，包括最大年龄和价格调整。"
+              }
+            },
+            "noti2": {
+              "title": "如果我对价格不确定怎么办？",
+              "items": {
+                "item1": "不用担心，您随时可以更改它。您甚至可以设置周末、工作日和季节性价格，从而更好地控制您的收入。"
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "便利设施",
+          "subTitle": "请告诉我们一些方便的信息，例如该网站使用的便利设施和互联网。",
+          "information": {
+            "optionalExtraBed": "可选加床",
+            "provideExtraBed": "您提供额外的床吗？",
+            "extraBeds": {
+              "yes": "是",
+              "no": "否"
+            },
+            "numberOfExtraBed": "请选择可以添加的额外床位数量",
+            "check": "如果您允许以下客人使用额外的床位，请勾选此框。",
+            "childrenOfCrib": "两岁以下儿童睡在婴儿床上",
+            "children": "儿童",
+            "priceChildren": "输入每个孩子每晚的价格",
+            "upTo": "最多",
+            "yearOld": "岁",
+            "adult": "成人",
+            "priceAdult": "输入每个成人每晚的价格"
+          },
+          "notification": {
+            "noti1": {
+              "title": "如果我没有看到我提供的设施怎么办？",
+              "items": {
+                "item1": "此处列出的设施是客人搜索最多的设施。注册完成后，您可以在Extranet上的更大列表中添加更多设施，Extranet是您管理物业的平台。"
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "照片",
+          "title": "您的酒店是什么样子的？",
+          "subTitle": "美丽的图像是对完整酒店体验的诱人邀请，下载高分辨率图像并准确展示您的酒店所提供的一切，我们将在Staying.com上的您的物业页面上显示它们。",
+          "information": {
+            "uploadPhoto": "至少上传5张贵酒店的照片。",
+            "moreUploadPhoto": "您上传的越多，您获得预订的可能性就越大。您可以稍后再添加更多。",
+            "dragOrDrop": "拖放或",
+            "upload": "上传照片",
+            "maximum": "jpg、jpeg或png，每张最大20MB",
+            "choose": "选择一张",
+            "mainPhoto": "主要照片",
+            "photoGood": "能给客人留下良好第一印象的照片。",
+            "clickAndDrag": "点击并拖动照片以按您希望客人看到的顺序排列。"
+          },
+          "notification": {
+            "noti1": {
+              "title": "如果我没有专业照片怎么办？",
+              "items": {
+                "item1": "没问题！您可以使用智能手机或数码相机。以下是拍摄贵酒店优秀照片的一些建议",
+                "item2": "如果您不知道是谁拍摄的照片，最好不要使用。仅在有许可的情况下使用他人拍摄的照片。"
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "政策",
+          "title": "取消政策",
+          "subTitle": "请列出基本政策详情。您是否允许儿童或宠物入住？您对取消是否灵活？",
+          "information": {
+            "cancelBooking": "客人何时可以免费取消预订？",
+            "before18": "到达当天18:00之前",
+            "before1day": "到达当天前1天",
+            "before2day": "到达当天前2天",
+            "before3day": "到达当天前3天",
+            "before4day": "到达当天前4天",
+            "before5day": "到达当天前5天",
+            "priceCancelBooking": "如果客人在取消窗口期后取消预订（到达当天18:00之前），您要向他们收取多少费用？",
+            "firstNight": "第一晚的费用",
+            "totalPrice": "总价的100%",
+            "additional": "其他政策？",
+            "pet": "您是否允许宠物？",
+            "pets": {
+              "yes": "是",
+              "no": "否"
+            },
+            "smo": "您允许吸烟吗？",
+            "smoking": {
+              "yes": "是",
+              "no": "否"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "我应该选择哪种政策？",
+              "items": {
+                "item1": "这些政策可以随时轻松更新。"
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "付款方式",
+          "subTitle": "请指示支付方式。您可以在其他选项中接受细节。",
+          "information": {
+            "title": "您的客人在您的物业上如何付款？",
+            "subTitle1": "如果您的物业不接受信用卡，Staying.com可以为您提供Staying.com支付服务，以为您的客人支付。",
+            "payWithCredit": "客人可以在我的物业使用信用卡支付",
+            "payWithStaying": "我将使用Staying.com支付，我将不支付支付费用",
+            "subTitle2": "为了遵守各种法律和监管要求，我们需要收集和验证有关您和您的物业的一些信息。",
+            "provideFullName": "请提供拥有住宿25％或更多的所有个人的全名。",
+            "firstName": "名字",
+            "lastName": "姓",
+            "flagAddress": "您是否标记地址？",
+            "flags": {
+              "yes": "是",
+              "no": "不"
+            },
+            "nameCountry": "国家/地区",
+            "selectCountry": "选择国家/地区",
+            "nameStreet": "街道名称和门牌号",
+            "nameStreetPlaceholder": "开始输入您的地址",
+            "nameDistrict": "区域地址",
+            "nameCity": "城市"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Staying.com支付如何工作？",
+              "items": {
+                "item1": "您的客人可以通过Staying.com支付，更多选择如PayPal，微信支付和支付宝。",
+                "item2": "我们为您的客人支付。您无需处理欺诈，退款或无效卡。",
+                "item3": "Staying.com向您发送支付。您将在每月15日收到银行转帐，覆盖上个月退房的所有预订。"
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "确认",
+          "title": "您接受Staying.com提供的详细信息。",
+          "information": {
+            "title": "您只差一步 - 最后几点注意事项。",
+            "subTitle1": "为了帮助您开始赚取收入，我们将自动在接下来的12个月内打开您的物业进行预订。如果您想在开放之前更改房间的可用性，您可以选择“完成注册并稍后开放”。您也可以在开放房间进行预订后调整可用性。",
+            "subTitle2": "为了完成注册，请勾选下面的框：",
+            "acceptGeneralTermsPrivacy": "我保证住宿业务合法，并拥有所有必要的许可证和许可证，可随时提供。 Staying.com B.V有权验证和调查您提供的任何信息。注册时发出。",
+            "certificationOfLegalBusinessOperations": "我已阅读并同意并接受一般条款和Staying.com安全与隐私政策，允许物业和客人通过Staying.com进行通信，接收和处理符合条件的通信。"
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "请填写您的酒店名称",
+            "notNameHotelName": "请输入有效的酒店名称",
+            "notNameLengthHotelName": "请以 4 到 32 个字符输入酒店名称",
+            "contactPersonNotBlank": "请输入您的联系人",
+            "notNameContactPerson": "请输入有效的联系人",
+            "notNameLengthContactPerson": "请以 4 到 32 个字符输入联系人",
+            "phoneNumberNotBlank": "请输入您的电话号码",
+            "notPhoneNumber": "请输入有效的电话号码",
+            "addressNotBlank": "请输入您的街道地址",
+            "districtNotBlank": "请输入您的区域地址",
+            "cityNotBlank": "请输入您的城市",
+            "postalCodeNotBlank": "请输入您的邮政编码",
+            "notPostalCode": "请输入有效的邮政编码"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "请输入自定义名称，长度为4到32位",
+            "quantityRoomNotGreaterThan": "请输入大于0的房间数量",
+            "roomSizeNotGreaterThan": "请输入大于0的房间面积",
+            "priceNotGreaterThan": "请输入大于0的每晚价格"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "请输入您的名字",
+            "lastNameNotBlank": "请输入您的姓氏",
+            "addressNotBlank": "请输入您的街道地址",
+            "districtNotBlank": "请输入您的区域地址",
+            "cityNotBlank": "请输入您的城市"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "恭喜您完成注册，现在是放松的时候了。为了帮助您保存记录，我们已经给您发送了一封注册确认邮件，以及一封附带您同意书副本的电子邮件。"
+      }
+    },
+    "buttonContinue": "继续"
   },
   "Search": {
     "location": "您要去哪里？",

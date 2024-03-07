@@ -37,8 +37,7 @@ const getBusinessData = [
 const getData = [
   {
     id: 1,
-    title:
-      "Please provide the full names and dates of birth of all individuals who own 25% or more of the accommodation.",
+    title: "Please provide the full names and dates of birth of all individuals who own 25% or more of the accommodation.",
     data: [
       {
         title: "First name",
@@ -72,13 +71,6 @@ export const PartnerData = [
         name: "I am an individual running a business",
         value: "individual",
         type: "text",
-        data: getData, // Remove parentheses to use the array
-      },
-      {
-        id: 3,
-        name: "I represent a business entity",
-        value: "business",
-        businessData: getBusinessData, // Remove parentheses to use the array
         data: getData, // Remove parentheses to use the array
       },
     ],

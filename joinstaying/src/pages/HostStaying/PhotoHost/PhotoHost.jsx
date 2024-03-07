@@ -9,13 +9,13 @@ import routesConfig from "../../../configs/routesConfig";
 import useRegisterPhoto from "../../../hooks/JoinStaying/PhotoHost/useRegisterPhoTo";
 import { postAddPhoto } from "../../../api/HostStaying/PhotoHost";
 import { useContext, useState } from "react";
-import { UseToken } from "../../../components/Contexts/AppTokenProvider";
+import { UserContext } from "../../../components/Contexts/AppUserProvider";
 
 const PhotoHost = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { photos } = useRegisterPhoto();
-  const { token } = useContext(UseToken);
+  const { token } = useContext(UserContext);
 
   const formData = new FormData();
 

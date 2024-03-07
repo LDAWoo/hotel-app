@@ -14,6 +14,8 @@ const routesConfig = {
   becomeAHostFeedBack: "/become-a-host/feedback",
   becomeAHostAddRess: "/become-a-host/address",
   becomeAHostMap: "/become-a-host/map",
+  becomeAHostCreateRoom: "/become-a-host/createroom",
+  becomeAHostThankYou: "/become-a-host/thanhyou",
   becomeAHostHotelName: "/become-a-host/name",
   becomeAHostFacilities: "/become-a-host/facilities",
   becomeAHostHouseRules: "/become-a-host/house-rules",

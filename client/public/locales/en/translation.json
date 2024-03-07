@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "Login to Manage Accommodations",
+    "title": "Login",
     "email": "Login Email",
     "password": "Password",
     "login": "Log In",
@@ -24,7 +24,7 @@
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "Partner Account Creation",
+    "title": "Register",
     "subTitle": "Create an account to register and manage accommodations.",
     "email": "Email Address",
     "continue": "Continue"

@@ -1,15 +1,11 @@
 import { get } from "../../utils/request";
 
-export const getHotelByCondition = async ({ data }) => {
+export const getHotelByCondition = async (data) => {
   try {
-    const response = await get("hotel/get-condition", { params: data });
-
-    console.log(response);
-
-    if (!response.ok) {
-      throw new Error(`Lỗi khi lấy dữ liệu: ${response.statusText}`);
-    }
-    const responseData = response.data; // Use responseData
+    const response = await get("/public/v1/hotel/get-condition", {
+      headers: { params: data },
+    });
+    const responseData = response.data;
     return responseData;
   } catch (error) {
     throw new Error(`Lỗi khi lấy dữ liệu: ${error.message}`);

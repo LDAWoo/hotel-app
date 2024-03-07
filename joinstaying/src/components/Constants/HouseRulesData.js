@@ -13,39 +13,46 @@ function generateHoursArray() {
 }
 
 export const HouseRulesData = [
-  {
-    id: 1,
-    title: "Check in",
-    type: "select",
-    data: [
-      {
-        id: 1,
-        name: "From",
-        time: generateHoursArray(),
-      },
-      {
-        id: 2,
-        name: "Until",
-        time: generateHoursArray(),
-      },
-    ],
-  },
+  // {
+  //   id: 1,
+  //   title: "Check in",
+  //   type: "select",
+  //   data: [
+  //     {
+  //       id: 1,
+  //       name: "From",
+  //       time: generateHoursArray(),
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Until",
+  //       time: generateHoursArray(),
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 2,
+  //   title: "Check out",
+  //   type: "select",
+  //   data: [
+  //     {
+  //       id: 1,
+  //       name: "From",
+  //       time: generateHoursArray(),
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Until",
+  //       time: generateHoursArray(),
+  //     },
+  //   ],
+  // },
   {
     id: 2,
-    title: "Check out",
-    type: "select",
-    data: [
-      {
-        id: 1,
-        name: "From",
-        time: generateHoursArray(),
-      },
-      {
-        id: 2,
-        name: "Until",
-        time: generateHoursArray(),
-      },
-    ],
+    title: "Additional Polices?",
+    subTitle: "",
+    type: "toggle",
+    value: true,
   },
   {
     id: 3,
@@ -63,6 +70,47 @@ export const HouseRulesData = [
         name: "children",
         title: "No",
         value: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Do you allow pet?",
+    type: "select",
+    data: [
+      {
+        id: 1,
+        time: [
+          {
+            name: "Yes",
+            value: true,
+          },
+          {
+            name: "No",
+            value: false,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 5,
+    title: "Do you allow smoking?",
+    type: "select",
+    data: [
+      {
+        id: 1,
+        time: [
+          {
+            name: "Yes",
+            value: true,
+          },
+          {
+            name: "No",
+            value: false,
+          },
+        ],
       },
     ],
   },

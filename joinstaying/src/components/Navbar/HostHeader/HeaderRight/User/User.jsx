@@ -23,7 +23,7 @@ function User() {
   return (
     <div className="relative">
       <UserButton title={user?.firstName + " " + user?.lastName} src={src} onClick={handleShowMenuUser} />
-      <RegisterToolTip userRegisterToolTip={useRegisterToolTipUser} component={<TitleComponent title={user?.name} src={src} />} render={<UserMenu />} width={240} zIndex="z-[999]" />
+      <RegisterToolTip left userRegisterToolTip={useRegisterToolTipUser} component={<TitleComponent title={user?.name} src={src} />} render={<UserMenu />} width={240} zIndex="z-[999]" />
     </div>
   );
 }

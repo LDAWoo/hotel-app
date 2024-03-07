@@ -85,7 +85,6 @@ export const ExtraBed = [
             title: "",
             type: "select",
             data: [
-              { value: 0, name: "Select old" },
               {
                 value: 3,
                 name: "Đến 3 tuổi",

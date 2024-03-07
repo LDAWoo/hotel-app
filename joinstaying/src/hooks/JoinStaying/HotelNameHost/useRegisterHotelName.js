@@ -2,26 +2,31 @@ import { create } from "zustand";
 
 const useRegisterHotelName = create((set) => ({
   hotelName: "",
+  errorHotelName: "",
   contactPerson: "",
+  errorContactPerson: "",
   phoneNumberOne: "",
+  errorPhoneNumberOne: "",
   phoneNumberTwo: "",
-  data: {
-    hotelName: "",
-    contactPerson: "",
-    phoneNumberOne: "",
-    phoneNumberTwo: "",
-  },
-  rating: 0.0,
+  errorPhoneNumberTwo: "",
+  rating: 0,
   managerHotel: false,
   setField: (field, value) => {
     set((prevState) => ({
       ...prevState,
       [field]: value,
-      data: {
-        ...prevState.data,
-        [field]: value,
-      },
     }));
+  },
+
+  resetAllHotelName: () => {
+    set({
+      hotelName: "",
+      contactPerson: "",
+      phoneNumberOne: "",
+      phoneNumberTwo: "",
+      rating: 0,
+      managerHotel: false,
+    });
   },
 }));
 

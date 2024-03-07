@@ -66,6 +66,7 @@
       "loginFailed": "Correo electrónico o contraseña incorrectos. Inténtelo de nuevo o utilice el enlace de verificación.",
       "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",
       "emailNotEmail": "Por favor, introduce una dirección de correo electrónico válida",
+      "emailNotExits": "Este correo electrónico no existe en nuestro sitio web.",
       "firstNameNotBlank": "Por favor, introduce tu nombre",
       "lastNameNotBlank": "Por favor, introduce tu apellido",
       "phoneNumberNotBlank": "Por favor, introduce tu número de teléfono",
@@ -101,6 +102,353 @@
     "title": "Esperamos que disfrutes de tu estancia",
     "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
     "bookNow": "Reservar ahora"
+  },
+  "JoinBanner": {
+    "listYour": "Enumere su",
+    "data": {
+      "title1": "apartamento",
+      "title2": "hotel",
+      "title3": "casa de vacaciones",
+      "title4": "casa de huéspedes",
+      "title5": "cama y desayuno"
+    },
+    "onStaying": "en Staying.com",
+    "title": "Ya sea que el hospedaje sea su pasión secundaria o trabajo de tiempo completo, regístrese su alquiler vacacional en Staying.com para llegar a viajeros de todo el mundo",
+    "getStarted": {
+      "title": "Gane más con reservas consistentes",
+      "items": {
+        "item1": "El 45% de los socios obtiene su primera reserva dentro de una semana",
+        "item2": "Más de 1.100 millones de huéspedes de alquiler vacacional desde 2024",
+        "item3": "Control total sobre su propiedad y finanzas",
+        "item4": "La inscripción es gratuita y demora 15 minutos"
+      },
+      "getStartedNow": "Empezar Ahora"
+    }
+  },
+  "WordMap": {
+    "title": "Alcanza una base de clientes global única",
+    "items": {
+      "item1": "de los huéspedes de alquiler vacacional regresan para reservar nuevamente con nosotros",
+      "item2": "de las noches reservadas en Staying.com en 2022 fueron para estancias internacionales",
+      "item3": "de los clientes de alquiler vacacional son nivel de lealtad Genius 2 o 3 que tienden a gastar más por reserva"
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "Enumere su propiedad en Staying.com y comience a dar la bienvenida a huéspedes en poco tiempo.",
+      "buttonProperty": "Enumera tu propiedad",
+      "subTitle": "Para comenzar, elija el tipo de propiedad que desea enumerar en Staying.com",
+      "items": {
+        "item1": {
+          "name": "Apartamento",
+          "description": "Alojamiento amueblado y con cocina, donde los huéspedes alquilan todo el lugar."
+        },
+        "item2": {
+          "name": "Casas",
+          "description": "Propiedades como apartamentos, casas de vacaciones, villas, etc."
+        },
+        "item3": {
+          "name": "Hotel, B&Bs y más",
+          "description": "Propiedades como hoteles, B&Bs, casas de huéspedes, hostales, apartahoteles, etc."
+        },
+        "item4": {
+          "name": "Lugares alternativos",
+          "description": "Propiedades como barcos, campings, tiendas de lujo, etc."
+        }
+      }
+    },
+    "Property": {
+      "title": "De la lista a continuación, ¿cuál es la categoría de propiedad más similar a la suya?"
+    },
+    "Owner": {
+      "title": "¿Cuántos hoteles está listando?",
+      "items": {
+        "item1": "Un hotel con una o varias habitaciones que los huéspedes pueden reservar",
+        "item2": "Varios hoteles con una o varias habitaciones que los huéspedes pueden reservar"
+      },
+      "valueProperty": "Número de propiedades"
+    },
+    "FeedBack": {
+      "title": "¿Estás listando?",
+      "subTitle": "¿Suena esto como su propiedad?",
+      "needChange": "No, necesito hacer un cambio"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "Información básica",
+          "title": "Hola",
+          "subTitle": "Por favor, comience diciéndonos el nombre de su habitación, dirección y detalles de contacto.",
+          "information": {
+            "hotelName": "¿Cuál es el nombre de su hotel?",
+            "subHotelName": "Los huéspedes verán este nombre al buscar un lugar para quedarse.",
+            "contactPerson": "Persona de contacto",
+            "subContactPerson": "Nombre de contacto para que podamos conocer su nombre.",
+            "phoneNumber": "Número de teléfono",
+            "subPhoneNumber": "Número de teléfono de contacto para que podamos apoyar su registro cuando sea necesario",
+            "otherPhoneNumber": "Otro número de teléfono",
+            "nameRanting": "¿Cuál es la clasificación por estrellas de su hotel?",
+            "ratings": {
+              "star0": "N/A",
+              "star": "estrella"
+            },
+            "nameMultipleHotel": "¿Posee varios hoteles o forma parte de una cadena o empresa de gestión?",
+            "multipleHotel": {
+              "yes": "Sí",
+              "no": "No"
+            },
+            "nameCountry": "País/región",
+            "selectCountry": "Seleccionar país/región",
+            "nameStreet": "Nombre de la calle y número de la casa",
+            "nameStreetPlaceholder": "Comience a escribir su dirección",
+            "nameDistrict": "Dirección del distrito",
+            "nameCity": "Ciudad",
+            "nameZipCode": "Código postal"
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Qué necesita incluirse en mi dirección?",
+              "items": {
+                "item1": "Incluya tanto el nombre de la calle como el número para toda la propiedad",
+                "item2": "El número de piso en la línea de dirección 2 si es relevante",
+                "item3": "Los números de apartamento o piso individuales se pueden compartir más tarde",
+                "item4": "Proporcione el código postal",
+                "item5": "Escriba correctamente el nombre de la calle",
+                "item6": "Use la dirección física de la propiedad, no su dirección de oficina o casa"
+              }
+            },
+            "noti2": {
+              "title": "¿Por qué necesito agregar mi dirección?",
+              "items": {
+                "item1": "Una vez que un huésped reserve su propiedad, esta es la dirección que se compartirá con ellos. Es importante que sea correcta para que los huéspedes puedan encontrar fácilmente su propiedad."
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "Composición y Precio",
+          "subTitle": "Por favor, elija nosotros para conocer su primera habitación. Después de ingresar toda la información necesaria. La ubicación podrá ingresar detalles para otras habitaciones.",
+          "information": {
+            "roomType": "Tipo de habitación",
+            "roomName": "Nombre de la habitación",
+            "optionalName": "Nombre opcional (no requerido)",
+            "subOptionalName": "Cree un nombre personalizado para su referencia (no requerido).",
+            "numberOfRoom": "Número de habitaciones (este tipo)",
+            "bedOptions": "Opciones de cama",
+            "roomSize": "Tamaño de la habitación",
+            "titlePrice": "¿Cuánto desea cobrar por noche?",
+            "priceGuestPay": "Precio que pagan los huéspedes",
+            "subPriceGuestPay": "Incluyendo impuestos, comisiones y cargos",
+            "commissions": {
+              "title": "Comisión",
+              "help": "Asistencia 24/7 en su idioma",
+              "save": "Ahorre tiempo con reservas confirmadas automáticamente",
+              "we": "Promocionamos su lugar en Google",
+              "earning": "Sus ganancias (incluidos los impuestos)"
+            },
+            "roomNameDefault": "Habitación Doble Deluxe",
+            "quantityType": "Cantidad de este tipo:",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "buttonAddOrderRoom": "Agregar otra habitación"
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Ofrece otros arreglos para dormir?",
+              "items": {
+                "item1": "Ahora mismo, solo necesita agregar sus arreglos básicos para dormir.",
+                "item2": "Cunas, camas adicionales y otros arreglos para dormir se pueden agregar en la extranet, la plataforma que usará para administrar su propiedad.",
+                "item3": "Puede configurar las políticas para niños de su propiedad, incluida la edad máxima y los ajustes de precio, en la extranet después de completar el registro."
+              }
+            },
+            "noti2": {
+              "title": "¿Qué pasa si no estoy seguro de mi precio?",
+              "items": {
+                "item1": "No se preocupe, siempre puede cambiarlo más tarde. Incluso puede establecer precios para fines de semana, días de semana y temporadas, lo que le brinda un mayor control sobre lo que gana."
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "Servicios",
+          "subTitle": "Por favor, proporcione información conveniente como servicios e internet que el sitio web utiliza.",
+          "information": {
+            "optionalExtraBed": "Cama adicional opcional",
+            "provideExtraBed": "¿Proporciona camas adicionales?",
+            "extraBeds": {
+              "yes": "Sí",
+              "no": "No"
+            },
+            "numberOfExtraBed": "Seleccione el número de camas adicionales que se pueden añadir",
+            "check": "Marque la casilla si permite a los siguientes huéspedes dormir en camas adicionales.",
+            "childrenOfCrib": "Los niños de hasta 2 años duermen en cuna",
+            "children": "Niños",
+            "priceChildren": "Ingrese el precio por noche por niño",
+            "upTo": "hasta",
+            "yearOld": "años",
+            "adult": "Adulto",
+            "priceAdult": "Ingrese el precio por noche por adulto"
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Qué pasa si no veo una instalación que ofrezco?",
+              "items": {
+                "item1": "Las instalaciones enumeradas aquí son las que los huéspedes buscan más. Después de completar su registro, puede agregar más instalaciones de una lista más grande en la Extranet, la plataforma que usará para administrar su propiedad."
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "Fotos",
+          "title": "¿Cómo es su hotel?",
+          "subTitle": "Las imágenes hermosas son una invitación tentadora a una experiencia completa de hotel, descargue imágenes de alta resolución y muestre exactamente lo que su hotel tiene para ofrecer, las mostraremos en la página de su propiedad en Staying.com.",
+          "information": {
+            "uploadPhoto": "Suba al menos 5 fotos de su propiedad.",
+            "moreUploadPhoto": "Cuanto más cargue, más probabilidades tendrá de obtener reservas. Puede agregar más después.",
+            "dragOrDrop": "Arrastre y suelte o",
+            "upload": "Subir fotos",
+            "maximum": "jpg, jpeg o png, máximo 20MB cada una",
+            "choose": "Elija una",
+            "mainPhoto": "foto principal",
+            "photoGood": "que causará una buena primera impresión.",
+            "clickAndDrag": "Haga clic y arrastre las fotos para organizarlas en el orden que desee que los huéspedes las vean."
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Qué pasa si no tengo fotos profesionales?",
+              "items": {
+                "item1": "¡No hay problema! Puede usar un teléfono inteligente o una cámara digital. Aquí hay algunos consejos para tomar excelentes fotos de su propiedad",
+                "item2": "Si no sabe quién tomó una foto, es mejor evitar usarla. Solo use fotos que hayan tomado otros si tiene permiso."
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "Políticas",
+          "title": "Políticas de cancelación",
+          "subTitle": "Por favor, liste los detalles básicos de la política. ¿Permite que se alojen niños o mascotas? ¿Qué flexibilidad tiene con las cancelaciones?.",
+          "information": {
+            "cancelBooking": "¿Cuándo pueden los huéspedes cancelar sus reservas de forma gratuita?",
+            "before18": "Antes de las 18:00 del día de llegada",
+            "before1day": "Un día antes del día de llegada",
+            "before2day": "Dos días antes del día de llegada",
+            "before3day": "Tres días antes del día de llegada",
+            "before4day": "Cuatro días antes del día de llegada",
+            "before5day": "Cinco días antes del día de llegada",
+            "priceCancelBooking": "¿Cuánto se les cobra a sus huéspedes si cancelan después del plazo de cancelación (antes de las 18:00 del día de llegada)?",
+            "firstNight": "Costo de la primera noche",
+            "totalPrice": "100% del precio total",
+            "additional": "¿Políticas adicionales?",
+            "pet": "¿Permite mascotas?",
+            "pets": {
+              "yes": "Sí",
+              "no": "No"
+            },
+            "smo": "¿Permite fumar?",
+            "smoking": {
+              "yes": "Sí",
+              "no": "No"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Qué política debo elegir?",
+              "items": {
+                "item1": "Estas políticas se pueden actualizar fácilmente más tarde."
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "Pago",
+          "subTitle": "Indique el método de pago. Acepta los detalles junto con las otras opciones.",
+          "information": {
+            "title": "¿Cómo pueden pagarle sus huéspedes en su propiedad?",
+            "subTitle1": "En caso de que no acepte tarjetas de crédito en su propiedad, Staying.com puede facilitar los pagos de sus huéspedes con el servicio Pagos de Staying.com",
+            "payWithCredit": "Los huéspedes pueden pagar con tarjeta de crédito en mi propiedad",
+            "payWithStaying": "Utilizaré Pagos de Staying.com y no pagaré ningún cargo por pago",
+            "subTitle2": "Para cumplir con varios requisitos legales y regulatorios, necesitamos recopilar y verificar información sobre usted y su propiedad.",
+            "provideFullName": "Proporcione los nombres completos de todas las personas que posean el 25% o más del alojamiento.",
+            "firstName": "Nombre",
+            "lastName": "Apellido",
+            "flagAddress": "¿Marcar dirección?",
+            "flags": {
+              "yes": "Sí",
+              "no": "No"
+            },
+            "nameCountry": "País/Región",
+            "selectCountry": "Seleccione País/Región",
+            "nameStreet": "Nombre de la calle y número de casa",
+            "nameStreetPlaceholder": "Comience a escribir su dirección",
+            "nameDistrict": "Dirección del distrito",
+            "nameCity": "Ciudad"
+          },
+          "notification": {
+            "noti1": {
+              "title": "¿Cómo funciona Pagos de Staying.com?",
+              "items": {
+                "item1": "Su huésped paga a través de Staying.com con más opciones como PayPal, WeChat Pay y AliPay.",
+                "item2": "Facilitamos el pago de su huésped. No tiene que lidiar con fraudes, contracargos o tarjetas inválidas.",
+                "item3": "Staying.com envía pagos a usted. Recibirá una transferencia bancaria antes del día 15 de cada mes que cubre todas las reservas con salida en el mes anterior."
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "Confirmar",
+          "title": "Acepta los detalles proporcionados por Staying.com.",
+          "information": {
+            "title": "Casi has terminado, solo unos pocos detalles finales.",
+            "subTitle1": "Para ayudarte a empezar a ganar ingresos, abriremos automáticamente tu propiedad para reservas durante los próximos 12 meses. Si deseas cambiar la disponibilidad de tus habitaciones antes de abrir, puedes seleccionar 'completar registro y abrir más tarde'. La disponibilidad también se puede ajustar después de abrir una habitación para reservar.",
+            "subTitle2": "Para completar el registro, por favor marca las casillas a continuación:",
+            "acceptGeneralTermsPrivacy": "Certifico que el negocio de alojamiento es legal y tiene todas las licencias y permisos necesarios, disponibles para presentar a pedido. Staying.com B.V tiene derecho a verificar e investigar cualquier información proporcionada por usted. emitido al registrarse.",
+            "certificationOfLegalBusinessOperations": "He leído y acepto y estoy de acuerdo con los términos generales y la Política de Seguridad y Privacidad de Staying.com que permite que las propiedades y los huéspedes se comuniquen a través de Staying.com donde se reciben y procesan comunicaciones compatibles."
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "Por favor, ingrese el nombre de su hotel",
+            "notNameHotelName": "Por favor, ingrese un nombre de hotel válido",
+            "notNameLengthHotelName": "Por favor, ingrese el nombre del hotel de 4 a 32 dígitos",
+            "contactPersonNotBlank": "Por favor, ingrese su persona de contacto",
+            "notNameContactPerson": "Por favor, ingrese una persona de contacto válida",
+            "notNameLengthContactPerson": "Por favor, ingrese la persona de contacto de 4 a 32 dígitos",
+            "phoneNumberNotBlank": "Por favor, ingrese su número de teléfono",
+            "notPhoneNumber": "Por favor, ingrese un número de teléfono válido",
+            "addressNotBlank": "Por favor, ingrese su dirección de la calle",
+            "districtNotBlank": "Por favor, ingrese su dirección del distrito",
+            "cityNotBlank": "Por favor, ingrese su ciudad",
+            "postalCodeNotBlank": "Por favor, ingrese su código postal",
+            "notPostalCode": "Por favor, ingrese un código postal válido"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "Por favor, ingrese el nombre personalizado de 4 a 32 dígitos",
+            "quantityRoomNotGreaterThan": "Por favor, ingrese una cantidad de habitaciones > 0",
+            "roomSizeNotGreaterThan": "Por favor, ingrese un tamaño de habitación > 0",
+            "priceNotGreaterThan": "Por favor, ingrese un precio por noche > 0"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "Por favor, ingrese su nombre",
+            "lastNameNotBlank": "Por favor, ingrese su apellido",
+            "addressNotBlank": "Por favor, ingrese su dirección",
+            "districtNotBlank": "Por favor, ingrese su dirección de distrito",
+            "cityNotBlank": "Por favor, ingrese su ciudad"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "Felicidades por completar el registro y ahora es momento de relajarse. Para ayudarte a mantener registros, te hemos enviado un correo electrónico de confirmación de registro junto con otro correo electrónico adjunto con una copia de tu acuerdo."
+      }
+    },
+    "buttonContinue": "Continuar"
   },
   "Search": {
     "location": "¿A dónde vas?",

@@ -3,28 +3,36 @@ import Button from "../Buttons/Button";
 import Label from "../Label/Label";
 import Title from "../Title/Title";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import routesConfig from "../../configs/routesConfig";
-
+import { useTranslation } from "react-i18next";
+import { UserContext } from "../Contexts/AppUserProvider";
 function GetStarted() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const { user } = useContext(UserContext);
+
   const data = [
     {
-      title: "45% of partners get their first booking within a week",
+      title: t("JoinBanner.getStarted.items.item1"),
     },
     {
-      title: "More than 1,1 billion holiday rental guests since 2023",
+      title: t("JoinBanner.getStarted.items.item2"),
     },
     {
-      title: "Full control over your property and finances",
+      title: t("JoinBanner.getStarted.items.item3"),
     },
     {
-      title: "Registration is free and takes 15 minutes",
+      title: t("JoinBanner.getStarted.items.item4"),
     },
   ];
 
   const handleGetStartNow = () => {
+    if (!Object.keys(user).length > 0) {
+      navigate(routesConfig.login);
+      return;
+    }
     navigate(routesConfig.becomeAHostCategory);
   };
 
@@ -32,7 +40,7 @@ function GetStarted() {
     <div className="w-full">
       <div className="bg-white w-full">
         <div className="flex flex-col gap-2 p-4">
-          <Title title="Earn more with consistent bookings" fontBold className="text-primary-700" xxxl nowrap={false} />
+          <Title title={t("JoinBanner.getStarted.title")} fontBold className="text-primary-700" xxxl nowrap={false} />
 
           <ul className="flex flex-col list-none gap-2">
             {data.map((item, index) => (
@@ -40,7 +48,7 @@ function GetStarted() {
             ))}
           </ul>
 
-          <Button title="Get started now" background className="pt-3 pb-3 justify-center mt-4" titlePosition="before" icon={HiOutlineArrowNarrowRight} size={20} onClick={handleGetStartNow} />
+          <Button title={t("JoinBanner.getStarted.getStartedNow")} background className="pt-3 pb-3 justify-center mt-4" titlePosition="before" icon={HiOutlineArrowNarrowRight} size={20} onClick={handleGetStartNow} />
         </div>
       </div>
     </div>

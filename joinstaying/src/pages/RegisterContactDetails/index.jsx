@@ -13,6 +13,7 @@ import routesConfig from "../../configs/routesConfig";
 import useRegisterCheckEmail from "../../hooks/Account/CheckEmail/useRegisterCheckEmail";
 import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
 import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
+import { validatePhone } from "../../Regexs/Validate/Phone";
 
 function RegisterContactDetails() {
   const { t } = useTranslation();
@@ -84,7 +85,11 @@ function RegisterContactDetails() {
     if (!value.length > 0) {
       setErrorPhoneNumber(t("Error.Account.phoneNumberNotBlank"));
     } else {
-      setErrorPhoneNumber("");
+      if (!validatePhone(value)) {
+        setErrorPhoneNumber(t("Error.Account.phoneNumberNotPhone"));
+      } else {
+        setErrorPhoneNumber("");
+      }
     }
     setPhoneNumber(value);
   };

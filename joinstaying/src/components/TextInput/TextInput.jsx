@@ -27,7 +27,7 @@ function TextInput({ className, label, classLabel, classBorder, classInput, clas
       )}
       <div className={`relative w-full rounded-[4px] duration-200 outline-none ${!classBorder ? `border-[1px] ${active ? "border-hotel-100 shadow-[0_0_0_1px_rgba(0,13,194,.76)]" : `${error ? "border-red-500 shadow-[0_0_0_1px_rgba(204,0,0,1)]" : "border-gray-300 dark:border-primary-500"}`}` : classBorder}`}>
         <input
-          className={`${!classInput ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[35px] pt-1 pb-1 ${copy ? "pr-[50px]" : "pr-[10px]"} outline-none text-primary-700 placeholder:text-primary-100 dark:placeholder:text-primary-50 dark:text-white font-normal text-[14px] ${icon ? "pl-[48px]" : "pl-[10px]"}` : classInput} `}
+          className={`${!classInput ? `bg-transparent hover:bg-transparent rounded-lg w-full h-[33px] pt-1 pb-1 ${copy ? "pr-[50px]" : "pr-[10px]"} outline-none text-primary-700 placeholder:text-primary-100 dark:placeholder:text-primary-50 dark:text-white font-normal text-[14px] ${icon ? "pl-[48px]" : "pl-[10px]"}` : classInput} `}
           placeholder={placeholder}
           {...props}
           autoCapitalize="off"

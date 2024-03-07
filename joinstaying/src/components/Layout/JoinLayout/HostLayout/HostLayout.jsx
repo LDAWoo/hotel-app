@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
-import { useContext, useEffect } from "react";
-import { use100vh } from "react-div-100vh";
+import { useEffect } from "react";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
 import HostStaying from "../../../../pages/HostStaying/HostStaying";
-import { ThemeContext } from "../../../Contexts/AppThemeProvider";
 import HostHeader from "../../../Navbar/HostHeader/HostHeader";
+import MainLayout from "../../MainLayout";
 
 function HostLayout({ children }) {
-  const { darkMode } = useContext(ThemeContext);
-  const heightWindow = use100vh();
-
   const { setWidthAndHeight } = useRegisterWindowSizeStore();
 
   useEffect(() => {
@@ -25,19 +21,12 @@ function HostLayout({ children }) {
   }, []);
 
   return (
-    <div className={`${darkMode}`}>
-      <div
-        className='bg-gray-50 w-full dark:bg-primary-700 overflow-x-hidden overflow-y-auto'
-        style={{
-          minHeight: heightWindow,
-        }}
-      >
-        <div className='flex w-full flex-col'>
-          <HostHeader />
-          <HostStaying>{children}</HostStaying>
-        </div>
+    <MainLayout>
+      <div className="flex w-full flex-col">
+        <HostHeader />
+        <HostStaying>{children}</HostStaying>
       </div>
-    </div>
+    </MainLayout>
   );
 }
 

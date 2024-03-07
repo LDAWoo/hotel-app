@@ -5,7 +5,6 @@ import { publicRoutesPathComponent } from "./routes/routes";
 import AppDeviceProvider from "./components/Contexts/AppDeviceProvider";
 import AppThemeProvider from "./components/Contexts/AppThemeProvider";
 import AppUserProvider from "./components/Contexts/AppUserProvider";
-import AppTokenProvider from "./components/Contexts/AppTokenProvider";
 
 function App() {
   return (
@@ -13,26 +12,24 @@ function App() {
     <AppThemeProvider>
       <AppDeviceProvider>
         <AppUserProvider>
-          <AppTokenProvider>
-            <Routes>
-              {publicRoutesPathComponent.map((route, index) => {
-                let Layout = route.layout;
-                const Page = route.component;
+          <Routes>
+            {publicRoutesPathComponent.map((route, index) => {
+              let Layout = route.layout;
+              const Page = route.component;
 
-                return (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    element={
-                      <Layout>
-                        <Page />
-                      </Layout>
-                    }
-                  />
-                );
-              })}
-            </Routes>
-          </AppTokenProvider>
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={
+                    <Layout>
+                      <Page />
+                    </Layout>
+                  }
+                />
+              );
+            })}
+          </Routes>
         </AppUserProvider>
       </AppDeviceProvider>
     </AppThemeProvider>

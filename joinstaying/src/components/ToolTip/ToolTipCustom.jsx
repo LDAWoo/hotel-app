@@ -3,15 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { IoMdClose } from "react-icons/io";
 import Icon from "../Icon/Icon";
-function ToolTipCustom({
-  isOpen,
-  onClose,
-  component,
-  disabled,
-  width,
-  render,
-  zIndex = "",
-}) {
+function ToolTipCustom({ isOpen, onClose, component, disabled, width, render, left, zIndex = "" }) {
   const [showToolTip, setShowToolTip] = useState(isOpen);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const tooltipRef = useRef(null);
@@ -78,8 +70,9 @@ function ToolTipCustom({
               inset-0
               lg:inset-auto
               lg:-translate-x-0
-              lg:translate-y-5
+              lg:translate-y-2
               m-0
+              ${left ? "lg:right-0" : "lg:left-0"}
               ${zIndex}
           `}
       ref={tooltipRef}
@@ -107,7 +100,7 @@ function ToolTipCustom({
                 `}
         >
           <div
-            className='
+            className="
                     transition-transform ease-out
                     h-full
                     flex
@@ -122,21 +115,21 @@ function ToolTipCustom({
                     border-[1px]
                     border-gray-200
                     dark:border-primary-500
-                    '
+                    "
           >
             {/* Header */}
             <div
-              className='
+              className="
                         flex
                         items-center
                         p-6
                         lg:hidden
-                        '
+                        "
             >
               <button
-                type='button'
+                type="button"
                 onClick={handleClose}
-                className='   
+                className="   
                       flex  
                       p-1
                       border-0
@@ -147,21 +140,13 @@ function ToolTipCustom({
                       right-5
                       rounded-full
                       text-hotel-50
-                      '
+                      "
               >
                 <Icon icon={IoMdClose} size={18} />
               </button>
             </div>
-            {component && (
-              <div className='pt-5 sm:pt-10 pl-6 pr-6 pb-1 flex lg:hidden'>
-                {component}
-              </div>
-            )}
-            {render && (
-              <div className='relative flex-auto pl-0 pr-0 pt-5 pb-20 lg:pt-0 lg:pb-0 overflow-y-auto no-scrollbar'>
-                {render}
-              </div>
-            )}
+            {component && <div className="pt-5 sm:pt-10 pl-6 pr-6 pb-1 flex lg:hidden">{component}</div>}
+            {render && <div className="relative flex-auto pl-0 pr-0 pt-5 pb-20 lg:pt-0 lg:pb-0 overflow-y-auto no-scrollbar">{render}</div>}
           </div>
         </div>
       </div>
@@ -174,6 +159,7 @@ ToolTipCustom.propTypes = {
   onClose: PropTypes.func.isRequired,
   component: PropTypes.node,
   disabled: PropTypes.bool,
+  left: PropTypes.bool,
   width: PropTypes.number,
   render: PropTypes.node,
   zIndex: PropTypes.string,

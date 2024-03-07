@@ -54,6 +54,7 @@
       "loginFailed": "이메일 또는 비밀번호가 잘못되었습니다. 다시 시도하거나 확인 링크를 사용하세요.",
       "emailNotBlank": "이메일 주소를 입력해주세요",
       "emailNotEmail": "유효한 이메일 주소를 입력해주세요",
+      "emailNotExits": "이 이메일은 우리 웹 사이트에 존재하지 않습니다.",
       "firstNameNotBlank": "이름을 입력해주세요",
       "lastNameNotBlank": "성을 입력해주세요",
       "phoneNumberNotBlank": "전화번호를 입력해주세요",
@@ -89,6 +90,353 @@
     "title": "우리는 여행을 즐기시길 바랍니다",
     "subTitle": "우리의 세계급 호텔 및 레스토랑 리조트를 발견해보세요.",
     "bookNow": "지금 예약하기"
+  },
+  "JoinBanner": {
+    "listYour": "귀하의",
+    "data": {
+      "title1": "아파트",
+      "title2": "호텔",
+      "title3": "휴가집",
+      "title4": "게스트하우스",
+      "title5": "침대와 아침식사"
+    },
+    "onStaying": "을 Staying.com에서",
+    "title": "여행 호스트가 귀하의 부업이건 본업이건, Staying.com에 귀하의 휴가 임대를 등록하여 전 세계 여행자에게 도달하세요",
+    "getStarted": {
+      "title": "일정한 예약으로 더 많은 수입 창출",
+      "items": {
+        "item1": "파트너의 45%가 1 주일 이내에 첫 예약을 받습니다",
+        "item2": "2024년 이후로 11억 명 이상의 휴가 임대 고객",
+        "item3": "귀하의 재산과 재정에 대한 완전한 통제",
+        "item4": "등록은 무료이며 15분이면 완료됩니다"
+      },
+      "getStartedNow": "지금 시작하세요"
+    }
+  },
+  "WordMap": {
+    "title": "독특한 글로벌 고객층에 도달",
+    "items": {
+      "item1": "휴가 숙박 손님 중 몇 퍼센트가 다시 예약합니다.",
+      "item2": "2022 년 Staying.com에서 예약된 밤 중 몇 퍼센트가 국제 숙박을 위한 것이었습니다.",
+      "item3": "휴가 숙박 고객 중 일부는 지니어스 로열티 레벨 2 또는 3이며 예약당 더 많은 금액을 지출하는 경향이 있습니다."
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "Staying.com에서 귀하의 재산을 등록하고 즉시 손님을 환영하세요!",
+      "buttonProperty": "당신의 속성을 나열하다",
+      "subTitle": "시작하려면 Staying.com에 등록하려는 속성 유형을 선택하십시오",
+      "items": {
+        "item1": {
+          "name": "아파트",
+          "description": "가구가 갖추어져 있고 셀프 케이터링 숙박으로, 손님이 전체 공간을 빌립니다."
+        },
+        "item2": {
+          "name": "주택",
+          "description": "아파트, 휴가집, 빌라 등과 같은 속성"
+        },
+        "item3": {
+          "name": "호텔, B&B 등",
+          "description": "호텔, B&B, 게스트하우스, 호스텔, 아파트 호텔 등과 같은 속성"
+        },
+        "item4": {
+          "name": "대안적 장소",
+          "description": "보트, 캠핑장, 고급 텐트 등과 같은 속성"
+        }
+      }
+    },
+    "Property": {
+      "title": "아래 목록에서 귀하의 장소와 가장 유사한 속성 카테고리는 무엇입니까?"
+    },
+    "Owner": {
+      "title": "귀하가 몇 개의 호텔을 등록하고 있습니까?",
+      "items": {
+        "item1": "한 호텔에 하나 이상의 객실을 보유한 호텔",
+        "item2": "한 개 이상의 객실을 보유한 여러 호텔"
+      },
+      "valueProperty": "재산 수"
+    },
+    "FeedBack": {
+      "title": "귀하가 등록 중입니까?",
+      "subTitle": "이것은 귀하의 속성과 유사한가요?",
+      "needChange": "아니요, 변경이 필요합니다"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "기본 정보",
+          "title": "안녕하세요",
+          "subTitle": "귀하의 객실 이름, 주소 및 연락처 정보를 알려주시기 바랍니다.",
+          "information": {
+            "hotelName": "귀하의 호텔 이름은 무엇입니까?",
+            "subHotelName": "숙박장소를 찾을 때 손님들이 이 이름을 볼 것입니다.",
+            "contactPerson": "담당자",
+            "subContactPerson": "귀하의 이름을 알 수 있도록 연락처 이름을 입력하십시오.",
+            "phoneNumber": "전화 번호",
+            "subPhoneNumber": "필요할 때 등록을 지원할 수 있도록 연락처 전화 번호를 입력하십시오.",
+            "otherPhoneNumber": "다른 전화 번호",
+            "nameRanting": "귀하의 호텔 평점은 어떻게 되나요?",
+            "ratings": {
+              "star0": "해당 없음",
+              "star": "별"
+            },
+            "nameMultipleHotel": "여러 호텔을 소유하고 있거나 체인 또는 관리 회사의 일부입니까?",
+            "multipleHotel": {
+              "yes": "예",
+              "no": "아니요"
+            },
+            "nameCountry": "국가/지역",
+            "selectCountry": "국가/지역 선택",
+            "nameStreet": "거리 이름과 번호",
+            "nameStreetPlaceholder": "주소를 입력하기 시작하세요",
+            "nameDistrict": "지구 주소",
+            "nameCity": "도시",
+            "nameZipCode": "우편 번호"
+          },
+          "notification": {
+            "noti1": {
+              "title": "내 주소에 무엇이 포함되어야 하나요?",
+              "items": {
+                "item1": "전체 재산에 대한 거리 이름과 번호를 포함하십시오",
+                "item2": "관련이 있는 경우 주소 두 번째 줄에 층 번호를 포함하십시오",
+                "item3": "개별 아파트 또는 층 번호는 나중에 공유할 수 있습니다",
+                "item4": "우편 번호를 제공하십시오",
+                "item5": "거리 이름을 올바르게 철자하십시오",
+                "item6": "사무실이나 집 주소가 아닌 속성의 물리적 주소를 사용하십시오"
+              }
+            },
+            "noti2": {
+              "title": "왜 내 주소를 추가해야 하나요?",
+              "items": {
+                "item1": "한 번 손님이 귀하의 속성을 예약하면 이것이 그들과 공유되는 주소입니다. 손님이 귀하의 속성을 쉽게 찾을 수 있도록 주소가 정확해야 합니다."
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "구성 및 가격",
+          "subTitle": "첫 번째 방을 알아보려면 우리를 선택하십시오. 필요한 모든 정보를 입력 한 후. 위치는 다른 방에 대한 세부 정보를 입력 할 수 있습니다.",
+          "information": {
+            "roomType": "객실 유형",
+            "roomName": "객실 이름",
+            "optionalName": "옵션 이름 (필수 아님)",
+            "subOptionalName": "참조 용으로 고유 한 사용자 정의 이름을 작성하십시오 (필수 아님).",
+            "numberOfRoom": "이 유형의 객실 수",
+            "bedOptions": "침대 옵션",
+            "roomSize": "방 크기",
+            "titlePrice": "밤에 얼마나 청구 하시겠습니까?",
+            "priceGuestPay": "게스트가 지불하는 가격",
+            "subPriceGuestPay": "세금, 수수료 및 요금 포함",
+            "commissions": {
+              "title": "커미션",
+              "help": "귀하의 언어로 24/7 도움말 제공",
+              "save": "자동으로 확인 된 예약으로 시간을 절약하십시오",
+              "we": "Google에서 귀하의 장소를 홍보합니다",
+              "earning": "귀하의 수익 (세금 포함)"
+            },
+            "roomNameDefault": "디럭스 더블 룸",
+            "quantityType": "이 유형의 수량 :",
+            "edit": "편집",
+            "delete": "삭제",
+            "buttonAddOrderRoom": "다른 방 추가"
+          },
+          "notification": {
+            "noti1": {
+              "title": "다른 숙면을 제공합니까?",
+              "items": {
+                "item1": "현재 당장은 기본 숙면을 추가하면됩니다.",
+                "item2": "유아용 침대, 추가 침대 및 기타 숙면은 속성을 관리하는 데 사용하는 플랫폼 (엑스트라 넷)에 추가 할 수 있습니다.",
+                "item3": "등록을 완료 한 후에는 엑스트라 넷에서 속성의 어린이 정책 (최대 연령 및 가격 조정 포함)을 설정할 수 있습니다."
+              }
+            },
+            "noti2": {
+              "title": "가격을 확신 할 수 없는 경우 어떻게합니까?",
+              "items": {
+                "item1": "걱정 마세요. 나중에 언제든지 변경할 수 있습니다. 주말, 평일 및 계절별 가격을 설정하여 수입을 더욱 효과적으로 제어 할 수 있습니다."
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "편의시설",
+          "subTitle": "웹 사이트가 사용하는 편의시설 및 인터넷과 같은 편리한 정보를 알려주세요.",
+          "information": {
+            "optionalExtraBed": "선택 사항 추가 침대",
+            "provideExtraBed": "추가 침대를 제공하시나요?",
+            "extraBeds": {
+              "yes": "예",
+              "no": "아니요"
+            },
+            "numberOfExtraBed": "추가할 수 있는 침대 수를 선택하세요",
+            "check": "다음 게스트가 추가 침대에서 잘 수 있도록 허용하려면 확인란을 선택하세요.",
+            "childrenOfCrib": "2세 이하의 어린이는 유아용 침대에서 잠을 잡니다.",
+            "children": "어린이",
+            "priceChildren": "어린이 1인당 밤 요금을 입력하세요",
+            "upTo": "최대",
+            "yearOld": "세",
+            "adult": "성인",
+            "priceAdult": "성인 1인당 밤 요금을 입력하세요"
+          },
+          "notification": {
+            "noti1": {
+              "title": "제공하는 시설이 보이지 않는 경우 어떻게 해야 하나요?",
+              "items": {
+                "item1": "여기 나열된 시설은 게스트가 가장 많이 검색하는 시설입니다. 등록을 완료한 후에는 속성을 관리하는 데 사용하는 Extranet에서 더 큰 목록에서 더 많은 시설을 추가할 수 있습니다."
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "사진",
+          "title": "귀하의 호텔은 어떻게 보이나요?",
+          "subTitle": "아름다운 이미지는 완벽한 호텔 경험으로 유혹적인 초대입니다. 고해상도 이미지를 다운로드하고 귀하의 호텔이 제공하는 것을 정확히 보여주세요. 우리는 그것들을 Staying.com의 속성 페이지에 표시합니다.",
+          "information": {
+            "uploadPhoto": "최소 5 장의 속성 사진을 업로드하십시오.",
+            "moreUploadPhoto": "업로드할수록 예약을 받을 가능성이 높아집니다. 나중에 더 추가할 수 있습니다.",
+            "dragOrDrop": "드래그 앤 드롭 또는",
+            "upload": "사진 업로드",
+            "maximum": "각각 최대 20MB의 jpg, jpeg 또는 png",
+            "choose": "선택하세요",
+            "mainPhoto": "주 사진",
+            "photoGood": "좋은 첫인상을 남길 사진입니다.",
+            "clickAndDrag": "사진을 클릭하고 드래그하여 고객이 보기를 원하는 순서대로 정렬합니다."
+          },
+          "notification": {
+            "noti1": {
+              "title": "전문 사진이 없는 경우 어떻게 해야 하나요?",
+              "items": {
+                "item1": "문제 없습니다! 스마트폰이나 디지털 카메라를 사용할 수 있습니다. 여기에 귀하의 속성에 대한 훌륭한 사진을 찍는 몇 가지 팁이 있습니다.",
+                "item2": "누가 사진을 찍었는지 모르는 경우 사용을 피하는 것이 좋습니다. 허가를 받지 않은 한, 다른 사람이 찍은 사진만 사용하십시오."
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "정책",
+          "title": "취소 정책",
+          "subTitle": "기본 정책 세부 정보를 나열하십시오. 어린이나 애완 동물을 투숙할 수 있습니까? 취소에 얼마나 유연한가요?",
+          "information": {
+            "cancelBooking": "게스트는 언제까지 무료로 예약을 취소할 수 있나요?",
+            "before18": "도착 당일 18:00 이전",
+            "before1day": "도착 당일 1일 전",
+            "before2day": "도착 당일 2일 전",
+            "before3day": "도착 당일 3일 전",
+            "before4day": "도착 당일 4일 전",
+            "before5day": "도착 당일 5일 전",
+            "priceCancelBooking": "취소 창문 이후 (도착 당일 18:00 이전)에 게스트가 지불해야 하는 금액은 얼마입니까?",
+            "firstNight": "첫 번째 밤의 비용",
+            "totalPrice": "총 금액의 100%",
+            "additional": "추가 정책이 있나요?",
+            "pet": "애완 동물을 허용하십니까?",
+            "pets": {
+              "yes": "예",
+              "no": "아니요"
+            },
+            "smo": "흡연을 허용하십니까?",
+            "smoking": {
+              "yes": "예",
+              "no": "아니요"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "어떤 정책을 선택해야 하나요?",
+              "items": {
+                "item1": "이러한 정책은 나중에 쉽게 업데이트할 수 있습니다."
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "지불",
+          "subTitle": "결제 방법을 지정하십시오. 다른 옵션과 함께 세부 정보를 수락하십시오.",
+          "information": {
+            "title": "고객이 귀하의 재산에서 어떻게 지불 할 수 있습니까?",
+            "subTitle1": "귀하의 재산에서 신용 카드를 수락하지 않는 경우 Staying.com은 Staying.com 결제 서비스로 귀하의 게스트 결제를 용이하게 할 수 있습니다",
+            "payWithCredit": "손님들이 내 재산에서 신용 카드로 지불 할 수 있습니다",
+            "payWithStaying": "저는 Staying.com 결제를 사용하고 결제 수수료를 지불하지 않겠습니다",
+            "subTitle2": "다양한 법적 및 규제 요구 사항을 준수하기 위해 귀하와 귀하의 재산에 대한 일부 정보를 수집하고 확인해야 합니다.",
+            "provideFullName": "숙소의 25% 이상을 소유한 모든 개인의 전체 이름을 제공하십시오.",
+            "firstName": "이름",
+            "lastName": "성",
+            "flagAddress": "주소를 표시 하시겠습니까?",
+            "flags": {
+              "yes": "예",
+              "no": "아니요"
+            },
+            "nameCountry": "국가/지역",
+            "selectCountry": "국가/지역 선택",
+            "nameStreet": "거리 이름 및 호수",
+            "nameStreetPlaceholder": "주소를 입력하기 시작하십시오",
+            "nameDistrict": "지역 주소",
+            "nameCity": "도시"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Staying.com 결제 방법은 어떻게 작동합니까?",
+              "items": {
+                "item1": "귀하의 게스트가 PayPal, WeChat Pay 및 AliPay와 같은 더 많은 옵션으로 Staying.com을 통해 지불합니다.",
+                "item2": "우리는 귀하의 게스트 결제를 용이하게합니다. 부정 행위, 환불 또는 잘못된 카드와 같은 문제에 대해 걱정할 필요가 없습니다.",
+                "item3": "Staying.com은 귀하에게 지불을 보냅니다. 지난 달 체크 아웃이있는 모든 예약을 포함하는 매월 15 일에 은행 송금을 받게됩니다."
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "확인",
+          "title": "Staying.com이 제공 한 세부 정보를 수락합니다.",
+          "information": {
+            "title": "거의 완료되었습니다. 마지막 몇 가지 참고 사항입니다.",
+            "subTitle1": "수익을 얻기 시작하려면 우리는 다음 12 개월 동안 자동으로 여러분의 숙박 시설을 예약할 수 있도록 엽니다. 열기 전에 객실 가용성을 변경하려면 '등록 완료 및 나중에 열기'를 선택할 수 있습니다. 객실을 예약하면 이후 가용성을 조정할 수도 있습니다.",
+            "subTitle2": "등록을 완료하려면 아래 상자를 확인하십시오.",
+            "acceptGeneralTermsPrivacy": "숙박 업무가 합법적이며 요청시 제시 가능한 모든 필요한 라이센스 및 허가를 보유하고 있다고 보증합니다. Staying.com B.V는 제공 한 모든 정보를 확인하고 조사 할 수있는 권리가 있습니다. 등록 시 발행됨.",
+            "certificationOfLegalBusinessOperations": "일반 약관 및 Staying.com 안전 및 개인 정보 보호 정책을 읽고 승인하고 동의합니다. 속성과 게스트가 Staying.com을 통해 통신하도록 허용됩니다. 수신 및 처리 된 적절한 통신."
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "호텔 이름을 입력하세요",
+            "notNameHotelName": "유효한 호텔 이름을 입력하세요",
+            "notNameLengthHotelName": "4에서 32자 사이의 호텔 이름을 입력하세요",
+            "contactPersonNotBlank": "연락처 인을 입력하세요",
+            "notNameContactPerson": "유효한 연락처 인을 입력하세요",
+            "notNameLengthContactPerson": "4에서 32자 사이의 연락처 인을 입력하세요",
+            "phoneNumberNotBlank": "전화 번호를 입력하세요",
+            "notPhoneNumber": "유효한 전화 번호를 입력하세요",
+            "addressNotBlank": "주소를 입력하세요",
+            "districtNotBlank": "지구 주소를 입력하세요",
+            "cityNotBlank": "도시를 입력하세요",
+            "postalCodeNotBlank": "우편 번호를 입력하세요",
+            "notPostalCode": "유효한 우편 번호를 입력하세요"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "4 ~ 32 자의 사용자 정의 이름을 입력하십시오",
+            "quantityRoomNotGreaterThan": "0보다 큰 객실 수를 입력하십시오",
+            "roomSizeNotGreaterThan": "0보다 큰 객실 크기를 입력하십시오",
+            "priceNotGreaterThan": "1 박 요금을 0보다 크게 입력하십시오"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "이름을 입력하세요",
+            "lastNameNotBlank": "성을 입력하세요",
+            "addressNotBlank": "주소를 입력하세요",
+            "districtNotBlank": "지구 주소를 입력하세요",
+            "cityNotBlank": "도시를 입력하세요"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "등록이 완료되어 축하합니다. 이제는 휴식의 시간입니다. 기록을 유지하기 위해 등록 확인 이메일과 함께 동의서 사본이 첨부된 이메일을 보냈습니다."
+      }
+    },
+    "buttonContinue": "계속"
   },
   "Search": {
     "location": "어디로 가시나요?",

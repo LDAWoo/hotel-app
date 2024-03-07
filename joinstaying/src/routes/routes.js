@@ -34,6 +34,8 @@ import RegisterPassword from "../pages/RegisterPassword";
 import ForgotPassword from "../pages/ForgotPassword";
 import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
 import CheckEmail from "../pages/CheckEmail";
+import CreateRoom from "../pages/HostStaying/CreateRoom/CreateRoom";
+import ThankYouHost from "../pages/HostStaying/ThankYouHost/ThankYouHost";
 
 const publicRoutesPathComponent = [
   {
@@ -104,6 +106,16 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.becomeAHostMap,
     component: MapHost,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostCreateRoom,
+    component: CreateRoom,
+    layout: HostLayout,
+  },
+  {
+    path: routesConfig.becomeAHostThankYou,
+    component: ThankYouHost,
     layout: HostLayout,
   },
   {

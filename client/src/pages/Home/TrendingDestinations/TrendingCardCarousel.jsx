@@ -4,13 +4,12 @@ import Title from "../../../components/Title/Title";
 
 import PropTypes from "prop-types";
 function TrendingCardCarousel({ item }) {
-  const property = 1000;
   return (
     <Link to={{}} className='flex flex-col w-full h-full '>
       <div className='flex w-full flex-col '>
         <div className='w-full relative'>
           <div style={{ aspectRatio: "20/19" }}>
-            <Image src={item?.src} className='w-full h-full object-cover' />
+            <Image src={item?.url} className='w-full h-full object-cover' />
           </div>
           <div className='absolute top-[5%] left-[5%] w-full h-[40px]'>
             <Image src={item?.areaImage} className='w-[10%]' />
@@ -24,7 +23,7 @@ function TrendingCardCarousel({ item }) {
             colorTitle='dark:text-white'
           />
           <Title
-            title={`${property} properties`}
+            title={`${item?.quantityRoom} properties`}
             large
             colorTitle='dark:text-primary-50'
           />

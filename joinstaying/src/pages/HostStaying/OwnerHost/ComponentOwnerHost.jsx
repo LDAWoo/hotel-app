@@ -1,11 +1,27 @@
-import { OwnerHostData } from "../../../components/Constants/OwnerHostData";
-import Title from "../../../components/Title/Title";
-import TextInput from "../../../components/TextInput/TextInput";
-import ItemHost from "../ItemHost";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+import TextInput from "../../../components/TextInput/TextInput";
+import Title from "../../../components/Title/Title";
 import useRegisterOwner from "../../../hooks/JoinStaying/OwnerHost/useRegisterOwner";
+import ItemHost from "../ItemHost";
 
 function ComponentOwnerHost() {
+  const { t } = useTranslation();
+  const OwnerHostData = [
+    {
+      id: 1,
+      name: t("HostStaying.Owner.items.item1"),
+      image: "/images/home.png",
+      value: 1,
+    },
+    {
+      id: 2,
+      name: t("HostStaying.Owner.items.item2"),
+      image: "/images/multiplehomes.png",
+      value: 2,
+    },
+  ];
+
   const { quantityHotel, setQuantityHotel, activeHotel, setActiveHotel } = useRegisterOwner();
 
   const handleActive = (name, value) => {
@@ -26,7 +42,7 @@ function ComponentOwnerHost() {
           <ItemHost description={item?.name} img={item?.image} active={activeHotel === item?.name} className="aspect-auto" onClick={() => handleActive(item?.name, item?.value)} />
           {item?.value > 1 && activeHotel === item?.name && (
             <div className="flex flex-col gap-2 mt-4">
-              <Title title="Number of property" xl />
+              <Title title={t("HostStaying.Owner.valueProperty")} xl />
               <TextInput type="number" onChange={handleChange} value={quantityHotel} min={item?.value} />
             </div>
           )}

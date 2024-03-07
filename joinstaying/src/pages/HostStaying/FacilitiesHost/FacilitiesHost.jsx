@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postFacilities } from "../../../api/HostStaying/FacilitiesHost";
-import { UseToken } from "../../../components/Contexts/AppTokenProvider";
 import routesConfig from "../../../configs/routesConfig";
 import useRegisterExtraBed from "../../../hooks/JoinStaying/FacilitiesHost/useRegisterExtraBed";
 import useRegisterFacilities from "../../../hooks/JoinStaying/FacilitiesHost/useRegisterFacilities";
@@ -9,11 +8,12 @@ import ComponentHost from "../ComponentHost";
 import FooterHost from "../FooterHost";
 import ComponentFacilities from "./ComponentFacilities";
 import ComponentNotificationFacilities from "./ComponentNotificationFacilities";
+import { UserContext } from "../../../components/Contexts/AppUserProvider";
 
 function FacilitiesHost() {
   const { facilities } = useRegisterFacilities();
   const navigate = useNavigate();
-  const { token } = useContext(UseToken);
+  const { token } = useContext(UserContext);
   const handleBack = () => {
     navigate(routesConfig.becomeAHostHotelName);
   };

@@ -66,6 +66,7 @@
       "loginFailed": "メールアドレスまたはパスワードが間違っています。もう一度やり直すか、確認リンクを使用してください。",
       "emailNotBlank": "メールアドレスを入力してください",
       "emailNotEmail": "有効なメールアドレスを入力してください",
+      "emailNotExits": "このメールアドレスは当社のウェブサイトに存在しません。",
       "firstNameNotBlank": "お名前を入力してください",
       "lastNameNotBlank": "姓を入力してください",
       "phoneNumberNotBlank": "電話番号を入力してください",
@@ -101,6 +102,353 @@
     "title": "滞在を楽しんでいただけることを願っています",
     "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
     "bookNow": "今すぐ予約"
+  },
+  "JoinBanner": {
+    "listYour": "あなたの",
+    "data": {
+      "title1": "アパートメント",
+      "title2": "ホテル",
+      "title3": "バケーションホーム",
+      "title4": "ゲストハウス",
+      "title5": "ベッド＆ブレックファースト"
+    },
+    "onStaying": "で Staying.com",
+    "title": "ホスティングがあなたの副業であろうとフルタイムの仕事であろうと、Staying.com であなたの休暇物件を登録して、世界中の旅行者にリーチしてください",
+    "getStarted": {
+      "title": "一貫した予約でより多くの収入を得る",
+      "items": {
+        "item1": "パートナーの45％が1週間以内に最初の予約を取得",
+        "item2": "2024年以来、11億人以上のバケーションレンタルゲスト",
+        "item3": "あなたの物件と財務に完全なコントロール",
+        "item4": "登録は無料で、15分で完了します"
+      },
+      "getStartedNow": "今すぐ始める"
+    }
+  },
+  "WordMap": {
+    "title": "ユニークなグローバル顧客層にアプローチ",
+    "items": {
+      "item1": "バケーションレンタルのゲストの何パーセントが再び私たちと予約します",
+      "item2": "2022年のStaying.comで予約された夜のうち何パーセントが国際滞在用でした",
+      "item3": "バケーションレンタルの顧客の何パーセントがジーニアスのロイヤリティレベル2または3であり、予約ごとにより多くの支出をする傾向があります"
+    }
+  },
+  "HostStaying": {
+    "Category": {
+      "title": "Staying.com に物件を登録し、すぐにゲストを歓迎しましょう！",
+      "buttonProperty": "物件をリストする",
+      "subTitle": "始めるには、Staying.com にリストするプロパティの種類を選択してください",
+      "items": {
+        "item1": {
+          "name": "アパートメント",
+          "description": "家具付きのセルフサービスの宿泊施設で、ゲストがまるごと場所を借ります。"
+        },
+        "item2": {
+          "name": "家",
+          "description": "アパートメント、バケーションホーム、別荘などのプロパティ"
+        },
+        "item3": {
+          "name": "ホテル、B＆B など",
+          "description": "ホテル、B＆B、ゲストハウス、ホステル、アパートホテルなどのプロパティ"
+        },
+        "item4": {
+          "name": "代替場所",
+          "description": "ボート、キャンプ場、高級テントなどのプロパティ"
+        }
+      }
+    },
+    "Property": {
+      "title": "以下のリストから、あなたの場所に最も似ているプロパティカテゴリは何ですか？"
+    },
+    "Owner": {
+      "title": "あなたは何軒のホテルをリストしていますか？",
+      "items": {
+        "item1": "ゲストが予約できる 1 つまたは複数の部屋を持つ 1 つのホテル",
+        "item2": "ゲストが予約できる 1 つまたは複数の部屋を持つ複数のホテル"
+      },
+      "valueProperty": "物件の数"
+    },
+    "FeedBack": {
+      "title": "あなたはリストしていますか？",
+      "subTitle": "これはあなたのプロパティに似ていますか？",
+      "needChange": "いいえ、変更が必要です"
+    },
+    "CreateRoom": {
+      "items": {
+        "information": {
+          "name": "基本情報",
+          "title": "こんにちは",
+          "subTitle": "部屋の名前、住所、連絡先の詳細をお知らせください。",
+          "information": {
+            "hotelName": "あなたのホテルの名前は何ですか？",
+            "subHotelName": "宿泊施設を検索する際に、ゲストがこの名前を見ます。",
+            "contactPerson": "連絡先",
+            "subContactPerson": "あなたの名前を知るための連絡先名を入力してください。",
+            "phoneNumber": "電話番号",
+            "subPhoneNumber": "必要に応じて登録をサポートするための連絡先電話番号を入力してください。",
+            "otherPhoneNumber": "別の電話番号",
+            "nameRanting": "あなたのホテルの星評価は何ですか？",
+            "ratings": {
+              "star0": "N/A",
+              "star": "スター"
+            },
+            "nameMultipleHotel": "複数のホテルを所有していますか、またはチェーンまたは管理会社の一部ですか？",
+            "multipleHotel": {
+              "yes": "はい",
+              "no": "いいえ"
+            },
+            "nameCountry": "国/地域",
+            "selectCountry": "国/地域を選択",
+            "nameStreet": "道路名と番号",
+            "nameStreetPlaceholder": "住所を入力し始めてください",
+            "nameDistrict": "地区の住所",
+            "nameCity": "都市",
+            "nameZipCode": "郵便番号"
+          },
+          "notification": {
+            "noti1": {
+              "title": "私の住所に含める必要があるものは何ですか？",
+              "items": {
+                "item1": "物件全体の道路名と番号を含めます",
+                "item2": "関連する場合は住所の2行目に階数を含めます",
+                "item3": "個々のアパートや階数は後で共有できます",
+                "item4": "郵便番号を提供します",
+                "item5": "道路名を正確にスペルします",
+                "item6": "物件の物理的な住所を使用します。オフィスや自宅の住所ではありません"
+              }
+            },
+            "noti2": {
+              "title": "なぜ私は自分の住所を追加する必要がありますか？",
+              "items": {
+                "item1": "ゲストがあなたの物件を予約すると、それが彼らと共有される住所です。ゲストがあなたの物件を簡単に見つけられるように、住所が正確であることが重要です。"
+              }
+            }
+          }
+        },
+        "composition": {
+          "name": "構成と価格",
+          "subTitle": "最初の部屋を知るために私たちを選んでください。 必要な情報をすべて入力した後。 位置は他の部屋の詳細を入力できます。",
+          "information": {
+            "roomType": "部屋タイプ",
+            "roomName": "部屋名",
+            "optionalName": "オプション名（必須ではありません）",
+            "subOptionalName": "参照用に独自のカスタム名を作成します（必須ではありません）。",
+            "numberOfRoom": "このタイプの部屋数",
+            "bedOptions": "ベッドオプション",
+            "roomSize": "部屋のサイズ",
+            "titlePrice": "1泊いくらで請求したいですか？",
+            "priceGuestPay": "ゲストが支払う価格",
+            "subPriceGuestPay": "税金、手数料、料金を含む",
+            "commissions": {
+              "title": "手数料",
+              "help": "24時間365日、あなたの言語でヘルプを提供します",
+              "save": "自動的に確認された予約で時間を節約します",
+              "we": "Googleであなたの場所をプロモートします",
+              "earning": "あなたの収入（税金を含む）"
+            },
+            "roomNameDefault": "デラックスダブルルーム",
+            "quantityType": "このタイプの数量：",
+            "edit": "編集",
+            "delete": "削除",
+            "buttonAddOrderRoom": "別の部屋を追加"
+          },
+          "notification": {
+            "noti1": {
+              "title": "他の寝具を提供していますか？",
+              "items": {
+                "item1": "今は基本的な寝具だけを追加する必要があります。",
+                "item2": "ベビーベッド、追加のベッド、その他の寝具は、プロパティを管理するために使用するプラットフォーム（エクストラネット）に追加できます。",
+                "item3": "登録を完了した後、エクストラネットでプロパティの子供ポリシー（最大年齢や価格調整を含む）を設定できます。"
+              }
+            },
+            "noti2": {
+              "title": "価格が不明な場合はどうすればよいですか？",
+              "items": {
+                "item1": "心配しないでください、後で変更することができます。週末、平日、季節ごとの価格を設定することさえできます。これにより、収入をより制御できます。"
+              }
+            }
+          }
+        },
+        "amenities": {
+          "name": "設備",
+          "subTitle": "サイトが使用する設備やインターネットなど、便利な情報を教えてください。",
+          "information": {
+            "optionalExtraBed": "オプションのエキストラベッド",
+            "provideExtraBed": "エキストラベッドを提供していますか？",
+            "extraBeds": {
+              "yes": "はい",
+              "no": "いいえ"
+            },
+            "numberOfExtraBed": "追加できるエキストラベッドの数を選択してください",
+            "check": "以下のゲストがエキストラベッドで寝ることを許可する場合は、チェックボックスをオンにしてください。",
+            "childrenOfCrib": "2歳以下の子供はベビーベッドで寝る",
+            "children": "子供",
+            "priceChildren": "1人当たりの子供の宿泊料金を入力してください",
+            "upTo": "最大",
+            "yearOld": "歳",
+            "adult": "大人",
+            "priceAdult": "1人当たりの大人の宿泊料金を入力してください"
+          },
+          "notification": {
+            "noti1": {
+              "title": "提供している施設が見当たらない場合はどうすればよいですか？",
+              "items": {
+                "item1": "ここにリストされている施設は、ゲストが最もよく検索する施設です。登録が完了すると、物件を管理するために使用するプラットフォームであるExtranet上のより大きなリストからさらに多くの施設を追加できます。"
+              }
+            }
+          }
+        },
+        "photo": {
+          "name": "写真",
+          "title": "あなたのホテルはどのように見えますか？",
+          "subTitle": "美しい画像は完全なホテル体験への誘いです。高解像度の画像をダウンロードして、あなたのホテルが提供するものを正確に表示しましょう。Staying.comの物件ページに表示されます。",
+          "information": {
+            "uploadPhoto": "物件の写真を少なくとも5枚アップロードしてください。",
+            "moreUploadPhoto": "アップロードすればするほど予約が取れる可能性が高まります。後で追加することもできます。",
+            "dragOrDrop": "ドラッグアンドドロップまたは",
+            "upload": "写真をアップロード",
+            "maximum": "jpg、jpeg、またはpng、各20MBまで",
+            "choose": "選択する",
+            "mainPhoto": "メイン写真",
+            "photoGood": "良い第一印象を与える写真。",
+            "clickAndDrag": "写真をクリックしてドラッグして、ゲストが見たい順序に並べます。"
+          },
+          "notification": {
+            "noti1": {
+              "title": "プロの写真がない場合はどうすればよいですか？",
+              "items": {
+                "item1": "問題ありません！スマートフォンまたはデジタルカメラを使用できます。以下はあなたの物件の素晴らしい写真を撮るためのいくつかのヒントです。",
+                "item2": "誰が写真を撮ったかわからない場合は、使用しないことをお勧めします。許可を得ていない限り、他人が撮影した写真のみを使用してください。"
+              }
+            }
+          }
+        },
+        "policies": {
+          "name": "ポリシー",
+          "title": "キャンセルポリシー",
+          "subTitle": "基本的なポリシーの詳細をリストしてください。 子供やペットの宿泊を許可しますか？ キャンセルにはどれほど柔軟ですか？",
+          "information": {
+            "cancelBooking": "ゲストはいつ無料で予約をキャンセルできますか？",
+            "before18": "到着日の18:00前",
+            "before1day": "到着日の前日",
+            "before2day": "到着日の2日前",
+            "before3day": "到着日の3日前",
+            "before4day": "到着日の4日前",
+            "before5day": "到着日の5日前",
+            "priceCancelBooking": "キャンセルウィンドウ（到着日の18:00前）後にゲストに請求される金額はいくらですか？",
+            "firstNight": "初日の宿泊料金",
+            "totalPrice": "合計金額の100%",
+            "additional": "追加ポリシーはありますか？",
+            "pet": "ペットの宿泊を許可しますか？",
+            "pets": {
+              "yes": "はい",
+              "no": "いいえ"
+            },
+            "smo": "喫煙を許可しますか？",
+            "smoking": {
+              "yes": "はい",
+              "no": "いいえ"
+            }
+          },
+          "notification": {
+            "noti1": {
+              "title": "どのポリシーを選択すべきですか？",
+              "items": {
+                "item1": "これらのポリシーは後で簡単に更新できます。"
+              }
+            }
+          }
+        },
+        "payment": {
+          "name": "支払い",
+          "subTitle": "お支払い方法をご指示ください。他のオプションと一緒に詳細をご承諾ください。",
+          "information": {
+            "title": "お客様は物件でどのようにお支払いいただけますか？",
+            "subTitle1": "お客様の物件でクレジットカードを受け付けていない場合、Staying.comはStaying.com支払いサービスを利用してお客様のお支払いを手配することができます",
+            "payWithCredit": "お客様は私の物件でクレジットカードで支払うことができます",
+            "payWithStaying": "Staying.com支払いを利用し、支払い手数料はかかりません",
+            "subTitle2": "様々な法的および規制上の要件に準拠するために、お客様とお客様の物件に関するいくつかの情報を収集し、確認する必要があります。",
+            "provideFullName": "宿泊施設の25％以上を所有しているすべての個人のフルネームをご提供ください。",
+            "firstName": "名",
+            "lastName": "姓",
+            "flagAddress": "住所をフラグしますか？",
+            "flags": {
+              "yes": "はい",
+              "no": "いいえ"
+            },
+            "nameCountry": "国/地域",
+            "selectCountry": "国/地域を選択",
+            "nameStreet": "通り名と番号",
+            "nameStreetPlaceholder": "あなたの住所を入力し始めます",
+            "nameDistrict": "地区の住所",
+            "nameCity": "市町村"
+          },
+          "notification": {
+            "noti1": {
+              "title": "Staying.com支払いの動作方法",
+              "items": {
+                "item1": "お客様はPayPal、WeChat Pay、AliPayなどのオプションを含むStaying.comを介して支払うことができます。",
+                "item2": "お客様のお支払いを手配します。詐欺、チャージバック、無効なカードに対処する必要はありません。",
+                "item3": "Staying.comはお客様に支払いを送信します。前月のチェックアウトを行ったすべての予約をカバーする銀行振り込みを毎月15日に受け取ります。"
+              }
+            }
+          }
+        },
+        "confirm": {
+          "name": "確認",
+          "title": "Staying.comが提供する詳細を受け入れます。",
+          "information": {
+            "title": "あと少しです - 最後のいくつかのメモ。",
+            "subTitle1": "収益を得るのを支援するために、私たちは次の12か月間、自動的にあなたの物件を予約可能にします。 開く前にルームの可用性を変更する場合は、「登録を完了して後で開く」を選択できます。 ルームを予約可能にすると、その後でも可用性を調整できます。",
+            "subTitle2": "登録を完了するには、以下のボックスにチェックを入れてください：",
+            "acceptGeneralTermsPrivacy": "宿泊施設業務が合法であり、要求された場合に提出できるすべての必要なライセンスと許可を持っていることを証明します。 Staying.com B.Vは、提供された情報を検証および調査する権利を有します。登録時に発行された。",
+            "certificationOfLegalBusinessOperations": "一般的な規約とStaying.comのセキュリティとプライバシーポリシーを読んで受け入れ、同意します。条件を満たした通信が受信され、処理される場合、プロパティとゲストがStaying.comを介して通信できるようにします。"
+          }
+        }
+      },
+      "Error": {
+        "information": {
+          "errors": {
+            "hotelNameNotBlank": "ホテル名を入力してください",
+            "notNameHotelName": "有効なホテル名を入力してください",
+            "notNameLengthHotelName": "4〜32文字のホテル名を入力してください",
+            "contactPersonNotBlank": "連絡先を入力してください",
+            "notNameContactPerson": "有効な連絡先を入力してください",
+            "notNameLengthContactPerson": "4〜32文字の連絡先を入力してください",
+            "phoneNumberNotBlank": "電話番号を入力してください",
+            "notPhoneNumber": "有効な電話番号を入力してください",
+            "addressNotBlank": "住所を入力してください",
+            "districtNotBlank": "地区の住所を入力してください",
+            "cityNotBlank": "都市を入力してください",
+            "postalCodeNotBlank": "郵便番号を入力してください",
+            "notPostalCode": "有効な郵便番号を入力してください"
+          }
+        },
+        "composition": {
+          "errors": {
+            "optionalNameNotName": "4桁から32桁の名前を入力してください",
+            "quantityRoomNotGreaterThan": "0より大きい部屋数を入力してください",
+            "roomSizeNotGreaterThan": "0より大きい部屋のサイズを入力してください",
+            "priceNotGreaterThan": "1泊の料金を0より大きく入力してください"
+          }
+        },
+        "payment": {
+          "errors": {
+            "firstNameNotBlank": "名前を入力してください",
+            "lastNameNotBlank": "姓を入力してください",
+            "addressNotBlank": "住所を入力してください",
+            "districtNotBlank": "地区の住所を入力してください",
+            "cityNotBlank": "市町村を入力してください"
+          }
+        }
+      }
+    },
+    "ThankYou": {
+      "items": {
+        "title": "登録が完了しました。おめでとうございます。今はリラックスする時間です。記録を保持するために、登録確認のメールと、同意書のコピーが添付された別のメールをお送りしました。"
+      }
+    },
+    "buttonContinue": "続行"
   },
   "Search": {
     "location": "どこに行く予定ですか？",

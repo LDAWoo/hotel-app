@@ -10,6 +10,7 @@ import ItemResults from "./ItemResults/ItemResults";
 import Map from "./Map/Map";
 import MapMobile from "./Map/MapMobile";
 import NoResult from "./NoResult";
+import { getHotelByCondition } from "../../api/Search";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
@@ -48,7 +49,7 @@ function SearchResult() {
 
       console.log(data);
 
-      const response = await post("hotel/get-condition", data);
+      const response = await getHotelByCondition(data);
       console.log(response);
       setOurHotels(response.listResult);
     } catch (error) {

@@ -3,24 +3,29 @@ import { create } from "zustand";
 const useRegisterAddRess = create((set) => ({
   country: "",
   streetAddress: "",
+  errorStreetAddress: "",
   districtAddress: "",
+  errorDistrictAddress: "",
   city: "",
+  errorCity: "",
   postalCode: "",
-  data: {
-    streetAddress: "",
-    districtAddress: "",
-    city: "",
-    postalCode: "",
-  },
+  errorPostalCode: "",
+
   setField: (field, value) => {
     set((prevState) => ({
       ...prevState,
       [field]: value,
-      data: {
-        ...prevState.data,
-        [field]: value,
-      },
     }));
+  },
+
+  resetAllAddress: () => {
+    set({
+      country: "",
+      streetAddress: "",
+      districtAddress: "",
+      city: "",
+      postalCode: "",
+    });
   },
 }));
 

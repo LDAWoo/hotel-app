@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postAddHotelName } from "../../../api/HostStaying/HotelName";
-import { UseToken } from "../../../components/Contexts/AppTokenProvider";
+import { UserContext } from "../../../components/Contexts/AppUserProvider";
 import routesConfig from "../../../configs/routesConfig";
 import useRegisHotelAddRess from "../../../hooks/JoinStaying/AddRessHost/useRegisterAddRess";
 import useRegisterHotelName from "../../../hooks/JoinStaying/HotelNameHost/useRegisterHotelName";
@@ -17,7 +17,7 @@ function HotelNameHost() {
 
   const { hotelName, rating, managerHotel, contactPerson, phoneNumberOne, phoneNumberTwo } = useRegisterHotelName();
 
-  const { token } = useContext(UseToken);
+  const { token } = useContext(UserContext);
 
   const [loading, setLoading] = useState(false);
 

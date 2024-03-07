@@ -13,7 +13,7 @@ import Title from "../../components/Title/Title";
 import routesConfig from "../../configs/routesConfig";
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
+  const { handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -78,16 +78,23 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      login();
+    }
+  };
+
   return (
     <div className="w-full h-full">
       <Title title={t("Login.title")} extraLarge4 nowrap={false} fontBold className=" dark:text-white mb-5" />
 
       <div className="flex flex-col w-full gap-2 pt-8">
         <Title title={t("Login.email")} fontMedium xl />
-        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0 || errorLogin.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
+        <TextInput onKeyDown={handleKeyDown} placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0 || errorLogin.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
         <TextError error={errorEmail} />
         <Title title={t("Login.password")} fontMedium xl />
         <TextInput
+          onKeyDown={handleKeyDown}
           placeholder={t("Login.password")}
           id="password"
           name="password"

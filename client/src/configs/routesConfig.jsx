@@ -11,6 +11,7 @@ const routesConfig = {
   hotelDetails: "/hotel",
 
   secureBooking: "/secure-book",
+  successfully: "/successfully"
 };
 
 export default routesConfig;

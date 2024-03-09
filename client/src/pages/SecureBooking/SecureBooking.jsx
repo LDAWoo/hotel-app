@@ -44,7 +44,7 @@ const SecureBooking = () => {
             <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
               <div className='flex flex-col w-full gap-4'>
                 <ProgressBooking />
-                <MainBooking />
+                <MainBooking data={data}/>
               </div>
             </div>
           </>

@@ -16,19 +16,8 @@ import useRegisterAddToStay from "../../../../hooks/SecureBooking/useRegisterAdd
 import useRegisterArrivalItem from "../../../../hooks/SecureBooking/useRegisterArrivalTime";
 import { postBookingSessionInfo } from "../../../../api/Booking";
 import useRegisterSpecialRequests from "../../../../hooks/SecureBooking/useRegisterSpecialRequests";
-
-const data = {
-  hotelId: "123",
-  hotelName: "The Hotel",
-  addRess: "124 An Nhơn, Go Vap District , Ho Chi Minh City, Vietnam",
-  checkIn: "2023-12-24",
-  checkOut: "2023-12-26",
-  adults: 2,
-  nights: 2,
-  children: 0,
-  price: 2000000,
-  rooms: 1,
-};
+import { useNavigate } from "react-router-dom";
+import routerConfig from '../../../../configs/routesConfig'
 
 function Main() {
   const { data } = useRegisterSecureBooking();
@@ -71,8 +60,6 @@ function Main() {
     },
   ];
 
-  console.log(data);
-
   const [loading, setLoading] = useState(false);
 
   const { firstName, lastName, email, country, phoneNumber } =
@@ -86,6 +73,8 @@ function Main() {
   const { specialRequirements } = useRegisterSpecialRequests();
 
   const { estimatedCheckInTime } = useRegisterArrivalItem();
+
+  const navigate = useNavigate()
 
   const handleFinalStep = async () => {
     try {
@@ -107,14 +96,13 @@ function Main() {
 
       setLoading(true);
       console.log(updateData);
-      const res = await postBookingSessionInfo(data?.jwtToken, updateData);
-      console.log(res);
+      const results = await postBookingSessionInfo(data?.jwtToken, updateData);
+      navigate(`${routerConfig.secureBooking}?token=${results?.jwtToken}&finalStep=complete`)
       setLoading(false);
     } catch (e) {
       setLoading(false);
     }
   };
-
   return (
     <main className='w-[65%] flex flex-col gap-4'>
       <>
@@ -141,7 +129,7 @@ function Main() {
           icon={MdKeyboardArrowRight}
           background
           size={24}
-          className='pt-2 pb-2 w-[300px] '
+          className='pt-2 pb-2 w-full '
           classButton='flex justify-center items-center w-full'
           titlePosition='before'
           xxl

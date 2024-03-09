@@ -14,6 +14,7 @@ import RegisterPassword from "../pages/RegisterPassword";
 import ForgotPassword from "../pages/ForgotPassword";
 import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
 import CheckEmail from "../pages/CheckEmail";
+import Successfully from "../pages/Successfully/Successfully";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -61,6 +62,11 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.secureBooking,
     component: SecureBooking,
+    layout: LayoutHotelDetail,
+  },
+  {
+    path: routesConfig.successfully,
+    component: Successfully,
     layout: LayoutHotelDetail,
   },
 ];

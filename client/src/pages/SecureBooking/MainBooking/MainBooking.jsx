@@ -1,11 +1,15 @@
+import FinalStep from "./FinalStep/FinalStep";
 import Aside from "./Aside/Aside";
 import Main from "./Main/Main";
 
-function MainBooking() {
+function MainBooking({data}) {
+
   return (
     <div className='flex flex-row gap-4'>
       <Aside />
-      <Main />
+      {
+        data?.email ? <FinalStep/>  : <Main />
+      }
     </div>
   );
 }

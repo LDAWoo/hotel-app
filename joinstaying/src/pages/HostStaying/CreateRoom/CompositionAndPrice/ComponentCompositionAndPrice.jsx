@@ -14,7 +14,7 @@ import SizeRoom from "./SizeRoom";
 import { useTranslation } from "react-i18next";
 
 const ComponentCompositionAndPrice = () => {
-  const { roomType, roomName, nameCustom, errorNameCustom, quantityRoom, errorQuantityRoom, roomArea, errorRoomArea, setField } = useRegisterCompositionAndPrice();
+  const { roomType, roomName, nameCustom, errorNameCustom, quantityRoom, errorQuantityRoom, roomArea, errorRoomArea,maxOccupancy, errorOccupancy, setField } = useRegisterCompositionAndPrice();
   const { t } = useTranslation();
   const [roomsType, setRoomsType] = useState([]);
   const [roomsName, setRoomsName] = useState([]);
@@ -78,6 +78,15 @@ const ComponentCompositionAndPrice = () => {
       setField("quantityRoom", parseInt(0));
     }
   };
+
+  const handleChangeMaxOccupancy = (value) => {
+    const roundedNum = parseInt(value, 10);
+    if (value.length > 0) {
+      setField("maxOccupancy", roundedNum);
+    } else {
+      setField("maxOccupancy", parseInt(0));
+    }
+  }
 
   const handleChangeSizeRoom = (value) => {
     const roundedNum = parseInt(value, 10);
@@ -150,6 +159,12 @@ const ComponentCompositionAndPrice = () => {
           <Title title={t("HostStaying.CreateRoom.items.composition.information.numberOfRoom")} fontMedium xl />
           <TextInput type="text" name="room-type-number" sizeIcon={20} error={errorQuantityRoom.length > 0} value={quantityRoom} onChange={(e) => handleChangeQuantityRoom(e.target.value)} onKeyDown={(e) => handleKeyDownNumber(e, quantityRoom)} />
           <TextError error={errorQuantityRoom} />
+        </div>
+
+        <div className="flex flex-col gap-1 mb-5">
+          <Title title="Max Occupancy" fontMedium xl />
+          <TextInput type="text" name="room-type-number" sizeIcon={20} error={errorOccupancy.length > 0} value={maxOccupancy} onChange={(e) => handleChangeMaxOccupancy(e.target.value)} onKeyDown={(e) => handleKeyDownNumber(e, maxOccupancy)} />
+          <TextError error={errorOccupancy} />
         </div>
 
         <div className="flex flex-col gap-5 mb-5">

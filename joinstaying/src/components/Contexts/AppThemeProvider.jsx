@@ -8,14 +8,14 @@ function AppThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState("");
 
   useEffect(() => {
-    if (theme == null) {
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      setDarkMode(prefersDarkMode ? "dark" : "light");
-    } else {
-      setDarkMode(theme);
-    }
+    // if (theme == null) {
+    //   const prefersDarkMode = window.matchMedia(
+    //     "(prefers-color-scheme: dark)",
+    //   ).matches;
+    //   setDarkMode(prefersDarkMode ? "dark" : "light");
+    // } else {
+      setDarkMode("light");
+    // }
   }, [theme]);
 
   return (

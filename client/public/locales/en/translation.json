@@ -25,7 +25,7 @@
   },
   "Register": {
     "title": "Register",
-    "subTitle": "Create an account to register and manage accommodations.",
+    "subTitle": "Create an account to register.",
     "email": "Email Address",
     "continue": "Continue"
   },
@@ -66,6 +66,7 @@
       "loginFailed": "Incorrect email or password. Please try again or use the verification link.",
       "emailNotBlank": "Please enter your email address",
       "emailNotEmail": "Please enter a valid email address",
+      "emailNotExits": "This email does not exist on our website.",
       "firstNameNotBlank": "Please enter your first name",
       "lastNameNotBlank": "Please enter your last name",
       "phoneNumberNotBlank": "Please enter your phone number",
@@ -73,6 +74,16 @@
       "passwordNotPassword": "Password must contain at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character",
       "confirmPasswordNotBlank": "Please confirm your password",
       "confirmPasswordNotPassword": "The passwords you entered do not match. Please try again."
+    },
+    "Search": {
+      "locationNotBlank": "Please enter a destination to start searching."
+    },
+    "SearchResults": {
+      "noResults": "Sorry, there were no results",
+      "reloadResults": "Reload results",
+      "notHotel": "Sorry, no accommodations found",
+      "hotHotelAndUpdate": "There are no accommodations that match your search criteria. Please try updating your search criteria.",
+      "updateSearch": "Update Search"
     }
   },
   "Modal": {
@@ -125,9 +136,41 @@
     "title": "Trending Destinations",
     "subTitle": "Travelers looking have also booked these"
   },
+  "UniqueProperties": {
+    "title": "Stay at our top unique properties",
+    "subTitle": "From castles and villas to boats and igloos, we've got it all"
+  },
+  "GuestLove": {
+    "title": "Homes guests love"
+  },
+  "WeLove": {
+    "title": "Destinations we love"
+  },
+  "Other": {
+    "regions": "regions",
+    "cities": "cities",
+    "previews": "previews",
+    "properties": "properties"
+  },
+  "ListYourProperties": {
+    "listYourProperties": "List Your Properties"
+  },
   "OurHotel": {
     "title": "Our Hotel",
     "subTitle": "The most popular hotels",
     "night": "night"
+  },
+  "SearchResults": {
+    "weeks": "weeks",
+    "adults": "adults",
+    "children": "children",
+    "taxesAndFees": "taxes and fees included",
+    "showOnMap": "Show on map",
+    "seeOnMap": "See on map",
+    "propertiesFound": "properties found",
+    "pointEvaluation": "point evaluation",
+    "evaluate": "evaluate",
+    "seeAvailability": "see availability",
+    "showing": "Showing"
   }
 }

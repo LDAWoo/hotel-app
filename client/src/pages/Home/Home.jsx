@@ -5,33 +5,28 @@ import GuestLove from "./GuestLove/GuestLove";
 import DestinationsWeLove from "./DestinationsWeLove/DestinationsWeLove";
 import { useEffect, useState } from "react";
 import { getHotelIndex } from "../../api/Home";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [homeData, setHomeData] = useState([]);
   const [currentData, setCurrentData] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [state, setState] = useState({
-    uniqueProperty: [],
-    guestLove: [],
-    destinationWeLove: [],
-  });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const result = await getHotelIndex();
-        console.log(result);
         setHomeData(result);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     const convertData =
@@ -51,9 +46,8 @@ function Home() {
     <div className='w-full'>
       <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
         <div className='flex flex-col w-full'>
-          <RecentSearch />
+          {/* <RecentSearch /> */}
           <TrendingDestination isLoading={loading} />
-
           <UniqueProperty data={currentData} isLoading={loading} />
           <GuestLove data={currentData} isLoading={loading} />
           <DestinationsWeLove data={currentData} isLoading={loading} />

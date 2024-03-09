@@ -27,8 +27,8 @@ const UniqueProperty = ({ data = [], isLoading }) => {
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
           <HomeTitle
-            title='Stay at our top unique properties'
-            subTitle="From castles and villas to boats and igloos, we've got it all "
+            title={t("UniqueProperties.title")}
+            subTitle={t("UniqueProperties.subTitle")}
           />
         </div>
         {isLoading ? (

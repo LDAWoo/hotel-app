@@ -45,7 +45,7 @@ function LocationBox() {
         componentError={
           <ToolTipAlert
             isOpen={isOpen}
-            content='Please enter a destination to start searching.'
+            content={t("Error.Search.locationNotBlank")}
           />
         }
       />

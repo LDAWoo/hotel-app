@@ -25,7 +25,7 @@ function GuestChildren() {
       handleMinus={handleMinusChild}
       handlePlus={handlePlusChild}
     >
-      {child > 0 && (
+      {/* {child > 0 && (
         <>
           <div className='grid grid-cols-2 gap-2'>
             {Array.from({ length: child }).map((x, index) => (
@@ -47,7 +47,7 @@ function GuestChildren() {
             className='dark:text-white'
           />
         </>
-      )}
+      )} */}
     </GuestItem>
   );
 }

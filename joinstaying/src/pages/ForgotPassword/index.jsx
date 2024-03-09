@@ -52,8 +52,7 @@ function ForgotPassword() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const results = await postUserForgot(email);
-        console.log(results);
+        await postUserForgot(email);
         setErrorForgot("");
         setLoading(false);
         setCurrentEmail(email);

@@ -5,12 +5,13 @@ import routesConfig from "../../../configs/routesConfig";
 import useRegisterPinMap from "../../../hooks/Map/useRegisterPinMap";
 // import CardHeart from "../../../pages/Home/OurHotel/CardHeart";
 import Icon from "../../Icon/Icon";
-import Image from "../../Image/Image";
 import MoneyFormatStaying from "../../Staying/MoneyFormatStaying";
 import StayingRating from "../../Staying/StayingRating";
 import Title from "../../Title/Title";
+import { useTranslation } from "react-i18next";
 
 const CardBody = ({ items = [], background, border }) => {
+  const { t } = useTranslation();
   const { value, setValue } = useRegisterPinMap();
   const queryParams = new URLSearchParams();
   queryParams.set("location", items?.city);
@@ -31,6 +32,7 @@ const CardBody = ({ items = [], background, border }) => {
 
   return (
     <Link
+      target='_blank'
       to={`${
         routesConfig.hotelDetails + "?id=" + items?.hotelId + "&" + queryString
       }`}
@@ -44,8 +46,8 @@ const CardBody = ({ items = [], background, border }) => {
     >
       {/* Image */}
       <div className='absolute top-[10px] bottom-[10px] overflow-hidden w-[35%] rounded-lg'>
-        <Image
-          imageBase={items?.picByte}
+        <img
+          src={items?.urlImage}
           className='h-full w-full object-cover rounded-lg'
         />
       </div>
@@ -75,7 +77,10 @@ const CardBody = ({ items = [], background, border }) => {
             <div className='flex w-full h-auto gap-1'>
               <StayingRating rating={items?.rating} />
               <div className='flex flex-row items-end'>
-                <Title title={`${items?.countView} lượt xem`} large />
+                <Title
+                  title={`${items?.countView} ${t("Other.previews")}`}
+                  large
+                />
               </div>
             </div>
           </div>
@@ -85,7 +90,7 @@ const CardBody = ({ items = [], background, border }) => {
           <div className='flex flex-col gap-2 w-full h-full'>
             {/* Categories */}
             <div className='flex flex-col gap-1 w-full dark:text-primary-50'>
-              <Title
+              {/* <Title
                 title='Studio Có Ban Công'
                 colorTitle='dark:text-white'
                 fontBold
@@ -93,13 +98,17 @@ const CardBody = ({ items = [], background, border }) => {
               />
               <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
               <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
-              <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
+              <Title title='1 studio nguyên căn • 1 phòng tắm •' large /> */}
             </div>
             {/* PriceAndDate */}
             <div className='flex items-end flex-col gap-1 w-full h-full'>
               {/* Date */}
               <Title
-                title={`${items?.totalDay} tuần, ${items?.adults} người lớn, ${items?.children} trẻ em`}
+                title={`${items?.totalDay} ${t("SearchResults.weeks")}, ${
+                  items?.adults
+                } ${t("SearchResults.adults")}, ${items?.children} ${t(
+                  "SearchResults.children",
+                )}`}
                 colorTitle='dark:text-primary-50'
                 large
               />
@@ -116,15 +125,16 @@ const CardBody = ({ items = [], background, border }) => {
                 <div className='flex flex-row gap-1 items-center dark:text-white'>
                   <MoneyFormatStaying
                     price={items?.totalMoneyPromotion}
-                    className='font-medium text-[16px] sm:text-[18px] '
+                    className='font-medium text-[16px] sm:text-[18px]'
+                    decimalScale={0}
                     prefix='VND '
                   />
                 </div>
               </div>
 
               <Title
-                title='Đã bao gồm thuế và phí'
-                colorTitle='dark:text-primary-50'
+                title={t("SearchResults.taxesAndFees")}
+                className='dark:text-primary-50 capitalize'
                 large
               />
             </div>

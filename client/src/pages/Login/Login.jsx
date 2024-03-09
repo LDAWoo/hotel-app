@@ -13,7 +13,8 @@ import Title from "../../components/Title/Title";
 import routesConfig from "../../configs/routesConfig";
 
 function Login() {
-  const { handleLoginWithGoogle, handleLoginWithFacebook, handleLogin, loading, errorLogin, setErrorLogin } = useContext(UserContext);
+  const { handleLogin, loading, errorLogin, setErrorLogin } =
+    useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -38,7 +39,11 @@ function Login() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (errorEmail.length > 0 || errorPassword.length > 0 || errorLogin.length > 0) {
+    if (
+      errorEmail.length > 0 ||
+      errorPassword.length > 0 ||
+      errorLogin.length > 0
+    ) {
       validate();
       if (errorLogin.length > 0) {
         setErrorLogin(t("Error.Account.loginFailed"));
@@ -56,7 +61,10 @@ function Login() {
 
     if (email === "") {
       isValid = false;
-      setState((prevState) => ({ ...prevState, errorEmail: t("Error.Account.emailNotBlank") }));
+      setState((prevState) => ({
+        ...prevState,
+        errorEmail: t("Error.Account.emailNotBlank"),
+      }));
     } else {
       setState((prevState) => ({ ...prevState, errorEmail: "" }));
     }
@@ -78,23 +86,46 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
-  return (
-    <div className="w-full h-full">
-      <Title title={t("Login.title")} extraLarge4 nowrap={false} fontBold className=" dark:text-white mb-5" />
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      login();
+    }
+  };
 
-      <div className="flex flex-col w-full gap-2 pt-8">
+  return (
+    <div className='w-full h-full'>
+      <Title
+        title={t("Login.title")}
+        extraLarge4
+        nowrap={false}
+        fontBold
+        className=' dark:text-white mb-5'
+      />
+
+      <div className='flex flex-col w-full gap-2 pt-8'>
         <Title title={t("Login.email")} fontMedium xl />
-        <TextInput placeholder={t("Login.email")} id="email" value={email} error={errorEmail.length > 0 || errorLogin.length > 0} required name="email" sizeIcon={24} onChange={handleChange} />
+        <TextInput
+          onKeyDown={handleKeyDown}
+          placeholder={t("Login.email")}
+          id='email'
+          value={email}
+          error={errorEmail.length > 0 || errorLogin.length > 0}
+          required
+          name='email'
+          sizeIcon={24}
+          onChange={handleChange}
+        />
         <TextError error={errorEmail} />
         <Title title={t("Login.password")} fontMedium xl />
         <TextInput
+          onKeyDown={handleKeyDown}
           placeholder={t("Login.password")}
-          id="password"
-          name="password"
+          id='password'
+          name='password'
           error={errorPassword.length > 0 || errorLogin.length > 0}
           type={showPassword ? "text" : "password"}
           copy
-          classCopy="absolute top-0 bottom-0 flex items-center right-0 cursor-pointer hover:bg-gray-100 p-2 rounded-tr-sm rounded-br-sm duration-200"
+          classCopy='absolute top-0 bottom-0 flex items-center right-0 cursor-pointer hover:bg-gray-100 p-2 rounded-tr-sm rounded-br-sm duration-200'
           onClickCopy={handleShowPassword}
           iconCopy={showPassword ? LiaEyeSlashSolid : LiaEyeSolid}
           sizeIconCopy={18}
@@ -106,16 +137,29 @@ function Login() {
         <TextError error={errorPassword} />
 
         <TextError error={errorLogin} />
-        <Button disabled={loading} loading={loading} background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.login")} onClick={login} />
+        <Button
+          disabled={loading}
+          loading={loading}
+          background
+          fontMedium
+          className='mt-4 p-2 rounded-[4px] flex items-center justify-center w-full '
+          title={t("Login.login")}
+          onClick={login}
+        />
       </div>
 
       <Link to={routesConfig.forgotPassword}>
-        <Button fontMedium xl className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full hover:bg-hotel-25 text-hotel-50" title={t("Login.forgot")} />
+        <Button
+          fontMedium
+          xl
+          className='mt-6 p-2 rounded-[4px] flex items-center justify-center w-full hover:bg-hotel-25 text-hotel-50'
+          title={t("Login.forgot")}
+        />
       </Link>
 
-      <div className=" text-[12px] text-center mt-6">
+      <div className=' text-[12px] text-center mt-6'>
         {t("Partner.partner")}
-        <Link to="/" className="text-hotel-50">
+        <Link to='/' className='text-hotel-50'>
           {" "}
           {t("Partner.help")}
         </Link>{" "}
@@ -123,25 +167,30 @@ function Login() {
       </div>
 
       <Link to={routesConfig.register}>
-        <Button border fontMedium className="mt-6 p-2 rounded-[4px] flex items-center justify-center w-full " title={t("Login.register")} />
+        <Button
+          border
+          fontMedium
+          className='mt-6 p-2 rounded-[4px] flex items-center justify-center w-full '
+          title={t("Login.register")}
+        />
       </Link>
-      <Border className="mt-6" />
+      <Border className='mt-6' />
 
-      <div className="text-[12px] text-center mt-6">
+      <div className='text-[12px] text-center mt-6'>
         {t("FooterAccount.nameOne")}
-        <Link to="/" className="text-hotel-50">
+        <Link to='/' className='text-hotel-50'>
           {" "}
           {t("FooterAccount.nameTwo")}
         </Link>{" "}
         {t("FooterAccount.nameThree")}
-        <Link to="/" className="text-hotel-50">
+        <Link to='/' className='text-hotel-50'>
           {" "}
           {t("FooterAccount.nameFour")}
         </Link>{" "}
         {t("FooterAccount.nameFive")}
       </div>
-      <Border className="mt-6" />
-      <div className="text-center text-[13px] mt-6">
+      <Border className='mt-6' />
+      <div className='text-center text-[13px] mt-6'>
         {t("AccessFooter.nameOne")}.<br /> {t("AccessFooter.nameTwo")}
       </div>
     </div>

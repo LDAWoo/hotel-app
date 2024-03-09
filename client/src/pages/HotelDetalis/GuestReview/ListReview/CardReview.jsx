@@ -11,6 +11,7 @@ import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
 const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
   console.log(item);
+
   const [maxSegments, setMaxSegments] = useState(1);
   const reviewResponseLength = item?.feedbacks && item?.feedbacks.length;
   const handleReadMore = () => {

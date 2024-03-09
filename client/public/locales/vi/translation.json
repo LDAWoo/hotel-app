@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "Đăng nhập để quản lý chỗ nghỉ",
+    "title": "Đăng nhập",
     "email": "Email đăng nhập",
     "password": "Mật khẩu",
     "login": "Đăng Nhập",
@@ -24,8 +24,8 @@
     "nameTwo": "Bản quyền (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "Tạo tài khoản đối tác",
-    "subTitle": "Tạo tài khoản để đăng ký và quản lý chỗ nghỉ.",
+    "title": "Đăng ký",
+    "subTitle": "Tạo tài khoản để đăng ký.",
     "email": "Địa chỉ email",
     "continue": "Tiếp tục"
   },
@@ -66,6 +66,7 @@
       "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
       "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
+      "emailNotExits": "Email này không tồn tại trong trang web của chúng tôi.",
       "firstNameNotBlank": "Vui lòng nhập tên của bạn",
       "lastNameNotBlank": "Vui lòng nhập họ của bạn",
       "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
@@ -73,6 +74,16 @@
       "passwordNotPassword": "Mật mã phải có ít nhất 1 chữ số, 1 chữ thường, 1 chữ hoa, 1 ký tự đặt biệt",
       "confirmPasswordNotBlank": "Vui lòng xác nhận mật khẩu",
       "confirmPasswordNotPassword": "Mật khẩu bạn đã nhập không khớp. Vui lòng thử lại."
+    },
+    "Search": {
+      "locationNotBlank": "Vui lòng nhập điểm đến để bắt đầu tìm kiếm."
+    },
+    "SearchResults": {
+      "noResults": "Xin lỗi, không có kết quả nào",
+      "reloadResults": "Tải lại kết quả",
+      "notHotel": "Không tìm thấy chỗ nghỉ ở",
+      "hotHotelAndUpdate": "Không có chỗ nghỉ nào phù hợp với các tiêu chí tìm kiếm của bạn. Hãy thử cập nhật tiêu chí tìm kiếm của bạn.",
+      "updateSearch": "Cập nhật tìm kiếm"
     }
   },
   "Modal": {
@@ -129,5 +140,37 @@
     "title": "Khách Sạn Của Chúng Tôi",
     "subTitle": "Những khách sạn phổ biến nhất",
     "night": "đêm"
+  },
+  "UniqueProperties": {
+    "title": "Ở trong các tài sản độc đáo hàng đầu của chúng tôi",
+    "subTitle": "Từ các lâu đài và biệt thự đến các con thuyền và nhà băng, chúng tôi có tất cả"
+  },
+  "GuestLove": {
+    "title": "Các ngôi nhà mà khách yêu thích"
+  },
+  "WeLove": {
+    "title": "Các điểm đến mà chúng tôi yêu thích"
+  },
+  "Other": {
+    "regions": "khu vực",
+    "cities": "thành phố",
+    "previews": "xem trước",
+    "properties": "các bất động sản"
+  },
+  "ListYourProperties": {
+    "listYourProperties": "Liệt kê tài sản của bạn"
+  },
+  "SearchResults": {
+    "weeks": "tuần",
+    "adults": "người lớn",
+    "children": "trẻ em",
+    "taxesAndFees": "đã bao gồm thuế và phí",
+    "showOnMap": "Hiển thị trên bản đồ",
+    "seeOnMap": "Xem trên bản đồ",
+    "propertiesFound": "các tài sản được tìm thấy",
+    "pointEvaluation": "điểm đánh giá",
+    "evaluate": "đánh giá",
+    "seeAvailability": "xem tính sẵn có",
+    "showing": "Hiển thị"
   }
 }

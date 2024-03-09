@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "Iniciar sesión para gestionar alojamientos",
+    "title": "Iniciar sesión",
     "email": "Correo electrónico de inicio de sesión",
     "password": "Contraseña",
     "login": "Iniciar sesión",
@@ -24,8 +24,8 @@
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "Creación de Cuenta de Socio",
-    "subTitle": "Crea una cuenta para registrar y gestionar alojamientos.",
+    "title": "Registrarse",
+    "subTitle": "Cree una cuenta para registrarse.",
     "email": "Dirección de Correo Electrónico",
     "continue": "Continuar"
   },
@@ -66,6 +66,7 @@
       "loginFailed": "Correo electrónico o contraseña incorrectos. Inténtelo de nuevo o utilice el enlace de verificación.",
       "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",
       "emailNotEmail": "Por favor, introduce una dirección de correo electrónico válida",
+      "emailNotExits": "Este correo electrónico no existe en nuestro sitio web.",
       "firstNameNotBlank": "Por favor, introduce tu nombre",
       "lastNameNotBlank": "Por favor, introduce tu apellido",
       "phoneNumberNotBlank": "Por favor, introduce tu número de teléfono",
@@ -73,6 +74,16 @@
       "passwordNotPassword": "La contraseña debe contener al menos 1 dígito, 1 letra minúscula, 1 letra mayúscula y 1 carácter especial",
       "confirmPasswordNotBlank": "Por favor, confirma tu contraseña",
       "confirmPasswordNotPassword": "Las contraseñas que ingresaste no coinciden. Por favor, inténtalo de nuevo."
+    },
+    "Search": {
+      "locationNotBlank": "Por favor, ingrese un destino para comenzar la búsqueda."
+    },
+    "SearchResults": {
+      "noResults": "Lo sentimos, no hay resultados",
+      "reloadResults": "Recargar resultados",
+      "notHotel": "Lo sentimos, no se encontraron alojamientos",
+      "hotHotelAndUpdate": "No hay alojamientos que coincidan con sus criterios de búsqueda. Por favor, intente actualizar sus criterios de búsqueda.",
+      "updateSearch": "Actualizar búsqueda"
     }
   },
   "Modal": {
@@ -129,5 +140,37 @@
     "title": "Nuestro Hotel",
     "subTitle": "Los hoteles más populares",
     "night": "noche"
+  },
+  "UniqueProperties": {
+    "title": "Quédate en nuestras principales propiedades únicas",
+    "subTitle": "Desde castillos y villas hasta barcos e iglús, lo tenemos todo"
+  },
+  "GuestLove": {
+    "title": "Hogares que los huéspedes aman"
+  },
+  "WeLove": {
+    "title": "Destinos que amamos"
+  },
+  "Other": {
+    "regions": "regiones",
+    "cities": "ciudades",
+    "previews": "vistas previas",
+    "properties": "propiedades"
+  },
+  "ListYourProperties": {
+    "listYourProperties": "Enumera tus propiedades"
+  },
+  "SearchResults": {
+    "weeks": "semanas",
+    "adults": "adultos",
+    "children": "niños",
+    "taxesAndFees": "impuestos y tasas incluidos",
+    "showOnMap": "Mostrar en el mapa",
+    "seeOnMap": "Ver en el mapa",
+    "propertiesFound": "propiedades encontradas",
+    "pointEvaluation": "puntuación de evaluación",
+    "evaluate": "evaluar",
+    "seeAvailability": "ver disponibilidad",
+    "showing": "Mostrando"
   }
 }

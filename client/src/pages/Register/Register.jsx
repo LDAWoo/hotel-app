@@ -9,6 +9,8 @@ import TextInput from "../../components/TextInput/TextInput";
 import Title from "../../components/Title/Title";
 import routesConfig from "../../configs/routesConfig";
 import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
+import { validateEmail } from "../../Regexs/Validate/Email";
+import { exitsEmailAddress } from "../../api/User/Register";
 
 function Register() {
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setEmail(currentEmail);
@@ -39,8 +42,22 @@ function Register() {
 
   const handleContinue = () => {
     if (!validate()) return;
-    setCurrentEmail(email);
-    navigate(routesConfig.contactDetails);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        await exitsEmailAddress({ email });
+        setErrorEmail("");
+        setLoading(false);
+        setCurrentEmail(email);
+        navigate(routesConfig.contactDetails);
+      } catch (error) {
+        setLoading(false);
+        setCurrentEmail("");
+        setErrorEmail(t("Error.Account.emailAlreadyExists"));
+      }
+    };
+
+    fetchData();
   };
 
   const validate = () => {
@@ -50,19 +67,20 @@ function Register() {
       setErrorEmail(t("Error.Account.emailNotBlank"));
       return isValid;
     } else {
+      setEmail(email);
       setErrorEmail("");
     }
 
-    // if (!validateEmail(email)) {
-    //   setErrorEmail(t("Error.Account.emailNotEmail"));
-    //   isValid = false;
-    // } else {
-    //   setErrorEmail("");
-    // }
+    if (!validateEmail(email)) {
+      setErrorEmail(t("Error.Account.emailNotEmail"));
+      isValid = false;
+    } else {
+      setErrorEmail("");
+    }
     return isValid;
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleContinue();
     }
@@ -96,13 +114,15 @@ function Register() {
           name='email'
           sizeIcon={24}
           onChange={handleChange}
-          onKeyDown={handleKeyPress}
+          onKeyDown={handleKeyDown}
         />
         <TextError error={errorEmail} />
 
         <Button
           background
           fontMedium
+          loading={loading}
+          disabled={loading}
           className='mt-4 p-2 rounded-[4px] flex items-center justify-center w-full '
           onClick={handleContinue}
           title={t("Register.continue")}

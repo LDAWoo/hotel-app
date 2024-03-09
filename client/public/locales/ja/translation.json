@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "宿泊施設を管理するためにログイン",
+    "title": "ログイン",
     "email": "ログインメール",
     "password": "パスワード",
     "login": "ログイン",
@@ -24,8 +24,8 @@
     "nameTwo": "著作権 (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "パートナーアカウントの作成",
-    "subTitle": "アカウントを作成して宿泊施設を登録および管理します。",
+    "title": "登録",
+    "subTitle": "登録するためにアカウントを作成してください。",
     "email": "メールアドレス",
     "continue": "続ける"
   },
@@ -66,6 +66,7 @@
       "loginFailed": "メールアドレスまたはパスワードが間違っています。もう一度やり直すか、確認リンクを使用してください。",
       "emailNotBlank": "メールアドレスを入力してください",
       "emailNotEmail": "有効なメールアドレスを入力してください",
+      "emailNotExits": "このメールアドレスは当社のウェブサイトに存在しません。",
       "firstNameNotBlank": "お名前を入力してください",
       "lastNameNotBlank": "姓を入力してください",
       "phoneNumberNotBlank": "電話番号を入力してください",
@@ -73,6 +74,16 @@
       "passwordNotPassword": "パスワードは少なくとも 1 桁の数字、1 桁の小文字、1 桁の大文字、1 つの特殊文字を含む必要があります",
       "confirmPasswordNotBlank": "パスワードを確認してください",
       "confirmPasswordNotPassword": "入力したパスワードが一致しません。もう一度お試しください。"
+    },
+    "Search": {
+      "locationNotBlank": "検索を開始するには、目的地を入力してください。"
+    },
+    "SearchResults": {
+      "noResults": "申し訳ありませんが、結果がありませんでした",
+      "reloadResults": "結果をリロードする",
+      "notHotel": "申し訳ありませんが、宿泊施設が見つかりませんでした",
+      "hotHotelAndUpdate": "検索条件に一致する宿泊施設が見つかりませんでした。検索条件を更新してみてください。",
+      "updateSearch": "検索を更新する"
     }
   },
   "Modal": {
@@ -129,5 +140,37 @@
     "title": "当社のホテル",
     "subTitle": "最も人気のあるホテル",
     "night": "夜"
+  },
+  "UniqueProperties": {
+    "title": "私たちのトップユニーク物件で滞在してください",
+    "subTitle": "城や別荘からボートやイグルーまで、全て取り揃えています"
+  },
+  "GuestLove": {
+    "title": "お客様が愛する家"
+  },
+  "WeLove": {
+    "title": "私たちが愛する目的地"
+  },
+  "Other": {
+    "regions": "地域",
+    "cities": "都市",
+    "previews": "プレビュー",
+    "properties": "物件"
+  },
+  "ListYourProperties": {
+    "listYourProperties": "あなたの物件をリストする"
+  },
+  "SearchResults": {
+    "weeks": "週間",
+    "adults": "大人",
+    "children": "子供",
+    "taxesAndFees": "税金および手数料込み",
+    "showOnMap": "地図で表示",
+    "seeOnMap": "地図で見る",
+    "propertiesFound": "物件が見つかりました",
+    "pointEvaluation": "評価ポイント",
+    "evaluate": "評価する",
+    "seeAvailability": "空室状況を見る",
+    "showing": "表示"
   }
 }

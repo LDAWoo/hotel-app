@@ -5,8 +5,11 @@ import ItemGuestLove from "./ItemGuestLove";
 import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
 import { Navigation } from "swiper/modules";
+import ItemGuestLoveSkeleton from "./ItemGuestLoveSkeleton";
+import { useTranslation } from "react-i18next";
 
 function GuestLove({ data, isLoading }) {
+  const { t } = useTranslation();
   const [guestsLove, setGuestsLove] = useState([]);
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
@@ -20,10 +23,15 @@ function GuestLove({ data, isLoading }) {
     <div className='w-full mb-5 ml-0 mr-0 mt-0'>
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
-          <HomeTitle title='Homes guests love' />
+          <HomeTitle title={t("GuestLove.title")} />
         </div>
-
-        <div>
+        {isLoading ? (
+          <div className='flex gap-4'>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <ItemGuestLoveSkeleton key={index} />
+            ))}
+          </div>
+        ) : (
           <div>
             <CarouselCustom
               spaceBetween={15}
@@ -35,7 +43,7 @@ function GuestLove({ data, isLoading }) {
               component={ItemGuestLove}
             />
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

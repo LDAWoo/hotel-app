@@ -5,10 +5,7 @@ function Card({ item }) {
   return (
     <div>
       <div className='aspect-[2/1.5]'>
-        <Image
-          imageBase={item?.picByte}
-          className='w-full h-full object-cover'
-        />
+        <Image src={item?.urlImage} className='w-full h-full object-cover' />
       </div>
     </div>
   );

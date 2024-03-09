@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import Image from "../../../components/Image/Image";
 import StayingRating from "../../../components/Staying/StayingRating";
 import Title from "../../../components/Title/Title";
+import routesConfig from "../../../configs/routesConfig";
+import { format } from "date-fns";
+import { useTranslation } from "react-i18next";
 function ItemUniqueProperty({ item }) {
+  const { t } = useTranslation();
   const location =
     item?.streetAddress +
     ", " +
@@ -12,8 +16,19 @@ function ItemUniqueProperty({ item }) {
     item?.city +
     ", " +
     item?.country;
+
+  const url =
+    routesConfig.hotelDetails +
+    `?id=${item.hotelId}&location=${item.city}&checkin=${format(
+      new Date(),
+      "yyyy-MM-dd",
+    )}&checkout=${format(
+      new Date(),
+      "yyyy-MM-dd",
+    )}&group_adults=1&group_children=0&group_rooms=1`;
+
   return (
-    <Link className='w-full'>
+    <Link className='w-full' target='_blank' to={url}>
       <div className='w-full border dark:border-primary-500 rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(200,200,200,0.16)]'>
         <div className='flex flex-col'>
           <div className='flex flex-col '>
@@ -46,7 +61,7 @@ function ItemUniqueProperty({ item }) {
                   className='text-[12px]'
                 />
                 <Title
-                  title={`${item?.countReview} reviews`}
+                  title={`${item?.countReview} ${t("Other.previews")}`}
                   large
                   colorTitle='dark:text-primary-50'
                 />

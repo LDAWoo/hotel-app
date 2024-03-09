@@ -1,17 +1,32 @@
 import PropTypes from "prop-types";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { Navigation } from "swiper/modules";
 import Button from "../../../components/Buttons/Button";
 import CarouselCustom from "../../../components/Carousel/CarouselCustom";
-import { DestinationWeLoveData } from "../../../components/Constants/Home/DestinationsWeLove/DestinationWeLoveData";
 import { DeviceContext } from "../../../components/Contexts/AppDeviceProvider";
 import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStore";
 import HomeTitle from "../HomeTitle";
 import ItemDestinationWeLove from "./ItemDestinationsWeLove";
 import ItemDestinationsWeLoveSkeleton from "./ItemDestinationsWeLoveSkeleton";
 import ItemHeadDestinationWeLoveSkeleton from "./ItemHeadDestinationsWeLoveSkeleton";
+import { useTranslation } from "react-i18next";
 
 const DestinationsWeLove = ({ data = [], isLoading }) => {
+  const { t } = useTranslation();
+
+  const DestinationWeLoveData = [
+    {
+      id: 1,
+      title: t("Other.regions"),
+      key: "hotelGroupPostalCodeResp",
+    },
+    {
+      id: 2,
+      title: t("Other.cities"),
+      key: "hotelGroupCityResp",
+    },
+  ];
+
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
   const [state, setState] = useState({
@@ -69,7 +84,7 @@ const DestinationsWeLove = ({ data = [], isLoading }) => {
     <div className='w-full mb-5 ml-0 mr-0 mt-0'>
       <div className='flex flex-col w-full'>
         <div className='mb-5'>
-          <HomeTitle title='Destinations we love' />
+          <HomeTitle title={t("WeLove.title")} />
         </div>
 
         <div className='mb-4'>
@@ -87,7 +102,8 @@ const DestinationsWeLove = ({ data = [], isLoading }) => {
                     <Button
                       title={item?.title}
                       onClick={() => handleDestination(item.key)}
-                      className={`p-2  rounded-lg duration-200 ${
+                      classTitle='capitalize'
+                      className={`p-2 rounded-lg duration-200 ${
                         currentDestination[0].key === item.key
                           ? "text-hotel-50"
                           : "font-medium hover:bg-gray-100 dark:hover:bg-primary-500 dark:text-primary-50"

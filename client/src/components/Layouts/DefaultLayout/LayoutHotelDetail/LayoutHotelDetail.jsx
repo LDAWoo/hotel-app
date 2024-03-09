@@ -7,14 +7,12 @@ import MainLayout from "../../MainLayout";
 function LayoutHotelDetail({ children }) {
   return (
     <MainLayout>
-      <div className='bg-gray-50 w-full dark:bg-primary-700 overflow-x-hidden overflow-y-auto min-h-[100vh]'>
-        <div className='flex w-full flex-col'>
-          <LanguageModal />
-          <MapModal />
-          <SearchModal />
-          <Navbar />
-          {children}
-        </div>
+      <div className='flex w-full flex-col'>
+        <LanguageModal />
+        <MapModal />
+        <SearchModal />
+        <Navbar />
+        {children}
       </div>
     </MainLayout>
   );

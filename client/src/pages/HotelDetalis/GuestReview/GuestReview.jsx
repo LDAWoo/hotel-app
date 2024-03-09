@@ -8,10 +8,9 @@ function GuestReview() {
   const { hotels, loading } = useRegisterHotelDetails();
 
   console.log(hotels);
-  console.log(loading);
 
   return (
-    <section className='flex flex-col w-full mt-5'>
+    <section className='flex flex-col gap-2 w-full mt-5'>
       {loading ? (
         <div>Loading</div>
       ) : (
@@ -19,8 +18,10 @@ function GuestReview() {
           <RatingReview data={hotels} />
           <Categories data={hotels?.reviewSyntheticResponse} />
           <ListReview
-            reviewData={hotels?.reviewSyntheticResponse?.reviewResponse}
-            loading={loading}
+            reviewData={
+              hotels?.reviewSyntheticResponse?.reviewResponse &&
+              hotels?.reviewSyntheticResponse?.reviewResponse
+            }
             style={false}
           />
           <ShowAllReview />

@@ -3,7 +3,6 @@ import useRegisterHotelDetails from "../../../../hooks/HotelDetails/useRegisterH
 
 const ImageBody = () => {
   const { hotels } = useRegisterHotelDetails();
-
   return (
     <div className='flex flex-row w-full h-full'>
       <div className='grid 2md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
@@ -14,7 +13,7 @@ const ImageBody = () => {
             style={{ aspectRatio: "20/19" }}
           >
             <Image
-              imageBase={photo?.picByte}
+              src={photo?.urlImage}
               className='w-full h-full object-cover rounded-sm'
             />
           </div>

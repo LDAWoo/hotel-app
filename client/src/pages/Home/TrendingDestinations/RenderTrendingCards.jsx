@@ -10,6 +10,7 @@ function RenderTrendingCards({ data, startIndex, endIndex, maxImage }) {
         destination={card.destination}
         src={card.src}
         maxImage={maxImage}
+        city={card.city}
       />
     ));
 }

@@ -6,11 +6,14 @@ import Icon from "../../../../components/Icon/Icon";
 import Image from "../../../../components/Image/Image";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
+import PropTypes from "prop-types";
 // import CardHeart from "../../../Home/OurHotel/CardHeart";
 import MoneyFormatStaying from "../../../../components/Staying/MoneyFormatStaying";
 import routesConfig from "../../../../configs/routesConfig";
+import { useTranslation } from "react-i18next";
 
 const CardResult = ({ items }) => {
+  const { t } = useTranslation();
   const queryParams = new URLSearchParams();
   queryParams.set("location", items?.city);
   queryParams.set("checkin", items?.checkInDate);
@@ -25,6 +28,7 @@ const CardResult = ({ items }) => {
       <div className='flex flex-row gap-2 w-full'>
         {/* Image */}
         <Link
+          target='_blank'
           to={`${
             routesConfig.hotelDetails +
             "?id=" +
@@ -35,8 +39,8 @@ const CardResult = ({ items }) => {
           className='relative rounded-lg min-w-[20px] sm:min-w-[200px] max-w-[350px] min-h-[150px] max-h-[200px]'
         >
           <Image
-            imageBase={items?.picByte}
-            className='h-full w-full object-cover rounded-lg'
+            src={items?.urlImage}
+            className='w-[230px] h-full object-cover rounded-lg'
           />
           {/* Heart */}
           {/* <div className='absolute top-[3%] right-[3%] z-[1]'>
@@ -59,13 +63,13 @@ const CardResult = ({ items }) => {
             <div className='flex flex-row gap-2 items-center'>
               <div className='flex flex-col items-end'>
                 <Title
-                  title={`Điểm đánh giá`}
+                  title={t("SearchResults.pointEvaluation")}
                   fontMedium
                   xl
-                  className='dark:text-white'
+                  className='dark:text-white capitalize'
                 />
                 <Title
-                  title={`${items?.countReview + " đánh giá"}`}
+                  title={`${items?.countReview} ${t("SearchResults.evaluate")}`}
                   large
                   className='dark:text-primary-50'
                 />
@@ -79,24 +83,30 @@ const CardResult = ({ items }) => {
           {/* Location */}
           <div className='flex flex-row gap-2'>
             <Title
-              title={`${items?.districtAddress + ", " + items?.city}`}
+              title={`${
+                items?.streetAddress +
+                ", " +
+                items?.districtAddress +
+                ", " +
+                items?.city
+              }`}
               colorTitle='text-hotel-100 underline cursor-pointer hover:text-hotel-300'
               large
               fontMedium
             />
-            <Title
-              title='Xem trên bản đồ'
-              colorTitle='text-hotel-100 underline cursor-pointer hover:text-hotel-300'
+            {/* <Title
+              title={t("SearchResults.seeOnMap")}
+              className='text-hotel-100 underline cursor-pointer hover:text-hotel-300'
               large
               fontMedium
-            />
+            /> */}
           </div>
 
           <div className='flex flex-row  pl-2 mt-2 w-full'>
             <div className='flex flex-col sm:flex-row gap-2 w-full'>
               {/* Categories */}
               <div className='flex flex-col gap-1 w-full dark:text-primary-50'>
-                <Title
+                {/* <Title
                   title='Studio Có Ban Công'
                   colorTitle='dark:text-white'
                   fontBold
@@ -104,21 +114,18 @@ const CardResult = ({ items }) => {
                 />
                 <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
                 <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
-                <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
+                <Title title='1 studio nguyên căn • 1 phòng tắm •' large /> */}
               </div>
               {/* PriceAndDate */}
               <div className='flex items-end flex-col gap-1 w-full'>
                 {/* Date */}
                 <Title
-                  title={`${
-                    items?.totalDay +
-                    " tuần, " +
-                    items?.adults +
-                    " người lớn, " +
-                    items?.children +
-                    " trẻ em"
-                  }`}
-                  colorTitle='dark:text-primary-50'
+                  title={`${items?.totalDay} ${t("SearchResults.weeks")}, ${
+                    items?.adults
+                  } ${t("SearchResults.adults")}, ${items?.children} ${t(
+                    "SearchResults.children",
+                  )}`}
+                  className='dark:text-primary-50'
                   large
                 />
                 {/* Price */}
@@ -126,6 +133,7 @@ const CardResult = ({ items }) => {
                   {items?.discountPercent > 0 && (
                     <MoneyFormatStaying
                       price={items?.totalMoneyOriginal}
+                      decimalScale={0}
                       className='text-red-600 line-through text-[12px]'
                       prefix='VND '
                     />
@@ -134,6 +142,7 @@ const CardResult = ({ items }) => {
                   <div className='flex flex-row gap-1 items-center dark:text-white'>
                     <MoneyFormatStaying
                       price={items?.totalMoneyPromotion}
+                      decimalScale={0}
                       className='font-medium text-[16px] sm:text-[18px] '
                       prefix='VND '
                     />
@@ -146,15 +155,15 @@ const CardResult = ({ items }) => {
                 </div>
 
                 <Title
-                  title='Đã bao gồm thuế và phí'
-                  colorTitle='dark:text-primary-50'
+                  title={t("SearchResults.taxesAndFees")}
+                  className='dark:text-primary-50 capitalize'
                   large
                 />
 
                 <div>
                   <Button
-                    title='Xem chỗ trống'
-                    className='pt-[6px] pb-[6px] pr-2 pl-2 rounded-md justify-end'
+                    title={t("SearchResults.seeAvailability")}
+                    className='pt-[6px] pb-[6px] pr-2 pl-5 rounded-md justify-end capitalize'
                     fontMedium
                     xl
                     background
@@ -171,6 +180,10 @@ const CardResult = ({ items }) => {
       </div>
     </div>
   );
+};
+
+CardResult.propTypes = {
+  items: PropTypes.object,
 };
 
 export default CardResult;

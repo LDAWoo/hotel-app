@@ -2,15 +2,19 @@ import Title from "../../../components/Title/Title";
 import PropTypes from "prop-types";
 import CardResult from "./CardResult";
 import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 
 function ItemResults({ data }) {
+  const { t } = useTranslation();
   return (
     <div className='w-full h-full relative'>
       <div className='flex flex-col w-full h-full relative'>
         <div className='mb-2'>
           <Title
-            title={`${data[0]?.city}: ${data?.length} properties found`}
-            xl
+            title={`${data[0]?.city}: ${data?.length} ${t(
+              "SearchResults.propertiesFound",
+            )}`}
+            extraLarge4
             fontBold
             colorTitle='dark:text-white'
             nowrap={false}
@@ -28,6 +32,6 @@ function ItemResults({ data }) {
   );
 }
 ItemResults.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
 export default ItemResults;

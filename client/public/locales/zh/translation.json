@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "登录以管理住宿",
+    "title": "登录",
     "email": "登录电子邮件",
     "password": "密码",
     "login": "登录",
@@ -24,8 +24,8 @@
     "nameTwo": "版权所有 (2023 - 2024) - Staying.com™"
   },
   "Register": {
-    "title": "创建合作伙伴账户",
-    "subTitle": "创建一个账户以注册和管理住宿。",
+    "title": "注册",
+    "subTitle": "创建一个帐户进行注册。",
     "email": "电子邮件地址",
     "continue": "继续"
   },
@@ -66,6 +66,7 @@
       "loginFailed": "邮箱或密码错误。请重试或使用验证链接。",
       "emailNotBlank": "请输入您的电子邮件地址",
       "emailNotEmail": "请输入有效的电子邮件地址",
+      "emailNotExits": "这个电子邮件在我们的网站中不存在。",
       "firstNameNotBlank": "请输入您的名字",
       "lastNameNotBlank": "请输入您的姓氏",
       "phoneNumberNotBlank": "请输入您的电话号码",
@@ -73,6 +74,16 @@
       "passwordNotPassword": "密码必须包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符",
       "confirmPasswordNotBlank": "请确认您的密码",
       "confirmPasswordNotPassword": "您输入的密码不匹配。请重试。"
+    },
+    "Search": {
+      "locationNotBlank": "请输入目的地开始搜索。"
+    },
+    "SearchResults": {
+      "noResults": "抱歉，没有找到结果",
+      "reloadResults": "重新加载结果",
+      "notHotel": "对不起，未找到住宿",
+      "hotHotelAndUpdate": "没有符合您搜索条件的住宿。请尝试更新您的搜索条件。",
+      "updateSearch": "更新搜索"
     }
   },
   "Modal": {
@@ -129,5 +140,38 @@
     "title": "我们的酒店",
     "subTitle": "最受欢迎的酒店",
     "night": "晚"
+  },
+
+  "UniqueProperties": {
+    "title": "入住我们顶级独特的物业",
+    "subTitle": "从城堡和别墅到船只和冰屋，我们应有尽有"
+  },
+  "GuestLove": {
+    "title": "受欢迎的房源"
+  },
+  "WeLove": {
+    "title": "我们喜爱的目的地"
+  },
+  "Other": {
+    "regions": "地区",
+    "cities": "城市",
+    "previews": "预览",
+    "properties": "房源"
+  },
+  "ListYourProperties": {
+    "listYourProperties": "列出您的房源"
+  },
+  "SearchResults": {
+    "weeks": "周",
+    "adults": "成人",
+    "children": "儿童",
+    "taxesAndFees": "含税费",
+    "showOnMap": "显示在地图上",
+    "seeOnMap": "查看地图",
+    "propertiesFound": "找到的属性",
+    "pointEvaluation": "评分",
+    "evaluate": "评价",
+    "seeAvailability": "查看可用性",
+    "showing": "显示"
   }
 }

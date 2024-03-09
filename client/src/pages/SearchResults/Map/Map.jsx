@@ -1,9 +1,11 @@
 import { MdLocationOn } from "react-icons/md";
 import Button from "../../../components/Buttons/Button";
 import useRegisterModalMap from "../../../hooks/useRegisterModalMap";
+import { useTranslation } from "react-i18next";
 
 function Map() {
   const { onOpen } = useRegisterModalMap();
+  const { t } = useTranslation();
   const handleShowMap = () => {
     onOpen();
   };
@@ -18,7 +20,7 @@ function Map() {
         <div className='pt-3 flex justify-center w-full'>
           <Button
             className='p-[6px] text-white text-[14px] font-medium whitespace-nowrap bg-hotel-50 hover:bg-hotel-100 rounded-md'
-            title='Show on map'
+            title={t("SearchResults.showOnMap")}
             onClick={handleShowMap}
           />
         </div>

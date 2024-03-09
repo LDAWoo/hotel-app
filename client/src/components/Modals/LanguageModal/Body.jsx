@@ -69,6 +69,7 @@ function Body() {
                     ? "text-hotel-50"
                     : "dark:text-white"
                 }`}
+                classButton='justify-between w-full mr-2 ml-2'
                 classImg='rounded-full object-cover w-5 h-5 sm:w-6 sm:h-6'
                 icon={BsCheck2}
                 srcPosition='before'

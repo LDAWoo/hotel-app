@@ -4,15 +4,17 @@ export const ControlData = [
     type: "input",
     data: [
       {
-        id: 1,
+        id: "confirmation",
         name: "Yes, I'd like free paperless confirmation (recommended)",
         subName: "We'll text you a link to download our app",
         type: "checkbox",
+        value: true,
       },
       {
-        id: 2,
+        id: "update",
         name: "Update my account to include these new details",
         type: "checkbox",
+        value: true,
       },
     ],
   },

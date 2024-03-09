@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Fragment, memo } from "react";
 import CardBody from "./CardBody";
 function ItemBody({ data }) {
-  console.log(data);
   return (
     <div className='w-full'>
       <div className='pt-2 flex flex-col h-full w-full'>

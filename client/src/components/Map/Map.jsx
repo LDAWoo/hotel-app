@@ -6,7 +6,6 @@ import Marker from "../Marker/Marker";
 import { mapStyles } from "./MapStyles";
 import { ThemeContext } from "../Contexts/AppThemeProvider";
 import PropType from "prop-types";
-import SearchMap from "./SeachMap";
 const key = import.meta.env.VITE_APP_GOOGLE_MAP_KEY;
 
 const Map = ({ data }) => {
@@ -28,7 +27,7 @@ const Map = ({ data }) => {
 
       if (currentAddRess.trim() != "") {
         const currentCoordinates = await getCoordinates(currentAddRess);
-        console.log(currentCoordinates);
+
         if (currentAddRess) {
           setCoordinates({
             lat: currentCoordinates.lat,
@@ -39,10 +38,9 @@ const Map = ({ data }) => {
     };
 
     fetch();
-  }, []);
+  }, [data]);
 
   const [markers, setMarkers] = useState([]);
-
   useEffect(() => {
     const fetchCoordinates = async () => {
       const markersArray = await Promise.all(
@@ -64,13 +62,7 @@ const Map = ({ data }) => {
                 lat={coordinates.lat}
                 lng={coordinates.lng}
                 isActive={item?.hotelId === value}
-                name={item?.name}
-                rating={item?.rating}
-                image={item?.images[0]?.picByte}
-                days={item?.totalDay}
-                adults={item?.adults}
-                child={item?.children}
-                reviews={item?.countView}
+                item={item}
               />
             ) : null;
           } catch (error) {
@@ -98,18 +90,12 @@ const Map = ({ data }) => {
     } catch (error) {
       if (error.status === "OVER_QUERY_LIMIT") {
         console.warn("Geocoding API quota exceeded. Waiting and retrying...");
-        // You can implement a retry mechanism or handle it as needed.
       } else {
         console.error("Error getting coordinates:", error);
       }
       return null;
     }
   };
-
-  // const handleApiLoaded = (map, maps) => {
-  //   // maps.visualRefresh = true;
-  //   // maps.maxZoomService = true;
-  // };
 
   return (
     <div className='w-full h-full relative'>
@@ -126,7 +112,6 @@ const Map = ({ data }) => {
       >
         {markers}
       </GoogleMapReact>
-      <SearchMap />
     </div>
   );
 };

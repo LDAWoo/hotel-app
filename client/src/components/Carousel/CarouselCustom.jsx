@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 function Carousel({ slides, component, ...props }) {
   const Component = component;
   return (
-    <Swiper {...props}>
+    <Swiper {...props} style={{ paddingBottom: "3px" }}>
       {slides &&
         slides.map((slide, index) => (
           <SwiperSlide key={index}>

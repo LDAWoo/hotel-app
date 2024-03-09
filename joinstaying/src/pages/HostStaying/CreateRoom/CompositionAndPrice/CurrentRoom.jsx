@@ -62,7 +62,7 @@ const CurrentRoom = ({ room = {}, loading, setLoading, handleAddNewRoom, handleE
         <div className="w-[60%]"></div>
         <div className="flex flex-row justify-end gap-2 w-full">
           {Object.keys(room).length === 0 && <Button title={t("HostStaying.CreateRoom.items.composition.information.buttonAddOrderRoom")} onClick={handleAddNewRoom} xl border className="pt-2 pb-2 w-full justify-center" />}
-          <Button title="Continue" onClick={handleSaveContinue} disabled={Object.keys(room).length === 0 || loading} xl background className="pt-2 pb-2 w-full justify-center" />
+          <Button title={t("HostStaying.buttonContinue")} onClick={handleSaveContinue} disabled={Object.keys(room).length === 0 || loading} xl background className="pt-2 pb-2 w-full justify-center" />
         </div>
       </div>
     </>

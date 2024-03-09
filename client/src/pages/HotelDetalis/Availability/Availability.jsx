@@ -10,8 +10,8 @@ function Availability() {
   const { hotels, loading } = useRegisterHotelDetails();
   return (
     <div className='w-full flex flex-col gap-1 dark:text-white mt-2'>
-      <Title title='Availability' fontBold xxl />
-      <AvailabilityChangeSearch />
+      <Title title='Availability' fontBold extraLarge4 />
+      {/* <AvailabilityChangeSearch /> */}
       {width > 900 ? (
         loading ? (
           <div>Loading</div>

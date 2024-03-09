@@ -21,11 +21,11 @@ function GalleryItem({
       } mb-[10px] bg-cover bg-no-repeat bg-[50%] bg-gray-200 dark:bg-primary-600 cursor-pointer`}
       onClick={onClick}
     >
-      <Image imageBase={imgURL} className='flex w-full h-full object-cover' />
+      <Image src={imgURL} className='flex w-full h-full object-cover' />
       {imageEnd && values > 0 && (
         <div className='absolute top-0 flex items-center justify-center bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.40)] z-10'>
           <Title
-            colorTitle='text-white border-b-[1px]'
+            className='text-white border-b-[1px]'
             title={`+${values} photos`}
             fontBold
             extraLarge4

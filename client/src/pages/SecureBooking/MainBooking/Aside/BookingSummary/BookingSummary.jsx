@@ -18,16 +18,18 @@ function BookingSummary({ data }) {
     setShowNights(!showNights);
   };
 
+  console.log(data);
+
   return (
     <div className='flex flex-col gap-4 dark:text-white'>
       <Title title='Your booking details' fontBold xxl nowrap={false} />
       <div className='flex flex-row gap-4 justify-between dark:text-primary-50'>
         <div className='flex flex-col '>
           <Title title='Check-in' xl />
-          {data?.checkIn && (
+          {data?.checkInDate && (
             <time>
               <span className='font-bold dark:text-white'>
-                {format(new Date(data?.checkIn), "EEE, MMM dd, yyyy", {
+                {format(new Date(data?.checkInDate), "EEE, MMM dd, yyyy", {
                   locale,
                 })}
               </span>
@@ -37,10 +39,10 @@ function BookingSummary({ data }) {
         <div className='border-r dark:border-primary-500' />
         <div className='flex flex-col'>
           <Title title='Check-out' xl />
-          {data?.checkOut && (
+          {data?.checkOutDate && (
             <time>
               <span className='font-bold dark:text-white'>
-                {format(new Date(data?.checkOut), "EEE, MMM dd, yyyy", {
+                {format(new Date(data?.checkOutDate), "EEE, MMM dd, yyyy", {
                   locale,
                 })}
               </span>
@@ -56,8 +58,13 @@ function BookingSummary({ data }) {
           nowrap={false}
           className='dark:text-primary-50'
         />
-        {data?.nights && (
-          <Title title={`${data?.nights} nights`} fontBold xl nowrap={false} />
+        {data?.totalDay && (
+          <Title
+            title={`${data?.totalDay} nights`}
+            fontBold
+            xl
+            nowrap={false}
+          />
         )}
       </div>
       <Border className='mb-0' />
@@ -73,7 +80,7 @@ function BookingSummary({ data }) {
           />
           <div className='flex flex-row items-center justify-between'>
             <Title
-              title={`${data?.rooms} for ${data?.adults} adults, ${data?.children} children`}
+              title={`${data?.quantityRoom} for ${data?.quantityAdult} adults, ${data?.quantityChildren} children`}
               fontBold
               xxl
               nowrap={false}
@@ -90,9 +97,13 @@ function BookingSummary({ data }) {
 
         {showNights && (
           <div className='flex flex-col dark:text-primary-50'>
-            <Title title={`${data?.rooms} x Double room`} fontMedium xl />
-            <Title title={`${data?.adults} adults`} xl />
-            <Title title={`${data?.children} children`} xl />
+            <Title
+              title={`${data?.quantityRoom} x Double room`}
+              fontMedium
+              xl
+            />
+            <Title title={`${data?.quantityAdult} adults`} xl />
+            <Title title={`${data?.quantityChildren} children`} xl />
           </div>
         )}
         <Link>

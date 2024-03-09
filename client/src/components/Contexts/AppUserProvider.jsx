@@ -1,4 +1,3 @@
-// import { useAuth0 } from "@auth0/auth0-react";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { getUserWithToken, postUserLogin } from "../../api/User/Login";
@@ -11,44 +10,50 @@ import { useTranslation } from "react-i18next";
 
 export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {
-  // const { loginWithRedirect, logout } = useAuth0();
   const { t } = useTranslation();
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
+  const [tokenBooking, setTokenBooking] = useState("");
+  const cookieToken = getCookie("token");
+  const cookieTokenBooking = getCookie("tokenBooking");
+  const [userLoading, setUserLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [errorLogin, setErrorLogin] = useState("");
   const navigate = useNavigate();
-  const handleLoginWithGoogle = () => {
-    // loginWithRedirect({ connection: "google-oauth2" });
-  };
-
-  const handleLoginWithFacebook = () => {
-    // loginWithRedirect({ connection: "facebook" });
-  };
 
   const handleLogout = () => {
-    // logout();
     removeCookie("token");
     setUser({});
   };
+
+  useEffect(() => {
+    if (cookieToken) {
+      setToken(cookieToken);
+    }
+  }, [cookieToken]);
+
+  useEffect(() => {
+    if (cookieTokenBooking) {
+      setTokenBooking(cookieTokenBooking);
+    }
+  }, [cookieTokenBooking]);
 
   const handleLogin = async (userData) => {
     try {
       setLoading(true);
       const response = await postUserLogin(userData);
-
-      if (response && response.token) {
-        const token = response.token;
+      const data = await response.data;
+      if (data && data.jwtToken) {
+        const token = data.jwtToken;
         const expirationTime = 14 * 24 * 60 * 60 * 1000;
         const expirationDate = new Date(Date.now() + expirationTime);
         removeCookie("token");
-
         setCookie("token", token, expirationDate);
-        setUser(response);
+        setToken(token);
         navigate(routesConfig.home);
         setErrorLogin("");
       } else {
         navigate(routesConfig.login);
-        setUser({});
       }
     } catch (e) {
       setErrorLogin(t("Error.Account.loginFailed"));
@@ -58,33 +63,40 @@ const AppUserProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const cookieToken = getCookie("token");
-
     const fetchUserData = async () => {
-      if (cookieToken) {
+      if (token) {
         try {
-          const userDataResponse = await getUserWithToken(cookieToken);
-          setUser(userDataResponse);
+          setUserLoading(true);
+          const userDataResponse = await getUserWithToken(token);
+          const data = await userDataResponse.data;
+          setUser(data);
+          setUserLoading(false);
         } catch (error) {
           setUser({});
+          setUserLoading(false);
+          setToken("");
         }
       }
     };
 
     fetchUserData();
-  }, []);
+  }, [token]);
 
   return (
     <UserContext.Provider
       value={{
         loading,
         setLoading,
-        handleLoginWithGoogle,
-        handleLoginWithFacebook,
         handleLogin,
         handleLogout,
         user,
         setUser,
+        token,
+        setToken,
+        tokenBooking,
+        setTokenBooking,
+        userLoading,
+        setUserLoading,
         errorLogin,
         setErrorLogin,
       }}

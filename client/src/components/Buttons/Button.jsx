@@ -58,7 +58,7 @@ function Button({
       onClick={onClick}
     >
       <div
-        className={`ml-2 mr-2 flex items-center gap-2 ${
+        className={`flex items-center gap-1 ${
           classButton
             ? classButton
             : title

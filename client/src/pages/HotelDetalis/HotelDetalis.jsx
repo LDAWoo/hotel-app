@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getHotelById } from "../../api/HotelDetails";
 import ImageModal from "../../components/Modals/ImageModal/ImageModal";
 import useRegisterHotelDetails from "../../hooks/HotelDetails/useRegisterHotelDetails";
@@ -16,7 +16,7 @@ import SideBar from "./SideBar/SideBar";
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
   const { t } = useTranslation();
-
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const currentHotelId = searchParams?.get("id") || "";
   const currentLocation =
@@ -43,20 +43,20 @@ function HotelDetails() {
     quantityRoom: currentRooms,
   };
 
+  const fetch = async () => {
+    try {
+      setLoading(true);
+      const results = await getHotelById(data);
+      setHotels(results);
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+      setHotels([]);
+    }
+  };
   useEffect(() => {
-    const fetch = async () => {
-      try {
-        const results = await getHotelById(data);
-        setHotels(results);
-      } catch (e) {
-        console.log(e);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetch();
-  }, []);
+  }, [navigate]);
 
   return (
     <div className='w-full'>

@@ -2,7 +2,13 @@ import Icon from "../../Icon/Icon";
 import { SiMediamarkt } from "react-icons/si";
 import Title from "../../Title/Title";
 import Button from "../../Buttons/Button";
+import { useTranslation } from "react-i18next";
 const NoItem = () => {
+  const { t } = useTranslation();
+
+  const handleReloadResults = () => {
+    window.onload();
+  };
   return (
     <div className='flex flex-col gap-4 items-center mt-4 p-4'>
       <Icon
@@ -11,7 +17,7 @@ const NoItem = () => {
         classIcon='animate-spin text-hotel-50 '
       />
       <Title
-        title='Rất tiếc, không có kết quả nào'
+        title={t("Error.SearchResults.noResults")}
         fontBold
         extraLarge4
         nowrap={false}
@@ -19,7 +25,12 @@ const NoItem = () => {
       />
 
       <div>
-        <Button title='Tải lại kết quả' background className='p-2 rounded-sm' />
+        <Button
+          title={t("Error.SearchResults.reloadResults")}
+          background
+          className='p-2 rounded-sm'
+          onClick={handleReloadResults}
+        />
       </div>
     </div>
   );

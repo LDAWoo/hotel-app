@@ -20,15 +20,28 @@ export const get = async (path, options = {}, token) => {
   return response.data;
 };
 
-export const post = async (path, options = {}, token) => {
+export const post = async (path, data = {}, token, options = {}) => {
   const headers = token
     ? {
         Authorization: `Bearer ${token}`,
-        ...options.headers,
+        ...(options.headers || {}),
       }
-    : options.headers;
+    : options.headers || {};
 
-  const response = await request.post(path, { ...options, headers });
+  const response = await request.post(path, data, { headers });
+
+  return response.data;
+};
+
+export const put = async (path, data = {}, token, options = {}) => {
+  const headers = token
+    ? {
+        Authorization: `Bearer ${token}`,
+        ...(options.headers || {}),
+      }
+    : options.headers || {};
+
+  const response = await request.put(path, data, { headers });
   return response.data;
 };
 

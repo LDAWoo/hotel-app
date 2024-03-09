@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Button from "../Buttons/Button";
 import Search from "../Search/Search";
 import Title from "../Title/Title";
 function Banner() {
@@ -18,14 +17,6 @@ function Banner() {
                   nowrap={false}
                 />
                 <Title title={t("Banner.subTitle")} xxxl nowrap={false} />
-              </div>
-              <div>
-                <Button
-                  className='w-full h-full bg-hotel-50 pt-[10px] pb-[10px] pl-5 pr-5 duration-300 rounded-md hover:bg-hotel-200'
-                  title={t("Banner.bookNow")}
-                  xl
-                  fontBold
-                />
               </div>
             </div>
           </div>

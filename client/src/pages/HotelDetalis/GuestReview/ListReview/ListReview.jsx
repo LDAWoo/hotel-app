@@ -34,7 +34,7 @@ const ListReview = ({ reviewData, vertical, style }) => {
             spaceBetween={15}
             slidesPerView={width >= 900 ? 3 : width >= 640 ? 2 : 1}
             modules={[Navigation]}
-            slides={reviewData?.listResult}
+            slides={reviewData}
             component={(props) => (
               <CardReview
                 {...props}
@@ -45,7 +45,7 @@ const ListReview = ({ reviewData, vertical, style }) => {
         </div>
       ) : (
         <>
-          {reviewData?.listResult.map((review, index) => (
+          {reviewData?.map((review, index) => (
             <>
               <CardReview
                 key={index}

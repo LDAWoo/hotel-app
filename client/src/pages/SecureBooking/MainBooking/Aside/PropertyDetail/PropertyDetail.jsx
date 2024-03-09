@@ -1,4 +1,5 @@
 import Title from "../../../../../components/Title/Title";
+import PropTypes from "prop-types";
 
 function PropertyDetail({ data }) {
   return (
@@ -6,7 +7,7 @@ function PropertyDetail({ data }) {
       <Title title={data?.hotelName} xl className='dark:text-primary-50' />
       <Title title={data?.hotelName} fontBold xxl />
       <Title
-        title={data?.addRess}
+        title={`${data?.address}, ${data?.location}`}
         xxl
         nowrap={false}
         className='dark:text-primary-50'
@@ -14,5 +15,9 @@ function PropertyDetail({ data }) {
     </div>
   );
 }
+
+PropertyDetail.propTypes = {
+  data: PropTypes.object,
+};
 
 export default PropertyDetail;

@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
 const useRegisterControl = create((set) => ({
-  accepted: [],
-  bookingFor: false,
-  travellingForWork: false,
+  bookingForMe: true,
+  businessTravel: false,
+  electronicConfirm: true,
   setField: (field, value) => set((prev) => ({ ...prev, [field]: value })),
 }));
 

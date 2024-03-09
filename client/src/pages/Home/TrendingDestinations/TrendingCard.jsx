@@ -2,9 +2,21 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../../../components/Title/Title";
-function TrendingCard({ to, destination, areaImage, src, maxImage }) {
+import routesConfig from "../../../configs/routesConfig";
+import { format } from "date-fns";
+function TrendingCard({ destination, areaImage, src, city, maxImage }) {
   const [isHovered, setIsHovered] = useState(false);
   const maxImg = maxImage;
+
+  const url =
+    routesConfig.searchResults +
+    `?location=${city}&checkin=${format(
+      new Date(),
+      "yyyy-MM-dd",
+    )}&checkout=${format(
+      new Date(),
+      "yyyy-MM-dd",
+    )}&group_adults=1&group_children=0&group_rooms=1`;
 
   return (
     <div
@@ -12,7 +24,7 @@ function TrendingCard({ to, destination, areaImage, src, maxImage }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link className='relative w-full h-full ' to={to}>
+      <Link className='relative w-full h-full' target='_blank' to={url}>
         {isHovered && (
           <div className='absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-b from-primary-700/50 duration-300' />
         )}

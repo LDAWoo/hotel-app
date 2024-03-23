@@ -6,6 +6,7 @@ import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import FilterModal from "../Modals/FilterModal/FilterModal";
 import MapModal from "../Modals/MapModal/MapModal";
 import LanguageModal from "../Modals/LanguageModal/LanguageModal";
+import UploadAvatarModal from "../Modals/UploadAvatarModal/UploadAvatarModal";
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
 
@@ -41,6 +42,7 @@ const MainLayout = ({ children }) => {
       <FilterModal />
       <MapModal />
       <LanguageModal />
+      <UploadAvatarModal/>
       {children}
     </div>
   );

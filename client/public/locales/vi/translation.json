@@ -113,6 +113,46 @@
     "subTitle": "Khám phá khu nghỉ dưỡng khách sạn và nhà hàng hàng đầu thế giới của chúng tôi.",
     "bookNow": "Đặt ngay"
   },
+  "Profile": {
+    "title": "Cài đặt Hồ sơ",
+    "subTitle": "Quản lý trải nghiệm của bạn trên Staying.com",
+    "information":{
+      "title": "Thông tin",
+      "subTitle": "Cập nhật thông tin của bạn và tìm hiểu cách nó được sử dụng.",
+      "selectImage": "Chọn hình ảnh để tải lên",
+      "selectFile": "Chọn tệp",
+      "errorFile": "Đây không phải là một tệp hình ảnh",
+      "name": "Tên",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "email": "Địa chỉ email",
+      "phoneNumber": "Số điện thoại",
+      "notPhoneNumber": "Thêm số điện thoại của bạn",
+      "dateOfBirth": "Ngày sinh",
+      "notDOB": "Thêm ngày sinh của bạn",
+      "gender": "Giới tính",
+      "notGender": "Thêm giới tính của bạn",
+      "male": "Nam",
+      "female": "Nữ",
+      "other": "Khác",
+      "address": "Địa chỉ",
+      "notAddress": "Thêm địa chỉ của bạn",
+      "edit": "Chỉnh sửa",
+      "save": "Lưu",
+      "cancel": "Hủy"
+    },
+    "security":{
+      "title": "Bảo mật",
+      "subTitle": "Thay đổi cài đặt bảo mật của bạn, thiết lập xác thực an toàn hoặc xóa tài khoản của bạn",
+      "password": "Mật khẩu",
+      "confirmPassword": "Chúng tôi đã gửi một email đặt lại mật khẩu tới",
+      "changePassword": "Để thay đổi mật khẩu của bạn, chúng tôi cần gửi một liên kết đặt lại tới địa chỉ email của bạn",
+      "resetPassword": "Đặt lại mật khẩu của bạn định kỳ để bảo vệ tài khoản của bạn",
+      "reset": "Đặt lại",
+      "cancel": "Hủy",
+      "sendEmail": "Gửi email"
+    }
+  },
   "Search": {
     "location": "Bạn muốn đến đâu?",
     "checkOutDate": "Ngày trả phòng",
@@ -172,5 +212,19 @@
     "evaluate": "đánh giá",
     "seeAvailability": "xem tính sẵn có",
     "showing": "Hiển thị"
+  },
+  "months": {
+    "January": "Tháng Một",
+    "February": "Tháng Hai",
+    "March": "Tháng Ba",
+    "April": "Tháng Tư",
+    "May": "Tháng Năm",
+    "June": "Tháng Sáu",
+    "July": "Tháng Bảy",
+    "August": "Tháng Tám",
+    "September": "Tháng Chín",
+    "October": "Tháng Mười",
+    "November": "Tháng Mười Một",
+    "December": "Tháng Mười Hai"
   }
 }

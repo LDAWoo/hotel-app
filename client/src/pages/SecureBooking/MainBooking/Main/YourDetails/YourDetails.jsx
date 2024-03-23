@@ -1,22 +1,102 @@
-import { Fragment, useEffect, useReducer } from "react";
+import { Fragment, useContext, useEffect, useReducer } from "react";
+import countryList from "country-list";
 import { BsCheck } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
 import { getCountryCallingCode } from "react-phone-number-input";
-import { YourDetailsData } from "../../../../../components/Constants/SecureBooking/YourDetailsData";
 import Icon from "../../../../../components/Icon/Icon";
 import SelectInput from "../../../../../components/SelectInput/SelectInput";
 import InputStaying from "../../../../../components/Staying/Input";
 import Title from "../../../../../components/Title/Title";
 import useRegisterYourDetails from "../../../../../hooks/SecureBooking/useRegisterYourDetails";
 import Control from "./Control";
+import {UserContext} from '../../../../../components/Contexts/AppUserProvider';
+
 
 function YourDetails() {
-  const { firstName, lastName, email, country, phoneNumber, setField } =
+  const {user} = useContext(UserContext)
+  console.log(user);
+
+
+  const YourDetailsData = [
+    {
+      id: 1,
+      type: "input",
+      data: [
+        {
+          id: "firstName",
+          name: "First Name",
+          nameError: "Please enter your first name",
+          placeHolder: "",
+          type: "text",
+          value: user?.firstName
+        },
+      ],
+    },
+    {
+      id: 2,
+      type: "input",
+      data: [
+        {
+          id: "lastName",
+          name: "Last Name",
+          nameError: "Please enter your last name",
+          placeHolder: "",
+          type: "text",
+          value: user?.lastName
+        },
+      ],
+    },
+    {
+      id: 3,
+      type: "input",
+      data: [
+        {
+          id: "email",
+          name: "Email",
+          nameError: "Please enter your email address",
+          subName: "Confirmation email sent to this address",
+          placeHolder: "Double-check for typos",
+          type: "email",
+          value: user?.email
+        },
+      ],
+    },
+    {
+      id: 4,
+      type: "select",
+      data: [
+        {
+          id: "country",
+          nameError: "Please enter your country",
+          name: "Country/Region",
+          data: countryList.getData(),
+        },
+      ],
+    },
+    {
+      id: 5,
+      type: "input",
+      data: [
+        {
+          id: "phoneNumber",
+          name: "Phone Number",
+          nameError: "Please enter your phone number",
+          subName: "Needed by the property to validate your booking",
+          country: true,
+          type: "number",
+          value: user?.phoneNumber || ""
+        },
+      ],
+    },
+  ];
+
+  const {  country, setField } =
     useRegisterYourDetails();
 
   const initState = YourDetailsData.map((item) => {
     const id = item.data[0]?.id;
-    let selectedValue = { countryCode: "VN", countryValue: "84", value: "" };
+    const value = item.data[0].value
+    let selectedValue = { countryCode: "VN", countryValue: "84", value: value };
     return { id, selectedValue, success: true, status: false, count: -1 };
   });
 

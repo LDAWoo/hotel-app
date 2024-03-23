@@ -21,7 +21,7 @@ function User() {
   const src = user?.picture ? user?.picture : userImage;
 
   return (
-    <div className='relative'>
+    <div className='relative w-full'>
       <UserButton
         title={user?.firstName + " " + user?.lastName}
         src={src}
@@ -33,6 +33,7 @@ function User() {
         render={<UserMenu />}
         width={240}
         zIndex='z-[999]'
+        left
       />
     </div>
   );

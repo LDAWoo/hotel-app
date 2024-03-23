@@ -1,20 +1,26 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import routesConfig from "../../../../../configs/routesConfig";
+import useRegisterToolTipUser from "../../../../../hooks/useRegisterToolTipUser";
 import Button from "../../../../Buttons/Button";
 import { User as Users } from "../../../../Constants/User";
-import { useTranslation } from "react-i18next";
 import { UserContext } from "../../../../Contexts/AppUserProvider";
 function UserMenu() {
   const { t } = useTranslation();
-
+  const {onClose} = useRegisterToolTipUser()
   const { handleLogout } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSelectOption = (opt) => {
     switch (opt) {
       case "profile":
-        console.log("Profile");
+        onClose()
+        navigate(routesConfig.profile)
         break;
 
       case "logout":
+        onClose()
         handleLogout();
         break;
     }

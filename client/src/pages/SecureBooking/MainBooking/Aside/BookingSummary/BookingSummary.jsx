@@ -106,14 +106,14 @@ function BookingSummary({ data }) {
             <Title title={`${data?.quantityChildren} children`} xl />
           </div>
         )}
-        <Link>
+        {/* <Link>
           <Button
             title='Change your selection'
             className='pt-1 pb-1 hover:bg-hotel-25 dark:hover:bg-primary-500 text-hotel-75 duration-300 rounded-md -translate-x-[6px]'
             fontBold
             xl
           />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

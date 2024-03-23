@@ -7,6 +7,7 @@ import Title from "../Title/Title";
 
 function Modals({
   className,
+  classModalWidth,
   classTitle,
   isOpen,
   onSubmit,
@@ -85,19 +86,17 @@ function Modals({
             z-50 
             outline-none
             focus:outline-none
-            bg-primary-700/70 
+            bg-primary-700/50 
             '
       >
         <div
           className={`
                 relative 
-                w-full 
-                md:w-5/6 
-                lg:w-[960px] 
                 my-10
                 mx-10
                 h-auto
                 ${hAuto ? "h-auto" : "h-[calc(100%_-_80px)]"}
+                ${classModalWidth ? classModalWidth : "w-full md:w-5/6 lg:w-[960px]"}
                 `}
           ref={modalRef}
         >
@@ -206,6 +205,7 @@ function Modals({
 
 Modals.propTypes = {
   className: PropTypes.string,
+  classModalWidth: PropTypes.string,
   classTitle: PropTypes.string,
   isOpen: PropTypes.bool,
   onSubmit: PropTypes.func,

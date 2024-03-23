@@ -113,6 +113,46 @@
     "subTitle": "Discover our world-class hotel & restaurant resort.",
     "bookNow": "Book Now"
   },
+  "Profile": {
+    "title": "Profile Settings",
+    "subTitle": "Manage your Staying.com experience",
+    "information":{
+      "title": "Information",
+      "subTitle": "Update your information and find out how it's used.",
+      "selectImage": "Select an image to upload",
+      "selectFile": "Select file",
+      "errorFile": "This is not an image file",
+      "name": "Name",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email address",
+      "phoneNumber": "Phone number",
+      "notPhoneNumber": "Add your phone number",
+      "dateOfBirth": "Date of birth",
+      "notDOB": "Add your birth date",
+      "gender": "Gender",
+      "notGender": "Add your gender",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other",
+      "address": "Address",
+      "notAddress": "Add your address",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "security":{
+      "title": "Security",
+      "subTitle": "Change your security settings, set up secure authentication or delete your account",
+      "password": "Password",
+      "confirmPassword": "We've sent a password reset email to",
+      "changePassword": "To change your password, we need to send a reset link to your email address",
+      "resetPassword": "Reset your password regularly to keep your account secure",
+      "reset": "Reset",
+      "cancel": "Cancel",
+      "sendEmail": "Send email"
+    }
+  },
   "Search": {
     "location": "Where are you going?",
     "checkOutDate": "Check-out date",
@@ -172,5 +212,19 @@
     "evaluate": "evaluate",
     "seeAvailability": "see availability",
     "showing": "Showing"
+  },
+  "months": {
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
   }
 }

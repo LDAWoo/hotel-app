@@ -2,14 +2,13 @@ import FinalStep from "./FinalStep/FinalStep";
 import Aside from "./Aside/Aside";
 import Main from "./Main/Main";
 
-function MainBooking({data}) {
+function MainBooking({currentSource}) {
 
   return (
     <div className='flex flex-row gap-4'>
       <Aside />
-      {
-        data?.email ? <FinalStep/>  : <Main />
-      }
+      {currentSource ==="details" && <Main />}
+      {currentSource ==="final" && <FinalStep />}
     </div>
   );
 }

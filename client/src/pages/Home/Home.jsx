@@ -21,7 +21,7 @@ function Home() {
         setHomeData(result);
         setLoading(false);
       } catch (error) {
-        setLoading(false);
+        setLoading(true);
       }
     };
 

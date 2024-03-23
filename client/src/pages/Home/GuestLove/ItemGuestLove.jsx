@@ -5,6 +5,7 @@ import StayingRating from "../../../components/Staying/StayingRating";
 import { format } from "date-fns";
 import routesConfig from "../../../configs/routesConfig";
 import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types'
 
 function ItemGuestLove({ item }) {
   const { t } = useTranslation();
@@ -17,13 +18,18 @@ function ItemGuestLove({ item }) {
     ", " +
     item?.country;
 
+  const currentDate = new Date();
+  const nextDay = new Date(currentDate);
+  nextDay.setDate(nextDay.getDate() + 1);
+
+
   const url =
     routesConfig.hotelDetails +
     `?id=${item?.hotelId}&location=${item.city}&checkin=${format(
       new Date(),
       "yyyy-MM-dd",
     )}&checkout=${format(
-      new Date(),
+      nextDay,
       "yyyy-MM-dd",
     )}&group_adults=1&group_children=0&group_rooms=1`;
 
@@ -75,5 +81,9 @@ function ItemGuestLove({ item }) {
     </Link>
   );
 }
+
+ItemGuestLove.propTypes = {
+  item: PropTypes.object,
+};
 
 export default ItemGuestLove;

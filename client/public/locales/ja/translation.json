@@ -113,6 +113,46 @@
     "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
     "bookNow": "今すぐ予約"
   },
+  "Profile": {
+    "title": "プロフィール設定",
+    "subTitle": "Staying.comの体験を管理する",
+    "information":{
+      "title": "情報",
+      "subTitle": "情報を更新し、その使用方法を確認します。",
+      "selectImage": "アップロードする画像を選択",
+      "selectFile": "ファイルを選択",
+      "errorFile": "これは画像ファイルではありません",
+      "name": "名前",
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "メールアドレス",
+      "phoneNumber": "電話番号",
+      "notPhoneNumber": "電話番号を追加",
+      "dateOfBirth": "生年月日",
+      "notDOB": "生年月日を追加",
+      "gender": "性別",
+      "notGender": "性別を追加",
+      "male": "男性",
+      "female": "女性",
+      "other": "その他",
+      "address": "住所",
+      "notAddress": "住所を追加",
+      "edit": "編集",
+      "save": "保存",
+      "cancel": "キャンセル"
+    },
+    "security":{
+      "title": "セキュリティ",
+      "subTitle": "セキュリティ設定を変更し、セキュアな認証を設定するか、アカウントを削除します",
+      "password": "パスワード",
+      "confirmPassword": "パスワードをリセットするためのメールを送信しました",
+      "changePassword": "パスワードを変更するには、リセットリンクをメールアドレスに送信する必要があります",
+      "resetPassword": "アカウントを安全に保つために定期的にパスワードをリセットします",
+      "reset": "リセット",
+      "cancel": "キャンセル",
+      "sendEmail": "メールを送信"
+    }
+  },
   "Search": {
     "location": "どこに行く予定ですか？",
     "checkOutDate": "チェックアウト日",
@@ -172,5 +212,19 @@
     "evaluate": "評価する",
     "seeAvailability": "空室状況を見る",
     "showing": "表示"
+  },
+  "months": {
+    "January": "1月",
+    "February": "2月",
+    "March": "3月",
+    "April": "4月",
+    "May": "5月",
+    "June": "6月",
+    "July": "7月",
+    "August": "8月",
+    "September": "9月",
+    "October": "10月",
+    "November": "11月",
+    "December": "12月"
   }
 }

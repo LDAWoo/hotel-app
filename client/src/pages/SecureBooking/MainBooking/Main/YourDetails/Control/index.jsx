@@ -24,13 +24,13 @@ function Control() {
 
   const travelling = [
     {
-      id: "yes",
+      id: "areYouTravellingForWork_true",
       name: "areYouTravellingForWork",
       title: "Yes",
       checked: true,
     },
     {
-      id: "no",
+      id: "areYouTravellingForWork_false",
       name: "areYouTravellingForWork",
       title: "No",
       checked: false,

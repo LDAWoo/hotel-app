@@ -15,6 +15,9 @@ import ForgotPassword from "../pages/ForgotPassword";
 import ForgotConfirmPassword from "../pages/ForgotConfirmPassword";
 import CheckEmail from "../pages/CheckEmail";
 import Successfully from "../pages/Successfully/Successfully";
+import Profile from "../pages/Profile/Profile";
+import Information from "../pages/Profile/Information/Information";
+import Security from "../pages/Profile/Security/Security";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -48,7 +51,22 @@ const publicRoutesPathComponent = [
     component: CheckEmail,
     layout: LoginLayout,
   },
-  { path: routesConfig.home, component: Home, layout: DefaultLayout },
+  { path: routesConfig.home,
+    component: Home, 
+    layout: DefaultLayout 
+  },
+  { path: routesConfig.profile, 
+    component: Profile, 
+    layout: DefaultLayout 
+  },
+  { path: routesConfig.profileInformation, 
+    component: Information, 
+    layout: DefaultLayout 
+  },
+  { path: routesConfig.profileSecurity, 
+    component: Security, 
+    layout: DefaultLayout 
+  },
   {
     path: routesConfig.searchResults,
     component: SearchResult,

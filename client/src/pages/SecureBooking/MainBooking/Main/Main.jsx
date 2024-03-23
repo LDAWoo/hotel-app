@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Panel from "../Aside/Panel/Panel";
 import Account from "./Account/Account";
 import YourDetails from "./YourDetails/YourDetails";
@@ -21,7 +21,6 @@ import routerConfig from '../../../../configs/routesConfig'
 
 function Main() {
   const { data } = useRegisterSecureBooking();
-
   const items = [
     // {
     //   component: Account,
@@ -60,6 +59,7 @@ function Main() {
     },
   ];
 
+  const [disabled, setDisabled] = useState(false)
   const [loading, setLoading] = useState(false);
 
   const { firstName, lastName, email, country, phoneNumber } =
@@ -75,6 +75,13 @@ function Main() {
   const { estimatedCheckInTime } = useRegisterArrivalItem();
 
   const navigate = useNavigate()
+  useEffect(() => {
+    firstName.length === 0 || lastName.length === 0 || email.length === 0 || country.length === 0 || phoneNumber.length === 0 ? setDisabled(true) : setDisabled(false)
+  },[firstName,lastName,email,country,phoneNumber])
+
+
+  console.log(orderCar);
+
 
   const handleFinalStep = async () => {
     try {
@@ -95,9 +102,8 @@ function Main() {
       };
 
       setLoading(true);
-      console.log(updateData);
       const results = await postBookingSessionInfo(data?.jwtToken, updateData);
-      navigate(`${routerConfig.secureBooking}?token=${results?.jwtToken}&finalStep=complete`)
+      navigate(`${routerConfig.secureBooking}?token=${results?.jwtToken}&source=final`)
       setLoading(false);
     } catch (e) {
       setLoading(false);
@@ -136,7 +142,7 @@ function Main() {
           fontMedium
           loading={loading}
           onClick={handleFinalStep}
-          disabled={loading}
+          disabled={disabled || loading}
         />
       </div>
     </main>

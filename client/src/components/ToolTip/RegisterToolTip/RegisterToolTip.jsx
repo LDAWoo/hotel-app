@@ -6,6 +6,7 @@ function RegisterToolTip({
   render,
   userRegisterToolTip,
   zIndex = "",
+  left,
 }) {
   const { isOpen, onClose } = userRegisterToolTip();
 
@@ -17,6 +18,7 @@ function RegisterToolTip({
       component={component}
       width={width}
       zIndex={zIndex}
+      left={left}
     />
   );
 }
@@ -27,6 +29,7 @@ RegisterToolTip.propTypes = {
   render: PropTypes.node,
   userRegisterToolTip: PropTypes.func,
   zIndex: PropTypes.string,
+  left: PropTypes.bool,
 };
 
 export default RegisterToolTip;

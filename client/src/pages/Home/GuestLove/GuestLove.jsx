@@ -7,6 +7,7 @@ import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStor
 import { Navigation } from "swiper/modules";
 import ItemGuestLoveSkeleton from "./ItemGuestLoveSkeleton";
 import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types'
 
 function GuestLove({ data, isLoading }) {
   const { t } = useTranslation();
@@ -48,5 +49,10 @@ function GuestLove({ data, isLoading }) {
     </div>
   );
 }
+GuestLove.propTypes ={
+  data: PropTypes.array,
+  isLoading: PropTypes.bool
+}
+
 
 export default GuestLove;

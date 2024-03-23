@@ -113,6 +113,46 @@
     "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
     "bookNow": "Reservar ahora"
   },
+  "Profile": {
+    "title": "Configuración del Perfil",
+    "subTitle": "Administra tu experiencia en Staying.com",
+    "information":{
+      "title": "Información",
+      "subTitle": "Actualiza tu información y descubre cómo se utiliza.",
+      "selectImage": "Selecciona una imagen para cargar",
+      "selectFile": "Seleccionar archivo",
+      "errorFile": "Este no es un archivo de imagen",
+      "name": "Nombre",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Dirección de correo electrónico",
+      "phoneNumber": "Número de teléfono",
+      "notPhoneNumber": "Agrega tu número de teléfono",
+      "dateOfBirth": "Fecha de nacimiento",
+      "notDOB": "Agrega tu fecha de nacimiento",
+      "gender": "Género",
+      "notGender": "Agrega tu género",
+      "male": "Masculino",
+      "female": "Femenino",
+      "other": "Otro",
+      "address": "Dirección",
+      "notAddress": "Agrega tu dirección",
+      "edit": "Editar",
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    },
+    "security":{
+      "title": "Seguridad",
+      "subTitle": "Cambia tu configuración de seguridad, configura la autenticación segura o elimina tu cuenta",
+      "password": "Contraseña",
+      "confirmPassword": "Hemos enviado un correo electrónico de restablecimiento de contraseña a",
+      "changePassword": "Para cambiar tu contraseña, necesitamos enviar un enlace de restablecimiento a tu dirección de correo electrónico",
+      "resetPassword": "Restablece tu contraseña regularmente para mantener tu cuenta segura",
+      "reset": "Restablecer",
+      "cancel": "Cancelar",
+      "sendEmail": "Enviar correo electrónico"
+    }
+  },
   "Search": {
     "location": "¿A dónde vas?",
     "checkOutDate": "Fecha de salida",
@@ -172,5 +212,19 @@
     "evaluate": "evaluar",
     "seeAvailability": "ver disponibilidad",
     "showing": "Mostrando"
+  },
+  "months": {
+    "January": "Enero",
+    "February": "Febrero",
+    "March": "Marzo",
+    "April": "Abril",
+    "May": "Mayo",
+    "June": "Junio",
+    "July": "Julio",
+    "August": "Agosto",
+    "September": "Septiembre",
+    "October": "Octubre",
+    "November": "Noviembre",
+    "December": "Diciembre"
   }
 }

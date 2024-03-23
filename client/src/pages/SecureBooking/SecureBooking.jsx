@@ -7,10 +7,10 @@ import { useLocation } from "react-router-dom";
 
 const SecureBooking = () => {
   const { data, setData } = useRegisterSecureBooking();
-
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const [loading, setLoading] = useState(false);
+  const currentSource = searchParams.get('source');
   const sessionToken = searchParams.get("token") || "";
 
   useEffect(() => {
@@ -43,8 +43,8 @@ const SecureBooking = () => {
           <>
             <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
               <div className='flex flex-col w-full gap-4'>
-                <ProgressBooking />
-                <MainBooking data={data}/>
+                <ProgressBooking currentSource={currentSource}/>
+                <MainBooking data={data} currentSource={currentSource}/>
               </div>
             </div>
           </>

@@ -58,7 +58,7 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
   overflow-y-hidden
   scroll-smooth
   inset-0
-  bg-primary-700/70
+  bg-primary-700/50
   m-0
   ${zIndex}
 `}

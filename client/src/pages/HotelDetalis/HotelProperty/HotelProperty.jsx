@@ -13,7 +13,7 @@ function HotelProperty() {
           <div>Loading</div>
         ) : (
           <>
-            {hotels.serviceAndAmenityRoomNameResponses.map((item, index) => (
+            {hotels.serviceAndAmenityRoomNameResponses && hotels.serviceAndAmenityRoomNameResponses.map((item, index) => (
               <HotelPropertyItems
                 key={index}
                 icon={BiCheck}

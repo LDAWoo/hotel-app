@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
 
-function Body({ data, maxSegments, className }) {
+import PropTypes from 'prop-types';
+const BodyReview = ({data,maxSegments,className}) => {
+
   const splitDescription = (text) => {
     if (!text || typeof text !== "string") {
       return null; 
@@ -29,14 +30,22 @@ function Body({ data, maxSegments, className }) {
   };
 
   return (
-    <p className='flex flex-col gap-2'>{data && splitDescription(data)}</p>
-  );
+    <div>
+        {
+            data && data.map((item,index) => (
+                <div key={index}>
+                    {splitDescription(item.feedbackContent)}
+                </div>
+            ))
+        }
+    </div>
+  )
 }
 
-Body.propTypes = {
-  data: PropTypes.string,
+BodyReview.propTypes = {
+  data: PropTypes.array,
   maxSegments: PropTypes.number,
-  className: PropTypes.string,
-};
+  className: PropTypes.string
+}
 
-export default Body;
+export default BodyReview

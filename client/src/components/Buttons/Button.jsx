@@ -168,6 +168,7 @@ Button.propTypes = {
   medium: PropTypes.bool,
   small: PropTypes.bool,
   nowrap: PropTypes.bool,
+  classLoading: PropTypes.string,
 };
 
 export default memo(Button);

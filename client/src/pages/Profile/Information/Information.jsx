@@ -1,25 +1,25 @@
 
 
 import { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PiCamera } from "react-icons/pi";
 import { getCountryCallingCode } from 'react-phone-number-input';
+import { useNavigate } from 'react-router-dom';
+import { updateUser } from '../../../api/User/Update';
 import Button from '../../../components/Buttons/Button';
 import { UserContext } from '../../../components/Contexts/AppUserProvider';
 import Icon from '../../../components/Icon/Icon';
-import Image from '../../../components/Image/Image';
 import InputStaying from '../../../components/Staying/Input';
 import TextInput from '../../../components/TextInput/TextInput';
 import Title from '../../../components/Title/Title';
-import SideBar from '../SideBar/SideBar';
-import { updateUser } from '../../../api/User/Update';
-import { userImage } from '../../../assets/Icons/UserImage';
+import routesConfig from '../../../configs/routesConfig';
 import useRegisterModalUploadAvatar from '../../../hooks/Profile/useRegisterModalUploadAvatar';
-import { useTranslation } from 'react-i18next';
-
+import SideBar from '../SideBar/SideBar';
 
 const Information = () => {
     const {t} = useTranslation();
-    const {user,setUser,token} = useContext(UserContext)
+    const navigate = useNavigate()
+    const {user,setUser,token, userLoading} = useContext(UserContext)
     const {onOpen} = useRegisterModalUploadAvatar();
     const [active, setActive] = useState("")
     const [countryCode, setCountryCode] = useState("VN");
@@ -28,9 +28,28 @@ const Information = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        if(!userLoading && !Object.keys(user).length > 0) {
+            navigate(routesConfig.home)
+            return;
+        }
         setCurrentUser(user)
-    }, [user])
+    }, [user,userLoading,navigate])
+    console.log(user);
 
+    useEffect(() => {
+        if (Object.keys(currentUser).length > 0) {
+            setCurrentUser(prev => {
+                if (prev.dob && prev.dob.length > 0) {
+                    const [year, month, day] = prev.dob.split('-');
+                    return { ...prev, dob: { year, month, day } };
+                }
+                if (prev.gender && prev.gender.length > 0) {
+                    return { ...prev, gender: { gender: prev.gender } };
+                }
+                return prev;
+            });
+        }
+    }, [currentUser]);
 
     const formatDateOfBirth = (dob) => {
         if(!dob) return;
@@ -41,7 +60,7 @@ const Information = () => {
     const items = [
         {
             Title: t("Profile.information.name"),
-            current: currentUser?.firstName+ " " + currentUser?.lastName || "",
+            current: currentUser?.firstName + " " + currentUser?.lastName || "" ,
             menu: [
                 {
                     title: t("Profile.information.firstName"),
@@ -261,7 +280,6 @@ const Information = () => {
 
     const handleGroupChange = (e, name, key) => {
         const { value } = e.target;
-        console.log(value);
         setCurrentUser(prevUser => ({
             ...prevUser,
             [key]: {
@@ -271,25 +289,29 @@ const Information = () => {
         }));
     };
 
-    console.log(currentUser);
-    
-    const handleSave = async(item) => {
+    const handleSave = async() => {
         const data = {
             firstName: currentUser?.firstName,
             lastName: currentUser?.lastName,
             dob: formatDateOfBirth(currentUser?.dob || "") || "",
             phoneNumber: currentUser?.phoneNumber,
-            gender: currentUser?.gender,
+            gender: currentUser?.gender?.gender,
             address: currentUser?.address,
         }
 
         try {
             setLoading(true);
             await updateUser(data,token);
+            const updatedUser = {
+                ...currentUser,
+                dob: formatDateOfBirth(currentUser?.dob || "") || "",
+                gender: currentUser?.gender?.gender || "",
+            }
+            setUser(updatedUser);
             setLoading(false);
             setActive("")
         } catch (error) {
-            setLoading(false);
+            setLoading(true);
         }
     }
 
@@ -299,7 +321,7 @@ const Information = () => {
         setCountryValue(getCountryCallingCode(selectedCountryCode));
     };
 
-    const handleKeyPress = (e) => {
+    const handleKeyDown = (e) => {
         if (e.key === "Enter") {
             handleSave();
         }
@@ -308,6 +330,8 @@ const Information = () => {
     const handleShowModalUploadAvatar = () => {
         onOpen();
     }
+
+    console.log(currentUser);
 
     return (
         <div className='w-full'>
@@ -323,8 +347,8 @@ const Information = () => {
                             </div>
 
                             <div className='hover:bg-gray-100 p-[12px_6px_12px_6px] rounded-md cursor-pointer duration-200' onClick={handleShowModalUploadAvatar}>
-                                <div className='relative flex bg-gray-700 w-[64px] h-[64px] rounded-full overflow-hidden border-[2px] border-secondary-50'>
-                                    <Image src={currentUser?.avatar}/>
+                                <div className={`${!currentUser?.avatar ? 'bg-gray-700' : 'bg-transparent'} relative flex w-[64px] h-[64px] rounded-full overflow-hidden border-[2px] border-secondary-50`}>
+                                    <img src={currentUser?.avatar} className="w-full h-full object-cover"/>
                                     <div className='absolute bottom-0 left-0 flex justify-center items-center w-full text-white'>
                                         <Icon icon={PiCamera} size={18} classIcon="text-white after:opacity-60 after:text-white after:h-[20px] after:bg-[#6b6b6b] after:absolute after:bottom-0 after:w-full after:left-0"/>
                                     </div>
@@ -363,9 +387,10 @@ const Information = () => {
                                                                             countryValue={"+" + countryValue}
                                                                             handleSelectCountry={handleSelectCountry}
                                                                             onChange={e => handleInputChange(e, menuItem?.name)}
+                                                                            onKeyDown={handleKeyDown}
                                                                             />
                                                                             :
-                                                                            <TextInput name={menuItem?.name} type={menuItem?.typeof} value={menuItem?.value} onChange={e => handleInputChange(e, menuItem?.name)}/>
+                                                                            <TextInput name={menuItem?.name} type={menuItem?.typeof} value={menuItem?.value} onKeyDown={handleKeyDown} onChange={e => handleInputChange(e, menuItem?.name)}/>
                                                                         }
                                         
                                                                     </div>
@@ -379,7 +404,7 @@ const Information = () => {
                                                                             menuItem?.group.map((g,index) => (
                                                                                 <div key={index} className='flex flex-row w-full'>
                                                                                         {g?.type === "input" && 
-                                                                                         <TextInput name={g?.name} type={g?.typeof} value={g?.value} placeholder={g?.placeHolder} onChange={e => handleGroupChange(e, g?.name, item.menu[0].name)}
+                                                                                         <TextInput name={g?.name} type={g?.typeof} value={g?.value} placeholder={g?.placeHolder} onKeyDown={handleKeyDown} onChange={e => handleGroupChange(e, g?.name, item.menu[0].name)}
                                                                                          />   
                                                                                         }
                                                                                         {g?.type === "select" && 

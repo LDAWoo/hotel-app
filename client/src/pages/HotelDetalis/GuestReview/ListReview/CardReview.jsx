@@ -9,14 +9,16 @@ import { getLocale } from "../../../../components/Locale/Locale";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
+import BodyReview from "./BodyReview";
 const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
-  console.log(item);
-
   const [maxSegments, setMaxSegments] = useState(1);
   const reviewResponseLength = item?.feedbacks && item?.feedbacks.length;
   const handleReadMore = () => {
     setMaxSegments(reviewResponseLength);
   };
+
+  const words = item?.fullName.split(" ");
+  const abbreviatedName = words.map(word => word.substring(0, 1)).join("");
 
   const locale = getLocale();
   return (
@@ -46,11 +48,14 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
         >
           <div className='flex flex-col gap-2'>
             <div className='flex flex-row items-center gap-2'>
-              <div className='w-[32px] h-[32px] rounded-full border-[2px] border-secondary-50'>
-                <Image
+              <div className='w-[32px] h-[32px] rounded-full flex items-center justify-center border-[2px] border-secondary-50 bg-secondary-50'>
+                {item?.src ? <Image
                   src={item?.src}
                   className='h-full w-full rounded-full object-cover'
                 />
+                  :
+                  <Title title={abbreviatedName} fontBold large/>
+              }
               </div>
               <div>
                 <Title
@@ -105,7 +110,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                 <div className='flex flex-row w-full'>
                   {/* CheckInDate */}
                   <Title
-                    title={`Đã đánh giá: ${format(
+                    title={`Have evaluated: ${format(
                       new Date(item?.reviewDate),
                       "dd MMMM MM yyyy",
                       locale,
@@ -131,10 +136,10 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                   <div className='flex flex-col w-full p-4 bg-gray-100 rounded-md dark:bg-primary-500 before:absolute before:border-b-[8px] before:border-gray-100 dark:before:border-primary-500 dark:before:border-l-transparent dark:before:border-r-transparent before:w-0 before:h-0 before:border-l-[8px] before:border-l-transparent before:border-r-[8px] before:border-r-transparent before:left-[50%] before:bottom-[100%]'>
                     <div className='flex items-center flex-row gap-2 mb-2 dark:text-white'>
                       <Icon icon={BiSolidMessageRoundedDots} size={24} />
-                      <Title title='Phản hồi của chỗ nghỉ:' fontBold large />
+                      <Title title='Property response:' fontBold large />
                     </div>
 
-                    <Body
+                    <BodyReview
                       data={item?.feedbacks}
                       maxSegments={maxSegments}
                       className='text-[14px] dark:text-primary-50'
@@ -143,7 +148,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                     {maxSegments !== reviewResponseLength && (
                       <button
                         type='button'
-                        className='flex items-center text-hotel-200 dark:text-hotel-50 hover:underline text-[14px]'
+                        className='flex items-center text-hotel-200 dark:text-hotel-50 hover:underline text-[14px] cursor-pointer'
                         onClick={handleReadMore}
                       >
                         Read more
@@ -164,7 +169,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
           >
             <Title
               title='Read More'
-              titleCustom='text-hotel-50 hover:underline cursor-pointer duration-300'
+              className='text-hotel-50 hover:underline cursor-pointer duration-300'
               large
             />
           </div>

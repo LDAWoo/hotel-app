@@ -25,7 +25,7 @@ function Gallery() {
 
   useEffect(() => {
     if (!loading) {
-      const remaining = hotels.images.length - (maxPhotos + startBottomPhotos);
+      const remaining = hotels?.images.length - (maxPhotos + startBottomPhotos);
       setRemainingPhotos(remaining);
     }
   }, [hotels, loading]);

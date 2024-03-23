@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { userImage } from "../../../../../assets/Icons/UserImage";
 import useRegisterToolTipUser from "../../../../../hooks/useRegisterToolTipUser";
 import { UserContext } from "../../../../Contexts/AppUserProvider";
@@ -9,6 +9,7 @@ import UserMenu from "./UserMenu";
 function User() {
   const { isOpen, onOpen, onClose } = useRegisterToolTipUser();
   const { user } = useContext(UserContext);
+  const [avatar, setAvatar] = useState("")
 
   const handleShowMenuUser = () => {
     if (isOpen) {
@@ -18,18 +19,23 @@ function User() {
     onOpen();
   };
 
-  const src = user?.picture ? user?.picture : userImage;
+  useEffect(() => {
+    if(Object.keys(user).length > 0) {
+      const src = user?.avatar ? user?.avatar : userImage;
+      setAvatar(src)
+    }
+  },[user])
 
   return (
     <div className='relative w-full'>
       <UserButton
         title={user?.firstName + " " + user?.lastName}
-        src={src}
+        src={avatar}
         onClick={handleShowMenuUser}
       />
       <RegisterToolTip
         userRegisterToolTip={useRegisterToolTipUser}
-        component={<TitleComponent title={user?.name} src={src} />}
+        component={<TitleComponent title={user?.name} src={avatar} />}
         render={<UserMenu />}
         width={240}
         zIndex='z-[999]'

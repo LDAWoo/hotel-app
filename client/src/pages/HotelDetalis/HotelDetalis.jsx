@@ -62,6 +62,7 @@ function HotelDetails() {
   const handleReturnHome = () => {
     window.location.href = routesConfig.home;
   }
+  
 
   return (
     <div className='w-full'>

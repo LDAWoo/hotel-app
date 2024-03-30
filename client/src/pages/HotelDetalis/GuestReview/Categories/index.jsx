@@ -4,6 +4,7 @@ import Title from "../../../../components/Title/Title";
 import CategoryItem from "./CategoryItem";
 import { TbArrowsMoveVertical } from "react-icons/tb";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
+import { useTranslation } from "react-i18next";
 
 const initialVisibleCount = 3;
 
@@ -11,6 +12,7 @@ const Categories = ({ data, vertical }) => {
   const { width } = useRegisterWindowSizeStore();
   const [showMore, setShowMore] = useState(true);
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+  const {t} = useTranslation();
 
   const handleShowMore = () => {
     setVisibleCount(data?.categories?.length);
@@ -24,7 +26,7 @@ const Categories = ({ data, vertical }) => {
 
   return (
     <div className='flex flex-col gap-2 dark:text-white'>
-      <Title title='Categories:' fontBold xl />
+      <Title title={t("HotelDetails.Categories.title")} fontBold xl />
       <div
         className={`grid ${
           vertical ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
@@ -42,30 +44,30 @@ const Categories = ({ data, vertical }) => {
       </div>
 
       {showMore && (
-        <div className='flex flex-row items-center w-auto sm:hidden'>
+        <div className='flex flex-row items-center w-full sm:hidden'>
           <Button
-            className='text-hotel-100 hover:underline duration-200 pt-2 pb-2 pr-0 pl-2 w-auto -translate-x-[12%]'
-            title='Show more'
+            className='text-hotel-100 hover:underline duration-200 mt-1'
+            title={t("HotelDetails.Categories.showMore")}
             icon={TbArrowsMoveVertical}
             titlePosition='before'
             size={16}
             xl
-            fontBold
+            fontMedium
             onClick={handleShowMore}
           />
         </div>
       )}
 
       {!showMore && (
-        <div className='flex flex-row items-center w-auto sm:hidden'>
+        <div className='flex flex-row items-center w-full sm:hidden'>
           <Button
-            className='text-hotel-100 hover:underline duration-200 pt-2 pb-2 pr-0 pl-2 w-auto -translate-x-[12%]'
-            title='Show less'
+            className='text-hotel-100 hover:underline duration-200 mt-1'
+            title={t("HotelDetails.Categories.showLess")}
             icon={TbArrowsMoveVertical}
             titlePosition='before'
             size={16}
             xl
-            fontBold
+            fontMedium
             onClick={handleShowLess}
           />
         </div>

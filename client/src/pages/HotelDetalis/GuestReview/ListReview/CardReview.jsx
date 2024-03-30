@@ -10,7 +10,9 @@ import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
 import Body from "../../DescriptionHighlight/Description/Description/Body";
 import BodyReview from "./BodyReview";
+import { useTranslation } from "react-i18next";
 const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
+  const {t} = useTranslation()
   const [maxSegments, setMaxSegments] = useState(1);
   const reviewResponseLength = item?.feedbacks && item?.feedbacks.length;
   const handleReadMore = () => {
@@ -62,7 +64,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                   title={item?.fullName}
                   fontBold
                   xl
-                  colorTitle='dark:text-white'
+                  className='dark:text-white'
                 />
               </div>
             </div>
@@ -76,7 +78,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                       title={format(
                         new Date(item?.reviewDate),
                         "EEE, d MMMM yyyy",
-                        locale,
+                        {locale},
                       )}
                       large
                     />
@@ -110,13 +112,13 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                 <div className='flex flex-row w-full'>
                   {/* CheckInDate */}
                   <Title
-                    title={`Have evaluated: ${format(
+                    title={`${t("HotelDetails.Categories.guestsLove.haveEvaluated")} ${format(
                       new Date(item?.reviewDate),
                       "dd MMMM MM yyyy",
-                      locale,
+                      {locale},
                     )}`}
                     large
-                    colorTitle='text-primary-100 dark:text-gray-50'
+                    className='text-primary-100 dark:text-gray-50'
                   />
                 </div>
               )}
@@ -126,7 +128,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                   title={item?.reviewContent}
                   nowrap={false}
                   xl
-                  colorTitle='dark:text-primary-50'
+                  className='dark:text-primary-50'
                 />
               </div>
 
@@ -136,7 +138,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                   <div className='flex flex-col w-full p-4 bg-gray-100 rounded-md dark:bg-primary-500 before:absolute before:border-b-[8px] before:border-gray-100 dark:before:border-primary-500 dark:before:border-l-transparent dark:before:border-r-transparent before:w-0 before:h-0 before:border-l-[8px] before:border-l-transparent before:border-r-[8px] before:border-r-transparent before:left-[50%] before:bottom-[100%]'>
                     <div className='flex items-center flex-row gap-2 mb-2 dark:text-white'>
                       <Icon icon={BiSolidMessageRoundedDots} size={24} />
-                      <Title title='Property response:' fontBold large />
+                      <Title title={t("HotelDetails.Categories.guestsLove.ownerResponse.title")} fontBold large />
                     </div>
 
                     <BodyReview
@@ -151,7 +153,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
                         className='flex items-center text-hotel-200 dark:text-hotel-50 hover:underline text-[14px] cursor-pointer'
                         onClick={handleReadMore}
                       >
-                        Read more
+                        {t("HotelDetails.Categories.guestsLove.readMore")}
                       </button>
                     )}
                   </div>
@@ -168,7 +170,7 @@ const CardReview = ({ vertical, border, style, onReadMoreClick, item }) => {
             onClick={() => onReadMoreClick(item)}
           >
             <Title
-              title='Read More'
+              title={t("HotelDetails.Categories.guestsLove.readMore")}
               className='text-hotel-50 hover:underline cursor-pointer duration-300'
               large
             />

@@ -27,3 +27,8 @@ export function validateZipCode(zip) {
 
   return true;
 }
+
+export const validUrl = (url) => {
+  const urlPattern = /^(http|https):\/\/([\w-]+(\.[\w-]+)+)([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/;
+  return urlPattern.test(url);
+};

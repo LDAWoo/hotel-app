@@ -190,7 +190,8 @@
     "regions": "regions",
     "cities": "cities",
     "previews": "previews",
-    "properties": "properties"
+    "properties": "properties",
+    "back": "Back"
   },
   "ListYourProperties": {
     "listYourProperties": "List Your Properties"
@@ -226,6 +227,58 @@
     "evaluate": "evaluate",
     "seeAvailability": "see availability",
     "showing": "Showing"
+  },
+  "HotelDetails": {
+    "Reserve": "Reserve",
+    "Search": {
+      "location": "Destination/property name:",
+      "placeholder": "Where are you going?",
+      "checkInDate": "Check-int date",
+      "checkOutDate":"Check-out date",
+      "stay": "stay"
+    },
+    "Description":{
+      "welcome": "has welcomed Staying guests from"
+    },
+    "Gallery":{
+      "photo": "photos"
+    },
+    "Availability": {
+      "title": "Availability",
+      "taxesAndChange": "Includes taxes and charges",
+      "table": {
+        "columns": {
+          "accommodationType": "Accommodation Type",
+          "sleep": "Sleeps",
+          "priceAWeek": "Price for a week",
+          "priceUpTo": "Price for up to",
+          "choice": "Your choices",
+          "amount": "Select amount"
+        },
+        "summary": {
+          "items": {
+            "item1": "It only takes 2 minutes",
+            "item2": "Confirmation is immediate",
+            "item3": "No booking or credit card fees!"
+          },
+          "roomForNight" : "room for night"
+        }
+      }
+    },
+    "Categories":{
+      "title": "Categories",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "guestsLove": {
+        "title": "See what guests loved the most:",
+        "readMore": "Read more",
+        "showAllReview": "Show all reviews",
+        "haveEvaluated": "Have evaluated:",
+        "ownerResponse": {
+          "title": "Property response:"
+        }
+      }
+    }
   },
   "months": {
     "January": "January",

@@ -10,6 +10,7 @@ import useRegisterHotelDetails from "../../../../../../hooks/HotelDetails/useReg
 import { startBookingSessionOne } from "../../../../../../api/Booking";
 import useRegisterAvailabilityRoom from "../../../../../../hooks/HotelDetails/AvailabilityRoom/useRegisterAvailabilityRoom";
 import setCookie from "../../../../../../hooks/useRegisterSetCookie";
+import { useTranslation } from "react-i18next";
 
 const Reserve = ({ toolTip }) => {
   const ButtonReserver = () => {
@@ -18,7 +19,7 @@ const Reserve = ({ toolTip }) => {
     const { hotels } = useRegisterHotelDetails();
     const [loading, setLoading] = useState(false);
     const { rooms } = useRegisterAvailabilityRoom();
-
+    const {t} = useTranslation()
     const handleReserve = async () => {
       if (!Object.keys(user).length > 0) {
         navigate(routesConfig.login);
@@ -55,7 +56,7 @@ const Reserve = ({ toolTip }) => {
 
     return (
       <Button
-        title='Reserve'
+        title={t("HotelDetails.Reserve")}
         fontMedium
         large
         className='pt-[6px] pb-[6px] justify-center flex items-center w-full'

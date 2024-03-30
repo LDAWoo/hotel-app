@@ -6,6 +6,7 @@ import TitleComponent from "../../../../TitleComponent/TitleComponent";
 import RegisterToolTip from "../../../../ToolTip/RegisterToolTip/RegisterToolTip";
 import UserButton from "./UserButton";
 import UserMenu from "./UserMenu";
+import { validUrl } from "../../../../../Regexs/Validate";
 function User() {
   const { isOpen, onOpen, onClose } = useRegisterToolTipUser();
   const { user } = useContext(UserContext);
@@ -26,11 +27,13 @@ function User() {
     }
   },[user])
 
+
+
   return (
     <div className='relative w-full'>
       <UserButton
         title={user?.firstName + " " + user?.lastName}
-        src={avatar}
+        src={validUrl(avatar) ? avatar : null}
         onClick={handleShowMenuUser}
       />
       <RegisterToolTip

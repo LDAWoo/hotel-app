@@ -7,11 +7,13 @@ import Title from "../../../../components/Title/Title";
 import useRegisterModalReadMoreReview from "../../../../hooks/Review/useRegisterModalReadMoreReview";
 import CardReview from "./CardReview";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
+import { useTranslation } from "react-i18next";
 
 const ListReview = ({ reviewData, vertical, style }) => {
   const [selectedReview, setSelectedReview] = useState([]);
   const { width } = useRegisterWindowSizeStore();
   const { onOpen } = useRegisterModalReadMoreReview();
+  const {t} = useTranslation()
 
   const handleReadMoreInsideCard = (reviewData) => {
     setSelectedReview(reviewData);
@@ -22,10 +24,11 @@ const ListReview = ({ reviewData, vertical, style }) => {
     <div className='flex flex-col mt-5 w-full gap-2'>
       <div className='flex flex-row items-center'>
         <Title
-          title='See what guests loved the most:'
+          title={t("HotelDetails.Categories.guestsLove.title")}
           fontBold
           xl
-          colorTitle='dark:text-white'
+          nowrap={false}
+          className='dark:text-white'
         />
       </div>
       {!style ? (

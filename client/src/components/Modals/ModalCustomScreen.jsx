@@ -4,10 +4,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import Button from "../Buttons/Button";
 import { DeviceContext } from "../Contexts/AppDeviceProvider";
+import { useTranslation } from "react-i18next";
 
-const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
+const ModalCustomScreen = ({ isOpen, disabled, body,footer, onClose, zIndex }) => {
   const modalsRef = useRef(null);
-
+  const {t} = useTranslation()
   const [showModal, setShowModal] = useState(isOpen);
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
@@ -114,19 +115,14 @@ const ModalCustomScreen = ({ isOpen, disabled, body, onClose, zIndex }) => {
               } gap-2 sm:hidden fixed bg-white dark:bg-primary-600 left-0 bottom-0 pb-2 pt-2 pl-3 pr-3 z-[99] border-t dark:border-primary-500`}
             >
               <Button
-                title='Back'
+                title={t("Other.back")}
                 border
                 onClick={handleClose}
                 className='pt-[4px] pb-[4px] text-center justify-center'
                 fontMedium
+                xl
               />
-
-              <Button
-                title='Reserve'
-                background
-                className='pt-[4px] pb-[4px] text-center justify-center'
-                fontMedium
-              />
+              {footer}
             </div>
           </div>
         </div>
@@ -139,6 +135,7 @@ ModalCustomScreen.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
   body: PropTypes.node.isRequired,
+  footer: PropTypes.node,
   onClose: PropTypes.func.isRequired,
   zIndex: PropTypes.string,
 };

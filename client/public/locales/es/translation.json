@@ -195,7 +195,8 @@
     "regions": "regiones",
     "cities": "ciudades",
     "previews": "vistas previas",
-    "properties": "propiedades"
+    "properties": "propiedades",
+    "back": "Atrás"
   },
   "ListYourProperties": {
     "listYourProperties": "Enumera tus propiedades"
@@ -226,6 +227,58 @@
     "evaluate": "evaluar",
     "seeAvailability": "ver disponibilidad",
     "showing": "Mostrando"
+  },
+  "HotelDetails": {
+    "Reserve": "Reservar",
+    "Search": {
+      "location": "Destino/nombre de la propiedad:",
+      "placeholder": "¿A dónde vas?",
+      "checkInDate": "Fecha de check-in",
+      "checkOutDate": "Fecha de check-out",
+      "stay": "Estancia"
+    },
+    "Description": {
+      "welcome": "ha dado la bienvenida a los huéspedes que se alojan desde"
+    },
+    "Gallery": {
+      "photo": "Fotos"
+    },
+    "Availability": {
+      "title": "Disponibilidad",
+      "taxesAndChange": "Incluye impuestos y cargos",
+      "table": {
+        "columns": {
+          "accommodationType": "Tipo de alojamiento",
+          "sleep": "Capacidad",
+          "priceAWeek": "Precio por semana",
+          "priceUpTo": "Precio hasta",
+          "choice": "Tus opciones",
+          "amount": "Seleccionar cantidad"
+        },
+        "summary": {
+          "items": {
+            "item1": "Solo lleva 2 minutos",
+            "item2": "Confirmación inmediata",
+            "item3": "¡Sin gastos de reserva o de tarjeta de crédito!"
+          },
+          "roomForNight": "habitación por noche"
+        }
+      }
+    },
+    "Categories": {
+      "title": "Categorías",
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos",
+      "guestsLove": {
+        "title": "Vea qué es lo que más les gustó a los huéspedes:",
+        "readMore": "Leer más",
+        "showAllReview": "Mostrar todas las reseñas",
+        "haveEvaluated": "Han evaluado:",
+        "ownerResponse": {
+          "title": "Respuesta del establecimiento:"
+        }
+      }
+    }
   },
   "months": {
     "January": "Enero",

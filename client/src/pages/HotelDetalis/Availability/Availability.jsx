@@ -5,21 +5,24 @@ import useRegisterHotelDetails from "../../../hooks/HotelDetails/useRegisterHote
 import AvailabilityChangeSearch from "./AvailabilityChangeSearch/AvailabilityChangeSearch";
 import AvailabilityRoom from "./AvailabilityRoom/AvailabilityRoom";
 import AvailabilityMobile from "./AvailabilityMobile/AvailabilityMobile";
+import { useTranslation } from "react-i18next";
 function Availability() {
   const { width } = useRegisterWindowSizeStore();
   const { hotels, loading } = useRegisterHotelDetails();
+  const {t} = useTranslation();
+
   return (
     <div className='w-full flex flex-col gap-1 dark:text-white mt-2'>
-      <Title title='Availability' fontBold extraLarge4 />
+      <Title title={t("HotelDetails.Availability.title")} fontBold extraLarge4 />
       {/* <AvailabilityChangeSearch /> */}
-      {width > 900 ? (
+      {
         loading ? (
           <div>Loading</div>
         ) : (
-          <AvailabilityRoom data={hotels} />
-        )
-      ) : (
-        <AvailabilityMobile />
+          <>
+            <AvailabilityRoom data={hotels} />
+            <AvailabilityMobile data={hotels}/>
+          </>
       )}
     </div>
   );

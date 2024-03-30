@@ -196,7 +196,8 @@
     "regions": "地区",
     "cities": "城市",
     "previews": "预览",
-    "properties": "房源"
+    "properties": "房源",
+    "back": "返回"
   },
   "ListYourProperties": {
     "listYourProperties": "列出您的房源"
@@ -227,6 +228,58 @@
     "evaluate": "评价",
     "seeAvailability": "查看可用性",
     "showing": "显示"
+  },
+  "HotelDetails": {
+    "Reserve": "预订",
+    "Search": {
+      "location": "目的地/酒店名称：",
+      "placeholder": "你要去哪里？",
+      "checkInDate": "入住日期",
+      "checkOutDate":"退房日期",
+      "stay": "停留"
+    },
+    "Description": {
+      "welcome": "欢迎住店来宾来自"
+    },
+    "Gallery": {
+      "photo": "照片"
+    },
+    "Availability": {
+      "title": "可用性",
+      "taxesAndChange": "包含税费和费用",
+      "table": {
+        "columns": {
+          "accommodationType": "住宿类型",
+          "sleep": "可容纳人数",
+          "priceAWeek": "一周价格",
+          "priceUpTo": "最高价格",
+          "choice": "您的选择",
+          "amount": "选择数量"
+        },
+        "summary": {
+          "items": {
+            "item1": "仅需2分钟",
+            "item2": "立即确认",
+            "item3": "无需预订或信用卡费用！"
+          },
+          "roomForNight": "每晚的房间"
+        }
+      }
+    },
+    "Categories": {
+      "title": "类别",
+      "showMore": "显示更多",
+      "showLess": "显示较少",
+      "guestsLove": {
+        "title": "看看客人最喜欢的是什么：",
+        "readMore": "阅读更多",
+        "showAllReview": "显示所有评论",
+        "haveEvaluated": "已评估：",
+        "ownerResponse": {
+          "title": "物业回应："
+        }
+      }
+    }
   },
   "months": {
     "January": "一月",

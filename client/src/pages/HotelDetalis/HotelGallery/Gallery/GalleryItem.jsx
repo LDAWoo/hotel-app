@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Title from "../../../../components/Title/Title";
+import { useTranslation } from "react-i18next";
 import Image from "../../../../components/Image/Image";
+import Title from "../../../../components/Title/Title";
 function GalleryItem({
   imgURL,
   width,
@@ -12,6 +12,8 @@ function GalleryItem({
   imageEnd,
   onClick,
 }) {
+  const {t} = useTranslation()
+
   return (
     <div
       className={`relative block ${width && width} ${height && height} ${
@@ -26,7 +28,7 @@ function GalleryItem({
         <div className='absolute top-0 flex items-center justify-center bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.40)] z-10'>
           <Title
             className='text-white border-b-[1px]'
-            title={`+${values} photos`}
+            title={`+${values} ${t("HotelDetails.Gallery.photo")}`}
             fontBold
             extraLarge4
           />
@@ -44,6 +46,7 @@ GalleryItem.propTypes = {
   right: PropTypes.bool,
   values: PropTypes.number,
   imageEnd: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default GalleryItem;

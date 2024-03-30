@@ -15,6 +15,7 @@ import Title from '../../../components/Title/Title';
 import routesConfig from '../../../configs/routesConfig';
 import useRegisterModalUploadAvatar from '../../../hooks/Profile/useRegisterModalUploadAvatar';
 import SideBar from '../SideBar/SideBar';
+import { validUrl } from '../../../Regexs/Validate';
 
 const Information = () => {
     const {t} = useTranslation();
@@ -34,7 +35,6 @@ const Information = () => {
         }
         setCurrentUser(user)
     }, [user,userLoading,navigate])
-    console.log(user);
 
     useEffect(() => {
         if (Object.keys(currentUser).length > 0) {
@@ -331,8 +331,6 @@ const Information = () => {
         onOpen();
     }
 
-    console.log(currentUser);
-
     return (
         <div className='w-full'>
             <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
@@ -347,8 +345,8 @@ const Information = () => {
                             </div>
 
                             <div className='hover:bg-gray-100 p-[12px_6px_12px_6px] rounded-md cursor-pointer duration-200' onClick={handleShowModalUploadAvatar}>
-                                <div className={`${!currentUser?.avatar ? 'bg-gray-700' : 'bg-transparent'} relative flex w-[64px] h-[64px] rounded-full overflow-hidden border-[2px] border-secondary-50`}>
-                                    <img src={currentUser?.avatar} className="w-full h-full object-cover"/>
+                                <div className={`${!validUrl(currentUser?.avatar) ? 'bg-gray-700' : 'bg-transparent'} relative flex w-[64px] h-[64px] rounded-full overflow-hidden border-[2px] border-secondary-50`}>
+                                    {validUrl(currentUser?.avatar) && <img src={currentUser?.avatar} className="w-full h-full object-cover"/>}
                                     <div className='absolute bottom-0 left-0 flex justify-center items-center w-full text-white'>
                                         <Icon icon={PiCamera} size={18} classIcon="text-white after:opacity-60 after:text-white after:h-[20px] after:bg-[#6b6b6b] after:absolute after:bottom-0 after:w-full after:left-0"/>
                                     </div>

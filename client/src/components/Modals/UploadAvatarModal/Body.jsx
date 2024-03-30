@@ -58,11 +58,13 @@ const Body = () => {
             setLoading(true)
             await updateUser(data,token);
             const results =await getUserWithToken(token)
+            console.log(results);
             setUser(results?.data)
             setCurrentURLBlob("")
             setLoading(false)
             onClose()
         } catch (error) {
+            console.log(error);
             setLoading(true)
             setUser({})
         }

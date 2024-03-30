@@ -8,7 +8,7 @@ function DescriptionHighlight() {
         {/* Description */}
         <Description />
         {/* Highlight */}
-        <Highlight />
+        {/* <Highlight /> */}
       </div>
     </>
   );

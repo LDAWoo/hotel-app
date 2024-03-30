@@ -2,25 +2,28 @@ import Title from "../../../../../components/Title/Title";
 import SummaryRoomAndPrice from "./SummaryRoomAndPrice";
 import Reserve from "./Reserve";
 import Ticket from "./Ticket";
+import { useTranslation } from "react-i18next";
 
 const AvailabilitySummary = ({ data }) => {
+  const {t} = useTranslation();
+
   return (
-    <div className='w-full'>
-      <div className='h-[48px] bg-[#4c76b2] sticky top-0'></div>
-      <div className='flex flex-col gap-1 p-2 bg-hotel-25 dark:bg-primary-50 dark:text-primary-700'>
+    <>
+      <div className='h-[48px] bg-[#4c76b2] sticky top-[-1px] z-[1]'></div>
+      <div className='flex flex-col gap-1 p-2 sticky top-[47px] z-0'>
         {/* SummaryRoomAndPrice */}
         <SummaryRoomAndPrice data={data} />
         {/* Includes */}
         <Title
-          title='Includes taxes and charges'
+          title={t("HotelDetails.Availability.taxesAndChange")}
           large
-          colorTitle='dark:text-primary-700'
+          className='dark:text-primary-700'
         />
         {/* Reserve */}
         <Reserve toolTip />
         <Ticket />
       </div>
-    </div>
+    </>
   );
 };
 export default AvailabilitySummary;

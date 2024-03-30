@@ -183,7 +183,8 @@
     "regions": "지역",
     "cities": "도시",
     "previews": "미리보기",
-    "properties": "특성"
+    "properties": "특성",
+    "back": "뒤로"
   },
   "ListYourProperties": {
     "listYourProperties": "당신의 속성 나열"
@@ -214,6 +215,58 @@
     "evaluate": "평가",
     "seeAvailability": "가용성 보기",
     "showing": "표시"
+  },
+  "HotelDetails": {
+    "Reserve": "예약",
+    "Search": {
+      "location": "목적지/숙소 이름:",
+      "placeholder": "어디로 가시나요?",
+      "checkInDate": "체크인 날짜",
+      "checkOutDate": "체크아웃 날짜",
+      "stay": "머무름"
+    },
+    "Description": {
+      "welcome": "방문객을 환영합니다"
+    },
+    "Gallery": {
+      "photo": "사진"
+    },
+    "Availability": {
+      "title": "가용성",
+      "taxesAndChange": "세금 및 요금 포함",
+      "table": {
+        "columns": {
+          "accommodationType": "숙박 유형",
+          "sleep": "수면 인원",
+          "priceAWeek": "주당 가격",
+          "priceUpTo": "최고 가격",
+          "choice": "당신의 선택",
+          "amount": "수량 선택"
+        },
+        "summary": {
+          "items": {
+            "item1": "2분 만에 가능",
+            "item2": "즉시 확인",
+            "item3": "예약 또는 신용카드 수수료 없음!"
+          },
+          "roomForNight": "밤마다 방"
+        }
+      }
+    },
+    "Categories": {
+      "title": "카테고리",
+      "showMore": "더 보기",
+      "showLess": "덜 보기",
+      "guestsLove": {
+        "title": "손님이 가장 좋아하는 것을 확인하세요:",
+        "readMore": "더 읽기",
+        "showAllReview": "모든 리뷰 보기",
+        "haveEvaluated": "평가했습니다:",
+        "ownerResponse": {
+          "title": "호텔 응답:"
+        }
+      }
+    }
   },
   "months": {
     "January": "1월",

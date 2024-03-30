@@ -195,7 +195,8 @@
     "regions": "khu vực",
     "cities": "thành phố",
     "previews": "xem trước",
-    "properties": "các bất động sản"
+    "properties": "các bất động sản",
+    "back": "Quay lại"
   },
   "ListYourProperties": {
     "listYourProperties": "Liệt kê tài sản của bạn"
@@ -226,6 +227,58 @@
     "evaluate": "đánh giá",
     "seeAvailability": "xem tính sẵn có",
     "showing": "Hiển thị"
+  },
+  "HotelDetails": {
+    "Reserve": "Đặt phòng",
+    "Search": {
+      "location": "Điểm đến/tên khách sạn:",
+      "placeholder": "Bạn đang đi đâu?",
+      "checkInDate": "Ngày nhận phòng",
+      "checkOutDate": "Ngày trả phòng",
+      "stay": "Lưu trú"
+    },
+    "Description": {
+      "welcome": "Đã chào đón khách lưu trú từ"
+    },
+    "Gallery": {
+      "photo": "Ảnh"
+    },
+    "Availability": {
+      "title": "Tình trạng phòng",
+      "taxesAndChange": "Bao gồm thuế và phí",
+      "table": {
+        "columns": {
+          "accommodationType": "Loại chỗ ở",
+          "sleep": "Số người ngủ",
+          "priceAWeek": "Giá trong một tuần",
+          "priceUpTo": "Giá lên đến",
+          "choice": "Lựa chọn của bạn",
+          "amount": "Chọn số lượng"
+        },
+        "summary": {
+          "items": {
+            "item1": "Chỉ mất 2 phút",
+            "item2": "Xác nhận ngay lập tức",
+            "item3": "Không có phí đặt phòng hoặc thẻ tín dụng!"
+          },
+          "roomForNight": "Phòng cho mỗi đêm"
+        }
+      }
+    },
+    "Categories": {
+      "title": "Danh mục",
+      "showMore": "Hiển thị thêm",
+      "showLess": "Hiển thị ít hơn",
+      "guestsLove": {
+        "title": "Xem những gì khách đã yêu thích nhất:",
+        "readMore": "Đọc thêm",
+        "showAllReview": "Hiển thị tất cả đánh giá",
+        "haveEvaluated": "Đã đánh giá:",
+        "ownerResponse": {
+          "title": "Phản hồi của khách sạn:"
+        }
+      }
+    }
   },
   "months": {
     "January": "Tháng Một",

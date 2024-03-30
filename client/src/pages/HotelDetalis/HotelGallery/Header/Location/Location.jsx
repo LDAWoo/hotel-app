@@ -15,22 +15,14 @@ function Location({ data }) {
 
   return (
     <div className='w-full mb-2'>
-      <div className='flex items-center cursor-pointer gap-1'>
+      <div className='flex items-center gap-1'>
         <div className='text-hotel-50 hover:text-hotel-100'>
           <Icon icon={MdLocationOn} size={24} />
         </div>
         <Title
           title={location}
-          colorTitle='dark:text-primary-50'
+          className='dark:text-primary-50'
           xl
-          nowrap={false}
-        />
-        <span className=''>–</span>
-        <Title
-          title='Vị trí tuyệt vời - Hiển thị trên bản đồ'
-          colorTitle='text-hotel-50 hover:underline'
-          xl
-          fontBold
           nowrap={false}
         />
       </div>

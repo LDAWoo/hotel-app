@@ -1,13 +1,12 @@
+import ReviewModal from "../../../components/Modals/ReviewModal/ReviewModal";
+import useRegisterHotelDetails from "../../../hooks/HotelDetails/useRegisterHotelDetails";
+import Reserve from "../Availability/AvailabilityRoom/AvailabilitySummary/Reserve";
 import Categories from "./Categories";
+import RatingReview from "./Categories/RatingReview";
 import ListReview from "./ListReview/ListReview";
 import ShowAllReview from "./ShowAllReview";
-import ReviewModal from "../../../components/Modals/ReviewModal/ReviewModal";
-import RatingReview from "./Categories/RatingReview";
-import useRegisterHotelDetails from "../../../hooks/HotelDetails/useRegisterHotelDetails";
 function GuestReview() {
   const { hotels, loading } = useRegisterHotelDetails();
-
-  console.log(hotels);
 
   return (
     <section className='flex flex-col gap-2 w-full mt-5'>
@@ -37,6 +36,7 @@ function GuestReview() {
                 />
               </div>
             }
+            footer={<div className="w-full"><Reserve/></div>}
           />
         </>
       )}

@@ -9,7 +9,7 @@ const MoneyFormatStaying = ({
 }) => {
   return (
     <div
-      className={`flex flex-col sm:flex-row items-end sm:items-center ${
+      className={`flex flex-row items-end sm:items-center ${
         className ? className : "gap-2"
       }`}
     >

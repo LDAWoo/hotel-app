@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Title from "../../../../../../components/Title/Title";
 
 const Person = ({ data }) => {
-  console.log(data);
   return (
     <div className='flex gap-[1px] flex-wrap dark:text-white'>
       <div className='flex flex-row gap-[2px]'>

@@ -36,6 +36,8 @@ function Button({
   medium,
   small,
   nowrap,
+  copy,
+  classCopy
 }) {
   return (
     <button
@@ -73,6 +75,7 @@ function Button({
             role='status'
           />
         )}
+        {copy && <div className={`${classCopy}`}>{copy}</div>}
         {srcPosition === "before" && src && (
           <Image
             className={classImg}
@@ -131,6 +134,8 @@ function Button({
         {active && iconPosition === "right" && icon && (
           <Icon classIcon={classIcon} icon={icon} size={size} />
         )}
+
+       
       </div>
     </button>
   );
@@ -169,6 +174,8 @@ Button.propTypes = {
   small: PropTypes.bool,
   nowrap: PropTypes.bool,
   classLoading: PropTypes.string,
+  classCopy: PropTypes.string,
+  copy: PropTypes.node,
 };
 
 export default memo(Button);

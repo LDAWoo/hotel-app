@@ -195,7 +195,8 @@
     "regions": "地域",
     "cities": "都市",
     "previews": "プレビュー",
-    "properties": "物件"
+    "properties": "物件",
+    "back": "戻る"
   },
   "ListYourProperties": {
     "listYourProperties": "あなたの物件をリストする"
@@ -226,6 +227,58 @@
     "evaluate": "評価する",
     "seeAvailability": "空室状況を見る",
     "showing": "表示"
+  },
+  "HotelDetails": {
+    "Reserve": "予約",
+    "Search": {
+      "location": "目的地/物件名:",
+      "placeholder": "どこに行きますか？",
+      "checkInDate": "チェックイン日",
+      "checkOutDate": "チェックアウト日",
+      "stay": "滞在"
+    },
+    "Description": {
+      "welcome": "滞在ゲストを歓迎しました"
+    },
+    "Gallery": {
+      "photo": "写真"
+    },
+    "Availability": {
+      "title": "空室状況",
+      "taxesAndChange": "税金と料金を含む",
+      "table": {
+        "columns": {
+          "accommodationType": "宿泊タイプ",
+          "sleep": "収容人数",
+          "priceAWeek": "週間料金",
+          "priceUpTo": "最高料金",
+          "choice": "あなたの選択肢",
+          "amount": "数量を選択"
+        },
+        "summary": {
+          "items": {
+            "item1": "たった2分で完了",
+            "item2": "即時確認",
+            "item3": "予約手数料やクレジットカード手数料はかかりません！"
+          },
+          "roomForNight": "一泊の部屋"
+        }
+      }
+    },
+    "Categories": {
+      "title": "カテゴリー",
+      "showMore": "もっと表示",
+      "showLess": "少なく表示",
+      "guestsLove": {
+        "title": "ゲストが最も気に入ったものを見てください：",
+        "readMore": "詳細を読む",
+        "showAllReview": "すべてのレビューを表示",
+        "haveEvaluated": "評価済み：",
+        "ownerResponse": {
+          "title": "施設の回答："
+        }
+      }
+    }
   },
   "months": {
     "January": "1月",

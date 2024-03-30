@@ -7,11 +7,11 @@ import DescriptionModal from "../../../../../components/Modals/DescriptionModal/
 import useRegisterModalDescription from "../../../../../hooks/Description/useRegisterModalDescription";
 import useRegisterWindowSizeStore from "../../../../../hooks/useRegisterWindowSizeStore";
 import useRegisterHotelDetails from "../../../../../hooks/HotelDetails/useRegisterHotelDetails";
+import { useTranslation } from "react-i18next";
 
 function Description() {
   const { hotels } = useRegisterHotelDetails();
-
-  console.log(hotels);
+  const {t} = useTranslation()
 
   const [state, setState] = useState({
     hotelName: "",
@@ -45,8 +45,6 @@ function Description() {
     }));
   }, [hotels]);
 
-  console.log(hotelName);
-
   return (
     <div className='flex flex-col gap-2'>
       <div className='text-[14px] dark:text-white'>
@@ -64,7 +62,7 @@ function Description() {
               fontMedium
               title='Show more'
               xl
-              titleCustom='underline pb-1 dark:text-white'
+              className='underline pb-1 dark:text-white'
             />
             <Icon icon={IoIosArrowForward} size={14} />
           </button>
@@ -72,11 +70,11 @@ function Description() {
       </div>
       <div>
         <Title
-          title={`${hotelName} đã chào đón khách Staying từ ${startDateHotel}.`}
+          title={`${hotelName} ${t("HotelDetails.Description.welcome")} ${startDateHotel}.`}
           fontBold
           large
           nowrap={false}
-          colorTitle='dark:text-gray-50'
+          className='dark:text-gray-50'
         />
       </div>
     </div>

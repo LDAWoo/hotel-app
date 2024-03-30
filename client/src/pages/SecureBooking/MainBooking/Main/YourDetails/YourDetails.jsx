@@ -14,9 +14,6 @@ import {UserContext} from '../../../../../components/Contexts/AppUserProvider';
 
 function YourDetails() {
   const {user} = useContext(UserContext)
-  console.log(user);
-
-
   const YourDetailsData = [
     {
       id: 1,
@@ -90,12 +87,12 @@ function YourDetails() {
     },
   ];
 
-  const {  country, setField } =
+  const {country, setField} =
     useRegisterYourDetails();
 
   const initState = YourDetailsData.map((item) => {
     const id = item.data[0]?.id;
-    const value = item.data[0].value
+    const value = item.data[0]?.value
     let selectedValue = { countryCode: "VN", countryValue: "84", value: value };
     return { id, selectedValue, success: true, status: false, count: -1 };
   });
@@ -234,7 +231,6 @@ function YourDetails() {
                     const selectedState =
                       state.find((s) => s.id === x?.id) || {};
                     const selectedValue = selectedState.selectedValue;
-
                     const { countryCode, countryValue, value } = selectedValue;
                     const { success, status, count } = selectedState;
                     return (

@@ -201,9 +201,23 @@
     "listYourProperties": "Enumera tus propiedades"
   },
   "SearchResults": {
+    "filters": {
+      "title": "Filtro",
+      "budgets": {
+        "title": "Su presupuesto (por noche)"
+      }
+    },
+    "map": {
+      "title": "Mapa"
+    },
     "weeks": "semanas",
+    "total": "Total",
+    "nights": "noches",
     "adults": "adultos",
     "children": "niños",
+    "propertyIsSaved": "Esta propiedad se guarda en 1 de tus listas",
+    "save": "Guardar",
+    "propertyOfferingDiscount": "Esta propiedad ofrece un descuento en estancias entre",
     "taxesAndFees": "impuestos y tasas incluidos",
     "showOnMap": "Mostrar en el mapa",
     "seeOnMap": "Ver en el mapa",

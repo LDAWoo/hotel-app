@@ -189,9 +189,23 @@
     "listYourProperties": "당신의 속성 나열"
   },
   "SearchResults": {
+    "filters": {
+      "title": "필터",
+      "budgets": {
+        "title": "당신의 예산 (밤 당)"
+      }
+    },
+    "map": {
+      "title": "지도"
+    },
     "weeks": "주",
+    "total": "총",
+    "nights": "밤",
     "adults": "성인",
     "children": "어린이",
+    "propertyIsSaved": "이 속성은 여러분의 목록 중 1개에 저장되어 있습니다.",
+    "save": "저장",
+    "propertyOfferingDiscount": "이 속성은 다음 사이의 체류에 할인을 제공하고 있습니다.",
     "taxesAndFees": "세금 및 수수료 포함",
     "showOnMap": "지도에 표시",
     "seeOnMap": "지도에서 보기",

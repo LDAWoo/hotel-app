@@ -4,16 +4,16 @@ import Budget from "./Budget/Budget";
 import Facilities from "./Facilities/Facilities";
 import PropertyRating from "./PropertyRating/PropertyRating";
 
-function Filter() {
+function Filter({hidden}) {
   return (
-    <div className='relative w-full items-center'>
+    <div className={`flex relative w-full items-center ${hidden && 'hidden'}`}>
       <div className='w-full flex items-center rounded-md border dark:bg-primary-600 dark:border-primary-500'>
         <div className='flex flex-col w-full'>
           <Budget />
-          <PropertyRating />
+          {/* <PropertyRating />
           <BedRooms />
           <BathRooms />
-          <Facilities />
+          <Facilities /> */}
         </div>
       </div>
     </div>

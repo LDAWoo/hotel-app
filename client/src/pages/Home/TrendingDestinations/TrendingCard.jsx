@@ -8,13 +8,17 @@ function TrendingCard({ destination, areaImage, src, city, maxImage }) {
   const [isHovered, setIsHovered] = useState(false);
   const maxImg = maxImage;
 
+  const currentDate = new Date();
+  const nextDay = new Date(currentDate);
+  nextDay.setDate(nextDay.getDate() + 1);
+
   const url =
     routesConfig.searchResults +
     `?location=${city}&checkin=${format(
       new Date(),
       "yyyy-MM-dd",
     )}&checkout=${format(
-      new Date(),
+      nextDay,
       "yyyy-MM-dd",
     )}&group_adults=1&group_children=0&group_rooms=1`;
 

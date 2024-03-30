@@ -1,10 +1,13 @@
 import { create } from "zustand";
 
+const min = 100000;
+const max = 6000000;
+const step = 100000;
 const useRegisterBudgetRangeSlider = create((set) => ({
-  min: 300000,
-  max: 6000000,
-  step: 100000,
-  values: [300000, 6000000],
+  min: min,
+  max: max,
+  step: step,
+  values: [min, max],
   setValues: (newValues) => set({ values: newValues }),
 }));
 export default useRegisterBudgetRangeSlider;

@@ -27,7 +27,7 @@ function ToolTip({
       arrow={true}
       className={`${
         !className
-          ? `duration-300 rounded-md pt-1 pb-1 pl-2 pr-2 text-[15px] font-medium  
+          ? `duration-300 rounded-md pt-1 pb-1 pl-2 pr-2 text-[14px] font-medium  
           ${
             darkMode === "dark"
               ? "bg-primary-50 text-primary-700"

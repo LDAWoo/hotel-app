@@ -11,6 +11,9 @@ import Map from "./Map/Map";
 import MapMobile from "./Map/MapMobile";
 import NoResult from "./NoResult";
 import PageResults from "./PageResults/PageResults";
+import Filter from './Filter/Filter';
+import FilterMobile from "./Filter/FilterMobile";
+import useRegisterBudgetRangeSlider from "../../hooks/useRegisterBudgetRangeSlider";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
@@ -20,6 +23,7 @@ function SearchResult() {
   }, [width]);
 
   const location = useLocation();
+  const { values } = useRegisterBudgetRangeSlider();
 
   const searchParams = new URLSearchParams(location.search);
   const currentLocation =
@@ -29,6 +33,8 @@ function SearchResult() {
   const currentAdults = searchParams.get("group_adults") || "";
   const currentChildren = searchParams.get("group_children") || "";
   const currentRooms = searchParams.get("group_rooms") || "";
+  const currentMinPrice = searchParams.get("min_price") || values[0];
+  const currentMaxPrice = searchParams.get("max_price") || values[1];
   const currentLimitPage = searchParams.get("limit_page") || 8;
   const currentPage = searchParams.get("offset") || 1;
   const [pageable, setPageable] = useState({});
@@ -48,6 +54,8 @@ function SearchResult() {
         typeOfGuestChildren: true,
         children: currentChildren,
         quantityRoom: currentRooms,
+        priceFindStart: currentMinPrice,
+        priceFindEnd: currentMaxPrice,
         limitPage: currentLimitPage,
         currentPage,
       };
@@ -72,7 +80,7 @@ function SearchResult() {
           {width < 900 && (
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row'>
-                {/* <FilterMobile /> */}
+                <FilterMobile />
                 <MapMobile />
               </div>
               <Border />
@@ -82,7 +90,7 @@ function SearchResult() {
           <div className='relative flex w-full gap-3'>
             <div className='hidden 2md:flex flex-col w-full 2md:w-[24%] absolute 2md:relative'>
               <Map />
-              {/* {ourHotels && ourHotels.length > 0 && <Filter />} */}
+              <Filter hidden={ourHotels.length === 0}/>
             </div>
 
             <div className='w-full 2md:w-[75%]'>

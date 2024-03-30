@@ -201,9 +201,23 @@
     "night": "night"
   },
   "SearchResults": {
+    "filters": {
+      "title": "Filter",
+      "budgets": {
+        "title": "Your Budget (per night)"
+      }
+    },
+    "map":{
+      "title": "Map"
+    },
     "weeks": "weeks",
+    "total": "Total",
+    "nights": "nights",
     "adults": "adults",
     "children": "children",
+    "propertyIsSaved": "This property is saved to 1 of your lists",
+    "save": "Save",
+    "propertyOfferingDiscount": "This property is offering a discount on stays between",
     "taxesAndFees": "taxes and fees included",
     "showOnMap": "Show on map",
     "seeOnMap": "See on map",

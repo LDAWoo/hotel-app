@@ -201,9 +201,23 @@
     "listYourProperties": "あなたの物件をリストする"
   },
   "SearchResults": {
+    "filters": {
+      "title": "フィルター",
+      "budgets": {
+        "title": "あなたの予算（1泊あたり）"
+      }
+    },
+    "map": {
+      "title": "マップ"
+    },
     "weeks": "週間",
+    "total": "合計",
+    "nights": "夜",
     "adults": "大人",
     "children": "子供",
+    "propertyIsSaved": "このプロパティはお客様のリストの1つに保存されています",
+    "save": "保存",
+    "propertyOfferingDiscount": "このプロパティは以下の滞在に割引を提供しています",
     "taxesAndFees": "税金および手数料込み",
     "showOnMap": "地図で表示",
     "seeOnMap": "地図で見る",

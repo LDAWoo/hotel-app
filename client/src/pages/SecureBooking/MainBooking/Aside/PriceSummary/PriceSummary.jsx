@@ -3,8 +3,6 @@ import Title from "../../../../../components/Title/Title";
 import PropTypes from "prop-types";
 
 function PriceSummary({ data }) {
-  console.log(data);
-
   return (
     <div className='flex flex-col gap-2'>
       <Title title='Your price summary' fontBold xxl />
@@ -13,7 +11,7 @@ function PriceSummary({ data }) {
           <Title title='Total' fontBold extraLarge5 />
           <div className='flex flex-col items-end justify-end'>
             <MoneyFormatStaying
-              price={data?.priceOrigin}
+              price={data?.pricePromotion}
               decimalScale={0}
               className='font-bold gap-2 text-[22px]'
             />

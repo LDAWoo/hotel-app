@@ -201,9 +201,23 @@
     "listYourProperties": "Liệt kê tài sản của bạn"
   },
   "SearchResults": {
+    "filters": {
+      "title": "Bộ lọc",
+      "budgets": {
+        "title": "Ngân sách của bạn (mỗi đêm)"
+      }
+    },
+    "map": {
+      "title": "Bản đồ"
+    },
     "weeks": "tuần",
+    "total": "Tổng cộng",
+    "nights": "đêm",
     "adults": "người lớn",
     "children": "trẻ em",
+    "propertyIsSaved": "Tài sản này đã được lưu vào 1 trong danh sách của bạn",
+    "save": "Lưu",
+    "propertyOfferingDiscount": "Tài sản này đang cung cấp chiết khấu cho các lưu trú giữa",
     "taxesAndFees": "đã bao gồm thuế và phí",
     "showOnMap": "Hiển thị trên bản đồ",
     "seeOnMap": "Xem trên bản đồ",

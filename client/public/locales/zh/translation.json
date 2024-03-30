@@ -202,9 +202,23 @@
     "listYourProperties": "列出您的房源"
   },
   "SearchResults": {
+    "filters": {
+      "title": "过滤器",
+      "budgets": {
+        "title": "您的预算（每晚）"
+      }
+    },
+    "map": {
+      "title": "地图"
+    },
     "weeks": "周",
+    "total": "总计",
+    "nights": "晚",
     "adults": "成人",
     "children": "儿童",
+    "propertyIsSaved": "此属性已保存到您的 1 个列表中",
+    "save": "保存",
+    "propertyOfferingDiscount": "此属性提供在以下停留期间的折扣",
     "taxesAndFees": "含税费",
     "showOnMap": "显示在地图上",
     "seeOnMap": "查看地图",

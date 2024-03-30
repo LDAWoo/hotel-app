@@ -16,7 +16,7 @@ function ItemResults({ data }) {
             )}`}
             extraLarge4
             fontBold
-            colorTitle='dark:text-white'
+            className='dark:text-white'
             nowrap={false}
           />
         </div>

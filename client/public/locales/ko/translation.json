@@ -69,7 +69,8 @@
       "dayNotMonth": "이번 달에 대한 유효한 날짜를 입력하세요",
       "yearNotYear": "4 자리 숫자를 사용하여 유효한 연도를 입력하세요",
       "dateNotDate": "유효한 생일을 입력하세요",
-      "dateEnsureLeastSixteen": "유효한 날짜를 입력하고 최소 16 세가 되었는지 확인하세요"
+      "dateEnsureLeastSixteen": "유효한 날짜를 입력하고 최소 16 세가 되었는지 확인하세요",
+      "countryNotBlank": "국가를 선택해주세요"
     },
     "Search": {
       "locationNotBlank": "검색을 시작하려면 대상을 입력하세요."
@@ -133,6 +134,8 @@
       "other": "기타",
       "address": "주소",
       "notAddress": "주소 추가",
+      "country": "국가 선택",
+      "countryRegion": "국가 지역 선택",
       "edit": "편집",
       "save": "저장",
       "cancel": "취소"
@@ -275,6 +278,102 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "선택 사항",
+      "details": "세부 정보",
+      "final": "최종 단계"
+    },
+    "Selection": {
+      "bookingDetails": "예약 세부 정보",
+      "checkIn": "체크인",
+      "checkOut": "체크아웃",
+      "adults": "성인",
+      "children": "어린이",
+      "for": "대상",
+      "rooms": "객실",
+      "totalLength": "총 숙박 기간",
+      "total": "합계",
+      "selected": "선택한 항목",
+      "priceSummary": "가격 요약",
+      "taxesAndFees": "세금 및 수수료 포함"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "세부 정보 입력",
+        "emailPlaceholder": "오타를 방지하려면 다시 확인하세요",
+        "emailConfirm": "확인 이메일이 이 주소로 전송되었습니다",
+        "needPhoneNumber": "예약 확인을 위해 재산이 전화 번호가 필요합니다",
+        "paperless": "예, 무료 전자 확인서를 받겠습니다 (권장)",
+        "linkToDownload": "앱을 다운로드할 링크가 문자로 전송됩니다",
+        "WhoBookingFor": {
+          "title": "누구를 위해 예약하시겠습니까?",
+          "items": {
+            "item1": "저는 주요 게스트입니다",
+            "item2": "예약은 다른 사람을 위한 것입니다"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "귀하가 출장 중입니까?",
+          "items": {
+            "item1": "예",
+            "item2": "아니요"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "알아두세요",
+        "items": {
+          "item1": "신용 카드가 필요하지 않습니다!",
+          "item2": "유연성 유지: 2023년 12월 27일 18:00 이전에 무료로 취소할 수 있으므로 오늘 이 우수한 가격을 확보하세요.",
+          "item3": "이 예약을 보장하려면 결제가 필요하지 않습니다. 숙박 중에 결제하게 됩니다.",
+          "item4": "당신은 호텔에서 가진 마지막 이용 가능한 더블 룸을 예약하고 있습니다."
+        }
+      },
+      "AddToYourStay":{
+        "title": "숙박에 추가",
+        "items": {
+          "item1": "차를 빌리고 싶습니다",
+          "item2": "여행을 최대한 즐기고 예약 확인서에서 차량 대여 옵션을 확인하세요",
+          "item3": "미리 택시 또는 셔틀을 예약하고 싶습니까?",
+          "item4": "놀라움을 피하고 공항에서 숙소로 이동하세요. 예약 확인서에 택시 옵션을 추가합니다.",
+          "item5": "공항 셔틀 요청에 관심이 있습니다",
+          "item6": "당신의 숙박 시설에 당신이 관심이 있다고 알려드리겠습니다. 그래서 그들은 세부 정보와 비용을 제공할 수 있습니다."
+        }
+      },
+      "SpecialRequests":{
+        "title": "특별 요청",
+        "subTitle": "특별 요청은 보장되지 않지만, 재산은 최선을 다해 요구를 충족시키기 위해 노력합니다. 예약을 완료한 후에도 특별 요청을 할 수 있습니다.",
+        "writeRequest": "요청 사항을 작성하세요.",
+        "optional": "(선택 사항)"
+      },
+      "YourArrivalTime":{
+        "title": "도착 시간",
+        "subTitle": "예상 도착 시간을 추가하세요.",
+        "optional": "(선택 사항)",
+        "pleaseSelect": "선택해주세요",
+        "theNextDay": "다음 날"
+      },
+      "finalStep": "다음: 최종 단계"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "Staying.com으로 지금 지불",
+        "subTitle": "이 예약을 완료할 때 지불하게 됩니다."
+      },
+      "WantToPay": {
+        "title": "어떻게 지불하시겠습니까?",
+        "items": {
+          "item1": "저는 Staying.com으로부터 마케팅 이메일을 받는 것에 동의합니다. 프로모션, 보상, 여행 경험 및 Staying.com 제품 및 서비스 정보를 포함합니다."
+        }
+      },
+      "CompleteBooking": "예약 완료"
+    }
+  },
+  "times":{
+    "am": "오전",
+    "pm": "오후"
   },
   "months": {
     "January": "1월",

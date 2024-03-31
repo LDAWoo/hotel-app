@@ -81,7 +81,8 @@
       "dayNotMonth": "请为本月输入有效的日期",
       "yearNotYear": "请使用4位数字输入有效的年份",
       "dateNotDate": "请输入有效的生日",
-      "dateEnsureLeastSixteen": "请输入有效日期，并确保您至少16岁"
+      "dateEnsureLeastSixteen": "请输入有效日期，并确保您至少16岁",
+      "countryNotBlank": "請選擇您的國家"
     },
     "Search": {
       "locationNotBlank": "请输入目的地开始搜索。"
@@ -145,6 +146,8 @@
       "other": "其他",
       "address": "地址",
       "notAddress": "添加您的地址",
+      "country": "選擇國家",
+      "countryRegion": "選擇國家地區",
       "edit": "编辑",
       "save": "保存",
       "cancel": "取消"
@@ -288,6 +291,103 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "您的選擇",
+      "details": "您的詳細資料",
+      "final": "最後一步"
+    },
+    "Selection": {
+      "bookingDetails": "您的預訂詳情",
+      "checkIn": "入住",
+      "checkOut": "退房",
+      "adults": "成人",
+      "children": "兒童",
+      "for": "房間",
+      "rooms": "間",
+      "totalLength": "總住宿時長",
+      "total": "總計",
+      "selected": "您的選擇",
+      "priceSummary": "您的價格摘要",
+      "taxesAndFees": "包含稅金和費用"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "輸入您的詳細資料",
+        "emailPlaceholder": "請仔細檢查，避免錯誤",
+        "emailConfirm": "確認郵件已發送至此地址",
+        "needPhoneNumber": "物業需要您的電話號碼以驗證您的預訂",
+        "paperless": "是，我想要免費無紙化確認（建議）",
+        "linkToDownload": "我們將以短信方式發送下載應用程式的連結給您",
+        "WhoBookingFor": {
+          "title": "您为谁预订？",
+          "items": {
+            "item1": "我是主要客人",
+            "item2": "预订是为了别人"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "您是否出差？",
+          "items": {
+            "item1": "是的",
+            "item2": "不是"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "值得知道",
+        "items": {
+          "item1": "無需信用卡！",
+          "item2": "保持彈性：您可以在2023年12月27日的18:00前免費取消，所以立即鎖定這個優惠價格。",
+          "item3": "無需支付以確保此預訂。 您將在住宿期間付款。",
+          "item4": "您正在預訂我們在飯店剩下的最後一間雙人房。"
+        }
+      },
+      "AddToYourStay":{
+        "title": "增添住宿體驗",
+        "items": {
+          "item1": "我對租車有興趣",
+          "item2": "充分利用您的旅程，並在您的預訂確認中查看汽車租賃選項",
+          "item3": "想要提前預訂出租車或接駁車嗎？",
+          "item4": "避免驚喜 - 從機場到您的住宿地點毫無阻礙。 我們將在您的預訂確認中添加出租車選項。",
+          "item5": "我有兴趣请求机场班车",
+          "item6": "我们会告诉您的住宿，您有兴趣，以便他们提供详情和费用。"
+
+        }
+      },
+      "SpecialRequests":{
+        "title": "特別要求",
+        "subTitle": "無法保證特別要求，但物業將盡最大努力滿足您的需求。 預訂完成後，您始終可以提出特別要求。",
+        "writeRequest": "請填寫您的要求。",
+        "optional": "（選擇性）"
+      },
+      "YourArrivalTime":{
+        "title": "您的到達時間",
+        "subTitle": "添加您的預計到達時間。",
+        "optional": "（選擇性）",
+        "pleaseSelect": "請選擇",
+        "theNextDay": "次日"
+      },
+      "finalStep": "下一步：最後一步"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "立即使用 Staying.com 支付",
+        "subTitle": "您将在完成此预订时付款。"
+      },
+      "WantToPay": {
+        "title": "您想如何支付？",
+        "items": {
+          "item1": "我同意接收 Staying.com 的营销邮件，包括促销、奖励、旅行体验以及有关 Staying.com 产品和服务的信息。"
+        }
+      },
+      "CompleteBooking": "完成预订"
+    }
+  },
+  "times":{
+    "am": "上午",
+    "pm": "下午"
   },
   "months": {
     "January": "一月",

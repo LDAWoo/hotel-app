@@ -1,30 +1,22 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../../../../../components/Buttons/Button";
-import ToolTipMoving from "../../../../../../components/ToolTip/ToolTipMoving";
-import Content from "./Content";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { startBookingSessionOne } from "../../../../../../api/Booking";
+import Button from "../../../../../../components/Buttons/Button";
 import { UserContext } from "../../../../../../components/Contexts/AppUserProvider";
 import routesConfig from "../../../../../../configs/routesConfig";
-import useRegisterHotelDetails from "../../../../../../hooks/HotelDetails/useRegisterHotelDetails";
-import { startBookingSessionOne } from "../../../../../../api/Booking";
 import useRegisterAvailabilityRoom from "../../../../../../hooks/HotelDetails/AvailabilityRoom/useRegisterAvailabilityRoom";
+import useRegisterHotelDetails from "../../../../../../hooks/HotelDetails/useRegisterHotelDetails";
 import setCookie from "../../../../../../hooks/useRegisterSetCookie";
-import { useTranslation } from "react-i18next";
 
 const Reserve = ({ toolTip }) => {
   const ButtonReserver = () => {
-    const navigate = useNavigate();
-    const { user } = useContext(UserContext);
     const { hotels } = useRegisterHotelDetails();
     const [loading, setLoading] = useState(false);
     const { rooms } = useRegisterAvailabilityRoom();
     const {t} = useTranslation()
     const handleReserve = async () => {
-      if (!Object.keys(user).length > 0) {
-        navigate(routesConfig.login);
-        return;
-      }
 
       const convertRoom = rooms.map((room) => ({
         roomId: room.roomId,

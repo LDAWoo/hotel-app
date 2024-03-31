@@ -81,7 +81,8 @@
       "dayNotMonth": "Por favor, ingrese un día válido para este mes",
       "yearNotYear": "Por favor, ingrese un año válido usando 4 dígitos",
       "dateNotDate": "Por favor, ingrese una fecha de nacimiento válida",
-      "dateEnsureLeastSixteen": "Por favor, ingrese una fecha válida y asegúrese de tener al menos 16 años"
+      "dateEnsureLeastSixteen": "Por favor, ingrese una fecha válida y asegúrese de tener al menos 16 años",
+      "countryNotBlank": "Por favor, selecciona tu país"
     },
     "Search": {
       "locationNotBlank": "Por favor, ingrese un destino para comenzar la búsqueda."
@@ -145,6 +146,8 @@
       "other": "Otro",
       "address": "Dirección",
       "notAddress": "Agrega tu dirección",
+      "country": "Seleccionar país",
+      "countryRegion": "Seleccionar región del país",
       "edit": "Editar",
       "save": "Guardar",
       "cancel": "Cancelar"
@@ -287,6 +290,102 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "Su selección",
+      "details": "Sus detalles",
+      "final": "Paso final"
+    },
+    "Selection": {
+      "bookingDetails": "Detalles de su reserva",
+      "checkIn": "Registro",
+      "checkOut": "Salida",
+      "adults": "adultos",
+      "children": "niños",
+      "for": "para",
+      "rooms": "habitaciones",
+      "totalLength": "Duración total de la estancia",
+      "total": "Total",
+      "selected": "Su selección",
+      "priceSummary": "Su resumen de precios",
+      "taxesAndFees": "Incluye impuestos y tasas"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "Ingrese sus detalles",
+        "emailPlaceholder": "Revise dos veces para evitar errores tipográficos",
+        "emailConfirm": "Correo electrónico de confirmación enviado a esta dirección",
+        "needPhoneNumber": "Necesario por el establecimiento para validar su reserva",
+        "paperless": "Sí, quiero confirmación sin papel gratuita (recomendado)",
+        "linkToDownload": "Le enviaremos un enlace para descargar nuestra aplicación",
+        "WhoBookingFor": {
+          "title": "¿Para quién estás haciendo la reserva?",
+          "items": {
+            "item1": "Soy el huésped principal",
+            "item2": "La reserva es para otra persona"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "¿Viajas por trabajo?",
+          "items": {
+            "item1": "Sí",
+            "item2": "No"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "Bueno saber",
+        "items": {
+          "item1": "¡No se necesita tarjeta de crédito!",
+          "item2": "¡Manténgase flexible: puede cancelar de forma gratuita antes de las 18:00 del 27 de diciembre de 2023, así que asegure este gran precio hoy!",
+          "item3": "No se requiere pago para asegurar esta reserva. Pagarás durante tu estancia.",
+          "item4": "Está reservando la última habitación doble disponible que tenemos en el hotel."
+        }
+      },
+      "AddToYourStay":{
+        "title": "Agregar a su estadía",
+        "items": {
+          "item1": "Estoy interesado en alquilar un auto",
+          "item2": "Aproveche al máximo su viaje y consulte las opciones de alquiler de autos en su confirmación de reserva",
+          "item3": "¿Quiere reservar un taxi o un traslado con anticipación?",
+          "item4": "Evite sorpresas: llegue del aeropuerto a su alojamiento sin problemas. Agregaremos opciones de taxi a su confirmación de reserva.",
+          "item5": "Estoy interesado en solicitar un servicio de transporte al aeropuerto",
+          "item6": "Informaremos a su alojamiento que usted está interesado para que puedan proporcionar detalles y costos."
+        }
+      },
+      "SpecialRequests":{
+        "title": "Solicitudes especiales",
+        "subTitle": "No se pueden garantizar las solicitudes especiales, pero el establecimiento hará todo lo posible para satisfacer sus necesidades. Siempre puede hacer una solicitud especial después de completar su reserva.",
+        "writeRequest": "Por favor escriba sus solicitudes.",
+        "optional": "(opcional)"
+      },
+      "YourArrivalTime":{
+        "title": "Su hora de llegada",
+        "subTitle": "Agregue su hora de llegada estimada.",
+        "optional": "(opcional)",
+        "pleaseSelect": "Por favor seleccione",
+        "theNextDay": "al día siguiente"
+      },
+      "finalStep": "Siguiente: Paso final"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "Pagar ahora con Staying.com",
+        "subTitle": "Pagarás cuando completes esta reserva."
+      },
+      "WantToPay": {
+        "title": "¿Cómo quieres pagar?",
+        "items": {
+          "item1": "Consiento en recibir correos electrónicos de marketing de Staying.com, incluyendo promociones, recompensas, experiencias de viaje e información sobre productos y servicios de Staying.com."
+        }
+      },
+      "CompleteBooking": "Completar reserva"
+    }
+  },
+  "times":{
+    "am": "AM",
+    "pm": "PM"
   },
   "months": {
     "January": "Enero",

@@ -81,7 +81,8 @@
       "dayNotMonth": "今月の有効な日付を入力してください",
       "yearNotYear": "4桁の数字を使用して有効な年を入力してください",
       "dateNotDate": "有効な誕生日を入力してください",
-      "dateEnsureLeastSixteen": "有効な日付を入力し、少なくとも16歳であることを確認してください"
+      "dateEnsureLeastSixteen": "有効な日付を入力し、少なくとも16歳であることを確認してください",
+      "countryNotBlank": "国を選択してください"
     },
     "Search": {
       "locationNotBlank": "検索を開始するには、目的地を入力してください。"
@@ -145,6 +146,8 @@
       "other": "その他",
       "address": "住所",
       "notAddress": "住所を追加",
+      "country": "国を選択",
+      "countryRegion": "国の地域を選択",
       "edit": "編集",
       "save": "保存",
       "cancel": "キャンセル"
@@ -287,6 +290,102 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "選択項目",
+      "details": "詳細情報",
+      "final": "最終ステップ"
+    },
+    "Selection": {
+      "bookingDetails": "予約の詳細",
+      "checkIn": "チェックイン",
+      "checkOut": "チェックアウト",
+      "adults": "大人",
+      "children": "子供",
+      "for": "のため",
+      "rooms": "部屋",
+      "totalLength": "滞在期間の合計",
+      "total": "合計",
+      "selected": "選択された項目",
+      "priceSummary": "価格の概要",
+      "taxesAndFees": "税金と手数料が含まれています"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "詳細を入力してください",
+        "emailPlaceholder": "入力内容をご確認ください",
+        "emailConfirm": "確認メールがこのアドレスに送信されました",
+        "needPhoneNumber": "予約の確認には電話番号が必要です",
+        "paperless": "はい、無料のペーパーレス確認を希望します（お勧め）",
+        "linkToDownload": "アプリをダウンロードするリンクをお送りします",
+        "WhoBookingFor": {
+          "title": "誰のために予約しますか？",
+          "items": {
+            "item1": "私がメインゲストです",
+            "item2": "予約は他の誰かのためです"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "出張ですか？",
+          "items": {
+            "item1": "はい",
+            "item2": "いいえ"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "重要事項",
+        "items": {
+          "item1": "クレジットカードは必要ありません！",
+          "item2": "柔軟性を保持します：2023年12月27日の18:00まで無料でキャンセルできますので、今日この素晴らしい価格を確定してください。",
+          "item3": "この予約を確保するために支払いは必要ありません。滞在中にお支払いいただきます。",
+          "item4": "ホテルに残っている最後の利用可能なダブルルームを予約しています。"
+        }
+      },
+      "AddToYourStay":{
+        "title": "滞在に追加",
+        "items": {
+          "item1": "車を借りたい",
+          "item2": "旅行を最大限に楽しむために、予約確認書で車のレンタルオプションを確認してください",
+          "item3": "事前にタクシーやシャトルを予約したいですか？",
+          "item4": "驚きを避け、空港から宿泊先までスムーズに移動します。予約確認にタクシーオプションを追加します。",
+          "item5": "空港送迎をリクエストする興味があります",
+          "item6": "あなたの宿泊先にあなたが興味があることを伝えますので、彼らが詳細と費用を提供できます。"
+        }
+      },
+      "SpecialRequests":{
+        "title": "特別なリクエスト",
+        "subTitle": "特別なリクエストは保証されませんが、施設は最善を尽くして対応します。予約が完了した後でも特別なリクエストをすることができます。",
+        "writeRequest": "リクエストを記入してください。",
+        "optional": "（オプション）"
+      },
+      "YourArrivalTime":{
+        "title": "到着時間",
+        "subTitle": "到着予定時間を追加してください。",
+        "optional": "（オプション）",
+        "pleaseSelect": "選択してください",
+        "theNextDay": "翌日"
+      },
+      "finalStep": "次：最終ステップ"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "Staying.com で今すぐ支払う",
+        "subTitle": "この予約を完了するときに支払います。"
+      },
+      "WantToPay": {
+        "title": "どのように支払いたいですか？",
+        "items": {
+          "item1": "私は Staying.com からのマーケティングメール、プロモーション、リワード、旅行体験、Staying.com の製品やサービスに関する情報を受け取ることに同意します。"
+        }
+      },
+      "CompleteBooking": "予約を完了する"
+    }
+  },
+  "times":{
+    "am": "午前",
+    "pm": "午後"
   },
   "months": {
     "January": "1月",

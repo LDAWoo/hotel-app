@@ -5,11 +5,8 @@ const useRegisterYourDetails = create((set) => ({
   lastName: "",
   email: "",
   country: "",
-  phoneNumber: {
-    number: "",
-    countryCode: "VN",
-    countryValue: "84",
-  },
+  phoneNumber: "",
+  validation: false,
   setField: (id, value) => {
     set((prev) => ({
       ...prev,

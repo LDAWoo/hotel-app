@@ -82,7 +82,8 @@
       "yearNotYear": "Please enter a valid year using 4 digits",
       "dateNotDate": "Please enter a valid birthday",
       "dateEnsureLeastSixteen": "Please enter a valid date and ensure you are at least 16 years old",
-      "addressNotBlank": "Please enter your address"
+      "addressNotBlank": "Please enter your address",
+      "countryNotBlank": "Please select your country"
     },
     "Search": {
       "locationNotBlank": "Please enter a destination to start searching."
@@ -146,6 +147,8 @@
       "other": "Other",
       "address": "Address",
       "notAddress": "Add your address",
+      "country": "Select country",
+      "countryRegion": "Select country region",
       "edit": "Edit",
       "save": "Save",
       "cancel": "Cancel"
@@ -288,6 +291,102 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "Your Selection",
+      "details": "Your Details",
+      "final": "Final Step"
+    },
+    "Selection": {
+      "bookingDetails": "Your booking details",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "adults": "adults",
+      "children": "children",
+      "for": "for",
+      "rooms": "rooms",
+      "totalLength": "Total length of stay",
+      "total": "Total",
+      "selected": "Your selected",
+      "priceSummary": "Your price summary",
+      "taxesAndFees": "Includes taxes and fees"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "Enter your details",
+        "emailPlaceholder": "Double-check for typos",
+        "emailConfirm": "Confirmation email sent to this address",
+        "needPhoneNumber": "Needed by the property to validate your booking",
+        "paperless": "Yes, I want free paperless confirmation (recommended)",
+        "linkToDownload": "We'll text you a link to download our app",
+        "WhoBookingFor": {
+          "title": "Who are you booking for?",
+          "items": {
+            "item1": "I am the main guest",
+            "item2": "Booking is for someone else"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "Are you traveling for work?",
+          "items": {
+            "item1": "Yes",
+            "item2": "No"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "Good to know",
+        "items": {
+          "item1": "No credit card needed!",
+          "item2": "Stay flexible: You can cancel for free before 18:00 on 27 December 2023, so lock in this great price today.",
+          "item3": "No payment is required to secure this booking. You'll pay during your stay.",
+          "item4": "You're booking the last available Double Room we have at Hotel."
+        }
+      },
+      "AddToYourStay":{
+        "title": "Add to your stay",
+        "items": {
+          "item1": "I'm interested in renting a car",
+          "item2": "Make the most out of your trip and check car hire options in your booking confirmation",
+          "item3": "Want to book a taxi or shuttle ride in advance?",
+          "item4": "Avoid surprises - get from the airport to your accommodation without a hitch. We'll add taxi options to your booking confirmation.",
+          "item5": "I'm interested in requesting an airport shuttle",
+          "item6": "We’ll tell your accommodation that you’re interested so they can provide details and costs."
+        }
+      },
+      "SpecialRequests":{
+        "title": "Special requests",
+        "subTitle": "Special requests can't be guaranteed, but the property will do its best to meet your needs. You can always make a special request after your booking is complete.",
+        "writeRequest": "Please write your requests.",
+        "optional": "(optional)"
+      },
+      "YourArrivalTime":{
+        "title": "Your arrival time",
+        "subTitle": "Add your estimated arrival time.",
+        "optional": "(optional)",
+        "pleaseSelect": "Please select",
+        "theNextDay": "the next day"
+      },
+      "finalStep": "Next: Final Step"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "Pay now with Staying.com",
+        "subTitle": "You'll pay when you complete this booking."
+      },
+      "WantToPay": {
+        "title": "How do you want to pay?",
+        "items": {
+          "item1": "I consent to receiving marketing emails from Staying.com, including promotions, rewards, travel experiences, and information about Staying.com’s products and services."
+        }
+      },
+      "CompleteBooking": "Complete booking"
+    }
+  },
+  "times":{
+    "am": "AM",
+    "pm": "PM"
   },
   "months": {
     "January": "January",

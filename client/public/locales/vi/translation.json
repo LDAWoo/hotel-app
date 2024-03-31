@@ -81,7 +81,8 @@
       "dayNotMonth": "Vui lòng nhập một ngày hợp lệ cho tháng này",
       "yearNotYear": "Vui lòng nhập một năm hợp lệ sử dụng 4 chữ số",
       "dateNotDate": "Vui lòng nhập một ngày sinh hợp lệ",
-      "dateEnsureLeastSixteen": "Vui lòng nhập một ngày hợp lệ và đảm bảo bạn đã đủ 16 tuổi"
+      "dateEnsureLeastSixteen": "Vui lòng nhập một ngày hợp lệ và đảm bảo bạn đã đủ 16 tuổi",
+      "countryNotBlank": "Vui lòng chọn quốc gia của bạn"
     },
     "Search": {
       "locationNotBlank": "Vui lòng nhập điểm đến để bắt đầu tìm kiếm."
@@ -145,6 +146,8 @@
       "other": "Khác",
       "address": "Địa chỉ",
       "notAddress": "Thêm địa chỉ của bạn",
+      "country": "Chọn quốc gia",
+      "countryRegion": "Chọn vùng của quốc gia",
       "edit": "Chỉnh sửa",
       "save": "Lưu",
       "cancel": "Hủy"
@@ -287,6 +290,102 @@
         }
       }
     }
+  },
+  "Secure": {
+    "Progress": {
+      "selection": "Lựa chọn của bạn",
+      "details": "Chi tiết của bạn",
+      "final": "Bước cuối cùng"
+    },
+    "Selection": {
+      "bookingDetails": "Chi tiết đặt phòng của bạn",
+      "checkIn": "Nhận phòng",
+      "checkOut": "Trả phòng",
+      "adults": "người lớn",
+      "children": "trẻ em",
+      "for": "cho",
+      "rooms": "phòng",
+      "totalLength": "Tổng thời gian lưu trú",
+      "total": "Tổng cộng",
+      "selected": "Lựa chọn của bạn",
+      "priceSummary": "Tóm tắt giá của bạn",
+      "taxesAndFees": "Bao gồm thuế và phí"
+    },
+    "Details": {
+      "YourDetails": {
+        "title": "Nhập thông tin của bạn",
+        "emailPlaceholder": "Kiểm tra kỹ để tránh sai sót",
+        "emailConfirm": "Xác nhận email đã được gửi đến địa chỉ này",
+        "needPhoneNumber": "Cần thiết cho khách sạn xác nhận đặt phòng của bạn",
+        "paperless": "Có, tôi muốn xác nhận không cần giấy (được khuyến nghị)",
+        "linkToDownload": "Chúng tôi sẽ gửi bạn một liên kết để tải ứng dụng của chúng tôi",
+        "WhoBookingFor": {
+          "title": "Bạn đặt phòng cho ai?",
+          "items": {
+            "item1": "Tôi là khách chính",
+            "item2": "Đặt phòng cho người khác"
+          }
+        },
+        "TravelingForWorks": {
+          "title": "Bạn có đi công tác không?",
+          "items": {
+            "item1": "Có",
+            "item2": "Không"
+          }
+        }
+      },
+      "GoodToKnow":{
+        "title": "Cần biết",
+        "items": {
+          "item1": "Không cần thẻ tín dụng!",
+          "item2": "Duy trì linh hoạt: Bạn có thể hủy miễn phí trước 18:00 ngày 27 tháng 12 năm 2023, vì vậy hãy khóa giá tốt này ngay hôm nay.",
+          "item3": "Không cần thanh toán để đảm bảo đặt phòng này. Bạn sẽ thanh toán trong thời gian lưu trú của bạn.",
+          "item4": "Bạn đang đặt phòng cho phòng đôi cuối cùng chúng tôi còn lại tại khách sạn."
+        }
+      },
+      "AddToYourStay":{
+        "title": "Thêm vào kỳ nghỉ của bạn",
+        "items": {
+          "item1": "Tôi quan tâm đến việc thuê xe",
+          "item2": "Tận dụng hết chuyến đi của bạn và kiểm tra các tùy chọn thuê xe trong xác nhận đặt phòng của bạn",
+          "item3": "Muốn đặt trước xe taxi hoặc xe đưa đón?",
+          "item4": "Tránh bất ngờ - đi từ sân bay đến nơi lưu trú của bạn mà không gặp rắc rối. Chúng tôi sẽ thêm tùy chọn taxi vào xác nhận đặt phòng của bạn.",
+          "item5": "Tôi quan tâm đến việc yêu cầu xe đưa đón sân bay",
+          "item6": "Chúng tôi sẽ thông báo cho nơi lưu trú của bạn biết rằng bạn quan tâm để họ có thể cung cấp thông tin và chi phí."
+        }
+      },
+      "SpecialRequests":{
+        "title": "Yêu cầu đặc biệt",
+        "subTitle": "Yêu cầu đặc biệt không thể đảm bảo, nhưng khách sạn sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn. Bạn luôn có thể yêu cầu đặc biệt sau khi đặt phòng hoàn tất.",
+        "writeRequest": "Vui lòng viết yêu cầu của bạn.",
+        "optional": "(tùy chọn)"
+      },
+      "YourArrivalTime":{
+        "title": "Thời gian đến của bạn",
+        "subTitle": "Thêm thời gian đến ước tính của bạn.",
+        "optional": "(tùy chọn)",
+        "pleaseSelect": "Vui lòng chọn",
+        "theNextDay": "ngày tiếp theo"
+      },
+      "finalStep": "Tiếp theo: Bước cuối cùng"
+    },
+    "Final": {
+      "PayNow": {
+        "title": "Thanh toán ngay bây giờ với Staying.com",
+        "subTitle": "Bạn sẽ thanh toán khi hoàn thành đặt phòng này."
+      },
+      "WantToPay": {
+        "title": "Bạn muốn thanh toán như thế nào?",
+        "items": {
+          "item1": "Tôi đồng ý nhận email tiếp thị từ Staying.com, bao gồm các chương trình khuyến mãi, phần thưởng, trải nghiệm du lịch và thông tin về sản phẩm và dịch vụ của Staying.com."
+        }
+      },
+      "CompleteBooking": "Hoàn tất đặt phòng"
+    }
+  },
+  "times":{
+    "am": "SA",
+    "pm": "CH"
   },
   "months": {
     "January": "Tháng Một",

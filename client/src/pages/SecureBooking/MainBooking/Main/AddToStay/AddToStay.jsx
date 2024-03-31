@@ -1,33 +1,50 @@
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { PiTaxi } from "react-icons/pi";
 import Checkbox from "../../../../../components/Checkbox/Checkbox";
 import Icon from "../../../../../components/Icon/Icon";
 import Title from "../../../../../components/Title/Title";
 import useRegisterAddToStay from "../../../../../hooks/SecureBooking/useRegisterAddToStay";
+import PropTypes from 'prop-types'
 
-function AddToStay() {
-  const { orderCar, orderTaxi, setField } = useRegisterAddToStay();
+function AddToStay({data}) {
+  const { orderCar, orderTaxi, pickUpService, setField } = useRegisterAddToStay();
+  const {t} = useTranslation();
+
+  useEffect(() => {
+    if(data){
+      const keysToCheck = ["orderCar", "orderTaxi","pickUpService"];
+      keysToCheck.forEach((key) => {
+          setField(key, data[key]);
+      });
+    }
+  },[data])
 
   const items = [
     {
       id: "interested_car_rentals",
-      value: 0,
-      title: "I'm interested in renting a car",
-      subTitle:
-        "Make the most out of your trip and check car hire options in your booking confirmation.",
+      title: t("Secure.Details.AddToYourStay.items.item1"),
+      subTitle: t("Secure.Details.AddToYourStay.items.item2"),
       icon: PiTaxi,
       type: "orderCar",
       isChecked: orderCar,
     },
     {
       id: "interested_taxi",
-      value: 1,
-      title: "Want to book a taxi or shuttle ride in advance?",
-      subTitle:
-        "Avoid surprises - get from the airport to your accommodation without a hitch. We'll add taxi options to your booking confirmation.",
+      title: t("Secure.Details.AddToYourStay.items.item3"),
+      subTitle: t("Secure.Details.AddToYourStay.items.item4"),
       icon: PiTaxi,
       type: "orderTaxi",
       isChecked: orderTaxi,
     },
+    {
+      id: "interested_pick_up_service",
+      title: t("Secure.Details.AddToYourStay.items.item5"),
+      subTitle: t("Secure.Details.AddToYourStay.items.item6"),
+      icon: PiTaxi,
+      type: "pickUpService",
+      isChecked: pickUpService,
+    }
   ];
 
   const handleChecked = (type, checked) => {
@@ -36,7 +53,7 @@ function AddToStay() {
 
   return (
     <div className='flex flex-col gap-2'>
-      <Title title='Add to your stay' fontBold extraLarge4 />
+      <Title title={t("Secure.Details.AddToYourStay.title")} fontBold extraLarge4 />
 
       <ul className='list-none flex flex-col'>
         {items.map((item, index) => (
@@ -62,6 +79,10 @@ function AddToStay() {
       </ul>
     </div>
   );
+}
+
+AddToStay.propTypes = {
+  data: PropTypes.object
 }
 
 export default AddToStay;

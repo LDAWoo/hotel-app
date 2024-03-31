@@ -1,43 +1,49 @@
-import ItemProgress from "./ItemProgress";
-import { IoCheckmarkSharp } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { IoCheckmarkSharp } from "react-icons/io5";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import Title from "../../../components/Title/Title";
 import Icon from "../../../components/Icon/Icon";
-import routesConfig from '../../../configs/routesConfig'
-const items = [
-  {
-    id: "yourSelection",
-    name: "Your Selection",
-    step: 1,
-    icon: IoCheckmarkSharp,
-    complete: true,
-    source: "selection"
-  },
-  {
-    id: "yourDetail",
-    name: "Your Details",
-    step: 2,
-    icon: IoCheckmarkSharp,
-    complete: false,
-    source: "details"
-  },
-  {
-    id: "finalStep",
-    name: "Final step",
-    step: 3,
-    icon: IoCheckmarkSharp,
-    complete: false,
-    source: "final"
-  },
-];
+import Title from "../../../components/Title/Title";
+import routesConfig from '../../../configs/routesConfig';
+import useRegisterSecureBooking from "../../../hooks/SecureBooking/useRegisterSecureBooking";
+
 
 function ProgressBooking({currentSource}) {
+  const {t} = useTranslation()
+  const {data} = useRegisterSecureBooking();
+
+  const items = [
+    {
+      id: "yourSelection",
+      name: t("Secure.Progress.selection"),
+      step: 1,
+      icon: IoCheckmarkSharp,
+      complete: true,
+      source: "selection"
+    },
+    {
+      id: "yourDetail",
+      name: t("Secure.Progress.details"),
+      step: 2,
+      icon: IoCheckmarkSharp,
+      complete: data?.email,
+      source: "details"
+    },
+    {
+      id: "finalStep",
+      name: t("Secure.Progress.final"),
+      step: 3,
+      icon: IoCheckmarkSharp,
+      complete: false,
+      source: "final"
+    },
+  ];
+
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const sessionToken = searchParams.get("token");
   const [flag, setFlag] = useState(false);
-  const [currentSourceBooking, setCurrentSourceBooking] = useState("");
+  const [currentSourceBooking, setCurrentSourceBooking] = useState(currentSource);
   const lastCompleteIndex = items
     .slice()
     .reverse()
@@ -79,7 +85,7 @@ function ProgressBooking({currentSource}) {
                   index !== items.length - 1 ? "flex-grow" : "flex-grow-0"
                 }`}
               >
-                <div className='item-center flex cursor-pointer' onClick={() => handleClick(item.source, index)}>
+                <div className={`item-center flex ${index - 1 > lastIndex ? 'cursor-default' : 'cursor-pointer'}`} onClick={() => handleClick(item.source, index)}>
                   {item.complete ? (
                     <>
                       <Icon
@@ -93,7 +99,7 @@ function ProgressBooking({currentSource}) {
                         className={`w-6 h-6 ${
                           item.complete
                             ? "bg-hotel-50 text-white"
-                            : "bg-transparent text-primary-700 border-[2px] border-primary-100 "
+                            : index - 1 <= lastIndex ? "bg-hotel-50 text-white" : "bg-transparent text-primary-700 border-[2px] border-primary-100 "
                         } rounded-full `}
                       >
                         <span className='items-center flex justify-center font-medium text-[14px]'>

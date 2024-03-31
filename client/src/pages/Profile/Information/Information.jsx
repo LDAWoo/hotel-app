@@ -18,6 +18,7 @@ import Title from '../../../components/Title/Title';
 import routesConfig from '../../../configs/routesConfig';
 import useRegisterModalUploadAvatar from '../../../hooks/Profile/useRegisterModalUploadAvatar';
 import SideBar from '../SideBar/SideBar';
+import i18next from 'i18next';
 
 const Information = () => {
     const {t} = useTranslation();
@@ -425,7 +426,7 @@ const Information = () => {
             }
 
             case "dob":{
-                if (currentUser?.dob.day === "") {
+                if (currentUser?.dob && currentUser?.dob.day === "") {
                     setUserError((prev) => ({
                         ...prev,
                         day: t("Error.Account.birthdayNotBlank"),
@@ -433,7 +434,7 @@ const Information = () => {
                     }));
                     isValid = false;
                 } else {
-                    if(currentUser?.dob.day.length > 2){
+                    if(currentUser?.dob.day && currentUser?.dob.day.length > 2){
                         setUserError((prev) => ({
                            ...prev,
                             day: t("Error.Account.dayNotDay"),
@@ -536,6 +537,14 @@ const Information = () => {
             return isValid
         }
     }
+
+    useEffect(() => {
+        if(Object.keys(currentUser).length > 0){
+            items.map(item => {
+                validate({ active: item.active });
+            })
+        }
+    }, [currentUser,i18next.language]);
 
     return (
         <div className='w-full'>

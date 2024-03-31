@@ -5,7 +5,7 @@ import Main from "./Main/Main";
 function MainBooking({currentSource}) {
 
   return (
-    <div className='flex flex-row gap-4'>
+    <div className='flex flex-col 2md:flex-row gap-4'>
       <Aside />
       {currentSource ==="details" && <Main />}
       {currentSource ==="final" && <FinalStep />}

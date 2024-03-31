@@ -1,20 +1,21 @@
-import { MdKeyboardArrowRight } from "react-icons/md";
-import Button from "../../../../components/Buttons/Button";
 import { Fragment, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import { postBookingSessionConfirm } from "../../../../api/Booking";
+import Button from "../../../../components/Buttons/Button";
+import routesConfig from "../../../../configs/routesConfig";
+import useRegisterSecureBooking from "../../../../hooks/SecureBooking/useRegisterSecureBooking";
+import useRegisterWantPay from "../../../../hooks/SecureBooking/useRegisterWantPay";
 import Panel from "../Aside/Panel/Panel";
 import PayNow from "./PayNow/PayNow";
 import WantPay from "./WantPay/WantPay";
-import useRegisterWantPay from "../../../../hooks/SecureBooking/useRegisterWantPay";
-import { postBookingSessionConfirm } from "../../../../api/Booking";
-import useRegisterSecureBooking from "../../../../hooks/SecureBooking/useRegisterSecureBooking";
-import {useNavigate} from 'react-router-dom'
-import routesConfig from "../../../../configs/routesConfig";
-
 const FinalStep = () => {
     const [loading, setLoading] = useState(false)
     const {receiveMarketingEmail} = useRegisterWantPay()
     const { data } = useRegisterSecureBooking();
     const navigate = useNavigate()
+    const {t} = useTranslation();
 
     const items = [
         {
@@ -47,7 +48,7 @@ const FinalStep = () => {
       }
 
     return (
-        <main className='w-[65%] flex flex-col gap-4'>
+        <main className='w-full mt-[80px] 2md:mt-0 2md:w-[65%] flex flex-col gap-4'>
       <>
         {items.map((item, index) => {
           const Component = item?.component;
@@ -68,7 +69,7 @@ const FinalStep = () => {
       <div className='float-right w-full flex flex-row justify-between'>
         <div></div>
         <Button
-          title='Complete booking'
+          title={t("Secure.Final.CompleteBooking")}
           icon={MdKeyboardArrowRight}
           background
           size={24}

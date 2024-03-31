@@ -1,23 +1,38 @@
+import { useTranslation } from "react-i18next";
 import Checkbox from "../../../../../../components/Checkbox/Checkbox";
 import RadioInput from "../../../../../../components/RadioInput/RadioInput";
 import Title from "../../../../../../components/Title/Title";
 import useRegisterControl from "../../../../../../hooks/SecureBooking/useRegisterControl";
+import { useEffect } from "react";
+import PropTypes from 'prop-types'
 
-function Control() {
+function Control({data}) {
   const { bookingForMe, businessTravel, electronicConfirm, setField } =
     useRegisterControl();
+    const {t} = useTranslation();
+
+  useEffect(() => {
+    if(data){
+      const keysToCheck = ["bookingForMe", "businessTravel", "electronicConfirm"];
+      keysToCheck.forEach((key) => {
+        if(data[key] != null){
+          setField(key, data[key]);
+        }
+      });
+    }
+  },[data])
 
   const bookingFor = [
     {
       id: "notstayer_false",
       name: "whoAreYouBookingFor",
-      title: "I am the main guest",
+      title: t("Secure.Details.YourDetails.WhoBookingFor.items.item1"),
       checked: true,
     },
     {
       id: "notstayer_true",
       name: "whoAreYouBookingFor",
-      title: "Booking is for someone else",
+      title: t("Secure.Details.YourDetails.WhoBookingFor.items.item2"),
       checked: false,
     },
   ];
@@ -26,13 +41,13 @@ function Control() {
     {
       id: "areYouTravellingForWork_true",
       name: "areYouTravellingForWork",
-      title: "Yes",
+      title: t("Secure.Details.YourDetails.TravelingForWorks.items.item1"),
       checked: true,
     },
     {
       id: "areYouTravellingForWork_false",
       name: "areYouTravellingForWork",
-      title: "No",
+      title: t("Secure.Details.YourDetails.TravelingForWorks.items.item2"),
       checked: false,
     },
   ];
@@ -54,16 +69,16 @@ function Control() {
       <div>
         <Checkbox
           checked={electronicConfirm}
-          title='Yes, I want free paperless confirmation (recommended)'
+          title={t("Secure.Details.YourDetails.paperless")}
           value={electronicConfirm}
           name='confirmation'
           onChange={handleChangeConfirm}
           key='confirmation'
         />
-        <Title title="We'll text you a link to download our app" large />
+        <Title title={t("Secure.Details.YourDetails.linkToDownload")} large />
       </div>
       <div>
-        <Title title='Who are you booking for?' fontBold xl />
+        <Title title={t("Secure.Details.YourDetails.WhoBookingFor.title")} fontBold xl />
         {bookingFor.map((x, index) => (
           <div key={index}>
             <div className='flex flex-col gap-0'>
@@ -72,7 +87,7 @@ function Control() {
                 title={x?.title}
                 name={x?.name}
                 value={x?.checked}
-                isChecked={bookingForMe}
+                isChecked={x?.checked === bookingForMe}
                 onChange={() => handleChangeBookingFor(x?.checked)}
               />
             </div>
@@ -80,7 +95,7 @@ function Control() {
         ))}
       </div>
       <div>
-        <Title title='Are you traveling for work?' fontBold xl />
+        <Title title={t("Secure.Details.YourDetails.TravelingForWorks.title")} fontBold xl />
         {travelling.map((x, index) => (
           <div key={index}>
             <div className='flex flex-col gap-0'>
@@ -89,7 +104,7 @@ function Control() {
                 title={x?.title}
                 name={x?.name}
                 value={x?.checked}
-                isChecked={businessTravel}
+                isChecked={x?.checked === businessTravel}
                 onChange={() => handleChangeTravelling(x?.checked)}
               />
             </div>
@@ -98,6 +113,10 @@ function Control() {
       </div>
     </div>
   );
+}
+
+Control.propTypes = {
+  data: PropTypes.object,
 }
 
 export default Control;

@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import Title from "../../../../../components/Title/Title";
 
 
 const PayNow = () => {
+    const {t} = useTranslation();
     return (
         <div className="flex flex-col gap-2">
-            <Title title="Pay now with Staying.com" fontBold extraLarge5/>
-            <Title title="You'll pay when you complete this booking."  xl/>
+            <Title title={t("Secure.Final.PayNow.title")} fontBold extraLarge5/>
+            <Title title={t("Secure.Final.PayNow.subTitle")}  xl/>
         </div>
     )
 }

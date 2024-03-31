@@ -1,19 +1,52 @@
-import { Fragment, useContext, useEffect, useReducer } from "react";
 import countryList from "country-list";
+import i18next from "i18next";
+import { Fragment, useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { BsCheck } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
-import { getCountryCallingCode } from "react-phone-number-input";
+import { validateName } from "../../../../../Regexs/Validate";
+import { validateEmail } from "../../../../../Regexs/Validate/Email";
+import { validateNumber, validatePhone } from "../../../../../Regexs/Validate/Phone";
+import { UserContext } from '../../../../../components/Contexts/AppUserProvider';
 import Icon from "../../../../../components/Icon/Icon";
 import SelectInput from "../../../../../components/SelectInput/SelectInput";
 import InputStaying from "../../../../../components/Staying/Input";
 import Title from "../../../../../components/Title/Title";
 import useRegisterYourDetails from "../../../../../hooks/SecureBooking/useRegisterYourDetails";
 import Control from "./Control";
-import {UserContext} from '../../../../../components/Contexts/AppUserProvider';
+import PropTypes from 'prop-types'
 
+function YourDetails({data}) {
+  const { user, userLoading } = useContext(UserContext);
+  const {t} = useTranslation();
+  const [currentUser, setCurrentUser] = useState({});
+  const [userError , setUserError] = useState({});
+  const {setField} = useRegisterYourDetails();
 
-function YourDetails() {
-  const {user} = useContext(UserContext)
+  useEffect(() => {
+    if (data) {
+      const keysToCheck = ["firstName", "lastName", "email", "phoneNumber","country"];
+      const newData = { ...currentUser };
+
+      Object.keys(data).forEach((key) => {
+        if (keysToCheck.includes(key)) {
+          newData[key] = data[key];
+        }
+      });
+
+      setCurrentUser(newData);
+    }
+
+    if (!userLoading && Object.keys(user).length > 0 && !data?.firstName && !data?.lastName && !data?.email && !data?.phoneNumber && !data.country) {
+      setCurrentUser(user);
+    }
+  }, [user, userLoading,data]);
+
+  const getValueFromDataOrCurrentUser = (currentUserKey) => {
+    const value = (currentUser && currentUser[currentUserKey]) || "";
+    return value
+  };
+
   const YourDetailsData = [
     {
       id: 1,
@@ -21,11 +54,11 @@ function YourDetails() {
       data: [
         {
           id: "firstName",
-          name: "First Name",
-          nameError: "Please enter your first name",
+          name: t("Profile.information.firstName"),
+          error: userError?.firstName || "",
           placeHolder: "",
           type: "text",
-          value: user?.firstName
+          value: getValueFromDataOrCurrentUser("firstName"),
         },
       ],
     },
@@ -35,11 +68,11 @@ function YourDetails() {
       data: [
         {
           id: "lastName",
-          name: "Last Name",
-          nameError: "Please enter your last name",
+          name: t("Profile.information.lastName"),
+          error: userError?.lastName || "",
           placeHolder: "",
           type: "text",
-          value: user?.lastName
+          value: getValueFromDataOrCurrentUser("lastName"),
         },
       ],
     },
@@ -49,12 +82,12 @@ function YourDetails() {
       data: [
         {
           id: "email",
-          name: "Email",
-          nameError: "Please enter your email address",
-          subName: "Confirmation email sent to this address",
-          placeHolder: "Double-check for typos",
+          name: t("Profile.information.email"),
+          error: userError?.email || "",
+          subName: t("Secure.Details.YourDetails.emailConfirm"),
+          placeHolder: t("Secure.Details.YourDetails.emailPlaceholder"),
           type: "email",
-          value: user?.email
+          value: getValueFromDataOrCurrentUser("email"),
         },
       ],
     },
@@ -64,8 +97,9 @@ function YourDetails() {
       data: [
         {
           id: "country",
-          nameError: "Please enter your country",
-          name: "Country/Region",
+          error: userError?.country || "",
+          name: t("Profile.information.country"),
+          value: getValueFromDataOrCurrentUser("country"),
           data: countryList.getData(),
         },
       ],
@@ -76,151 +110,153 @@ function YourDetails() {
       data: [
         {
           id: "phoneNumber",
-          name: "Phone Number",
-          nameError: "Please enter your phone number",
-          subName: "Needed by the property to validate your booking",
-          country: true,
+          name: t("Profile.information.phoneNumber"),
+          error: userError?.phoneNumber || "",
+          subName: t("Secure.Details.YourDetails.needPhoneNumber"),
           type: "number",
-          value: user?.phoneNumber || ""
+          value: getValueFromDataOrCurrentUser("phoneNumber"),
         },
       ],
     },
   ];
 
-  const {country, setField} =
-    useRegisterYourDetails();
+  const handleChange = (id, value) => {
+    setCurrentUser((prev) => ({
+      ...prev,
+      [id]: value,
+    }))
+  };
 
-  const initState = YourDetailsData.map((item) => {
-    const id = item.data[0]?.id;
-    const value = item.data[0]?.value
-    let selectedValue = { countryCode: "VN", countryValue: "84", value: value };
-    return { id, selectedValue, success: true, status: false, count: -1 };
-  });
+  const handleFocus = () => {
+    setField("validation", false);
+  }
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "CHANGE_OPTION":
-        return state.map((item) => {
-          if (item.id === action.payload.id) {
-            const updatedSelectedValue = { value: action.payload.value };
-            return {
-              ...item,
-              selectedValue: {
-                ...item.selectedValue,
-                ...updatedSelectedValue,
-              },
-            };
-          }
+  const handleBlur = () => {
+    const valid = validate();
+    setField("validation", valid);
+  };
 
-          return item;
-        });
+  const handleKeyPress = (e,type) => {
+    if(type === "text") {
+        if (!validateName(e.key)) {
+            e.preventDefault();
+        }
+    } 
 
-      case "SELECT_OPTION":
-        return state.map((item) => {
-          if (item.id === action.payload.id) {
-            return {
-              ...item,
-              selectedValue: {
-                ...item.selectedValue,
-                countryCode: action.payload.countryCode,
-                countryValue: action.payload.countryValue,
-              },
-            };
-          }
-          return item;
-        });
-
-      case "FOCUS_OPTION":
-        return state.map((item) => {
-          if (item.id === action.payload.id) {
-            return {
-              ...item,
-              status: action.payload.status,
-              count: action.payload.count,
-            };
-          }
-          return item;
-        });
-      case "BLUR_OPTION":
-        return state.map((item) => {
-          if (item.id === action.payload.id) {
-            return {
-              ...item,
-              success: action.payload.success,
-              status: action.payload.status,
-              count: action.payload.count,
-            };
-          }
-          return item;
-        });
-      default:
-        return state;
+    if(type === "number") {
+        if(!validateNumber(e.key)) {
+            e.preventDefault();
+        }
     }
   };
 
-  const [state, dispatch] = useReducer(reducer, initState);
+  const validate = () => {
+    let isValid = true;
 
-  const handleChange = (id, value, country) => {
-    dispatch({ type: "CHANGE_OPTION", payload: { id, value, country } });
-  };
+    if (!currentUser?.firstName || currentUser?.firstName.trim() === "") {
+      setUserError((prev) => ({
+          ...prev,
+          firstName: t("Error.Account.firstNameNotBlank")
+      }));
+      isValid = false;
+      }else{
+          setUserError((prev) => ({
+            ...prev,
+              firstName: ""
+          }));
+      }
 
-  const handleFocus = (id) => {
-    const count = state.find((s) => s.id === id).count;
+      if (!currentUser?.lastName || currentUser?.lastName.trim() === "") {
+          setUserError((prev) => ({
+            ...prev,
+              lastName: t("Error.Account.lastNameNotBlank")
+          }));
+          isValid = false;
+      }else{
+          setUserError((prev) => ({
+            ...prev,
+              lastName: ""
+          }));
+      }
 
-    dispatch({
-      type: "FOCUS_OPTION",
-      payload: { id, status: true, count: count + 1 },
-    });
-  };
+      if(!currentUser.email || currentUser.email.trim() === ""){
+        setUserError((prev) => ({
+          ...prev,
+          email: t("Error.Account.emailNotBlank")
+        }))
+        isValid = false;
+      }else{
+        if(!validateEmail(currentUser.email)){
+          setUserError((prev) => ({
+          ...prev,
+            email: t("Error.Account.emailNotEmail")
+          }))
+          isValid = false;
+        }else{
+          setUserError((prev) => ({
+            ...prev,
+              email: ""
+          }));
+        }
+      }
 
-  const handleBlur = (id) => {
-    const check = state.find((s) => s.id === id).selectedValue.value;
-    const count = state.find((s) => s.id === id).count;
+      if(!currentUser.country || currentUser?.country.trim() === ""){
+        setUserError((prev) => ({
+          ...prev,
+          country: t("Error.Account.countryNotBlank")
+        }))
+        isValid = false;
+      }else{
+          setUserError((prev) => ({
+          ...prev,
+            country: ""
+          }))
+      }
 
-    let successFully = true;
-
-    check.length > 0 && check !== ""
-      ? (successFully = true)
-      : (successFully = false);
-
-    dispatch({
-      type: "BLUR_OPTION",
-      payload: { id, success: successFully, status: true, count: count + 1 },
-    });
-  };
+      if (!currentUser?.phoneNumber || currentUser?.phoneNumber.trim() === "") {
+        setUserError((prev) => ({
+          ...prev,
+          phoneNumber: t("Error.Account.phoneNumberNotBlank")
+        }));
+        isValid = false;
+      }else{
+          if(!validatePhone(currentUser?.phoneNumber)){
+              setUserError((prev) => ({
+                ...prev,
+                phoneNumber: t("Error.Account.phoneNumberNotPhone")
+              }));
+              isValid = false;
+          }else{
+              setUserError((prev) => ({
+                ...prev,
+                phoneNumber: ""
+              }));
+          }
+      }
+      
+    return isValid;
+  }
 
   useEffect(() => {
-    state.forEach((item) => {
-      const id = item.id;
-      const selectedValue = item.selectedValue;
+    if(Object.keys(currentUser).length > 0){
+      const valid = validate();
+      setField("validation", valid);
+    }
+  },[i18next.language,currentUser])
 
-      if (id === "phoneNumber" && selectedValue) {
-        const phoneNumber = {
-          number: selectedValue.value || "",
-          countryCode: selectedValue.countryCode || "",
-          countryValue: selectedValue.countryValue || "",
-        };
-
-        setField(id, phoneNumber);
-      } else {
-        setField(id, selectedValue?.value || "");
-      }
-    });
-  }, [state, setField]);
-
-  const handleSelectCountry = (id, value) => {
-    const selectedCountryCode = value;
-    const countryCode = selectedCountryCode;
-    const countryValue = getCountryCallingCode(selectedCountryCode);
-    dispatch({
-      type: "SELECT_OPTION",
-      payload: { id, countryCode, countryValue },
-    });
-  };
+  useEffect(() => {
+    if(currentUser){
+      Object.entries(currentUser).forEach(([field, value]) => {
+        if (value) {
+          setField(field, value);
+        }
+      });
+    }
+  },[currentUser])
 
   return (
     <div className='flex flex-col gap-4 w-full dark:text-white'>
-      <Title title='Enter your details' fontBold extraLarge4 />
+      <Title title={t("Secure.Details.YourDetails.title")} fontBold extraLarge4 />
       <div className='grid grid-cols-1 2md:grid-cols-2 gap-4 w-full'>
         {YourDetailsData.map((item, index) => (
           <div key={index} className='flex flex-col w-full'>
@@ -228,11 +264,7 @@ function YourDetails() {
               <Fragment>
                 {item?.data &&
                   item?.data.map((x, index) => {
-                    const selectedState =
-                      state.find((s) => s.id === x?.id) || {};
-                    const selectedValue = selectedState.selectedValue;
-                    const { countryCode, countryValue, value } = selectedValue;
-                    const { success, status, count } = selectedState;
+                    const success = x?.error.length === 0
                     return (
                       <Fragment key={index}>
                         {success ? (
@@ -243,7 +275,7 @@ function YourDetails() {
                         ) : (
                           <div className='flex flex-row gap-1'>
                             <Title
-                              title={x?.nameError}
+                              title={x?.error}
                               fontBold
                               xl
                               nowrap={false}
@@ -256,29 +288,19 @@ function YourDetails() {
                           <InputStaying
                             type={x?.type}
                             placeHolder={x?.placeHolder}
-                            country={x?.country}
-                            handleSelectCountry={(e) =>
-                              handleSelectCountry(x?.id, e.target.value)
-                            }
-                            countryCode={countryCode}
-                            countryValue={"+" + countryValue}
                             className={`rounded-md h-[36px] ${
                               success
-                                ? count > 0
                                   ? "focus:shadow-[0_0_0_1px_rgba(0,128,9,1)]"
-                                  : ""
-                                : count > 0
-                                ? "border-[rgb(204,0,0)] focus:shadow-[0_0_0_1px_rgba(204,0,0,1)]"
-                                : "focus:shadow-[0_0_0_1px_rgba(204,0,0,1)]"
+                                  : "focus:shadow-[0_0_0_1px_rgba(204,0,0,1)]"
                             }`}
-                            value={value}
-                            onFocus={() => handleFocus(x?.id)}
-                            onBlur={() => handleBlur(x?.id)}
+                            value={x?.value}
+                            onFocus={() => handleFocus()}
+                            onBlur={() => handleBlur()}
                             onChange={(e) =>
                               handleChange(x?.id, e.target.value, x?.country)
                             }
+                            onKeyPress={(e) => handleKeyPress(e,x?.type)}
                           />
-                          {status && count > 0 && (
                             <Icon
                               classIcon={`absolute flex items-center justify-center top-0 right-0 rounded-tr-md rounded-br-md bottom-0 text-white ${
                                 success ? "bg-success-50" : "bg-error-100"
@@ -286,7 +308,7 @@ function YourDetails() {
                               icon={success ? BsCheck : IoIosClose}
                               size={24}
                             />
-                          )}
+                          
                         </div>
                         {x?.subName && (
                           <Title
@@ -305,7 +327,7 @@ function YourDetails() {
               <>
                 {item?.data &&
                   item?.data.map((x, index) => {
-                    const success = state.find((s) => s?.id === x?.id)?.success;
+                    const success = x?.error.length === 0
 
                     return (
                       <Fragment key={index}>
@@ -317,7 +339,7 @@ function YourDetails() {
                         ) : (
                           <div className='flex flex-row gap-1'>
                             <Title
-                              title={x?.nameError}
+                              title={x?.error}
                               fontBold
                               xl
                               nowrap={false}
@@ -328,16 +350,15 @@ function YourDetails() {
                         )}
                         <SelectInput
                           onChange={(e) => handleChange(x?.id, e.target.value)}
-                          onFocus={() => handleFocus(x?.id)}
                           onBlur={() => handleBlur(x?.id)}
-                          value={country}
+                          value={x?.value}
                           className='h-[36px] rounded-md focus:shadow-[0_0_0_1px_rgba(0,13,194,.76)] mb-[0px]'
                         >
                           <option
                             className='text-[14px] text-primary-700 dark:text-white'
                             value=''
                           >
-                            Select country/region
+                            {t("Profile.information.countryRegion")}
                           </option>
                           {x?.data.map((country, index) => (
                             <option
@@ -358,9 +379,14 @@ function YourDetails() {
         ))}
       </div>
 
-      <Control />
+      <Control data={data}/>
     </div>
   );
 }
+
+YourDetails.propTypes ={
+  data: PropTypes.object,
+}
+
 
 export default YourDetails;

@@ -27,8 +27,6 @@ function User() {
     }
   },[user])
 
-
-
   return (
     <div className='relative w-full'>
       <UserButton

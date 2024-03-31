@@ -56,7 +56,7 @@ function ItemUniqueProperty({ item }) {
                   title={location}
                   nowrap={false}
                   large
-                  colorTitle='dark:text-primary-50'
+                  className='dark:text-primary-50 min-h-[36px] line-clamp-2 overflow-hidden text-ellipsis'
                 />
               </div>
               <div className='flex flex-row items-center gap-2 mt-1'>
@@ -67,7 +67,7 @@ function ItemUniqueProperty({ item }) {
                 <Title
                   title={`${item?.countReview} ${t("Other.previews")}`}
                   large
-                  colorTitle='dark:text-primary-50'
+                  className='dark:text-primary-50'
                 />
               </div>
             </div>

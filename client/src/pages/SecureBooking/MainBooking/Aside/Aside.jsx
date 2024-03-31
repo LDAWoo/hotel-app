@@ -27,7 +27,7 @@ function Aside() {
   ];
 
   return (
-    <aside className='w-[35%] flex flex-col gap-4'>
+    <aside className='w-full 2md:w-[35%] h-auto flex flex-col gap-4'>
       {items.map((item, index) => {
         const Component = item?.component;
         const isPanel = item?.panel;

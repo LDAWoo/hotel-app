@@ -18,9 +18,12 @@ import { postBookingSessionInfo } from "../../../../api/Booking";
 import useRegisterSpecialRequests from "../../../../hooks/SecureBooking/useRegisterSpecialRequests";
 import { useNavigate } from "react-router-dom";
 import routerConfig from '../../../../configs/routesConfig'
+import { useTranslation } from "react-i18next";
 
 function Main() {
   const { data } = useRegisterSecureBooking();
+  const {t} = useTranslation();
+
   const items = [
     // {
     //   component: Account,
@@ -30,7 +33,7 @@ function Main() {
     {
       component: YourDetails,
       panel: true,
-      data: [],
+      data: data,
     },
     {
       component: GoodToKnow,
@@ -45,30 +48,30 @@ function Main() {
     {
       component: AddToStay,
       panel: true,
-      data: [],
+      data: data,
     },
     {
       component: SpecialRequests,
       panel: true,
-      data: [],
+      data: data,
     },
     {
       component: YourArrival,
       panel: true,
-      data: [],
+      data: data,
     },
   ];
 
   const [disabled, setDisabled] = useState(false)
   const [loading, setLoading] = useState(false);
 
-  const { firstName, lastName, email, country, phoneNumber } =
+  const { firstName, lastName, email, country, phoneNumber,validation } =
     useRegisterYourDetails();
 
   const { bookingForMe, businessTravel, electronicConfirm } =
     useRegisterControl();
 
-  const { orderCar, orderTaxi } = useRegisterAddToStay();
+  const { orderCar, orderTaxi, pickUpService } = useRegisterAddToStay();
 
   const { specialRequirements } = useRegisterSpecialRequests();
 
@@ -76,12 +79,8 @@ function Main() {
 
   const navigate = useNavigate()
   useEffect(() => {
-    firstName.length === 0 || lastName.length === 0 || email.length === 0 || country.length === 0 || phoneNumber.length === 0 ? setDisabled(true) : setDisabled(false)
-  },[firstName,lastName,email,country,phoneNumber])
-
-
-  console.log(orderCar);
-
+    setDisabled(!validation)
+  },[validation])
 
   const handleFinalStep = async () => {
     try {
@@ -90,13 +89,13 @@ function Main() {
         lastName: lastName,
         email: email,
         country: country,
-        phoneNumber: phoneNumber.number,
+        phoneNumber: phoneNumber,
         bookingForMe,
         businessTravel,
         electronicConfirm,
         orderCar,
         orderTaxi,
-        pickUpService: false,
+        pickUpService,
         specialRequirements,
         estimatedCheckInTime,
       };
@@ -110,7 +109,7 @@ function Main() {
     }
   };
   return (
-    <main className='w-[65%] flex flex-col gap-4'>
+    <main className='w-full mt-[80px] 2md:mt-0 2md:w-[65%] flex flex-col gap-4'>
       <>
         {items.map((item, index) => {
           const Component = item?.component;
@@ -131,7 +130,7 @@ function Main() {
       <div className='float-right w-full flex flex-row justify-between'>
         <div></div>
         <Button
-          title='Next: Final Step'
+          title={t("Secure.Details.finalStep")}
           icon={MdKeyboardArrowRight}
           background
           size={24}

@@ -63,17 +63,25 @@
   },
   "Error": {
     "Account": {
-      "loginFailed": "邮箱或密码错误。请重试或使用验证链接。",
+      "loginFailed": "电子邮件或密码错误。 请重试或使用验证链接。",
       "emailNotBlank": "请输入您的电子邮件地址",
       "emailNotEmail": "请输入有效的电子邮件地址",
-      "emailNotExits": "这个电子邮件在我们的网站中不存在。",
+      "emailNotExits": "此电子邮件不存在于我们的网站上。",
+      "emailAlreadyExists": "此电子邮件已存在于我们的网站上",
       "firstNameNotBlank": "请输入您的名字",
       "lastNameNotBlank": "请输入您的姓氏",
       "phoneNumberNotBlank": "请输入您的电话号码",
+      "phoneNumberNotPhone": "请输入有效的电话号码",
       "passwordNotBlank": "请输入新密码",
-      "passwordNotPassword": "密码必须包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符",
+      "passwordNotPassword": "密码必须包含至少1个数字，1个小写字母，1个大写字母，1个特殊字符",
       "confirmPasswordNotBlank": "请确认您的密码",
-      "confirmPasswordNotPassword": "您输入的密码不匹配。请重试。"
+      "confirmPasswordNotPassword": "您输入的密码不匹配。 请重试。",
+      "birthdayNotBlank": "请输入您的生日",
+      "dayNotDay": "请使用2位数字输入有效的日期",
+      "dayNotMonth": "请为本月输入有效的日期",
+      "yearNotYear": "请使用4位数字输入有效的年份",
+      "dateNotDate": "请输入有效的生日",
+      "dateEnsureLeastSixteen": "请输入有效日期，并确保您至少16岁"
     },
     "Search": {
       "locationNotBlank": "请输入目的地开始搜索。"

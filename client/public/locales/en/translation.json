@@ -67,13 +67,22 @@
       "emailNotBlank": "Please enter your email address",
       "emailNotEmail": "Please enter a valid email address",
       "emailNotExits": "This email does not exist on our website.",
+      "emailAlreadyExists": "This email already exists on our website",
       "firstNameNotBlank": "Please enter your first name",
       "lastNameNotBlank": "Please enter your last name",
       "phoneNumberNotBlank": "Please enter your phone number",
+      "phoneNumberNotPhone": "Please enter a valid phone number",
       "passwordNotBlank": "Please enter a new password",
       "passwordNotPassword": "Password must contain at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character",
       "confirmPasswordNotBlank": "Please confirm your password",
-      "confirmPasswordNotPassword": "The passwords you entered do not match. Please try again."
+      "confirmPasswordNotPassword": "The passwords you entered do not match. Please try again.",
+      "birthdayNotBlank": "Please enter your birthday",
+      "dayNotDay": "Please enter a valid day using 2 digits",
+      "dayNotMonth": "Please enter a valid day for this month",
+      "yearNotYear": "Please enter a valid year using 4 digits",
+      "dateNotDate": "Please enter a valid birthday",
+      "dateEnsureLeastSixteen": "Please enter a valid date and ensure you are at least 16 years old",
+      "addressNotBlank": "Please enter your address"
     },
     "Search": {
       "locationNotBlank": "Please enter a destination to start searching."

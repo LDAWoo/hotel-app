@@ -5,17 +5,19 @@ import { useTranslation } from 'react-i18next';
 import { PiCamera } from "react-icons/pi";
 import { getCountryCallingCode } from 'react-phone-number-input';
 import { useNavigate } from 'react-router-dom';
+import { validUrl, validateName } from '../../../Regexs/Validate';
+import { validateNumber, validatePhone } from '../../../Regexs/Validate/Phone';
 import { updateUser } from '../../../api/User/Update';
 import Button from '../../../components/Buttons/Button';
 import { UserContext } from '../../../components/Contexts/AppUserProvider';
 import Icon from '../../../components/Icon/Icon';
 import InputStaying from '../../../components/Staying/Input';
+import TextError from '../../../components/TextError/TextError';
 import TextInput from '../../../components/TextInput/TextInput';
 import Title from '../../../components/Title/Title';
 import routesConfig from '../../../configs/routesConfig';
 import useRegisterModalUploadAvatar from '../../../hooks/Profile/useRegisterModalUploadAvatar';
 import SideBar from '../SideBar/SideBar';
-import { validUrl } from '../../../Regexs/Validate';
 
 const Information = () => {
     const {t} = useTranslation();
@@ -27,14 +29,19 @@ const Information = () => {
     const [countryValue, setCountryValue] = useState("84");
     const [currentUser, setCurrentUser] = useState({})
     const [loading, setLoading] = useState(false);
+    const [userError, setUserError] = useState({})
 
     useEffect(() => {
+        refreshUser();
+    }, [user,userLoading,navigate])
+
+    const refreshUser = () => {
         if(!userLoading && !Object.keys(user).length > 0) {
             navigate(routesConfig.home)
             return;
         }
         setCurrentUser(user)
-    }, [user,userLoading,navigate])
+    }
 
     useEffect(() => {
         if (Object.keys(currentUser).length > 0) {
@@ -42,6 +49,9 @@ const Information = () => {
                 if (prev.dob && prev.dob.length > 0) {
                     const [year, month, day] = prev.dob.split('-');
                     return { ...prev, dob: { year, month, day } };
+                }
+                if(!prev.dob && prev.dob.length === 0 ){
+                    return { ...prev, dob: { year: "", month: "01", day: "" } };
                 }
                 if (prev.gender && prev.gender.length > 0) {
                     return { ...prev, gender: { gender: prev.gender } };
@@ -67,14 +77,16 @@ const Information = () => {
                     name: "firstName",
                     type: "input",
                     typeof: "text",
-                    value: currentUser?.firstName || ""
+                    value: currentUser?.firstName || "",
+                    error: userError?.firstName || "",
                 },
                 {
                     title: t("Profile.information.lastName"),
                     name: "lastName",
                     type: "input",
                     typeof: "text",
-                    value: currentUser?.lastName || ""
+                    value: currentUser?.lastName || "",
+                    error: userError?.lastName || "",
                 },
             ],
             active: "name",
@@ -109,8 +121,8 @@ const Information = () => {
                     name: "phoneNumber",
                     type: "input",
                     typeof: "number",
-                    value: currentUser?.phoneNumber || ""
-                    
+                    value: currentUser?.phoneNumber || "",
+                    error: userError?.phoneNumber || "",
                 },
             ],
             active: "phoneNumber",
@@ -120,24 +132,27 @@ const Information = () => {
         },
         {
             Title: t("Profile.information.dateOfBirth"),
-            current: formatDateOfBirth(currentUser?.dob || "")  || t("Profile.information.notDOB"),
+            current: currentUser?.dob && currentUser?.dob?.day && currentUser?.dob?.day.length > 0 && currentUser?.dob.month && currentUser?.dob.month.length > 0 && currentUser?.dob?.year &&currentUser?.dob?.year.length > 0 && formatDateOfBirth(currentUser?.dob || "")  || t("Profile.information.notDOB"),
             menu: [
                 {
                     title: t("Profile.information.dateOfBirth"),
                     typeof: "group",
                     name: "dob",
+                    error: userError?.date || "",
                     group: [
                         {
                             placeHolder: "DD",
                             type: "input",
                             typeof: "text",
                             name: "day",
-                            value:  currentUser?.dob?.day || ""
+                            value:  currentUser?.dob?.day || "",
+                            error: userError?.day || "",
                         },
                         {
                             type: "select",
                             name: "month",
                             value:  currentUser?.dob?.month || "01",
+                            error: userError?.month || "",
                             data: [
                                 {
                                     value:  "01",
@@ -195,6 +210,7 @@ const Information = () => {
                             type: "input",
                             typeof: "text",
                             name: "year",
+                            error: userError?.year || "",
                             value:  currentUser?.dob?.year || "",
                         }
                     ]
@@ -207,7 +223,7 @@ const Information = () => {
         },
         {
             Title: t("Profile.information.gender"),
-            current: currentUser?.gender?.gender || t("Profile.information.notGender"),
+            current: currentUser?.gender?.gender !== "Male" && currentUser?.gender?.gender !== "Female" && currentUser?.gender?.gender !== "Other" ?  t("Profile.information.notGender") : currentUser?.gender?.gender,
             menu: [
                 {
                     title: t("Profile.information.gender"),
@@ -244,15 +260,15 @@ const Information = () => {
         },
         {
             Title: t("Profile.information.address"),
-            current: currentUser?.address || t("Profile.information.notAddress"),
+            current: currentUser?.address !== "No address!.." ? currentUser?.address : t("Profile.information.notAddress"),
             menu: [
                 {
                     title: t("Profile.information.address"),
                     name: "address",
                     type: "input",
-                    typeof: "text",
-                    value: currentUser?.address || ""
-                    
+                    typeof: "textOrNumber",
+                    value: currentUser?.address !== "No address!.." ? currentUser?.address : "",
+                    error: userError?.address || "",
                 },
             ],
             active: "address",
@@ -268,6 +284,8 @@ const Information = () => {
 
     const handleCancel = () => {
         setActive("")
+        refreshUser();
+        setUserError({})
     }
 
     const handleInputChange = (e, name) => {
@@ -289,14 +307,21 @@ const Information = () => {
         }));
     };
 
-    const handleSave = async() => {
+    const handleSave = async(ac) => {
+        if(!validate(ac)) return;
+        let dateOfBirth = "";
+
+        if(currentUser?.dob?.day.length > 0 && currentUser?.dob?.month.length > 0 && currentUser?.dob?.year.length > 0) {
+            dateOfBirth = formatDateOfBirth(currentUser?.dob);
+        }
+
         const data = {
-            firstName: currentUser?.firstName,
-            lastName: currentUser?.lastName,
-            dob: formatDateOfBirth(currentUser?.dob || "") || "",
-            phoneNumber: currentUser?.phoneNumber,
+            firstName: currentUser?.firstName.trim(),
+            lastName: currentUser?.lastName.trim(),
+            dob: dateOfBirth,
+            phoneNumber: currentUser?.phoneNumber.trim(),
             gender: currentUser?.gender?.gender,
-            address: currentUser?.address,
+            address: currentUser?.address.trim(),
         }
 
         try {
@@ -304,7 +329,7 @@ const Information = () => {
             await updateUser(data,token);
             const updatedUser = {
                 ...currentUser,
-                dob: formatDateOfBirth(currentUser?.dob || "") || "",
+                dob: dateOfBirth,
                 gender: currentUser?.gender?.gender || "",
             }
             setUser(updatedUser);
@@ -321,14 +346,195 @@ const Information = () => {
         setCountryValue(getCountryCallingCode(selectedCountryCode));
     };
 
-    const handleKeyDown = (e) => {
+    const handleKeyPress = (e,type,ac) => {
+        if(type === "text") {
+            if (!validateName(e.key)) {
+                e.preventDefault();
+            }
+        } 
+
+        if(type === "number") {
+            if(!validateNumber(e.key)) {
+                e.preventDefault();
+            }
+        }
+        
         if (e.key === "Enter") {
-            handleSave();
+            handleSave(ac);
         }
     };
 
     const handleShowModalUploadAvatar = () => {
         onOpen();
+    }
+
+    const validate = (ac) => {
+        let isValid = true;
+        switch (ac.active) {
+            case "name": {
+                if (!currentUser?.firstName || currentUser?.firstName.trim() === "") {
+                    setUserError((prev) => ({
+                        ...prev,
+                        firstName: t("Error.Account.firstNameNotBlank")
+                    }));
+                    isValid = false;
+                }else{
+                    setUserError((prev) => ({
+                       ...prev,
+                        firstName: ""
+                    }));
+                }
+        
+                if (!currentUser?.lastName || currentUser?.lastName.trim() === "") {
+                    setUserError((prev) => ({
+                       ...prev,
+                        lastName: t("Error.Account.lastNameNotBlank")
+                    }));
+                    isValid = false;
+                }else{
+                    setUserError((prev) => ({
+                       ...prev,
+                        lastName: ""
+                    }));
+                }
+                return isValid;
+            }
+            
+            case "phoneNumber":{
+                if (!currentUser?.phoneNumber || currentUser?.phoneNumber.trim() === "") {
+                    setUserError((prev) => ({
+                       ...prev,
+                        phoneNumber: t("Error.Account.phoneNumberNotBlank")
+                    }));
+                    isValid = false;
+                }else{
+                    if(!validatePhone(currentUser?.phoneNumber)){
+                        setUserError((prev) => ({
+                           ...prev,
+                            phoneNumber: t("Error.Account.phoneNumberNotPhone")
+                        }));
+                        isValid = false;
+                    }else{
+                        setUserError((prev) => ({
+                           ...prev,
+                            phoneNumber: ""
+                        }));
+                    }
+                }
+                return isValid
+            }
+
+            case "dob":{
+                if (currentUser?.dob.day === "") {
+                    setUserError((prev) => ({
+                        ...prev,
+                        day: t("Error.Account.birthdayNotBlank"),
+                        date: t("Error.Account.birthdayNotBlank"),
+                    }));
+                    isValid = false;
+                } else {
+                    if(currentUser?.dob.day.length > 2){
+                        setUserError((prev) => ({
+                           ...prev,
+                            day: t("Error.Account.dayNotDay"),
+                            date: t("Error.Account.dayNotDay"),
+                        }));
+                        isValid = false;
+                    }else{
+                        setUserError((prev) => ({
+                            ...prev,
+                             day: "",
+                        }));
+                        if(currentUser?.dob.year === ""){
+                            setUserError((prev) => ({
+                                ...prev,
+                                year: t("Error.Account.birthdayNotBlank"),
+                                date: t("Error.Account.birthdayNotBlank"),
+                            }));
+                            isValid = false;
+                        }else{
+                            setUserError((prev) => ({
+                               ...prev,
+                                year: "",
+                            }));
+            
+                            let year = parseInt(currentUser?.dob?.year);
+                            if(year < 100){
+                                year = 1900 - year;
+                            }
+            
+                            const dob = new Date(year, currentUser?.dob?.month - 1, currentUser?.dob?.day);
+                            if (isNaN(dob.getTime())) {
+                                setUserError((prev) => ({
+                                    ...prev,
+                                    date: t("Error.Account.dateNotDate"),
+                                }));
+                                isValid = false;
+                            } else {
+                                const currentDate = new Date();
+                                const minValidDate = new Date(currentDate.getFullYear() - 16, currentDate.getMonth(), currentDate.getDate());
+                                if (dob >= currentDate || dob >= minValidDate) {
+                                    setUserError((prev) => ({
+                                        ...prev,
+                                        year: t("Error.Account.dateEnsureLeastSixteen"),
+                                        date: t("Error.Account.dateEnsureLeastSixteen"),
+                                    }));
+                                    isValid = false;
+                                } else {
+                                    const minBirthDate = new Date(1900, 0, 1);
+                                    if (dob < minBirthDate) {
+                                        setUserError((prev) => ({
+                                            ...prev,
+                                            year: t("Error.Account.yearNotYear"),
+                                            date: t("Error.Account.yearNotYear"),
+                                        }));
+                                        isValid = false;
+                                    } else {
+                                        const daysInMonth = new Date(currentUser?.dob?.year, currentUser?.dob?.month, 0).getDate();
+                                        if (currentUser?.dob?.day > daysInMonth) {
+                                            setUserError((prev) => ({
+                                                ...prev,
+                                                day: t("Error.Account.dayNotMonth"),
+                                                date: t("Error.Account.dayNotMonth"),
+                                            }));
+                                            isValid = false;
+                                        } else {
+                                            setUserError((prev) => ({
+                                                ...prev,
+                                                day: "",
+                                                month: "",
+                                                year: "",
+                                                date: "",
+                                            }));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return isValid;
+            }
+
+            case "address": {
+                if (!currentUser?.address || currentUser?.address.trim() === "") {
+                    setUserError((prev) => ({
+                       ...prev,
+                        address: t("Error.Account.addressNotBlank")
+                    }));
+                    isValid = false;
+                }else{
+                    setUserError((prev) => ({
+                       ...prev,
+                        address: ""
+                    }));
+                }
+                return isValid;
+            }
+
+            default:
+            return isValid
+        }
     }
 
     return (
@@ -385,12 +591,15 @@ const Information = () => {
                                                                             countryValue={"+" + countryValue}
                                                                             handleSelectCountry={handleSelectCountry}
                                                                             onChange={e => handleInputChange(e, menuItem?.name)}
-                                                                            onKeyDown={handleKeyDown}
+                                                                            onKeyPress={(e)=> handleKeyPress(e,menuItem?.typeof,item?.active)}
                                                                             />
                                                                             :
-                                                                            <TextInput name={menuItem?.name} type={menuItem?.typeof} value={menuItem?.value} onKeyDown={handleKeyDown} onChange={e => handleInputChange(e, menuItem?.name)}/>
+                                                                            <TextInput name={menuItem?.name} error={menuItem.error.length > 0} sizeIcon={24} type={menuItem?.typeof} value={menuItem?.value} onKeyPress={(e) => handleKeyPress(e,menuItem?.typeof,item?.active)} onChange={e => handleInputChange(e, menuItem?.name)}/>
                                                                         }
-                                        
+                                                                        
+                                                                        <div className='min-h-[24px]'>
+                                                                            <TextError error={menuItem.error || ""}/>
+                                                                        </div>
                                                                     </div>
                                                             }
                                                             {
@@ -400,9 +609,9 @@ const Information = () => {
                                                                     <div className='flex flex-row w-full gap-4'>
                                                                         {
                                                                             menuItem?.group.map((g,index) => (
-                                                                                <div key={index} className='flex flex-row w-full'>
+                                                                                <div key={index} className='flex flex-col w-full'>
                                                                                         {g?.type === "input" && 
-                                                                                         <TextInput name={g?.name} type={g?.typeof} value={g?.value} placeholder={g?.placeHolder} onKeyDown={handleKeyDown} onChange={e => handleGroupChange(e, g?.name, item.menu[0].name)}
+                                                                                         <TextInput error={g?.error && g?.error.length > 0} sizeIcon={24} name={g?.name} type={g?.typeof} value={g?.value} placeholder={g?.placeHolder} onKeyPress={(e) => handleKeyPress(e,"number",item?.active)} onChange={e => handleGroupChange(e, g?.name, item.menu[0].name)}
                                                                                          />   
                                                                                         }
                                                                                         {g?.type === "select" && 
@@ -424,6 +633,9 @@ const Information = () => {
                                                                             ))
                                                                         }
                                                                     </div>
+                                                                    <div className='min-h-[24px]'>
+                                                                            <TextError error={menuItem?.error || ""}/>
+                                                                    </div>
                                                                     </div> 
                                                             }
                                                         </div>
@@ -441,7 +653,7 @@ const Information = () => {
                                             ? 
                                             <>
                                                 <Button title={item?.cancel} disabled={loading} className={` rounded-sm duration-200 p-1 ${loading ? 'cursor-not-allowed text-gray-500 bg-transparent' : "text-hotel-50 hover:bg-hotel-25"}`} xl fontMedium onClick={() => handleCancel(item?.active)}/>
-                                                <Button title={item?.submit} disabled={loading} loading={loading} classLoading="h-[16px] w-[16px]" background className="p-1 rounded-sm" classButton="w-full justify-center" xl fontMedium onClick={() => handleSave(item)}/>
+                                                <Button title={item?.submit} disabled={loading} loading={loading} classLoading="h-[16px] w-[16px]" background className="p-1 rounded-sm" classButton="w-full justify-center" xl fontMedium onClick={() => handleSave(item,item?.active)}/>
                                             </> 
                                             :
                                             <>{!item?.disabled && <Button title={item?.action} disabled={active.length > 0 && active != item?.active} className={`p-2 rounded-sm duration-200 ${active.length > 0 && active != item?.active ? 'cursor-not-allowed text-gray-500 bg-transparent' : 'text-hotel-50 hover:bg-hotel-25'}`} xl fontMedium onClick={() => handleActive(item?.active)}/>}</>

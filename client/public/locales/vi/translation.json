@@ -63,17 +63,25 @@
   },
   "Error": {
     "Account": {
-      "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng đường link xác minh",
+      "loginFailed": "Sai email hoặc mật khẩu. Vui lòng thử lại hoặc sử dụng liên kết xác nhận.",
       "emailNotBlank": "Vui lòng nhập địa chỉ email của bạn",
-      "emailNotEmail": "Vui lòng nhập địa chỉ email đúng định dạng",
-      "emailNotExits": "Email này không tồn tại trong trang web của chúng tôi.",
+      "emailNotEmail": "Vui lòng nhập một địa chỉ email hợp lệ",
+      "emailNotExits": "Email này không tồn tại trên trang web của chúng tôi.",
+      "emailAlreadyExists": "Email này đã tồn tại trên trang web của chúng tôi",
       "firstNameNotBlank": "Vui lòng nhập tên của bạn",
       "lastNameNotBlank": "Vui lòng nhập họ của bạn",
       "phoneNumberNotBlank": "Vui lòng nhập số điện thoại của bạn",
+      "phoneNumberNotPhone": "Vui lòng nhập một số điện thoại hợp lệ",
       "passwordNotBlank": "Vui lòng nhập mật khẩu mới",
-      "passwordNotPassword": "Mật mã phải có ít nhất 1 chữ số, 1 chữ thường, 1 chữ hoa, 1 ký tự đặt biệt",
-      "confirmPasswordNotBlank": "Vui lòng xác nhận mật khẩu",
-      "confirmPasswordNotPassword": "Mật khẩu bạn đã nhập không khớp. Vui lòng thử lại."
+      "passwordNotPassword": "Mật khẩu phải chứa ít nhất 1 chữ số, 1 chữ thường, 1 chữ hoa, 1 ký tự đặc biệt",
+      "confirmPasswordNotBlank": "Vui lòng xác nhận mật khẩu của bạn",
+      "confirmPasswordNotPassword": "Mật khẩu bạn nhập không khớp. Vui lòng thử lại.",
+      "birthdayNotBlank": "Vui lòng nhập ngày sinh của bạn",
+      "dayNotDay": "Vui lòng nhập một ngày hợp lệ sử dụng 2 chữ số",
+      "dayNotMonth": "Vui lòng nhập một ngày hợp lệ cho tháng này",
+      "yearNotYear": "Vui lòng nhập một năm hợp lệ sử dụng 4 chữ số",
+      "dateNotDate": "Vui lòng nhập một ngày sinh hợp lệ",
+      "dateEnsureLeastSixteen": "Vui lòng nhập một ngày hợp lệ và đảm bảo bạn đã đủ 16 tuổi"
     },
     "Search": {
       "locationNotBlank": "Vui lòng nhập điểm đến để bắt đầu tìm kiếm."

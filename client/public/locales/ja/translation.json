@@ -63,17 +63,25 @@
   },
   "Error": {
     "Account": {
-      "loginFailed": "メールアドレスまたはパスワードが間違っています。もう一度やり直すか、確認リンクを使用してください。",
+      "loginFailed": "メールアドレスまたはパスワードが間違っています。 もう一度やり直すか、確認リンクを使用してください。",
       "emailNotBlank": "メールアドレスを入力してください",
       "emailNotEmail": "有効なメールアドレスを入力してください",
       "emailNotExits": "このメールアドレスは当社のウェブサイトに存在しません。",
-      "firstNameNotBlank": "お名前を入力してください",
+      "emailAlreadyExists": "このメールアドレスはすでに当社のウェブサイトに存在します",
+      "firstNameNotBlank": "名を入力してください",
       "lastNameNotBlank": "姓を入力してください",
       "phoneNumberNotBlank": "電話番号を入力してください",
+      "phoneNumberNotPhone": "有効な電話番号を入力してください",
       "passwordNotBlank": "新しいパスワードを入力してください",
-      "passwordNotPassword": "パスワードは少なくとも 1 桁の数字、1 桁の小文字、1 桁の大文字、1 つの特殊文字を含む必要があります",
-      "confirmPasswordNotBlank": "パスワードを確認してください",
-      "confirmPasswordNotPassword": "入力したパスワードが一致しません。もう一度お試しください。"
+      "passwordNotPassword": "パスワードには少なくとも1つの数字、1つの小文字、1つの大文字、1つの特殊文字を含める必要があります",
+      "confirmPasswordNotBlank": "パスワードを再度入力してください",
+      "confirmPasswordNotPassword": "入力したパスワードが一致しません。 もう一度お試しください。",
+      "birthdayNotBlank": "生年月日を入力してください",
+      "dayNotDay": "2桁の数字を使用して有効な日付を入力してください",
+      "dayNotMonth": "今月の有効な日付を入力してください",
+      "yearNotYear": "4桁の数字を使用して有効な年を入力してください",
+      "dateNotDate": "有効な誕生日を入力してください",
+      "dateEnsureLeastSixteen": "有効な日付を入力し、少なくとも16歳であることを確認してください"
     },
     "Search": {
       "locationNotBlank": "検索を開始するには、目的地を入力してください。"

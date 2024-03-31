@@ -1,5 +1,7 @@
 import Icon from "../Icon/Icon";
 import { IoIosClose } from "react-icons/io";
+import PropTypes from 'prop-types'
+
 function TextError({ icon, error }) {
   return (
     <>
@@ -11,6 +13,11 @@ function TextError({ icon, error }) {
       )}
     </>
   );
+}
+
+TextError.propTypes = {
+  icon: PropTypes.bool,
+  error: PropTypes.string
 }
 
 export default TextError;

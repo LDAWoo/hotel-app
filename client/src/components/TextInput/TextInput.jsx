@@ -52,7 +52,7 @@ function TextInput({
         </div>
       )}
       <div
-        className={`relative w-full rounded-[4px] duration-200 outline-none ${
+        className={`relative w-full rounded-[4px] overflow-hidden duration-200 outline-none ${
           !classBorder
             ? `border-[1px] ${
                 active

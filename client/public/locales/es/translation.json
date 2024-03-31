@@ -63,17 +63,25 @@
   },
   "Error": {
     "Account": {
-      "loginFailed": "Correo electrónico o contraseña incorrectos. Inténtelo de nuevo o utilice el enlace de verificación.",
-      "emailNotBlank": "Por favor, introduce tu dirección de correo electrónico",
-      "emailNotEmail": "Por favor, introduce una dirección de correo electrónico válida",
+      "loginFailed": "Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo o use el enlace de verificación.",
+      "emailNotBlank": "Por favor, ingrese su dirección de correo electrónico",
+      "emailNotEmail": "Por favor, ingrese una dirección de correo electrónico válida",
       "emailNotExits": "Este correo electrónico no existe en nuestro sitio web.",
-      "firstNameNotBlank": "Por favor, introduce tu nombre",
-      "lastNameNotBlank": "Por favor, introduce tu apellido",
-      "phoneNumberNotBlank": "Por favor, introduce tu número de teléfono",
-      "passwordNotBlank": "Por favor, introduce una nueva contraseña",
-      "passwordNotPassword": "La contraseña debe contener al menos 1 dígito, 1 letra minúscula, 1 letra mayúscula y 1 carácter especial",
-      "confirmPasswordNotBlank": "Por favor, confirma tu contraseña",
-      "confirmPasswordNotPassword": "Las contraseñas que ingresaste no coinciden. Por favor, inténtalo de nuevo."
+      "emailAlreadyExists": "Este correo electrónico ya existe en nuestro sitio web",
+      "firstNameNotBlank": "Por favor, ingrese su nombre",
+      "lastNameNotBlank": "Por favor, ingrese su apellido",
+      "phoneNumberNotBlank": "Por favor, ingrese su número de teléfono",
+      "phoneNumberNotPhone": "Por favor, ingrese un número de teléfono válido",
+      "passwordNotBlank": "Por favor, ingrese una nueva contraseña",
+      "passwordNotPassword": "La contraseña debe contener al menos 1 dígito, 1 letra minúscula, 1 letra mayúscula, 1 carácter especial",
+      "confirmPasswordNotBlank": "Por favor, confirme su contraseña",
+      "confirmPasswordNotPassword": "Las contraseñas que ingresó no coinciden. Por favor, inténtelo de nuevo.",
+      "birthdayNotBlank": "Por favor, ingrese su fecha de nacimiento",
+      "dayNotDay": "Por favor, ingrese un día válido usando 2 dígitos",
+      "dayNotMonth": "Por favor, ingrese un día válido para este mes",
+      "yearNotYear": "Por favor, ingrese un año válido usando 4 dígitos",
+      "dateNotDate": "Por favor, ingrese una fecha de nacimiento válida",
+      "dateEnsureLeastSixteen": "Por favor, ingrese una fecha válida y asegúrese de tener al menos 16 años"
     },
     "Search": {
       "locationNotBlank": "Por favor, ingrese un destino para comenzar la búsqueda."

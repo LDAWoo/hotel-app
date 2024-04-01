@@ -75,7 +75,7 @@ function SearchResult() {
 
   return (
     <div className='w-full'>
-      <div className='w-full m-auto lg:max-w-[1100px] mt-10 p-[10px] bg-transparent'>
+      <div className='w-full m-auto lg:max-w-[1100px] mt-10 mb-10 p-[10px] bg-transparent'>
         <div className='flex flex-col w-full gap-2'>
           {width < 900 && (
             <div className='flex flex-col gap-2'>

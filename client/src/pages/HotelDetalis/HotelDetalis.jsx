@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getHotelById } from "../../api/HotelDetails";
+import Button from "../../components/Buttons/Button";
 import ImageModal from "../../components/Modals/ImageModal/ImageModal";
+import Title from "../../components/Title/Title";
+import routesConfig from "../../configs/routesConfig";
 import useRegisterHotelDetails from "../../hooks/HotelDetails/useRegisterHotelDetails";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import Availability from "./Availability/Availability";
@@ -12,13 +14,9 @@ import GuestReview from "./GuestReview/GuestReview";
 import HotelGallery from "./HotelGallery/HotelGallery";
 import HotelProperty from "./HotelProperty/HotelProperty";
 import SideBar from "./SideBar/SideBar";
-import Button from "../../components/Buttons/Button";
-import Title from "../../components/Title/Title";
-import routesConfig from "../../configs/routesConfig";
 
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const currentHotelId = searchParams?.get("id") || "";
@@ -62,7 +60,6 @@ function HotelDetails() {
   const handleReturnHome = () => {
     window.location.href = routesConfig.home;
   }
-  
   
   return (
     <div className='w-full'>

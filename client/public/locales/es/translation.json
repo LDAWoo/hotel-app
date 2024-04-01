@@ -20,6 +20,13 @@
     "nameFive": "."
   },
   "AccessFooter": {
+    "items": {
+      "item1": "Términos y condiciones",
+      "item2": "Cómo trabajamos",
+      "item3": "Política de privacidad",
+      "item4": "Declaración de MSA",
+      "item5": "Acerca de Staying.com"
+    },    
     "nameOne": "Todos los derechos reservados",
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
@@ -185,7 +192,14 @@
   },
   "TrendingDestination": {
     "title": "Destinos Populares",
-    "subTitle": "Otros viajeros también han reservado estos destinos"
+    "subTitle": "Otros viajeros también han reservado estos destinos",
+    "locations": {
+      "HaNoi": "Hanói",
+      "DaNang": "Da Nang",
+      "NhaTrang": "Nha Trang",
+      "VungTau": "Vũng Tàu",
+      "HoChiMinh": "Ho Chi Minh"
+    }
   },
   "OurHotel": {
     "title": "Nuestro Hotel",

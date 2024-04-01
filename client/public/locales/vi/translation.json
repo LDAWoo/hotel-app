@@ -20,6 +20,13 @@
     "nameFive": " của chúng tôi"
   },
   "AccessFooter": {
+    "items": {
+      "item1": "Điều khoản và điều kiện",
+      "item2": "Cách chúng tôi làm việc",
+      "item3": "Chính sách bảo mật",
+      "item4": "Tuyên bố MSA",
+      "item5": "Về Staying.com"
+    },    
     "nameOne": "Bảo lưu mọi quyền",
     "nameTwo": "Bản quyền (2023 - 2024) - Staying.com™"
   },
@@ -185,7 +192,14 @@
   },
   "TrendingDestination": {
     "title": "Các Điểm Đến Đang Phổ Biến",
-    "subTitle": "Các du khách khác cũng đã đặt những điểm này"
+    "subTitle": "Các du khách khác cũng đã đặt những điểm này",
+    "locations": {
+      "HaNoi": "Hà Nội",
+      "DaNang": "Đà Nẵng",
+      "NhaTrang": "Nha Trang",
+      "VungTau": "Vũng Tàu",
+      "HoChiMinh": "Hồ Chí Minh"
+    }
   },
   "OurHotel": {
     "title": "Khách Sạn Của Chúng Tôi",

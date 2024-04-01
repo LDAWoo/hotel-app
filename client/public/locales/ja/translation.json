@@ -20,6 +20,13 @@
     "nameFive": "に同意したことになります。"
   },
   "AccessFooter": {
+    "items": {
+      "item1": "利用規約",
+      "item2": "弊社の動作方法",
+      "item3": "プライバシーポリシー",
+      "item4": "MSA声明",
+      "item5": "Staying.comについて"
+    },    
     "nameOne": "全ての権利を保有",
     "nameTwo": "著作権 (2023 - 2024) - Staying.com™"
   },
@@ -185,7 +192,14 @@
   },
   "TrendingDestination": {
     "title": "トレンディング先行予約地",
-    "subTitle": "他の旅行者もこれらを予約しました"
+    "subTitle": "他の旅行者もこれらを予約しました",
+    "locations": {
+      "HaNoi": "ハノイ",
+      "DaNang": "ダナン",
+      "NhaTrang": "ニャチャン",
+      "VungTau": "ヴũンタウ",
+      "HoChiMinh": "ホーチミン市"
+    }
   },
   "OurHotel": {
     "title": "当社のホテル",

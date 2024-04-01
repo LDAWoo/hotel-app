@@ -20,6 +20,13 @@
     "nameFive": "."
   },
   "AccessFooter": {
+    "items": {
+      "item1": "Term & Conditions",
+      "item2": "How we work",
+      "item3": "Privacy Policy",
+      "item4": "MSA Statement",
+      "item5": "About Staying.com"
+    },
     "nameOne": "All rights reserved",
     "nameTwo": "Copyright (2023 - 2024) - Staying.com™"
   },
@@ -186,7 +193,14 @@
   },
   "TrendingDestination": {
     "title": "Trending Destinations",
-    "subTitle": "Travelers looking have also booked these"
+    "subTitle": "Travelers looking have also booked these",
+    "locations": {
+      "HaNoi": "Ha Noi",
+      "DaNang": "Da Nang",
+      "NhaTrang": "Nha Trang",
+      "VungTau": "Vung Tau",
+      "HoChiMinh": "Ho Chi Minh"
+    }
   },
   "UniqueProperties": {
     "title": "Stay at our top unique properties",

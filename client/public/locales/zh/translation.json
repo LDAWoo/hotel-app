@@ -20,6 +20,13 @@
     "nameFive": "。"
   },
   "AccessFooter": {
+    "items": {
+      "item1": "条款和条件",
+      "item2": "我们的工作方式",
+      "item3": "隐私政策",
+      "item4": "MSA声明",
+      "item5": "关于 Staying.com"
+    },    
     "nameOne": "保留所有权利",
     "nameTwo": "版权所有 (2023 - 2024) - Staying.com™"
   },
@@ -185,7 +192,14 @@
   },
   "TrendingDestination": {
     "title": "热门目的地",
-    "subTitle": "其他旅行者也预订了这些"
+    "subTitle": "其他旅行者也预订了这些",
+    "locations": {
+      "HaNoi": "河内",
+      "DaNang": "岘港",
+      "NhaTrang": "芽庄",
+      "VungTau": "头顿",
+      "HoChiMinh": "胡志明市"
+    }
   },
   "OurHotel": {
     "title": "我们的酒店",

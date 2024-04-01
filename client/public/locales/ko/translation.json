@@ -20,6 +20,13 @@
     "nameFive": "입니다."
   },
   "AccessFooter": {
+    "items": {
+      "item1": "약관",
+      "item2": "저희의 작업 방식",
+      "item3": "개인 정보 보호 정책",
+      "item4": "MSA 성명",
+      "item5": "Staying.com 소개"
+    },    
     "nameOne": "모든 권리 보유",
     "nameTwo": "저작권 (2023 - 2024) - Staying.com™"
   },
@@ -173,7 +180,14 @@
   },
   "TrendingDestination": {
     "title": "인기 있는 여행지",
-    "subTitle": "다른 여행자들도 이 여행지를 예약했습니다"
+    "subTitle": "다른 여행자들도 이 여행지를 예약했습니다",
+    "locations": {
+      "HaNoi": "하노이",
+      "DaNang": "다낭",
+      "NhaTrang": "나트랑",
+      "VungTau": "봉따우",
+      "HoChiMinh": "호치민시"
+    }
   },
   "OurHotel": {
     "title": "우리 호텔",

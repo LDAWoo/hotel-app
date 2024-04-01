@@ -13,6 +13,8 @@ import routesConfig from "../../configs/routesConfig";
 import useRegisterCheckEmail from "../../hooks/Account/CheckEmail/useRegisterCheckEmail";
 import useRegisterContactDetails from "../../hooks/Account/Register/useRegisterContactDetails";
 import useRegisterEmail from "../../hooks/Account/Register/useRegisterEmail";
+import { validateName } from "../../Regexs/Validate";
+import { validateNumber, validatePhone } from "../../Regexs/Validate/Phone";
 
 function RegisterContactDetails() {
   const { t } = useTranslation();
@@ -91,9 +93,9 @@ function RegisterContactDetails() {
 
   const handleContinue = () => {
     if (!validate()) return;
-    setContactDetails("currentFirstName", firstName);
-    setContactDetails("currentLastName", lastName);
-    setContactDetails("currentPhoneNumber", phoneNumber);
+    setContactDetails("currentFirstName", firstName.trim());
+    setContactDetails("currentLastName", lastName.trim());
+    setContactDetails("currentPhoneNumber", phoneNumber.trim());
     navigate(routesConfig.registerPassword);
   };
 
@@ -117,17 +119,34 @@ function RegisterContactDetails() {
       setErrorPhoneNumber(t("Error.Account.phoneNumberNotBlank"));
       isValid = false;
     } else {
-      setErrorPhoneNumber("");
+      if(!validatePhone(phoneNumber)){
+          setErrorPhoneNumber(t("Error.Account.phoneNumberNotPhone"));
+          isValid = false;
+      }else{
+          setErrorPhoneNumber("");
+      }
     }
 
     return isValid;
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e,type) => {
+    if(type === "text") {
+        if (!validateName(e.key)) {
+            e.preventDefault();
+        }
+    } 
+
+    if(type === "number") {
+        if(!validateNumber(e.key)) {
+            e.preventDefault();
+        }
+    }
+    
     if (e.key === "Enter") {
       handleContinue();
     }
-  };
+};
 
   const handleSelectCountry = (e) => {
     const selectedCountryCode = e.target.value;
@@ -143,10 +162,10 @@ function RegisterContactDetails() {
       </div>
       <div className="flex flex-col w-full gap-2 pt-8">
         <Title title={t("RegisterContactDetails.firstName")} fontMedium xl />
-        <TextInput placeholder={t("RegisterContactDetails.firstName")} value={firstName} type="text" id="firstName" error={errorFirstName.length > 0} required name="firstName" sizeIcon={24} onChange={handleChangeFirstName} onKeyDown={handleKeyPress} />
+        <TextInput placeholder={t("RegisterContactDetails.firstName")} value={firstName} type="text" id="firstName" error={errorFirstName.length > 0} required name="firstName" sizeIcon={24} onChange={handleChangeFirstName} onKeyPress={(e) => handleKeyPress(e,"text")} />
         <TextError error={errorFirstName} />
         <Title title={t("RegisterContactDetails.lastName")} fontMedium xl />
-        <TextInput placeholder={t("RegisterContactDetails.lastName")} value={lastName} type="text" id="lastName" error={errorLastName.length > 0} required name="lastName" sizeIcon={24} onChange={handleChangeLastName} onKeyDown={handleKeyPress} />
+        <TextInput placeholder={t("RegisterContactDetails.lastName")} value={lastName} type="text" id="lastName" error={errorLastName.length > 0} required name="lastName" sizeIcon={24} onChange={handleChangeLastName} onKeyPress={(e) => handleKeyPress(e,"text")} />
         <TextError error={errorLastName} />
         <Title title={t("RegisterContactDetails.phoneNumber")} fontMedium xl />
         <InputStaying
@@ -161,7 +180,7 @@ function RegisterContactDetails() {
           value={phoneNumber}
           handleSelectCountry={handleSelectCountry}
           onChange={handleChangePhoneNumber}
-          onKeyDown={handleKeyPress}
+          onKeyPress={(e) => handleKeyPress(e,"number")}
         />
         <TextError error={errorPhoneNumber} />
         <Button background fontMedium className="mt-4 p-2 rounded-[4px] flex items-center justify-center w-full " onClick={handleContinue} title={t("Register.continue")} />

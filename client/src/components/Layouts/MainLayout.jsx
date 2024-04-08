@@ -9,7 +9,6 @@ import LanguageModal from "../Modals/LanguageModal/LanguageModal";
 import UploadAvatarModal from "../Modals/UploadAvatarModal/UploadAvatarModal";
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
-
   const { setIsOnline } = useRegisterWindowOnline();
   const { setWidthAndHeight } = useRegisterWindowSizeStore();
 
@@ -38,7 +37,7 @@ const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className={`${darkMode}`}>
+    <div className={`${darkMode} h-screen`}>
       <FilterModal />
       <MapModal />
       <LanguageModal />

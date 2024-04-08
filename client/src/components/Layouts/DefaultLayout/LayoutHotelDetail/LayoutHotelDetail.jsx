@@ -8,7 +8,7 @@ import Footer from "../../../Footer/Footer";
 function LayoutHotelDetail({ children }) {
   return (
     <MainLayout>
-      <div className='flex w-full flex-col'>
+      <div className='flex w-full flex-col h-full'>
         <LanguageModal />
         <MapModal />
         <SearchModal />

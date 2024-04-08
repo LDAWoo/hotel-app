@@ -122,12 +122,60 @@
   },
   "User": {
     "managerProfile": "Gestionar cuenta",
+    "bookingAndTrip": "Reservas y Viajes",
     "logout": "Cerrar sesión"
   },
   "Banner": {
     "title": "Esperamos que disfrutes de tu estancia",
     "subTitle": "Descubre nuestro resort de hoteles y restaurantes de clase mundial.",
     "bookNow": "Reservar ahora"
+  },
+  "MyTrip": {
+    "title": "Reservas y Viajes",
+    "complete": "Completo",
+    "items": {
+      "item1": "Volver a reservar",
+      "item2": "Eliminar reserva"
+    }
+  },
+  "MyBooking": {
+    "title": "Mi Reserva",
+    "bookingConfirmation": "Confirmación de reserva",
+    "confirmNumber": "Número de confirmación:",
+    "pinCode": "Código PIN:",
+    "address": "Dirección:",
+    "phone": "Teléfono:",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "price": "Precio",
+    "vat": "IVA",
+    "units": "Unidades",
+    "nights": "Noches",
+    "guestName": "Nombre del huésped:",
+    "bedSize": "Tamaño de la cama(s):",
+    "forMax": "para max.",
+    "people": "personas",
+    "finalPrice": {
+      "title": "El precio final mostrado es la cantidad que pagará a la propiedad.",
+      "items": {
+        "item1": "Staying.com no cobra a los huéspedes ninguna reserva, administración u otras tarifas.",
+        "item2": "Su emisor de tarjeta puede cobrarle una tarifa por transacción extranjera."
+      }
+    },
+    "paymentInfo": {
+      "title": "Información de pago",
+      "items": {
+        "item1": "El hotel maneja todos los pagos.",
+        "item2": "Esta propiedad acepta las siguientes formas de pago:"
+      }
+    },
+    "additionInfo": {
+      "title": "Información adicional",
+      "items": {
+        "item1": "Tenga en cuenta que los suplementos adicionales (por ejemplo, cama extra) no se incluyen en este total.",
+        "item2": "Si no se presenta o cancela, el hotel puede cobrar impuestos aplicables."
+      }
+    }
   },
   "Profile": {
     "title": "Configuración del Perfil",

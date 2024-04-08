@@ -122,12 +122,60 @@
   },
   "User": {
     "managerProfile": "アカウント管理",
+    "bookingAndTrip": "予約と旅行",
     "logout": "ログアウト"
   },
   "Banner": {
     "title": "滞在を楽しんでいただけることを願っています",
     "subTitle": "世界クラスのホテル＆レストランリゾートをご覧ください。",
     "bookNow": "今すぐ予約"
+  },
+  "MyTrip": {
+    "title": "予約と旅行",
+    "complete": "完了",
+    "items": {
+      "item1": "再予約",
+      "item2": "予約の削除"
+    }
+  },
+  "MyBooking": {
+    "title": "マイ予約",
+    "bookingConfirmation": "予約確認",
+    "confirmNumber": "確認番号：",
+    "pinCode": "PINコード：",
+    "address": "住所：",
+    "phone": "電話番号：",
+    "checkIn": "チェックイン",
+    "checkOut": "チェックアウト",
+    "price": "価格",
+    "vat": "VAT",
+    "units": "単位",
+    "nights": "泊",
+    "guestName": "ゲスト名：",
+    "bedSize": "ベッドのサイズ：",
+    "forMax": "最大",
+    "people": "人",
+    "finalPrice": {
+      "title": "表示される最終価格は、施設に支払う金額です。",
+      "items": {
+        "item1": "Staying.comは、ゲストに予約料、管理料、その他の料金を請求しません。",
+        "item2": "お客様のカード発行会社が外貨取引手数料を請求する場合があります。"
+      }
+    },
+    "paymentInfo": {
+      "title": "支払情報",
+      "items": {
+        "item1": "ホテルがすべての支払いを処理します。",
+        "item2": "この施設では、以下の支払い方法が受け入れられます："
+      }
+    },
+    "additionInfo": {
+      "title": "追加情報",
+      "items": {
+        "item1": "追加のサプリメント（例：追加ベッド）は、この合計に含まれていません。",
+        "item2": "出発しない場合やキャンセルした場合、施設からは税金が請求される場合があります。"
+      }
+    }
   },
   "Profile": {
     "title": "プロフィール設定",

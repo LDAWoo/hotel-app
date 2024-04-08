@@ -51,7 +51,7 @@ const Information = () => {
                     const [year, month, day] = prev.dob.split('-');
                     return { ...prev, dob: { year, month, day } };
                 }
-                if(!prev.dob && prev.dob.length === 0 ){
+                if(!prev.dob){
                     return { ...prev, dob: { year: "", month: "01", day: "" } };
                 }
                 if (prev.gender && prev.gender.length > 0) {
@@ -261,14 +261,14 @@ const Information = () => {
         },
         {
             Title: t("Profile.information.address"),
-            current: currentUser?.address !== "No address!.." ? currentUser?.address : t("Profile.information.notAddress"),
+            current: currentUser?.address ? currentUser?.address : t("Profile.information.notAddress"),
             menu: [
                 {
                     title: t("Profile.information.address"),
                     name: "address",
                     type: "input",
                     typeof: "textOrNumber",
-                    value: currentUser?.address !== "No address!.." ? currentUser?.address : "",
+                    value: currentUser?.address ? currentUser?.address : "",
                     error: userError?.address || "",
                 },
             ],
@@ -544,7 +544,7 @@ const Information = () => {
                 validate({ active: item.active });
             })
         }
-    }, [currentUser,i18next.language]);
+    }, [i18next.language]);
 
     return (
         <div className='w-full'>

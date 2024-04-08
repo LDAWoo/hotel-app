@@ -7,6 +7,7 @@ import setCookie from "../../hooks/useRegisterSetCookie";
 import routesConfig from "../../configs/routesConfig";
 import getCookie from "../../hooks/useRegisterGetCookie";
 import { useTranslation } from "react-i18next";
+import { getLogout } from "../../api/User/Logout";
 
 export const UserContext = createContext();
 const AppUserProvider = ({ children }) => {
@@ -21,8 +22,10 @@ const AppUserProvider = ({ children }) => {
   const [errorLogin, setErrorLogin] = useState("");
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await getLogout(token)
     removeCookie("token");
+    setCookie("token","");
     setUser({});
   };
 

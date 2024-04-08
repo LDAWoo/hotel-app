@@ -41,7 +41,7 @@ const SecureBooking = () => {
       ) : Object.keys(data).length > 0 ? (
         <>
           <>
-            <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
+            <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 mb-10 p-[10px] bg-transparent'>
               <div className='flex flex-col w-full gap-4'>
                 <ProgressBooking currentSource={currentSource}/>
                 <MainBooking currentSource={currentSource}/>

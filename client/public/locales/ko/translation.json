@@ -110,12 +110,60 @@
   },
   "User": {
     "managerProfile": "계정 관리",
+    "bookingAndTrip": "예약 및 여행",
     "logout": "로그아웃"
   },
   "Banner": {
     "title": "우리는 여행을 즐기시길 바랍니다",
     "subTitle": "우리의 세계급 호텔 및 레스토랑 리조트를 발견해보세요.",
     "bookNow": "지금 예약하기"
+  },
+  "MyTrip": {
+    "title": "예약 및 여행",
+    "complete": "완료",
+    "items": {
+      "item1": "다시 예약",
+      "item2": "예약 취소"
+    }
+  },
+  "MyBooking": {
+    "title": "내 예약",
+    "bookingConfirmation": "예약 확인",
+    "confirmNumber": "확인 번호:",
+    "pinCode": "핀 코드:",
+    "address": "주소:",
+    "phone": "전화번호:",
+    "checkIn": "체크인",
+    "checkOut": "체크아웃",
+    "price": "가격",
+    "vat": "부가세",
+    "units": "단위",
+    "nights": "박",
+    "guestName": "게스트 이름:",
+    "bedSize": "침대 크기:",
+    "forMax": "최대",
+    "people": "명",
+    "finalPrice": {
+      "title": "최종 가격은 숙소에 지불할 금액입니다.",
+      "items": {
+        "item1": "Staying.com은 손님에게 예약, 관리 또는 기타 수수료를 청구하지 않습니다.",
+        "item2": "카드 발급자가 외화 거래 수수료를 부과할 수 있습니다."
+      }
+    },
+    "paymentInfo": {
+      "title": "결제 정보",
+      "items": {
+        "item1": "호텔이 모든 결제를 처리합니다.",
+        "item2": "이 숙소는 다음의 결제 방식을 허용합니다:"
+      }
+    },
+    "additionInfo": {
+      "title": "추가 정보",
+      "items": {
+        "item1": "추가 비용(예: 추가 침대)은 여기서 총액에 추가되지 않습니다.",
+        "item2": "도착하지 않거나 예약을 취소하면 숙박 요금이 부과될 수 있습니다."
+      }
+    }
   },
   "Profile": {
     "title": "프로필 설정",

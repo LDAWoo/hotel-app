@@ -7,6 +7,8 @@ const routesConfig = {
   forgotConfirmation: "/forgot-password/confirmation",
   checkEmail: "/register/check-email",
   home: "/",
+  mytrip: "/mytrip",
+  mybooking: "/mybooking",
   profile: "/profile",
   profileInformation: "/profile/information",
   profileSecurity: "/profile/security",

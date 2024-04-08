@@ -122,12 +122,60 @@
   },
   "User": {
     "managerProfile": "Quản lí trang cá nhân",
+    "bookingAndTrip": "Đặt phòng & Chuyến đi",
     "logout": "Đăng xuất"
   },
   "Banner": {
     "title": "Chúng tôi hy vọng bạn sẽ thích kỳ nghỉ của mình",
     "subTitle": "Khám phá khu nghỉ dưỡng khách sạn và nhà hàng hàng đầu thế giới của chúng tôi.",
     "bookNow": "Đặt ngay"
+  },
+  "MyTrip": {
+    "title": "Đặt phòng & Chuyến đi",
+    "complete": "Hoàn thành",
+    "items": {
+      "item1": "Đặt lại",
+      "item2": "Hủy đặt phòng"
+    }
+  },
+  "MyBooking": {
+    "title": "Đặt phòng của tôi",
+    "bookingConfirmation": "Xác nhận đặt phòng",
+    "confirmNumber": "Mã xác nhận:",
+    "pinCode": "Mã PIN:",
+    "address": "Địa chỉ:",
+    "phone": "Điện thoại:",
+    "checkIn": "Nhận phòng",
+    "checkOut": "Trả phòng",
+    "price": "Giá",
+    "vat": "VAT",
+    "units": "Đơn vị",
+    "nights": "Đêm",
+    "guestName": "Tên khách:",
+    "bedSize": "Kích thước giường:",
+    "forMax": "tối đa",
+    "people": "người",
+    "finalPrice": {
+      "title": "Giá cuối cùng được hiển thị là số tiền bạn sẽ thanh toán cho khách sạn.",
+      "items": {
+        "item1": "Staying.com không thu phí đặt phòng, quản lý hoặc phí khác cho khách.",
+        "item2": "Ngân hàng phát hành thẻ của bạn có thể tính phí giao dịch ngoại tệ cho bạn."
+      }
+    },
+    "paymentInfo": {
+      "title": "Thông tin thanh toán",
+      "items": {
+        "item1": "Khách sạn xử lý tất cả các khoản thanh toán.",
+        "item2": "Khách sạn này chấp nhận các hình thức thanh toán sau đây:"
+      }
+    },
+    "additionInfo": {
+      "title": "Thông tin bổ sung",
+      "items": {
+        "item1": "Vui lòng lưu ý rằng các phụ phí bổ sung (ví dụ: giường thêm) không được tính vào tổng số này.",
+        "item2": "Nếu bạn không xuất hiện hoặc hủy, khách sạn vẫn có thể tính thuế phí áp dụng."
+      }
+    }
   },
   "Profile": {
     "title": "Cài đặt Hồ sơ",

@@ -7,7 +7,7 @@ import Footer from "../../Footer/Footer";
 function DefaultLayout({ children }) {
   return (
     <MainLayout>
-      <div className='flex w-full flex-col'>
+      <div className='flex w-full flex-col h-full'>
         <Navbar />
         <Banner />
         {children}

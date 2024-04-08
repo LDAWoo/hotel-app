@@ -123,12 +123,61 @@
   },
   "User": {
     "managerProfile": "Manage account",
+    "bookingAndTrip": "Bookings & Trips",
     "logout": "Log out"
   },
   "Banner": {
     "title": "We hope you’ll enjoy your stay",
     "subTitle": "Discover our world-class hotel & restaurant resort.",
     "bookNow": "Book Now"
+  },
+  "MyTrip": {
+    "title": "Bookings & Trips",
+    "complete": "Complete",
+    "items": {
+      "item1": "Booking again",
+      "item2": "Remove booking"
+    }
+  },
+  "MyBooking": {
+    "title": "My Booking",
+    "bookingConfirmation": "Booking confirmation",
+    "confirmNumber": "Confirm number:",
+    "pinCode": "Pin code:",
+    "address": "Address:",
+    "phone": "Phone:",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "price": "Price",
+    "vat": "vat",
+    "units": "Units",
+    "nights": "Nights",
+    "guestName": "Guest name:",
+    "bedSize": "Bed size(s):",
+    "forMax": "for max.",
+    "people": "people",
+    "finalPrice": {
+      "title": "The final price shown is the amount you will pay to the property.",
+      "items": {
+        "item1": "Staying.com does not charge guests any reservation, administration or other fees.",
+        "item2": "Your card issuer may charge you a foreign transaction fee."
+      }
+    },
+    "paymentInfo": {
+      "title": "Payment information",
+      "items": {
+        "item1": "Hotel handles all payments.",
+        "item2": "This property accepts the following forms of payment:"
+      }
+    },
+    "additionInfo": {
+      "title": "Additional information",
+      "items": {
+        "item1": "Please note that additional supplements (e.g. extra bed) are not added in this total.",
+        "item2": "If you don't show up or cancel, applicable taxes may still be charged by the property.",
+        "item3": "Please remember to read the important information below, as this may contain important details not mentioned here."
+      }
+    }
   },
   "Profile": {
     "title": "Profile Settings",

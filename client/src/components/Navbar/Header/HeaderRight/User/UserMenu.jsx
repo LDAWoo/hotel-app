@@ -4,9 +4,33 @@ import { useNavigate } from "react-router-dom";
 import routesConfig from "../../../../../configs/routesConfig";
 import useRegisterToolTipUser from "../../../../../hooks/useRegisterToolTipUser";
 import Button from "../../../../Buttons/Button";
-import { User as Users } from "../../../../Constants/User";
 import { UserContext } from "../../../../Contexts/AppUserProvider";
+import { AiOutlineUser } from "react-icons/ai";
+import { BiLogOutCircle } from "react-icons/bi";
+import { IoBagHandleOutline } from "react-icons/io5";
+
 function UserMenu() {
+  const Users = [
+    {
+      id: 1,
+      icon: AiOutlineUser,
+      type: "profile",
+      translationKey: "User.managerProfile",
+    },
+    {
+      id: 2,
+      icon: IoBagHandleOutline,
+      type: "booking",
+      translationKey: "User.bookingAndTrip",
+    },
+    {
+      id: 2,
+      icon: BiLogOutCircle,
+      type: "logout",
+      translationKey: "User.logout",
+    },
+  ];
+
   const { t } = useTranslation();
   const {onClose} = useRegisterToolTipUser()
   const { handleLogout } = useContext(UserContext);
@@ -17,6 +41,11 @@ function UserMenu() {
       case "profile":
         onClose()
         navigate(routesConfig.profile)
+        break;
+        
+      case "booking":
+        onClose()
+        navigate(routesConfig.mytrip)
         break;
 
       case "logout":

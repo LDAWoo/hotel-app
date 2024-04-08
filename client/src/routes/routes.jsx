@@ -18,6 +18,8 @@ import Successfully from "../pages/Successfully/Successfully";
 import Profile from "../pages/Profile/Profile";
 import Information from "../pages/Profile/Information/Information";
 import Security from "../pages/Profile/Security/Security";
+import BookingTrip from "../pages/BookingTrip/BookingTrip";
+import MyBooking from "../pages/MyBooking/MyBooking";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -54,6 +56,16 @@ const publicRoutesPathComponent = [
   { path: routesConfig.home,
     component: Home, 
     layout: DefaultLayout 
+  },
+  {
+    path: routesConfig.mytrip, 
+    component: BookingTrip, 
+    layout: LayoutHotelDetail
+  },
+  {
+    path: routesConfig.mybooking, 
+    component: MyBooking, 
+    layout: LayoutHotelDetail
   },
   { path: routesConfig.profile, 
     component: Profile, 

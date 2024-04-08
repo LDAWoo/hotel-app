@@ -25,10 +25,10 @@ export const postBookingSessionInfo = async (token, newData) => {
   return data;
 };
 
-export const postBookingSessionConfirm = async (token, newData) => {
-  const response = await post(`/public/v1/booking/session/confirm`, newData, "", {
+export const postBookingSessionConfirm = async (jwtToken, newData,token) => {
+  const response = await post(`/public/v1/booking/session/confirm`, newData, token, {
     headers: {
-      jwtToken: token,
+      'jwtToken': jwtToken,
     },
   });
   const data = await response.data;

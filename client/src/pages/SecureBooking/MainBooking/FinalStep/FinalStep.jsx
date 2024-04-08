@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
@@ -10,13 +10,15 @@ import useRegisterWantPay from "../../../../hooks/SecureBooking/useRegisterWantP
 import Panel from "../Aside/Panel/Panel";
 import PayNow from "./PayNow/PayNow";
 import WantPay from "./WantPay/WantPay";
+import { UserContext } from "../../../../components/Contexts/AppUserProvider";
 const FinalStep = () => {
     const [loading, setLoading] = useState(false)
     const {receiveMarketingEmail} = useRegisterWantPay()
     const { data } = useRegisterSecureBooking();
+    const {token, user} = useContext(UserContext)
     const navigate = useNavigate()
     const {t} = useTranslation();
-
+    console.log(data);
     const items = [
         {
           component: PayNow,
@@ -37,9 +39,11 @@ const FinalStep = () => {
             receiveMarketingEmail
         }
 
+        const tokenUser = Object.keys(user).length > 0 ? token : "";
+
         try {
             setLoading(true)
-            await postBookingSessionConfirm(data.jwtToken, updateData)
+            await postBookingSessionConfirm(data.jwtToken, updateData, tokenUser)
             setLoading(false)
             navigate(`${routesConfig.successfully}?token=${data.jwtToken}`)
         } catch (error) {

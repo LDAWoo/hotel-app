@@ -445,6 +445,11 @@
       "CompleteBooking": "Hoàn tất đặt phòng"
     }
   },
+  "BookingSuccess": {
+    "title": "Cảm ơn bạn!",
+    "subTitle": "Chúng tôi đã tạo phòng cho bạn, để bạn có thể tìm phòng phù hợp.",
+    "backToHome": "Quay lại trang chủ"
+  },
   "times":{
     "am": "SA",
     "pm": "CH"

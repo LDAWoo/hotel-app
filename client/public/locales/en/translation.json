@@ -447,6 +447,11 @@
       "CompleteBooking": "Complete booking"
     }
   },
+  "BookingSuccess": {
+      "title": "Thank you!",
+      "subTitle": "We have created room for you, so you can find the room that suits you.",
+      "backToHome": "Back to home"
+  },
   "times":{
     "am": "AM",
     "pm": "PM"

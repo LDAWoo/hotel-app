@@ -448,6 +448,11 @@
       "CompleteBooking": "完成预订"
     }
   },
+  "BookingSuccess": {
+    "title": "谢谢您！",
+    "subTitle": "我们已为您创建了房间，您可以找到适合您的房间。",
+    "backToHome": "返回首页"
+  },
   "times":{
     "am": "上午",
     "pm": "下午"

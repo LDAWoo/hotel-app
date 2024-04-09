@@ -445,6 +445,11 @@
       "CompleteBooking": "Completar reserva"
     }
   },
+  "BookingSuccess": {
+    "title": "¡Gracias!",
+    "subTitle": "Hemos creado una habitación para ti, para que puedas encontrar la habitación que te convenga.",
+    "backToHome": "Volver a casa"
+  },
   "times":{
     "am": "AM",
     "pm": "PM"

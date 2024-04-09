@@ -445,6 +445,11 @@
       "CompleteBooking": "予約を完了する"
     }
   },
+  "BookingSuccess": {
+    "title": "ありがとうございます！",
+    "subTitle": "あなたのために部屋を作成しましたので、お好みの部屋を見つけることができます。",
+    "backToHome": "ホームに戻る"
+  },
   "times":{
     "am": "午前",
     "pm": "午後"

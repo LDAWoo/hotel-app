@@ -1,6 +1,5 @@
 import Image from '../../../components/Image/Image';
 import Title from '../../../components/Title/Title';
-import Tooltip from '../../../components/Tooltip/Tooltip';
 import { BsEmojiFrown } from "react-icons/bs";
 import { BsEmojiNeutral } from "react-icons/bs";
 import { BsEmojiSmile } from "react-icons/bs";
@@ -11,6 +10,7 @@ import { useState } from 'react';
 import TextInput from '../../../components/TextInput/TextInput';
 import StayingRating from '../../../components/Staying/StayingRating';
 import Button from '../../../components/Buttons/Button';
+import ToolTip from '../../../components/ToolTip/ToolTip';
 
 function Body() {
     const [currentRating, setCurrentRating] = useState(0)
@@ -122,7 +122,7 @@ function Body() {
                             <div className='flex w-full'>
                                 {itemsRating.map((item, index) => (
                                     <div onClick={() => handleChooseRating(item?.rating)} onMouseEnter={() => handleMouseEnter(item?.rating)} onMouseLeave={() => handleMouseLeave(item?.rating)} key={index} className={`overflow-hidden w-full h-[42px] border border-[#bdbdbd] ${index === itemsRating.length - 1 ? 'border-r' : 'border-r-0'} ${index === 0 ? 'rounded-tl-[4px] rounded-bl-[4px]' : 'rounded-0'} ${index === itemsRating.length - 1 ? 'rounded-tr-[4px] rounded-br-[4px]' : 'rounded-0'}`}>
-                                        <Tooltip typeToolTip='TippyHeadless' isVisible={activeRating === item?.rating} 
+                                        <ToolTip typeToolTip='TippyHeadless' isVisible={activeRating === item?.rating} 
                                                 items={
                                                     <div className=' text-white justify-center items-center flex flex-col bg-hotel-100 p-[4px_8px] rounded-[6px]'>
                                                         <div className='flex flex-row items-center gap-1'>
@@ -137,7 +137,7 @@ function Body() {
                                                                 {item?.rating}
                                                             </div>
                                                     </div>
-                                        </Tooltip>
+                                        </ToolTip>
                                     </div>
                                 ))}
                             </div>

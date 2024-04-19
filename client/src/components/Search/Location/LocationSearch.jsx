@@ -27,7 +27,7 @@ function LocationSearch({onKeyDown}) {
       if(onOpen){
         setTimeout(() => {
           inputRef.current.focus();
-        },300)
+        },800)
       }
     }
   },[onOpen])

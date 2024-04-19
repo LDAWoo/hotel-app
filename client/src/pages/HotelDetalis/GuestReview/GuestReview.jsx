@@ -1,4 +1,5 @@
 import ReviewModal from "../../../components/Modals/ReviewModal/ReviewModal";
+import Title from "../../../components/Title/Title";
 import useRegisterHotelDetails from "../../../hooks/HotelDetails/useRegisterHotelDetails";
 import Reserve from "../Availability/AvailabilityRoom/AvailabilitySummary/Reserve";
 import Categories from "./Categories";
@@ -6,24 +7,26 @@ import RatingReview from "./Categories/RatingReview";
 import ListReview from "./ListReview/ListReview";
 import ShowAllReview from "./ShowAllReview";
 function GuestReview() {
-  const { hotels, loading } = useRegisterHotelDetails();
+  const { hotels } = useRegisterHotelDetails();
 
   return (
     <section className='flex flex-col gap-2 w-full mt-5'>
-      {loading ? (
-        <div>Loading</div>
-      ) : (
         <>
+          <Title title="Guest reviews" extraLarge4 fontBold/>
           <RatingReview data={hotels} />
           <Categories data={hotels?.reviewSyntheticResponse} />
-          <ListReview
-            reviewData={
-              hotels?.reviewSyntheticResponse?.reviewResponse &&
-              hotels?.reviewSyntheticResponse?.reviewResponse
-            }
-            style={false}
-          />
-          <ShowAllReview />
+          {hotels?.reviewSyntheticResponse?.reviewResponse.length > 0 &&
+            <>
+              <ListReview
+                reviewData={
+                  hotels?.reviewSyntheticResponse?.reviewResponse &&
+                  hotels?.reviewSyntheticResponse?.reviewResponse
+                }
+                style={false}
+              />
+              <ShowAllReview />
+            </>
+          }
 
           <ReviewModal
             body={
@@ -39,7 +42,6 @@ function GuestReview() {
             footer={<div className="w-full"><Reserve/></div>}
           />
         </>
-      )}
     </section>
   );
 }

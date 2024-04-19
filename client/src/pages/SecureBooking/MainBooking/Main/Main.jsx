@@ -21,7 +21,7 @@ import routerConfig from '../../../../configs/routesConfig'
 import { useTranslation } from "react-i18next";
 
 function Main() {
-  const { data } = useRegisterSecureBooking();
+  const { data,setData } = useRegisterSecureBooking();
   const {t} = useTranslation();
 
   const items = [
@@ -102,6 +102,7 @@ function Main() {
 
       setLoading(true);
       const results = await postBookingSessionInfo(data?.jwtToken, updateData);
+      setData(results);
       navigate(`${routerConfig.secureBooking}?token=${results?.jwtToken}&source=final`)
       setLoading(false);
     } catch (e) {

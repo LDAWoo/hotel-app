@@ -6,6 +6,7 @@ import useRegisterToolTipLocation from "../../../hooks/useRegisterToolTipLocatio
 import Icon from "../../Icon/Icon";
 import Title from "../../Title/Title";
 function SearchItem({
+  id,
   className,
   icon,
   iconClose,
@@ -22,22 +23,18 @@ function SearchItem({
   onClick,
   button,
   componentError,
+  onKeyDown,
+  ...props
 }) {
   const { isMobile } = useContext(DeviceContext);
   const { onCloseAlert } = useRegisterLocationStore();
-  const [isFocus, setIsFocus] = useState(false);
   const { onOpen } = useRegisterToolTipLocation();
 
   const handleFocus = () => {
-    setIsFocus(true);
     onCloseAlert();
     if (isMobile) {
       onOpen();
     }
-  };
-
-  const handleBlur = () => {
-    setIsFocus(false);
   };
 
   return (
@@ -50,11 +47,9 @@ function SearchItem({
         } ${button ? "cursor-pointer" : ""} rounded-lg w-full`}
         onClick={onClick}
       >
-        <div className={`flex flex-1 w-full items-center p-1`}>
+        <div className={`flex flex-1 w-full items-center p-[9px_4px]`}>
           <div
-            className={`flex items-center relative duration-50 gap-2 p-[2px] w-full border-[2px] ${
-              isFocus ? " border-hotel-100" : " border-transparent"
-            } ${button && icon ? "justify-start" : "justify-center"}`}
+            className={`flex items-center relative duration-50 gap-2 p-[2px] w-full ${button && icon ? "justify-start" : "justify-center"}`}
           >
             {icon && (
               <div
@@ -68,18 +63,20 @@ function SearchItem({
             )}
             {input && (
               <input
+                id={id}
                 type='text'
                 placeholder={placeholder}
                 name={name}
                 value={value}
-                className={`flex justify-start flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:sm:text-[15px] placeholder:font-medium text-[14px] sm:text-[15px]${
-                  isFocus
-                    ? "placeholder:text-gray-500 dark:placeholder:text-gray-100"
-                    : ""
-                } overflow-hidden text-ellipsis whitespace-nowrap`}
+                className={`flex justify-start flex-grow outline-none font-medium dark:text-white dark:placeholder:text-primary-50 bg-transparent placeholder:text-black placeholder:text-[14px] placeholder:sm:text-[15px] placeholder:font-medium text-[14px] sm:text-[15px] overflow-hidden text-ellipsis whitespace-nowrap`}
                 onFocus={handleFocus}
-                onBlur={handleBlur}
                 onChange={(e) => handleChangeInput(e)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    onKeyDown();
+                  }
+                }}
+                {...props}
               />
             )}
 
@@ -104,7 +101,8 @@ function SearchItem({
             {title && (
               <Title
                 title={title}
-                className='text-[14px] sm:text-[15px] text-white'
+                className=' text-white'
+                xxxl
                 fontBold
               />
             )}
@@ -116,6 +114,7 @@ function SearchItem({
 }
 
 SearchItem.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
   icon: PropTypes.elementType,
   iconClose: PropTypes.elementType,
@@ -132,5 +131,6 @@ SearchItem.propTypes = {
   handleClose: PropTypes.func,
   onClick: PropTypes.func,
   button: PropTypes.bool,
+  onKeyDown: PropTypes.func,
 };
 export default SearchItem;

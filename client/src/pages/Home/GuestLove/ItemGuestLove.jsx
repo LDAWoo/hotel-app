@@ -34,7 +34,7 @@ function ItemGuestLove({ item }) {
     )}&group_adults=1&group_children=0&group_rooms=1`;
 
   return (
-    <Link className='w-full min-h-full]' to={url} target='_blank'>
+    <Link className='w-full min-h-full]' to={url}>
       <div className='w-full min-h-full rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.16)]'>
         <div className='flex flex-col min-h-full'>
           <div className='flex flex-col min-h-full overflow-hidden'>

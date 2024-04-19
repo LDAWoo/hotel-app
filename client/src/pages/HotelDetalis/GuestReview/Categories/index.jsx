@@ -5,6 +5,7 @@ import CategoryItem from "./CategoryItem";
 import { TbArrowsMoveVertical } from "react-icons/tb";
 import useRegisterWindowSizeStore from "../../../../hooks/useRegisterWindowSizeStore";
 import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types'
 
 const initialVisibleCount = 3;
 
@@ -38,7 +39,7 @@ const Categories = ({ data, vertical }) => {
             <CategoryItem
               key={category?.categoryId}
               title={category?.categoryName}
-              rating={category?.rating}
+              rating={category?.rating || Math.floor(Math.random() * 5)}
             />
           ))}
       </div>
@@ -75,5 +76,18 @@ const Categories = ({ data, vertical }) => {
     </div>
   );
 };
+
+Categories.propTypes = {
+  data: PropTypes.shape({
+    categories: PropTypes.arrayOf(
+      PropTypes.shape({
+        categoryId: PropTypes.string,
+        categoryName: PropTypes.string,
+        rating: PropTypes.number,
+      })
+    ),
+  }),
+  vertical: PropTypes.bool,
+}
 
 export default Categories;

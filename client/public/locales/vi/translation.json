@@ -123,6 +123,7 @@
   "User": {
     "managerProfile": "Quản lí trang cá nhân",
     "bookingAndTrip": "Đặt phòng & Chuyến đi",
+    "myWishlist": "Đã lưu",
     "logout": "Đăng xuất"
   },
   "Banner": {
@@ -219,10 +220,87 @@
       "sendEmail": "Gửi email"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "Đã xác nhận",
+    "yourBookingIn": "Đặt phòng của bạn tại",
+    "showYourBookingIn": "Hiển thị xác nhận của bạn trong",
+    "scanWithPhone": "Quét bằng điện thoại",
+    "isConfirm": "đã được xác nhận.",
+    "confirmationEmailTo": "Bạn đã sẵn sàng! Chúng tôi đã gửi email xác nhận của bạn đến",
+    "paymentWill": "Thanh toán của bạn sẽ được xử lý bởi",
+    "priceMoreDetails": "Phần 'Giá' dưới đây có thông tin chi tiết hơn",
+    "youCanNowModify": "Bạn có thể chỉnh sửa hoặc hủy đặt phòng của mình cho đến khi nhận phòng",
+    "checkIn": "Nhận phòng",
+    "checkOut": "Trả phòng",
+    "bookingDetails": "Chi tiết đặt phòng",
+    "address": "Địa chỉ",
+    "phone": "Điện thoại:",
+    "yourRoomDetails": "Chi tiết phòng của bạn",
+    "adults": "người lớn",
+    "children": "trẻ em",
+    "rooms": "phòng",
+    "nights": "đêm",
+    "guestName": "Tên khách",
+    "maximumCapacity": "Sức chứa tối đa",
+    "facilities": "Tiện nghi",
+    "beds": "Giường",
+    "prepayment": "Thanh toán trước",
+    "noPrepayment": "Không cần thanh toán trước.",
+    "sale": "Khuyến mãi",
+    "for": "cho",
+    "guests": "khách",
+    "price": "Giá",
+    "TheFinal": {
+        "title": "Giá cuối cùng được hiển thị là số tiền bạn sẽ thanh toán cho tài sản.",
+        "items": {
+            "item1": "Staying.com không tính phí đặt phòng, phí quản lý hoặc các loại phí khác cho khách hàng.",
+            "item2": "Ngân hàng phát hành thẻ của bạn có thể tính cho bạn phí giao dịch ngoại tệ."
+        }
+    },
+    "PaymentInformation": {
+        "title": "Thông tin thanh toán",
+        "items": {
+            "item1": "Khách sạn sẽ xử lý tất cả các khoản thanh toán.",
+            "item2": "Tài sản này chấp nhận các hình thức thanh toán sau: Chỉ tiền mặt"
+        }
+    },
+    "AdditionalInformation": {
+        "title": "Thông tin bổ sung",
+        "items": {
+            "item1": "Vui lòng lưu ý rằng các phụ phí bổ sung (ví dụ: giường phụ) không được tính vào tổng này.",
+            "item2": "Nếu bạn không xuất hiện trong đặt phòng này và không hủy trước, tài sản có quyền tính cho bạn toàn bộ số tiền đặt phòng.",
+            "item3": "Vui lòng nhớ đọc thông tin quan trọng dưới đây, vì điều này có thể chứa các chi tiết quan trọng không được đề cập ở đây."
+        }
+    },
+    "contactProperty": "Liên hệ tài sản",
+    "forQuestions": "Đối với hầu hết các câu hỏi của bạn, tài sản thường là nơi tốt nhất để hỏi",
+    "emailProperty": "Email tài sản",
+    "sendAEmailProperty": "Gửi tin nhắn cho tài sản, họ sẽ trả lời sớm nhất có thể",
+    "callProperty": "Gọi tài sản",
+    "confirmationNumber": "Số xác nhận:",
+    "pinCode": "Mã PIN:",
+    "isEverythingCorrect": "Mọi thứ có đúng không?",
+    "yourBookingOnline": "Bạn luôn có thể xem hoặc thay đổi đặt phòng của mình trực tuyến - không cần đăng ký.",
+    "tipChange": "Mẹo: Bạn có thể thay đổi đặt phòng này bất kỳ lúc nào",
+    "greatTrip": "Chúc bạn có một chuyến đi tuyệt vời!",
+    "TheTeam": "Nhóm Staying.com",
+    "moreThan": "Hơn",
+    "million": "1 triệu",
+    "recommendStaying": "người trong tháng trước nói rằng họ sẽ giới thiệu Staying.com cho gia đình và bạn bè của họ.",
+    "button": {
+        "cancel": "Hủy bỏ",
+        "cancelBooking": "Hủy đặt phòng của bạn",
+        "sendAnEmail": "Gửi email",
+        "viewBooking": "Xem đặt phòng",
+        "saveConfirmation": "Lưu xác nhận"
+    }
+  },
   "Search": {
-    "location": "Bạn muốn đến đâu?",
+    "title": "Nhập điểm đến",
+    "location": "Bạn định đi đến đâu?",
     "checkOutDate": "Ngày trả phòng",
-    "search": "Tìm",
+    "search": "Tìm kiếm",
+    "clear": "Xóa",
     "Guest": {
       "Adult": {
         "title": "Người lớn"
@@ -232,7 +310,8 @@
       },
       "Room": {
         "title": "Phòng"
-      }
+      },
+      "Done": "Xong"
     }
   },
   "RecentSearch": {
@@ -449,6 +528,38 @@
     "title": "Cảm ơn bạn!",
     "subTitle": "Chúng tôi đã tạo phòng cho bạn, để bạn có thể tìm phòng phù hợp.",
     "backToHome": "Quay lại trang chủ"
+  },
+  "MyWishlist": {
+    "title": "Danh sách mong muốn của tôi",
+    "propertiesSaved": "các địa điểm đã lưu",
+    "previews": "xem trước",
+    "nights": "đêm",
+    "adults": "người lớn",
+    "children": "trẻ em",
+    "includesTaxesChanges": "Bao gồm thuế và phí",
+    "undo": "Hoàn tác",
+    "NotWishlist": {
+      "title": "Dưới đây là 3 bước đơn giản để bạn bắt đầu:",
+      "items": {
+        "item1": "Tìm kiếm nơi lưu trú",
+        "item2": "Nhấn vào biểu tượng trái tim khi bạn tìm thấy một địa điểm bạn thích",
+        "item3": "Bạn sẽ tìm thấy tất cả những gì bạn đã lưu ở đây"
+      },
+      "startSearching": "Bắt đầu tìm kiếm"
+    },
+    "CreateAccount": {
+      "title": "Lưu và chia sẻ các bất động sản bạn yêu thích",
+      "subTitle": "Danh sách giúp bạn đánh dấu các bất động sản và chia sẻ chúng với bạn bè, từ bất kỳ thiết bị nào, bất cứ khi nào bạn muốn.",
+      "createAccount": "Tạo một tài khoản để bắt đầu tạo danh sách",
+      "signUp": "Đăng ký",
+      "alreadyHaveAnAccount": "Đã có một tài khoản?",
+      "toSeeTheLists": "để xem danh sách của bạn."
+      }
+  },
+  "NotPage": {
+      "title": "Không tìm thấy trang",
+      "subTitle": "Điều này xảy ra! Bây giờ, hãy cố gắng đưa bạn quay lại đúng hướng.",
+      "goToHomePage": "Đi đến trang chủ"
   },
   "times":{
     "am": "SA",

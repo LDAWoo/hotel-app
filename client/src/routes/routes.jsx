@@ -20,6 +20,12 @@ import Information from "../pages/Profile/Information/Information";
 import Security from "../pages/Profile/Security/Security";
 import BookingTrip from "../pages/BookingTrip/BookingTrip";
 import MyBooking from "../pages/MyBooking/MyBooking";
+import BookingConfirm from "../pages/BookingConfirm/BookingConfirm";
+import WishList from "../pages/Wishlist/Wishlist";
+import NotPage from "../pages/NotPage/NotPage";
+import BookingReview from "../pages/BookingReview/BookingReview";
+import BookingReviewSubmited from "../pages/BookingReviewSubmited/BookingReviewSubmited";
+import BookingReviewTimeline from "../pages/BookingReviewTimeline/BookingReviewTimeline";
 
 const publicRoutesPathComponent = [
   { path: routesConfig.login, component: Login, layout: LoginLayout },
@@ -58,6 +64,11 @@ const publicRoutesPathComponent = [
     layout: DefaultLayout 
   },
   {
+    path: routesConfig.mywishlist, 
+    component: WishList, 
+    layout: LayoutHotelDetail
+  },
+  {
     path: routesConfig.mytrip, 
     component: BookingTrip, 
     layout: LayoutHotelDetail
@@ -65,6 +76,26 @@ const publicRoutesPathComponent = [
   {
     path: routesConfig.mybooking, 
     component: MyBooking, 
+    layout: LayoutHotelDetail
+  },
+  {
+    path: routesConfig.bookingconfirmation, 
+    component: BookingConfirm, 
+    layout: LayoutHotelDetail
+  },
+  {
+    path: routesConfig.bookingreview, 
+    component: BookingReview, 
+    layout: LayoutHotelDetail
+  },
+  {
+    path: routesConfig.bookingreviewsubmitted, 
+    component: BookingReviewSubmited, 
+    layout: LayoutHotelDetail
+  },
+  {
+    path: routesConfig.bookingreviewtimeline, 
+    component: BookingReviewTimeline, 
     layout: LayoutHotelDetail
   },
   { path: routesConfig.profile, 
@@ -98,6 +129,11 @@ const publicRoutesPathComponent = [
     path: routesConfig.successfully,
     component: Successfully,
     layout: LayoutHotelDetail,
+  },
+  {
+    path: routesConfig.notPage,
+    component: NotPage,
+    layout: DefaultLayout,
   },
 ];
 

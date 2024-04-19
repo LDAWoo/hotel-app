@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useRegisterAvailabilityRoom from "../../../../../../hooks/HotelDetails/AvailabilityRoom/useRegisterAvailabilityRoom";
+import PropTypes from 'prop-types'
 
 const SelectAmount = ({ data }) => {
   const { rooms, setRooms } = useRegisterAvailabilityRoom();
@@ -24,7 +25,7 @@ const SelectAmount = ({ data }) => {
 
   return (
     <div>
-      <select
+      {data?.totalMoneyPromotion > 0 && <select
         value={selected ? data.roomId : 0}
         onChange={() => handleChange(data)}
         className='border border-primary-500 dark:text-primary-50 focus:outline-none focus:border-primary-400 bg-transparent rounded-[3px] w-full'
@@ -35,9 +36,16 @@ const SelectAmount = ({ data }) => {
         <option value={data.roomId}>
           1 <span>&nbsp;&nbsp;&nbsp;</span>(VND {data?.totalMoneyPromotion})
         </option>
-      </select>
+      </select>}
     </div>
   );
 };
+
+SelectAmount.propTypes = {
+  data: PropTypes.shape({
+    roomId: PropTypes.number.isRequired,
+    totalMoneyPromotion: PropTypes.number.isRequired,
+  }).isRequired,
+}
 
 export default SelectAmount;

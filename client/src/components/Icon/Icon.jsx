@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-function Icon({ icon, size, classIcon }) {
+function Icon({ icon, size, classIcon,...props }) {
   const IconComponent = icon;
 
   return (
-    <div className={classIcon}>{icon && <IconComponent size={size} />}</div>
+    <div className={classIcon} {...props}>{icon && <IconComponent size={size} />}</div>
   );
 }
 

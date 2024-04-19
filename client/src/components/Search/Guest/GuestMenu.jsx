@@ -1,3 +1,4 @@
+import Done from "./Done";
 import GuestAdult from "./GuestAdult";
 import GuestChildren from "./GuestChildren";
 import GuestRoom from "./GuestRoom";
@@ -8,6 +9,7 @@ function GuestMenu() {
         <GuestAdult />
         <GuestChildren />
         <GuestRoom />
+        <Done/>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { LuCalendarDays } from "react-icons/lu";
@@ -11,37 +11,31 @@ import RegisterToolTip from "../../ToolTip/RegisterToolTip/RegisterToolTip";
 import SearchBox from "../SearchBox/SearchItem";
 import CalendarCustom from "./CalendarCustom";
 function CalendarBox() {
+  const { onOpen, onClose } = useRegisterToolTipCalendar();
   const [searchParams] = useSearchParams();
-  const checkIn = searchParams.get("checkin");
-  const checkOut = searchParams.get("checkout");
+  const currentCheckInDate = searchParams.get("checkin") || "";
+  const currentCheckOutDate = searchParams.get("checkout") || "";
 
   const { startDate, endDate, setStartDate, setEndDate } =
     useRegisterDateStore();
   const locale = getLocale();
   const { t } = useTranslation();
 
-  const validateStartDate = (date) => {
-    if (isNaN(date) || new Date(date) < new Date()) {
-      setStartDate(new Date());
-    } else {
-      setStartDate(new Date(date));
-    }
-  };
-
-  const validateEndDate = (date) => {
-    if (isNaN(date) || new Date(date) < new Date()) {
-      setEndDate(new Date());
-    } else {
-      setEndDate(new Date(date));
-    }
-  };
-
   useEffect(() => {
-    validateStartDate(checkIn);
-    validateEndDate(checkOut);
-  }, []);
+    if(currentCheckInDate) {
+      const date = parseISO(currentCheckInDate);
+      if (!isNaN(date.getTime())) {
+        setStartDate(date);
+      }
+    }
+    if(currentCheckOutDate) {
+      const date = parseISO(currentCheckOutDate);
+      if (!isNaN(date.getTime())) {
+        setEndDate(date);
+      }
+    }
+  },[currentCheckInDate,currentCheckOutDate])
 
-  const { onOpen } = useRegisterToolTipCalendar();
   const handleShowCalender = () => {
     onOpen();
   };
@@ -50,6 +44,13 @@ function CalendarBox() {
     startDate === endDate
       ? t("Search.checkOutDate")
       : format(endDate, "EEE, MMM d", { locale });
+
+
+  useEffect(() => {
+    if(endDate > startDate) {
+      onClose();
+    }
+  },[endDate])
 
   return (
     <div className='relative w-full'>

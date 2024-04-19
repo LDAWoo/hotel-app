@@ -27,6 +27,7 @@ const AppUserProvider = ({ children }) => {
     removeCookie("token");
     setCookie("token","");
     setUser({});
+    setToken("")
   };
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const AppUserProvider = ({ children }) => {
         } catch (error) {
           setUser({});
           setUserLoading(false);
-          setToken("");
+          setToken();
         }
       }
     };

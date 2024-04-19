@@ -123,6 +123,7 @@
   "User": {
     "managerProfile": "アカウント管理",
     "bookingAndTrip": "予約と旅行",
+    "myWishlist": "保存済み",
     "logout": "ログアウト"
   },
   "Banner": {
@@ -219,10 +220,87 @@
       "sendEmail": "メールを送信"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "確認済み",
+    "yourBookingIn": "あなたの予約は",
+    "showYourBookingIn": "予約確認を表示",
+    "scanWithPhone": "電話でスキャン",
+    "isConfirm": "が確認されました。",
+    "confirmationEmailTo": "準備が整いました！確認メールが送信されました",
+    "paymentWill": "お支払いはこちらによって処理されます",
+    "priceMoreDetails": "以下の「価格」セクションに詳細があります",
+    "youCanNowModify": "チェックインまで予約を変更またはキャンセルできます",
+    "checkIn": "チェックイン",
+    "checkOut": "チェックアウト",
+    "bookingDetails": "予約の詳細",
+    "address": "住所",
+    "phone": "電話：",
+    "yourRoomDetails": "お部屋の詳細",
+    "adults": "大人",
+    "children": "子供",
+    "rooms": "部屋",
+    "nights": "泊",
+    "guestName": "ゲスト名",
+    "maximumCapacity": "最大収容人数",
+    "facilities": "設備",
+    "beds": "ベッド",
+    "prepayment": "前払い",
+    "noPrepayment": "前払いは必要ありません。",
+    "sale": "セール",
+    "for": "対象",
+    "guests": "ゲスト",
+    "price": "価格",
+    "TheFinal": {
+        "title": "表示される最終価格は、物件に支払う金額です。",
+        "items": {
+            "item1": "Staying.comは、ゲストに予約、管理手数料、その他の料金を請求しません。",
+            "item2": "カード発行会社が外貨取引手数料を請求する場合があります。"
+        }
+    },
+    "PaymentInformation": {
+        "title": "支払情報",
+        "items": {
+            "item1": "ホテルがすべての支払いを処理します。",
+            "item2": "この施設は次の支払い形式を受け入れます：現金のみ"
+        }
+    },
+    "AdditionalInformation": {
+        "title": "追加情報",
+        "items": {
+            "item1": "この合計には追加の補足料金（例：エクストラベッド）は含まれていません。",
+            "item2": "この予約に現れず、事前にキャンセルしなかった場合、物件は全額の予約料金を請求することがあります。",
+            "item3": "ここで言及されていない重要な詳細が含まれている可能性があるため、下記の重要な情報をお読みください。"
+        }
+    },
+    "contactProperty": "物件に連絡する",
+    "forQuestions": "ほとんどの質問に対しては、物件が通常最適な場所です",
+    "emailProperty": "物件にメールする",
+    "sendAEmailProperty": "物件にメッセージを送信すると、できるだけ早く返信します",
+    "callProperty": "物件に電話する",
+    "confirmationNumber": "予約番号：",
+    "pinCode": "PINコード：",
+    "isEverythingCorrect": "すべて正しいですか？",
+    "yourBookingOnline": "いつでもオンラインで予約を表示または変更できます-登録は必要ありません。",
+    "tipChange": "ヒント：いつでもこの予約を変更できます",
+    "greatTrip": "素晴らしい旅行を！",
+    "TheTeam": "Staying.comチーム",
+    "moreThan": "100万以上",
+    "million": "100万",
+    "recommendStaying": "先月、100万人以上の方がStaying.comを家族や友人にお勧めしました。",
+    "button": {
+        "cancel": "キャンセル",
+        "cancelBooking": "予約をキャンセルする",
+        "sendAnEmail": "メールを送信する",
+        "viewBooking": "予約を表示する",
+        "saveConfirmation": "確認を保存する"
+    }
+  },
   "Search": {
-    "location": "どこに行く予定ですか？",
+    "title": "目的地を入力",
+    "location": "どこに行きますか？",
     "checkOutDate": "チェックアウト日",
     "search": "検索",
+    "clear": "クリア",
     "Guest": {
       "Adult": {
         "title": "大人"
@@ -232,7 +310,8 @@
       },
       "Room": {
         "title": "部屋"
-      }
+      },
+      "Done": "完了"
     }
   },
   "RecentSearch": {
@@ -449,6 +528,38 @@
     "title": "ありがとうございます！",
     "subTitle": "あなたのために部屋を作成しましたので、お好みの部屋を見つけることができます。",
     "backToHome": "ホームに戻る"
+  },
+  "MyWishlist": {
+    "title": "私のウィッシュリスト",
+    "propertiesSaved": "保存された物件",
+    "previews": "プレビュー",
+    "nights": "泊",
+    "adults": "大人",
+    "children": "子供",
+    "includesTaxesChanges": "税金と料金を含む",
+    "undo": "元に戻す",
+    "NotWishlist": {
+      "title": "始めるための3つの簡単なステップ：",
+      "items": {
+        "item1": "宿泊先を検索します",
+        "item2": "気に入った物件を見つけたら、ハートアイコンをタップします",
+        "item3": "ここに保存されたすべてのものが見つかります"
+      },
+      "startSearching": "検索を開始"
+    },
+    "CreateAccount": {
+      "title": "お気に入りのプロパティを保存して共有します",
+      "subTitle": "リストを使用すると、どこからでも、いつでも、お使いのデバイスでプロパティをブックマークして友達と共有できます。",
+      "createAccount": "アカウントを作成してリストの作成を開始",
+      "signUp": "サインアップ",
+      "alreadyHaveAnAccount": "すでにアカウントをお持ちですか？",
+      "toSeeTheLists": "リストを表示するには"
+      }
+  },
+  "NotPage": {
+      "title": "ページが見つかりません",
+      "subTitle": "これが起こります！ 今、私たちはあなたを正しい道に戻そうとします。",
+      "goToHomePage": "ホームページに移動"
   },
   "times":{
     "am": "午前",

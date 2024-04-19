@@ -18,7 +18,6 @@ const FinalStep = () => {
     const {token, user} = useContext(UserContext)
     const navigate = useNavigate()
     const {t} = useTranslation();
-    console.log(data);
     const items = [
         {
           component: PayNow,
@@ -43,9 +42,9 @@ const FinalStep = () => {
 
         try {
             setLoading(true)
-            await postBookingSessionConfirm(data.jwtToken, updateData, tokenUser)
+            const bookingId = await postBookingSessionConfirm(data.jwtToken, updateData, tokenUser)
             setLoading(false)
-            navigate(`${routesConfig.successfully}?token=${data.jwtToken}`)
+            navigate(`${routesConfig.bookingconfirmation}?bid=${bookingId}`)
         } catch (error) {
             setLoading(false)
         }

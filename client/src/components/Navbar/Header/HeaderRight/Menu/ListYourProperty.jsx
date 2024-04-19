@@ -1,22 +1,25 @@
+import { useTranslation } from "react-i18next";
 import { MdOutlineAddHome } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import routesConfig from "../../../../../configs/routesConfig";
-import MenuButton from "./MenuButton";
 import useRegisterToolTipMenuMore from "../../../../../hooks/useRegisterToolTipMenuMore";
+import MenuButton from "./MenuButton";
 
 function ListYourProperty() {
-  const navigate = useNavigate();
   const { onClose } = useRegisterToolTipMenuMore();
+  const { t } = useTranslation();
   const handleClickJoinStaying = () => {
-    navigate(routesConfig.join);
+    window.open(
+      routesConfig.join,
+      "_blank"
+    )
     onClose();
   };
   return (
     <MenuButton
-      title='ListYourProperty'
+      title={t("ListYourProperties.listYourProperties")}
       className='dark:text-white'
       icon={MdOutlineAddHome}
-      size={18}
+      size={20}
       onClick={handleClickJoinStaying}
     />
   );

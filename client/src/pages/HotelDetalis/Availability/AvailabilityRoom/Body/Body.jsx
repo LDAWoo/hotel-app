@@ -6,12 +6,12 @@ import Price from "./Price";
 import PropTypes from "prop-types";
 const Body = ({ data }) => {
   return (
-    <tbody className='border-b border-hotel-500 dark:border-primary-500'>
+    <tbody>
       {data?.rooms &&
         data?.rooms.map((room, index) => (
           <tr
             key={index}
-            className='h-auto table-row border-collapse border-b border-hotel-500 dark:border-primary-500'
+            className={`h-auto table-row border-collapse border-b  ${index === data?.rooms.length - 1 ? 'border-transparent': "border-hotel-500"}`}
           >
             <Col
               className='w-[30%]'

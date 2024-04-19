@@ -111,6 +111,7 @@
   "User": {
     "managerProfile": "계정 관리",
     "bookingAndTrip": "예약 및 여행",
+    "myWishlist": "저장됨",
     "logout": "로그아웃"
   },
   "Banner": {
@@ -207,20 +208,98 @@
       "sendEmail": "이메일 보내기"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "확인됨",
+    "yourBookingIn": "다음에서의 예약",
+    "showYourBookingIn": "예약 확인을 표시",
+    "scanWithPhone": "핸드폰으로 스캔",
+    "isConfirm": "가 확인되었습니다.",
+    "confirmationEmailTo": "모두 준비되었습니다! 확인 이메일을 다음으로 보냈습니다",
+    "paymentWill": "결제는 다음에서 처리됩니다",
+    "priceMoreDetails": "아래 '가격' 섹션에 자세한 내용이 있습니다",
+    "youCanNowModify": "입실 전에 예약을 수정하거나 취소할 수 있습니다",
+    "checkIn": "체크인",
+    "checkOut": "체크아웃",
+    "bookingDetails": "예약 세부 정보",
+    "address": "주소",
+    "phone": "전화 :",
+    "yourRoomDetails": "객실 세부 정보",
+    "adults": "성인",
+    "children": "어린이",
+    "rooms": "객실",
+    "nights": "박",
+    "guestName": "손님 이름",
+    "maximumCapacity": "최대 수용 인원",
+    "facilities": "시설",
+    "beds": "침대",
+    "prepayment": "선결제",
+    "noPrepayment": "선결제가 필요하지 않습니다.",
+    "sale": "세일",
+    "for": "대상",
+    "guests": "손님",
+    "price": "가격",
+    "TheFinal": {
+        "title": "표시된 최종 가격은 속성에 지불 할 금액입니다.",
+        "items": {
+            "item1": "Staying.com은 예약, 관리 수수료 또는 기타 요금을 고객에게 청구하지 않습니다.",
+            "item2": "귀하의 카드 발급자가 외화 거래 수수료를 청구 할 수 있습니다."
+        }
+    },
+    "PaymentInformation": {
+        "title": "결제 정보",
+        "items": {
+            "item1": "호텔이 모든 지불을 처리합니다.",
+            "item2": "이 속성은 다음 지불 형식을 수락합니다 : 현금 만"
+        }
+    },
+    "AdditionalInformation": {
+        "title": "추가 정보",
+        "items": {
+            "item1": "추가 보충 제품 (예 : 추가 침대)이이 총액에 추가되지 않았음을 유의하십시오.",
+            "item2": "이 예약에 나타나지 않고 체크인을 하지 않은 경우 속성이 전체 예약 금액을 청구 할 수 있습니다.",
+            "item3": "중요한 정보를 여기에 언급되지 않은 경우 아래의 중요한 정보를 읽어보시기 바랍니다."
+        }
+    },
+    "contactProperty": "특성 연락하기",
+    "forQuestions": "대부분의 질문에 대한 답변을 얻으려면 특성이 가장 좋은 장소입니다.",
+    "emailProperty": "이메일 특성",
+    "sendAEmailProperty": "특성에게 메시지를 보내면 가능한 한 빨리 답변을 받게됩니다.",
+    "callProperty": "특성에게 전화",
+    "confirmationNumber": "확인 번호 :",
+    "pinCode": "PIN 코드 :",
+    "isEverythingCorrect": "모든 것이 올바른가요?",
+    "yourBookingOnline": "언제든지 온라인에서 예약을 보거나 변경할 수 있습니다-등록이 필요하지 않습니다.",
+    "tipChange": "팁 :이 예약을 언제든지 변경할 수 있습니다",
+    "greatTrip": "좋은 여행 되세요!",
+    "TheTeam": "Staying.com 팀",
+    "moreThan": "100만 이상",
+    "million": "100만",
+    "recommendStaying": "지난 달에 100만 명 이상의 사람들이 가족과 친구에게 Staying.com을 추천했습니다.",
+    "button": {
+        "cancel": "취소",
+        "cancelBooking": "예약 취소",
+        "sendAnEmail": "이메일 보내기",
+        "viewBooking": "예약보기",
+        "saveConfirmation": "확인 저장"
+    }
+  },
   "Search": {
+    "title": "목적지 입력",
     "location": "어디로 가시나요?",
     "checkOutDate": "체크아웃 날짜",
     "search": "검색",
+    "clear": "지우기",
     "Guest": {
       "Adult": {
-        "title": "어른"
+        "title": "성인"
       },
       "Children": {
         "title": "어린이"
       },
       "Room": {
-        "title": "방"
-      }
+        "title": "객실"
+      },
+      "Done": "완료"
     }
   },
   "RecentSearch": {
@@ -437,6 +516,38 @@
     "title": "감사합니다!",
     "subTitle": "우리는 여러분을 위해 방을 예약했습니다. 여러분에게 적합한 방을 찾을 수 있습니다.",
     "backToHome": "홈으로 돌아가기"
+  },
+  "MyWishlist": {
+    "title": "내 위시리스트",
+    "propertiesSaved": "저장된 숙소",
+    "previews": "미리보기",
+    "nights": "밤",
+    "adults": "어른",
+    "children": "어린이",
+    "includesTaxesChanges": "세금 및 수수료 포함",
+    "undo": "실행 취소",
+    "NotWishlist": {
+      "title": "여기는 시작하는 데 도움이 되는 3 가지 간단한 단계입니다 :",
+      "items": {
+        "item1": "숙박 장소를 검색합니다",
+        "item2": "좋아하는 숙소를 찾으면 하트 아이콘을 탭합니다",
+        "item3": "여기에 저장된 모든 것을 찾을 수 있습니다"
+      },
+      "startSearching": "검색 시작"
+    },
+    "CreateAccount": {
+      "title": "좋아하는 속성을 저장하고 공유하세요",
+      "subTitle": "목록을 사용하면 언제 어디서나 장치를 이용하여 속성을 즐겨찾기로 표시하고 친구들과 공유할 수 있습니다.",
+      "createAccount": "계정 만들기를 시작하여 목록 작성",
+      "signUp": "가입하기",
+      "alreadyHaveAnAccount": "이미 계정이 있으십니까?",
+      "toSeeTheLists": "목록을 보려면"
+      }
+  },
+  "NotPage": {
+      "title": "페이지를 찾을 수 없음",
+      "subTitle": "이런 일이 발생합니다! 이제 우리는 당신을 다시 올바른 길로 이끌어 보겠습니다.",
+      "goToHomePage": "홈페이지로 이동"
   },
   "times":{
     "am": "오전",

@@ -3,7 +3,7 @@ import Border from '../Border/Border'
 import Title from '../Title/Title'
 import {Link} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
-
+import routesConfig from '../../configs/routesConfig'
 
 function Footer() {
     const {t} = useTranslation()
@@ -31,6 +31,13 @@ function Footer() {
         }
     ]
 
+    const handleJoinStaying = () =>{
+        window.open(
+            routesConfig.join,
+            "_blank",
+          )
+    }
+
     return ( 
         <footer className="w-full">
             <div className='relative'>
@@ -38,6 +45,7 @@ function Footer() {
                     <div className='flex items-center justify-center p-4'>
                         <div>
                             <Button 
+                            onClick={handleJoinStaying}
                             xl
                             className="p-[6px_8px_6px_8px] text-hotel-50 bg-hotel-25 rounded-sm hover:opacity-90 duration-200"
                             title={t("ListYourProperties.listYourProperties")}/>   

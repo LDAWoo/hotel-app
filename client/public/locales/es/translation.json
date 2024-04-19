@@ -123,6 +123,7 @@
   "User": {
     "managerProfile": "Gestionar cuenta",
     "bookingAndTrip": "Reservas y Viajes",
+    "myWishlist": "Guardado",
     "logout": "Cerrar sesión"
   },
   "Banner": {
@@ -219,10 +220,87 @@
       "sendEmail": "Enviar correo electrónico"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "Confirmado",
+    "yourBookingIn": "Su reserva en",
+    "showYourBookingIn": "Mostrar su confirmación en",
+    "scanWithPhone": "Escanear con el teléfono",
+    "isConfirm": "está confirmada.",
+    "confirmationEmailTo": "¡Todo listo! Hemos enviado su correo de confirmación a",
+    "paymentWill": "Su pago será gestionado por",
+    "priceMoreDetails": "La sección 'Precio' a continuación tiene más detalles",
+    "youCanNowModify": "Ahora puede modificar o cancelar su reserva hasta el check-in",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "bookingDetails": "Detalles de la reserva",
+    "address": "Dirección",
+    "phone": "Teléfono:",
+    "yourRoomDetails": "Detalles de su habitación",
+    "adults": "adultos",
+    "children": "niños",
+    "rooms": "habitaciones",
+    "nights": "noches",
+    "guestName": "Nombre del huésped",
+    "maximumCapacity": "Capacidad máxima",
+    "facilities": "Instalaciones",
+    "beds": "Camas",
+    "prepayment": "Pago anticipado",
+    "noPrepayment": "No se necesita pago anticipado.",
+    "sale": "Venta",
+    "for": "para",
+    "guests": "huéspedes",
+    "price": "Precio",
+    "TheFinal": {
+        "title": "El precio final mostrado es la cantidad que pagará a la propiedad.",
+        "items": {
+            "item1": "Staying.com no cobra a los huéspedes ninguna reserva, administración u otras tarifas.",
+            "item2": "Su emisor de tarjeta puede cobrarle una tarifa por transacción extranjera."
+        }
+    },
+    "PaymentInformation": {
+        "title": "Información de pago",
+        "items": {
+            "item1": "El hotel se encarga de todos los pagos.",
+            "item2": "Esta propiedad acepta las siguientes formas de pago: Solo efectivo"
+        }
+    },
+    "AdditionalInformation": {
+        "title": "Información adicional",
+        "items": {
+            "item1": "Tenga en cuenta que los suplementos adicionales (por ejemplo, cama extra) no se agregan a este total.",
+            "item2": "Si no se presenta en esta reserva y no cancela con anticipación, la propiedad tiene derecho a cobrarle el monto total de la reserva.",
+            "item3": "Recuerde leer la información importante a continuación, ya que puede contener detalles importantes no mencionados aquí."
+        }
+    },
+    "contactProperty": "Contactar a la propiedad",
+    "forQuestions": "Para la mayoría de sus preguntas, la propiedad suele ser el mejor lugar para preguntar",
+    "emailProperty": "Correo electrónico a la propiedad",
+    "sendAEmailProperty": "Envíe un mensaje a la propiedad, responderán lo antes posible",
+    "callProperty": "Llamar a la propiedad",
+    "confirmationNumber": "Número de confirmación:",
+    "pinCode": "Código PIN:",
+    "isEverythingCorrect": "¿Todo está correcto?",
+    "yourBookingOnline": "Siempre puede ver o cambiar su reserva en línea, no es necesario registrarse.",
+    "tipChange": "Consejo: puede realizar cambios en esta reserva en cualquier momento",
+    "greatTrip": "¡Que tengas un gran viaje!",
+    "TheTeam": "El equipo de Staying.com",
+    "moreThan": "Más de",
+    "million": "1 millón",
+    "recommendStaying": "personas el mes pasado dijeron que recomendarían Staying.com a su familia y amigos.",
+    "button": {
+        "cancel": "Cancelar",
+        "cancelBooking": "Cancelar su reserva",
+        "sendAnEmail": "Enviar un correo electrónico",
+        "viewBooking": "Ver reserva",
+        "saveConfirmation": "Guardar confirmación"
+    }
+  },
   "Search": {
-    "location": "¿A dónde vas?",
+    "title": "Ingrese destino",
+    "location": "¿Adónde vas?",
     "checkOutDate": "Fecha de salida",
     "search": "Buscar",
+    "clear": "Limpiar",
     "Guest": {
       "Adult": {
         "title": "Adultos"
@@ -231,8 +309,9 @@
         "title": "Niños"
       },
       "Room": {
-        "title": "Habitación"
-      }
+        "title": "Habitaciones"
+      },
+      "Done": "Hecho"
     }
   },
   "RecentSearch": {
@@ -449,6 +528,38 @@
     "title": "¡Gracias!",
     "subTitle": "Hemos creado una habitación para ti, para que puedas encontrar la habitación que te convenga.",
     "backToHome": "Volver a casa"
+  },
+  "MyWishlist": {
+    "title": "Mi lista de deseos",
+    "propertiesSaved": "propiedades guardadas",
+    "previews": "vistas previas",
+    "nights": "noches",
+    "adults": "adultos",
+    "children": "niños",
+    "includesTaxesChanges": "Incluye impuestos y cargos",
+    "undo": "Deshacer",
+    "NotWishlist": {
+      "title": "Aquí hay 3 simples pasos para ayudarte a comenzar:",
+      "items": {
+        "item1": "Busca un lugar para alojarte",
+        "item2": "Toca el ícono de corazón cuando encuentres una propiedad que te guste",
+        "item3": "Encontrarás todo lo que has guardado aquí"
+      },
+      "startSearching": "Comienza a buscar"
+    },
+    "CreateAccount": {
+      "title": "Guarda y comparte las propiedades que te gustan",
+      "subTitle": "Las listas te permiten marcar propiedades y compartirlas con amigos, desde cualquier dispositivo y en cualquier momento.",
+      "createAccount": "Crea una cuenta para empezar a hacer listas",
+      "signUp": "Regístrate",
+      "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+      "toSeeTheLists": "para ver tus listas."
+      }
+  },
+  "NotPage": {
+      "title": "Página no encontrada",
+      "subTitle": "¡Sucede! Ahora, intentemos ponerte de nuevo en el camino correcto.",
+      "goToHomePage": "Ir a la página de inicio"
   },
   "times":{
     "am": "AM",

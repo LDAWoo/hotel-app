@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getHotelByCondition } from "../../api/Search";
 import Border from "../../components/Border/Border";
 import useRegisterSearchHotelResult from "../../hooks/SearchResults/useRegisterSearchHotelResult";
+import useRegisterBudgetRangeSlider from "../../hooks/useRegisterBudgetRangeSlider";
 import useRegisterModalFilter from "../../hooks/useRegisterModalFilter";
 import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
+import Filter from './Filter/Filter';
+import FilterMobile from "./Filter/FilterMobile";
 import ItemResults from "./ItemResults/ItemResults";
 import ItemResultsSkeleton from "./ItemResultsSkeleton";
 import Map from "./Map/Map";
 import MapMobile from "./Map/MapMobile";
 import NoResult from "./NoResult";
 import PageResults from "./PageResults/PageResults";
-import Filter from './Filter/Filter';
-import FilterMobile from "./Filter/FilterMobile";
-import useRegisterBudgetRangeSlider from "../../hooks/useRegisterBudgetRangeSlider";
 
 function SearchResult() {
   const { width } = useRegisterWindowSizeStore();
@@ -37,10 +37,8 @@ function SearchResult() {
   const currentMaxPrice = searchParams.get("max_price") || values[1];
   const currentLimitPage = searchParams.get("limit_page") || 8;
   const currentPage = searchParams.get("offset") || 1;
-  const [pageable, setPageable] = useState({});
 
-  const { ourHotels, setOurHotels, loading, setLoading } =
-    useRegisterSearchHotelResult();
+  const { ourHotels, setOurHotels,pageable,setPageable, loading, setLoading,querySearch, setQuerySearch } = useRegisterSearchHotelResult();
 
   const fetchData = async () => {
     try {
@@ -70,11 +68,14 @@ function SearchResult() {
   };
 
   useEffect(() => {
-    fetchData();
+    if(location.search !== querySearch){
+      setQuerySearch(location.search);
+      fetchData();
+    }
   }, [location.search]);
 
   return (
-    <div className='w-full'>
+    <div className='w-full flex flex-1'>
       <div className='w-full m-auto lg:max-w-[1100px] mt-10 mb-10 p-[10px] bg-transparent'>
         <div className='flex flex-col w-full gap-2'>
           {width < 900 && (
@@ -101,9 +102,7 @@ function SearchResult() {
                       key={index}
                       className='w-full h-[245px] p-4 border rounded-lg'
                     >
-                      <div>
                         <ItemResultsSkeleton />
-                      </div>
                     </div>
                   ))}
                 </div>

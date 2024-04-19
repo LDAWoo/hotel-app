@@ -7,6 +7,25 @@ import { mapStyles } from "./MapStyles";
 import { ThemeContext } from "../Contexts/AppThemeProvider";
 import PropType from "prop-types";
 const key = import.meta.env.VITE_APP_GOOGLE_MAP_KEY;
+export const getCoordinates = async (address) => {
+  try {
+    const results = await geocodeByAddress(address);
+    if (results && results.length > 0) {
+      const latLng = await getLatLng(results[0]);
+      return latLng;
+    } else {
+      console.error("No valid result found");
+      return null;
+    }
+  } catch (error) {
+    if (error.status === "OVER_QUERY_LIMIT") {
+      console.warn("Geocoding API quota exceeded. Waiting and retrying...");
+    } else {
+      console.error("Error getting coordinates:", error);
+    }
+    return null;
+  }
+};
 
 const Map = ({ data }) => {
   const { value } = useRegisterPinMap();
@@ -77,25 +96,7 @@ const Map = ({ data }) => {
     fetchCoordinates();
   }, [data, value]);
 
-  const getCoordinates = async (address) => {
-    try {
-      const results = await geocodeByAddress(address);
-      if (results && results.length > 0) {
-        const latLng = await getLatLng(results[0]);
-        return latLng;
-      } else {
-        console.error("No valid result found");
-        return null;
-      }
-    } catch (error) {
-      if (error.status === "OVER_QUERY_LIMIT") {
-        console.warn("Geocoding API quota exceeded. Waiting and retrying...");
-      } else {
-        console.error("Error getting coordinates:", error);
-      }
-      return null;
-    }
-  };
+  
 
   return (
     <div className='w-full h-full relative'>

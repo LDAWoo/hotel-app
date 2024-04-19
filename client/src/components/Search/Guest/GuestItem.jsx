@@ -19,7 +19,6 @@ function GuestItem({
           <Title title={title} xl fontMedium />
         </div>
         <div className='flex flex-row items-center h-full justify-center'>
-          <div className='flex items-center justify-center h-full border-[1px] rounded-lg dark:border-primary-500 gap-3'>
             <IncreaseAndDecreaseValue
               value={value}
               minValue={minValue}
@@ -27,7 +26,6 @@ function GuestItem({
               handleMinus={handleMinus}
               handlePlus={handlePlus}
             />
-          </div>
         </div>
       </div>
 

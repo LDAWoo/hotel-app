@@ -8,6 +8,7 @@ import { UserContext } from "../../../../Contexts/AppUserProvider";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
 import { IoBagHandleOutline } from "react-icons/io5";
+import { LuHeart } from "react-icons/lu";
 
 function UserMenu() {
   const Users = [
@@ -24,7 +25,13 @@ function UserMenu() {
       translationKey: "User.bookingAndTrip",
     },
     {
-      id: 2,
+      id: 3,
+      icon: LuHeart,
+      type: "wishlist",
+      translationKey: "User.myWishlist",
+    },
+    {
+      id: 4,
       icon: BiLogOutCircle,
       type: "logout",
       translationKey: "User.logout",
@@ -47,7 +54,12 @@ function UserMenu() {
         onClose()
         navigate(routesConfig.mytrip)
         break;
-
+        
+      case "wishlist":
+        onClose()
+        navigate(routesConfig.mywishlist)
+        break;
+        
       case "logout":
         onClose()
         handleLogout();

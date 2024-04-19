@@ -8,7 +8,7 @@ import useRegisterWindowSizeStore from "../../../hooks/useRegisterWindowSizeStor
 import HomeTitle from "../HomeTitle";
 import ItemUniqueProperty from "./ItemUniqueProperty";
 import ItemUniquePropertySkeleton from "./ItemUniquePropertySkeleton";
-import "./UniquePropertyStyle.scss";
+
 const UniqueProperty = ({ data = [], isLoading }) => {
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
@@ -32,7 +32,7 @@ const UniqueProperty = ({ data = [], isLoading }) => {
           />
         </div>
         {isLoading ? (
-          <div className='flex gap-4'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 2md:grid-cols-4 gap-4'>
             {Array.from({ length: 4 }).map((_, index) => (
               <ItemUniquePropertySkeleton key={index} />
             ))}

@@ -7,10 +7,13 @@ import FilterModal from "../Modals/FilterModal/FilterModal";
 import MapModal from "../Modals/MapModal/MapModal";
 import LanguageModal from "../Modals/LanguageModal/LanguageModal";
 import UploadAvatarModal from "../Modals/UploadAvatarModal/UploadAvatarModal";
+import useRegisterScrollStore from "../../hooks/useRegisterScrollStore";
+import BookingConfirmationModal from "../Modals/BookingConfirmationModal/BookingConfirmationModal";
 const MainLayout = ({ children }) => {
   const { darkMode } = useContext(ThemeContext);
   const { setIsOnline } = useRegisterWindowOnline();
   const { setWidthAndHeight } = useRegisterWindowSizeStore();
+  const {isVisible} = useRegisterScrollStore();
 
   useEffect(() => {
     const handleOnline = () => {
@@ -37,10 +40,11 @@ const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className={`${darkMode} h-screen`}>
+    <div className={`${darkMode} h-screen overflow-y-auto`}>
       <FilterModal />
       <MapModal />
       <LanguageModal />
+      <BookingConfirmationModal/>
       <UploadAvatarModal/>
       {children}
     </div>

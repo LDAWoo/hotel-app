@@ -32,7 +32,7 @@ function ItemUniqueProperty({ item }) {
     )}&group_adults=1&group_children=0&group_rooms=1`;
 
   return (
-    <Link className='w-full' target='_blank' to={url}>
+    <Link className='w-full' to={url}>
       <div className='w-full border dark:border-primary-500 rounded-lg shadow-[0_2px_8px_0_rgba(26,26,26,0.16)] dark:shadow-[0_2px_8px_0_rgba(200,200,200,0.16)]'>
         <div className='flex flex-col'>
           <div className='flex flex-col '>
@@ -48,7 +48,7 @@ function ItemUniqueProperty({ item }) {
                   title={item?.nameHotel}
                   fontBold
                   nowrap={false}
-                  titleCustom='text-[14px]'
+                  className='text-[14px]'
                 />
               </div>
               <div className='flex w-full items-center gap-1'>

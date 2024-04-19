@@ -15,7 +15,7 @@ function IncreaseAndDecreaseValue({
 }) {
   return (
     <div
-      className={`flex items-center justify-center border-[1px] rounded-lg dark:border-primary-500 gap-3 ${
+      className={`flex items-center justify-center border-[1px] rounded-lg overflow-hidden gap-3 ${
         className ? className : "w-full h-[40px]"
       }`}
     >

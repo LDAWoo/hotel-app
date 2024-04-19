@@ -25,7 +25,7 @@ const ItemDestinationWeLove = ({ item }) => {
 
       return (
         <div key={index}>
-          <Link to={url} target="_blank">
+          <Link to={url}>
             <Title
               title={x?.name}
               fontMedium

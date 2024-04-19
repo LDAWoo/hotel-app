@@ -41,18 +41,15 @@ function Body() {
             title={t("Modal.Language.allLanguage")}
             xl
             fontMedium
-            colorTitle='dark:text-white'
+            className='dark:text-white'
           />
         </div>
-        <div className='flex items-center justify-start w-full flex-wrap'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2md:grid-cols-4 w-full'>
           {sortLanguage.map((lang) => (
             <div
               key={lang.id}
               className={`flex flex-1 flex-shrink basis-0 items-center justify-start 
-                min-w-[180px] 
-                sm:min-w-[200px]
-                sm:max-w-[304px]
-                lg:max-w-[217px]
+                w-full
                 h-10 sm:h-12 mt-2 mr-2 rounded-md ${
                   lang.code === currentLanguage
                     ? "bg-gray-100 dark:bg-primary-500"

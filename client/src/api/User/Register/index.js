@@ -1,7 +1,7 @@
 import { post } from "../../../utils/request";
 
 export const postRegister = async (account) => {
-  const response = await post(`/public/v1/user/register/${true}`, account);
+  const response = await post(`/public/v1/user/register/${false}`, account);
   return response;
 };
 

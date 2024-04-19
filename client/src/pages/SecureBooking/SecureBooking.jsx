@@ -16,13 +16,9 @@ const SecureBooking = () => {
   useEffect(() => {
     const fetch = async () => {
       const token = sessionToken;
-      const data = {
-        receiveMarketingEmail: true,
-      };
-
       try {
         setLoading(true);
-        const results = await getBookingSessionPending(token, data);
+        const results = await getBookingSessionPending(token);
         setData(results);
         setLoading(false);
       } catch (error) {
@@ -35,7 +31,7 @@ const SecureBooking = () => {
   }, [sessionToken]);
 
   return (
-    <div className='w-full'>
+    <div className='w-full flex flex-1'>
       {loading ? (
         <div>Loading</div>
       ) : Object.keys(data).length > 0 ? (

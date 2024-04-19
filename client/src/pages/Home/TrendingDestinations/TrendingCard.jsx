@@ -28,7 +28,7 @@ function TrendingCard({ destination, areaImage, src, city, maxImage }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link className='relative w-full h-full' target='_blank' to={url}>
+      <Link className='relative w-full h-full' to={url}>
         {isHovered && (
           <div className='absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-b from-primary-700/50 duration-300' />
         )}
@@ -59,6 +59,7 @@ TrendingCard.propTypes = {
   areaImage: PropTypes.string,
   src: PropTypes.string.isRequired,
   maxImage: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
 };
 
 export default TrendingCard;

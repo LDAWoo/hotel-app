@@ -123,6 +123,7 @@
   "User": {
     "managerProfile": "管理帐户",
     "bookingAndTrip": "预订与旅行",
+    "myWishlist": "已保存",
     "logout": "登出"
   },
   "Banner": {
@@ -220,10 +221,87 @@
       "sendEmail": "发送电子邮件"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "已确认",
+    "yourBookingIn": "您在的预订",
+    "showYourBookingIn": "显示您的确认信息",
+    "scanWithPhone": "用手机扫描",
+    "isConfirm": "已确认。",
+    "confirmationEmailTo": "您已准备就绪！我们已将确认电子邮件发送至您的邮箱",
+    "paymentWill": "您的支付将由",
+    "priceMoreDetails": "以下“价格”部分有更多细节",
+    "youCanNowModify": "您现在可以在入住前修改或取消预订",
+    "checkIn": "入住",
+    "checkOut": "退房",
+    "bookingDetails": "预订详情",
+    "address": "地址",
+    "phone": "电话：",
+    "yourRoomDetails": "您的房间详情",
+    "adults": "成人",
+    "children": "儿童",
+    "rooms": "房间",
+    "nights": "晚",
+    "guestName": "客人姓名",
+    "maximumCapacity": "最大容量",
+    "facilities": "设施",
+    "beds": "床",
+    "prepayment": "预付款",
+    "noPrepayment": "无需预付款。",
+    "sale": "促销",
+    "for": "对于",
+    "guests": "位客人",
+    "price": "价格",
+    "TheFinal": {
+        "title": "显示的最终价格是您将支付给物业的金额。",
+        "items": {
+            "item1": "Staying.com不向客人收取任何预订、行政费或其他费用。",
+            "item2": "您的卡发卡方可能会向您收取外币交易费。"
+        }
+    },
+    "PaymentInformation": {
+        "title": "支付信息",
+        "items": {
+            "item1": "酒店负责所有支付。",
+            "item2": "此酒店只接受以下支付方式：仅限现金"
+        }
+    },
+    "AdditionalInformation": {
+        "title": "附加信息",
+        "items": {
+            "item1": "请注意，此总额未包含其他补充费用（例如额外床位）。",
+            "item2": "如果您没有出现在此预订中，并且您没有提前取消，物业有权向您收取全额预订金额。",
+            "item3": "请记住阅读下面的重要信息，因为这可能包含未在此处提及的重要细节。"
+        }
+    },
+    "contactProperty": "联系物业",
+    "forQuestions": "对于大多数问题，物业通常是最佳联系人",
+    "emailProperty": "邮件物业",
+    "sendAEmailProperty": "向物业发送消息，他们将尽快回复",
+    "callProperty": "拨打物业电话",
+    "confirmationNumber": "确认号码：",
+    "pinCode": "PIN码：",
+    "isEverythingCorrect": "一切是否正确？",
+    "yourBookingOnline": "您可以随时在线查看或更改您的预订-无需注册。",
+    "tipChange": "提示：您随时可以对此预订进行更改",
+    "greatTrip": "祝您旅途愉快！",
+    "TheTeam": "Staying.com团队",
+    "moreThan": "超过",
+    "million": "100万",
+    "recommendStaying": "上个月有100万人表示他们会向家人和朋友推荐Staying.com。",
+    "button": {
+        "cancel": "取消",
+        "cancelBooking": "取消您的预订",
+        "sendAnEmail": "发送电子邮件",
+        "viewBooking": "查看预订",
+        "saveConfirmation": "保存确认"
+    }
+  },
   "Search": {
-    "location": "您要去哪里？",
+    "title": "输入目的地",
+    "location": "你要去哪里？",
     "checkOutDate": "退房日期",
     "search": "搜索",
+    "clear": "清除",
     "Guest": {
       "Adult": {
         "title": "成人"
@@ -233,7 +311,8 @@
       },
       "Room": {
         "title": "房间"
-      }
+      },
+      "Done": "完成"
     }
   },
   "RecentSearch": {
@@ -452,6 +531,38 @@
     "title": "谢谢您！",
     "subTitle": "我们已为您创建了房间，您可以找到适合您的房间。",
     "backToHome": "返回首页"
+  },
+  "MyWishlist": {
+    "title": "我的收藏清单",
+    "propertiesSaved": "个地点已保存",
+    "previews": "预览",
+    "nights": "晚",
+    "adults": "成人",
+    "children": "儿童",
+    "includesTaxesChanges": "包括税费和费用",
+    "undo": "撤销",
+    "NotWishlist": {
+      "title": "以下是帮助您开始的3个简单步骤：",
+      "items": {
+        "item1": "搜索住宿地点",
+        "item2": "当您找到喜欢的属性时，点击心形图标",
+        "item3": "您将在此找到所有保存的内容"
+      },
+      "startSearching": "开始搜索"
+    },
+    "CreateAccount": {
+      "title": "保存并分享您喜爱的物业",
+      "subTitle": "列表可以让您收藏物业并与朋友分享，无论您在何处、何时，都可以使用任何设备。",
+      "createAccount": "创建一个帐户开始制作列表",
+      "signUp": "注册",
+      "alreadyHaveAnAccount": "已经有一个帐户了？",
+      "toSeeTheLists": "查看您的列表。"
+    }
+  },
+  "NotPage": {
+      "title": "页面未找到",
+      "subTitle": "这种情况有时会发生！现在，让我们尝试帮助您回到正确的轨道上。",
+      "goToHomePage": "转到主页"
   },
   "times":{
     "am": "上午",

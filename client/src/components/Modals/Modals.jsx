@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import Button from "../Buttons/Button";
 import Icon from "../Icon/Icon";
 import Title from "../Title/Title";
+import useRegisterScrollStore from "../../hooks/useRegisterScrollStore";
 
 function Modals({
   className,
@@ -27,6 +28,8 @@ function Modals({
 }) {
   const modalRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
+  const {onVisible,unVisible} = useRegisterScrollStore();
+
   useEffect(() => {
     const handleMouseDown = (event) => {
       if (!modalRef.current) {
@@ -47,6 +50,11 @@ function Modals({
 
   useEffect(() => {
     setShowModal(isOpen);
+    if(isOpen){
+      unVisible();
+    }else{
+      onVisible();
+    }
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
@@ -75,6 +83,7 @@ function Modals({
   return (
     <>
       <div
+        id="id-modal"
         className='
             flex 
             fixed 
@@ -86,7 +95,7 @@ function Modals({
             z-50 
             outline-none
             focus:outline-none
-            bg-primary-700/50 
+            bg-primary-700/30 
             '
       >
         <div
@@ -144,8 +153,8 @@ function Modals({
               >
                 <Title
                   title={title}
-                  colorTitle='dark:text-white flex-1'
-                  xxl
+                  className='dark:text-white flex-1'
+                  extraLarge5
                   fontBold
                   nowrap={false}
                 />
@@ -165,7 +174,7 @@ function Modals({
                 </button>
               </div>
               {/* Body */}
-              <div className='relative pt-2 pb-2 pr-4 pl-4 flex-auto overflow-y-auto h-full'>
+              <div className='pt-2 pb-2 pr-4 pl-4 flex-auto overflow-y-auto h-full'>
                 {body}
               </div>
               {/* Footer */}

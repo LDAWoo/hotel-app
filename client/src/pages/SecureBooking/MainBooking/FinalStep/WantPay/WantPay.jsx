@@ -1,5 +1,5 @@
 import Title from "../../../../../components/Title/Title";
-import CheckBox from "../../../../../components/CheckBox/CheckBox";
+import Checkbox from "../../../../../components/Checkbox/Checkbox";
 import useRegisterWantPay from "../../../../../hooks/SecureBooking/useRegisterWantPay";
 import { useTranslation } from "react-i18next";
 
@@ -20,7 +20,11 @@ const WantPay = () => {
             </div>
 
             <div>
-                <CheckBox name="receiveMarketingEmail" key="receiveMarketingEmail" value={receiveMarketingEmail} checked={receiveMarketingEmail} onChange={handleChecked} 
+                <Checkbox  
+                name="receiveMarketingEmail" 
+                value="receiveMarketingEmail"
+                checked={receiveMarketingEmail} 
+                onChange={handleChecked} 
                 title={t("Secure.Final.WantToPay.items.item1")}/>
             </div>
 

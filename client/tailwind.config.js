@@ -4,6 +4,19 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      animation: {
+        'loading': 'loading 1s cubic-bezier(.445,.05,.55,.95) infinite',
+      },
+      keyframes: {
+          "loading": {
+            "0%": {
+              transform: "rotate(0deg)",
+            },
+            "100%": {
+              transform: "rotate(2turn)",
+          },
+        },
+      },
       screens: {
         "vsm": "480px",
         "2vsm": "550px",

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { getHotelById } from "../../api/HotelDetails";
 import Button from "../../components/Buttons/Button";
 import ImageModal from "../../components/Modals/ImageModal/ImageModal";
@@ -13,11 +13,11 @@ import DescriptionHighlight from "./DescriptionHighlight/DescriptionHighlight";
 import GuestReview from "./GuestReview/GuestReview";
 import HotelGallery from "./HotelGallery/HotelGallery";
 import HotelProperty from "./HotelProperty/HotelProperty";
+import HotelSurroundings from "./HotelSurroundings/HotelSurroundings";
 import SideBar from "./SideBar/SideBar";
 
 function HotelDetails() {
   const { width } = useRegisterWindowSizeStore();
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const currentHotelId = searchParams?.get("id") || "";
   const currentLocation =
@@ -28,7 +28,7 @@ function HotelDetails() {
   const currentChildren = searchParams?.get("group_children") || "";
   const currentRooms = searchParams?.get("group_rooms") || "";
 
-  const { hotels, setHotels, setLoading } = useRegisterHotelDetails();
+  const { hotels, setHotels, setLoading,loading } = useRegisterHotelDetails();
 
   const data = {
     hotelId: currentHotelId,
@@ -49,24 +49,30 @@ function HotelDetails() {
       setHotels(results);
       setLoading(false);
     } catch (e) {
-      setLoading(false);
+      setLoading(true);
       setHotels({});
     }
   };
   useEffect(() => {
-    fetch();
-  }, [navigate]);
+      if(Object.keys(hotels).length > 0) {
+        if(hotels.hotelId !== currentHotelId){
+          fetch();
+        }
+        return;
+      }
+      fetch();
+  }, [hotels,currentHotelId]);
 
   const handleReturnHome = () => {
     window.location.href = routesConfig.home;
   }
   
   return (
-    <div className='w-full'>
-      <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 p-[10px] bg-transparent'>
+    <div className='w-full flex flex-1'>
+      <div className='w-full m-auto lg:max-w-[var(--max-width)] mt-10 mb-10 p-[10px] bg-transparent'>
         <div className='flex flex-col w-full'>
           {
-            !Object.keys(hotels).length>0 ? 
+            !Object.keys(hotels).length > 0 && loading ? 
             <div className='flex justify-center flex-col gap-4'>
               <div className="flex justify-center">
                 <Title title="Not Found" fontBold extraLarge5/>
@@ -95,6 +101,7 @@ function HotelDetails() {
               <DescriptionHighlight />
               <Availability />
               <GuestReview />
+              <HotelSurroundings/>
               <ImageModal body={<BodyImageModal />} />
             </>
           }

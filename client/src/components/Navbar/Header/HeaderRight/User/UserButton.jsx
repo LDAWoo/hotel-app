@@ -22,7 +22,7 @@ function UserButton({ title, src, icon, onClick }) {
         className='flex items-center justify-center w-full h-full '
         classTitle='w-full hidden lg:flex text-white font-medium'
         copy={
-          !src && <div className="hidden 2md:flex bg-secondary-50 w-[28px] h-[28px] rounded-full flex items-center justify-center text-[14px] font-bold">
+          !src && words && <div className="flex bg-secondary-50 w-[28px] h-[28px] rounded-full items-center justify-center text-[14px] font-bold">
               {words}
           </div>  
         }

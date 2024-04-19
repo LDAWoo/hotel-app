@@ -1,6 +1,6 @@
 import { Language as TranslateLanguage } from "../../../../Constants/Language";
-import ListYourProperty from "../ListYourProperty/ListYourProperty";
 import Language from "./Language";
+import ListYourProperty from "./ListYourProperty";
 
 function MenuMore() {
   const menuMores = [

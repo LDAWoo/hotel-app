@@ -2,20 +2,21 @@ import AccountHeader from "../../Navbar/AccountHeader/AccountHeader";
 import { useNavigate } from "react-router-dom";
 import MainLayout from "../MainLayout";
 import PropTypes from "prop-types";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import routesConfig from "../../../configs/routesConfig";
 import { UserContext } from "../../Contexts/AppUserProvider";
 function LoginLayout({ children }) {
   const navigate = useNavigate();
   const { user, userLoading } = useContext(UserContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!userLoading) {
       if (Object.keys(user).length > 0) {
         navigate(routesConfig.home);
       }
     }
   }, [user, userLoading, navigate]);
+
   return (
     <MainLayout>
       <AccountHeader />

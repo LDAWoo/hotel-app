@@ -1,0 +1,44 @@
+# CI-CD Back end
+variables:
+  IMAGE_NAME: sellsad/graduation-thesis-fe-client
+  IMAGE_TAG: latest
+  CONTAINER_NAME: graduation_thesis_client_app_1
+
+stages:
+  - build
+  - deploy
+
+# Build image docker
+build_image:
+  only:
+    refs:
+      - main
+  image: docker:26.0.0
+  services:
+    - docker:26.0.0-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  stage: build
+  before_script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+
+# Deploy
+deploy:
+  stage: deploy
+  only:
+    refs:
+      - main
+  before_script:
+    - chmod 600 $SSH_KEY
+  script:
+    - ssh -o StrictHostKeyChecking=no -i $SSH_KEY root@45.119.212.80 "
+      if docker ps -a --format '{{.Names}}' | grep -q $CONTAINER_NAME; then
+      docker rm -f $CONTAINER_NAME;
+      fi;
+      docker pull $IMAGE_NAME:$IMAGE_TAG;
+      docker rmi -f \$(docker images -f 'dangling=true' -q);
+      docker run --name $CONTAINER_NAME -d -p 8888:8080 $IMAGE_NAME:$IMAGE_TAG
+      "

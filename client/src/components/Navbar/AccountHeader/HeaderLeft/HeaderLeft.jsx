@@ -4,10 +4,10 @@ import routesConfig from "../../../../configs/routesConfig";
 
 function HeaderLeft() {
   return (
-    <Link className='flex items-center' to={routesConfig.login}>
+    <Link className='flex items-center' to={routesConfig.home}>
       <Title
         title='Staying.com'
-        fontMedium
+        fontBold
         extraLarge5
         className='text-white'
       />

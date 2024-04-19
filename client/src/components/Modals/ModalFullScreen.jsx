@@ -2,8 +2,10 @@ import PropTypes from "prop-types";
 import { memo, useEffect, useRef } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Icon from "../Icon/Icon";
+import useRegisterScrollStore from "../../hooks/useRegisterScrollStore";
 function ModalFullScreen({ isOpen, body, onClose }) {
   const modalRef = useRef(null);
+  const {onVisible,unVisible} = useRegisterScrollStore();
 
   useEffect(() => {
     const handleMouseDown = (event) => {
@@ -23,6 +25,14 @@ function ModalFullScreen({ isOpen, body, onClose }) {
   const handleCloseModal = () => {
     onClose();
   };
+
+  useEffect(() => {
+    if(isOpen){
+      unVisible();
+    }else{
+      onVisible();
+    }
+  },[isOpen])
 
   if (!isOpen) {
     return;

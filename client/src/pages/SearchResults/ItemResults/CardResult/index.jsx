@@ -1,22 +1,24 @@
+import { format } from 'date-fns';
+import PropTypes from "prop-types";
+import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { BsInfoCircle } from "react-icons/bs";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Border from "../../../../components/Border/Border";
 import Button from "../../../../components/Buttons/Button";
 import Icon from "../../../../components/Icon/Icon";
 import Image from "../../../../components/Image/Image";
+import { getLocale } from "../../../../components/Locale/Locale";
+import MoneyFormatStaying from "../../../../components/Staying/MoneyFormatStaying";
 import StayingRating from "../../../../components/Staying/StayingRating";
 import Title from "../../../../components/Title/Title";
-import PropTypes from "prop-types";
-import MoneyFormatStaying from "../../../../components/Staying/MoneyFormatStaying";
-import routesConfig from "../../../../configs/routesConfig";
-import { useTranslation } from "react-i18next";
-import { RiHeartLine } from "react-icons/ri";
-import { RiHeartFill } from "react-icons/ri";
-import { useState } from "react";
 import ToolTip from "../../../../components/ToolTip/ToolTip";
-import {format} from 'date-fns'
-import { getLocale } from "../../../../components/Locale/Locale";
-import Border from "../../../../components/Border/Border";
+import routesConfig from "../../../../configs/routesConfig";
+import useRegisterWishlist from '../../../../hooks/Wishlist/useRegisterWishlist';
+import { addHotelFavorite, deleteHotelFavorite } from '../../../../api/User/Wishlist';
+import {UserContext} from '../../../../components/Contexts/AppUserProvider'
 
 const CardResult = ({ items }) => {
   const { t } = useTranslation();
@@ -30,61 +32,90 @@ const CardResult = ({ items }) => {
   queryParams.set("group_rooms", items?.quantityRoom);
   const queryString = queryParams.toString();
   const [loading, setLoading] =useState(false)
+  const {wishlist, addToWishlist,removeFromWishlist} = useRegisterWishlist();
+  const [isWhiteList, setIsWhiteList] = useState(false);
+  const {user,token} = useContext(UserContext)
+  const navigate = useNavigate();
 
-  const handleSeeAvailability = () => {
-    const url =
+  const url =
       routesConfig.hotelDetails +
       "?id=" +
       items?.hotelId +
       "&" +
       queryString;
+
+  const handleSeeAvailability = () => {
     window.open(url, "_blank");
   }
 
-  const isWhiteList = true;
+  useEffect(() => {
+    if (wishlist.length > 0) {
+       const isWhiteList = wishlist.find(item => item.hotelId === items?.hotelId)
+       setIsWhiteList(isWhiteList)
+    }
+  },[wishlist,items])
 
-  console.log(items);
+  const handleUpdateWishlist = async () => {
+    if(Object.keys(user).length === 0) {
+      navigate(routesConfig.login)
+      return;
+    }
+    if(loading) return;
+
+    try{
+      setLoading(true)
+      if(isWhiteList){
+        await deleteHotelFavorite(items?.hotelId, token)
+        removeFromWishlist(items)
+        setLoading(false)
+        return;
+      }
+      await addHotelFavorite(items?.hotelId, token);
+      addToWishlist(items)
+      setLoading(false)
+    }catch(e){
+      setLoading(true)
+    }
+  }
 
   return (
     <div className='flex flex-row w-full p-4 border rounded-lg duration-200 dark:border-primary-500 hover:bg-hotel-25 dark:hover:bg-primary-500'>
       <div className='flex flex-row gap-2 w-full'>
         {/* Image */}
-        <Link
-          target='_blank'
-          to={`${
-            routesConfig.hotelDetails +
-            "?id=" +
-            items?.hotelId +
-            "&" +
-            queryString
-          }`}
-          className='relative rounded-lg min-w-[20px] sm:min-w-[200px] max-w-[350px] min-h-[150px] max-h-[200px]'
-        >
-          <Image
-            src={items?.urlImage}
-            className='w-[230px] h-full object-cover rounded-lg'
-          />
-          {/* Heart */}
-            <div className='absolute top-[3%] right-[3%] z-[1] bg-white p-[3px] flex justify-center items-center rounded-full'>
-              <ToolTip content={`${isWhiteList ? t("SearchResults.propertyIsSaved") : t("SearchResults.save")}`} >
-                <div><Button icon={isWhiteList ? RiHeartFill : RiHeartLine} loading={loading} classLoading="w-[20px] h-[20px]" classIcon={`${isWhiteList && 'text-error-100'} ${loading && 'hidden'}`} className="p-0" classButton="w-full ml-1 mt-1 mb-1" size={20}/></div>
-              </ToolTip>
-            </div>
-        </Link>
+        <div className='relative w-[33%]'>
+          <Link
+            target='_blank'
+            to={url}
+            className='rounded-lg overflow-hidden w-full h-full'
+          >
+            <Image
+              src={items?.urlImage}
+              className='w-full h-full object-cover rounded-lg'
+            />
+          </Link>
+            {/* Heart */}
+              <div className='absolute top-[3%] right-[3%] z-[1] bg-white p-[3px] flex justify-center items-center rounded-full'>
+                <ToolTip content={`${isWhiteList ? t("SearchResults.propertyIsSaved") : t("SearchResults.save")}`} >
+                    <div>
+                      <Button icon={isWhiteList ? IoMdHeart : IoMdHeartEmpty} spin={loading} classSpin="w-5 h-5" classIcon={`${isWhiteList && 'text-error-100'} ${loading && 'hidden'}`} className="p-0" classButton="w-full ml-1 mt-1 mb-1" size={20} onClick={() => handleUpdateWishlist()}/>
+                    </div>
+                </ToolTip>
+              </div>
+        </div>
 
         <div className='flex flex-col w-full'>
-          <Link className='flex flex-row w-full'>
-            <div className='flex-1'>
+          <Link className='flex flex-col sm:flex-row w-full' to={url}>
+            <div className='flex-0 sm:flex-1'>
               <Title
                 title={items?.name}
-                colorTitle='text-hotel-200 hover:text-primary-700 dark:hover:text-white duration-200'
+                className='text-hotel-200 hover:text-primary-700 dark:hover:text-white duration-200'
                 fontBold
                 extraLarge4
                 nowrap={false}
               />
             </div>
 
-            <div className='flex flex-row gap-2 items-center'>
+            <div className='flex flex-row gap-2 items-center justify-end'>
               <div className='flex flex-col items-end'>
                 <Title
                   title={t("SearchResults.pointEvaluation")}
@@ -114,9 +145,10 @@ const CardResult = ({ items }) => {
                 ", " +
                 items?.city
               }`}
-              colorTitle='text-hotel-100 underline cursor-pointer hover:text-hotel-300'
+              className='text-hotel-100 underline cursor-pointer hover:text-hotel-300'
               large
               fontMedium
+              nowrap={false}
             />
             {/* <Title
               title={t("SearchResults.seeOnMap")}
@@ -130,13 +162,13 @@ const CardResult = ({ items }) => {
             <div className='flex flex-col sm:flex-row gap-2 w-full'>
               {/* Categories */}
               <div className='flex flex-col gap-1 w-full dark:text-primary-50'>
-                {/* <Title
-                  title='Studio Có Ban Công'
-                  colorTitle='dark:text-white'
+                <Title
+                  title={items?.roomName}
+                  className='dark:text-white capitalize'
                   fontBold
                   large
                 />
-                <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
+                {/* <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
                 <Title title='1 studio nguyên căn • 1 phòng tắm •' large />
                 <Title title='1 studio nguyên căn • 1 phòng tắm •' large /> */}
               </div>

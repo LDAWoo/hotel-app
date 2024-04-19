@@ -95,26 +95,23 @@ function ToolTipCustom({ isOpen, onClose, component, disabled, width, render, le
                 translate-x-0
                 duration-300
                 h-full
-                
                 ${showToolTip ? "translate-y-0" : "translate-y-full"}
                 `}
         >
           <div
             className="
-                    transition-transform ease-out
                     h-full
+                    overflow-hidden
                     flex
                     flex-col
-                    outline-none
                     lg:h-auto
                     lg:rounded-lg
                     bg-white
-                    dark:bg-primary-600
                     pt-[5px]
                     pb-[5px]
-                    border-[1px]
+                    w-full
+                    border
                     border-gray-200
-                    dark:border-primary-500
                     "
           >
             {/* Header */}

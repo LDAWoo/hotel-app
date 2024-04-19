@@ -1,6 +1,5 @@
 import PropType from "prop-types";
 import { GoSearch } from "react-icons/go";
-import Button from "../../../components/Buttons/Button";
 import Icon from "../../../components/Icon/Icon";
 import Title from "../../../components/Title/Title";
 import { useTranslation } from "react-i18next";
@@ -25,14 +24,14 @@ function NoResult({ searchResult }) {
           xxl
           nowrap={false}
         />
-
+{/* 
         <div>
           <Button
             title={t("Error.SearchResults.updateSearch")}
             background
             className='justify-center p-2'
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

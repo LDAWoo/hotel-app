@@ -3,6 +3,7 @@ import { memo } from "react";
 import Icon from "../Icon/Icon";
 import Image from "../Image/Image";
 import Title from "../Title/Title";
+import Spin from "../Spin/Spin";
 function Button({
   className,
   classButton,
@@ -14,6 +15,8 @@ function Button({
   classTitle,
   title,
   size,
+  spin,
+  classSpin,
   disabled,
   loading,
   classLoading,
@@ -74,6 +77,9 @@ function Button({
             className={`${classLoading ? classLoading : "h-[26px] w-[26px]"} inline-block animate-spin rounded-full border-[3px] border-solid border-hotel-100 border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]`}
             role='status'
           />
+        )}
+        {spin && (
+          <Spin width={classSpin} height={classSpin}/>
         )}
         {copy && <div className={`${classCopy}`}>{copy}</div>}
         {srcPosition === "before" && src && (
@@ -176,6 +182,8 @@ Button.propTypes = {
   classLoading: PropTypes.string,
   classCopy: PropTypes.string,
   copy: PropTypes.node,
+  spin: PropTypes.bool,
+  classSpin: PropTypes.string,
 };
 
 export default memo(Button);

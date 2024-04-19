@@ -124,7 +124,11 @@
   "User": {
     "managerProfile": "Manage account",
     "bookingAndTrip": "Bookings & Trips",
+    "myWishlist": "Saved",
     "logout": "Log out"
+  },
+  "Menu": {
+    "more": "More"
   },
   "Banner": {
     "title": "We hope you’ll enjoy your stay",
@@ -134,6 +138,8 @@
   "MyTrip": {
     "title": "Bookings & Trips",
     "complete": "Complete",
+    "yourTrip": "Your trips live here",
+    "showAll": "This page shows all of your bookings.",
     "items": {
       "item1": "Booking again",
       "item2": "Remove booking"
@@ -151,9 +157,11 @@
     "price": "Price",
     "vat": "vat",
     "units": "Units",
+    "rooms": "Rooms",
     "nights": "Nights",
     "guestName": "Guest name:",
     "bedSize": "Bed size(s):",
+    "roomName": "Room name:",
     "forMax": "for max.",
     "people": "people",
     "finalPrice": {
@@ -221,10 +229,87 @@
       "sendEmail": "Send email"
     }
   },
+  "BookingConfirm": {
+    "confirmed": "Confirmed",
+    "yourBookingIn": "Your booking in",
+    "showYourBookingIn": "show your confirmation in",
+    "scanWithPhone": "Scan with phone",
+    "isConfirm": "is confirmed.",
+    "confirmationEmailTo": "You're all set! We've sent your confirmation email to",
+    "paymentWill": "Your payment will be handled by",
+    "priceMoreDetails": "The 'Price' section below has more details",
+    "youCanNowModify": "You can now modify or cancel your booking until check-in",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "bookingDetails": "Booking details",
+    "address": "Address",
+    "phone": "Phone:",
+    "yourRoomDetails": "Your room details",
+    "adults": "adults",
+    "children": "children",
+    "rooms": "rooms",
+    "nights": "nights",
+    "guestName": "Guest name",
+    "maximumCapacity": "Maximum capacity",
+    "facilities": "Facilities",
+    "beds": "Beds",
+    "prepayment": "Prepayment",
+    "noPrepayment": "No prepayment is needed.",
+    "sale": "Sale",
+    "for": "for",
+    "guests": "guests",
+    "price": "Price",
+    "TheFinal": {
+      "title": "The final price shown is the amount you will pay to the property.",
+      "items": {
+        "item1": "Staying.com does not charge guests any reservation, administration or other fees.",
+        "item2": "Your card issuer may charge you a foreign transaction fee."
+      }
+    },
+    "PaymentInformation":{
+      "title": "Payment information",
+      "items": {
+        "item1": "Hotel handles all payments.",
+        "item2": "This property accepts the following forms of payment: Cash only"
+      }
+    },
+    "AdditionalInformation":{
+      "title": "Additional information",
+      "items": {
+        "item1": "Please note that additional supplements (e.g. extra bed) are not added in this total.",
+        "item2": "If you don’t show up at this booking, and you don’t cancel beforehand, the property is liable to charge you the full reservation amount.",
+        "item3": "Please remember to read the important information below, as this may contain important details not mentioned here."
+      }
+    },
+    "contactProperty": "Contact property",
+    "forQuestions": "For most of your questions, the property is usually the best place to ask",
+    "emailProperty": "Email property",
+    "sendAEmailProperty": "Send a message to the property, they'll respond as soon as possible",
+    "callProperty": "Call property",
+    "confirmationNumber": "Confirmation number:",
+    "pinCode": "PIN code:",
+    "isEverythingCorrect": "Is everything correct?",
+    "yourBookingOnline": "You can always view or change your booking online - no registration required.",
+    "tipChange": "Tip: You can make changes to this booking at anytime",
+    "greatTrip": "Have a great trip!",
+    "TheTeam": "The Staying.com Team",
+    "moreThan": "More than",
+    "million": "1 million",
+    "recommendStaying": "people last month said they'd recommend Staying.com to their family and friends.",
+    "button": {
+      "cancel": "Cancel",
+      "cancelBooking": "Cancel your booking",
+      "sendAnEmail": "Send an email",
+      "viewBooking": "View booking",
+      "saveConfirmation": "Save Confirmation"
+    }
+  },
   "Search": {
+    "title": "Enter destination",
     "location": "Where are you going?",
     "checkOutDate": "Check-out date",
     "search": "Search",
+    "clear": "Clear",
     "Guest": {
       "Adult": {
         "title": "Adult"
@@ -234,7 +319,8 @@
       },
       "Room": {
         "title": "Rooms"
-      }
+      },
+      "Done": "Done"
     }
   },
   "RecentSearch": {
@@ -451,6 +537,38 @@
       "title": "Thank you!",
       "subTitle": "We have created room for you, so you can find the room that suits you.",
       "backToHome": "Back to home"
+  },
+  "MyWishlist": {
+    "title": "My Wishlist",
+    "propertiesSaved": "properties saved",
+    "previews": "previews",
+    "nights": "nights",
+    "adults": "adults",
+    "children": "children",
+    "includesTaxesChanges": "Includes taxes and charges",
+    "undo": "Undo",
+    "NotWishlist": {
+      "title": "Here are 3 simple steps to help you begin:",
+      "items": {
+        "item1": "Search for a place to stay",
+        "item2": "Tap the heart icon when you find a property you like",
+        "item3": "You'll find all you've saved here"
+      },
+      "startSearching": "Start searching"
+    },
+    "CreateAccount": {
+      "title": "Save and share the properties you love",
+      "subTitle": "Lists let you bookmark properties and share them with friends, from any device, whenever you like.",
+      "createAccount": "Create an account start marking lists",
+      "signUp": "Sign up",
+      "alreadyHaveAnAccount": "Already have an account?",
+      "toSeeTheLists": "to see your lists."
+    }
+  },
+  "NotPage": {
+      "title": "Page not found",
+      "subTitle": "It happens! Now, let’s try to get you back on track.",
+      "goToHomePage": "Go to homepage"
   },
   "times":{
     "am": "AM",

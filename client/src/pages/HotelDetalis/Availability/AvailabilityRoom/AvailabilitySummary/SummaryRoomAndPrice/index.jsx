@@ -17,6 +17,7 @@ const SummaryRoomAndPrice = () => {
       <Title title={`${rooms.length} ${t("HotelDetails.Availability.table.summary.roomForNight")}`} large />
       {/* Price */}
       <MoneyFormatStaying
+        decimalScale={0}
         price={totalRoomPrice}
         className='font-[600] flex flex-row gap-1'
       />

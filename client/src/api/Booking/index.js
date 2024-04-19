@@ -6,10 +6,9 @@ export const startBookingSessionOne = async (newData) => {
   return data;
 };
 
-export const getBookingSessionPending = async (token, newData) => {
+export const getBookingSessionPending = async (token) => {
   const response = await get(
     `/public/v1/booking/${token}/STATUS_BOOKING_PENDING`,
-    newData,
   );
   const data = await response.data;
   return data;

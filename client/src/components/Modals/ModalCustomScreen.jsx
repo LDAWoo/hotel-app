@@ -5,6 +5,7 @@ import useRegisterWindowSizeStore from "../../hooks/useRegisterWindowSizeStore";
 import Button from "../Buttons/Button";
 import { DeviceContext } from "../Contexts/AppDeviceProvider";
 import { useTranslation } from "react-i18next";
+import useRegisterScrollStore from "../../hooks/useRegisterScrollStore";
 
 const ModalCustomScreen = ({ isOpen, disabled, body,footer, onClose, zIndex }) => {
   const modalsRef = useRef(null);
@@ -12,6 +13,8 @@ const ModalCustomScreen = ({ isOpen, disabled, body,footer, onClose, zIndex }) =
   const [showModal, setShowModal] = useState(isOpen);
   const { width } = useRegisterWindowSizeStore();
   const { isMobile } = useContext(DeviceContext);
+  const {onVisible,unVisible} = useRegisterScrollStore();
+
   useEffect(() => {
     const handleMouseDown = (event) => {
       if (!modalsRef.current) {
@@ -30,6 +33,11 @@ const ModalCustomScreen = ({ isOpen, disabled, body,footer, onClose, zIndex }) =
 
   useEffect(() => {
     setShowModal(isOpen);
+    if(isOpen){
+      unVisible();
+    }else{
+      onVisible();
+    }
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
